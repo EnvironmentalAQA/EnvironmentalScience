@@ -1,0 +1,262 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The circular economy, biocapacity &amp; ecological footprints - AQA Environmental Science</title><style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap');
+:root{--forest:#1f3d2b;--moss:#3f6b4a;--leaf:#7fb069;--leaf-light:#e6f0dc;--sand:#f6f3ec;--sand-dark:#ece6d8;--earth:#8b5e3c;--stone:#5c6660;--ink:#22302a;--line:#dcd6c8;
+--p1:#2f5f73;--p1-light:#e2edf2;--p2:#3f6b4a;--p2-light:#e6f0dc;--card:#ffffff;--head:#1f3d2b;--ms-bg:#e6f0dc;--ms-line:#cfe0bf;--note-bg:#fff8e6;--note-line:#ecd9a3;--input:#fff;
+--ok:#3f8f5a;--warn:#d9a441;--bad:#c0554a}
+[data-theme=dark]{--forest:#0f1a13;--moss:#8fc17f;--leaf:#7fb069;--leaf-light:#22301f;--sand:#131a15;--sand-dark:#1c2620;--earth:#d6a878;--stone:#a6b0a8;--ink:#e4e8e2;--line:#2c3a31;
+--p1-light:#1c3140;--p2-light:#22301f;--card:#192219;--head:#dfe9d9;--ms-bg:#1f2d21;--ms-line:#33513a;--note-bg:#2b2716;--note-line:#5a4c22;--input:#0f1611}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:'Source Sans 3',Segoe UI,Arial,sans-serif;font-size:17px;color:var(--ink);background:var(--sand);line-height:1.55}
+h1,h2,h3,.brand{font-family:Fraunces,Georgia,'Times New Roman',serif;font-weight:700;letter-spacing:-.01em}
+a{color:var(--moss)}code{background:var(--sand-dark);padding:1px 5px;border-radius:4px;font-size:.9em}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+header.top{background:var(--forest);color:#fff;position:sticky;top:0;z-index:20;box-shadow:0 2px 12px rgba(0,0,0,.18)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;min-height:62px}
+header.top a{color:#fff;text-decoration:none}.brand{font-size:1.25rem;display:flex;align-items:center;gap:10px}.brand svg{width:30px;height:30px}
+header.top nav{display:flex;align-items:center;flex-wrap:wrap}header.top nav a{margin-left:18px;font-size:.96rem;opacity:.9;padding:6px 0;border-bottom:2px solid transparent}header.top nav a:hover,header.top nav a.on{opacity:1;border-color:var(--leaf)}
+button.icon-btn{margin-left:18px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:8px;padding:5px 10px;cursor:pointer;font-size:.9rem;font-family:inherit}button.icon-btn:hover{background:rgba(255,255,255,.22)}
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#1f3d2b 0%,#2f5a3f 55%,#3f6b4a 100%);color:#fff;padding:54px 0 48px}
+.hero:before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'><g fill='none' stroke='rgba(255,255,255,0.10)' stroke-width='1.2'><path d='M0 300c60-40 120-40 180 0s120 40 220 0'/><path d='M0 240c60-40 120-40 180 0s120 40 220 0'/><path d='M0 180c60-40 120-40 180 0s120 40 220 0'/><path d='M0 120c60-40 120-40 180 0s120 40 220 0'/><path d='M0 60c60-40 120-40 180 0s120 40 220 0'/><path d='M0 360c60-40 120-40 180 0s120 40 220 0'/></g></svg>");opacity:.9}
+.hero .wrap{position:relative}.hero h1{margin:0 0 10px;font-size:2.4rem;line-height:1.15}.hero p{margin:0;max-width:760px;color:rgba(255,255,255,.88);font-size:1.08rem}
+.hero .crumbs{font-size:.9rem;margin-bottom:14px;color:rgba(255,255,255,.75)}.hero .crumbs a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4)}.hero .crumbs span{margin:0 8px;opacity:.6}
+.hero.p1{background:linear-gradient(135deg,#1e3f4d 0%,#2f5f73 60%,#3e7a90 100%)}.hero.p2{background:linear-gradient(135deg,#1f3d2b 0%,#3f6b4a 60%,#5e8f5a 100%)}
+.hero.small{padding:34px 0 30px}.hero.small h1{font-size:1.9rem}
+.pill{display:inline-block;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:3px 12px;font-size:.82rem;margin-right:8px;margin-top:10px}
+main{padding:30px 0 40px}
+h2.sec{font-size:1.55rem;color:var(--head);margin:34px 0 14px;display:flex;align-items:center;gap:12px}h2.sec:after{content:"";flex:1;height:1px;background:var(--line)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}@media(max-width:860px){.grid3{grid-template-columns:1fr}}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}@media(max-width:900px){.grid4{grid-template-columns:1fr 1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;box-shadow:0 1px 3px rgba(31,61,43,.06)}
+.card h3{margin:0 0 8px;font-size:1.25rem;color:var(--head)}.card p{margin:0 0 10px;color:var(--stone)}
+.stat{font-family:Fraunces,serif;font-size:2.2rem;color:var(--moss);line-height:1}
+a.btn,button.btn{display:inline-block;background:var(--moss);color:#fff;text-decoration:none;padding:9px 16px;border-radius:8px;font-weight:600;font-size:.95rem;border:0;cursor:pointer;font-family:inherit}a.btn:hover,button.btn:hover{background:var(--forest)}
+[data-theme=dark] a.btn:hover,[data-theme=dark] button.btn:hover{background:#6fa562}
+a.btn.ghost,button.btn.ghost{background:transparent;color:var(--moss);border:1.5px solid var(--moss)}a.btn.ghost:hover,button.btn.ghost:hover{background:var(--leaf-light)}
+.paper-head{display:flex;align-items:center;gap:14px;margin:8px 0 14px}.paper-head .tag{white-space:nowrap;font-family:Fraunces,serif;font-size:1.05rem;font-weight:700;color:#fff;border-radius:8px;padding:4px 12px}
+.tag.p1{background:var(--p1)}.tag.p2{background:var(--p2)}.paper-head span.assessed{color:var(--stone);font-size:.95rem}
+.topic-card{display:flex;gap:16px;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;transition:transform .12s,box-shadow .12s}
+.topic-card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(31,61,43,.12)}
+.topic-card .icon{flex:0 0 52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center}.topic-card .icon svg{width:30px;height:30px}
+.icon.p1{background:var(--p1-light);color:var(--p1)}.icon.p2{background:var(--p2-light);color:var(--p2)}[data-theme=dark] .icon.p1{color:#8fc3d8}[data-theme=dark] .icon.p2{color:#9fd08f}
+.topic-card>div:last-child{flex:1}.topic-card h3{margin:0 0 4px;font-size:1.2rem;color:var(--head)}.topic-card .meta{color:var(--stone);font-size:.9rem}.topic-card .subs{margin:8px 0 0;color:var(--stone);font-size:.9rem;line-height:1.4}
+.sub-list{list-style:none;padding:0;margin:0}
+.sub-item{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:12px 0;display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}
+.sub-item .t{flex:1 1 380px}.sub-item .t a.name{font-family:Fraunces,serif;font-size:1.15rem;font-weight:700;color:var(--head);text-decoration:none}.sub-item .t a.name:hover{color:var(--moss)}
+.sub-item .meta{color:var(--stone);font-size:.88rem;margin-top:2px}
+.links{display:flex;flex-wrap:wrap;gap:6px}.links a{font-size:.82rem;padding:4px 11px;border-radius:999px;text-decoration:none;border:1px solid var(--line);background:var(--sand);color:var(--moss);font-weight:600}
+.links a:hover{background:var(--leaf-light);border-color:var(--leaf)}.links a.qp{background:var(--leaf-light)}
+table.list{border-collapse:collapse;width:100%;margin:10px 0 24px;background:var(--card);border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+table.list th,table.list td{padding:10px 14px;text-align:left;font-size:.95rem;vertical-align:top;border-bottom:1px solid var(--line)}table.list th{background:var(--sand-dark);color:var(--head)}table.list tr:last-child td{border-bottom:0}
+.q{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 24px;margin:20px 0;box-shadow:0 1px 3px rgba(31,61,43,.05);border-left-width:5px}
+.q[data-status="1"]{border-left-color:var(--warn)}.q[data-status="2"]{border-left-color:var(--ok)}
+.q .qh{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:8px}
+.q .qh .num{font-family:Fraunces,serif;font-weight:700;color:var(--head);font-size:1.15rem}.q .meta{font-size:.82rem;color:var(--stone)}
+.q .part{margin:12px 0 6px;padding:8px 0 8px 12px;border-left:3px solid var(--leaf)}.q .part .pn{font-weight:700;color:var(--moss);margin-right:8px;font-family:Fraunces,serif}.q .marks{float:right;font-weight:700;color:var(--earth);font-size:.9rem}
+.q table.data{border-collapse:collapse;margin:12px auto;background:var(--card)}.q table.data th,.q table.data td{border:1px solid var(--stone);padding:5px 12px;text-align:center;font-size:.92rem}.q table.data th{background:var(--sand-dark)}
+.q .cap{text-align:center;font-weight:700;margin:10px 0 2px;font-family:Fraunces,serif;color:var(--head)}
+.q ul.mcq{list-style:none;padding-left:10px}.q ul.mcq li:before{content:"\2610  ";}
+svg.chart{max-width:100%;height:auto;display:block;margin:6px auto;background:#fff;border-radius:8px}
+details.ms{margin-top:12px;background:var(--ms-bg);border:1px solid var(--ms-line);border-radius:10px;padding:10px 14px}details.ms summary{cursor:pointer;font-weight:700;color:var(--moss)}
+details.ms ul{margin:6px 0 8px 18px;padding:0}details.ms .lvl{font-size:.88rem;margin:4px 0;color:var(--stone)}details.ms .src{font-size:.85rem;color:var(--earth);margin-top:8px;border-top:1px dashed var(--ms-line);padding-top:6px}
+.note{background:var(--note-bg);border:1px solid var(--note-line);border-radius:10px;padding:12px 16px;font-size:.95rem}
+footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-size:.88rem;margin-top:40px}footer a{color:#fff}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:24px}@media(max-width:860px){.two{grid-template-columns:1fr}}
+/* progress */
+.st{display:inline-flex;gap:4px;margin-left:auto}.st button{font-family:inherit;font-size:.78rem;border:1px solid var(--line);background:var(--sand);color:var(--stone);border-radius:999px;padding:2px 10px;cursor:pointer}
+.st button:hover{border-color:var(--moss)}.st button.on[data-s="1"]{background:var(--warn);color:#222;border-color:var(--warn)}.st button.on[data-s="2"]{background:var(--ok);color:#fff;border-color:var(--ok)}
+.prog{display:flex;align-items:center;gap:10px;font-size:.82rem;color:var(--stone);margin-top:8px}.prog .bar{flex:1;height:8px;background:var(--sand-dark);border-radius:999px;overflow:hidden;display:flex;max-width:260px}
+.prog .bar .ok{background:var(--ok);height:100%}.prog .bar .wk{background:var(--warn);height:100%}.prog .pl{white-space:nowrap;min-width:90px}
+.hero .prog{color:rgba(255,255,255,.85)}.hero .prog .bar{background:rgba(255,255,255,.25)}
+/* filter bar & tools */
+.filterbar{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.filterbar input[type=search]{flex:1 1 220px;font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
+.filterbar label{font-size:.85rem;color:var(--stone);display:inline-flex;align-items:center;gap:4px;cursor:pointer}.filterbar .chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--sand);color:var(--stone);font-size:.82rem;cursor:pointer;font-family:inherit}
+.filterbar .chip.on{background:var(--moss);color:#fff;border-color:var(--moss)}.filterbar .cnt{font-size:.85rem;color:var(--stone);margin-left:auto}
+.filterbar select{font:inherit;font-size:.88rem;padding:5px 8px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
+.tools{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:10px 0;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.tools .time{font-family:Fraunces,serif;font-size:1.6rem;font-weight:700;color:var(--head);min-width:120px}.tools .time.low{color:var(--bad)}
+.tools .score{font-weight:700;color:var(--moss)}.tools .score b{font-family:Fraunces,serif;font-size:1.3rem}.tools .pct{font-size:.85rem;color:var(--stone)}
+.tools button{font-family:inherit;font-size:.88rem;padding:6px 12px;border-radius:8px;border:1px solid var(--moss);background:transparent;color:var(--moss);cursor:pointer}.tools button.primary{background:var(--moss);color:#fff}
+.aw{display:flex;align-items:center;gap:8px;margin:4px 0 8px;font-size:.88rem;color:var(--stone)}.aw input{width:64px;font:inherit;padding:3px 6px;border:1px solid var(--line);border-radius:6px;background:var(--input);color:var(--ink)}
+.q.hide{display:none}
+/* quick-fire & search */
+.qf-controls{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin:10px 0 16px}.qf-controls label{font-size:.9rem;color:var(--stone);display:inline-flex;gap:5px;align-items:center}
+.qf-controls select,.qf-controls input[type=search]{font:inherit;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
+.kbd{font-size:.8rem;color:var(--stone)}.kbd kbd{border:1px solid var(--line);border-radius:4px;padding:0 5px;background:var(--sand-dark);font-family:inherit}
+.res{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0;text-decoration:none;color:inherit}.res:hover{border-color:var(--moss)}
+.res .t{font-weight:700;color:var(--head)}.res .m{font-size:.82rem;color:var(--stone)}.res .s{font-size:.92rem;margin-top:4px}.res mark{background:#ffe58a;color:#222;border-radius:3px;padding:0 2px}
+.empty{color:var(--stone);font-style:italic}
+/* print */
+@media print{header.top,footer,.tools,.filterbar,.st,.pill,.aw,.hero .crumbs,.prog,.noprint{display:none!important}
+body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;color:#000;padding:10px 0}.hero p,.hero h1{color:#000}.hero:before{display:none}
+.q{break-inside:avoid;box-shadow:none;border:1px solid #999;page-break-inside:avoid}details.ms{display:none}body.print-ms details.ms{display:block;background:#f3f3f3}body.print-ms details.ms summary{display:none}
+svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
+</style>
+<script>try{if(localStorage.getItem('envsci.theme')==='"dark"')document.documentElement.dataset.theme='dark';}catch(e){}</script></head><body >
+<header class="top"><div class="wrap"><a class="brand" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb069" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-8 0-14 4-14 12 0 1.5.3 3 1 4 2-6 6-9 11-11-4 3-7 6-8 12 8 0 12-6 10-17z"/></svg><span>AQA Environmental Science</span></a><nav><a href="../index.html" class="">Topics</a><a href="../papers.html" class="">Mock papers</a><a href="../official.html" class="">Past papers</a><a href="../essays.html" class="">Essay bank</a><a href="../quickfire.html" class="">Quick-fire</a><a href="../search.html" class="">Search</a><button class="icon-btn" id="themeBtn" type="button" title="Toggle dark mode">&#9790; Dark</button></nav></div></header>
+<section class="hero p2 small"><div class="wrap"><div class="crumbs"><a href="../index.html">Topics</a><span>&rsaquo;</span><a href="../topic/sustainability.html">Sustainability</a><span>&rsaquo;</span>The circular economy, biocapacity &amp; ecological footprints</div><h1>The circular economy, biocapacity &amp; ecological footprints</h1><p>Sustainability &middot; AQA spec 3.6.4 &middot; R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 374-389</p><span class="pill">Paper 2</span><span class="pill">5 questions</span><div class="prog" data-qids="SUS-05,SUS-06,SUS-07,SUS-08,SUS-09"><div class="bar"><div class="ok"></div><div class="wk"></div></div><span class="pl"></span></div></div></section>
+<main><div class="wrap"><h2 class="sec">Question sets</h2><table class="list"><tr><th>Set</th><th>Questions</th><th>Marks</th><th>Question paper</th><th>Mark scheme</th></tr>
+<tr><td>Set 1</td><td>5</td><td>50</td><td><a href="../pdf/topic/circular-economy-set1-QP.pdf">Download QP (PDF)</a></td><td><a href="../pdf/topic/circular-economy-set1-MS.pdf">Download MS (PDF)</a></td></tr>
+</table>
+<div class="filterbar noprint"><input type="search" placeholder="Filter questions by keyword (e.g. albedo, quota, Simpson)"><button type="button" class="chip mk" data-v="5">5 marks</button><button type="button" class="chip mk" data-v="10">10 marks</button><button type="button" class="chip mk" data-v="15">15 marks</button><button type="button" class="chip fl" data-v="calc">Calculation</button><button type="button" class="chip fl" data-v="data">Data / figure</button><button type="button" class="chip fl" data-v="ext">9-mark extended</button><button type="button" class="chip fl" data-v="mcq">Multiple choice</button><button type="button" class="chip fl" data-v="table">Complete a table</button><select class="status" title="Filter by your progress"><option value="all">All progress</option><option value="todo">Not attempted</option><option value="work">Needs work</option><option value="secure">Secure</option><option value="notsecure">Not yet secure</option></select><button type="button" class="chip clear">Clear</button><span class="cnt"></span><button type="button" class="chip" data-reveal="1">Show all mark schemes</button><button type="button" class="chip" data-print="qp" title="Print the questions only">Print</button><button type="button" class="chip" data-print="ms" title="Print questions with mark schemes">Print + MS</button></div>
+<h2 class="sec set">Set 1</h2>
+<div class="q" id="SUS-05" data-qid="SUS-05" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 1</span><span class="meta">10 marks &middot; <a href="../subtopic/circular-economy.html">The circular economy, biocapacity &amp; ecological footprints</a> &middot; spec 3.6.4.1 &middot; Genn pp. 374-375 &middot; SUS-05</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="part"><span class="marks">[6 marks]</span><span class="pn">01.1</span>Describe the main principles of the circular economy.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">01.2</span>Explain what is meant by 'optimum production rather than maximum production', using a comparison between a natural ecosystem and an agroecosystem.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">01.3</span>Explain why international cooperation (eg through the EU or UN) is needed to implement circular economy initiatives.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div><b>01.1</b> (6 marks)
+<ul><li>Cycling of materials (like biogeochemical cycles) - recycling, re-use</li><li>Energy from renewable sources</li><li>Human activities should support ecosystems / conserve biodiversity</li><li>Separation of technical and biological materials; connected systems where the waste of one process feeds another (industrial symbiosis)</li><li>Diverse systems are more resistant to change</li><li>Design of products for extended use and end-of-life re-use; optimum rather than maximum production; technologies that improve efficiency and enable dismantling</li></ul>
+</div>
+<div><b>01.2</b> (2 marks)
+<ul><li>Natural systems over-produce so the surplus supports the processes the system relies on: plant products feed pollinators, seed dispersers, decomposers, mycorrhizae</li><li>Agroecosystems aim for maximum harvested yield, removing the surplus that would maintain soil biota, pollinators and pest predators, so they need artificial inputs</li></ul>
+</div>
+<div><b>01.3</b> (2 marks)
+<ul><li>Costs of environmental measures could put companies in one country at a disadvantage against competitors in countries without them</li><li>A common approach gives a level playing field, coordinated monitoring and support for less successful countries</li></ul>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 374-375; AQA spec 3.6.4.1.</div></details></div>
+<div class="q" id="SUS-06" data-qid="SUS-06" data-marks="10" data-flags="ext"><div class="qh"><span class="num">Question 2</span><span class="meta">10 marks &middot; <a href="../subtopic/circular-economy.html">The circular economy, biocapacity &amp; ecological footprints</a> &middot; spec 3.6.4.1 &middot; Genn pp. 375-379 &middot; SUS-06</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="part"><span class="marks">[9 marks]</span><span class="pn">02.1</span>Evaluate the extent to which the principles of the circular economy can be applied to <b>three</b> of the following: water supplies, mineral supplies, waste management, pollution control, energy supplies, food production.
+</div>
+<div class="part"><span class="marks">[1 mark]</span><span class="pn">02.2</span>State what is meant by <b>industrial symbiosis</b>.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div><b>02.1</b> (9 marks)
+<div class="lvl"><b>Levels of response:</b> L3 7-9 comprehensive, well-structured, applied to context, supported judgement; L2 4-6 sound but incomplete application/evaluation; L1 1-3 basic, limited structure.</div><div class="lvl"><b>Indicative content:</b></div>
+<ul><li>Water: catchment management, conservation, metering, greywater, re-use of treated effluent, aquifer recharge, sustainable urban drainage - largely cyclical already; limits in arid regions</li><li>Minerals: exploiting low-grade ores with low-temperature processes (bioleaching), extending product lifespans, repair / re-use / repurpose / recycle, design for disassembly, reduced packaging; limits: dispersal, alloys, energy of collection</li><li>Waste management: repair, re-use, refurbish, recycle, composting and anaerobic digestion returning nutrients, minimal landfill, energy from residual waste; EU targets on packaging, batteries, WEEE</li><li>Pollution control: shift from post-production treatment to non-release - fuel desulfurisation not FGD, fuel cells / electric vehicles not combustion, industrial symbiosis (Kalundborg: waste heat, gypsum, fly ash, yeast used by neighbours); limits for legacy pollution</li><li>Energy: renewables, storage, energy density technologies, low-temperature manufacturing, CHP; limits of intermittency, transport fuels</li><li>Food: natural processes for nutrients (legumes, organic matter), pest control (IPM), soil biota, agri-environment schemes, IMTA aquaculture; tension with maximum yield for a growing population</li><li>Land uses supporting ecosystems: urban green infrastructure, gardens, permeable surfaces, habitat in redeveloped docks / lagoons</li><li>Judgement: high applicability in some sectors (water, waste), partial in others (minerals, energy for transport); needs policy support</li></ul>
+</div>
+<div><b>02.2</b> (1 marks)
+<ul><li>Locating industries so that the wastes of one (heat, gases, by-products) become the raw materials of another, mimicking natural cycles (eg Kalundborg eco-industrial park)</li></ul>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 375-379; AQA spec 3.6.4.1.</div></details></div>
+<div class="q" id="SUS-07" data-qid="SUS-07" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 3</span><span class="meta">10 marks &middot; <a href="../subtopic/circular-economy.html">The circular economy, biocapacity &amp; ecological footprints</a> &middot; spec 3.6.4.2 &middot; Genn pp. 379-380 &middot; SUS-07</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<p>Table 1 shows the ecological footprint and biocapacity per person for four countries and the world in 2016.</p>
+<div class="cap">Table 1</div><table class="data"><tr><th></th><th>Ecological footprint / gha per person</th><th>Biocapacity / gha per person</th><th>Human Development Index</th></tr><tr><td>USA</td><td>8.1</td><td>3.6</td><td>0.92</td></tr><tr><td>UK</td><td>4.4</td><td>1.4</td><td>0.92</td></tr><tr><td>China</td><td>3.6</td><td>1.0</td><td>0.75</td></tr><tr><td>Bangladesh</td><td>0.8</td><td>0.4</td><td>0.61</td></tr><tr><td>World</td><td>2.8</td><td>1.7</td><td>0.72</td></tr></table>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">03.1</span>Define <b>ecological footprint</b> and <b>biocapacity</b>.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">03.2</span>Explain what is meant by a <b>global hectare</b> and why it is used.
+</div>
+<div class="part"><span class="marks">[1 mark]</span><span class="pn">03.3</span>Use Table 1 to calculate how many Earths would be needed if everyone lived like the average US citizen.
+</div>
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">03.4</span>Use Table 1 to describe the relationship between development and ecological footprint, and explain the concept of Earth Overshoot Day.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">03.5</span>Suggest <b>two</b> ways a country such as the UK could reduce its footprint without reducing its HDI.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div><b>03.1</b> (2 marks)
+<ul><li>Ecological footprint: the area of the Earth's surface (global hectares) needed to provide the resources used by a person / population / activity and to absorb the wastes produced</li><li>Biocapacity: the biological productivity of an area (forests, cropland, grazing, fisheries, built land) - its ability to supply resources and absorb wastes, expressed in global hectares</li></ul>
+</div>
+<div><b>03.2</b> (2 marks)
+<ul><li>A hectare of land / sea with the world-average biological productivity</li><li>Biocapacities of real areas vary widely so a standard unit allows footprints and biocapacities of different places to be compared</li></ul>
+</div>
+<div><b>03.3</b> (1 marks)
+<ul><li>8.1 / 1.7 = 4.8 (accept 4.7-4.8)</li></ul>
+</div>
+<div><b>03.4</b> (3 marks)
+<ul><li>Higher HDI is associated with a larger footprint (USA 8.1 vs Bangladesh 0.8), though the UK achieves the same HDI as the USA with about half the footprint</li><li>Global footprint (2.8) exceeds global biocapacity (1.7) so humanity uses resources faster than they regenerate and CO2 accumulates (overshoot)</li><li>Earth Overshoot Day is the date each year when a year's worth of resources / waste absorption has been used up; it falls earlier each year (8 August in 2016)</li></ul>
+</div>
+<div><b>03.5</b> (2 marks)
+<div class="lvl"><i>Any 2 from:</i></div>
+<ul><li>Renewable energy and energy conservation (carbon footprint is the largest component)</li><li>Reduced meat consumption / food waste; local seasonal food</li><li>Circular economy: repair, re-use, recycling; longer product lives</li><li>Public transport, efficient buildings</li></ul>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 379-380; AQA spec 3.6.4.2.</div></details></div>
+<div class="q" id="SUS-08" data-qid="SUS-08" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 4</span><span class="meta">10 marks &middot; <a href="../subtopic/circular-economy.html">The circular economy, biocapacity &amp; ecological footprints</a> &middot; spec 3.6.4.2 &middot; Genn pp. 380-383 &middot; SUS-08</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">04.1</span>Explain what a carbon footprint should include when calculated for a car.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">04.2</span>Describe what the WWF Living Planet Index measures and how it is used.
+</div>
+<div class="part"><span class="marks">[5 marks]</span><span class="pn">04.3</span>Describe how the Ol Pejeta reserve in Kenya combines commercial cattle ranching with wildlife conservation.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div><b>04.1</b> (3 marks)
+<ul><li>All greenhouse gases expressed as CO2 equivalent (allowing for different warming strengths)</li><li>Direct emissions from fuel combustion plus indirect: manufacture of components, maintenance items, final disposal (life-cycle analysis)</li><li>A fair share of the infrastructure: roads, car parks, signals, street lighting</li></ul>
+</div>
+<div><b>04.2</b> (2 marks)
+<ul><li>Compares the populations of over 18 000 populations of 3700 vertebrate species (terrestrial, freshwater, marine) with 1970 levels</li><li>Published in the Living Planet Report as a measure of the state of the planet's ecosystems / biodiversity loss over time</li></ul>
+</div>
+<div><b>04.3</b> (5 marks)
+<ul><li>Hardy, disease-resistant Boran cattle; regular tick dipping reduces ticks for wild herbivores too</li><li>Mobile bomas (night enclosures) protect cattle from lions and leave dung that enriches soil and plant growth</li><li>Electric fences keep game in and poachers out; biological corridors let animals (except rhinos) move to other reserves; problem elephants relocated</li><li>Monitoring: radio-collared lions, drones, camera traps, track surveys; endangered species (Grevy's zebra, northern white rhino) protected</li><li>Community links: ecotourism income funds health, education and water projects; local employment; cattle breeding help for local farmers</li></ul>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 380-383; AQA spec 3.6.4.2.</div></details></div>
+<div class="q" id="SUS-09" data-qid="SUS-09" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 5</span><span class="meta">10 marks &middot; <a href="../subtopic/circular-economy.html">The circular economy, biocapacity &amp; ecological footprints</a> &middot; spec 3.6.4 &middot; Genn pp. 384-389 &middot; SUS-09</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<p>The Isle of Eigg (area 31 km<sup>2</sup>, population about 100) is not connected to the national grid. Table 1 shows its electricity sources.</p>
+<div class="cap">Table 1</div><table class="data"><tr><th>Source</th><th>Capacity / kW</th></tr><tr><td>Hydroelectric (3 generators)</td><td>110</td></tr><tr><td>Solar PV</td><td>50</td></tr><tr><td>Wind (4 turbines)</td><td>24</td></tr><tr><td>Diesel generators (back-up)</td><td>160</td></tr></table>
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">05.1</span>Explain why Eigg uses a mix of three renewable resources rather than one, and why diesel back-up is still needed.
+</div>
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">05.2</span>Describe <b>three</b> other ways in which the Eigg community has increased its sustainability.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">05.3</span>Explain why small self-contained communities often find it easier to adopt sustainable lifestyles than large cities.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">05.4</span>Explain how large-scale DC electricity grids such as Desertec could increase the use of renewable energy.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div><b>05.1</b> (3 marks)
+<ul><li>Diversity: HEP (wet winters), solar (summer) and wind peak at different times so supply is more reliable - diverse systems resist change</li><li>No single source could meet demand all year; battery storage on the island grid smooths fluctuations</li><li>Calm, dry, dull periods still leave gaps so diesel generators provide security (fossil fuel use minimised, not yet eliminated)</li></ul>
+</div>
+<div><b>05.2</b> (3 marks)
+<div class="lvl"><i>Any 3 from:</i></div>
+<ul><li>Community ownership (Isle of Eigg Trust with Scottish Wildlife Trust) managing the island for people and wildlife</li><li>Wood biomass heating; insulation such as straw-bale housing; some electric vehicles</li><li>Habitat protection and creation: fencing rare plants from grazing, planting indigenous woodland (rowan, birch, willow); eagles and hen harriers nesting</li><li>Recyclables shipped off; garden / food waste composted; low-impact food production; beach litter collection</li></ul>
+</div>
+<div><b>05.3</b> (2 marks)
+<ul><li>Small groups can organise, agree and act quickly; decisions benefit people who see the results directly</li><li>Resources and wastes are local and visible so feedback is immediate, unlike cities supplied from far away</li></ul>
+</div>
+<div><b>05.4</b> (2 marks)
+<ul><li>Renewable energy is abundant but geographically and temporally variable; a continental grid moves electricity from areas of surplus (desert solar, offshore wind) to areas of demand</li><li>DC grids do not need every generator synchronised in phase as AC grids do, so coordination across many countries is easier</li></ul>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 384-389; AQA spec 3.6.4.</div></details></div>
+</div></main>
+<footer><div class="wrap">Original practice questions and mark schemes written to the AQA A-level Environmental Science (7447) specification. Every question cites the printed page numbers of R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018). AQA past papers are &copy; AQA. Progress, scores and timers are saved only in this browser. &nbsp;&middot;&nbsp; <a href="../index.html">Topics</a> &middot; <a href="../papers.html">Mock papers</a> &middot; <a href="../official.html">Past papers</a> &middot; <a href="../essays.html">Essay bank</a> &middot; <a href="../quickfire.html">Quick-fire</a> &middot; <a href="../search.html">Search</a></div></footer>
+<script>
+(function(){
+const LS=k=>{try{return JSON.parse(localStorage.getItem(k)||'null')}catch(e){return null}};
+const SV=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+window.ES={LS,SV};
+/* ---- theme ---- */
+const root=document.documentElement;
+function applyTheme(t){if(t==='dark')root.dataset.theme='dark';else delete root.dataset.theme;const b=document.getElementById('themeBtn');if(b)b.textContent=t==='dark'?'\u2600 Light':'\u263E Dark';}
+applyTheme(LS('envsci.theme')||'light');
+const tb=document.getElementById('themeBtn');if(tb)tb.onclick=()=>{const t=root.dataset.theme==='dark'?'light':'dark';SV('envsci.theme',t);applyTheme(t);};
+/* ---- progress ---- */
+let prog=LS('envsci.progress')||{};
+window.ES.prog=()=>prog;
+function paint(){
+  document.querySelectorAll('.q[data-qid]').forEach(el=>{const s=prog[el.dataset.qid]||0;el.dataset.status=s;el.querySelectorAll('.st button').forEach(b=>b.classList.toggle('on',+b.dataset.s===s&&s>0));});
+  document.querySelectorAll('[data-qids]').forEach(el=>{const ids=el.dataset.qids.split(',').filter(Boolean);const n=ids.length;if(!n)return;
+    const ok=ids.filter(i=>prog[i]===2).length,wk=ids.filter(i=>prog[i]===1).length;
+    const o=el.querySelector('.bar .ok'),w=el.querySelector('.bar .wk'),p=el.querySelector('.pl');
+    if(o)o.style.width=(100*ok/n)+'%';if(w)w.style.width=(100*wk/n)+'%';if(p)p.textContent=ok+'/'+n+' secure'+(wk?' \u00b7 '+wk+' to revisit':'');});
+  const ov=document.getElementById('overall');if(ov){const all=(ov.dataset.qids||'').split(',').filter(Boolean);const ok=all.filter(i=>prog[i]===2).length,wk=all.filter(i=>prog[i]===1).length;ov.querySelector('.stat').textContent=Math.round(100*ok/all.length)+'%';ov.querySelector('.detail').textContent=ok+' secure, '+wk+' to revisit, '+(all.length-ok-wk)+' not attempted of '+all.length+' questions.';}
+}
+window.ES.paint=paint;
+document.addEventListener('click',e=>{const b=e.target.closest('.st button');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);paint();if(window.ES.onFilter)window.ES.onFilter();});
+const rs=document.getElementById('resetProg');if(rs)rs.onclick=()=>{if(confirm('Clear all saved progress on this browser?')){prog={};SV('envsci.progress',prog);paint();}};
+paint();
+/* ---- filter bar ---- */
+const fb=document.querySelector('.filterbar');
+if(fb){
+  const qs=[...document.querySelectorAll('.q[data-qid]')];
+  const txt=fb.querySelector('input[type=search]');const cnt=fb.querySelector('.cnt');
+  function run(){const words=(txt.value||'').toLowerCase().split(/\s+/).filter(Boolean);
+    const marks=[...fb.querySelectorAll('.chip.mk.on')].map(c=>c.dataset.v);const flags=[...fb.querySelectorAll('.chip.fl.on')].map(c=>c.dataset.v);
+    const st=fb.querySelector('select.status').value;let shown=0;
+    qs.forEach(el=>{let ok=true;const t=el.textContent.toLowerCase();
+      if(words.length&&!words.every(w=>t.includes(w)))ok=false;
+      if(marks.length&&!marks.includes(el.dataset.marks))ok=false;
+      if(flags.length&&!flags.every(f=>(' '+el.dataset.flags+' ').includes(' '+f+' ')))ok=false;
+      const s=prog[el.dataset.qid]||0;if(st==='todo'&&s!==0)ok=false;if(st==='work'&&s!==1)ok=false;if(st==='secure'&&s!==2)ok=false;if(st==='notsecure'&&s===2)ok=false;
+      el.classList.toggle('hide',!ok);if(ok)shown++;});
+    cnt.textContent='Showing '+shown+' of '+qs.length;
+    document.querySelectorAll('h2.sec.set').forEach(h=>{let n=h.nextElementSibling,any=false;while(n&&!n.classList.contains('set')){if(n.classList.contains('q')&&!n.classList.contains('hide'))any=true;n=n.nextElementSibling;}h.style.display=any?'':'none';});}
+  window.ES.onFilter=run;
+  txt.addEventListener('input',run);fb.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{c.classList.toggle('on');run();});fb.querySelector('select.status').onchange=run;
+  const clr=fb.querySelector('.clear');if(clr)clr.onclick=()=>{txt.value='';fb.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));fb.querySelector('select.status').value='all';run();};
+  run();}
+/* ---- print & reveal ---- */
+document.querySelectorAll('[data-print]').forEach(b=>b.onclick=()=>{const ms=b.dataset.print==='ms';document.body.classList.toggle('print-ms',ms);document.querySelectorAll('details.ms').forEach(d=>d.open=ms);window.print();});
+document.querySelectorAll('[data-reveal]').forEach(b=>b.onclick=()=>{const open=b.dataset.reveal==='1';document.querySelectorAll('details.ms').forEach(d=>d.open=open);b.dataset.reveal=open?'0':'1';b.textContent=open?'Hide all mark schemes':'Show all mark schemes';});
+})();
+</script></body></html>

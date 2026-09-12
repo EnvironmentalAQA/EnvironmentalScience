@@ -1,0 +1,511 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Generated Set 04 - AQA Environmental Science</title><style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap');
+:root{--forest:#1f3d2b;--moss:#3f6b4a;--leaf:#7fb069;--leaf-light:#e6f0dc;--sand:#f6f3ec;--sand-dark:#ece6d8;--earth:#8b5e3c;--stone:#5c6660;--ink:#22302a;--line:#dcd6c8;
+--p1:#2f5f73;--p1-light:#e2edf2;--p2:#3f6b4a;--p2-light:#e6f0dc;--card:#ffffff;--head:#1f3d2b;--ms-bg:#e6f0dc;--ms-line:#cfe0bf;--note-bg:#fff8e6;--note-line:#ecd9a3;--input:#fff;
+--ok:#3f8f5a;--warn:#d9a441;--bad:#c0554a}
+[data-theme=dark]{--forest:#0f1a13;--moss:#8fc17f;--leaf:#7fb069;--leaf-light:#22301f;--sand:#131a15;--sand-dark:#1c2620;--earth:#d6a878;--stone:#a6b0a8;--ink:#e4e8e2;--line:#2c3a31;
+--p1-light:#1c3140;--p2-light:#22301f;--card:#192219;--head:#dfe9d9;--ms-bg:#1f2d21;--ms-line:#33513a;--note-bg:#2b2716;--note-line:#5a4c22;--input:#0f1611}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:'Source Sans 3',Segoe UI,Arial,sans-serif;font-size:17px;color:var(--ink);background:var(--sand);line-height:1.55}
+h1,h2,h3,.brand{font-family:Fraunces,Georgia,'Times New Roman',serif;font-weight:700;letter-spacing:-.01em}
+a{color:var(--moss)}code{background:var(--sand-dark);padding:1px 5px;border-radius:4px;font-size:.9em}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+header.top{background:var(--forest);color:#fff;position:sticky;top:0;z-index:20;box-shadow:0 2px 12px rgba(0,0,0,.18)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;min-height:62px}
+header.top a{color:#fff;text-decoration:none}.brand{font-size:1.25rem;display:flex;align-items:center;gap:10px}.brand svg{width:30px;height:30px}
+header.top nav{display:flex;align-items:center;flex-wrap:wrap}header.top nav a{margin-left:18px;font-size:.96rem;opacity:.9;padding:6px 0;border-bottom:2px solid transparent}header.top nav a:hover,header.top nav a.on{opacity:1;border-color:var(--leaf)}
+button.icon-btn{margin-left:18px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:8px;padding:5px 10px;cursor:pointer;font-size:.9rem;font-family:inherit}button.icon-btn:hover{background:rgba(255,255,255,.22)}
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#1f3d2b 0%,#2f5a3f 55%,#3f6b4a 100%);color:#fff;padding:54px 0 48px}
+.hero:before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'><g fill='none' stroke='rgba(255,255,255,0.10)' stroke-width='1.2'><path d='M0 300c60-40 120-40 180 0s120 40 220 0'/><path d='M0 240c60-40 120-40 180 0s120 40 220 0'/><path d='M0 180c60-40 120-40 180 0s120 40 220 0'/><path d='M0 120c60-40 120-40 180 0s120 40 220 0'/><path d='M0 60c60-40 120-40 180 0s120 40 220 0'/><path d='M0 360c60-40 120-40 180 0s120 40 220 0'/></g></svg>");opacity:.9}
+.hero .wrap{position:relative}.hero h1{margin:0 0 10px;font-size:2.4rem;line-height:1.15}.hero p{margin:0;max-width:760px;color:rgba(255,255,255,.88);font-size:1.08rem}
+.hero .crumbs{font-size:.9rem;margin-bottom:14px;color:rgba(255,255,255,.75)}.hero .crumbs a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4)}.hero .crumbs span{margin:0 8px;opacity:.6}
+.hero.p1{background:linear-gradient(135deg,#1e3f4d 0%,#2f5f73 60%,#3e7a90 100%)}.hero.p2{background:linear-gradient(135deg,#1f3d2b 0%,#3f6b4a 60%,#5e8f5a 100%)}
+.hero.small{padding:34px 0 30px}.hero.small h1{font-size:1.9rem}
+.pill{display:inline-block;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:3px 12px;font-size:.82rem;margin-right:8px;margin-top:10px}
+main{padding:30px 0 40px}
+h2.sec{font-size:1.55rem;color:var(--head);margin:34px 0 14px;display:flex;align-items:center;gap:12px}h2.sec:after{content:"";flex:1;height:1px;background:var(--line)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}@media(max-width:860px){.grid3{grid-template-columns:1fr}}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}@media(max-width:900px){.grid4{grid-template-columns:1fr 1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;box-shadow:0 1px 3px rgba(31,61,43,.06)}
+.card h3{margin:0 0 8px;font-size:1.25rem;color:var(--head)}.card p{margin:0 0 10px;color:var(--stone)}
+.stat{font-family:Fraunces,serif;font-size:2.2rem;color:var(--moss);line-height:1}
+a.btn,button.btn{display:inline-block;background:var(--moss);color:#fff;text-decoration:none;padding:9px 16px;border-radius:8px;font-weight:600;font-size:.95rem;border:0;cursor:pointer;font-family:inherit}a.btn:hover,button.btn:hover{background:var(--forest)}
+[data-theme=dark] a.btn:hover,[data-theme=dark] button.btn:hover{background:#6fa562}
+a.btn.ghost,button.btn.ghost{background:transparent;color:var(--moss);border:1.5px solid var(--moss)}a.btn.ghost:hover,button.btn.ghost:hover{background:var(--leaf-light)}
+.paper-head{display:flex;align-items:center;gap:14px;margin:8px 0 14px}.paper-head .tag{white-space:nowrap;font-family:Fraunces,serif;font-size:1.05rem;font-weight:700;color:#fff;border-radius:8px;padding:4px 12px}
+.tag.p1{background:var(--p1)}.tag.p2{background:var(--p2)}.paper-head span.assessed{color:var(--stone);font-size:.95rem}
+.topic-card{display:flex;gap:16px;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;transition:transform .12s,box-shadow .12s}
+.topic-card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(31,61,43,.12)}
+.topic-card .icon{flex:0 0 52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center}.topic-card .icon svg{width:30px;height:30px}
+.icon.p1{background:var(--p1-light);color:var(--p1)}.icon.p2{background:var(--p2-light);color:var(--p2)}[data-theme=dark] .icon.p1{color:#8fc3d8}[data-theme=dark] .icon.p2{color:#9fd08f}
+.topic-card>div:last-child{flex:1}.topic-card h3{margin:0 0 4px;font-size:1.2rem;color:var(--head)}.topic-card .meta{color:var(--stone);font-size:.9rem}.topic-card .subs{margin:8px 0 0;color:var(--stone);font-size:.9rem;line-height:1.4}
+.sub-list{list-style:none;padding:0;margin:0}
+.sub-item{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:12px 0;display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}
+.sub-item .t{flex:1 1 380px}.sub-item .t a.name{font-family:Fraunces,serif;font-size:1.15rem;font-weight:700;color:var(--head);text-decoration:none}.sub-item .t a.name:hover{color:var(--moss)}
+.sub-item .meta{color:var(--stone);font-size:.88rem;margin-top:2px}
+.links{display:flex;flex-wrap:wrap;gap:6px}.links a{font-size:.82rem;padding:4px 11px;border-radius:999px;text-decoration:none;border:1px solid var(--line);background:var(--sand);color:var(--moss);font-weight:600}
+.links a:hover{background:var(--leaf-light);border-color:var(--leaf)}.links a.qp{background:var(--leaf-light)}
+table.list{border-collapse:collapse;width:100%;margin:10px 0 24px;background:var(--card);border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+table.list th,table.list td{padding:10px 14px;text-align:left;font-size:.95rem;vertical-align:top;border-bottom:1px solid var(--line)}table.list th{background:var(--sand-dark);color:var(--head)}table.list tr:last-child td{border-bottom:0}
+.q{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 24px;margin:20px 0;box-shadow:0 1px 3px rgba(31,61,43,.05);border-left-width:5px}
+.q[data-status="1"]{border-left-color:var(--warn)}.q[data-status="2"]{border-left-color:var(--ok)}
+.q .qh{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:8px}
+.q .qh .num{font-family:Fraunces,serif;font-weight:700;color:var(--head);font-size:1.15rem}.q .meta{font-size:.82rem;color:var(--stone)}
+.q .part{margin:12px 0 6px;padding:8px 0 8px 12px;border-left:3px solid var(--leaf)}.q .part .pn{font-weight:700;color:var(--moss);margin-right:8px;font-family:Fraunces,serif}.q .marks{float:right;font-weight:700;color:var(--earth);font-size:.9rem}
+.q table.data{border-collapse:collapse;margin:12px auto;background:var(--card)}.q table.data th,.q table.data td{border:1px solid var(--stone);padding:5px 12px;text-align:center;font-size:.92rem}.q table.data th{background:var(--sand-dark)}
+.q .cap{text-align:center;font-weight:700;margin:10px 0 2px;font-family:Fraunces,serif;color:var(--head)}
+.q ul.mcq{list-style:none;padding-left:10px}.q ul.mcq li:before{content:"\2610  ";}
+svg.chart{max-width:100%;height:auto;display:block;margin:6px auto;background:#fff;border-radius:8px}
+details.ms{margin-top:12px;background:var(--ms-bg);border:1px solid var(--ms-line);border-radius:10px;padding:10px 14px}details.ms summary{cursor:pointer;font-weight:700;color:var(--moss)}
+details.ms ul{margin:6px 0 8px 18px;padding:0}details.ms .lvl{font-size:.88rem;margin:4px 0;color:var(--stone)}details.ms .src{font-size:.85rem;color:var(--earth);margin-top:8px;border-top:1px dashed var(--ms-line);padding-top:6px}
+.note{background:var(--note-bg);border:1px solid var(--note-line);border-radius:10px;padding:12px 16px;font-size:.95rem}
+footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-size:.88rem;margin-top:40px}footer a{color:#fff}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:24px}@media(max-width:860px){.two{grid-template-columns:1fr}}
+/* progress */
+.st{display:inline-flex;gap:4px;margin-left:auto}.st button{font-family:inherit;font-size:.78rem;border:1px solid var(--line);background:var(--sand);color:var(--stone);border-radius:999px;padding:2px 10px;cursor:pointer}
+.st button:hover{border-color:var(--moss)}.st button.on[data-s="1"]{background:var(--warn);color:#222;border-color:var(--warn)}.st button.on[data-s="2"]{background:var(--ok);color:#fff;border-color:var(--ok)}
+.prog{display:flex;align-items:center;gap:10px;font-size:.82rem;color:var(--stone);margin-top:8px}.prog .bar{flex:1;height:8px;background:var(--sand-dark);border-radius:999px;overflow:hidden;display:flex;max-width:260px}
+.prog .bar .ok{background:var(--ok);height:100%}.prog .bar .wk{background:var(--warn);height:100%}.prog .pl{white-space:nowrap;min-width:90px}
+.hero .prog{color:rgba(255,255,255,.85)}.hero .prog .bar{background:rgba(255,255,255,.25)}
+/* filter bar & tools */
+.filterbar{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.filterbar input[type=search]{flex:1 1 220px;font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
+.filterbar label{font-size:.85rem;color:var(--stone);display:inline-flex;align-items:center;gap:4px;cursor:pointer}.filterbar .chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--sand);color:var(--stone);font-size:.82rem;cursor:pointer;font-family:inherit}
+.filterbar .chip.on{background:var(--moss);color:#fff;border-color:var(--moss)}.filterbar .cnt{font-size:.85rem;color:var(--stone);margin-left:auto}
+.filterbar select{font:inherit;font-size:.88rem;padding:5px 8px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
+.tools{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:10px 0;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.tools .time{font-family:Fraunces,serif;font-size:1.6rem;font-weight:700;color:var(--head);min-width:120px}.tools .time.low{color:var(--bad)}
+.tools .score{font-weight:700;color:var(--moss)}.tools .score b{font-family:Fraunces,serif;font-size:1.3rem}.tools .pct{font-size:.85rem;color:var(--stone)}
+.tools button{font-family:inherit;font-size:.88rem;padding:6px 12px;border-radius:8px;border:1px solid var(--moss);background:transparent;color:var(--moss);cursor:pointer}.tools button.primary{background:var(--moss);color:#fff}
+.aw{display:flex;align-items:center;gap:8px;margin:4px 0 8px;font-size:.88rem;color:var(--stone)}.aw input{width:64px;font:inherit;padding:3px 6px;border:1px solid var(--line);border-radius:6px;background:var(--input);color:var(--ink)}
+.q.hide{display:none}
+/* quick-fire & search */
+.qf-controls{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin:10px 0 16px}.qf-controls label{font-size:.9rem;color:var(--stone);display:inline-flex;gap:5px;align-items:center}
+.qf-controls select,.qf-controls input[type=search]{font:inherit;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
+.kbd{font-size:.8rem;color:var(--stone)}.kbd kbd{border:1px solid var(--line);border-radius:4px;padding:0 5px;background:var(--sand-dark);font-family:inherit}
+.res{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0;text-decoration:none;color:inherit}.res:hover{border-color:var(--moss)}
+.res .t{font-weight:700;color:var(--head)}.res .m{font-size:.82rem;color:var(--stone)}.res .s{font-size:.92rem;margin-top:4px}.res mark{background:#ffe58a;color:#222;border-radius:3px;padding:0 2px}
+.empty{color:var(--stone);font-style:italic}
+/* print */
+@media print{header.top,footer,.tools,.filterbar,.st,.pill,.aw,.hero .crumbs,.prog,.noprint{display:none!important}
+body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;color:#000;padding:10px 0}.hero p,.hero h1{color:#000}.hero:before{display:none}
+.q{break-inside:avoid;box-shadow:none;border:1px solid #999;page-break-inside:avoid}details.ms{display:none}body.print-ms details.ms{display:block;background:#f3f3f3}body.print-ms details.ms summary{display:none}
+svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
+</style>
+<script>try{if(localStorage.getItem('envsci.theme')==='"dark"')document.documentElement.dataset.theme='dark';}catch(e){}</script></head><body data-paper="P2-Set04" data-max="120">
+<header class="top"><div class="wrap"><a class="brand" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb069" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-8 0-14 4-14 12 0 1.5.3 3 1 4 2-6 6-9 11-11-4 3-7 6-8 12 8 0 12-6 10-17z"/></svg><span>AQA Environmental Science</span></a><nav><a href="../index.html" class="">Topics</a><a href="../papers.html" class="">Mock papers</a><a href="../official.html" class="">Past papers</a><a href="../essays.html" class="">Essay bank</a><a href="../quickfire.html" class="">Quick-fire</a><a href="../search.html" class="">Search</a><button class="icon-btn" id="themeBtn" type="button" title="Toggle dark mode">&#9790; Dark</button></nav></div></header>
+<section class="hero p2 small"><div class="wrap"><div class="crumbs"><a href="../papers.html">Mock papers</a><span>&rsaquo;</span>Set 04</div><h1>Paper 2 &mdash; Generated Set 04</h1><p>120 marks &middot; 3 hours &middot; <a style="color:#fff" href="../pdf/papers/P2-Set04-QP.pdf">Question paper PDF</a> &middot; <a style="color:#fff" href="../pdf/papers/P2-Set04-MS.pdf">Mark scheme PDF</a></p></div></section>
+<main><div class="wrap">
+<div class="tools noprint"><span class="time" id="clock">3:00:00</span><button type="button" class="primary" id="startBtn">Start exam</button><button type="button" id="resetBtn">Reset timer</button><span class="score">Score <b id="scoreN">0</b>/120 <span class="pct" id="scorePct">0%</span></span><button type="button" id="clearScore">Clear marks</button><button type="button" data-reveal="1">Show all mark schemes</button><button type="button" data-print="qp">Print</button><button type="button" data-print="ms">Print + MS</button><span class="kbd">Enter the marks you award yourself inside each mark scheme; the score is saved for this paper.</span></div>
+<div class="q" id="MON-04" data-qid="MON-04" data-marks="5" data-flags="mcq"><div class="qh"><span class="num">Question 1</span><span class="meta">5 marks &middot; <a href="../subtopic/eco-monitoring.html">Ecological monitoring &amp; new technologies</a> &middot; spec 3.1.2.3.6 &middot; Genn pp. 404-405 &middot; MON-04</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="part"><span class="marks">[1 mark]</span><span class="pn">01.1</span>Which technique would be most suitable for detecting whether great crested newts are present in a pond without catching them? Tick <b>one</b> box.
+<ul class="mcq"><li>A&nbsp; Environmental DNA (eDNA) analysis</li><li>B&nbsp; Radio tracking</li><li>C&nbsp; Lincoln index (mark-release-recapture)</li><li>D&nbsp; Leg rings</li></ul>
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">01.2</span>Explain why geolocator tags, rather than radio or GPS transmitters, are used to track the migrations of small birds.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">01.3</span>Explain how DNA databases could help to control the illegal trade in elephant ivory.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div><b>01.1</b> (1 marks)
+<ul><li>Environmental DNA (eDNA) analysis</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="1" step="1" data-kind="part" data-key="MON-04.1"></label> / 1</div>
+</div>
+<div><b>01.2</b> (2 marks)
+<ul><li>Transmitters are too heavy for small birds / their batteries would not last for a long-term study</li><li>Geolocator tags are small and only record time and light levels; latitude and longitude for each day are worked out when the bird is recaptured and the data downloaded</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="MON-04.2"></label> / 2</div>
+</div>
+<div><b>01.3</b> (2 marks)
+<ul><li>Each separate (regional) population has its own unique gene pool</li><li>DNA from seized ivory can be compared with the database to identify where the elephant came from, so poaching hotspots / trade routes can be targeted</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="MON-04.3"></label> / 2</div>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 404-405; AQA spec 3.1.2.3.6.</div></details></div>
+<div class="q" id="SUS-12" data-qid="SUS-12" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 2</span><span class="meta">10 marks &middot; <a href="../subtopic/dynamic-equilibria.html">Dynamic equilibria, feedback &amp; tipping points</a> &middot; spec 3.6.1 &middot; Genn pp. 370-371 &middot; SUS-12</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">02.1</span>Explain <b>three</b> reasons why the development of new human activities has rarely been restricted by their environmental impacts.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">02.2</span>Explain why sedentary rural communities often exploit resources sustainably.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">02.3</span>Explain why urban populations are often unaware that the resources they use are being depleted.
+</div>
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">02.4</span>Explain why the growth of affluence has increased per capita environmental impacts.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div><b>02.1</b> (3 marks)
+<ul><li>The new opportunity is overwhelmingly attractive (economic benefit)</li><li>Lack of knowledge / understanding of the impacts</li><li>The impacts occur elsewhere or much later, so are not evident to those who benefit</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="SUS-12.1"></label> / 3</div>
+</div>
+<div><b>02.2</b> (2 marks)
+<ul><li>Cultural belief that resources should be exploited to satisfy needs only</li><li>Problems of over-exploitation become obvious quickly as local supplies dwindle, so behaviour changes</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="SUS-12.2"></label> / 2</div>
+</div>
+<div><b>02.3</b> (2 marks)
+<ul><li>Resources are brought in from other areas</li><li>If one area is depleted, exploitation moves to another area (eg timber, fish, metals, energy) without the consumers noticing</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="SUS-12.3"></label> / 2</div>
+</div>
+<div><b>02.4</b> (3 marks)
+<ul><li>Easier access to energy has made many new activities possible</li><li>The scale of activities has greatly increased</li><li>Toxic wastes are produced that cannot be decontaminated by natural processes</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="SUS-12.4"></label> / 3</div>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 370-371; AQA spec 3.6.1.</div></details></div>
+<div class="q" id="SUS-04" data-qid="SUS-04" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 3</span><span class="meta">10 marks &middot; <a href="../subtopic/natural-systems.html">Energy &amp; material cycles: natural vs human systems</a> &middot; spec 3.6.3 &middot; Genn pp. 373-374 &middot; SUS-04</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="part"><span class="marks">[4 marks]</span><span class="pn">03.1</span>Explain how natural material cycles differ from linear human systems of material use.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">03.2</span>Explain why the use of toxic metals in electronic products is a particular problem for sustainability.
+</div>
+<div class="part"><span class="marks">[4 marks]</span><span class="pn">03.3</span>Describe how the design of a product can move it from a linear to a cyclical system.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div><b>03.1</b> (4 marks)
+<ul><li>Natural cycles use a small number of abundant elements (C, H, O, N, P) built into monomers and polymers (carbohydrates, proteins); wastes of one process are raw materials for another so nothing is depleted or accumulates</li><li>Natural wastes are biodegradable / non-toxic and are broken down by decomposers into raw materials</li><li>Human systems are linear: extract - process - manufacture - use - discard; minerals are dispersed after use or mixed so recovery is difficult</li><li>Human wastes are often persistent and toxic (organochlorines, PCBs, heavy metals in electronics) and build up; fossil fuel use is inherently linear and unsustainable</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="4" step="1" data-kind="part" data-key="SUS-04.1"></label> / 4</div>
+</div>
+<div><b>03.2</b> (2 marks)
+<ul><li>Metals are dispersed in small amounts within complex mixed products so they cannot easily be separated / recovered at end of life</li><li>They leach from landfill or are released by incineration; persistent, bioaccumulating</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="SUS-04.2"></label> / 2</div>
+</div>
+<div><b>03.3</b> (4 marks)
+<ul><li>Design for durability, repair and re-use (replaceable parts, no built-in batteries, spare parts and support, no planned obsolescence)</li><li>Easy identification of materials (coding) and separation of components so they can be recycled</li><li>Separation of technical materials (metals, plastics) from biological materials (which can be composted / digested)</li><li>Use of recycled and recyclable / biodegradable materials; reduced packaging and material use (Cradle to Cradle)</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="4" step="1" data-kind="part" data-key="SUS-04.3"></label> / 4</div>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 373-374; AQA spec 3.6.3.</div></details></div>
+<div class="q" id="AGR-02" data-qid="AGR-02" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 4</span><span class="meta">10 marks &middot; <a href="../subtopic/agroecosystems.html">Agroecosystems: abiotic &amp; biotic factors</a> &middot; spec 3.5.1.1 &middot; Genn pp. 308-310, 313 &middot; AGR-02</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">04.1</span>Explain why a moderate water shortage reduces crop productivity even though the plants survive.
+</div>
+<div class="part"><span class="marks">[4 marks]</span><span class="pn">04.2</span>Explain the problems caused by waterlogged soils and describe <b>two</b> ways farmers reduce soil water levels.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">04.3</span>Explain how irrigating with groundwater can cause soil salinisation and how this harms crops.
+</div>
+<div class="part"><span class="marks">[1 mark]</span><span class="pn">04.4</span>State how a farmer could raise the pH of an acidic soil and explain why a low pH reduces fertility.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div><b>04.1</b> (3 marks)
+<ul><li>Plants close their stomata to reduce transpiration losses</li><li>Closed stomata stop the absorption of carbon dioxide so photosynthesis and growth stop</li><li>Less water for nutrient absorption / transport and cell turgidity; severe shortage dehydrates cells and inhibits biochemical reactions</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="AGR-02.1"></label> / 3</div>
+</div>
+<div><b>04.2</b> (4 marks)
+<ul><li>Anaerobic soil favours denitrifying bacteria and inhibits nitrifying bacteria so nitrate is lost faster than it forms; higher risk of fungal disease; root respiration inhibited</li><li>Drainage ditches or pipes</li><li>Deep ploughing; avoiding compaction by machinery / livestock; adding organic matter to encourage worms</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="4" step="1" data-kind="part" data-key="AGR-02.2"></label> / 4</div>
+</div>
+<div><b>04.3</b> (2 marks)
+<ul><li>Groundwater often contains dissolved salts; when the water evaporates from the soil the salts are left behind and accumulate</li><li>High soil salinity causes osmotic dehydration of roots / crop death; washing out with extra water uses more water and salinises rivers</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="AGR-02.3"></label> / 2</div>
+</div>
+<div><b>04.4</b> (1 marks)
+<ul><li>Add crushed lime (calcium carbonate / hydroxide); low pH increases leaching, inhibits nutrient uptake and mobilises toxic aluminium and lead</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="1" step="1" data-kind="part" data-key="AGR-02.4"></label> / 1</div>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 308-310, 313; AQA spec 3.5.1.1.</div></details></div>
+<div class="q" id="LIFE-04" data-qid="LIFE-04" data-marks="5" data-flags="mcq"><div class="qh"><span class="num">Question 5</span><span class="meta">5 marks &middot; <a href="../subtopic/life-conditions.html">Conditions for life on Earth</a> &middot; spec 3.1.1.1 &middot; Genn pp. 5-7 &middot; LIFE-04</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="part"><span class="marks">[1 mark]</span><span class="pn">05.1</span>Which feature of the Earth prevents most atmospheric gases from escaping into space? Tick <b>one</b> box.
+<ul class="mcq"><li>A&nbsp; Its mass</li><li>B&nbsp; Its magnetic field</li><li>C&nbsp; Its distance from the Sun</li><li>D&nbsp; Its speed of rotation</li></ul>
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">05.2</span>Explain how the speed of rotation of the Earth and the tilt of its axis affect the conditions for life.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">05.3</span>Explain why the presence of liquid water on Earth depends on <b>both</b> the distance from the Sun <b>and</b> atmospheric pressure.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div><b>05.1</b> (1 marks)
+<ul><li>Its mass</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="1" step="1" data-kind="part" data-key="LIFE-04.1"></label> / 1</div>
+</div>
+<div><b>05.2</b> (2 marks)
+<ul><li>The 24-hour rotation period means the surface is not exposed to sunlight for long, so temperature extremes / excessive heating and cooling are reduced</li><li>The axis is tilted relative to the orbit so the amount of insolation at each latitude changes through the year, producing seasonal variations in conditions</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="LIFE-04.2"></label> / 2</div>
+</div>
+<div><b>05.3</b> (2 marks)
+<ul><li>The distance from the Sun gives surface temperatures between 0 and 35 &deg;C in most areas: too close and water would boil / evaporate, too far and it would freeze</li><li>Atmospheric pressure (produced by the mass of gases held by gravity) is high enough to stop the water boiling / evaporating away; at much lower pressure there would be no liquid water</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="LIFE-04.3"></label> / 2</div>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 5-7; AQA spec 3.1.1.1.</div></details></div>
+<div class="q" id="PRI-05" data-qid="PRI-05" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 6</span><span class="meta">10 marks &middot; <a href="../subtopic/conservation-priorities.html">Conservation priorities, legislation &amp; protocols</a> &middot; spec 3.1.2.3.2 &middot; Genn pp. 31-32 &middot; PRI-05</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<p>Table 1 shows the estimated population of blue whales and the number killed by whaling in selected years.</p>
+<div class="cap">Table 1</div><table class="data"><tr><th>Year</th><th>1900</th><th>1930</th><th>1960</th><th>1986</th><th>2020</th></tr><tr><td>Estimated population</td><td>240 000</td><td>100 000</td><td>5 000</td><td>2 000</td><td>15 000</td></tr><tr><td>Whales killed that year</td><td>200</td><td>30 000</td><td>1 200</td><td>0</td><td>0</td></tr></table>
+<div class="part"><span class="marks">[1 mark]</span><span class="pn">06.1</span>Calculate the percentage decline in the blue whale population between 1900 and 1986.
+</div>
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">06.2</span>Explain why whale populations were so easily over-exploited.
+</div>
+<div class="part"><span class="marks">[4 marks]</span><span class="pn">06.3</span>Describe how the International Whaling Commission regulates whaling.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">06.4</span>Explain why the ITTO has been less successful than the IWC in achieving sustainable exploitation.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div><b>06.1</b> (1 marks)
+<ul><li>(240 000 - 2 000) / 240 000 x 100 = 99.2%</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="1" step="1" data-kind="part" data-key="PRI-05.1"></label> / 1</div>
+</div>
+<div><b>06.2</b> (3 marks)
+<ul><li>Whales are k-selected: slow growing, late maturing, one calf every few years, so populations recover very slowly</li><li>Technology (harpoon cannons, steam / factory ships) allowed catches far above the sustainable yield within decades</li><li>No regulation / open access to the ocean; whales were valuable (oil, spermaceti) and easily found</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="PRI-05.2"></label> / 3</div>
+</div>
+<div><b>06.3</b> (4 marks)
+<ul><li>Moratorium on commercial whaling since 1986 until populations recover</li><li>Total protection for certain species; whale sanctuaries</li><li>Limits on numbers and sizes taken; protection of suckling mothers and calves</li><li>Research into whale biology and threats (ship strikes, net entanglement); exceptions: aboriginal subsistence quotas (eg Inuit bowheads), 'scientific' permits (Japan - ruled not research in 2014), Norway / Iceland set their own quotas</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="4" step="1" data-kind="part" data-key="PRI-05.3"></label> / 4</div>
+</div>
+<div><b>06.4</b> (2 marks)
+<ul><li>ITTO's 1990 target of trade only from sustainably managed forests by 2000 was not met and little progress since</li><li>Timber comes from many countries / private land with weak enforcement, high demand and alternative land uses; whaling involves few nations and a single treaty body</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="PRI-05.4"></label> / 2</div>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 31-32; AQA spec 3.1.2.3.2.</div></details></div>
+<div class="q" id="SUS-07" data-qid="SUS-07" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 7</span><span class="meta">10 marks &middot; <a href="../subtopic/circular-economy.html">The circular economy, biocapacity &amp; ecological footprints</a> &middot; spec 3.6.4.2 &middot; Genn pp. 379-380 &middot; SUS-07</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<p>Table 1 shows the ecological footprint and biocapacity per person for four countries and the world in 2016.</p>
+<div class="cap">Table 1</div><table class="data"><tr><th></th><th>Ecological footprint / gha per person</th><th>Biocapacity / gha per person</th><th>Human Development Index</th></tr><tr><td>USA</td><td>8.1</td><td>3.6</td><td>0.92</td></tr><tr><td>UK</td><td>4.4</td><td>1.4</td><td>0.92</td></tr><tr><td>China</td><td>3.6</td><td>1.0</td><td>0.75</td></tr><tr><td>Bangladesh</td><td>0.8</td><td>0.4</td><td>0.61</td></tr><tr><td>World</td><td>2.8</td><td>1.7</td><td>0.72</td></tr></table>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">07.1</span>Define <b>ecological footprint</b> and <b>biocapacity</b>.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">07.2</span>Explain what is meant by a <b>global hectare</b> and why it is used.
+</div>
+<div class="part"><span class="marks">[1 mark]</span><span class="pn">07.3</span>Use Table 1 to calculate how many Earths would be needed if everyone lived like the average US citizen.
+</div>
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">07.4</span>Use Table 1 to describe the relationship between development and ecological footprint, and explain the concept of Earth Overshoot Day.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">07.5</span>Suggest <b>two</b> ways a country such as the UK could reduce its footprint without reducing its HDI.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div><b>07.1</b> (2 marks)
+<ul><li>Ecological footprint: the area of the Earth's surface (global hectares) needed to provide the resources used by a person / population / activity and to absorb the wastes produced</li><li>Biocapacity: the biological productivity of an area (forests, cropland, grazing, fisheries, built land) - its ability to supply resources and absorb wastes, expressed in global hectares</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="SUS-07.1"></label> / 2</div>
+</div>
+<div><b>07.2</b> (2 marks)
+<ul><li>A hectare of land / sea with the world-average biological productivity</li><li>Biocapacities of real areas vary widely so a standard unit allows footprints and biocapacities of different places to be compared</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="SUS-07.2"></label> / 2</div>
+</div>
+<div><b>07.3</b> (1 marks)
+<ul><li>8.1 / 1.7 = 4.8 (accept 4.7-4.8)</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="1" step="1" data-kind="part" data-key="SUS-07.3"></label> / 1</div>
+</div>
+<div><b>07.4</b> (3 marks)
+<ul><li>Higher HDI is associated with a larger footprint (USA 8.1 vs Bangladesh 0.8), though the UK achieves the same HDI as the USA with about half the footprint</li><li>Global footprint (2.8) exceeds global biocapacity (1.7) so humanity uses resources faster than they regenerate and CO2 accumulates (overshoot)</li><li>Earth Overshoot Day is the date each year when a year's worth of resources / waste absorption has been used up; it falls earlier each year (8 August in 2016)</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="SUS-07.4"></label> / 3</div>
+</div>
+<div><b>07.5</b> (2 marks)
+<div class="lvl"><i>Any 2 from:</i></div>
+<ul><li>Renewable energy and energy conservation (carbon footprint is the largest component)</li><li>Reduced meat consumption / food waste; local seasonal food</li><li>Circular economy: repair, re-use, recycling; longer product lives</li><li>Public transport, efficient buildings</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="SUS-07.5"></label> / 2</div>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 379-380; AQA spec 3.6.4.2.</div></details></div>
+<div class="q" id="FOR-03" data-qid="FOR-03" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 8</span><span class="meta">10 marks &middot; <a href="../subtopic/forests.html">Forest resources &amp; deforestation</a> &middot; spec 3.5.3.3 &middot; Genn pp. 367-368 &middot; FOR-03</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<p>Figure 1 shows the area of forest lost each year in three regions between 1990 and 2020.</p>
+<div class="cap">Figure 1</div>
+<svg class="chart" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
+<polyline points="60.0,72.8 220.0,61.7 380.0,111.7 540.0,142.2" fill="none" stroke="#22302a" stroke-width="1.8"/>
+<circle cx="60.0" cy="72.8" r="2.6" fill="#22302a"/>
+<circle cx="220.0" cy="61.7" r="2.6" fill="#22302a"/>
+<circle cx="380.0" cy="111.7" r="2.6" fill="#22302a"/>
+<circle cx="540.0" cy="142.2" r="2.6" fill="#22302a"/>
+<polyline points="60.0,122.8 220.0,120.0 380.0,120.0 540.0,106.1" fill="none" stroke="#2f5f73" stroke-width="1.8"/>
+<circle cx="60.0" cy="122.8" r="2.6" fill="#2f5f73"/>
+<circle cx="220.0" cy="120.0" r="2.6" fill="#2f5f73"/>
+<circle cx="380.0" cy="120.0" r="2.6" fill="#2f5f73"/>
+<circle cx="540.0" cy="106.1" r="2.6" fill="#2f5f73"/>
+<polyline points="60.0,236.7 220.0,239.4 380.0,231.1 540.0,222.8" fill="none" stroke="#8b5e3c" stroke-width="1.8"/>
+<circle cx="60.0" cy="236.7" r="2.6" fill="#8b5e3c"/>
+<circle cx="220.0" cy="239.4" r="2.6" fill="#8b5e3c"/>
+<circle cx="380.0" cy="231.1" r="2.6" fill="#8b5e3c"/>
+<circle cx="540.0" cy="222.8" r="2.6" fill="#8b5e3c"/>
+<line x1="60.0" y1="270" x2="60.0" y2="274" stroke="#000"/><text x="60.0" y="286" text-anchor="middle">1990</text>
+<line x1="56" y1="270.0" x2="60" y2="270.0" stroke="#000"/><text x="52" y="274.0" text-anchor="end">-2</text>
+<line x1="156.0" y1="270" x2="156.0" y2="274" stroke="#000"/><text x="156.0" y="286" text-anchor="middle">1996</text>
+<line x1="56" y1="220.0" x2="60" y2="220.0" stroke="#000"/><text x="52" y="224.0" text-anchor="end">-0.2</text>
+<line x1="252.0" y1="270" x2="252.0" y2="274" stroke="#000"/><text x="252.0" y="286" text-anchor="middle">2002</text>
+<line x1="56" y1="170.0" x2="60" y2="170.0" stroke="#000"/><text x="52" y="174.0" text-anchor="end">1.6</text>
+<line x1="348.0" y1="270" x2="348.0" y2="274" stroke="#000"/><text x="348.0" y="286" text-anchor="middle">2008</text>
+<line x1="56" y1="120.0" x2="60" y2="120.0" stroke="#000"/><text x="52" y="124.0" text-anchor="end">3.4</text>
+<line x1="444.0" y1="270" x2="444.0" y2="274" stroke="#000"/><text x="444.0" y="286" text-anchor="middle">2014</text>
+<line x1="56" y1="70.0" x2="60" y2="70.0" stroke="#000"/><text x="52" y="74.0" text-anchor="end">5.2</text>
+<line x1="540.0" y1="270" x2="540.0" y2="274" stroke="#000"/><text x="540.0" y="286" text-anchor="middle">2020</text>
+<line x1="56" y1="20.0" x2="60" y2="20.0" stroke="#000"/><text x="52" y="24.0" text-anchor="end">7</text>
+<line x1="60" y1="20" x2="60" y2="270" stroke="#000"/><line x1="60" y1="270" x2="540" y2="270" stroke="#000"/>
+<text x="300.0" y="312" text-anchor="middle" font-weight="bold">Year</text>
+<text transform="translate(14,145.0) rotate(-90)" text-anchor="middle" font-weight="bold">Forest loss / million ha per year</text>
+<rect x="70" y="24" width="10" height="10" fill="#22302a"/><text x="84" y="33">South America</text>
+<rect x="70" y="38" width="10" height="10" fill="#2f5f73"/><text x="84" y="47">Africa</text>
+<rect x="70" y="52" width="10" height="10" fill="#8b5e3c"/><text x="84" y="61">Europe</text>
+</svg>
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">08.1</span>Describe the trends shown in Figure 1.
+</div>
+<div class="part"><span class="marks">[4 marks]</span><span class="pn">08.2</span>Explain the main causes of forest loss in South America and Africa.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">08.3</span>Explain why roads and railways cause more forest loss than the area they occupy.
+</div>
+<div class="part"><span class="marks">[1 mark]</span><span class="pn">08.4</span>Explain why softwood from Scandinavia and Canada is generally produced more sustainably than tropical hardwood.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div><b>08.1</b> (3 marks)
+<ul><li>South America: high loss (5.1-5.5 Mha yr<sup>-1</sup>) falling by about half by 2020</li><li>Africa: loss steady at about 3.4 then rising to 3.9 by 2020 - now the highest</li><li>Europe: negative values - forest area increasing (afforestation exceeds loss), though the gain is shrinking</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="FOR-03.1"></label> / 3</div>
+</div>
+<div><b>08.2</b> (4 marks)
+<ul><li>South America: clearance for commercial cash crops (sugar cane, soya) and cattle ranching for export; HEP reservoirs; roads improving access; mining</li><li>Africa: growing rural populations clearing land for subsistence farming; fuelwood and charcoal collection above regrowth (charcoal wastes much of the wood's energy); fodder cutting in dry areas</li><li>Both: hardwood timber (teak, mahogany) from clear-felled mixed forest often not replanted; urban expansion</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="4" step="1" data-kind="part" data-key="FOR-03.2"></label> / 4</div>
+</div>
+<div><b>08.3</b> (2 marks)
+<ul><li>They create barriers fragmenting wildlife populations</li><li>Improved access makes it easier to remove timber and farm produce, so clearance spreads along them</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="FOR-03.3"></label> / 2</div>
+</div>
+<div><b>08.4</b> (1 marks)
+<ul><li>Conifers grow quickly so plantations are replanted after harvest and yield a saleable crop within decades; slow-growing hardwoods (teak, mahogany) take too long for commercial plantations so they are taken from natural forest that is clear-felled and not replanted</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="1" step="1" data-kind="part" data-key="FOR-03.4"></label> / 1</div>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 367-368; AQA spec 3.5.3.3.</div></details></div>
+<div class="q" id="HAB-07" data-qid="HAB-07" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 9</span><span class="meta">10 marks &middot; <a href="../subtopic/habitats.html">Habitat case studies: woodland, rainforest, reefs, islands, mangroves, Antarctica</a> &middot; spec 3.1.2.3.4 &middot; Genn pp. 60-63 &middot; HAB-07</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<p>Figure 1 shows the percentage of live coral cover on a reef near a growing coastal resort between 1990 and 2020, and the years of two major bleaching events.</p>
+<div class="cap">Figure 1</div>
+<svg class="chart" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
+<polyline points="60.0,48.6 140.0,62.9 188.0,145.0 252.0,120.0 316.0,109.3 380.0,127.1 476.0,205.7 540.0,191.4" fill="none" stroke="#22302a" stroke-width="1.8"/>
+<circle cx="60.0" cy="48.6" r="2.6" fill="#22302a"/>
+<circle cx="140.0" cy="62.9" r="2.6" fill="#22302a"/>
+<circle cx="188.0" cy="145.0" r="2.6" fill="#22302a"/>
+<circle cx="252.0" cy="120.0" r="2.6" fill="#22302a"/>
+<circle cx="316.0" cy="109.3" r="2.6" fill="#22302a"/>
+<circle cx="380.0" cy="127.1" r="2.6" fill="#22302a"/>
+<circle cx="476.0" cy="205.7" r="2.6" fill="#22302a"/>
+<circle cx="540.0" cy="191.4" r="2.6" fill="#22302a"/>
+<line x1="60.0" y1="270" x2="60.0" y2="274" stroke="#000"/><text x="60.0" y="286" text-anchor="middle">1990</text>
+<line x1="56" y1="270.0" x2="60" y2="270.0" stroke="#000"/><text x="52" y="274.0" text-anchor="end">0</text>
+<line x1="156.0" y1="270" x2="156.0" y2="274" stroke="#000"/><text x="156.0" y="286" text-anchor="middle">1996</text>
+<line x1="56" y1="220.0" x2="60" y2="220.0" stroke="#000"/><text x="52" y="224.0" text-anchor="end">14</text>
+<line x1="252.0" y1="270" x2="252.0" y2="274" stroke="#000"/><text x="252.0" y="286" text-anchor="middle">2002</text>
+<line x1="56" y1="170.0" x2="60" y2="170.0" stroke="#000"/><text x="52" y="174.0" text-anchor="end">28</text>
+<line x1="348.0" y1="270" x2="348.0" y2="274" stroke="#000"/><text x="348.0" y="286" text-anchor="middle">2008</text>
+<line x1="56" y1="120.0" x2="60" y2="120.0" stroke="#000"/><text x="52" y="124.0" text-anchor="end">42</text>
+<line x1="444.0" y1="270" x2="444.0" y2="274" stroke="#000"/><text x="444.0" y="286" text-anchor="middle">2014</text>
+<line x1="56" y1="70.0" x2="60" y2="70.0" stroke="#000"/><text x="52" y="74.0" text-anchor="end">56</text>
+<line x1="540.0" y1="270" x2="540.0" y2="274" stroke="#000"/><text x="540.0" y="286" text-anchor="middle">2020</text>
+<line x1="56" y1="20.0" x2="60" y2="20.0" stroke="#000"/><text x="52" y="24.0" text-anchor="end">70</text>
+<line x1="60" y1="20" x2="60" y2="270" stroke="#000"/><line x1="60" y1="270" x2="540" y2="270" stroke="#000"/>
+<text x="300.0" y="312" text-anchor="middle" font-weight="bold">Year</text>
+<text transform="translate(14,145.0) rotate(-90)" text-anchor="middle" font-weight="bold">Live coral cover / %</text>
+</svg>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">09.1</span>Describe the changes in coral cover shown in Figure 1.
+</div>
+<div class="part"><span class="marks">[4 marks]</span><span class="pn">09.2</span>Explain what coral bleaching is and give <b>three</b> causes.
+</div>
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">09.3</span>Explain how the growing resort could threaten the reef other than through bleaching.
+</div>
+<div class="part"><span class="marks">[1 mark]</span><span class="pn">09.4</span>Explain why a no-take zone on the reef could increase fish catches in surrounding areas.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div><b>09.1</b> (2 marks)
+<ul><li>Overall decline from 62% to 22%</li><li>Sharp falls in 1998 (to 35%) and 2016 (to 18%) coinciding with bleaching events, with partial recovery after each</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="HAB-07.1"></label> / 2</div>
+</div>
+<div><b>09.2</b> (4 marks)
+<ul><li>The polyps expel their symbiotic zooxanthellae so the coral loses colour; bleached corals are alive but grow very slowly and may die if algae do not return</li><li>Raised water temperature (climate change / El Ni&ntilde;o)</li><li>Pollution: sewage, pesticides, cyanide, sunscreen; low oxygen from zooplankton blooms after overfishing</li><li>High light / solar activity; ocean acidification hinders skeleton formation</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="4" step="1" data-kind="part" data-key="HAB-07.2"></label> / 4</div>
+</div>
+<div><b>09.3</b> (3 marks)
+<ul><li>Coastal construction and dredging increase sedimentation / turbidity covering and killing polyps</li><li>Sewage and fertiliser nutrients cause algal growth that shades corals and prevents egg release</li><li>Physical damage from anchors, divers, souvenir collection; loss of mangroves / seagrass nurseries that trap sediment</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="HAB-07.3"></label> / 3</div>
+</div>
+<div><b>09.4</b> (1 marks)
+<ul><li>Protected breeding populations grow larger and produce surplus young / adults that spill over into fished areas</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="1" step="1" data-kind="part" data-key="HAB-07.4"></label> / 1</div>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 60-63; AQA spec 3.1.2.3.4.</div></details></div>
+<div class="q" id="AGI-07" data-qid="AGI-07" data-marks="15" data-flags="ext"><div class="qh"><span class="num">Question 10</span><span class="meta">15 marks &middot; <a href="../subtopic/agri-impacts.html">Impacts of agriculture, social/political factors &amp; sustainable agriculture</a> &middot; spec 3.5.1.5 &middot; Genn pp. 335-337 &middot; AGI-07</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">10.1</span>Explain why the potential to increase food supplies by cultivating new land is limited.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">10.2</span>Explain why importing food may reduce the availability of food in the area where it is produced.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">10.3</span>Explain why organic agriculture is more than simply 'not using pesticides and artificial fertilisers'.
+</div>
+<div class="part"><span class="marks">[9 marks]</span><span class="pn">10.4</span>Evaluate the strategies that could be used to make agriculture more sustainable.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div><b>10.1</b> (2 marks)
+<ul><li>About 10% of land is already cultivated and 25% grazed</li><li>Most remaining land is too dry, wet, cold, hot or steep, is covered in ice, or has no soil</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="AGI-07.1"></label> / 2</div>
+</div>
+<div><b>10.2</b> (2 marks)
+<ul><li>Land becomes too expensive for local people to rent / is used to grow export crops for more affluent societies</li><li>So people with less money lose access to the land and food they used to produce</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="AGI-07.2"></label> / 2</div>
+</div>
+<div><b>10.3</b> (2 marks)
+<ul><li>It uses natural processes to supply nutrients (legumes, recycled organic matter, soil biota), control pests and provide ecological services</li><li>So that pesticides and artificial fertilisers become unnecessary rather than just being banned</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="AGI-07.3"></label> / 2</div>
+</div>
+<div><b>10.4</b> (9 marks)
+<div class="lvl"><b>Levels of response:</b> L3 7-9 comprehensive, well-structured, applied to context, supported judgement; L2 4-6 sound but incomplete application/evaluation; L1 1-3 basic, limited structure.</div><div class="lvl"><b>Indicative content:</b></div>
+<ul><li>Unsustainable features: reliance on chemical pesticides (resistance, non-target impacts, bans), non-renewable rock phosphate, fossil-fuel-intensive nitrate manufacture, over-exploitation of rivers / groundwater, salinisation, loss of soil organic matter, greenhouse gases from fuel, rice and livestock, loss of species providing ecosystem services</li><li>Pest control: cultural methods (weeding, mulching, crop rotation, barrier crops, culling), biological control, predator habitats, polyculture / companion crops, integrated control, reduced antibiotic use</li><li>Nutrients: recycling organic matter, crop rotation, cultivation of legumes, conservation of soil biota, reduced artificial fertiliser especially nitrate, low tillage</li><li>Water: low water-use crops, reservoirs and aquifer recharge, drip irrigation rather than sprays</li><li>Soil and carbon: low-tillage farming to maintain organic matter, reduced machinery, renewable energy, drought-tolerant rice varieties so fields are drained earlier, high-carbohydrate ground feed for cattle reduces methane</li><li>Biodiversity: conserve habitats of crop wild relatives, seed banks, retain hedgerows, ditches, ponds, woodland; agri-environment schemes</li><li>Evaluation: growing population (perhaps 12 billion) needs more food; lower trophic level diets; obstacles - cost, need for support, gaining acceptance of new techniques; learning from past land degradation (fertile crescent, US mid-west)</li><li>Judgement: no single strategy sufficient; combination of ecological principles and new technology; justified conclusion</li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="9" step="1" data-kind="part" data-key="AGI-07.4"></label> / 9</div>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 335-337; AQA spec 3.5.1.5.</div></details></div>
+<div class="q"><div class="qh"><span class="num">Question 11 &mdash; Essay (answer ONE)</span><span class="meta">25 marks</span></div>
+<div class="part"><span class="marks">[25 marks]</span><span class="pn">11.1</span>Explain how the physical features of the Earth and the activities of living organisms have combined to create and maintain conditions suitable for life.</div>
+<details class="ms"><summary>Indicative content</summary><div class="lvl"><b>Levels:</b> L5 21-25 &middot; L4 16-20 &middot; L3 11-15 &middot; L2 6-10 &middot; L1 1-5. Reward breadth across the specification, accurate detail, application to the question and a supported conclusion.</div><ul><li>Physical features: mass / gravity retaining an atmosphere and giving pressure for liquid water; distance from the Sun and the Goldilocks zone; speed of rotation reducing temperature extremes; tilt producing seasons; magnetic field deflecting the solar wind; the Moon stabilising the orbit and producing tides</li><li>Importance of liquid water: solvent, transport, temperature control, anomalous expansion, high specific heat capacity, habitats, absorption of UV before the ozone layer</li><li>Development of life: Archaea at vents; photosynthesis; oxygen reacting with iron then accumulating; ozone layer allowing colonisation of land; aerobic organisms</li><li>Life changing conditions: carbon sequestration offsetting solar brightening, biogeochemical cycles, transpiration and rainfall, regulation of atmospheric gases</li><li>Methods of studying past conditions: proxy data, isotope ratios, ice cores, Mg:Ca ratios; understanding of continental drift and ocean currents</li><li>Links to current threats (climate change, ozone depletion) and a justified conclusion about the interdependence of physical and biological factors</li></ul><div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="25" step="1" data-kind="essay" data-key="ESS-P2-CONDITIONS"></label> / 25 (only the higher of the two essays counts)</div><div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 5-9; spec 3.1.1.</div></details>
+<div class="part"><span class="marks">[25 marks]</span><span class="pn">11.2</span>Discuss the extent to which the resources and services provided by other species justify the conservation of biodiversity.</div>
+<details class="ms"><summary>Indicative content</summary><div class="lvl"><b>Levels:</b> L5 21-25 &middot; L4 16-20 &middot; L3 11-15 &middot; L2 6-10 &middot; L1 1-5. Reward breadth across the specification, accurate detail, application to the question and a supported conclusion.</div><ul><li>Resources: wood, fibres, oils, fuels, food; new food species (morama bean, yeheb, perennial maize, Kernza, bison, eland) and their adaptations</li><li>Biomimetics: wing-tip feathers, whale tubercles, shark skin, termite mounds, bird bones, gecko adhesion, burrs, lotus, spider silk</li><li>Medicines: poppies, cinchona, willow, yew (taxol), Mexican yam, sponges (AZT), sharks; few species yet studied; physiological research (marsupials, hippo, sponges)</li><li>Genetic resources: crop wild relatives, Vavilov centres, gene pools and inbreeding</li><li>Ecosystem services: atmospheric regulation, hydrological cycle, biogeochemical cycles, soil maintenance; interspecies relationships - food, pollination (Darwin's orchid), seed dispersal, habitat provision</li><li>Evaluation: economic vs intrinsic / moral arguments; services unnoticed because of dynamic equilibrium; unknown future value; justified conclusion</li></ul><div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="25" step="1" data-kind="essay" data-key="ESS-P2-BIOVALUE"></label> / 25 (only the higher of the two essays counts)</div><div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 10-19; spec 3.1.2.1.</div></details>
+</div>
+</div></main>
+<footer><div class="wrap">Original practice questions and mark schemes written to the AQA A-level Environmental Science (7447) specification. Every question cites the printed page numbers of R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018). AQA past papers are &copy; AQA. Progress, scores and timers are saved only in this browser. &nbsp;&middot;&nbsp; <a href="../index.html">Topics</a> &middot; <a href="../papers.html">Mock papers</a> &middot; <a href="../official.html">Past papers</a> &middot; <a href="../essays.html">Essay bank</a> &middot; <a href="../quickfire.html">Quick-fire</a> &middot; <a href="../search.html">Search</a></div></footer>
+<script>
+(function(){
+const LS=k=>{try{return JSON.parse(localStorage.getItem(k)||'null')}catch(e){return null}};
+const SV=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+window.ES={LS,SV};
+/* ---- theme ---- */
+const root=document.documentElement;
+function applyTheme(t){if(t==='dark')root.dataset.theme='dark';else delete root.dataset.theme;const b=document.getElementById('themeBtn');if(b)b.textContent=t==='dark'?'\u2600 Light':'\u263E Dark';}
+applyTheme(LS('envsci.theme')||'light');
+const tb=document.getElementById('themeBtn');if(tb)tb.onclick=()=>{const t=root.dataset.theme==='dark'?'light':'dark';SV('envsci.theme',t);applyTheme(t);};
+/* ---- progress ---- */
+let prog=LS('envsci.progress')||{};
+window.ES.prog=()=>prog;
+function paint(){
+  document.querySelectorAll('.q[data-qid]').forEach(el=>{const s=prog[el.dataset.qid]||0;el.dataset.status=s;el.querySelectorAll('.st button').forEach(b=>b.classList.toggle('on',+b.dataset.s===s&&s>0));});
+  document.querySelectorAll('[data-qids]').forEach(el=>{const ids=el.dataset.qids.split(',').filter(Boolean);const n=ids.length;if(!n)return;
+    const ok=ids.filter(i=>prog[i]===2).length,wk=ids.filter(i=>prog[i]===1).length;
+    const o=el.querySelector('.bar .ok'),w=el.querySelector('.bar .wk'),p=el.querySelector('.pl');
+    if(o)o.style.width=(100*ok/n)+'%';if(w)w.style.width=(100*wk/n)+'%';if(p)p.textContent=ok+'/'+n+' secure'+(wk?' \u00b7 '+wk+' to revisit':'');});
+  const ov=document.getElementById('overall');if(ov){const all=(ov.dataset.qids||'').split(',').filter(Boolean);const ok=all.filter(i=>prog[i]===2).length,wk=all.filter(i=>prog[i]===1).length;ov.querySelector('.stat').textContent=Math.round(100*ok/all.length)+'%';ov.querySelector('.detail').textContent=ok+' secure, '+wk+' to revisit, '+(all.length-ok-wk)+' not attempted of '+all.length+' questions.';}
+}
+window.ES.paint=paint;
+document.addEventListener('click',e=>{const b=e.target.closest('.st button');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);paint();if(window.ES.onFilter)window.ES.onFilter();});
+const rs=document.getElementById('resetProg');if(rs)rs.onclick=()=>{if(confirm('Clear all saved progress on this browser?')){prog={};SV('envsci.progress',prog);paint();}};
+paint();
+/* ---- filter bar ---- */
+const fb=document.querySelector('.filterbar');
+if(fb){
+  const qs=[...document.querySelectorAll('.q[data-qid]')];
+  const txt=fb.querySelector('input[type=search]');const cnt=fb.querySelector('.cnt');
+  function run(){const words=(txt.value||'').toLowerCase().split(/\s+/).filter(Boolean);
+    const marks=[...fb.querySelectorAll('.chip.mk.on')].map(c=>c.dataset.v);const flags=[...fb.querySelectorAll('.chip.fl.on')].map(c=>c.dataset.v);
+    const st=fb.querySelector('select.status').value;let shown=0;
+    qs.forEach(el=>{let ok=true;const t=el.textContent.toLowerCase();
+      if(words.length&&!words.every(w=>t.includes(w)))ok=false;
+      if(marks.length&&!marks.includes(el.dataset.marks))ok=false;
+      if(flags.length&&!flags.every(f=>(' '+el.dataset.flags+' ').includes(' '+f+' ')))ok=false;
+      const s=prog[el.dataset.qid]||0;if(st==='todo'&&s!==0)ok=false;if(st==='work'&&s!==1)ok=false;if(st==='secure'&&s!==2)ok=false;if(st==='notsecure'&&s===2)ok=false;
+      el.classList.toggle('hide',!ok);if(ok)shown++;});
+    cnt.textContent='Showing '+shown+' of '+qs.length;
+    document.querySelectorAll('h2.sec.set').forEach(h=>{let n=h.nextElementSibling,any=false;while(n&&!n.classList.contains('set')){if(n.classList.contains('q')&&!n.classList.contains('hide'))any=true;n=n.nextElementSibling;}h.style.display=any?'':'none';});}
+  window.ES.onFilter=run;
+  txt.addEventListener('input',run);fb.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{c.classList.toggle('on');run();});fb.querySelector('select.status').onchange=run;
+  const clr=fb.querySelector('.clear');if(clr)clr.onclick=()=>{txt.value='';fb.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));fb.querySelector('select.status').value='all';run();};
+  run();}
+/* ---- print & reveal ---- */
+document.querySelectorAll('[data-print]').forEach(b=>b.onclick=()=>{const ms=b.dataset.print==='ms';document.body.classList.toggle('print-ms',ms);document.querySelectorAll('details.ms').forEach(d=>d.open=ms);window.print();});
+document.querySelectorAll('[data-reveal]').forEach(b=>b.onclick=()=>{const open=b.dataset.reveal==='1';document.querySelectorAll('details.ms').forEach(d=>d.open=open);b.dataset.reveal=open?'0':'1';b.textContent=open?'Hide all mark schemes':'Show all mark schemes';});
+})();
+</script><script>
+(function(){
+const file=document.body.dataset.paper,LS=window.ES.LS,SV=window.ES.SV;const TOTAL=10800;
+let sc=LS('envsci.scores')||{};let mine=sc[file]||{parts:{},essay:{}};
+const inputs=[...document.querySelectorAll('input.aw-in')];
+function total(){let t=0;inputs.forEach(i=>{if(i.dataset.kind==='part')t+=+i.value||0;});const ev=Object.values(mine.essay).map(Number);if(ev.length)t+=Math.max(...ev,0);return t;}
+function paintScore(){const t=total();const max=+document.body.dataset.max;document.getElementById('scoreN').textContent=t;document.getElementById('scorePct').textContent=Math.round(100*t/max)+'%';}
+inputs.forEach(i=>{const key=i.dataset.key;const stored=i.dataset.kind==='part'?mine.parts[key]:mine.essay[key];if(stored!==undefined)i.value=stored;
+  i.addEventListener('input',()=>{let v=Math.max(0,Math.min(+i.max,+i.value||0));if(i.value!=='')i.value=v;if(i.dataset.kind==='part')mine.parts[key]=v;else mine.essay[key]=v;mine.total=total();mine.max=+document.body.dataset.max;mine.when=Date.now();sc[file]=mine;SV('envsci.scores',sc);paintScore();});});
+paintScore();
+document.getElementById('clearScore').onclick=()=>{if(!confirm('Clear the marks you entered for this paper?'))return;inputs.forEach(i=>i.value='');mine={parts:{},essay:{}};delete sc[file];SV('envsci.scores',sc);paintScore();};
+/* timer */
+let tm=(LS('envsci.timers')||{})[file]||{left:TOTAL,running:false,at:0};
+const disp=document.getElementById('clock'),btn=document.getElementById('startBtn');
+function left(){return tm.running?Math.max(0,tm.left-Math.floor((Date.now()-tm.at)/1000)):tm.left;}
+function save(){const all=LS('envsci.timers')||{};all[file]=tm;SV('envsci.timers',all);}
+function fmt(s){const h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=s%60;return h+':'+String(m).padStart(2,'0')+':'+String(x).padStart(2,'0');}
+function tick(){const l=left();disp.textContent=fmt(l);disp.classList.toggle('low',l<15*60);btn.textContent=tm.running?'Pause':(l===TOTAL?'Start exam':'Resume');if(tm.running&&l===0){tm.running=false;tm.left=0;save();alert('Time is up - pens down!');}}
+btn.onclick=()=>{if(tm.running){tm.left=left();tm.running=false;}else{if(tm.left===0)return;tm.running=true;tm.at=Date.now();}save();tick();};
+document.getElementById('resetBtn').onclick=()=>{tm={left:TOTAL,running:false,at:0};save();tick();};
+tick();setInterval(tick,1000);
+})();
+</script></body></html>

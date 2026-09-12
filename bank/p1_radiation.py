@@ -1,0 +1,107 @@
+"""Pollution: ionising radiation (spec 3.4.3.2.14).  Genn pp. 295-304."""
+from gen.model import Q, P, Table, Chart, Essay
+
+T = "radiation"
+
+QUESTIONS = [
+    Q("RAD-01", T, "3.4.3.2.14", "299-301",
+      intro="Table 1 shows some radioactive isotopes, their half-lives and the type of radiation they emit.",
+      figures=[Table(["Isotope", "Half-life", "Main radiation", "Source"],
+                     [["Iodine-131", "8 days", "Beta / gamma", "Fission in reactors"], ["Strontium-90", "29 years", "Beta", "Fission in reactors"],
+                      ["Caesium-137", "30 years", "Beta / gamma", "Fission in reactors"], ["Plutonium-239", "24 400 years", "Alpha", "Neutron bombardment of U-238"], ["Uranium-238", "4.5 x 10^9 years", "Alpha", "Occurs naturally in rocks"]])],
+      parts=[
+          P("Define the term <b>half-life</b>.", 1, ms=["The time taken for half of the atoms of a radioactive isotope to decay (activity halves)"]),
+          P("A sample of iodine-131 has an activity of 6400 Bq. Calculate its activity after 32 days.", 2, calc=True, unit="Bq",
+            ms=["32 / 8 = 4 half-lives", "6400 / 2^4 = 400 Bq"]),
+          P("Use Table 1 to explain why isotopes with half-lives of several decades, such as caesium-137, cause the greatest concern after a nuclear accident.", 3,
+            ms=["Short half-life isotopes (I-131) release all their radiation quickly: dangerous but only briefly so short-term precautions (potassium iodide tablets, evacuation) are sufficient",
+                "Very long half-life isotopes (U-238) emit only small amounts of radiation in any period so the level of danger is low",
+                "Decades-long half-lives combine a high rate of radiation release with persistence for most or all of a human lifetime, so short-term protection is inadequate (land contaminated for generations)"]),
+          P("Explain why plutonium-239 is relatively safe outside the body but very dangerous if inhaled or ingested.", 3,
+            ms=["Alpha particles have very low penetrating power and are absorbed by clothing / dead skin so external sources cause little exposure",
+                "Inside the body the alpha particles are absorbed in a very small mass of tissue so damage is concentrated (high RBE - weighting factor 20)",
+                "Long half-life means it continues to emit for the rest of the person's life / cannot be excreted quickly (contamination not just exposure)"]),
+          P("Explain what is meant by an <b>activation product</b>.", 1,
+            ms=["A previously stable nucleus that becomes radioactive after absorbing a neutron (eg in reactor structures), later decaying to emit ionising radiation"]),
+      ]),
+
+    Q("RAD-02", T, "3.4.3.2.14", "301, 303",
+      parts=[
+          P("Explain how ionising radiation damages living cells.", 3,
+            ms=["Radiation absorbed by tissue produces free radicals (ions with unpaired electrons), mostly from water, which are highly reactive",
+                "Free radicals damage DNA / chromosomes in the nucleus causing mutations (cancer, inherited effects) - rapidly dividing cells (skin, gut, bone marrow) most affected",
+                "Damage to other cell parts can stop the cell functioning or kill it; low damage may be repaired by the intact nucleus"]),
+          P("Distinguish between acute and chronic effects of radiation exposure.", 2,
+            ms=["Acute: effects appearing quickly after a large dose over a short time (radiation sickness, damage to bone marrow / immune system / gut, haemorrhage, rapid death)",
+                "Chronic: effects appearing slowly, in proportion to the dose received over a long period (cancers, cataracts)"]),
+          P("Distinguish between <b>exposure</b> and <b>contamination</b>.", 2,
+            ms=["Exposure: absorption of ionising radiation from a source the person is close enough to",
+                "Contamination: physically carrying radioactive material on or in the body, so exposure continues wherever the person goes; sealed sources can expose but not contaminate"]),
+          P("A worker receives an absorbed dose of 0.002 Gy from alpha radiation. Calculate the effective dose in sieverts.", 2, calc=True, unit="Sv",
+            ms=["Sieverts = grays x radiation weighting factor (20 for alpha)", "0.002 x 20 = 0.04 Sv (40 mSv)"]),
+          P("State what is measured by the becquerel.", 1, ms=["The activity of a source (number of decays per second)"]),
+      ]),
+
+    Q("RAD-03", T, "3.4.3.2.14", "302-303",
+      intro="Figure 1 shows the radiation dose rate measured at different distances from a small gamma source.",
+      figures=[Chart("line", "Distance from source / m", "Dose rate / &micro;Sv h^-1", {"Dose rate": [(1, 400), (2, 100), (3, 44), (4, 25), (5, 16), (8, 6.3), (10, 4)]}, y_min=0)],
+      parts=[
+          P("Use Figure 1 to show that the dose rate follows the inverse square law.", 2,
+            ms=["Doubling the distance from 1 m to 2 m reduces the dose rate from 400 to 100 (one quarter)", "Distance x 10 (1 to 10 m) reduces it by 100 times (400 to 4); dose is proportional to 1/distance^2"]),
+          P("Calculate the dose rate at 20 m from the source.", 1, calc=True, unit="&micro;Sv h^-1", ms=["400 / 20^2 = 1 &micro;Sv h^-1"]),
+          P("Explain how each of the following reduces the exposure of workers handling radioactive sources.", 4,
+            labels=["Closed (sealed) sources", "Absorbing materials", "Reduced exposure time", "Worker monitoring"],
+            ms=["Sealed container prevents contact / contamination so exposure stops when the worker moves away; container may absorb alpha completely; remote handling",
+                "Barriers (lead, concrete, thick steel flask walls) absorb radiation before it reaches the worker; thickness depends on radiation type",
+                "Dose received is proportional to time near the source so work is organised to minimise time close to it (job rotation)",
+                "Dosemeters / film badges record exposure; air monitors detect alpha-emitting particles; contamination monitors on leaving check that no material is carried out"]),
+          P("Explain why potassium iodide tablets are issued to people near a nuclear accident.", 2,
+            ms=["Stable iodine saturates the thyroid", "So radioactive iodine-131 released is not taken up / concentrated in the thyroid gland"]),
+          P("State the meaning of ALARA.", 1, ms=["Exposure should be As Low As Reasonably Achievable"]),
+      ]),
+
+    Q("RAD-04", T, "3.4.3.2.14", "297-299",
+      intro="Table 1 shows the average annual radiation dose received by a person in the UK from different sources.",
+      figures=[Table(["Source", "Percentage of average dose / %"], [["Radon gas from the ground", "50"], ["Medical (X-rays, CT scans)", "16"], ["Gamma rays from rocks / buildings", "13"], ["Internal (food and drink)", "9.5"], ["Cosmic radiation", "10"], ["Occupational, fallout, nuclear discharges, consumer products", "1.5"]])],
+      parts=[
+          P("Explain why radon concentrations are high inside some houses in Devon and Cornwall.", 3,
+            ms=["The underlying granite contains uranium whose decay produces the radioactive gas radon (an alpha emitter)",
+                "Radon travels up cracks in the rock and through foundations into buildings", "It becomes concentrated inside enclosed / poorly ventilated buildings; control by ventilating foundations / sumps"]),
+          P("Use Table 1 to calculate the percentage of the average dose that comes from artificial (human-made) sources.", 1, calc=True, unit="%", ms=["16 + 1.5 = 17.5%"]),
+          P("Suggest <b>two</b> reasons why the dose received by an individual may differ greatly from the average.", 2, items=2,
+            ms=["Where they live (geology / radon, altitude)", "Occupation (radiographer, nuclear worker, aircrew, miner)", "Medical history (number of X-rays / CT scans)", "Lifestyle / diet (eg shellfish near discharges); smoking"]),
+          P("Explain why a risk:benefit analysis is needed for the use of X-rays in medicine, and give <b>two</b> reasons why the risks of ionising radiation are difficult to assess.", 4,
+            ms=["X-rays carry a small risk of mutation / cancer but the benefit (diagnosis, avoiding invasive surgery) may outweigh it; risks can be reduced (shielding, dose limits)",
+                "Symptoms of chronic low-dose exposure take a long time to develop", "The same symptoms (cancers) have other causes so effects are hard to attribute",
+                "Accurate data on human exposure / doses is often unavailable (especially after accidents)", "People who benefit and people who take the risk may be different (eg uranium miners vs electricity consumers)"]),
+      ]),
+
+    Q("RAD-05", T, "3.4.3.2.14", "303",
+      parts=[
+          P("Complete Table 1 to show the source and disposal method for each category of radioactive waste from nuclear electricity generation.", 6,
+            table=Table(["Waste category", "Example / source", "Storage or disposal method"], [["High-level waste", "", ""], ["Intermediate-level waste", "", ""], ["Low-level solid waste", "", ""]], blank=True, col_widths=[4, 5.5, 5.5]),
+            ms=["High-level: used fuel rods / fission products separated in reprocessing; vitrification in molten glass in sealed stainless steel containers, surrounded by concrete, air-cooled to remove decay heat (Sellafield)",
+                "Intermediate: fuel cladding / metal tubes around fuel rods, filters from reprocessing; mixed with cement (encapsulated) in stainless steel drums, stored in concrete vaults",
+                "Low-level solid: contaminated clothing, equipment; sealed in plastic bags inside steel drums / containers in a concrete-lined, monitored landfill (Drigg)"]),
+          P("Explain why high-level waste must be cooled and why its storage must be monitored for very long periods.", 2,
+            ms=["Radioactive decay of the concentrated fission products generates heat which could damage containers", "Isotopes with long half-lives (plutonium 24 400 years) remain hazardous for thousands of years"]),
+          P("Describe how low-level liquid and gaseous wastes are treated before discharge.", 2,
+            ms=["Liquids: filtered and passed through ion-exchange (sands / resins) to remove radionuclides, then discharged (monitored by CPA / CGM)", "Gases: filtered (HEPA / charcoal filters) to remove particles and iodine before release"]),
+      ]),
+
+    Q("RAD-06", T, "3.4.3.2.14", "295-304",
+      parts=[
+          P("Evaluate the risks and benefits of the uses of ionising radiation, and explain the principles used to control exposure of workers and the public.", 9, level=True,
+            ms=["Uses / benefits: nuclear electricity (low carbon, high energy density), medicine (X-rays, CT, radiotherapy, tracers, sterilising equipment), industry (thickness gauges, polymer cross-linking, testing turbines, oil exploration), agriculture (food irradiation, sterile male technique, mutation breeding), research tracers, smoke detectors, ship / submarine propulsion",
+                "Risks: free radical production, DNA damage, mutation, cancer; acute and chronic, somatic and gonadic effects; contamination vs exposure; activation products; long-lived wastes; accidents (Chernobyl, Fukushima); weapons fallout",
+                "Factors affecting risk: type of radiation (alpha, beta, gamma, neutrons - penetration, RBE / weighting factors), half-life, dose (Gy, Sv), route of exposure",
+                "Risk:benefit analysis and why it is difficult (latency, alternative causes, poor exposure data, risks and benefits to different people, offsets such as avoided surgery)",
+                "Principles: ALARA, BATNEEC; closed sources, remote handling, absorbers / shielding, distance (inverse square law), time, protective clothing, decontamination, potassium iodide",
+                "Monitoring: dosemeters, film badges, air and contamination monitors; environmental monitoring via CPA and CGM; waste categories and disposal (vitrification, encapsulation, Drigg)",
+                "Evaluation / judgement: benefits generally outweigh risks when controls are applied; public perception vs actual risk (background radon 50% of dose vs <1% from nuclear industry)"]),
+          P("Give <b>one</b> reason why the risks and benefits of nuclear electricity may not fall on the same people.", 1,
+            ms=["Consumers of the electricity may live in a different country / region from the uranium miners or the communities near waste stores who bear the risks"]),
+      ]),
+]
+
+ESSAYS = []

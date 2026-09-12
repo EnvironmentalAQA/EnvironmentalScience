@@ -1,0 +1,115 @@
+"""Energy resources: importance of energy supplies and features of energy resources; sustainability of current use
+(spec 3.3.1-3.3.3).  Genn pp. 170-182."""
+from gen.model import Q, P, Table, Chart, Essay
+
+T = "energy-features"
+
+QUESTIONS = [
+    Q("ENF-01", T, "3.3.1", "170-174",
+      intro="Table 1 shows the per capita energy consumption and GDP per capita of five countries.",
+      figures=[Table(["Country", "GDP per capita / US$ thousand", "Energy use per capita / GJ per year", "Main energy resource"],
+                     [["A", "62", "290", "Oil, gas"], ["B", "44", "125", "Gas, nuclear, renewables"], ["C", "10", "95", "Coal"], ["D", "2", "25", "Biomass (wood), oil"], ["E", "55", "220", "Hydroelectricity, oil"]])],
+      parts=[
+          P("Describe the relationship between GDP per capita and energy use per capita shown in Table 1.", 2,
+            ms=["In general, higher GDP per capita is associated with higher energy use per capita (positive correlation)", "But not proportional: B has a high GDP but much lower energy use than A or E; C uses relatively high energy for its GDP"]),
+          P("Explain why affluence increases per capita energy consumption.", 3,
+            ms=["Affluent people buy more consumer goods, appliances and travel more / drive larger, less efficient vehicles and heat larger homes",
+                "Manufacture and transport of the extra products bought uses energy (indirect use); larger houses use more energy to build",
+                "Affluent countries can afford energy for non-essential uses; cheap local energy (eg petrol in the USA) encourages wasteful use"]),
+          P("Suggest <b>two</b> reasons why country B uses much less energy per capita than country A despite a similar level of affluence.", 2, items=2,
+            ms=["Higher energy prices / taxes encouraging conservation", "Culture of energy conservation (eg Scandinavia after past shortages) / environmental awareness", "Milder climate needing less heating or air conditioning",
+                "Service-based economy: heavy industry (steel, aluminium) has moved to other countries so energy embodied in imports is not counted", "Smaller / more efficient vehicles, better public transport, better insulated buildings"]),
+          P("Explain why the per capita energy consumption of the UK has fallen in recent years even though consumption of goods has risen.", 2,
+            ms=["Decline of heavy industries such as steel and aluminium smelting in the UK", "The energy-intensive goods are now manufactured abroad (eg China) so the energy is counted in the exporting country; also efficiency improvements"]),
+          P("Give <b>one</b> way energy is used in each of the following: water supplies; agriculture.", 1,
+            ms=["Water: pumping, treatment / sterilisation, sewage treatment; Agriculture: machinery, fertiliser manufacture (Haber process), irrigation pumps, processing / refrigeration"]),
+      ]),
+
+    Q("ENF-02", T, "3.3.2", "175-178",
+      intro="Table 1 shows the approximate energy density of some energy resources.",
+      figures=[Table(["Energy resource", "Energy density / MJ kg^-1"], [["Uranium (natural, in fission reactor)", "500 000"], ["Natural gas", "55"], ["Petrol", "46"], ["Coal", "28"], ["Dry wood", "16"], ["Lithium-ion battery (stored electricity)", "0.7"]])],
+      parts=[
+          P("Explain what is meant by <b>energy density</b> and why it is an important feature of an energy resource.", 3,
+            ms=["The amount of energy contained in a given mass of the resource (or harnessed per kg of equipment for renewables)",
+                "High energy density means smaller quantities are needed so storage and transport are easier and cheaper (eg 75 t of aviation fuel carries a 400 t aircraft 5600 km)",
+                "High energy density fuels reach high temperatures needed for smelting / steam turbines"]),
+          P("Use Table 1 to calculate how many tonnes of coal contain the same energy as 1 kg of uranium.", 2, calc=True, unit="tonnes", ms=["500 000 / 28 = 17 857 kg", "= 17.9 tonnes (accept 18; book quotes 13 t for 0.7% enriched fuel)"]),
+          P("Explain why low energy density does not prevent solar and wind power from being useful.", 2,
+            ms=["The electricity they generate can power high-energy-requirement technologies", "Electricity can be converted to high energy density secondary fuels, eg hydrogen by electrolysis, or stored (batteries, pumped storage)"]),
+          P("Explain the difference between an <b>intermittent</b> resource and an <b>unpredictable</b> resource, using named examples.", 2,
+            ms=["Intermittent: not available all the time, eg tidal (but the times are predictable so alternatives can be planned)", "Unpredictable: intermittent and the timing / amount cannot be forecast accurately, eg wind, solar"]),
+          P("Explain why natural gas must be liquefied for transport by ship.", 1,
+            ms=["Gaseous natural gas has a very low energy density by volume; LNG at -160 &deg;C has 160 times the energy density so a ship can carry a worthwhile amount"]),
+      ]),
+
+    Q("ENF-03", T, "3.3.2", "175-177",
+      parts=[
+          P("Distinguish between <b>renewable</b> and <b>depletable</b> energy resources, giving an example of a resource that is both renewable and depletable.", 3,
+            ms=["Renewable: re-forms naturally relatively quickly so use does not necessarily reduce future availability (solar, wind, tidal, geothermal, biofuel)",
+                "Depletable: use can reduce future availability - all non-renewables (fossil fuels, uranium) plus renewables exploited unsustainably", "Wood / biofuels are renewable but depletable if forests are felled faster than they regrow"]),
+          P("Explain why the abundance of an energy resource is not the same as the amount available for use. Give <b>two</b> examples.", 3,
+            ms=["Other factors (technology, location, cost) restrict how much can be harnessed", "Examples: coal too deep to mine; winds high above the ground / far offshore where turbines cannot be placed; waves in deep water where equipment cannot be anchored; low-intensity sunlight that cannot produce high temperatures",
+                "New technologies or higher prices may make these usable in future"]),
+          P("Describe the locational constraints of <b>two</b> named renewable energy resources.", 4,
+            ms=["Wind: strong reliable winds - shallow seas, open plains, uplands; low land-use conflict (not near urban areas, ecologically sensitive or scenic areas); near the grid",
+                "HEP: high reliable rainfall, large catchment, narrow valley for a small dam with a large basin, impermeable stable bedrock", "Solar: high light intensity, low cloud cover", "Wave: coasts with strong reliable prevailing winds and a long fetch",
+                "Tidal: large tidal range, coastal features (estuaries, channels) that focus the flow", "Geothermal: hot rocks near the surface / recent volcanic activity", "Biofuels: nearby farmland / forest / urban waste to avoid transporting bulky low-density fuel"]),
+      ]),
+
+    Q("ENF-04", T, "3.3.2-3.3.3", "179-181",
+      intro="Figure 1 shows the estimated cost of generating electricity from three sources between 1990 and 2020, and projections to 2030.",
+      figures=[Chart("line", "Year", "Cost / US$ per MWh", {"Solar PV": [(1990, 480), (2000, 350), (2010, 200), (2020, 50), (2030, 30)], "Natural gas": [(1990, 70), (2000, 65), (2010, 70), (2020, 60), (2030, 65)], "Onshore wind": [(1990, 200), (2000, 120), (2010, 80), (2020, 45), (2030, 35)]}, y_min=0)],
+      parts=[
+          P("Describe the trends shown in Figure 1.", 3,
+            ms=["Solar PV cost fell dramatically from about 480 to 50 $/MWh (about 90%), the steepest fall", "Wind fell steadily from 200 to 45", "Gas stayed roughly constant at 60-70; solar and wind became cheaper than gas around 2015-2020 and are projected to fall further"]),
+          P("Explain why new energy technologies are expensive when first introduced and why their costs then fall.", 3,
+            ms=["Development / research costs are still being paid for and there are no economies of scale in manufacture",
+                "They compete with established technologies whose development costs were paid long ago and which benefit from mass production and existing infrastructure", "As output grows, mass production, improved designs / efficiency and experience reduce costs"]),
+          P("Explain why a renewable energy project may still be at a financial disadvantage compared with a gas-fired power station of the same total cost.", 2,
+            ms=["Most of the renewable cost is the initial equipment, paid for with loans on which interest must be paid; running costs are very low",
+                "Most of the gas project's cost is running costs (fuel) paid from income without borrowing, so it has lower interest payments"]),
+          P("Explain why the price paid for fossil fuel energy does not reflect its full cost.", 2,
+            ms=["Environmental damage (acid rain damage to buildings, crops, forests; health effects of air pollution; climate change) is paid for by others (health service, agriculture) not the energy user",
+                "Some impacts (climate change) cannot yet be costed; decommissioning and waste costs are also uncertain"]),
+      ]),
+
+    Q("ENF-05", T, "3.3.3", "180-186",
+      parts=[
+          P("Explain why current global energy use is described as unsustainable.", 3,
+            ms=["Most energy comes from non-renewable fossil fuels whose reserves are depleting; the rate of new discoveries has fallen sharply since the 1980s",
+                "Use causes unacceptable environmental damage: atmospheric pollution, climate change, oil pollution, habitat loss", "Economic / social: depleting resources become more expensive, reducing future affluence; risk of an energy gap if new technologies are not developed in time"]),
+          P("Describe the environmental impacts of exploiting fossil fuels that occur <b>before</b> the fuel is used.", 4,
+            ms=["Coal mining: habitat loss (especially open-cast), spoil heaps, subsidence from deep mines, acid drainage, dust, noise", "Oil and gas extraction: spills from rigs, oil-based drilling mud polluting groundwater and sea, gas flaring releasing SO2 / CO2 / smoke",
+                "Pipelines causing habitat damage during construction; tanker transport risks", "Fuel processing (refineries, coal washing) pollution; embodied energy of equipment and site development for all resources"]),
+          P("Explain why an 'energy gap' could occur if society waits until fossil fuels become expensive before developing alternatives.", 3,
+            ms=["New technologies take many years to develop, prove and scale up, and need new infrastructure (grids, storage, vehicles)",
+                "Existing cheap fossil fuel technologies make it hard for alternatives to compete until fuel prices rise", "By then depletion would reduce supply faster than replacements could be built, causing shortages"]),
+      ]),
+
+    Q("ENF-06", T, "3.3.2-3.3.3", "175-182",
+      parts=[
+          P("Discuss how the features of energy resources determine their suitability for different uses and their environmental sustainability.", 9, level=True,
+            ms=["Features: renewable / non-renewable, depletable, abundance, energy density, locational constraints, intermittency and predictability, need for conversions, applicability, ease of storage and transport, technological development, political and economic influences, environmental impacts",
+                "Fossil fuels: high energy density, easy storage and transport, reach high temperatures, well-developed technologies and infrastructure - but finite, polluting (acid rain, smoke, CO2), politically concentrated (Middle East oil)",
+                "Nuclear: very high energy density, base load, few fuel deliveries - but complex, expensive, waste, public opposition",
+                "Renewables: low energy density, intermittent (wind, solar unpredictable; tidal predictable), locationally constrained, cannot be stored without conversion, need storage / grid, cannot reach fossil-fuel temperatures or replace liquid vehicle fuels yet - but renewable, low pollution, falling costs",
+                "Sustainability concepts: impacts before use (extraction, processing, equipment embodied energy) and as a consequence of use (pollution, habitat damage, depletion)",
+                "Economic and political factors: subsidies, guaranteed prices, planning, external costs not included in price, energy security",
+                "Judgement: a diverse mix matched to uses (electricity vs heat vs transport) with storage is most sustainable; transition must start before depletion"]),
+          P("State <b>one</b> reason why nuclear power stations can be located where transport infrastructure is poor.", 1,
+            ms=["Very high energy density fuel means only a few tens of tonnes are needed each year, compared with 10 000 t of coal per day for a coal-fired station"]),
+      ]),
+]
+
+ESSAYS = [
+    Essay("ESS-P1-ENERGY-PROPS", 1,
+          "Discuss how knowledge of the properties of energy resources can be used to reduce the severity of their impact on the environment.",
+          "3.3.2-3.3.4", "175-235",
+          ["Properties: energy density, renewability, abundance, location, intermittency / predictability, storage, transport, conversions, technology level, environmental impacts",
+           "Fossil fuels: choosing lower-impact fuels (gas over coal), desulfurisation, CCS, efficient combustion, siting power stations near cooling water and coal ports; new extraction technologies (directional drilling, secondary / tertiary recovery) and their impacts (fracking, tar sands)",
+           "Nuclear: high energy density reduces transport; waste properties (half-life) determine storage; thorium and fusion prospects",
+           "Renewables: matching resource to location (wind, HEP, solar, wave, tidal, geothermal, biofuel siting); intermittency managed by storage (pumped HEP, batteries, hydrogen, P2G, V2G), grid management and diversity; low-impact designs (helical turbines, VAWT, tidal lagoons)",
+           "Energy conservation reduces demand: transport, buildings, industry (CHP, heat exchangers)",
+           "Impacts before and during use; life-cycle / embodied energy",
+           "Evaluation: no resource is impact-free; knowledge allows the best mix and mitigation; judgement"]),
+]

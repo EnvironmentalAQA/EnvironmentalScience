@@ -1,0 +1,155 @@
+"""Living environment: adaptation, ecological terminology, succession, population dynamics and control (spec 3.1.3);
+ecological monitoring and new technologies (3.1.2.3.5-3.1.2.3.6).  Genn pp. 72-85, 393-394, 402-407."""
+from gen.model import Q, P, Table, Chart, Essay
+
+QUESTIONS = [
+    # ---------------- life-processes 3.1.3 ----------------
+    Q("LP-01", "life-processes", "3.1.3.1", "72-73",
+      intro="Figure 1 shows the percentage survival of two populations of a freshwater snail species (X and Y) at different water pH values.",
+      figures=[Chart("line", "Water pH", "Survival / %", {"Population X": [(5.0, 0), (5.5, 10), (6.0, 60), (6.5, 95), (7.0, 100), (7.5, 95), (8.0, 60), (8.5, 10), (9.0, 0)], "Population Y": [(5.0, 0), (5.5, 0), (6.0, 5), (6.5, 60), (7.0, 100), (7.5, 60), (8.0, 5), (8.5, 0), (9.0, 0)]}, y_min=0, y_max=100)],
+      parts=[
+          P("Explain what is meant by the term <b>range of tolerance</b> and use Figure 1 to compare the ranges of tolerance of populations X and Y.", 3,
+            ms=["The range of an environmental factor within which a species / population can survive (survival highest at the optimum, falling towards the limits)",
+                "X survives from about pH 5.5 to 8.5 (wide range); Y only from about pH 6.0 to 8.0 (narrow range)", "Both have the same optimum (pH 7.0)"]),
+          P("A stream is acidified by mine drainage from pH 7.0 to 6.0. Use Figure 1 to explain which population is more likely to survive and why.", 3,
+            ms=["X: 60% survive at pH 6.0 whereas only 5% of Y survive", "X has a larger gene pool / wider range of tolerance so some individuals are adapted to the new conditions",
+                "Survivors breed and their offspring are adapted so the population rebuilds; Y is likely to die out locally"]),
+          P("Explain how an understanding of a species' range of tolerance helps in conservation management.", 2,
+            ms=["Reveals the habitat requirements / which abiotic factor is near the edge of tolerance", "Management can make small beneficial changes to that factor (eg liming, shading, water levels) to keep conditions within the range and increase survival"]),
+          P("Give <b>two</b> biotic factors that affect the distribution of a species.", 2, items=2, ms=["Food supply", "Pollinators", "Seed dispersal species", "Disease / pathogens", "Predators / competitors"]),
+      ]),
+
+    Q("LP-02", "life-processes", "3.1.3.2", "82-85",
+      parts=[
+          P("Define each of the following ecological terms and give an example.", 8,
+            labels=["Species", "Ecological niche", "Community", "Biome"],
+            ms=["Species: a group of closely related organisms that naturally interbreed to produce fertile offspring and are reproductively isolated from other groups (Passer domesticus, house sparrow); the only 'real' taxon",
+                "Niche: the role a species plays in its habitat - how it uses resources and relates to other species (tawny owl: nocturnal carnivore nesting in tree holes eating small mammals); two species cannot share exactly the same niche in one habitat",
+                "Community: all the populations of all species (plants, animals, fungi, bacteria, protists, archaea) living in an area", "Biome: a large geographical region with a specific climate and characteristic community, including all areas where it occurs (all tropical rainforests, tundra, savannah)"]),
+          P("Explain the difference between an ecosystem and a biome.", 2,
+            ms=["An ecosystem is the biotic community plus abiotic factors of one area, relatively self-contained (a particular coral reef)", "A biome includes all separate ecosystems with the same climate and community type (all coral reefs); each reef is a different ecosystem within the same biome"]),
+      ]),
+
+    Q("LP-03", "life-processes", "3.1.3.3", "73-76",
+      intro="A new pond was dug in a nature reserve. Table 1 shows the vegetation recorded at intervals over 60 years.",
+      figures=[Table(["Years after creation", "Dominant vegetation", "Water depth at centre / m"], [["1", "Single-celled algae, floating duckweed", "2.0"], ["5", "Submerged pondweeds; reeds at margins", "1.8"], ["15", "Reeds and reedmace over most of pond; water lilies", "1.0"], ["30", "Marsh plants, sedges; willow and alder at edges", "0.2"], ["60", "Willow / alder carr; oak seedlings", "0 (soil waterlogged)"]])],
+      parts=[
+          P("Name the type of sere shown in Table 1 and identify the pioneer species.", 2, ms=["Hydrosere", "Single-celled algae (and floating plants) - arrive on birds / insects / from soil"]),
+          P("Explain the changes shown in Table 1.", 5,
+            ms=["Pioneers and later plants grow and die; dead organic matter plus sediment washed in fill the pond so water becomes shallower",
+                "As depth falls rooted plants (pondweeds then emergent reeds with leaves above water) can anchor and colonise; emergents shade submerged plants which die out",
+                "Sediment / soil accumulates and becomes able to support larger plants; water-tolerant trees (willow, alder) colonise the waterlogged soil",
+                "Transpiration by trees and further sediment dry the soil and make it aerobic so oak can colonise; the denser canopy shades out smaller plants",
+                "Each community changes abiotic conditions (depth, light, nutrients, oxygen), making it suitable for the next colonisers which out-compete them; conditions become less extreme and biotic factors increasingly important"]),
+          P("Explain why a lithosere and a hydrosere in the same region end with the same climax community.", 2,
+            ms=["Starting conditions (bare rock vs open water) differ but each stage makes conditions less extreme and builds soil / organic matter", "The final community is controlled by the regional climate (temperature, water availability), which is the same for both - climatic climax (eg oak woodland in the UK)"]),
+          P("Describe the early stages of a lithosere.", 1,
+            ms=["Lichens and algae colonise bare rock (extreme temperatures, no soil, little water); rock fragments and dead organic matter accumulate; mosses, then grasses and ferns as thin soil forms; wind-dispersed trees (birch) then animal-dispersed (oak, beech)"]),
+      ]),
+
+    Q("LP-04", "life-processes", "3.1.3.3", "76-77",
+      parts=[
+          P("Explain the difference between primary and secondary succession and why secondary succession is faster.", 3,
+            ms=["Primary: succession on a newly created habitat with no life / no soil (bare rock, new pond, sand)", "Secondary: succession restarting after an existing community is disturbed (tree felling, ploughing, fire, end of grazing)",
+                "Faster because soil already exists and many seeds / roots / organisms are still present so there are fewer delays for colonisation"]),
+          P("Explain what is meant by <b>deflected succession</b> and a <b>plagioclimax</b>, using a named UK example.", 3,
+            ms=["Human activity (grazing, mowing, burning, coppicing) regularly removes the later successional species so the climatic climax cannot form", "The stable community that develops under this repeated disturbance is a plagioclimax",
+                "Examples: chalk grassland / hay meadows maintained by grazing or mowing; lowland heath by burning; coppiced woodland; Machair grassland; Broads grazing marshes"]),
+          P("Explain why conservation of a plagioclimax requires continued human activity whereas conservation of a rainforest or coral reef does not.", 2,
+            ms=["If the traditional activity stops, secondary succession returns the habitat to scrub / woodland and the plagioclimax species are lost", "Rainforest and coral reefs are climax communities so conservation aims to minimise human impact"]),
+          P("Explain why biodiversity tends to be low in abiotically extreme environments and high in stable ones.", 2,
+            ms=["Extreme environments (deserts, polar) are dominated by abiotic factors; few species tolerate them; populations fluctuate and food webs are simple so changes in one food species have large effects",
+                "Stable environments allow many species to evolve inter-species relationships; populations are regulated by biotic factors; complex food webs give stability (rainforests, reefs)"]),
+      ]),
+
+    Q("LP-05", "life-processes", "3.1.3.4", "78-81",
+      intro="Figure 1 shows the population of red deer on an island after they were introduced in year 0. No predators are present.",
+      figures=[Chart("line", "Years after introduction", "Population", {"Red deer": [(0, 20), (2, 40), (4, 90), (6, 200), (8, 420), (10, 700), (12, 880), (14, 940), (16, 900), (18, 950), (20, 920)]}, y_min=0)],
+      parts=[
+          P("Name the shape of the growth curve and explain the changes in growth rate shown.", 4,
+            ms=["Sigmoidal (S-shaped) growth curve", "Slow start (few breeding individuals), then rapid / exponential growth (years 4-10) as abundant food and space mean birth rate far exceeds death rate",
+                "Growth slows as density-dependent factors (intra-species competition for food, disease) raise the death rate", "Population stabilises / fluctuates around about 920-950 - the carrying capacity - where birth rate equals death rate"]),
+          P("Explain the difference between density-dependent and density-independent factors, with an example of each.", 2,
+            ms=["Density-dependent: effect on survival increases with population density - food shortage / intra-species competition, disease spread, predation", "Density-independent: chance of survival unaffected by density - drought, flood, volcanic eruption, severe winter"]),
+          P("Explain why the deer population on the island may need to be culled even though it appears stable.", 2,
+            ms=["Without wolves (natural predators removed) the population is regulated only by starvation / disease at a high density", "At this density deer over-graze, preventing tree regeneration and damaging habitats / other species; culling keeps numbers below the damaging level (as in Scotland)"]),
+          P("Explain how predator and prey populations regulate each other.", 2,
+            ms=["Rising prey numbers give predators more food so predator numbers rise; high predation then reduces the prey population", "Food shortage reduces predators, allowing prey to recover - cyclic fluctuations with predators lagging behind prey"]),
+      ]),
+
+    Q("LP-06", "life-processes", "3.1.3.4", "79-80",
+      intro="Table 1 compares two exploited species.",
+      figures=[Table(["Feature", "Anchovy", "Blue whale"], [["Age at sexual maturity", "1 year", "10 years"], ["Offspring per female per year", "Thousands of eggs", "1 calf every 2-3 years"], ["Lifespan", "3-4 years", "80+ years"], ["Parental care", "None", "Extensive"]])],
+      parts=[
+          P("Use Table 1 to identify which species is r-selected and which is k-selected, and explain the difference between the strategies.", 3,
+            ms=["Anchovy r-selected; blue whale k-selected", "r-selected: mature quickly, produce many young, disperse widely, short lives; adapted to respond rapidly to high death rates / unstable conditions (mice, locusts, greenfly, rabbits)",
+                "k-selected: mature late, few young with parental care, long-lived; populations stable near carrying capacity (whales, elephants, rhinos)"]),
+          P("Explain why k-selected species are much more easily over-exploited than r-selected species.", 3,
+            ms=["Low reproductive rate means losses from hunting / habitat change cannot be replaced quickly", "An increase in death rate above the low birth rate causes a population crash",
+                "Recovery takes decades (eg blue whale still far below pre-whaling numbers after the 1986 moratorium); r-selected species rebound within a few years once exploitation stops"]),
+          P("State the equation used to forecast a change in population size.", 1,
+            ms=["New population = starting population + births + immigrants - deaths - emigrants"]),
+          P("Explain what is meant by <b>maximum sustainable yield</b> and how it relates to carrying capacity.", 3,
+            ms=["The greatest rate of exploitation (harvest) possible without causing long-term population decline", "Equals the surplus production: highest when the population is well below carrying capacity where growth rate is fastest (middle of the sigmoid curve)",
+                "At carrying capacity net growth is zero so any harvest reduces the population; harvesting above MSY causes decline"]),
+      ]),
+
+    Q("LP-07", "life-processes", "3.1.3", "72-85",
+      parts=[
+          P("Explain how an understanding of ecological succession and population dynamics can inform conservation decision-making.", 9, level=True,
+            ms=["Succession: pioneers, seres (hydrosere, lithosere, psammosere), modification of abiotic conditions, climax communities controlled by climate; deflected succession and plagioclimaxes",
+                "Application: deciding whether to manage (plagioclimax habitats need grazing, mowing, burning, coppicing, pollarding continued) or leave alone (climax habitats); habitat creation planning the stages; controlling scrub / secondary succession; understanding that new habitats change over time",
+                "Population dynamics: birth and death rates, density-dependent and independent factors, carrying capacity, sigmoid growth, predator-prey cycles, r- and k-selection, MSY",
+                "Application: setting sustainable harvest levels (fisheries, whaling, forestry); recognising k-selected species need strict protection and recover slowly; deciding when culling is needed (deer without wolves, introduced species) or when releases / captive breeding are needed (low breeding rate); predicting effects of reintroducing predators",
+                "Monitoring population size, distribution, survival rate and age structure to assess success; adaptation and range of tolerance guiding abiotic management",
+                "Evaluation: uncertainties (natural fluctuations, unknown carrying capacity); examples (Yellowstone wolves, Scottish deer, chalk grassland); judgement"]),
+          P("State what is meant by a <b>taxon</b>.", 1, ms=["Any taxonomic group of organisms classified together by similarity (eg species, genus, family)"]),
+      ]),
+
+    # ---------------- eco-monitoring 3.1.2.3.5-3.1.2.3.6 ----------------
+    Q("MON-01", "eco-monitoring", "3.1.2.3.5", "393-394, 400-402",
+      intro="A conservation team is planning to protect a population of an endangered antelope in a reserve.",
+      parts=[
+          P("Explain why each of the following features of the population should be measured before a conservation strategy is decided.", 8,
+            labels=["Population size", "Distribution", "Survival rate", "Age structure"],
+            ms=["Size: shows whether the population is viable / how urgent action is; sets a baseline to judge success; needed to estimate carrying capacity and sustainable off-take",
+                "Distribution: shows which habitats / areas are used and whether the population is fragmented into non-viable isolated groups needing corridors; identifies key areas to protect",
+                "Survival rate (mortality): identifies the life stage and causes of death (predation, disease, poaching) so management targets the limiting factor",
+                "Age structure: many young indicates a growing population; few young / ageing population indicates breeding failure or high juvenile mortality even if adults are numerous; k-selected species need breeding adults protected"]),
+          P("Describe how the population size of the antelope could be estimated.", 2,
+            ms=["Direct counts from vehicles / aircraft / drones along transects, or camera traps with individual recognition", "Sub-sample counts in known areas scaled up to the whole reserve; mark-release-recapture (Lincoln index) for smaller species"]),
+      ]),
+
+    Q("MON-02", "eco-monitoring", "3.1.2.3.6", "402-406",
+      parts=[
+          P("Explain how each of the following new technologies improves the validity of ecological research.", 8,
+            labels=["Satellite / radio / GPS tracking", "DNA databases and eDNA", "Image recognition software", "Acoustic monitoring / sonograms"],
+            ms=["Tracking: continuous data on movements, territory size, migration routes and habitat use without disturbance, over large areas and long periods; acoustic tags in seawater; geolocators for small birds; more representative than occasional sightings",
+                "DNA: identifies individuals, gene pool size / inbreeding and regional populations (tracing ivory, timber, fish); eDNA detects rare or hidden aquatic species (great crested newt, invasive carp) from shed cells without capture",
+                "Image recognition: software identifies individuals from unique markings (tiger stripes, whale shark spots, fin damage) in camera-trap / drone / satellite images, giving population size, lifespan, social structure from large image sets quickly and objectively",
+                "Acoustic: bat detectors, hydrophones and sonograms record species that are hard to see (bats, cetaceans, insects), giving presence, abundance and activity continuously, day and night"]),
+          P("Explain why new technologies allow the collection of 'more representative' data.", 2,
+            ms=["Data collected continuously / over large areas / at night rather than at a few times and places a researcher can visit", "Less disturbance so animals behave naturally; larger sample sizes; objective rather than subjective identification"]),
+      ]),
+
+    Q("MON-03", "eco-monitoring", "3.1.2.3.5-3.1.2.3.6", "393-394, 402-407",
+      parts=[
+          P("Which of the following would be most suitable for monitoring the movements of a whale over several months? Tick one box.", 1,
+            mcq=["Radio collar", "Acoustic / satellite tag", "Pitfall trap", "Geolocator tag recovered by recapture"], ms=["B - radio waves do not travel through seawater; acoustic or satellite tags transmit position"]),
+          P("Explain why post-release monitoring is important in a captive breeding and release programme and describe <b>two</b> suitable methods.", 4,
+            ms=["Shows survival, dispersal and breeding of released individuals so success can be assessed and future releases improved", "Radio / GPS tags or collars; leg rings / wing tags on birds; camera traps; DNA from droppings to confirm identity and diet"]),
+      ]),
+]
+
+ESSAYS = [
+    Essay("ESS-P2-MONITOR", 2,
+          "Discuss how ecological monitoring and the development of new technologies have improved the planning and evaluation of conservation strategies.",
+          "3.1.2.3.5-3.1.2.3.6, 3.7", "393-394, 400-407",
+          ["Why monitor: species present, population size, density, distribution, survival, age structure, breeding rates, movements; baseline and evaluation; Red List categorisation and quotas rely on it",
+           "Standard techniques and their limitations: quadrats, transects, nets, traps, Lincoln index, Simpson's index, DAFOR; sampling design (random / systematic, size, number, timing, standardisation)",
+           "New technologies: satellite / radio / GPS / acoustic tracking, geolocators, camera traps, CCTV, image recognition databases, DNA databases, eDNA, sonograms, drones / ROVs / AUVs, satellite sensors, data loggers",
+           "How they improve validity: representative data over large areas and times, less disturbance, individual identification, detection of hidden species, objectivity",
+           "Examples: penguin colonies from satellites, tiger camera traps, ivory DNA, MCZ monitoring, released animals tracked",
+           "Limitations: cost, battery / tag weight, data handling, ethics, still need ground truthing",
+           "Judgement"]),
+]

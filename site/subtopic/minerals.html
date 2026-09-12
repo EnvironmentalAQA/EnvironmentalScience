@@ -1,0 +1,392 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mineral resources (the lithosphere) - AQA Environmental Science</title><style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap');
+:root{--forest:#1f3d2b;--moss:#3f6b4a;--leaf:#7fb069;--leaf-light:#e6f0dc;--sand:#f6f3ec;--sand-dark:#ece6d8;--earth:#8b5e3c;--stone:#5c6660;--ink:#22302a;--line:#dcd6c8;
+--p1:#2f5f73;--p1-light:#e2edf2;--p2:#3f6b4a;--p2-light:#e6f0dc;--card:#ffffff;--head:#1f3d2b;--ms-bg:#e6f0dc;--ms-line:#cfe0bf;--note-bg:#fff8e6;--note-line:#ecd9a3;--input:#fff;
+--ok:#3f8f5a;--warn:#d9a441;--bad:#c0554a}
+[data-theme=dark]{--forest:#0f1a13;--moss:#8fc17f;--leaf:#7fb069;--leaf-light:#22301f;--sand:#131a15;--sand-dark:#1c2620;--earth:#d6a878;--stone:#a6b0a8;--ink:#e4e8e2;--line:#2c3a31;
+--p1-light:#1c3140;--p2-light:#22301f;--card:#192219;--head:#dfe9d9;--ms-bg:#1f2d21;--ms-line:#33513a;--note-bg:#2b2716;--note-line:#5a4c22;--input:#0f1611}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:'Source Sans 3',Segoe UI,Arial,sans-serif;font-size:17px;color:var(--ink);background:var(--sand);line-height:1.55}
+h1,h2,h3,.brand{font-family:Fraunces,Georgia,'Times New Roman',serif;font-weight:700;letter-spacing:-.01em}
+a{color:var(--moss)}code{background:var(--sand-dark);padding:1px 5px;border-radius:4px;font-size:.9em}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+header.top{background:var(--forest);color:#fff;position:sticky;top:0;z-index:20;box-shadow:0 2px 12px rgba(0,0,0,.18)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;min-height:62px}
+header.top a{color:#fff;text-decoration:none}.brand{font-size:1.25rem;display:flex;align-items:center;gap:10px}.brand svg{width:30px;height:30px}
+header.top nav{display:flex;align-items:center;flex-wrap:wrap}header.top nav a{margin-left:18px;font-size:.96rem;opacity:.9;padding:6px 0;border-bottom:2px solid transparent}header.top nav a:hover,header.top nav a.on{opacity:1;border-color:var(--leaf)}
+button.icon-btn{margin-left:18px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:8px;padding:5px 10px;cursor:pointer;font-size:.9rem;font-family:inherit}button.icon-btn:hover{background:rgba(255,255,255,.22)}
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#1f3d2b 0%,#2f5a3f 55%,#3f6b4a 100%);color:#fff;padding:54px 0 48px}
+.hero:before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'><g fill='none' stroke='rgba(255,255,255,0.10)' stroke-width='1.2'><path d='M0 300c60-40 120-40 180 0s120 40 220 0'/><path d='M0 240c60-40 120-40 180 0s120 40 220 0'/><path d='M0 180c60-40 120-40 180 0s120 40 220 0'/><path d='M0 120c60-40 120-40 180 0s120 40 220 0'/><path d='M0 60c60-40 120-40 180 0s120 40 220 0'/><path d='M0 360c60-40 120-40 180 0s120 40 220 0'/></g></svg>");opacity:.9}
+.hero .wrap{position:relative}.hero h1{margin:0 0 10px;font-size:2.4rem;line-height:1.15}.hero p{margin:0;max-width:760px;color:rgba(255,255,255,.88);font-size:1.08rem}
+.hero .crumbs{font-size:.9rem;margin-bottom:14px;color:rgba(255,255,255,.75)}.hero .crumbs a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4)}.hero .crumbs span{margin:0 8px;opacity:.6}
+.hero.p1{background:linear-gradient(135deg,#1e3f4d 0%,#2f5f73 60%,#3e7a90 100%)}.hero.p2{background:linear-gradient(135deg,#1f3d2b 0%,#3f6b4a 60%,#5e8f5a 100%)}
+.hero.small{padding:34px 0 30px}.hero.small h1{font-size:1.9rem}
+.pill{display:inline-block;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:3px 12px;font-size:.82rem;margin-right:8px;margin-top:10px}
+main{padding:30px 0 40px}
+h2.sec{font-size:1.55rem;color:var(--head);margin:34px 0 14px;display:flex;align-items:center;gap:12px}h2.sec:after{content:"";flex:1;height:1px;background:var(--line)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}@media(max-width:860px){.grid3{grid-template-columns:1fr}}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}@media(max-width:900px){.grid4{grid-template-columns:1fr 1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;box-shadow:0 1px 3px rgba(31,61,43,.06)}
+.card h3{margin:0 0 8px;font-size:1.25rem;color:var(--head)}.card p{margin:0 0 10px;color:var(--stone)}
+.stat{font-family:Fraunces,serif;font-size:2.2rem;color:var(--moss);line-height:1}
+a.btn,button.btn{display:inline-block;background:var(--moss);color:#fff;text-decoration:none;padding:9px 16px;border-radius:8px;font-weight:600;font-size:.95rem;border:0;cursor:pointer;font-family:inherit}a.btn:hover,button.btn:hover{background:var(--forest)}
+[data-theme=dark] a.btn:hover,[data-theme=dark] button.btn:hover{background:#6fa562}
+a.btn.ghost,button.btn.ghost{background:transparent;color:var(--moss);border:1.5px solid var(--moss)}a.btn.ghost:hover,button.btn.ghost:hover{background:var(--leaf-light)}
+.paper-head{display:flex;align-items:center;gap:14px;margin:8px 0 14px}.paper-head .tag{white-space:nowrap;font-family:Fraunces,serif;font-size:1.05rem;font-weight:700;color:#fff;border-radius:8px;padding:4px 12px}
+.tag.p1{background:var(--p1)}.tag.p2{background:var(--p2)}.paper-head span.assessed{color:var(--stone);font-size:.95rem}
+.topic-card{display:flex;gap:16px;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;transition:transform .12s,box-shadow .12s}
+.topic-card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(31,61,43,.12)}
+.topic-card .icon{flex:0 0 52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center}.topic-card .icon svg{width:30px;height:30px}
+.icon.p1{background:var(--p1-light);color:var(--p1)}.icon.p2{background:var(--p2-light);color:var(--p2)}[data-theme=dark] .icon.p1{color:#8fc3d8}[data-theme=dark] .icon.p2{color:#9fd08f}
+.topic-card>div:last-child{flex:1}.topic-card h3{margin:0 0 4px;font-size:1.2rem;color:var(--head)}.topic-card .meta{color:var(--stone);font-size:.9rem}.topic-card .subs{margin:8px 0 0;color:var(--stone);font-size:.9rem;line-height:1.4}
+.sub-list{list-style:none;padding:0;margin:0}
+.sub-item{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:12px 0;display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}
+.sub-item .t{flex:1 1 380px}.sub-item .t a.name{font-family:Fraunces,serif;font-size:1.15rem;font-weight:700;color:var(--head);text-decoration:none}.sub-item .t a.name:hover{color:var(--moss)}
+.sub-item .meta{color:var(--stone);font-size:.88rem;margin-top:2px}
+.links{display:flex;flex-wrap:wrap;gap:6px}.links a{font-size:.82rem;padding:4px 11px;border-radius:999px;text-decoration:none;border:1px solid var(--line);background:var(--sand);color:var(--moss);font-weight:600}
+.links a:hover{background:var(--leaf-light);border-color:var(--leaf)}.links a.qp{background:var(--leaf-light)}
+table.list{border-collapse:collapse;width:100%;margin:10px 0 24px;background:var(--card);border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+table.list th,table.list td{padding:10px 14px;text-align:left;font-size:.95rem;vertical-align:top;border-bottom:1px solid var(--line)}table.list th{background:var(--sand-dark);color:var(--head)}table.list tr:last-child td{border-bottom:0}
+.q{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 24px;margin:20px 0;box-shadow:0 1px 3px rgba(31,61,43,.05);border-left-width:5px}
+.q[data-status="1"]{border-left-color:var(--warn)}.q[data-status="2"]{border-left-color:var(--ok)}
+.q .qh{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:8px}
+.q .qh .num{font-family:Fraunces,serif;font-weight:700;color:var(--head);font-size:1.15rem}.q .meta{font-size:.82rem;color:var(--stone)}
+.q .part{margin:12px 0 6px;padding:8px 0 8px 12px;border-left:3px solid var(--leaf)}.q .part .pn{font-weight:700;color:var(--moss);margin-right:8px;font-family:Fraunces,serif}.q .marks{float:right;font-weight:700;color:var(--earth);font-size:.9rem}
+.q table.data{border-collapse:collapse;margin:12px auto;background:var(--card)}.q table.data th,.q table.data td{border:1px solid var(--stone);padding:5px 12px;text-align:center;font-size:.92rem}.q table.data th{background:var(--sand-dark)}
+.q .cap{text-align:center;font-weight:700;margin:10px 0 2px;font-family:Fraunces,serif;color:var(--head)}
+.q ul.mcq{list-style:none;padding-left:10px}.q ul.mcq li:before{content:"\2610  ";}
+svg.chart{max-width:100%;height:auto;display:block;margin:6px auto;background:#fff;border-radius:8px}
+details.ms{margin-top:12px;background:var(--ms-bg);border:1px solid var(--ms-line);border-radius:10px;padding:10px 14px}details.ms summary{cursor:pointer;font-weight:700;color:var(--moss)}
+details.ms ul{margin:6px 0 8px 18px;padding:0}details.ms .lvl{font-size:.88rem;margin:4px 0;color:var(--stone)}details.ms .src{font-size:.85rem;color:var(--earth);margin-top:8px;border-top:1px dashed var(--ms-line);padding-top:6px}
+.note{background:var(--note-bg);border:1px solid var(--note-line);border-radius:10px;padding:12px 16px;font-size:.95rem}
+footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-size:.88rem;margin-top:40px}footer a{color:#fff}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:24px}@media(max-width:860px){.two{grid-template-columns:1fr}}
+/* progress */
+.st{display:inline-flex;gap:4px;margin-left:auto}.st button{font-family:inherit;font-size:.78rem;border:1px solid var(--line);background:var(--sand);color:var(--stone);border-radius:999px;padding:2px 10px;cursor:pointer}
+.st button:hover{border-color:var(--moss)}.st button.on[data-s="1"]{background:var(--warn);color:#222;border-color:var(--warn)}.st button.on[data-s="2"]{background:var(--ok);color:#fff;border-color:var(--ok)}
+.prog{display:flex;align-items:center;gap:10px;font-size:.82rem;color:var(--stone);margin-top:8px}.prog .bar{flex:1;height:8px;background:var(--sand-dark);border-radius:999px;overflow:hidden;display:flex;max-width:260px}
+.prog .bar .ok{background:var(--ok);height:100%}.prog .bar .wk{background:var(--warn);height:100%}.prog .pl{white-space:nowrap;min-width:90px}
+.hero .prog{color:rgba(255,255,255,.85)}.hero .prog .bar{background:rgba(255,255,255,.25)}
+/* filter bar & tools */
+.filterbar{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.filterbar input[type=search]{flex:1 1 220px;font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
+.filterbar label{font-size:.85rem;color:var(--stone);display:inline-flex;align-items:center;gap:4px;cursor:pointer}.filterbar .chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--sand);color:var(--stone);font-size:.82rem;cursor:pointer;font-family:inherit}
+.filterbar .chip.on{background:var(--moss);color:#fff;border-color:var(--moss)}.filterbar .cnt{font-size:.85rem;color:var(--stone);margin-left:auto}
+.filterbar select{font:inherit;font-size:.88rem;padding:5px 8px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
+.tools{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:10px 0;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.tools .time{font-family:Fraunces,serif;font-size:1.6rem;font-weight:700;color:var(--head);min-width:120px}.tools .time.low{color:var(--bad)}
+.tools .score{font-weight:700;color:var(--moss)}.tools .score b{font-family:Fraunces,serif;font-size:1.3rem}.tools .pct{font-size:.85rem;color:var(--stone)}
+.tools button{font-family:inherit;font-size:.88rem;padding:6px 12px;border-radius:8px;border:1px solid var(--moss);background:transparent;color:var(--moss);cursor:pointer}.tools button.primary{background:var(--moss);color:#fff}
+.aw{display:flex;align-items:center;gap:8px;margin:4px 0 8px;font-size:.88rem;color:var(--stone)}.aw input{width:64px;font:inherit;padding:3px 6px;border:1px solid var(--line);border-radius:6px;background:var(--input);color:var(--ink)}
+.q.hide{display:none}
+/* quick-fire & search */
+.qf-controls{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin:10px 0 16px}.qf-controls label{font-size:.9rem;color:var(--stone);display:inline-flex;gap:5px;align-items:center}
+.qf-controls select,.qf-controls input[type=search]{font:inherit;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
+.kbd{font-size:.8rem;color:var(--stone)}.kbd kbd{border:1px solid var(--line);border-radius:4px;padding:0 5px;background:var(--sand-dark);font-family:inherit}
+.res{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0;text-decoration:none;color:inherit}.res:hover{border-color:var(--moss)}
+.res .t{font-weight:700;color:var(--head)}.res .m{font-size:.82rem;color:var(--stone)}.res .s{font-size:.92rem;margin-top:4px}.res mark{background:#ffe58a;color:#222;border-radius:3px;padding:0 2px}
+.empty{color:var(--stone);font-style:italic}
+/* print */
+@media print{header.top,footer,.tools,.filterbar,.st,.pill,.aw,.hero .crumbs,.prog,.noprint{display:none!important}
+body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;color:#000;padding:10px 0}.hero p,.hero h1{color:#000}.hero:before{display:none}
+.q{break-inside:avoid;box-shadow:none;border:1px solid #999;page-break-inside:avoid}details.ms{display:none}body.print-ms details.ms{display:block;background:#f3f3f3}body.print-ms details.ms summary{display:none}
+svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
+</style>
+<script>try{if(localStorage.getItem('envsci.theme')==='"dark"')document.documentElement.dataset.theme='dark';}catch(e){}</script></head><body >
+<header class="top"><div class="wrap"><a class="brand" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb069" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-8 0-14 4-14 12 0 1.5.3 3 1 4 2-6 6-9 11-11-4 3-7 6-8 12 8 0 12-6 10-17z"/></svg><span>AQA Environmental Science</span></a><nav><a href="../index.html" class="">Topics</a><a href="../papers.html" class="">Mock papers</a><a href="../official.html" class="">Past papers</a><a href="../essays.html" class="">Essay bank</a><a href="../quickfire.html" class="">Quick-fire</a><a href="../search.html" class="">Search</a><button class="icon-btn" id="themeBtn" type="button" title="Toggle dark mode">&#9790; Dark</button></nav></div></header>
+<section class="hero p1 small"><div class="wrap"><div class="crumbs"><a href="../index.html">Topics</a><span>&rsaquo;</span><a href="../topic/physical.html">The physical environment</a><span>&rsaquo;</span>Mineral resources (the lithosphere)</div><h1>Mineral resources (the lithosphere)</h1><p>The physical environment &middot; AQA spec 3.2.3 &middot; R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 130-147</p><span class="pill">Paper 1</span><span class="pill">10 questions</span><div class="prog" data-qids="MIN-01,MIN-02,MIN-03,MIN-04,MIN-05,MIN-06,MIN-07,MIN-08,MIN-09,MIN-10"><div class="bar"><div class="ok"></div><div class="wk"></div></div><span class="pl"></span></div></div></section>
+<main><div class="wrap"><h2 class="sec">Question sets</h2><table class="list"><tr><th>Set</th><th>Questions</th><th>Marks</th><th>Question paper</th><th>Mark scheme</th></tr>
+<tr><td>Set 1</td><td>8</td><td>75</td><td><a href="../pdf/topic/minerals-set1-QP.pdf">Download QP (PDF)</a></td><td><a href="../pdf/topic/minerals-set1-MS.pdf">Download MS (PDF)</a></td></tr>
+<tr><td>Set 2</td><td>2</td><td>20</td><td><a href="../pdf/topic/minerals-set2-QP.pdf">Download QP (PDF)</a></td><td><a href="../pdf/topic/minerals-set2-MS.pdf">Download MS (PDF)</a></td></tr>
+</table>
+<div class="filterbar noprint"><input type="search" placeholder="Filter questions by keyword (e.g. albedo, quota, Simpson)"><button type="button" class="chip mk" data-v="5">5 marks</button><button type="button" class="chip mk" data-v="10">10 marks</button><button type="button" class="chip mk" data-v="15">15 marks</button><button type="button" class="chip fl" data-v="calc">Calculation</button><button type="button" class="chip fl" data-v="data">Data / figure</button><button type="button" class="chip fl" data-v="ext">9-mark extended</button><button type="button" class="chip fl" data-v="mcq">Multiple choice</button><button type="button" class="chip fl" data-v="table">Complete a table</button><select class="status" title="Filter by your progress"><option value="all">All progress</option><option value="todo">Not attempted</option><option value="work">Needs work</option><option value="secure">Secure</option><option value="notsecure">Not yet secure</option></select><button type="button" class="chip clear">Clear</button><span class="cnt"></span><button type="button" class="chip" data-reveal="1">Show all mark schemes</button><button type="button" class="chip" data-print="qp" title="Print the questions only">Print</button><button type="button" class="chip" data-print="ms" title="Print questions with mark schemes">Print + MS</button></div>
+<h2 class="sec set">Set 1</h2>
+<div class="q" id="MIN-01" data-qid="MIN-01" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 1</span><span class="meta">10 marks &middot; <a href="../subtopic/minerals.html">Mineral resources (the lithosphere)</a> &middot; spec 3.2.3.2 &middot; Genn pp. 132-134 &middot; MIN-01</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="part"><span class="marks">[4 marks]</span><span class="pn">01.1</span>Describe how hydrothermal deposition produces exploitable concentrations of metal ores.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">01.2</span>Explain how Proterozoic marine sediments produced the world's major iron ore deposits.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">01.3</span>Explain how alluvial (physical sediment) processes separate and concentrate minerals such as gold and tin ore.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">01.4</span>Give <b>two</b> examples of mineral deposits formed by biological sedimentation and state their origin.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div><b>01.1</b> (4 marks)
+<ul><li>Igneous intrusions (batholiths) of magma cool within the crust, heating groundwater to produce superheated, pressurised water</li><li>The hot water dissolves minerals from the surrounding rock and the mineral-rich solutions travel along fissures / cracks away from the batholith</li><li>As the solutions cool the dissolved minerals crystallise in order of solubility (least soluble first) - fractional crystallisation</li><li>So different metals are separated and concentrated in veins, eg tin, copper, lead, silver, gold, arsenic (SW England batholith)</li></ul>
+</div>
+<div><b>01.2</b> (2 marks)
+<ul><li>Dissolved iron compounds in ancient seas were oxidised by the oxygen released by early photosynthetic organisms (2.5-1.8 billion years ago)</li><li>Iron oxides are insoluble so they were deposited as sediments (haematite, magnetite)</li></ul>
+</div>
+<div><b>01.3</b> (2 marks)
+<ul><li>Flowing water carries solid particles; the ability to carry them depends on the water velocity and the density of the solids</li><li>As velocity falls, dense minerals (gold, tin ore) are deposited first while lighter material is carried further, concentrating the heavy minerals in particular places</li></ul>
+</div>
+<div><b>01.4</b> (2 marks)
+<div class="lvl"><i>Any 2 from:</i></div>
+<ul><li>Limestone / chalk from the shells of marine organisms</li><li>Coal from terrestrial vegetation</li><li>Crude oil and natural gas from marine organisms (plankton)</li></ul>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 132-134; AQA spec 3.2.3.2.</div></details></div>
+<div class="q" id="MIN-02" data-qid="MIN-02" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 2</span><span class="meta">10 marks &middot; <a href="../subtopic/minerals.html">Mineral resources (the lithosphere)</a> &middot; spec 3.2.3.3 &middot; Genn pp. 135-136 &middot; MIN-02</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<p>Figure 1 shows the mass of copper contained in the Earth's crust at different ore purities, illustrating Lasky's principle.</p>
+<div class="cap">Figure 1</div>
+<svg class="chart" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
+<rect x="74.4" y="269.0" width="67.2" height="1.0" fill="#3f6b4a"/>
+<text x="108.0" y="286" text-anchor="middle">above 2.0</text>
+<rect x="170.4" y="266.4" width="67.2" height="3.6" fill="#3f6b4a"/>
+<text x="204.0" y="286" text-anchor="middle">1.0-2.0</text>
+<rect x="266.4" y="255.6" width="67.2" height="14.4" fill="#3f6b4a"/>
+<text x="300.0" y="286" text-anchor="middle">0.5-1.0</text>
+<rect x="362.4" y="212.6" width="67.2" height="57.4" fill="#3f6b4a"/>
+<text x="396.0" y="286" text-anchor="middle">0.25-0.5</text>
+<rect x="458.4" y="42.7" width="67.2" height="227.3" fill="#3f6b4a"/>
+<text x="492.0" y="286" text-anchor="middle">0.1-0.25</text>
+<line x1="56" y1="270.0" x2="60" y2="270.0" stroke="#000"/><text x="52" y="274.0" text-anchor="end">0</text>
+<line x1="56" y1="220.0" x2="60" y2="220.0" stroke="#000"/><text x="52" y="224.0" text-anchor="end">2090</text>
+<line x1="56" y1="170.0" x2="60" y2="170.0" stroke="#000"/><text x="52" y="174.0" text-anchor="end">4180</text>
+<line x1="56" y1="120.0" x2="60" y2="120.0" stroke="#000"/><text x="52" y="124.0" text-anchor="end">6270</text>
+<line x1="56" y1="70.0" x2="60" y2="70.0" stroke="#000"/><text x="52" y="74.0" text-anchor="end">8360</text>
+<line x1="56" y1="20.0" x2="60" y2="20.0" stroke="#000"/><text x="52" y="24.0" text-anchor="end">10450</text>
+<line x1="60" y1="20" x2="60" y2="270" stroke="#000"/><line x1="60" y1="270" x2="540" y2="270" stroke="#000"/>
+<text x="300.0" y="312" text-anchor="middle" font-weight="bold">Ore purity / % copper</text>
+<text transform="translate(14,145.0) rotate(-90)" text-anchor="middle" font-weight="bold">Mass of copper in deposits / million tonnes</text>
+</svg>
+<div class="part"><span class="marks">[1 mark]</span><span class="pn">02.1</span>State Lasky's principle.
+</div>
+<div class="part"><span class="marks">[1 mark]</span><span class="pn">02.2</span>Use Figure 1 to calculate how many times more copper is contained in deposits of 0.25-0.5% purity than in deposits above 2.0%.
+</div>
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">02.3</span>Explain the difference between the <b>reserves</b> and the <b>resource</b> of a mineral.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">02.4</span>Explain, using Lasky's principle, why the ability to exploit slightly lower grade ores greatly increases reserves.
+</div>
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">02.5</span>Explain why the main problem for future mineral supplies is not the quantity that exists in the crust.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div><b>02.1</b> (1 marks)
+<ul><li>As the (linear) purity / grade of a mineral deposit decreases, the amount of the mineral present increases exponentially / logarithmically</li></ul>
+</div>
+<div><b>02.2</b> (1 marks)
+<ul><li>2400 / 40 = 60 times</li></ul>
+</div>
+<div><b>02.3</b> (3 marks)
+<ul><li>Reserves: the amount that can be exploited now, economically, with existing technology (deposits above the cut-off ore grade)</li><li>Resource: all the material that could be exploited technically and economically now or in the future (with realistic price rises or new technology), including deep, low-grade or protected deposits</li><li>The resource is finite but the reserves change: they rise if prices rise or technology improves, and fall if prices fall</li></ul>
+</div>
+<div><b>02.4</b> (2 marks)
+<ul><li>Lowering the cut-off ore grade includes deposits of lower purity in the reserves</li><li>Because the amount of material rises exponentially as purity falls, a small drop in COOG adds a very large mass (eg 0.5-1.0% has 4x the copper of 1.0-2.0%)</li></ul>
+</div>
+<div><b>02.5</b> (3 marks)
+<ul><li>The total quantity (stock / resource base) is far greater than could ever be used</li><li>But most is at purities too low or in locations too inaccessible for current economic exploitation</li><li>The challenge is developing technologies (low-energy extraction such as bioleaching, phytomining; better exploration) that make low-grade deposits exploitable; energy needs rise rapidly as ore grade falls</li></ul>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 135-136; AQA spec 3.2.3.3.</div></details></div>
+<div class="q" id="MIN-03" data-qid="MIN-03" data-marks="10" data-flags="data table"><div class="qh"><span class="num">Question 3</span><span class="meta">10 marks &middot; <a href="../subtopic/minerals.html">Mineral resources (the lithosphere)</a> &middot; spec 3.2.3.4 &middot; Genn pp. 137 &middot; MIN-03</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<p>Table 1 shows some techniques used to locate mineral deposits.</p>
+<div class="part"><span class="marks">[4 marks]</span><span class="pn">03.1</span>Complete Table 1 by adding the name of the technique or a description of how it works.
+<div class="cap">Table 1</div><table class="data"><tr><th>Technique</th><th>How it works</th></tr><tr><td>Gravimetry</td><td></td></tr><tr><td></td><td>Detects rocks that are more magnetic, such as magnetite iron ore or ores of tungsten and cobalt</td></tr><tr><td>Seismic survey</td><td></td></tr><tr><td></td><td>Measures how difficult it is for electricity to pass through rocks; sedimentary rocks with high water content have lower values than igneous rocks</td></tr></table>
+</div>
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">03.2</span>Explain why trial drilling is usually carried out only after remote sensing surveys.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">03.3</span>Explain how infrared spectroscopy from satellites can help identify mineral deposits.
+</div>
+<div class="part"><span class="marks">[1 mark]</span><span class="pn">03.4</span>Give <b>one</b> advantage of portable field analysis equipment such as X-ray fluorescence.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div><b>03.1</b> (4 marks)
+<ul><li>Gravimetry: gravimeters detect variations in gravity caused by differences in rock density / mass (metal ores usually denser than sedimentary rock)</li><li>Magnetometry</li><li>Seismic survey: sound / shock waves from controlled explosions or a seismic vibrator; echoes recorded by geophones give the depth, density and shape of rock strata</li><li>Resistivity</li></ul>
+</div>
+<div><b>03.2</b> (3 marks)
+<ul><li>Trial drilling is the most expensive technique per site</li><li>Remote sensing (satellite, aircraft, ground surveys) covers large areas at low cost per unit area and identifies promising sites</li><li>Drilling is then targeted where deposits are likely; it is the only method that produces actual rock samples for chemical analysis to confirm composition and purity (proven reserves)</li></ul>
+</div>
+<div><b>03.3</b> (2 marks)
+<ul><li>Different minerals emit / reflect infrared at different wavelengths</li><li>Multispectral sensors detect these wavelengths over the whole surface (eg Landsat 8 every 16 days) giving information on surface mineral composition</li></ul>
+</div>
+<div><b>03.4</b> (1 marks)
+<ul><li>Results are available immediately in the field, saving time waiting for laboratory analysis</li></ul>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 137; AQA spec 3.2.3.4.</div></details></div>
+<div class="q" id="MIN-04" data-qid="MIN-04" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 4</span><span class="meta">10 marks &middot; <a href="../subtopic/minerals.html">Mineral resources (the lithosphere)</a> &middot; spec 3.2.3.5 &middot; Genn pp. 138-139 &middot; MIN-04</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<p>Table 1 shows information about two copper deposits, X and Y, being assessed for mining. The current cut-off ore grade for copper is 0.4%.</p>
+<div class="cap">Table 1</div><table class="data"><tr><th>Feature</th><th>Deposit X</th><th>Deposit Y</th></tr><tr><td>Ore grade / % copper</td><td>0.9</td><td>0.35</td></tr><tr><td>Depth of deposit / m</td><td>350</td><td>40</td></tr><tr><td>Overburden</td><td>Hard igneous rock</td><td>Loose glacial sediment</td></tr><tr><td>Distance to nearest railway / km</td><td>120</td><td>8</td></tr><tr><td>Annual rainfall / mm</td><td>2 100</td><td>500</td></tr><tr><td>Chemical form</td><td>Copper sulfide</td><td>Copper sulfide</td></tr></table>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">04.1</span>Explain what is meant by the <b>cut-off ore grade</b> and state which deposit is currently included in the copper reserves.
+</div>
+<div class="part"><span class="marks">[6 marks]</span><span class="pn">04.2</span>Use Table 1 to discuss the factors that affect the viability of mining each deposit.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">04.3</span>State <b>two</b> changes that would decrease the cut-off ore grade.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div><b>04.1</b> (2 marks)
+<ul><li>The lowest ore purity that can be mined economically with existing technology</li><li>Deposit X (0.9% is above 0.4%; Y at 0.35% is part of the resource, not the reserves)</li></ul>
+</div>
+<div><b>04.2</b> (6 marks)
+<ul><li>X has higher grade so less rock mined, less spoil, less energy and pollution per tonne of copper</li><li>But X is deep: costs rise more than proportionally with depth (sides cannot be vertical so much more rock removed; more water inflow and pumping)</li><li>X has hard overburden requiring blasting (cost, noise, dust) and high rainfall increasing drainage costs</li><li>X is far from transport infrastructure so transport costs are high</li><li>Y is shallow with loose overburden (cheap to remove but landslide risk so gentler slopes / larger land take), near a railway, low rainfall</li><li>Y's grade is below the COOG so it is not viable now but would become viable if copper prices rose or extraction technology improved (eg bioleaching); both sulfides risk acid mine drainage</li></ul>
+</div>
+<div><b>04.3</b> (2 marks)
+<div class="lvl"><i>Any 2 from:</i></div>
+<ul><li>Higher market value / price of the metal</li><li>Improved extraction technology</li><li>Lower energy costs</li></ul>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 138-139; AQA spec 3.2.3.5.</div></details></div>
+<div class="q" id="MIN-05" data-qid="MIN-05" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 5</span><span class="meta">10 marks &middot; <a href="../subtopic/minerals.html">Mineral resources (the lithosphere)</a> &middot; spec 3.2.3.6 &middot; Genn pp. 139-142 &middot; MIN-05</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">05.1</span>Explain why mineral extraction causes more land-use conflict than most other human activities.
+</div>
+<div class="part"><span class="marks">[5 marks]</span><span class="pn">05.2</span>Describe how each of the following environmental impacts of an operating mine can be reduced.
+</div>
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">05.3</span>Explain how spoil heaps can be made stable and describe what happened at Aberfan in 1966.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div><b>05.1</b> (2 marks)
+<ul><li>Minerals can only be exploited where they were deposited (no choice of location), unlike housing, roads or ports</li><li>Land take is larger than the mine void: buildings, access roads, overburden and spoil heaps, buffer zones; open-cast mines take far more land than deep mines</li></ul>
+</div>
+<div><b>05.2</b> (5 marks)
+<ul><li>Dust: water sprays on roads / blasting areas make particles heavier and clump so they settle</li><li>Noise: baffle mounds / embankments absorb and deflect; blasting at set, predictable daytime hours; quieter machinery</li><li>Turbid water: sedimentation lagoons where water stands until solids settle before discharge</li><li>Leachate: collect drainage water and pass through crushed limestone to neutralise acid and immobilise toxic metals</li><li>Amenity: landscaping and tree planting to screen the mine; restoration plans agreed as a condition of planning permission</li></ul>
+</div>
+<div><b>05.3</b> (3 marks)
+<ul><li>Landscaping to reduce gradients, compaction, drainage to prevent waterlogging, adding soil / nutrients and planting vegetation whose roots bind the surface</li><li>At Aberfan a waterlogged coal-mine spoil heap became unstable and slid into the village</li><li>Killing 144 people, mainly children in the primary school</li></ul>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 139-142; AQA spec 3.2.3.6.</div></details></div>
+<div class="q" id="MIN-06" data-qid="MIN-06" data-marks="5" data-flags=""><div class="qh"><span class="num">Question 6</span><span class="meta">5 marks &middot; <a href="../subtopic/minerals.html">Mineral resources (the lithosphere)</a> &middot; spec 3.2.3.6 &middot; Genn pp. 140, 142 &middot; MIN-06</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<p>A sand and gravel pit near a town is due to close. Three options for the site are proposed: a wetland nature reserve, housing, or return to farmland.</p>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">06.1</span>Explain why flooded sand and gravel pits are often developed as wetland nature reserves.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">06.2</span>Explain the conditions that would need to be met for the site to be used for housing or farmland.
+</div>
+<div class="part"><span class="marks">[1 mark]</span><span class="pn">06.3</span>Explain why moving the wildlife from a site before mining begins is rarely completely successful.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div><b>06.1</b> (2 marks)
+<ul><li>The void fills with water naturally; wetlands are uncommon / valuable habitats in most regions</li><li>The new habitat may have greater wildlife value than the farmland lost; low cost compared with filling and levelling</li></ul>
+</div>
+<div><b>06.2</b> (2 marks)
+<ul><li>Housing: ground must be stable (no subsidence), no toxic metal wastes (otherwise industrial use is safer)</li><li>Farmland: landscape not too steep or uneven, no toxic materials, sufficiently fertile soil (topsoil replaced)</li></ul>
+</div>
+<div><b>06.3</b> (1 marks)
+<ul><li>Species that cannot be caught / found, or whose habitat requirements are unknown or hard to recreate, are lost; transplanted plants often fail</li></ul>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 140, 142; AQA spec 3.2.3.6.</div></details></div>
+<div class="q" id="MIN-07" data-qid="MIN-07" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 7</span><span class="meta">10 marks &middot; <a href="../subtopic/minerals.html">Mineral resources (the lithosphere)</a> &middot; spec 3.2.3.7 &middot; Genn pp. 143-145 &middot; MIN-07</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="part"><span class="marks">[5 marks]</span><span class="pn">07.1</span>Describe how bioleaching is used to extract copper from low-grade ores or spoil heaps, and explain why it may be more sustainable than smelting.
+</div>
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">07.2</span>Describe the process of phytomining.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">07.3</span>Explain how polymer adsorption may provide a low-energy source of uranium in the future.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div><b>07.1</b> (5 marks)
+<ul><li>Acidophilic bacteria (eg Acidithiobacillus) oxidise sulfide ores, producing sulfuric acid which dissolves the metal ions</li><li>Leachate (rainwater / recirculated solution) percolating through the spoil heap is collected; recirculation increases the metal concentration</li><li>Copper is recovered from solution by electrolysis or by displacement with scrap iron (iron is more reactive so copper is deposited as solid metal)</li><li>Smelting needs chemical reduction at high temperatures; energy needed rises rapidly as ore grade falls, so low-grade ores are uneconomic</li><li>Bioleaching works at low temperatures with low energy inputs, so it can exploit low-grade deposits and wastes (increasing reserves) - mimics natural low-temperature processes</li></ul>
+</div>
+<div><b>07.2</b> (3 marks)
+<ul><li>Plants (hyperaccumulators) absorb metal ions from soil / water and concentrate them in their leaves</li><li>The vegetation is harvested and incinerated</li><li>The concentrated metal in the ash is dissolved in acid and separated by electrolysis; also decontaminates polluted sites</li></ul>
+</div>
+<div><b>07.3</b> (2 marks)
+<ul><li>Uranium ions dissolved in seawater adsorb onto the surface of synthetic or natural polymers (lignin from wood, chitin from shrimp shells)</li><li>The polymers are collected and the uranium recovered, avoiding mining / high-energy extraction</li></ul>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 143-145; AQA spec 3.2.3.7.</div></details></div>
+<div class="q" id="MIN-08" data-qid="MIN-08" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 8</span><span class="meta">10 marks &middot; <a href="../subtopic/minerals.html">Mineral resources (the lithosphere)</a> &middot; spec 3.2.3.7 &middot; Genn pp. 145-146 &middot; MIN-08</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">08.1</span>Describe polymetallic (manganese) nodules and explain why they are not yet exploited on a large scale.
+</div>
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">08.2</span>Explain the environmental impacts of mining polymetallic nodules.
+</div>
+<div class="part"><span class="marks">[4 marks]</span><span class="pn">08.3</span>Explain why rare earth metals are a supply concern and describe one new extraction technique.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div><b>08.1</b> (3 marks)
+<ul><li>Metal-rich lumps 5-10 cm across on the deep seabed (4000-5000 m), containing about 30% manganese plus nickel, copper, cobalt, iron, titanium</li><li>Exploitation would be very expensive (remotely operated collectors, pumping to the surface) / no viable technology yet</li><li>International agreement on ownership of the seabed and its resources is needed</li></ul>
+</div>
+<div><b>08.2</b> (3 marks)
+<ul><li>Collectors disturb the seabed and kill benthic organisms living on it</li><li>Separating nodules from sediment creates plumes that increase turbidity with unknown consequences</li><li>Re-deposition of sediment covers and kills filter feeders and other benthic organisms; slow recovery in the deep sea</li></ul>
+</div>
+<div><b>08.3</b> (4 marks)
+<ul><li>Used in small amounts in many essential technologies (smartphones, hybrid vehicles, wind turbines, fibre optics, LEDs)</li><li>Exploitable land deposits are limited and mainly in China; chemical separation is complex and produces large amounts of toxic waste</li><li>Bacterial adsorption: dissolved rare earth ions adsorb onto the cell surfaces of bacteria (Bacillus subtilis) and are washed off at specific pHs to separate them</li><li>Deep sea sediments contain relatively high concentrations but no viable extraction method yet</li></ul>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 145-146; AQA spec 3.2.3.7.</div></details></div>
+<h2 class="sec set">Set 2</h2>
+<div class="q" id="MIN-09" data-qid="MIN-09" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 9</span><span class="meta">10 marks &middot; <a href="../subtopic/minerals.html">Mineral resources (the lithosphere)</a> &middot; spec 3.2.3.7 &middot; Genn pp. 146-147 &middot; MIN-09</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<p>Table 1 compares the energy used to produce 1 tonne of aluminium from bauxite ore with the energy used to produce 1 tonne from recycled aluminium cans.</p>
+<div class="cap">Table 1</div><table class="data"><tr><th>Source</th><th>Energy used / GJ per tonne</th><th>CO<sub>2</sub> emitted / tonnes per tonne of aluminium</th></tr><tr><td>Bauxite ore (extraction, refining, smelting)</td><td>210</td><td>12</td></tr><tr><td>Recycled cans (collection, sorting, remelting)</td><td>12</td><td>0.7</td></tr></table>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">09.1</span>Calculate the percentage energy saving from recycling aluminium rather than extracting it from ore.
+</div>
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">09.2</span>Give <b>three</b> advantages of recycling metals other than energy saving.
+</div>
+<div class="part"><span class="marks">[4 marks]</span><span class="pn">09.3</span>Explain <b>four</b> difficulties that reduce the effectiveness of recycling schemes.
+</div>
+<div class="part"><span class="marks">[1 mark]</span><span class="pn">09.4</span>Explain what is meant by <b>Cradle to Cradle</b> design.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div><b>09.1</b> (2 marks)
+<ul><li>(210 - 12) / 210 x 100</li><li>= 94.3% (accept 94%)</li></ul>
+</div>
+<div><b>09.2</b> (3 marks)
+<div class="lvl"><i>Any 3 from:</i></div>
+<ul><li>Conserves mineral reserves / extends their lifetime</li><li>Reduces the environmental impacts of mining (land take, habitat loss, spoil, dust, noise, turbid water)</li><li>Reduces mineral processing pollution (eg red mud from bauxite refining)</li><li>Reduces waste disposal impacts / landfill volume</li><li>Less CO2 / climate change</li></ul>
+</div>
+<div><b>09.3</b> (4 marks)
+<div class="lvl"><i>Any 4 from:</i></div>
+<ul><li>Identification of materials: slow, labour-intensive to determine composition where it matters (eg alloys, plastic types)</li><li>Separation of mixed materials: alloys cannot easily be separated so recycled aluminium cannot be used where pure metal is needed; mixed wastes reduce quality</li><li>Reduction in quality / contamination (eg paper mixed with food waste)</li><li>Transport / collection: small dispersed quantities cannot use bulk transport so costs and energy per tonne are higher (may exceed savings)</li><li>Lack of consumer cooperation in separating wastes; waste losses to litter and general waste; labour costs</li></ul>
+</div>
+<div><b>09.4</b> (1 marks)
+<ul><li>Designing products so that the materials can be re-used at the end of their lives - easy separation of components and identification of materials - extending the lifetime of mineral use</li></ul>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 146-147; AQA spec 3.2.3.7.</div></details></div>
+<div class="q" id="MIN-10" data-qid="MIN-10" data-marks="10" data-flags="ext"><div class="qh"><span class="num">Question 10</span><span class="meta">10 marks &middot; <a href="../subtopic/minerals.html">Mineral resources (the lithosphere)</a> &middot; spec 3.2.3 &middot; Genn pp. 130-147 &middot; MIN-10</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="part"><span class="marks">[9 marks]</span><span class="pn">10.1</span>As high-grade mineral deposits become depleted, discuss the strategies that could be used to secure future supplies of metals.
+</div>
+<div class="part"><span class="marks">[1 mark]</span><span class="pn">10.2</span>State what is meant by the <b>stock</b> (resource base) of a mineral.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div><b>10.1</b> (9 marks)
+<div class="lvl"><b>Levels of response:</b> L3 7-9 comprehensive, well-structured, applied to context, supported judgement; L2 4-6 sound but incomplete application/evaluation; L1 1-3 basic, limited structure.</div><div class="lvl"><b>Indicative content:</b></div>
+<ul><li>Context: Lasky's principle - vast quantities exist at low grade; reserves vs resource; COOG affected by price, technology, energy costs</li><li>Improved exploration: higher resolution multispectral satellite sensors, IR spectroscopy, gravimetry, magnetometry, seismic, resistivity, portable field analysis, targeted trial drilling</li><li>Mechanisation allowing deeper underground mines and larger open-cast mines</li><li>Low-energy extraction of low-grade ores: bioleaching with acidophilic bacteria and fungi, phytomining, iron displacement, bacterial adsorption of rare earths, polymer adsorption from seawater</li><li>Previously inaccessible deposits: polymetallic nodules, deep sea sediments, Antarctica (currently protected) - environmental and legal issues</li><li>Extending use: recycling (advantages, difficulties), Cradle to Cradle design, product lifetime extension, substitution of scarce materials, circular economy</li><li>Evaluation: environmental impacts vs benefits; energy costs; economics; which strategies are most sustainable; conclusion</li></ul>
+</div>
+<div><b>10.2</b> (1 marks)
+<ul><li>All of the material that exists in the lithosphere, including that which will never be technologically or economically exploitable</li></ul>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 130-147; AQA spec 3.2.3.</div></details></div>
+</div></main>
+<footer><div class="wrap">Original practice questions and mark schemes written to the AQA A-level Environmental Science (7447) specification. Every question cites the printed page numbers of R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018). AQA past papers are &copy; AQA. Progress, scores and timers are saved only in this browser. &nbsp;&middot;&nbsp; <a href="../index.html">Topics</a> &middot; <a href="../papers.html">Mock papers</a> &middot; <a href="../official.html">Past papers</a> &middot; <a href="../essays.html">Essay bank</a> &middot; <a href="../quickfire.html">Quick-fire</a> &middot; <a href="../search.html">Search</a></div></footer>
+<script>
+(function(){
+const LS=k=>{try{return JSON.parse(localStorage.getItem(k)||'null')}catch(e){return null}};
+const SV=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+window.ES={LS,SV};
+/* ---- theme ---- */
+const root=document.documentElement;
+function applyTheme(t){if(t==='dark')root.dataset.theme='dark';else delete root.dataset.theme;const b=document.getElementById('themeBtn');if(b)b.textContent=t==='dark'?'\u2600 Light':'\u263E Dark';}
+applyTheme(LS('envsci.theme')||'light');
+const tb=document.getElementById('themeBtn');if(tb)tb.onclick=()=>{const t=root.dataset.theme==='dark'?'light':'dark';SV('envsci.theme',t);applyTheme(t);};
+/* ---- progress ---- */
+let prog=LS('envsci.progress')||{};
+window.ES.prog=()=>prog;
+function paint(){
+  document.querySelectorAll('.q[data-qid]').forEach(el=>{const s=prog[el.dataset.qid]||0;el.dataset.status=s;el.querySelectorAll('.st button').forEach(b=>b.classList.toggle('on',+b.dataset.s===s&&s>0));});
+  document.querySelectorAll('[data-qids]').forEach(el=>{const ids=el.dataset.qids.split(',').filter(Boolean);const n=ids.length;if(!n)return;
+    const ok=ids.filter(i=>prog[i]===2).length,wk=ids.filter(i=>prog[i]===1).length;
+    const o=el.querySelector('.bar .ok'),w=el.querySelector('.bar .wk'),p=el.querySelector('.pl');
+    if(o)o.style.width=(100*ok/n)+'%';if(w)w.style.width=(100*wk/n)+'%';if(p)p.textContent=ok+'/'+n+' secure'+(wk?' \u00b7 '+wk+' to revisit':'');});
+  const ov=document.getElementById('overall');if(ov){const all=(ov.dataset.qids||'').split(',').filter(Boolean);const ok=all.filter(i=>prog[i]===2).length,wk=all.filter(i=>prog[i]===1).length;ov.querySelector('.stat').textContent=Math.round(100*ok/all.length)+'%';ov.querySelector('.detail').textContent=ok+' secure, '+wk+' to revisit, '+(all.length-ok-wk)+' not attempted of '+all.length+' questions.';}
+}
+window.ES.paint=paint;
+document.addEventListener('click',e=>{const b=e.target.closest('.st button');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);paint();if(window.ES.onFilter)window.ES.onFilter();});
+const rs=document.getElementById('resetProg');if(rs)rs.onclick=()=>{if(confirm('Clear all saved progress on this browser?')){prog={};SV('envsci.progress',prog);paint();}};
+paint();
+/* ---- filter bar ---- */
+const fb=document.querySelector('.filterbar');
+if(fb){
+  const qs=[...document.querySelectorAll('.q[data-qid]')];
+  const txt=fb.querySelector('input[type=search]');const cnt=fb.querySelector('.cnt');
+  function run(){const words=(txt.value||'').toLowerCase().split(/\s+/).filter(Boolean);
+    const marks=[...fb.querySelectorAll('.chip.mk.on')].map(c=>c.dataset.v);const flags=[...fb.querySelectorAll('.chip.fl.on')].map(c=>c.dataset.v);
+    const st=fb.querySelector('select.status').value;let shown=0;
+    qs.forEach(el=>{let ok=true;const t=el.textContent.toLowerCase();
+      if(words.length&&!words.every(w=>t.includes(w)))ok=false;
+      if(marks.length&&!marks.includes(el.dataset.marks))ok=false;
+      if(flags.length&&!flags.every(f=>(' '+el.dataset.flags+' ').includes(' '+f+' ')))ok=false;
+      const s=prog[el.dataset.qid]||0;if(st==='todo'&&s!==0)ok=false;if(st==='work'&&s!==1)ok=false;if(st==='secure'&&s!==2)ok=false;if(st==='notsecure'&&s===2)ok=false;
+      el.classList.toggle('hide',!ok);if(ok)shown++;});
+    cnt.textContent='Showing '+shown+' of '+qs.length;
+    document.querySelectorAll('h2.sec.set').forEach(h=>{let n=h.nextElementSibling,any=false;while(n&&!n.classList.contains('set')){if(n.classList.contains('q')&&!n.classList.contains('hide'))any=true;n=n.nextElementSibling;}h.style.display=any?'':'none';});}
+  window.ES.onFilter=run;
+  txt.addEventListener('input',run);fb.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{c.classList.toggle('on');run();});fb.querySelector('select.status').onchange=run;
+  const clr=fb.querySelector('.clear');if(clr)clr.onclick=()=>{txt.value='';fb.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));fb.querySelector('select.status').value='all';run();};
+  run();}
+/* ---- print & reveal ---- */
+document.querySelectorAll('[data-print]').forEach(b=>b.onclick=()=>{const ms=b.dataset.print==='ms';document.body.classList.toggle('print-ms',ms);document.querySelectorAll('details.ms').forEach(d=>d.open=ms);window.print();});
+document.querySelectorAll('[data-reveal]').forEach(b=>b.onclick=()=>{const open=b.dataset.reveal==='1';document.querySelectorAll('details.ms').forEach(d=>d.open=open);b.dataset.reveal=open?'0':'1';b.textContent=open?'Hide all mark schemes':'Show all mark schemes';});
+})();
+</script></body></html>
