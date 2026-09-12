@@ -69,12 +69,12 @@ footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-
 .prog .bar .ok{background:var(--ok);height:100%}.prog .bar .wk{background:var(--warn);height:100%}.prog .pl{white-space:nowrap;min-width:90px}
 .hero .prog{color:rgba(255,255,255,.85)}.hero .prog .bar{background:rgba(255,255,255,.25)}
 /* filter bar & tools */
-.filterbar{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.filterbar{position:sticky;top:var(--hdr,62px);z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .filterbar input[type=search]{flex:1 1 220px;font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
 .filterbar label{font-size:.85rem;color:var(--stone);display:inline-flex;align-items:center;gap:4px;cursor:pointer}.filterbar .chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--sand);color:var(--stone);font-size:.82rem;cursor:pointer;font-family:inherit}
 .filterbar .chip.on{background:var(--moss);color:#fff;border-color:var(--moss)}.filterbar .cnt{font-size:.85rem;color:var(--stone);margin-left:auto}
 .filterbar select{font:inherit;font-size:.88rem;padding:5px 8px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
-.tools{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:10px 0;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.tools{position:sticky;top:var(--hdr,62px);z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:10px 0;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .tools .time{font-family:Fraunces,serif;font-size:1.6rem;font-weight:700;color:var(--head);min-width:120px}.tools .time.low{color:var(--bad)}
 .tools .score{font-weight:700;color:var(--moss)}.tools .score b{font-family:Fraunces,serif;font-size:1.3rem}.tools .pct{font-size:.85rem;color:var(--stone)}
 .tools button{font-family:inherit;font-size:.88rem;padding:6px 12px;border-radius:8px;border:1px solid var(--moss);background:transparent;color:var(--moss);cursor:pointer}.tools button.primary{background:var(--moss);color:#fff}
@@ -87,6 +87,20 @@ footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-
 .res{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0;text-decoration:none;color:inherit}.res:hover{border-color:var(--moss)}
 .res .t{font-weight:700;color:var(--head)}.res .m{font-size:.82rem;color:var(--stone)}.res .s{font-size:.92rem;margin-top:4px}.res mark{background:#ffe58a;color:#222;border-radius:3px;padding:0 2px}
 .empty{color:var(--stone);font-style:italic}
+/* mark scheme points, levels, links */
+.mspart{margin:8px 0 12px}.msh{display:flex;align-items:baseline;gap:8px;margin-bottom:2px}.msh .mtot{font-size:.8rem;color:var(--earth);font-weight:700}
+ul.pts{list-style:none;margin:4px 0 6px 0!important;padding:0}ul.pts li{display:flex;gap:10px;align-items:flex-start;padding:4px 0;border-top:1px dashed var(--ms-line)}ul.pts li:first-child{border-top:0}
+.mk{flex:0 0 auto;min-width:26px;text-align:center;font-size:.75rem;font-weight:700;color:#fff;background:var(--ok);border-radius:6px;padding:2px 6px;margin-top:3px}
+table.levels{border-collapse:collapse;width:100%;margin:6px 0 10px;font-size:.86rem;background:var(--card)}table.levels th,table.levels td{border:1px solid var(--ms-line);padding:5px 8px;text-align:left;vertical-align:top}table.levels th{background:var(--sand-dark)}table.levels td.r{white-space:nowrap;font-weight:700;color:var(--earth)}
+ul.ind{margin:4px 0 8px 18px}
+.st button.lnk{padding:2px 7px}
+#totop{position:fixed;right:18px;bottom:18px;z-index:15;background:var(--moss);color:#fff;border:0;border-radius:50%;width:42px;height:42px;font-size:1.2rem;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .2s}#totop.show{opacity:1;pointer-events:auto}
+.jump{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 4px}.jump a{font-size:.82rem;padding:3px 10px;border-radius:999px;border:1px solid var(--line);background:var(--sand);color:var(--moss);text-decoration:none;font-weight:600}.jump a:hover{background:var(--leaf-light)}
+.real .row{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;padding:8px 0;border-bottom:1px dashed var(--line);font-size:.95rem}.real .row .ser{font-weight:700;color:var(--head);min-width:150px}.real .row .qn{color:var(--stone);min-width:70px}.real .row .t{flex:1 1 300px}
+.real .row a{font-size:.82rem;padding:2px 9px;border-radius:999px;border:1px solid var(--line);background:var(--sand);text-decoration:none;font-weight:600}
+.plan input[type=date]{font:inherit;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}.plan .big{font-family:Fraunces,serif;font-size:2rem;color:var(--moss)}
+table.list td .bar{height:8px;background:var(--sand-dark);border-radius:999px;overflow:hidden;display:flex;width:140px}table.list td .bar .ok{background:var(--ok)}table.list td .bar .wk{background:var(--warn)}
+@media(max-width:720px){header.top{position:static}header.top nav a{margin-left:12px;font-size:.88rem}.filterbar,.tools{top:0}.hero h1{font-size:1.8rem}.hero{padding:34px 0 28px}.sub-item .t{flex-basis:100%}}
 /* print */
 @media print{header.top,footer,.tools,.filterbar,.st,.pill,.aw,.hero .crumbs,.prog,.noprint{display:none!important}
 body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;color:#000;padding:10px 0}.hero p,.hero h1{color:#000}.hero:before{display:none}
@@ -94,14 +108,16 @@ body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;c
 svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 </style>
 <script>try{if(localStorage.getItem('envsci.theme')==='"dark"')document.documentElement.dataset.theme='dark';}catch(e){}</script></head><body >
-<header class="top"><div class="wrap"><a class="brand" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb069" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-8 0-14 4-14 12 0 1.5.3 3 1 4 2-6 6-9 11-11-4 3-7 6-8 12 8 0 12-6 10-17z"/></svg><span>AQA Environmental Science</span></a><nav><a href="../index.html" class="">Topics</a><a href="../papers.html" class="">Mock papers</a><a href="../official.html" class="">Past papers</a><a href="../essays.html" class="">Essay bank</a><a href="../quickfire.html" class="">Quick-fire</a><a href="../search.html" class="">Search</a><button class="icon-btn" id="themeBtn" type="button" title="Toggle dark mode">&#9790; Dark</button></nav></div></header>
+<header class="top"><div class="wrap"><a class="brand" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb069" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-8 0-14 4-14 12 0 1.5.3 3 1 4 2-6 6-9 11-11-4 3-7 6-8 12 8 0 12-6 10-17z"/></svg><span>AQA Environmental Science</span></a><nav><a href="../index.html" class="">Topics</a><a href="../papers.html" class="">Mock papers</a><a href="../official.html" class="">Past papers</a><a href="../essays.html" class="">Essay bank</a><a href="../pastq.html" class="">Real Qs by topic</a><a href="../quickfire.html" class="">Quick-fire</a><a href="../planner.html" class="">Planner</a><a href="../search.html" class="">Search</a><button class="icon-btn" id="themeBtn" type="button" title="Toggle dark mode">&#9790; Dark</button></nav></div></header>
 <section class="hero p2 small"><div class="wrap"><div class="crumbs"><a href="../index.html">Topics</a><span>&rsaquo;</span><a href="../topic/living.html">The living environment</a><span>&rsaquo;</span>How humans influence biodiversity</div><h1>How humans influence biodiversity</h1><p>The living environment &middot; AQA spec 3.1.2.2 &middot; R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 20-25</p><span class="pill">Paper 2</span><span class="pill">5 questions</span><div class="prog" data-qids="HUM-01,HUM-02,HUM-03,HUM-04,HUM-05"><div class="bar"><div class="ok"></div><div class="wk"></div></div><span class="pl"></span></div></div></section>
 <main><div class="wrap"><h2 class="sec">Question sets</h2><table class="list"><tr><th>Set</th><th>Questions</th><th>Marks</th><th>Question paper</th><th>Mark scheme</th></tr>
 <tr><td>Set 1</td><td>5</td><td>45</td><td><a href="../pdf/topic/human-impacts-set1-QP.pdf">Download QP (PDF)</a></td><td><a href="../pdf/topic/human-impacts-set1-MS.pdf">Download MS (PDF)</a></td></tr>
 </table>
+<h2 class="sec">Real AQA questions on this topic (4)</h2><div class="real"><div class="row"><span class="ser">June 2022 &middot; Paper 2</span><span class="qn">Q7 &middot; 5 marks</span><span class="t">Acid mine drainage, river pH and wildlife</span><a href="../official/AQA-74472-QP-JUN22-CR.PDF#page=13">Question (p.13)</a> <a href="../official/AQA-74472-MS-JUN22.PDF">Mark scheme</a></div><div class="row"><span class="ser">June 2022 &middot; Paper 2</span><span class="qn">Q3 &middot; 10 marks</span><span class="t">Culling of red foxes in France</span><a href="../official/AQA-74472-QP-JUN22-CR.PDF#page=4">Question (p.4)</a> <a href="../official/AQA-74472-MS-JUN22.PDF">Mark scheme</a></div><div class="row"><span class="ser">November 2021 &middot; Paper 2</span><span class="qn">Q2 &middot; 10 marks</span><span class="t">Owston&#x27;s civet: direct exploitation</span><a href="../official/AQA-74472-QP-NOV21.PDF#page=4">Question (p.4)</a> <a href="../official/AQA-74472-MS-NOV21.PDF">Mark scheme</a></div><div class="row"><span class="ser">November 2020 &middot; Paper 2</span><span class="qn">Q2 &middot; 10 marks</span><span class="t">Rat eradication and tree abundance on a Pacific island</span><a href="../official/AQA-74472-QP-NOV20.PDF#page=4">Question (p.4)</a> <a href="../official/AQA-74472-W-MS-NOV20.PDF">Mark scheme</a></div></div>
+<p class="note noprint">Practise this subtopic one question at a time: <a href="../quickfire.html?sub=human-impacts">Quick-fire &rarr;</a></p>
 <div class="filterbar noprint"><input type="search" placeholder="Filter questions by keyword (e.g. albedo, quota, Simpson)"><button type="button" class="chip mk" data-v="5">5 marks</button><button type="button" class="chip mk" data-v="10">10 marks</button><button type="button" class="chip mk" data-v="15">15 marks</button><button type="button" class="chip fl" data-v="calc">Calculation</button><button type="button" class="chip fl" data-v="data">Data / figure</button><button type="button" class="chip fl" data-v="ext">9-mark extended</button><button type="button" class="chip fl" data-v="mcq">Multiple choice</button><button type="button" class="chip fl" data-v="table">Complete a table</button><select class="status" title="Filter by your progress"><option value="all">All progress</option><option value="todo">Not attempted</option><option value="work">Needs work</option><option value="secure">Secure</option><option value="notsecure">Not yet secure</option></select><button type="button" class="chip clear">Clear</button><span class="cnt"></span><button type="button" class="chip" data-reveal="1">Show all mark schemes</button><button type="button" class="chip" data-print="qp" title="Print the questions only">Print</button><button type="button" class="chip" data-print="ms" title="Print questions with mark schemes">Print + MS</button></div>
 <h2 class="sec set">Set 1</h2>
-<div class="q" id="HUM-01" data-qid="HUM-01" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 1</span><span class="meta">10 marks &middot; <a href="../subtopic/human-impacts.html">How humans influence biodiversity</a> &middot; spec 3.1.2.2 &middot; Genn pp. 20-21 &middot; HUM-01</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="HUM-01" data-qid="HUM-01" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 1</span><span class="meta">10 marks &middot; <a href="../subtopic/human-impacts.html">How humans influence biodiversity</a> &middot; spec 3.1.2.2 &middot; Genn pp. 20-21 &middot; HUM-01</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[5 marks]</span><span class="pn">01.1</span>For each of the following forms of direct exploitation, give a named species whose population has been reduced.
 </div>
 <div class="part"><span class="marks">[3 marks]</span><span class="pn">01.2</span>Explain why species are deliberately eradicated. Give <b>three</b> categories with examples.
@@ -109,18 +125,17 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">01.3</span>Explain why legal protection alone rarely prevents the decline of a species exploited for traditional medicine.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>01.1</b> (5 marks)
-<ul><li>Food: cod, tuna, swordfish, sharks, turtles; extinct - dodo, great auk, passenger pigeon</li><li>Fashion: leopard, snow leopard, tiger, ocelot fur; fur seals; crocodile / alligator leather; kingfisher, parrot, ostrich feathers</li><li>Entertainment / pets: parrots, lizards, snakes, tortoises, tropical marine fish (most wild-caught), dolphins / orcas for marine parks, wild-collected air plants</li><li>Furniture / ornaments: mahogany, teak, ramin timber; ebony and ivory piano keys; turtle shell, shark teeth, coral and shells as souvenirs</li><li>Traditional medicines: tiger (bones, claws), rhinoceros horn, seahorses</li></ul>
+<div class="mspart"><div class="msh"><b>01.1</b> <span class="mtot">5 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Food: cod, tuna, swordfish, sharks, turtles; extinct - dodo, great auk, passenger pigeon</span></li><li><span class="mk">1</span><span>Fashion: leopard, snow leopard, tiger, ocelot fur; fur seals; crocodile / alligator leather; kingfisher, parrot, ostrich feathers</span></li><li><span class="mk">1</span><span>Entertainment / pets: parrots, lizards, snakes, tortoises, tropical marine fish (most wild-caught), dolphins / orcas for marine parks, wild-collected air plants</span></li><li><span class="mk">1</span><span>Furniture / ornaments: mahogany, teak, ramin timber; ebony and ivory piano keys; turtle shell, shark teeth, coral and shells as souvenirs</span></li><li><span class="mk">1</span><span>Traditional medicines: tiger (bones, claws), rhinoceros horn, seahorses</span></li></ul>
 </div>
-<div><b>01.2</b> (3 marks)
-<div class="lvl"><i>Any 3 from:</i></div>
-<ul><li>Threat to humans: sharks, venomous snakes, crocodiles</li><li>Disease vectors: malaria mosquitoes, tsetse flies</li><li>Predators of livestock: wolves, puma, birds of prey, herons, seals</li><li>Agricultural / forestry pests and competitors: rabbits, deer, wood-boring beetles, squirrels, beavers</li></ul>
+<div class="mspart"><div class="msh"><b>01.2</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">Any 3 from the points below - 1 mark each, maximum 3.</div><ul class="pts"><li><span class="mk">1</span><span>Threat to humans: sharks, venomous snakes, crocodiles</span></li><li><span class="mk">1</span><span>Disease vectors: malaria mosquitoes, tsetse flies</span></li><li><span class="mk">1</span><span>Predators of livestock: wolves, puma, birds of prey, herons, seals</span></li><li><span class="mk">1</span><span>Agricultural / forestry pests and competitors: rabbits, deer, wood-boring beetles, squirrels, beavers</span></li></ul>
 </div>
-<div><b>01.3</b> (2 marks)
-<ul><li>High demand and prices make illegal trade / poaching profitable; laws are hard to enforce across borders</li><li>Belief in the medicine persists despite little scientific evidence; species become rarer and more valuable</li></ul>
+<div class="mspart"><div class="msh"><b>01.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>High demand and prices make illegal trade / poaching profitable; laws are hard to enforce across borders</span></li><li><span class="mk">1</span><span>Belief in the medicine persists despite little scientific evidence; species become rarer and more valuable</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 20-21; AQA spec 3.1.2.2.</div></details></div>
-<div class="q" id="HUM-02" data-qid="HUM-02" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 2</span><span class="meta">10 marks &middot; <a href="../subtopic/human-impacts.html">How humans influence biodiversity</a> &middot; spec 3.1.2.2 &middot; Genn pp. 22-23 &middot; HUM-02</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="HUM-02" data-qid="HUM-02" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 2</span><span class="meta">10 marks &middot; <a href="../subtopic/human-impacts.html">How humans influence biodiversity</a> &middot; spec 3.1.2.2 &middot; Genn pp. 22-23 &middot; HUM-02</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[6 marks]</span><span class="pn">02.1</span>Explain how each of the following changes in abiotic factors caused by human activities can make a habitat unsuitable for species living there.
 </div>
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">02.2</span>Explain how increased water turbidity caused by ploughing, mining or dredging harms aquatic organisms.
@@ -128,17 +143,17 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">02.3</span>Explain why species that were already rare are most likely to be lost when abiotic conditions change.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>02.1</b> (6 marks)
-<ul><li>Drainage of wetlands / lowering water tables by groundwater abstraction dries out wetlands; HEP schemes alter river levels flooding sandbank nests of turtles / birds; species with narrow tolerance (specialists) affected first; sundews lost when drained soil becomes aerobic / nitrogen-rich and taller competitors invade</li><li>Hot water discharges and organic wastes (sewage) reduce dissolved oxygen, killing aerobic organisms such as fish and insect larvae</li><li>Acid mine drainage and acid rain gases lower pH, denaturing proteins of exposed tissues (fish eggs, gills) and dissolving calcium exoskeletons (crayfish)</li></ul>
+<div class="mspart"><div class="msh"><b>02.1</b> <span class="mtot">6 marks</span></div>
+<div class="lvl">2 marks for each point (partial credit for a partly correct point).</div><ul class="pts"><li><span class="mk">2</span><span>Drainage of wetlands / lowering water tables by groundwater abstraction dries out wetlands; HEP schemes alter river levels flooding sandbank nests of turtles / birds; species with narrow tolerance (specialists) affected first; sundews lost when drained soil becomes aerobic / nitrogen-rich and taller competitors invade</span></li><li><span class="mk">2</span><span>Hot water discharges and organic wastes (sewage) reduce dissolved oxygen, killing aerobic organisms such as fish and insect larvae</span></li><li><span class="mk">2</span><span>Acid mine drainage and acid rain gases lower pH, denaturing proteins of exposed tissues (fish eggs, gills) and dissolving calcium exoskeletons (crayfish)</span></li></ul>
 </div>
-<div><b>02.2</b> (2 marks)
-<ul><li>Reduces light penetration so submerged plants cannot photosynthesise</li><li>Blocks the gills of filter feeders such as bivalve molluscs; sediment smothers the bed</li></ul>
+<div class="mspart"><div class="msh"><b>02.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Reduces light penetration so submerged plants cannot photosynthesise</span></li><li><span class="mk">1</span><span>Blocks the gills of filter feeders such as bivalve molluscs; sediment smothers the bed</span></li></ul>
 </div>
-<div><b>02.3</b> (2 marks)
-<ul><li>Rare species often have very specialised habitat requirements / narrow ranges of tolerance</li><li>A small change moves conditions outside their range while generalists survive; small populations cannot recover</li></ul>
+<div class="mspart"><div class="msh"><b>02.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Rare species often have very specialised habitat requirements / narrow ranges of tolerance</span></li><li><span class="mk">1</span><span>A small change moves conditions outside their range while generalists survive; small populations cannot recover</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 22-23; AQA spec 3.1.2.2.</div></details></div>
-<div class="q" id="HUM-03" data-qid="HUM-03" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 3</span><span class="meta">10 marks &middot; <a href="../subtopic/human-impacts.html">How humans influence biodiversity</a> &middot; spec 3.1.2.2 &middot; Genn pp. 23-25 &middot; HUM-03</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="HUM-03" data-qid="HUM-03" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 3</span><span class="meta">10 marks &middot; <a href="../subtopic/human-impacts.html">How humans influence biodiversity</a> &middot; spec 3.1.2.2 &middot; Genn pp. 23-25 &middot; HUM-03</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>Figure 1 shows the estimated populations of sea otters, sea urchins and the area of kelp forest along part of the coast of California between 1960 and 2010.</p>
 <div class="cap">Figure 1</div>
 <svg class="chart" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
@@ -191,21 +206,20 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">03.4</span>Explain why the loss of beavers or forest elephants can cause the decline of many other species.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>03.1</b> (3 marks)
-<ul><li>As sea otters declined (1960-1980) sea urchins increased (to 350) and kelp area fell (to 25)</li><li>As otters recovered after 1990 urchins declined and kelp recovered</li><li>Otter and kelp trends are positively correlated; urchins negatively correlated with both</li></ul>
+<div class="mspart"><div class="msh"><b>03.1</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>As sea otters declined (1960-1980) sea urchins increased (to 350) and kelp area fell (to 25)</span></li><li><span class="mk">1</span><span>As otters recovered after 1990 urchins declined and kelp recovered</span></li><li><span class="mk">1</span><span>Otter and kelp trends are positively correlated; urchins negatively correlated with both</span></li></ul>
 </div>
-<div><b>03.2</b> (3 marks)
-<ul><li>Sea otters are predators of sea urchins so fewer otters allowed the urchin population to rise</li><li>Sea urchins graze kelp so the kelp forest was over-grazed and destroyed</li><li>Kelp forests are habitat / food for many species including otters (keystone species / trophic cascade); otter recovery restored the balance</li></ul>
+<div class="mspart"><div class="msh"><b>03.2</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Sea otters are predators of sea urchins so fewer otters allowed the urchin population to rise</span></li><li><span class="mk">1</span><span>Sea urchins graze kelp so the kelp forest was over-grazed and destroyed</span></li><li><span class="mk">1</span><span>Kelp forests are habitat / food for many species including otters (keystone species / trophic cascade); otter recovery restored the balance</span></li></ul>
 </div>
-<div><b>03.3</b> (2 marks)
-<div class="lvl"><i>Any 2 from:</i></div>
-<ul><li>Over-fishing of sandeels reduced puffins</li><li>Over-collection of turtle eggs reduced turtles so jellyfish (their food) increased; over-fishing of sardines / herring (competitors) also increased jellyfish</li><li>Loss of pollinating bees (pesticides, wild flower loss) reduces plant reproduction; loss of elephants / large herbivores reduces seed dispersal of trees</li></ul>
+<div class="mspart"><div class="msh"><b>03.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">Any 2 from the points below - 1 mark each, maximum 2.</div><ul class="pts"><li><span class="mk">1</span><span>Over-fishing of sandeels reduced puffins</span></li><li><span class="mk">1</span><span>Over-collection of turtle eggs reduced turtles so jellyfish (their food) increased; over-fishing of sardines / herring (competitors) also increased jellyfish</span></li><li><span class="mk">1</span><span>Loss of pollinating bees (pesticides, wild flower loss) reduces plant reproduction; loss of elephants / large herbivores reduces seed dispersal of trees</span></li></ul>
 </div>
-<div><b>03.4</b> (2 marks)
-<ul><li>They control abiotic features: beaver dams create ponds colonised by aquatic species; elephants create clearings and keep water holes open</li><li>Species that depend on these features (light, water, minerals) cannot survive in their absence</li></ul>
+<div class="mspart"><div class="msh"><b>03.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>They control abiotic features: beaver dams create ponds colonised by aquatic species; elephants create clearings and keep water holes open</span></li><li><span class="mk">1</span><span>Species that depend on these features (light, water, minerals) cannot survive in their absence</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 23-25; AQA spec 3.1.2.2.</div></details></div>
-<div class="q" id="HUM-04" data-qid="HUM-04" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 4</span><span class="meta">10 marks &middot; <a href="../subtopic/human-impacts.html">How humans influence biodiversity</a> &middot; spec 3.1.2.2 &middot; Genn pp. 24-25 &middot; HUM-04</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="HUM-04" data-qid="HUM-04" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 4</span><span class="meta">10 marks &middot; <a href="../subtopic/human-impacts.html">How humans influence biodiversity</a> &middot; spec 3.1.2.2 &middot; Genn pp. 24-25 &middot; HUM-04</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">04.1</span>Explain why introduced species often have a greater effect on island communities than on mainland communities.
 </div>
 <div class="part"><span class="marks">[6 marks]</span><span class="pn">04.2</span>For each of the following, describe an example of an introduced species and explain its effect on an indigenous species.
@@ -213,29 +227,28 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">04.3</span>Explain how hybridisation with an introduced species threatens the red deer and the Scottish wildcat.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>04.1</b> (2 marks)
-<ul><li>Island communities evolved from few colonising species in isolation, often without mammal predators or large herbivores</li><li>So indigenous species lack adaptations (eg ground-nesting birds, flightlessness) to survive introduced cats, rats, pigs, goats</li></ul>
+<div class="mspart"><div class="msh"><b>04.1</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Island communities evolved from few colonising species in isolation, often without mammal predators or large herbivores</span></li><li><span class="mk">1</span><span>So indigenous species lack adaptations (eg ground-nesting birds, flightlessness) to survive introduced cats, rats, pigs, goats</span></li></ul>
 </div>
-<div><b>04.2</b> (6 marks)
-<ul><li>Competitor: grey squirrel (North America) out-competes red squirrel - digests acorns, larger, wins nest sites; rhododendron shades ground and releases toxins preventing native regrowth</li><li>Predator: American mink (escaped fur farms) reduced water vole range; cane toads in Australia; cats / rats / pigs on islands eating ground-nesting birds; Nile perch in Lake Victoria ate cichlids to extinction</li><li>Pathogen: squirrel pox virus carried by grey squirrels kills red squirrels; crayfish plague carried by signal crayfish kills white-clawed crayfish; Dutch elm disease, ash dieback, sudden oak death imported on plants / soil</li></ul>
+<div class="mspart"><div class="msh"><b>04.2</b> <span class="mtot">6 marks</span></div>
+<div class="lvl">2 marks for each point (partial credit for a partly correct point).</div><ul class="pts"><li><span class="mk">2</span><span>Competitor: grey squirrel (North America) out-competes red squirrel - digests acorns, larger, wins nest sites; rhododendron shades ground and releases toxins preventing native regrowth</span></li><li><span class="mk">2</span><span>Predator: American mink (escaped fur farms) reduced water vole range; cane toads in Australia; cats / rats / pigs on islands eating ground-nesting birds; Nile perch in Lake Victoria ate cichlids to extinction</span></li><li><span class="mk">2</span><span>Pathogen: squirrel pox virus carried by grey squirrels kills red squirrels; crayfish plague carried by signal crayfish kills white-clawed crayfish; Dutch elm disease, ash dieback, sudden oak death imported on plants / soil</span></li></ul>
 </div>
-<div><b>04.3</b> (2 marks)
-<ul><li>Closely related introduced species (sika deer; domestic cats) cross-breed producing fertile hybrids</li><li>The natural gene pool is changed / diluted with genes it would not naturally contain, so the pure indigenous species may disappear</li></ul>
+<div class="mspart"><div class="msh"><b>04.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Closely related introduced species (sika deer; domestic cats) cross-breed producing fertile hybrids</span></li><li><span class="mk">1</span><span>The natural gene pool is changed / diluted with genes it would not naturally contain, so the pure indigenous species may disappear</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 24-25; AQA spec 3.1.2.2.</div></details></div>
-<div class="q" id="HUM-05" data-qid="HUM-05" data-marks="5" data-flags="mcq"><div class="qh"><span class="num">Question 5</span><span class="meta">5 marks &middot; <a href="../subtopic/human-impacts.html">How humans influence biodiversity</a> &middot; spec 3.1.2.2 &middot; Genn pp. 20-26 &middot; HUM-05</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="HUM-05" data-qid="HUM-05" data-marks="5" data-flags="mcq"><div class="qh"><span class="num">Question 5</span><span class="meta">5 marks &middot; <a href="../subtopic/human-impacts.html">How humans influence biodiversity</a> &middot; spec 3.1.2.2 &middot; Genn pp. 20-26 &middot; HUM-05</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">05.1</span>Which of the following is an example of habitat destruction rather than a change in abiotic factors? Tick one box.
 <ul class="mcq"><li>A&nbsp; Thermal pollution of a river by a power station</li><li>B&nbsp; Flooding a valley to create a reservoir</li><li>C&nbsp; Lowering the water table by groundwater abstraction</li><li>D&nbsp; Acid mine drainage entering a stream</li></ul>
 </div>
 <div class="part"><span class="marks">[4 marks]</span><span class="pn">05.2</span>Give <b>four</b> human activities that cause complete habitat destruction.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>05.1</b> (1 marks)
-<ul><li>B</li></ul>
+<div class="mspart"><div class="msh"><b>05.1</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">Correct answer only.</div><ul class="pts"><li><span class="mk">1</span><span><b></b>&nbsp; B</span></li></ul>
 </div>
-<div><b>05.2</b> (4 marks)
-<div class="lvl"><i>Any 4 from:</i></div>
-<ul><li>Deforestation</li><li>Ploughing of grassland / expansion of farmland</li><li>Reservoir creation / flooding</li><li>Mineral extraction, especially open-cast mining</li><li>Urban expansion</li></ul>
+<div class="mspart"><div class="msh"><b>05.2</b> <span class="mtot">4 marks</span></div>
+<div class="lvl">Any 4 from the points below - 1 mark each, maximum 4.</div><ul class="pts"><li><span class="mk">1</span><span>Deforestation</span></li><li><span class="mk">1</span><span>Ploughing of grassland / expansion of farmland</span></li><li><span class="mk">1</span><span>Reservoir creation / flooding</span></li><li><span class="mk">1</span><span>Mineral extraction, especially open-cast mining</span></li><li><span class="mk">1</span><span>Urban expansion</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 20-26; AQA spec 3.1.2.2.</div></details></div>
 </div></main>
@@ -254,7 +267,7 @@ const tb=document.getElementById('themeBtn');if(tb)tb.onclick=()=>{const t=root.
 let prog=LS('envsci.progress')||{};
 window.ES.prog=()=>prog;
 function paint(){
-  document.querySelectorAll('.q[data-qid]').forEach(el=>{const s=prog[el.dataset.qid]||0;el.dataset.status=s;el.querySelectorAll('.st button').forEach(b=>b.classList.toggle('on',+b.dataset.s===s&&s>0));});
+  document.querySelectorAll('.q[data-qid]').forEach(el=>{const s=prog[el.dataset.qid]||0;el.dataset.status=s;el.querySelectorAll('.st button[data-s]').forEach(b=>b.classList.toggle('on',+b.dataset.s===s&&s>0));});
   document.querySelectorAll('[data-qids]').forEach(el=>{const ids=el.dataset.qids.split(',').filter(Boolean);const n=ids.length;if(!n)return;
     const ok=ids.filter(i=>prog[i]===2).length,wk=ids.filter(i=>prog[i]===1).length;
     const o=el.querySelector('.bar .ok'),w=el.querySelector('.bar .wk'),p=el.querySelector('.pl');
@@ -262,7 +275,7 @@ function paint(){
   const ov=document.getElementById('overall');if(ov){const all=(ov.dataset.qids||'').split(',').filter(Boolean);const ok=all.filter(i=>prog[i]===2).length,wk=all.filter(i=>prog[i]===1).length;ov.querySelector('.stat').textContent=Math.round(100*ok/all.length)+'%';ov.querySelector('.detail').textContent=ok+' secure, '+wk+' to revisit, '+(all.length-ok-wk)+' not attempted of '+all.length+' questions.';}
 }
 window.ES.paint=paint;
-document.addEventListener('click',e=>{const b=e.target.closest('.st button');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);paint();if(window.ES.onFilter)window.ES.onFilter();});
+document.addEventListener('click',e=>{const b=e.target.closest('.st button[data-s]');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);paint();if(window.ES.onFilter)window.ES.onFilter();});
 const rs=document.getElementById('resetProg');if(rs)rs.onclick=()=>{if(confirm('Clear all saved progress on this browser?')){prog={};SV('envsci.progress',prog);paint();}};
 paint();
 /* ---- filter bar ---- */
@@ -285,6 +298,13 @@ if(fb){
   txt.addEventListener('input',run);fb.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{c.classList.toggle('on');run();});fb.querySelector('select.status').onchange=run;
   const clr=fb.querySelector('.clear');if(clr)clr.onclick=()=>{txt.value='';fb.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));fb.querySelector('select.status').value='all';run();};
   run();}
+/* ---- sticky offset = real header height (nav can wrap) ---- */
+const hd=document.querySelector('header.top');const setH=()=>root.style.setProperty('--hdr',(getComputedStyle(hd).position==='sticky'?hd.offsetHeight:0)+'px');setH();window.addEventListener('resize',setH);
+/* ---- copy link, back to top ---- */
+document.addEventListener('click',e=>{const b=e.target.closest('[data-copy]');if(!b)return;const q=b.closest('.q');const url=location.href.split('#')[0]+'#'+q.id;
+  (navigator.clipboard?navigator.clipboard.writeText(url):Promise.reject()).then(()=>{b.textContent='\u2713';setTimeout(()=>b.innerHTML='&#128279;',1200);}).catch(()=>prompt('Copy this link:',url));});
+const tt=document.createElement('button');tt.id='totop';tt.title='Back to top';tt.innerHTML='&uarr;';tt.className='noprint';document.body.appendChild(tt);tt.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+window.addEventListener('scroll',()=>tt.classList.toggle('show',window.scrollY>600),{passive:true});
 /* ---- print & reveal ---- */
 document.querySelectorAll('[data-print]').forEach(b=>b.onclick=()=>{const ms=b.dataset.print==='ms';document.body.classList.toggle('print-ms',ms);document.querySelectorAll('details.ms').forEach(d=>d.open=ms);window.print();});
 document.querySelectorAll('[data-reveal]').forEach(b=>b.onclick=()=>{const open=b.dataset.reveal==='1';document.querySelectorAll('details.ms').forEach(d=>d.open=open);b.dataset.reveal=open?'0':'1';b.textContent=open?'Hide all mark schemes':'Show all mark schemes';});

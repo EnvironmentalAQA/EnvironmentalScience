@@ -69,12 +69,12 @@ footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-
 .prog .bar .ok{background:var(--ok);height:100%}.prog .bar .wk{background:var(--warn);height:100%}.prog .pl{white-space:nowrap;min-width:90px}
 .hero .prog{color:rgba(255,255,255,.85)}.hero .prog .bar{background:rgba(255,255,255,.25)}
 /* filter bar & tools */
-.filterbar{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.filterbar{position:sticky;top:var(--hdr,62px);z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .filterbar input[type=search]{flex:1 1 220px;font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
 .filterbar label{font-size:.85rem;color:var(--stone);display:inline-flex;align-items:center;gap:4px;cursor:pointer}.filterbar .chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--sand);color:var(--stone);font-size:.82rem;cursor:pointer;font-family:inherit}
 .filterbar .chip.on{background:var(--moss);color:#fff;border-color:var(--moss)}.filterbar .cnt{font-size:.85rem;color:var(--stone);margin-left:auto}
 .filterbar select{font:inherit;font-size:.88rem;padding:5px 8px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
-.tools{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:10px 0;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.tools{position:sticky;top:var(--hdr,62px);z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:10px 0;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .tools .time{font-family:Fraunces,serif;font-size:1.6rem;font-weight:700;color:var(--head);min-width:120px}.tools .time.low{color:var(--bad)}
 .tools .score{font-weight:700;color:var(--moss)}.tools .score b{font-family:Fraunces,serif;font-size:1.3rem}.tools .pct{font-size:.85rem;color:var(--stone)}
 .tools button{font-family:inherit;font-size:.88rem;padding:6px 12px;border-radius:8px;border:1px solid var(--moss);background:transparent;color:var(--moss);cursor:pointer}.tools button.primary{background:var(--moss);color:#fff}
@@ -87,6 +87,20 @@ footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-
 .res{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0;text-decoration:none;color:inherit}.res:hover{border-color:var(--moss)}
 .res .t{font-weight:700;color:var(--head)}.res .m{font-size:.82rem;color:var(--stone)}.res .s{font-size:.92rem;margin-top:4px}.res mark{background:#ffe58a;color:#222;border-radius:3px;padding:0 2px}
 .empty{color:var(--stone);font-style:italic}
+/* mark scheme points, levels, links */
+.mspart{margin:8px 0 12px}.msh{display:flex;align-items:baseline;gap:8px;margin-bottom:2px}.msh .mtot{font-size:.8rem;color:var(--earth);font-weight:700}
+ul.pts{list-style:none;margin:4px 0 6px 0!important;padding:0}ul.pts li{display:flex;gap:10px;align-items:flex-start;padding:4px 0;border-top:1px dashed var(--ms-line)}ul.pts li:first-child{border-top:0}
+.mk{flex:0 0 auto;min-width:26px;text-align:center;font-size:.75rem;font-weight:700;color:#fff;background:var(--ok);border-radius:6px;padding:2px 6px;margin-top:3px}
+table.levels{border-collapse:collapse;width:100%;margin:6px 0 10px;font-size:.86rem;background:var(--card)}table.levels th,table.levels td{border:1px solid var(--ms-line);padding:5px 8px;text-align:left;vertical-align:top}table.levels th{background:var(--sand-dark)}table.levels td.r{white-space:nowrap;font-weight:700;color:var(--earth)}
+ul.ind{margin:4px 0 8px 18px}
+.st button.lnk{padding:2px 7px}
+#totop{position:fixed;right:18px;bottom:18px;z-index:15;background:var(--moss);color:#fff;border:0;border-radius:50%;width:42px;height:42px;font-size:1.2rem;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .2s}#totop.show{opacity:1;pointer-events:auto}
+.jump{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 4px}.jump a{font-size:.82rem;padding:3px 10px;border-radius:999px;border:1px solid var(--line);background:var(--sand);color:var(--moss);text-decoration:none;font-weight:600}.jump a:hover{background:var(--leaf-light)}
+.real .row{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;padding:8px 0;border-bottom:1px dashed var(--line);font-size:.95rem}.real .row .ser{font-weight:700;color:var(--head);min-width:150px}.real .row .qn{color:var(--stone);min-width:70px}.real .row .t{flex:1 1 300px}
+.real .row a{font-size:.82rem;padding:2px 9px;border-radius:999px;border:1px solid var(--line);background:var(--sand);text-decoration:none;font-weight:600}
+.plan input[type=date]{font:inherit;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}.plan .big{font-family:Fraunces,serif;font-size:2rem;color:var(--moss)}
+table.list td .bar{height:8px;background:var(--sand-dark);border-radius:999px;overflow:hidden;display:flex;width:140px}table.list td .bar .ok{background:var(--ok)}table.list td .bar .wk{background:var(--warn)}
+@media(max-width:720px){header.top{position:static}header.top nav a{margin-left:12px;font-size:.88rem}.filterbar,.tools{top:0}.hero h1{font-size:1.8rem}.hero{padding:34px 0 28px}.sub-item .t{flex-basis:100%}}
 /* print */
 @media print{header.top,footer,.tools,.filterbar,.st,.pill,.aw,.hero .crumbs,.prog,.noprint{display:none!important}
 body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;color:#000;padding:10px 0}.hero p,.hero h1{color:#000}.hero:before{display:none}
@@ -94,14 +108,15 @@ body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;c
 svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 </style>
 <script>try{if(localStorage.getItem('envsci.theme')==='"dark"')document.documentElement.dataset.theme='dark';}catch(e){}</script></head><body >
-<header class="top"><div class="wrap"><a class="brand" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb069" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-8 0-14 4-14 12 0 1.5.3 3 1 4 2-6 6-9 11-11-4 3-7 6-8 12 8 0 12-6 10-17z"/></svg><span>AQA Environmental Science</span></a><nav><a href="../index.html" class="">Topics</a><a href="../papers.html" class="">Mock papers</a><a href="../official.html" class="">Past papers</a><a href="../essays.html" class="">Essay bank</a><a href="../quickfire.html" class="">Quick-fire</a><a href="../search.html" class="">Search</a><button class="icon-btn" id="themeBtn" type="button" title="Toggle dark mode">&#9790; Dark</button></nav></div></header>
+<header class="top"><div class="wrap"><a class="brand" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb069" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-8 0-14 4-14 12 0 1.5.3 3 1 4 2-6 6-9 11-11-4 3-7 6-8 12 8 0 12-6 10-17z"/></svg><span>AQA Environmental Science</span></a><nav><a href="../index.html" class="">Topics</a><a href="../papers.html" class="">Mock papers</a><a href="../official.html" class="">Past papers</a><a href="../essays.html" class="">Essay bank</a><a href="../pastq.html" class="">Real Qs by topic</a><a href="../quickfire.html" class="">Quick-fire</a><a href="../planner.html" class="">Planner</a><a href="../search.html" class="">Search</a><button class="icon-btn" id="themeBtn" type="button" title="Toggle dark mode">&#9790; Dark</button></nav></div></header>
 <section class="hero  small"><div class="wrap"><div class="crumbs"><a href="../index.html">Topics</a><span>&rsaquo;</span><a href="../topic/research.html">Research methods</a><span>&rsaquo;</span>Specialist techniques &amp; statistical analysis</div><h1>Specialist techniques &amp; statistical analysis</h1><p>Research methods &middot; AQA spec 3.7.2.3 &middot; R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 402-407, 420-423</p><span class="pill">Paper 1 and Paper 2</span><span class="pill">7 questions</span><div class="prog" data-qids="RM-12,RM-13,RM-14,RM-15,RM-18,RM-19,RM-20"><div class="bar"><div class="ok"></div><div class="wk"></div></div><span class="pl"></span></div></div></section>
 <main><div class="wrap"><h2 class="sec">Question sets</h2><table class="list"><tr><th>Set</th><th>Questions</th><th>Marks</th><th>Question paper</th><th>Mark scheme</th></tr>
 <tr><td>Set 1</td><td>7</td><td>65</td><td><a href="../pdf/topic/stats-set1-QP.pdf">Download QP (PDF)</a></td><td><a href="../pdf/topic/stats-set1-MS.pdf">Download MS (PDF)</a></td></tr>
 </table>
+<p class="note noprint">Practise this subtopic one question at a time: <a href="../quickfire.html?sub=stats">Quick-fire &rarr;</a></p>
 <div class="filterbar noprint"><input type="search" placeholder="Filter questions by keyword (e.g. albedo, quota, Simpson)"><button type="button" class="chip mk" data-v="5">5 marks</button><button type="button" class="chip mk" data-v="10">10 marks</button><button type="button" class="chip mk" data-v="15">15 marks</button><button type="button" class="chip fl" data-v="calc">Calculation</button><button type="button" class="chip fl" data-v="data">Data / figure</button><button type="button" class="chip fl" data-v="ext">9-mark extended</button><button type="button" class="chip fl" data-v="mcq">Multiple choice</button><button type="button" class="chip fl" data-v="table">Complete a table</button><select class="status" title="Filter by your progress"><option value="all">All progress</option><option value="todo">Not attempted</option><option value="work">Needs work</option><option value="secure">Secure</option><option value="notsecure">Not yet secure</option></select><button type="button" class="chip clear">Clear</button><span class="cnt"></span><button type="button" class="chip" data-reveal="1">Show all mark schemes</button><button type="button" class="chip" data-print="qp" title="Print the questions only">Print</button><button type="button" class="chip" data-print="ms" title="Print questions with mark schemes">Print + MS</button></div>
 <h2 class="sec set">Set 1</h2>
-<div class="q" id="RM-12" data-qid="RM-12" data-marks="10" data-flags="data table"><div class="qh"><span class="num">Question 1</span><span class="meta">10 marks &middot; <a href="../subtopic/stats.html">Specialist techniques &amp; statistical analysis</a> &middot; spec 3.7.2.3 &middot; Genn pp. 402-407 &middot; RM-12</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="RM-12" data-qid="RM-12" data-marks="10" data-flags="data table"><div class="qh"><span class="num">Question 1</span><span class="meta">10 marks &middot; <a href="../subtopic/stats.html">Specialist techniques &amp; statistical analysis</a> &middot; spec 3.7.2.3 &middot; Genn pp. 402-407 &middot; RM-12</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>Table 1 lists some techniques used in ecological monitoring.</p>
 <div class="part"><span class="marks">[6 marks]</span><span class="pn">01.1</span>Complete Table 1 by giving one application and one limitation of each technique.
 <div class="cap">Table 1</div><table class="data"><tr><th>Technique</th><th>Application</th><th>Limitation</th></tr><tr><td>Image databases of unique markings</td><td></td><td></td></tr><tr><td>eDNA sampling</td><td></td><td></td></tr><tr><td>Geolocator tags</td><td></td><td></td></tr></table>
@@ -111,18 +126,17 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">01.3</span>Give <b>two</b> types of indirect evidence of an animal's presence and the information each can give.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>01.1</b> (6 marks)
-<ul><li>Image databases: identifying individuals (tiger stripes, whale shark spots, dolphin fins) to find territory size, movements, lifespan, social groups - few species have unique recognisable features</li><li>eDNA: detecting the presence of a species from DNA shed into water (great crested newt, invasive carp) - shows presence not abundance; contamination / DNA transport by water</li><li>Geolocator tags: tracking small birds on migration where transmitters are too heavy - only record light and time so position is approximate; animal must be recaptured to download data</li></ul>
+<div class="mspart"><div class="msh"><b>01.1</b> <span class="mtot">6 marks</span></div>
+<div class="lvl">2 marks for each point (partial credit for a partly correct point).</div><ul class="pts"><li><span class="mk">2</span><span>Image databases: identifying individuals (tiger stripes, whale shark spots, dolphin fins) to find territory size, movements, lifespan, social groups - few species have unique recognisable features</span></li><li><span class="mk">2</span><span>eDNA: detecting the presence of a species from DNA shed into water (great crested newt, invasive carp) - shows presence not abundance; contamination / DNA transport by water</span></li><li><span class="mk">2</span><span>Geolocator tags: tracking small birds on migration where transmitters are too heavy - only record light and time so position is approximate; animal must be recaptured to download data</span></li></ul>
 </div>
-<div><b>01.2</b> (2 marks)
-<ul><li>Microwaves emitted by the satellite reflect off the surface giving data on wave height, wind velocity, sea surface altitude and oil slicks (which smooth the surface)</li><li>Microwaves pass through cloud so monitoring is not interrupted by weather</li></ul>
+<div class="mspart"><div class="msh"><b>01.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Microwaves emitted by the satellite reflect off the surface giving data on wave height, wind velocity, sea surface altitude and oil slicks (which smooth the surface)</span></li><li><span class="mk">1</span><span>Microwaves pass through cloud so monitoring is not interrupted by weather</span></li></ul>
 </div>
-<div><b>01.3</b> (2 marks)
-<div class="lvl"><i>Any 2 from:</i></div>
-<ul><li>Droppings: diet, gender, territory size</li><li>Owl pellets: diet</li><li>Feeding marks (chewed hazel nuts - dormouse), tracks / footprints, nests / burrows, scratching posts (territory)</li></ul>
+<div class="mspart"><div class="msh"><b>01.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">Any 2 from the points below - 1 mark each, maximum 2.</div><ul class="pts"><li><span class="mk">1</span><span>Droppings: diet, gender, territory size</span></li><li><span class="mk">1</span><span>Owl pellets: diet</span></li><li><span class="mk">1</span><span>Feeding marks (chewed hazel nuts - dormouse), tracks / footprints, nests / burrows, scratching posts (territory)</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 402-407; AQA spec 3.7.2.3.</div></details></div>
-<div class="q" id="RM-13" data-qid="RM-13" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 2</span><span class="meta">10 marks &middot; <a href="../subtopic/stats.html">Specialist techniques &amp; statistical analysis</a> &middot; spec 3.7.2.3 &middot; Genn pp. 420-423 &middot; RM-13</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="RM-13" data-qid="RM-13" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 2</span><span class="meta">10 marks &middot; <a href="../subtopic/stats.html">Specialist techniques &amp; statistical analysis</a> &middot; spec 3.7.2.3 &middot; Genn pp. 420-423 &middot; RM-13</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>Table 1 shows the mean dry mass of wheat plants grown with two fertiliser treatments (10 replicates each).</p>
 <div class="cap">Table 1</div><table class="data"><tr><th>Treatment</th><th>Mean dry mass / g</th><th>Standard deviation / g</th></tr><tr><td>Organic manure</td><td>14.2</td><td>3.9</td></tr><tr><td>Inorganic NPK fertiliser</td><td>16.1</td><td>4.1</td></tr></table>
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">02.1</span>Explain what the standard deviation values tell you about the data.
@@ -136,23 +150,23 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">02.5</span>Suggest how the student could increase the chance of detecting a real difference if one exists.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>02.1</b> (2 marks)
-<ul><li>The scatter / variability of results around each mean; about 68% of values lie within one SD of the mean</li><li>The SDs are large relative to the difference in means (1.9 g) so the ranges overlap greatly</li></ul>
+<div class="mspart"><div class="msh"><b>02.1</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>The scatter / variability of results around each mean; about 68% of values lie within one SD of the mean</span></li><li><span class="mk">1</span><span>The SDs are large relative to the difference in means (1.9 g) so the ranges overlap greatly</span></li></ul>
 </div>
-<div><b>02.2</b> (2 marks)
-<ul><li>t-test</li><li>Comparing two means of measured (continuous) data</li></ul>
+<div class="mspart"><div class="msh"><b>02.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>t-test</span></li><li><span class="mk">1</span><span>Comparing two means of measured (continuous) data</span></li></ul>
 </div>
-<div><b>02.3</b> (2 marks)
-<ul><li>There is a 30% probability that the difference occurred by random chance</li><li>Above the 0.05 (5%) level so the difference is not significant; the null hypothesis (no difference) is accepted</li></ul>
+<div class="mspart"><div class="msh"><b>02.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>There is a 30% probability that the difference occurred by random chance</span></li><li><span class="mk">1</span><span>Above the 0.05 (5%) level so the difference is not significant; the null hypothesis (no difference) is accepted</span></li></ul>
 </div>
-<div><b>02.4</b> (2 marks)
-<ul><li>Two correlated variables may both be caused by a third variable that was not investigated</li><li>Significance only shows the result is unlikely to be chance; a mechanism / controlled experiment is needed for causation</li></ul>
+<div class="mspart"><div class="msh"><b>02.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Two correlated variables may both be caused by a third variable that was not investigated</span></li><li><span class="mk">1</span><span>Significance only shows the result is unlikely to be chance; a mechanism / controlled experiment is needed for causation</span></li></ul>
 </div>
-<div><b>02.5</b> (2 marks)
-<ul><li>Increase the number of replicates (reduces the effect of variability)</li><li>Standardise other variables (soil, water, light) more closely to reduce scatter</li></ul>
+<div class="mspart"><div class="msh"><b>02.5</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Increase the number of replicates (reduces the effect of variability)</span></li><li><span class="mk">1</span><span>Standardise other variables (soil, water, light) more closely to reduce scatter</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 420-423; AQA spec 3.7.2.3.</div></details></div>
-<div class="q" id="RM-14" data-qid="RM-14" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 3</span><span class="meta">10 marks &middot; <a href="../subtopic/stats.html">Specialist techniques &amp; statistical analysis</a> &middot; spec 3.7.2.3 &middot; Genn pp. 422-423 &middot; RM-14</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="RM-14" data-qid="RM-14" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 3</span><span class="meta">10 marks &middot; <a href="../subtopic/stats.html">Specialist techniques &amp; statistical analysis</a> &middot; spec 3.7.2.3 &middot; Genn pp. 422-423 &middot; RM-14</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[4 marks]</span><span class="pn">03.1</span>For each of the following investigations, name the most appropriate statistical test.
 </div>
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">03.2</span>Explain why the chi-squared test cannot be used for data such as wind speed or plant height.
@@ -162,20 +176,20 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">03.4</span>Explain the purpose of error bars on a graph of mean values.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>03.1</b> (4 marks)
-<ul><li>Spearman's rank correlation coefficient</li><li>Chi-squared test (frequencies / counts in categories)</li><li>t-test (two means of measured data)</li><li>Spearman's rank correlation coefficient</li></ul>
+<div class="mspart"><div class="msh"><b>03.1</b> <span class="mtot">4 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Spearman's rank correlation coefficient</span></li><li><span class="mk">1</span><span>Chi-squared test (frequencies / counts in categories)</span></li><li><span class="mk">1</span><span>t-test (two means of measured data)</span></li><li><span class="mk">1</span><span>Spearman's rank correlation coefficient</span></li></ul>
 </div>
-<div><b>03.2</b> (1 marks)
-<ul><li>Chi-squared compares frequencies / counts in categories; it cannot be used for continuously variable measured data</li></ul>
+<div class="mspart"><div class="msh"><b>03.2</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>Chi-squared compares frequencies / counts in categories; it cannot be used for continuously variable measured data</span></li></ul>
 </div>
-<div><b>03.3</b> (3 marks)
-<ul><li>The value (ignoring sign) exceeds the critical value so the correlation is significant at the 5% level</li><li>The negative sign shows a negative correlation: one variable decreases as the other increases</li><li>There is less than a 5% probability the correlation arose by chance; reject the null hypothesis (but correlation is not proof of causation)</li></ul>
+<div class="mspart"><div class="msh"><b>03.3</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>The value (ignoring sign) exceeds the critical value so the correlation is significant at the 5% level</span></li><li><span class="mk">1</span><span>The negative sign shows a negative correlation: one variable decreases as the other increases</span></li><li><span class="mk">1</span><span>There is less than a 5% probability the correlation arose by chance; reject the null hypothesis (but correlation is not proof of causation)</span></li></ul>
 </div>
-<div><b>03.4</b> (2 marks)
-<ul><li>Show the standard deviation / range of the original values around each mean</li><li>If the bars of two means overlap greatly the difference is probably not significant; little overlap suggests a significant difference</li></ul>
+<div class="mspart"><div class="msh"><b>03.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Show the standard deviation / range of the original values around each mean</span></li><li><span class="mk">1</span><span>If the bars of two means overlap greatly the difference is probably not significant; little overlap suggests a significant difference</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 422-423; AQA spec 3.7.2.3.</div></details></div>
-<div class="q" id="RM-15" data-qid="RM-15" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 4</span><span class="meta">10 marks &middot; <a href="../subtopic/stats.html">Specialist techniques &amp; statistical analysis</a> &middot; spec 3.7.2.3 &middot; Genn pp. 404-406 &middot; RM-15</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="RM-15" data-qid="RM-15" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 4</span><span class="meta">10 marks &middot; <a href="../subtopic/stats.html">Specialist techniques &amp; statistical analysis</a> &middot; spec 3.7.2.3 &middot; Genn pp. 404-406 &middot; RM-15</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[3 marks]</span><span class="pn">04.1</span>Describe how DNA databases are used to control the illegal trade in tropical timber and ivory.
 </div>
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">04.2</span>Explain the difference between radio / GPS tracking and acoustic tracking and state when each is used.
@@ -185,20 +199,20 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">04.4</span>Explain how motion-sensitive cameras and CCTV reduce disturbance to wildlife compared with direct observation.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>04.1</b> (3 marks)
-<ul><li>Each regional population has its own unique gene pool / DNA profile</li><li>DNA from seized timber or ivory is compared with the database of regional populations</li><li>This identifies where the material came from, showing whether it was legally harvested and where poaching occurs</li></ul>
+<div class="mspart"><div class="msh"><b>04.1</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Each regional population has its own unique gene pool / DNA profile</span></li><li><span class="mk">1</span><span>DNA from seized timber or ivory is compared with the database of regional populations</span></li><li><span class="mk">1</span><span>This identifies where the material came from, showing whether it was legally harvested and where poaching occurs</span></li></ul>
 </div>
-<div><b>04.2</b> (2 marks)
-<ul><li>Radio / GPS transmitters use radio waves - work in air and fresh water, giving positions (GPS stores or transmits location)</li><li>Radio waves do not travel through seawater so acoustic transmitters (sound) are used for marine animals, giving real-time positions</li></ul>
+<div class="mspart"><div class="msh"><b>04.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Radio / GPS transmitters use radio waves - work in air and fresh water, giving positions (GPS stores or transmits location)</span></li><li><span class="mk">1</span><span>Radio waves do not travel through seawater so acoustic transmitters (sound) are used for marine animals, giving real-time positions</span></li></ul>
 </div>
-<div><b>04.3</b> (3 marks)
-<ul><li>Drones / ROVs, AUVs (eg Autosub), balloons, aircraft, satellites, animals (tags)</li><li>Drones: cheap, low disturbance, high-resolution images of areas hard to reach (cliffs, canopy, ice), repeated surveys; infrared cameras detect animals at night</li></ul>
+<div class="mspart"><div class="msh"><b>04.3</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">Up to 3 marks in total; award marks in proportion to the completeness of each point.</div><ul class="pts"><li><span class="mk">up to 2</span><span>Drones / ROVs, AUVs (eg Autosub), balloons, aircraft, satellites, animals (tags)</span></li><li><span class="mk">up to 2</span><span>Drones: cheap, low disturbance, high-resolution images of areas hard to reach (cliffs, canopy, ice), repeated surveys; infrared cameras detect animals at night</span></li></ul>
 </div>
-<div><b>04.4</b> (2 marks)
-<ul><li>Cameras record automatically (visible light by day, infrared at night) without researchers being present</li><li>So animals behave naturally and nests are not deserted; monitoring continues 24 hours</li></ul>
+<div class="mspart"><div class="msh"><b>04.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Cameras record automatically (visible light by day, infrared at night) without researchers being present</span></li><li><span class="mk">1</span><span>So animals behave naturally and nests are not deserted; monitoring continues 24 hours</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 404-406; AQA spec 3.7.2.3.</div></details></div>
-<div class="q" id="RM-18" data-qid="RM-18" data-marks="5" data-flags="calc data"><div class="qh"><span class="num">Question 5</span><span class="meta">5 marks &middot; <a href="../subtopic/stats.html">Specialist techniques &amp; statistical analysis</a> &middot; spec 3.7.2.3 &middot; Genn pp. 402 &middot; RM-18</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="RM-18" data-qid="RM-18" data-marks="5" data-flags="calc data"><div class="qh"><span class="num">Question 5</span><span class="meta">5 marks &middot; <a href="../subtopic/stats.html">Specialist techniques &amp; statistical analysis</a> &middot; spec 3.7.2.3 &middot; Genn pp. 402 &middot; RM-18</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>A student sampled the ground-flora of two woodlands. Table 1 shows the results for woodland A.</p>
 <div class="cap">Table 1</div><table class="data"><tr><th>Species</th><th>Number of individuals (n)</th></tr><tr><td>Bluebell</td><td>40</td></tr><tr><td>Wood anemone</td><td>30</td></tr><tr><td>Dog's mercury</td><td>20</td></tr><tr><td>Bramble</td><td>10</td></tr><tr><td>Total (N)</td><td>100</td></tr></table>
 <div class="part"><span class="marks">[3 marks]</span><span class="pn">05.1</span>Use the formula <i>D</i> = <i>N</i>(<i>N</i> - 1) / &Sigma;<i>n</i>(<i>n</i> - 1) to calculate Simpson's index of diversity for woodland A.
@@ -206,14 +220,14 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">05.2</span>Woodland B had an index of 1.6. State what this shows and give <b>one</b> limitation of using the index alone to compare the woodlands.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>05.1</b> (3 marks)
-<ul><li>&Sigma;n(n - 1) = (40 x 39) + (30 x 29) + (20 x 19) + (10 x 9) = 1560 + 870 + 380 + 90 = 2900</li><li>N(N - 1) = 100 x 99 = 9900</li><li>D = 9900 / 2900 = 3.41 (accept 3.4)</li></ul>
+<div class="mspart"><div class="msh"><b>05.1</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">A correct final answer (with unit where asked) scores full marks. If the answer is wrong, award 1 mark for each correct step of working shown.</div><ul class="pts"><li><span class="mk">1</span><span>&Sigma;n(n - 1) = (40 x 39) + (30 x 29) + (20 x 19) + (10 x 9) = 1560 + 870 + 380 + 90 = 2900</span></li><li><span class="mk">1</span><span>N(N - 1) = 100 x 99 = 9900</span></li><li><span class="mk">1</span><span>D = 9900 / 2900 = 3.41 (accept 3.4)</span></li></ul>
 </div>
-<div><b>05.2</b> (2 marks)
-<ul><li>Woodland A has a higher biodiversity (greater variety and more even abundance) than woodland B</li><li>The index does not identify which species are present / a rare or important species may be missed; depends on identification skill and sampling method</li></ul>
+<div class="mspart"><div class="msh"><b>05.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Woodland A has a higher biodiversity (greater variety and more even abundance) than woodland B</span></li><li><span class="mk">1</span><span>The index does not identify which species are present / a rare or important species may be missed; depends on identification skill and sampling method</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 402; AQA spec 3.7.2.3.</div></details></div>
-<div class="q" id="RM-19" data-qid="RM-19" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 6</span><span class="meta">10 marks &middot; <a href="../subtopic/stats.html">Specialist techniques &amp; statistical analysis</a> &middot; spec 3.7.2.3 &middot; Genn pp. 420-423 &middot; RM-19</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="RM-19" data-qid="RM-19" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 6</span><span class="meta">10 marks &middot; <a href="../subtopic/stats.html">Specialist techniques &amp; statistical analysis</a> &middot; spec 3.7.2.3 &middot; Genn pp. 420-423 &middot; RM-19</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>A student measured the wind speed at 10 sites inside a woodland and at 10 sites in a nearby clearing.</p>
 <div class="cap">Table 1</div><table class="data"><tr><th>Location</th><th>Mean wind speed / m s<sup>-1</sup></th><th>Standard deviation / m s<sup>-1</sup></th></tr><tr><td>Woodland</td><td>1.2</td><td>0.4</td></tr><tr><td>Clearing</td><td>3.5</td><td>1.1</td></tr></table>
 <div class="part"><span class="marks">[3 marks]</span><span class="pn">06.1</span>Name the statistical test the student should use to find out whether the difference between the means is significant. Give <b>two</b> reasons for your choice.
@@ -227,23 +241,23 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">06.5</span>Explain why a statistically significant result does not prove that trees cause the lower wind speed.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>06.1</b> (3 marks)
-<ul><li>t-test</li><li>The data are measured (continuous) values and two means are being compared</li><li>The data are (assumed to be) normally distributed</li></ul>
+<div class="mspart"><div class="msh"><b>06.1</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>t-test</span></li><li><span class="mk">1</span><span>The data are measured (continuous) values and two means are being compared</span></li><li><span class="mk">1</span><span>The data are (assumed to be) normally distributed</span></li></ul>
 </div>
-<div><b>06.2</b> (1 marks)
-<ul><li>Use the Mann-Whitney U test instead (compares medians)</li></ul>
+<div class="mspart"><div class="msh"><b>06.2</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>Use the Mann-Whitney U test instead (compares medians)</span></li></ul>
 </div>
-<div><b>06.3</b> (2 marks)
-<ul><li>There is a 2% probability that the difference occurred by random chance</li><li>As this is less than 0.05 the difference is statistically significant / the null hypothesis is rejected</li></ul>
+<div class="mspart"><div class="msh"><b>06.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>There is a 2% probability that the difference occurred by random chance</span></li><li><span class="mk">1</span><span>As this is less than 0.05 the difference is statistically significant / the null hypothesis is rejected</span></li></ul>
 </div>
-<div><b>06.4</b> (2 marks)
-<ul><li>The ranges of values (mean plus or minus SD) do not overlap: woodland up to 1.6 and clearing down to 2.4</li><li>About 68% of values lie within one SD of each mean so the two data sets are clearly separated</li></ul>
+<div class="mspart"><div class="msh"><b>06.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>The ranges of values (mean plus or minus SD) do not overlap: woodland up to 1.6 and clearing down to 2.4</span></li><li><span class="mk">1</span><span>About 68% of values lie within one SD of each mean so the two data sets are clearly separated</span></li></ul>
 </div>
-<div><b>06.5</b> (2 marks)
-<ul><li>Significance shows the difference is unlikely to be due to chance, not that a causal relationship exists</li><li>Another variable (eg topography / aspect of the sites) could cause both; a controlled experiment or further evidence is needed</li></ul>
+<div class="mspart"><div class="msh"><b>06.5</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Significance shows the difference is unlikely to be due to chance, not that a causal relationship exists</span></li><li><span class="mk">1</span><span>Another variable (eg topography / aspect of the sites) could cause both; a controlled experiment or further evidence is needed</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 420-423; AQA spec 3.7.2.3.</div></details></div>
-<div class="q" id="RM-20" data-qid="RM-20" data-marks="10" data-flags="data table"><div class="qh"><span class="num">Question 7</span><span class="meta">10 marks &middot; <a href="../subtopic/stats.html">Specialist techniques &amp; statistical analysis</a> &middot; spec 3.7.2.3 &middot; Genn pp. 422-423 &middot; RM-20</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="RM-20" data-qid="RM-20" data-marks="10" data-flags="data table"><div class="qh"><span class="num">Question 7</span><span class="meta">10 marks &middot; <a href="../subtopic/stats.html">Specialist techniques &amp; statistical analysis</a> &middot; spec 3.7.2.3 &middot; Genn pp. 422-423 &middot; RM-20</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[4 marks]</span><span class="pn">07.1</span>Complete Table 1 by naming the most suitable statistical test for each hypothesis.
 <div class="cap">Table 1</div><table class="data"><tr><th>Hypothesis</th><th>Statistical test</th></tr><tr><td>Noise levels decrease as distance from a road increases</td><td></td></tr><tr><td>Fewer cars use a road after road charging is introduced (counts on 12 days before and after)</td><td></td></tr><tr><td>Woodlands managed in different ways have different numbers of dormice</td><td></td></tr><tr><td>Mean lobster mass is higher in areas where collection is banned</td><td></td></tr></table>
 </div>
@@ -254,17 +268,17 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">07.4</span>Describe how error bars are added to a graph of means and how they are interpreted.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>07.1</b> (4 marks)
-<ul><li>Spearman's rank correlation coefficient</li><li>Mann-Whitney U test</li><li>Chi-squared test</li><li>t-test</li></ul>
+<div class="mspart"><div class="msh"><b>07.1</b> <span class="mtot">4 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Spearman's rank correlation coefficient</span></li><li><span class="mk">1</span><span>Mann-Whitney U test</span></li><li><span class="mk">1</span><span>Chi-squared test</span></li><li><span class="mk">1</span><span>t-test</span></li></ul>
 </div>
-<div><b>07.2</b> (2 marks)
-<ul><li>Chi-squared compares frequencies / counts in categories</li><li>Dissolved oxygen is continuously variable measured data, so a t-test or Mann-Whitney U test is needed</li></ul>
+<div class="mspart"><div class="msh"><b>07.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Chi-squared compares frequencies / counts in categories</span></li><li><span class="mk">1</span><span>Dissolved oxygen is continuously variable measured data, so a t-test or Mann-Whitney U test is needed</span></li></ul>
 </div>
-<div><b>07.3</b> (2 marks)
-<ul><li>There is always some remaining uncertainty / a probability that the result was produced by chance</li><li>Statistics only give a level of confidence (eg 95%, 99%) that the result is significant</li></ul>
+<div class="mspart"><div class="msh"><b>07.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>There is always some remaining uncertainty / a probability that the result was produced by chance</span></li><li><span class="mk">1</span><span>Statistics only give a level of confidence (eg 95%, 99%) that the result is significant</span></li></ul>
 </div>
-<div><b>07.4</b> (2 marks)
-<ul><li>Bars drawn above and below each mean showing plus and minus one standard deviation</li><li>If the bars of two means overlap a lot the difference is probably not significant; if they do not overlap it probably is</li></ul>
+<div class="mspart"><div class="msh"><b>07.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Bars drawn above and below each mean showing plus and minus one standard deviation</span></li><li><span class="mk">1</span><span>If the bars of two means overlap a lot the difference is probably not significant; if they do not overlap it probably is</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 422-423; AQA spec 3.7.2.3.</div></details></div>
 </div></main>
@@ -283,7 +297,7 @@ const tb=document.getElementById('themeBtn');if(tb)tb.onclick=()=>{const t=root.
 let prog=LS('envsci.progress')||{};
 window.ES.prog=()=>prog;
 function paint(){
-  document.querySelectorAll('.q[data-qid]').forEach(el=>{const s=prog[el.dataset.qid]||0;el.dataset.status=s;el.querySelectorAll('.st button').forEach(b=>b.classList.toggle('on',+b.dataset.s===s&&s>0));});
+  document.querySelectorAll('.q[data-qid]').forEach(el=>{const s=prog[el.dataset.qid]||0;el.dataset.status=s;el.querySelectorAll('.st button[data-s]').forEach(b=>b.classList.toggle('on',+b.dataset.s===s&&s>0));});
   document.querySelectorAll('[data-qids]').forEach(el=>{const ids=el.dataset.qids.split(',').filter(Boolean);const n=ids.length;if(!n)return;
     const ok=ids.filter(i=>prog[i]===2).length,wk=ids.filter(i=>prog[i]===1).length;
     const o=el.querySelector('.bar .ok'),w=el.querySelector('.bar .wk'),p=el.querySelector('.pl');
@@ -291,7 +305,7 @@ function paint(){
   const ov=document.getElementById('overall');if(ov){const all=(ov.dataset.qids||'').split(',').filter(Boolean);const ok=all.filter(i=>prog[i]===2).length,wk=all.filter(i=>prog[i]===1).length;ov.querySelector('.stat').textContent=Math.round(100*ok/all.length)+'%';ov.querySelector('.detail').textContent=ok+' secure, '+wk+' to revisit, '+(all.length-ok-wk)+' not attempted of '+all.length+' questions.';}
 }
 window.ES.paint=paint;
-document.addEventListener('click',e=>{const b=e.target.closest('.st button');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);paint();if(window.ES.onFilter)window.ES.onFilter();});
+document.addEventListener('click',e=>{const b=e.target.closest('.st button[data-s]');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);paint();if(window.ES.onFilter)window.ES.onFilter();});
 const rs=document.getElementById('resetProg');if(rs)rs.onclick=()=>{if(confirm('Clear all saved progress on this browser?')){prog={};SV('envsci.progress',prog);paint();}};
 paint();
 /* ---- filter bar ---- */
@@ -314,6 +328,13 @@ if(fb){
   txt.addEventListener('input',run);fb.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{c.classList.toggle('on');run();});fb.querySelector('select.status').onchange=run;
   const clr=fb.querySelector('.clear');if(clr)clr.onclick=()=>{txt.value='';fb.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));fb.querySelector('select.status').value='all';run();};
   run();}
+/* ---- sticky offset = real header height (nav can wrap) ---- */
+const hd=document.querySelector('header.top');const setH=()=>root.style.setProperty('--hdr',(getComputedStyle(hd).position==='sticky'?hd.offsetHeight:0)+'px');setH();window.addEventListener('resize',setH);
+/* ---- copy link, back to top ---- */
+document.addEventListener('click',e=>{const b=e.target.closest('[data-copy]');if(!b)return;const q=b.closest('.q');const url=location.href.split('#')[0]+'#'+q.id;
+  (navigator.clipboard?navigator.clipboard.writeText(url):Promise.reject()).then(()=>{b.textContent='\u2713';setTimeout(()=>b.innerHTML='&#128279;',1200);}).catch(()=>prompt('Copy this link:',url));});
+const tt=document.createElement('button');tt.id='totop';tt.title='Back to top';tt.innerHTML='&uarr;';tt.className='noprint';document.body.appendChild(tt);tt.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+window.addEventListener('scroll',()=>tt.classList.toggle('show',window.scrollY>600),{passive:true});
 /* ---- print & reveal ---- */
 document.querySelectorAll('[data-print]').forEach(b=>b.onclick=()=>{const ms=b.dataset.print==='ms';document.body.classList.toggle('print-ms',ms);document.querySelectorAll('details.ms').forEach(d=>d.open=ms);window.print();});
 document.querySelectorAll('[data-reveal]').forEach(b=>b.onclick=()=>{const open=b.dataset.reveal==='1';document.querySelectorAll('details.ms').forEach(d=>d.open=open);b.dataset.reveal=open?'0':'1';b.textContent=open?'Hide all mark schemes':'Show all mark schemes';});

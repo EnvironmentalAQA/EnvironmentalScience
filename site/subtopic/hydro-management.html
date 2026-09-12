@@ -69,12 +69,12 @@ footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-
 .prog .bar .ok{background:var(--ok);height:100%}.prog .bar .wk{background:var(--warn);height:100%}.prog .pl{white-space:nowrap;min-width:90px}
 .hero .prog{color:rgba(255,255,255,.85)}.hero .prog .bar{background:rgba(255,255,255,.25)}
 /* filter bar & tools */
-.filterbar{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.filterbar{position:sticky;top:var(--hdr,62px);z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .filterbar input[type=search]{flex:1 1 220px;font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
 .filterbar label{font-size:.85rem;color:var(--stone);display:inline-flex;align-items:center;gap:4px;cursor:pointer}.filterbar .chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--sand);color:var(--stone);font-size:.82rem;cursor:pointer;font-family:inherit}
 .filterbar .chip.on{background:var(--moss);color:#fff;border-color:var(--moss)}.filterbar .cnt{font-size:.85rem;color:var(--stone);margin-left:auto}
 .filterbar select{font:inherit;font-size:.88rem;padding:5px 8px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
-.tools{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:10px 0;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.tools{position:sticky;top:var(--hdr,62px);z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:10px 0;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .tools .time{font-family:Fraunces,serif;font-size:1.6rem;font-weight:700;color:var(--head);min-width:120px}.tools .time.low{color:var(--bad)}
 .tools .score{font-weight:700;color:var(--moss)}.tools .score b{font-family:Fraunces,serif;font-size:1.3rem}.tools .pct{font-size:.85rem;color:var(--stone)}
 .tools button{font-family:inherit;font-size:.88rem;padding:6px 12px;border-radius:8px;border:1px solid var(--moss);background:transparent;color:var(--moss);cursor:pointer}.tools button.primary{background:var(--moss);color:#fff}
@@ -87,6 +87,20 @@ footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-
 .res{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0;text-decoration:none;color:inherit}.res:hover{border-color:var(--moss)}
 .res .t{font-weight:700;color:var(--head)}.res .m{font-size:.82rem;color:var(--stone)}.res .s{font-size:.92rem;margin-top:4px}.res mark{background:#ffe58a;color:#222;border-radius:3px;padding:0 2px}
 .empty{color:var(--stone);font-style:italic}
+/* mark scheme points, levels, links */
+.mspart{margin:8px 0 12px}.msh{display:flex;align-items:baseline;gap:8px;margin-bottom:2px}.msh .mtot{font-size:.8rem;color:var(--earth);font-weight:700}
+ul.pts{list-style:none;margin:4px 0 6px 0!important;padding:0}ul.pts li{display:flex;gap:10px;align-items:flex-start;padding:4px 0;border-top:1px dashed var(--ms-line)}ul.pts li:first-child{border-top:0}
+.mk{flex:0 0 auto;min-width:26px;text-align:center;font-size:.75rem;font-weight:700;color:#fff;background:var(--ok);border-radius:6px;padding:2px 6px;margin-top:3px}
+table.levels{border-collapse:collapse;width:100%;margin:6px 0 10px;font-size:.86rem;background:var(--card)}table.levels th,table.levels td{border:1px solid var(--ms-line);padding:5px 8px;text-align:left;vertical-align:top}table.levels th{background:var(--sand-dark)}table.levels td.r{white-space:nowrap;font-weight:700;color:var(--earth)}
+ul.ind{margin:4px 0 8px 18px}
+.st button.lnk{padding:2px 7px}
+#totop{position:fixed;right:18px;bottom:18px;z-index:15;background:var(--moss);color:#fff;border:0;border-radius:50%;width:42px;height:42px;font-size:1.2rem;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .2s}#totop.show{opacity:1;pointer-events:auto}
+.jump{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 4px}.jump a{font-size:.82rem;padding:3px 10px;border-radius:999px;border:1px solid var(--line);background:var(--sand);color:var(--moss);text-decoration:none;font-weight:600}.jump a:hover{background:var(--leaf-light)}
+.real .row{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;padding:8px 0;border-bottom:1px dashed var(--line);font-size:.95rem}.real .row .ser{font-weight:700;color:var(--head);min-width:150px}.real .row .qn{color:var(--stone);min-width:70px}.real .row .t{flex:1 1 300px}
+.real .row a{font-size:.82rem;padding:2px 9px;border-radius:999px;border:1px solid var(--line);background:var(--sand);text-decoration:none;font-weight:600}
+.plan input[type=date]{font:inherit;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}.plan .big{font-family:Fraunces,serif;font-size:2rem;color:var(--moss)}
+table.list td .bar{height:8px;background:var(--sand-dark);border-radius:999px;overflow:hidden;display:flex;width:140px}table.list td .bar .ok{background:var(--ok)}table.list td .bar .wk{background:var(--warn)}
+@media(max-width:720px){header.top{position:static}header.top nav a{margin-left:12px;font-size:.88rem}.filterbar,.tools{top:0}.hero h1{font-size:1.8rem}.hero{padding:34px 0 28px}.sub-item .t{flex-basis:100%}}
 /* print */
 @media print{header.top,footer,.tools,.filterbar,.st,.pill,.aw,.hero .crumbs,.prog,.noprint{display:none!important}
 body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;color:#000;padding:10px 0}.hero p,.hero h1{color:#000}.hero:before{display:none}
@@ -94,14 +108,16 @@ body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;c
 svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 </style>
 <script>try{if(localStorage.getItem('envsci.theme')==='"dark"')document.documentElement.dataset.theme='dark';}catch(e){}</script></head><body >
-<header class="top"><div class="wrap"><a class="brand" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb069" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-8 0-14 4-14 12 0 1.5.3 3 1 4 2-6 6-9 11-11-4 3-7 6-8 12 8 0 12-6 10-17z"/></svg><span>AQA Environmental Science</span></a><nav><a href="../index.html" class="">Topics</a><a href="../papers.html" class="">Mock papers</a><a href="../official.html" class="">Past papers</a><a href="../essays.html" class="">Essay bank</a><a href="../quickfire.html" class="">Quick-fire</a><a href="../search.html" class="">Search</a><button class="icon-btn" id="themeBtn" type="button" title="Toggle dark mode">&#9790; Dark</button></nav></div></header>
+<header class="top"><div class="wrap"><a class="brand" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb069" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-8 0-14 4-14 12 0 1.5.3 3 1 4 2-6 6-9 11-11-4 3-7 6-8 12 8 0 12-6 10-17z"/></svg><span>AQA Environmental Science</span></a><nav><a href="../index.html" class="">Topics</a><a href="../papers.html" class="">Mock papers</a><a href="../official.html" class="">Past papers</a><a href="../essays.html" class="">Essay bank</a><a href="../pastq.html" class="">Real Qs by topic</a><a href="../quickfire.html" class="">Quick-fire</a><a href="../planner.html" class="">Planner</a><a href="../search.html" class="">Search</a><button class="icon-btn" id="themeBtn" type="button" title="Toggle dark mode">&#9790; Dark</button></nav></div></header>
 <section class="hero p1 small"><div class="wrap"><div class="crumbs"><a href="../index.html">Topics</a><span>&rsaquo;</span><a href="../topic/physical.html">The physical environment</a><span>&rsaquo;</span>Water treatment, conservation &amp; new sources</div><h1>Water treatment, conservation &amp; new sources</h1><p>The physical environment &middot; AQA spec 3.2.2.4-3.2.2.5 &middot; R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 122-127</p><span class="pill">Paper 1</span><span class="pill">7 questions</span><div class="prog" data-qids="HYD-07,HYD-08,HYD-09,HYD-10,HYD-11,HYD-12,HYD-13"><div class="bar"><div class="ok"></div><div class="wk"></div></div><span class="pl"></span></div></div></section>
 <main><div class="wrap"><h2 class="sec">Question sets</h2><table class="list"><tr><th>Set</th><th>Questions</th><th>Marks</th><th>Question paper</th><th>Mark scheme</th></tr>
 <tr><td>Set 1</td><td>7</td><td>65</td><td><a href="../pdf/topic/hydro-management-set1-QP.pdf">Download QP (PDF)</a></td><td><a href="../pdf/topic/hydro-management-set1-MS.pdf">Download MS (PDF)</a></td></tr>
 </table>
+<h2 class="sec">Real AQA questions on this topic (4)</h2><div class="real"><div class="row"><span class="ser">June 2022 &middot; Paper 1</span><span class="qn">Essay &middot; 25 marks</span><span class="t">Essay: managing water resources to meet demand while minimising impacts</span><a href="../official/AQA-74471-QP-JUN22.PDF#page=31">Question (p.31)</a> <a href="../official/AQA-74471-MS-JUN22.PDF">Mark scheme</a></div><div class="row"><span class="ser">November 2021 &middot; Paper 1</span><span class="qn">Q6 &middot; 10 marks</span><span class="t">Water resources and demand in India</span><a href="../official/AQA-74471-QP-NOV21-CR.PDF#page=14">Question (p.14)</a> <a href="../official/AQA-74471-MS-NOV21.PDF">Mark scheme</a></div><div class="row"><span class="ser">November 2021 &middot; Paper 1</span><span class="qn">Q1 &middot; 5 marks</span><span class="t">Water treatment processes (complete the table)</span><a href="../official/AQA-74471-QP-NOV21-CR.PDF#page=2">Question (p.2)</a> <a href="../official/AQA-74471-MS-NOV21.PDF">Mark scheme</a></div><div class="row"><span class="ser">Specimen &middot; Paper 1</span><span class="qn">Q6 &middot; 10 marks</span><span class="t">Treating borehole water for a brewery</span><a href="../official/AQA-74471-SQP-CR.PDF#page=16">Question (p.16)</a> <a href="../official/AQA-74471-SMS.PDF">Mark scheme</a></div></div>
+<p class="note noprint">Practise this subtopic one question at a time: <a href="../quickfire.html?sub=hydro-management">Quick-fire &rarr;</a></p>
 <div class="filterbar noprint"><input type="search" placeholder="Filter questions by keyword (e.g. albedo, quota, Simpson)"><button type="button" class="chip mk" data-v="5">5 marks</button><button type="button" class="chip mk" data-v="10">10 marks</button><button type="button" class="chip mk" data-v="15">15 marks</button><button type="button" class="chip fl" data-v="calc">Calculation</button><button type="button" class="chip fl" data-v="data">Data / figure</button><button type="button" class="chip fl" data-v="ext">9-mark extended</button><button type="button" class="chip fl" data-v="mcq">Multiple choice</button><button type="button" class="chip fl" data-v="table">Complete a table</button><select class="status" title="Filter by your progress"><option value="all">All progress</option><option value="todo">Not attempted</option><option value="work">Needs work</option><option value="secure">Secure</option><option value="notsecure">Not yet secure</option></select><button type="button" class="chip clear">Clear</button><span class="cnt"></span><button type="button" class="chip" data-reveal="1">Show all mark schemes</button><button type="button" class="chip" data-print="qp" title="Print the questions only">Print</button><button type="button" class="chip" data-print="ms" title="Print questions with mark schemes">Print + MS</button></div>
 <h2 class="sec set">Set 1</h2>
-<div class="q" id="HYD-07" data-qid="HYD-07" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 1</span><span class="meta">10 marks &middot; <a href="../subtopic/hydro-management.html">Water treatment, conservation &amp; new sources</a> &middot; spec 3.2.2.5 &middot; Genn pp. 122-124 &middot; HYD-07</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="HYD-07" data-qid="HYD-07" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 1</span><span class="meta">10 marks &middot; <a href="../subtopic/hydro-management.html">Water treatment, conservation &amp; new sources</a> &middot; spec 3.2.2.5 &middot; Genn pp. 122-124 &middot; HYD-07</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[4 marks]</span><span class="pn">01.1</span>Describe <b>four</b> factors that should be considered when choosing a site for a dam and reservoir.
 </div>
 <div class="part"><span class="marks">[3 marks]</span><span class="pn">01.2</span>Give <b>one</b> advantage and <b>two</b> disadvantages of an estuary barrage compared with a reservoir on land.
@@ -111,21 +127,20 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">01.4</span>Explain how artificial recharge can make aquifer supplies sustainable.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>01.1</b> (4 marks)
-<div class="lvl"><i>Any 4 from:</i></div>
-<ul><li>Topography: a narrow exit from a large deep basin so a small dam holds a large volume</li><li>Geology: impermeable rock beneath (no seepage), strong enough to support the dam, no faults / seismic activity</li><li>Catchment area: large enough with regular, reliable rainfall / river inflow; climate not too hot (evaporation losses)</li><li>Catchment land use: low pollution risk (industry, pesticides); low soil erosion (sedimentation reduces capacity)</li><li>Infrastructure / proximity to demand: access for construction, cost of transporting water</li><li>Existing land use: value of what is lost (urban areas, conservation sites, farmland) - loss:benefit analysis</li></ul>
+<div class="mspart"><div class="msh"><b>01.1</b> <span class="mtot">4 marks</span></div>
+<div class="lvl">Any 4 from the points below - 1 mark each, maximum 4.</div><ul class="pts"><li><span class="mk">1</span><span>Topography: a narrow exit from a large deep basin so a small dam holds a large volume</span></li><li><span class="mk">1</span><span>Geology: impermeable rock beneath (no seepage), strong enough to support the dam, no faults / seismic activity</span></li><li><span class="mk">1</span><span>Catchment area: large enough with regular, reliable rainfall / river inflow; climate not too hot (evaporation losses)</span></li><li><span class="mk">1</span><span>Catchment land use: low pollution risk (industry, pesticides); low soil erosion (sedimentation reduces capacity)</span></li><li><span class="mk">1</span><span>Infrastructure / proximity to demand: access for construction, cost of transporting water</span></li><li><span class="mk">1</span><span>Existing land use: value of what is lost (urban areas, conservation sites, farmland) - loss:benefit analysis</span></li></ul>
 </div>
-<div><b>01.2</b> (3 marks)
-<ul><li>Advantage: fewer land-use conflicts as no land is flooded; large volume near coastal cities</li><li>Disadvantages: destroys / changes important intertidal habitats (mudflats for wading birds); obstacle to shipping; collects pollution from the whole river catchment; sedimentation</li></ul>
+<div class="mspart"><div class="msh"><b>01.2</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">Up to 3 marks in total; award marks in proportion to the completeness of each point.</div><ul class="pts"><li><span class="mk">up to 2</span><span>Advantage: fewer land-use conflicts as no land is flooded; large volume near coastal cities</span></li><li><span class="mk">up to 2</span><span>Disadvantages: destroys / changes important intertidal habitats (mudflats for wading birds); obstacle to shipping; collects pollution from the whole river catchment; sedimentation</span></li></ul>
 </div>
-<div><b>01.3</b> (2 marks)
-<ul><li>Very energy-intensive and expensive (reverse osmosis / distillation)</li><li>Only worthwhile where seawater is available and freshwater supplies are inadequate (eg Malta, Middle East)</li></ul>
+<div class="mspart"><div class="msh"><b>01.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Very energy-intensive and expensive (reverse osmosis / distillation)</span></li><li><span class="mk">1</span><span>Only worthwhile where seawater is available and freshwater supplies are inadequate (eg Malta, Middle East)</span></li></ul>
 </div>
-<div><b>01.4</b> (1 marks)
-<ul><li>Surplus water in wet periods (when infiltration capacity is exceeded and runoff would go to the sea) is pumped underground or diverted into lagoons to infiltrate, so abstraction in dry periods is balanced by recharge</li></ul>
+<div class="mspart"><div class="msh"><b>01.4</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>Surplus water in wet periods (when infiltration capacity is exceeded and runoff would go to the sea) is pumped underground or diverted into lagoons to infiltrate, so abstraction in dry periods is balanced by recharge</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 122-124; AQA spec 3.2.2.5.</div></details></div>
-<div class="q" id="HYD-08" data-qid="HYD-08" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 2</span><span class="meta">10 marks &middot; <a href="../subtopic/hydro-management.html">Water treatment, conservation &amp; new sources</a> &middot; spec 3.2.2.5 &middot; Genn pp. 124-126 &middot; HYD-08</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="HYD-08" data-qid="HYD-08" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 2</span><span class="meta">10 marks &middot; <a href="../subtopic/hydro-management.html">Water treatment, conservation &amp; new sources</a> &middot; spec 3.2.2.5 &middot; Genn pp. 124-126 &middot; HYD-08</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>Table 1 shows the effect of installing water meters on the mean daily water use of households in a UK town.</p>
 <div class="cap">Table 1</div><table class="data"><tr><th></th><th>Unmetered households (fixed charge)</th><th>Metered households</th></tr><tr><td>Mean water use / dm<sup>3</sup> per person per day</td><td>150</td><td>125</td></tr><tr><td>Percentage with low-flush toilets</td><td>35</td><td>58</td></tr><tr><td>Percentage using a garden hosepipe weekly in summer</td><td>44</td><td>20</td></tr></table>
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">02.1</span>Calculate the percentage reduction in water use per person in metered households.
@@ -139,24 +154,23 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">02.5</span>Explain how drip irrigation reduces the water needed to grow a crop compared with spray irrigation.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>02.1</b> (1 marks)
-<ul><li>(150 - 125) / 150 x 100 = 16.7% (accept 17%)</li></ul>
+<div class="mspart"><div class="msh"><b>02.1</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark for the correct answer.</div><ul class="pts"><li><span class="mk">1</span><span>(150 - 125) / 150 x 100 = 16.7% (accept 17%)</span></li></ul>
 </div>
-<div><b>02.2</b> (2 marks)
-<ul><li>A fixed fee gives no incentive to save water because the bill is the same however much is used</li><li>Metering matches the charge to the volume used so households save money by using less (fewer hosepipes, low-flow appliances)</li></ul>
+<div class="mspart"><div class="msh"><b>02.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>A fixed fee gives no incentive to save water because the bill is the same however much is used</span></li><li><span class="mk">1</span><span>Metering matches the charge to the volume used so households save money by using less (fewer hosepipes, low-flow appliances)</span></li></ul>
 </div>
-<div><b>02.3</b> (3 marks)
-<div class="lvl"><i>Any 3 from:</i></div>
-<ul><li>Low-water appliances: dual-flush toilets, low-flow shower heads, efficient washing machines / dishwashers, tap timers</li><li>Greywater re-use: bath / shower water used to flush toilets or water gardens</li><li>Rainwater collection / water butts for garden use</li><li>Xeriscaping: planting drought-adapted species that need no watering</li><li>Repairing leaks / dripping taps</li></ul>
+<div class="mspart"><div class="msh"><b>02.3</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">Any 3 from the points below - 1 mark each, maximum 3.</div><ul class="pts"><li><span class="mk">1</span><span>Low-water appliances: dual-flush toilets, low-flow shower heads, efficient washing machines / dishwashers, tap timers</span></li><li><span class="mk">1</span><span>Greywater re-use: bath / shower water used to flush toilets or water gardens</span></li><li><span class="mk">1</span><span>Rainwater collection / water butts for garden use</span></li><li><span class="mk">1</span><span>Xeriscaping: planting drought-adapted species that need no watering</span></li><li><span class="mk">1</span><span>Repairing leaks / dripping taps</span></li></ul>
 </div>
-<div><b>02.4</b> (2 marks)
-<ul><li>Old infrastructure / pipes in poor condition leak</li><li>Repair and good maintenance / pipe replacement / leak detection reduce wastage</li></ul>
+<div class="mspart"><div class="msh"><b>02.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Old infrastructure / pipes in poor condition leak</span></li><li><span class="mk">1</span><span>Repair and good maintenance / pipe replacement / leak detection reduce wastage</span></li></ul>
 </div>
-<div><b>02.5</b> (2 marks)
-<ul><li>Water is delivered directly to the plant roots / soil around each plant</li><li>Less evaporation loss from spray droplets and from wetting the whole soil surface; less runoff</li></ul>
+<div class="mspart"><div class="msh"><b>02.5</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Water is delivered directly to the plant roots / soil around each plant</span></li><li><span class="mk">1</span><span>Less evaporation loss from spray droplets and from wetting the whole soil surface; less runoff</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 124-126; AQA spec 3.2.2.5.</div></details></div>
-<div class="q" id="HYD-09" data-qid="HYD-09" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 3</span><span class="meta">10 marks &middot; <a href="../subtopic/hydro-management.html">Water treatment, conservation &amp; new sources</a> &middot; spec 3.2.2.4 &middot; Genn pp. 126-128 &middot; HYD-09</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="HYD-09" data-qid="HYD-09" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 3</span><span class="meta">10 marks &middot; <a href="../subtopic/hydro-management.html">Water treatment, conservation &amp; new sources</a> &middot; spec 3.2.2.4 &middot; Genn pp. 126-128 &middot; HYD-09</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>Figure 1 lists the stages in a water treatment works supplying drinking water from a lowland river.</p>
 <div class="cap">Figure 1</div><table class="data"><tr><th>Stage</th><th>Process</th></tr><tr><td>1</td><td>Screens</td></tr><tr><td>2</td><td>Sedimentation</td></tr><tr><td>3</td><td>Aeration</td></tr><tr><td>4</td><td>Flocculation and clarification</td></tr><tr><td>5</td><td>Filtration through sand and gravel</td></tr><tr><td>6</td><td>Activated carbon</td></tr><tr><td>7</td><td>Sterilisation</td></tr><tr><td>8</td><td>pH adjustment</td></tr></table>
 <div class="part"><span class="marks">[3 marks]</span><span class="pn">03.1</span>Explain why clay particles do not settle out in the sedimentation stage, and describe how they are removed in stage 4.
@@ -168,20 +182,20 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[3 marks]</span><span class="pn">03.4</span>Describe how each of the following contaminants is removed from water.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>03.1</b> (3 marks)
-<ul><li>Clay particles are very small and carry electrostatic charges on their surfaces so they repel each other and stay suspended</li><li>Flocculants (aluminium sulfate / alum or polyelectrolytes) are added and mixed to neutralise the charges</li><li>The particles clump together (flocs) and settle in the clarifier tank</li></ul>
+<div class="mspart"><div class="msh"><b>03.1</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Clay particles are very small and carry electrostatic charges on their surfaces so they repel each other and stay suspended</span></li><li><span class="mk">1</span><span>Flocculants (aluminium sulfate / alum or polyelectrolytes) are added and mixed to neutralise the charges</span></li><li><span class="mk">1</span><span>The particles clump together (flocs) and settle in the clarifier tank</span></li></ul>
 </div>
-<div><b>03.2</b> (2 marks)
-<ul><li>Increases dissolved oxygen and removes hydrogen sulfide (bad-egg smell) from anaerobic sources</li><li>Oxidises some dissolved metals (eg iron) so they become insoluble and can be removed; improves taste</li></ul>
+<div class="mspart"><div class="msh"><b>03.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Increases dissolved oxygen and removes hydrogen sulfide (bad-egg smell) from anaerobic sources</span></li><li><span class="mk">1</span><span>Oxidises some dissolved metals (eg iron) so they become insoluble and can be removed; improves taste</span></li></ul>
 </div>
-<div><b>03.3</b> (2 marks)
-<ul><li>Peaty water contains organic matter which reacts with chlorine to produce toxic substances (eg trihalomethanes)</li><li>Ozone / UV kill pathogens without forming these by-products (though chlorine / chloramine keeps water sterile during distribution)</li></ul>
+<div class="mspart"><div class="msh"><b>03.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Peaty water contains organic matter which reacts with chlorine to produce toxic substances (eg trihalomethanes)</span></li><li><span class="mk">1</span><span>Ozone / UV kill pathogens without forming these by-products (though chlorine / chloramine keeps water sterile during distribution)</span></li></ul>
 </div>
-<div><b>03.4</b> (3 marks)
-<ul><li>Ion exchange: toxic ions adsorb onto polymer resin beads or zeolite (also used to soften water by removing calcium / magnesium)</li><li>Reverse osmosis / distillation (desalination) - expensive, energy-intensive</li><li>Activated carbon: organic molecules causing odour / taste and pesticides adsorb onto the high-surface-area carbon particles</li></ul>
+<div class="mspart"><div class="msh"><b>03.4</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Ion exchange: toxic ions adsorb onto polymer resin beads or zeolite (also used to soften water by removing calcium / magnesium)</span></li><li><span class="mk">1</span><span>Reverse osmosis / distillation (desalination) - expensive, energy-intensive</span></li><li><span class="mk">1</span><span>Activated carbon: organic molecules causing odour / taste and pesticides adsorb onto the high-surface-area carbon particles</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 126-128; AQA spec 3.2.2.4.</div></details></div>
-<div class="q" id="HYD-10" data-qid="HYD-10" data-marks="5" data-flags="mcq"><div class="qh"><span class="num">Question 4</span><span class="meta">5 marks &middot; <a href="../subtopic/hydro-management.html">Water treatment, conservation &amp; new sources</a> &middot; spec 3.2.2.4-3.2.2.5 &middot; Genn pp. 122-128 &middot; HYD-10</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="HYD-10" data-qid="HYD-10" data-marks="5" data-flags="mcq"><div class="qh"><span class="num">Question 4</span><span class="meta">5 marks &middot; <a href="../subtopic/hydro-management.html">Water treatment, conservation &amp; new sources</a> &middot; spec 3.2.2.4-3.2.2.5 &middot; Genn pp. 122-128 &middot; HYD-10</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">04.1</span>Which of the following water sources is usually the most convenient for large communities? Tick one box.
 <ul class="mcq"><li>A&nbsp; Desalinated seawater</li><li>B&nbsp; River water</li><li>C&nbsp; Rainwater catchment</li><li>D&nbsp; Newly discovered aquifers</li></ul>
 </div>
@@ -190,17 +204,17 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">04.3</span>Explain why inter-basin transfers may be used and give <b>one</b> disadvantage.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>04.1</b> (1 marks)
-<ul><li>B - rivers are accessible over a large area with few natural contaminants</li></ul>
+<div class="mspart"><div class="msh"><b>04.1</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">Correct answer only.</div><ul class="pts"><li><span class="mk">1</span><span><b></b>&nbsp; B - rivers are accessible over a large area with few natural contaminants</span></li></ul>
 </div>
-<div><b>04.2</b> (2 marks)
-<ul><li>Potable / public supply: no pathogens, low toxins, good appearance / taste / smell (public health)</li><li>Industrial boiler / cooling water: soft water with low calcium so mineral deposits do not block pipes or reduce heat exchange; spray irrigation: low turbidity to avoid blocked pipes and low heavy metals</li></ul>
+<div class="mspart"><div class="msh"><b>04.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Potable / public supply: no pathogens, low toxins, good appearance / taste / smell (public health)</span></li><li><span class="mk">1</span><span>Industrial boiler / cooling water: soft water with low calcium so mineral deposits do not block pipes or reduce heat exchange; spray irrigation: low turbidity to avoid blocked pipes and low heavy metals</span></li></ul>
 </div>
-<div><b>04.3</b> (2 marks)
-<ul><li>Canals / pipes move water from areas with a surplus to areas with a shortage (eg Wales to England, China's Yangtze transfers)</li><li>Disadvantage: high cost / energy for pumping; ecological impacts on the donor river; transfer of pollutants or invasive species; political conflict</li></ul>
+<div class="mspart"><div class="msh"><b>04.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Canals / pipes move water from areas with a surplus to areas with a shortage (eg Wales to England, China's Yangtze transfers)</span></li><li><span class="mk">1</span><span>Disadvantage: high cost / energy for pumping; ecological impacts on the donor river; transfer of pollutants or invasive species; political conflict</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 122-128; AQA spec 3.2.2.4-3.2.2.5.</div></details></div>
-<div class="q" id="HYD-11" data-qid="HYD-11" data-marks="5" data-flags="mcq"><div class="qh"><span class="num">Question 5</span><span class="meta">5 marks &middot; <a href="../subtopic/hydro-management.html">Water treatment, conservation &amp; new sources</a> &middot; spec 3.2.2.5 &middot; Genn pp. 122-123 &middot; HYD-11</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="HYD-11" data-qid="HYD-11" data-marks="5" data-flags="mcq"><div class="qh"><span class="num">Question 5</span><span class="meta">5 marks &middot; <a href="../subtopic/hydro-management.html">Water treatment, conservation &amp; new sources</a> &middot; spec 3.2.2.5 &middot; Genn pp. 122-123 &middot; HYD-11</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">05.1</span>Which of the following is a feature of a river that affects its usefulness as a water source? Tick <b>one</b> box.
 <ul class="mcq"><li>A&nbsp; Its total annual discharge</li><li>B&nbsp; The albedo of its surface</li><li>C&nbsp; Its salinity</li><li>D&nbsp; The age of its bedrock</li></ul>
 </div>
@@ -209,17 +223,17 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">05.3</span>Explain why an estuary barrage has fewer land-use conflicts than a reservoir on land but still causes environmental problems.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>05.1</b> (1 marks)
-<ul><li>Its total annual discharge</li></ul>
+<div class="mspart"><div class="msh"><b>05.1</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">Correct answer only.</div><ul class="pts"><li><span class="mk">1</span><span><b>A</b>&nbsp; Its total annual discharge</span></li></ul>
 </div>
-<div><b>05.2</b> (2 marks)
-<ul><li>Public supplies cannot match consumer demand / the water is often cleaner than rivers</li><li>It also reduces urban flooding after heavy rain; surplus can be used for aquifer recharge</li></ul>
+<div class="mspart"><div class="msh"><b>05.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Public supplies cannot match consumer demand / the water is often cleaner than rivers</span></li><li><span class="mk">1</span><span>It also reduces urban flooding after heavy rain; surplus can be used for aquifer recharge</span></li></ul>
 </div>
-<div><b>05.3</b> (2 marks)
-<ul><li>The reservoir is created in the estuary so no farmland / settlements need to be flooded</li><li>But it changes important inter-tidal habitats, obstructs shipping and can be polluted by activities anywhere in the river's catchment</li></ul>
+<div class="mspart"><div class="msh"><b>05.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>The reservoir is created in the estuary so no farmland / settlements need to be flooded</span></li><li><span class="mk">1</span><span>But it changes important inter-tidal habitats, obstructs shipping and can be polluted by activities anywhere in the river's catchment</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 122-123; AQA spec 3.2.2.5.</div></details></div>
-<div class="q" id="HYD-12" data-qid="HYD-12" data-marks="10" data-flags="data table"><div class="qh"><span class="num">Question 6</span><span class="meta">10 marks &middot; <a href="../subtopic/hydro-management.html">Water treatment, conservation &amp; new sources</a> &middot; spec 3.2.2.4 &middot; Genn pp. 126-127 &middot; HYD-12</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="HYD-12" data-qid="HYD-12" data-marks="10" data-flags="data table"><div class="qh"><span class="num">Question 6</span><span class="meta">10 marks &middot; <a href="../subtopic/hydro-management.html">Water treatment, conservation &amp; new sources</a> &middot; spec 3.2.2.4 &middot; Genn pp. 126-127 &middot; HYD-12</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>Table 1 shows the water quality required for four different uses.</p>
 <div class="part"><span class="marks">[4 marks]</span><span class="pn">06.1</span>Complete Table 1 by giving the quality requirement for each water use and the reason for it.
 <div class="cap">Table 1</div><table class="data"><tr><th>Water use</th><th>Quality requirement</th><th>Reason</th></tr><tr><td>Potable (public) supply</td><td></td><td></td></tr><tr><td>Spray irrigation</td><td></td><td></td></tr><tr><td>Power station condenser cooling</td><td></td><td></td></tr><tr><td>Industrial boiler water</td><td></td><td></td></tr></table>
@@ -231,21 +245,20 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">06.4</span>Give <b>two</b> methods used to sterilise treated water.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>06.1</b> (4 marks)
-<ul><li>Potable: no pathogens, toxins at acceptable levels, looks / smells / tastes good - public health, consumer complaints</li><li>Spray irrigation: low turbidity, low toxins such as heavy metals - blockage of pipes, contamination of food</li><li>Condenser cooling: no gross solids - pipe blockage</li><li>Boiler water: no dissolved minerals / soft water - mineral deposits reduce heat exchange and block pipes</li></ul>
+<div class="mspart"><div class="msh"><b>06.1</b> <span class="mtot">4 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Potable: no pathogens, toxins at acceptable levels, looks / smells / tastes good - public health, consumer complaints</span></li><li><span class="mk">1</span><span>Spray irrigation: low turbidity, low toxins such as heavy metals - blockage of pipes, contamination of food</span></li><li><span class="mk">1</span><span>Condenser cooling: no gross solids - pipe blockage</span></li><li><span class="mk">1</span><span>Boiler water: no dissolved minerals / soft water - mineral deposits reduce heat exchange and block pipes</span></li></ul>
 </div>
-<div><b>06.2</b> (2 marks)
-<ul><li>Raises dissolved oxygen and removes hydrogen sulfide (bad-egg smell) from decay of organic matter</li><li>Some dissolved toxic / bad-tasting metals become insoluble when oxidised and can be removed</li></ul>
+<div class="mspart"><div class="msh"><b>06.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Raises dissolved oxygen and removes hydrogen sulfide (bad-egg smell) from decay of organic matter</span></li><li><span class="mk">1</span><span>Some dissolved toxic / bad-tasting metals become insoluble when oxidised and can be removed</span></li></ul>
 </div>
-<div><b>06.3</b> (2 marks)
-<ul><li>Clay particles carry electrostatic charges that make them repel each other so they stay suspended</li><li>Flocculants such as aluminium sulfate (alum) or polyelectrolytes neutralise the charges so the particles clump and settle in the clarifier</li></ul>
+<div class="mspart"><div class="msh"><b>06.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Clay particles carry electrostatic charges that make them repel each other so they stay suspended</span></li><li><span class="mk">1</span><span>Flocculants such as aluminium sulfate (alum) or polyelectrolytes neutralise the charges so the particles clump and settle in the clarifier</span></li></ul>
 </div>
-<div><b>06.4</b> (2 marks)
-<div class="lvl"><i>Any 2 from:</i></div>
-<ul><li>Chlorine</li><li>Ozone</li><li>Ultraviolet light</li></ul>
+<div class="mspart"><div class="msh"><b>06.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">Any 2 from the points below - 1 mark each, maximum 2.</div><ul class="pts"><li><span class="mk">1</span><span>Chlorine</span></li><li><span class="mk">1</span><span>Ozone</span></li><li><span class="mk">1</span><span>Ultraviolet light</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 126-127; AQA spec 3.2.2.4.</div></details></div>
-<div class="q" id="HYD-13" data-qid="HYD-13" data-marks="15" data-flags="calc data ext"><div class="qh"><span class="num">Question 7</span><span class="meta">15 marks &middot; <a href="../subtopic/hydro-management.html">Water treatment, conservation &amp; new sources</a> &middot; spec 3.2.2.4-3.2.2.5 &middot; Genn pp. 122-127 &middot; HYD-13</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="HYD-13" data-qid="HYD-13" data-marks="15" data-flags="calc data ext"><div class="qh"><span class="num">Question 7</span><span class="meta">15 marks &middot; <a href="../subtopic/hydro-management.html">Water treatment, conservation &amp; new sources</a> &middot; spec 3.2.2.4-3.2.2.5 &middot; Genn pp. 122-127 &middot; HYD-13</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>Figure 1 shows the river level below a reservoir site during one year, before and after a river-regulation reservoir was built.</p>
 <div class="cap">Figure 1</div>
 <svg class="chart" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
@@ -302,18 +315,18 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[9 marks]</span><span class="pn">07.4</span>Discuss the factors that should be considered when selecting a site for a new reservoir, and evaluate the alternative strategies for increasing the sustainability of water supplies.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>07.1</b> (2 marks)
-<ul><li>No reservoir range = 3.9 - 0.7 = 3.2 m; with reservoir = 2.7 - 1.7 = 1.0 m</li><li>Reduction = 2.2 m</li></ul>
+<div class="mspart"><div class="msh"><b>07.1</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">A correct final answer (with unit where asked) scores full marks. If the answer is wrong, award 1 mark for each correct step of working shown.</div><ul class="pts"><li><span class="mk">1</span><span>No reservoir range = 3.9 - 0.7 = 3.2 m; with reservoir = 2.7 - 1.7 = 1.0 m</span></li><li><span class="mk">1</span><span>Reduction = 2.2 m</span></li></ul>
 </div>
-<div><b>07.2</b> (2 marks)
-<ul><li>After heavy rainfall surplus water is stored, reducing peak flows / flooding downstream</li><li>During dry periods the dam is opened to release water and maintain river levels</li></ul>
+<div class="mspart"><div class="msh"><b>07.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>After heavy rainfall surplus water is stored, reducing peak flows / flooding downstream</span></li><li><span class="mk">1</span><span>During dry periods the dam is opened to release water and maintain river levels</span></li></ul>
 </div>
-<div><b>07.3</b> (2 marks)
-<ul><li>Deforestation / urbanisation reduce infiltration and interception</li><li>So runoff reaches the river faster after rain and less water is stored to maintain flow in dry periods</li></ul>
+<div class="mspart"><div class="msh"><b>07.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Deforestation / urbanisation reduce infiltration and interception</span></li><li><span class="mk">1</span><span>So runoff reaches the river faster after rain and less water is stored to maintain flow in dry periods</span></li></ul>
 </div>
-<div><b>07.4</b> (9 marks)
-<div class="lvl"><b>Levels of response:</b> L3 7-9 comprehensive, well-structured, applied to context, supported judgement; L2 4-6 sound but incomplete application/evaluation; L1 1-3 basic, limited structure.</div><div class="lvl"><b>Indicative content:</b></div>
-<ul><li>Site factors: topography - narrow exit from a large deep basin so a small dam holds a large volume; impermeable, strong bedrock without faults or seismic activity; large catchment with regular high rainfall and low evaporation; catchment land use with low pollution risk (pesticides, industry) and low soil erosion to avoid sedimentation; forest / vegetation in the flooded area decaying anaerobically releasing methane; access for workers and materials and distance to demand; value of the land lost (urban, conservation, agricultural) - loss-benefit analysis differs between countries</li><li>Alternatives for supply: rainwater collection, rivers, estuary barrages, desalination (energy-intensive so only where freshwater is inadequate), unexploited aquifers (N Africa, Kenya), inter-basin transfers (China, Australia, Wales-England), artificial aquifer recharge using surplus wet-season water, river-regulation reservoirs, afforestation to even out flow</li><li>Conservation strategies: low-water appliances, dual-flush toilets, xeriscaping, drip irrigation, grey-water re-use, leak repair (about 20% lost in the UK), metering</li><li>Treatment / pollution control allowing re-use of contaminated sources: sewage treatment, buffer strips, mine drainage control</li><li>Evaluation: reservoirs give large reliable supplies and flood control but flood land, cause habitat loss and methane; conservation is cheap and quick but limited by behaviour; transfers create conflicts between regions; desalination has high energy / carbon cost; combination needed as demand grows</li><li>Justified conclusion</li></ul>
+<div class="mspart"><div class="msh"><b>07.4</b> <span class="mtot">9 marks</span></div>
+<table class="levels"><tr><th>Level</th><th>Marks</th><th>What the answer must show</th></tr><tr><td><b>Level 3</b></td><td class="r">7-9</td><td>Answer is comprehensive, relevant and logically structured. Shows detailed knowledge and understanding of the relevant scientific ideas and applies them accurately to the context. Evaluation/analysis is well supported by evidence and a clear judgement or conclusion is reached.</td></tr><tr><td><b>Level 2</b></td><td class="r">4-6</td><td>Answer is mostly relevant and shows some structure. Knowledge and understanding of relevant ideas is sound but application to the context or evaluation may be incomplete or lack detail. A judgement may be made but is not fully supported.</td></tr><tr><td><b>Level 1</b></td><td class="r">1-3</td><td>Answer is basic, with limited structure. Some relevant knowledge is shown but there are omissions or errors. Little application to the context and little or no evaluation.</td></tr><tr><td><b>&nbsp;</b></td><td class="r">0</td><td>No relevant content.</td></tr></table><div class="lvl"><b>Indicative content</b> - credit any of the following (and other relevant, accurate points):</div>
+<ul class="ind"><li>Site factors: topography - narrow exit from a large deep basin so a small dam holds a large volume; impermeable, strong bedrock without faults or seismic activity; large catchment with regular high rainfall and low evaporation; catchment land use with low pollution risk (pesticides, industry) and low soil erosion to avoid sedimentation; forest / vegetation in the flooded area decaying anaerobically releasing methane; access for workers and materials and distance to demand; value of the land lost (urban, conservation, agricultural) - loss-benefit analysis differs between countries</li><li>Alternatives for supply: rainwater collection, rivers, estuary barrages, desalination (energy-intensive so only where freshwater is inadequate), unexploited aquifers (N Africa, Kenya), inter-basin transfers (China, Australia, Wales-England), artificial aquifer recharge using surplus wet-season water, river-regulation reservoirs, afforestation to even out flow</li><li>Conservation strategies: low-water appliances, dual-flush toilets, xeriscaping, drip irrigation, grey-water re-use, leak repair (about 20% lost in the UK), metering</li><li>Treatment / pollution control allowing re-use of contaminated sources: sewage treatment, buffer strips, mine drainage control</li><li>Evaluation: reservoirs give large reliable supplies and flood control but flood land, cause habitat loss and methane; conservation is cheap and quick but limited by behaviour; transfers create conflicts between regions; desalination has high energy / carbon cost; combination needed as demand grows</li><li>Justified conclusion</li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 122-127; AQA spec 3.2.2.4-3.2.2.5.</div></details></div>
 </div></main>
@@ -332,7 +345,7 @@ const tb=document.getElementById('themeBtn');if(tb)tb.onclick=()=>{const t=root.
 let prog=LS('envsci.progress')||{};
 window.ES.prog=()=>prog;
 function paint(){
-  document.querySelectorAll('.q[data-qid]').forEach(el=>{const s=prog[el.dataset.qid]||0;el.dataset.status=s;el.querySelectorAll('.st button').forEach(b=>b.classList.toggle('on',+b.dataset.s===s&&s>0));});
+  document.querySelectorAll('.q[data-qid]').forEach(el=>{const s=prog[el.dataset.qid]||0;el.dataset.status=s;el.querySelectorAll('.st button[data-s]').forEach(b=>b.classList.toggle('on',+b.dataset.s===s&&s>0));});
   document.querySelectorAll('[data-qids]').forEach(el=>{const ids=el.dataset.qids.split(',').filter(Boolean);const n=ids.length;if(!n)return;
     const ok=ids.filter(i=>prog[i]===2).length,wk=ids.filter(i=>prog[i]===1).length;
     const o=el.querySelector('.bar .ok'),w=el.querySelector('.bar .wk'),p=el.querySelector('.pl');
@@ -340,7 +353,7 @@ function paint(){
   const ov=document.getElementById('overall');if(ov){const all=(ov.dataset.qids||'').split(',').filter(Boolean);const ok=all.filter(i=>prog[i]===2).length,wk=all.filter(i=>prog[i]===1).length;ov.querySelector('.stat').textContent=Math.round(100*ok/all.length)+'%';ov.querySelector('.detail').textContent=ok+' secure, '+wk+' to revisit, '+(all.length-ok-wk)+' not attempted of '+all.length+' questions.';}
 }
 window.ES.paint=paint;
-document.addEventListener('click',e=>{const b=e.target.closest('.st button');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);paint();if(window.ES.onFilter)window.ES.onFilter();});
+document.addEventListener('click',e=>{const b=e.target.closest('.st button[data-s]');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);paint();if(window.ES.onFilter)window.ES.onFilter();});
 const rs=document.getElementById('resetProg');if(rs)rs.onclick=()=>{if(confirm('Clear all saved progress on this browser?')){prog={};SV('envsci.progress',prog);paint();}};
 paint();
 /* ---- filter bar ---- */
@@ -363,6 +376,13 @@ if(fb){
   txt.addEventListener('input',run);fb.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{c.classList.toggle('on');run();});fb.querySelector('select.status').onchange=run;
   const clr=fb.querySelector('.clear');if(clr)clr.onclick=()=>{txt.value='';fb.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));fb.querySelector('select.status').value='all';run();};
   run();}
+/* ---- sticky offset = real header height (nav can wrap) ---- */
+const hd=document.querySelector('header.top');const setH=()=>root.style.setProperty('--hdr',(getComputedStyle(hd).position==='sticky'?hd.offsetHeight:0)+'px');setH();window.addEventListener('resize',setH);
+/* ---- copy link, back to top ---- */
+document.addEventListener('click',e=>{const b=e.target.closest('[data-copy]');if(!b)return;const q=b.closest('.q');const url=location.href.split('#')[0]+'#'+q.id;
+  (navigator.clipboard?navigator.clipboard.writeText(url):Promise.reject()).then(()=>{b.textContent='\u2713';setTimeout(()=>b.innerHTML='&#128279;',1200);}).catch(()=>prompt('Copy this link:',url));});
+const tt=document.createElement('button');tt.id='totop';tt.title='Back to top';tt.innerHTML='&uarr;';tt.className='noprint';document.body.appendChild(tt);tt.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+window.addEventListener('scroll',()=>tt.classList.toggle('show',window.scrollY>600),{passive:true});
 /* ---- print & reveal ---- */
 document.querySelectorAll('[data-print]').forEach(b=>b.onclick=()=>{const ms=b.dataset.print==='ms';document.body.classList.toggle('print-ms',ms);document.querySelectorAll('details.ms').forEach(d=>d.open=ms);window.print();});
 document.querySelectorAll('[data-reveal]').forEach(b=>b.onclick=()=>{const open=b.dataset.reveal==='1';document.querySelectorAll('details.ms').forEach(d=>d.open=open);b.dataset.reveal=open?'0':'1';b.textContent=open?'Hide all mark schemes':'Show all mark schemes';});

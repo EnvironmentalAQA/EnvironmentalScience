@@ -14,6 +14,7 @@ specification reference. Printed page = PDF page − 2 in the compressed PDF.
 
 ```
 build.py            rebuilds everything (site/ is output — never edit it by hand)
+bank/official_index.py  which subtopic each question in the real AQA papers covers (edit when a new series is added)
 bank/topics.py      the topic tree: Paper 1 / Paper 2 → topic → subtopic (slug, spec ref, book pages)
 bank/p1_*.py        Paper 1 question bank (physical environment, energy, pollution)
 bank/p2_*.py        Paper 2 question bank (living environment, biological resources, sustainability)
@@ -91,9 +92,19 @@ They are grouped by series and paper on `site/official.html`.
   (pause / resume / reset, survives reloads) and a *Marks awarded* box under every mark-scheme part
   (essay: higher of the two counts). The score is saved per paper and shown in the *Your score* column.
 - **Dark mode** toggle in the header (remembered) and a print stylesheet that hides navigation and tools.
+- **Real AQA questions by topic** (`pastq.html`) - every question in the published AQA papers indexed by
+  subtopic (`bank/official_index.py`), linking to the official PDF at the right page and to its mark scheme;
+  each subtopic page also lists the real questions on that topic.
+- **Revision planner** (`planner.html`) - exam countdown, subtopics sorted weakest-first with how often each
+  has been examined, mock-paper score history and suggested next steps.
+- **Explicit mark schemes** - every marking point shows the mark it earns and a rule line ("Any 3 from",
+  "2 marks for each point", calculation rules); levels-of-response questions show the full level
+  descriptor table (`gen/marking.py`, shared by the PDFs and the site).
+- Quick-fire weights questions marked *needs work* three times more heavily; `quickfire.html?sub=<slug>`
+  practises one subtopic. Copy-link button on every question; jump list on mock papers; back-to-top.
 
 ## Current contents
 
-296 questions across all 43 spec subtopics (33 five-markers, 8 fifteen-markers), 31 essay titles,
+301 questions across all 43 spec subtopics (33 five-markers, 13 fifteen-markers), 31 essay titles,
 40 mock papers per paper. Adding more 15-mark questions is the main lever for making the assembler
 use the real AQA (2 x 15, 5 x 10, 3 x 5) pattern more often.

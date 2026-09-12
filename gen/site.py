@@ -5,7 +5,9 @@ localStorage so the site still works as plain files with no server."""
 import os, re, html, json
 from bank.topics import PAPERS, subtopic_index, BOOK
 from .model import Table as QTable, Chart
-from .pdf import plain
+from .pdf import plain, LEVELS_9, LEVELS_25
+from .marking import mark_points
+from bank.official_index import OFFICIAL_INDEX
 
 EXAM_SECONDS = 3 * 60 * 60   # AQA 7447: each paper is 3 hours
 
@@ -79,12 +81,12 @@ footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-
 .prog .bar .ok{background:var(--ok);height:100%}.prog .bar .wk{background:var(--warn);height:100%}.prog .pl{white-space:nowrap;min-width:90px}
 .hero .prog{color:rgba(255,255,255,.85)}.hero .prog .bar{background:rgba(255,255,255,.25)}
 /* filter bar & tools */
-.filterbar{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.filterbar{position:sticky;top:var(--hdr,62px);z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .filterbar input[type=search]{flex:1 1 220px;font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
 .filterbar label{font-size:.85rem;color:var(--stone);display:inline-flex;align-items:center;gap:4px;cursor:pointer}.filterbar .chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--sand);color:var(--stone);font-size:.82rem;cursor:pointer;font-family:inherit}
 .filterbar .chip.on{background:var(--moss);color:#fff;border-color:var(--moss)}.filterbar .cnt{font-size:.85rem;color:var(--stone);margin-left:auto}
 .filterbar select{font:inherit;font-size:.88rem;padding:5px 8px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
-.tools{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:10px 0;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.tools{position:sticky;top:var(--hdr,62px);z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:10px 0;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .tools .time{font-family:Fraunces,serif;font-size:1.6rem;font-weight:700;color:var(--head);min-width:120px}.tools .time.low{color:var(--bad)}
 .tools .score{font-weight:700;color:var(--moss)}.tools .score b{font-family:Fraunces,serif;font-size:1.3rem}.tools .pct{font-size:.85rem;color:var(--stone)}
 .tools button{font-family:inherit;font-size:.88rem;padding:6px 12px;border-radius:8px;border:1px solid var(--moss);background:transparent;color:var(--moss);cursor:pointer}.tools button.primary{background:var(--moss);color:#fff}
@@ -97,6 +99,20 @@ footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-
 .res{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0;text-decoration:none;color:inherit}.res:hover{border-color:var(--moss)}
 .res .t{font-weight:700;color:var(--head)}.res .m{font-size:.82rem;color:var(--stone)}.res .s{font-size:.92rem;margin-top:4px}.res mark{background:#ffe58a;color:#222;border-radius:3px;padding:0 2px}
 .empty{color:var(--stone);font-style:italic}
+/* mark scheme points, levels, links */
+.mspart{margin:8px 0 12px}.msh{display:flex;align-items:baseline;gap:8px;margin-bottom:2px}.msh .mtot{font-size:.8rem;color:var(--earth);font-weight:700}
+ul.pts{list-style:none;margin:4px 0 6px 0!important;padding:0}ul.pts li{display:flex;gap:10px;align-items:flex-start;padding:4px 0;border-top:1px dashed var(--ms-line)}ul.pts li:first-child{border-top:0}
+.mk{flex:0 0 auto;min-width:26px;text-align:center;font-size:.75rem;font-weight:700;color:#fff;background:var(--ok);border-radius:6px;padding:2px 6px;margin-top:3px}
+table.levels{border-collapse:collapse;width:100%;margin:6px 0 10px;font-size:.86rem;background:var(--card)}table.levels th,table.levels td{border:1px solid var(--ms-line);padding:5px 8px;text-align:left;vertical-align:top}table.levels th{background:var(--sand-dark)}table.levels td.r{white-space:nowrap;font-weight:700;color:var(--earth)}
+ul.ind{margin:4px 0 8px 18px}
+.st button.lnk{padding:2px 7px}
+#totop{position:fixed;right:18px;bottom:18px;z-index:15;background:var(--moss);color:#fff;border:0;border-radius:50%;width:42px;height:42px;font-size:1.2rem;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .2s}#totop.show{opacity:1;pointer-events:auto}
+.jump{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 4px}.jump a{font-size:.82rem;padding:3px 10px;border-radius:999px;border:1px solid var(--line);background:var(--sand);color:var(--moss);text-decoration:none;font-weight:600}.jump a:hover{background:var(--leaf-light)}
+.real .row{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;padding:8px 0;border-bottom:1px dashed var(--line);font-size:.95rem}.real .row .ser{font-weight:700;color:var(--head);min-width:150px}.real .row .qn{color:var(--stone);min-width:70px}.real .row .t{flex:1 1 300px}
+.real .row a{font-size:.82rem;padding:2px 9px;border-radius:999px;border:1px solid var(--line);background:var(--sand);text-decoration:none;font-weight:600}
+.plan input[type=date]{font:inherit;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}.plan .big{font-family:Fraunces,serif;font-size:2rem;color:var(--moss)}
+table.list td .bar{height:8px;background:var(--sand-dark);border-radius:999px;overflow:hidden;display:flex;width:140px}table.list td .bar .ok{background:var(--ok)}table.list td .bar .wk{background:var(--warn)}
+@media(max-width:720px){header.top{position:static}header.top nav a{margin-left:12px;font-size:.88rem}.filterbar,.tools{top:0}.hero h1{font-size:1.8rem}.hero{padding:34px 0 28px}.sub-item .t{flex-basis:100%}}
 /* print */
 @media print{header.top,footer,.tools,.filterbar,.st,.pill,.aw,.hero .crumbs,.prog,.noprint{display:none!important}
 body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;color:#000;padding:10px 0}.hero p,.hero h1{color:#000}.hero:before{display:none}
@@ -130,7 +146,7 @@ const tb=document.getElementById('themeBtn');if(tb)tb.onclick=()=>{const t=root.
 let prog=LS('envsci.progress')||{};
 window.ES.prog=()=>prog;
 function paint(){
-  document.querySelectorAll('.q[data-qid]').forEach(el=>{const s=prog[el.dataset.qid]||0;el.dataset.status=s;el.querySelectorAll('.st button').forEach(b=>b.classList.toggle('on',+b.dataset.s===s&&s>0));});
+  document.querySelectorAll('.q[data-qid]').forEach(el=>{const s=prog[el.dataset.qid]||0;el.dataset.status=s;el.querySelectorAll('.st button[data-s]').forEach(b=>b.classList.toggle('on',+b.dataset.s===s&&s>0));});
   document.querySelectorAll('[data-qids]').forEach(el=>{const ids=el.dataset.qids.split(',').filter(Boolean);const n=ids.length;if(!n)return;
     const ok=ids.filter(i=>prog[i]===2).length,wk=ids.filter(i=>prog[i]===1).length;
     const o=el.querySelector('.bar .ok'),w=el.querySelector('.bar .wk'),p=el.querySelector('.pl');
@@ -138,7 +154,7 @@ function paint(){
   const ov=document.getElementById('overall');if(ov){const all=(ov.dataset.qids||'').split(',').filter(Boolean);const ok=all.filter(i=>prog[i]===2).length,wk=all.filter(i=>prog[i]===1).length;ov.querySelector('.stat').textContent=Math.round(100*ok/all.length)+'%';ov.querySelector('.detail').textContent=ok+' secure, '+wk+' to revisit, '+(all.length-ok-wk)+' not attempted of '+all.length+' questions.';}
 }
 window.ES.paint=paint;
-document.addEventListener('click',e=>{const b=e.target.closest('.st button');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);paint();if(window.ES.onFilter)window.ES.onFilter();});
+document.addEventListener('click',e=>{const b=e.target.closest('.st button[data-s]');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);paint();if(window.ES.onFilter)window.ES.onFilter();});
 const rs=document.getElementById('resetProg');if(rs)rs.onclick=()=>{if(confirm('Clear all saved progress on this browser?')){prog={};SV('envsci.progress',prog);paint();}};
 paint();
 /* ---- filter bar ---- */
@@ -161,6 +177,13 @@ if(fb){
   txt.addEventListener('input',run);fb.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{c.classList.toggle('on');run();});fb.querySelector('select.status').onchange=run;
   const clr=fb.querySelector('.clear');if(clr)clr.onclick=()=>{txt.value='';fb.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));fb.querySelector('select.status').value='all';run();};
   run();}
+/* ---- sticky offset = real header height (nav can wrap) ---- */
+const hd=document.querySelector('header.top');const setH=()=>root.style.setProperty('--hdr',(getComputedStyle(hd).position==='sticky'?hd.offsetHeight:0)+'px');setH();window.addEventListener('resize',setH);
+/* ---- copy link, back to top ---- */
+document.addEventListener('click',e=>{const b=e.target.closest('[data-copy]');if(!b)return;const q=b.closest('.q');const url=location.href.split('#')[0]+'#'+q.id;
+  (navigator.clipboard?navigator.clipboard.writeText(url):Promise.reject()).then(()=>{b.textContent='\u2713';setTimeout(()=>b.innerHTML='&#128279;',1200);}).catch(()=>prompt('Copy this link:',url));});
+const tt=document.createElement('button');tt.id='totop';tt.title='Back to top';tt.innerHTML='&uarr;';tt.className='noprint';document.body.appendChild(tt);tt.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+window.addEventListener('scroll',()=>tt.classList.toggle('show',window.scrollY>600),{passive:true});
 /* ---- print & reveal ---- */
 document.querySelectorAll('[data-print]').forEach(b=>b.onclick=()=>{const ms=b.dataset.print==='ms';document.body.classList.toggle('print-ms',ms);document.querySelectorAll('details.ms').forEach(d=>d.open=ms);window.print();});
 document.querySelectorAll('[data-reveal]').forEach(b=>b.onclick=()=>{const open=b.dataset.reveal==='1';document.querySelectorAll('details.ms').forEach(d=>d.open=open);b.dataset.reveal=open?'0':'1';b.textContent=open?'Hide all mark schemes':'Show all mark schemes';});
@@ -201,7 +224,7 @@ PAPERS_JS = r"""
 def page(title, body, root="", active="", extra_js="", body_attrs=""):
     nav = "".join(f'<a href="{root}{h}" class="{"on" if active == h else ""}">{t}</a>' for h, t in
                   [("index.html", "Topics"), ("papers.html", "Mock papers"), ("official.html", "Past papers"), ("essays.html", "Essay bank"),
-                   ("quickfire.html", "Quick-fire"), ("search.html", "Search")])
+                   ("pastq.html", "Real Qs by topic"), ("quickfire.html", "Quick-fire"), ("planner.html", "Planner"), ("search.html", "Search")])
     return f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(title)} - AQA Environmental Science</title><style>{CSS}</style>
 <script>try{{if(localStorage.getItem('envsci.theme')==='"dark"')document.documentElement.dataset.theme='dark';}}catch(e){{}}</script></head><body {body_attrs}>
@@ -312,8 +335,13 @@ def q_flags(q):
     return f
 
 
+def levels_table(levels):
+    rows = "".join(f'<tr><td><b>{html.escape(lv) if lv else "&nbsp;"}</b></td><td class="r">{html.escape(rng)}</td><td>{html.escape(desc)}</td></tr>' for lv, rng, desc in levels)
+    return f'<table class="levels"><tr><th>Level</th><th>Marks</th><th>What the answer must show</th></tr>{rows}</table>'
+
+
 FLAG_NAMES = {"calc": "Calculation", "data": "Data / figure", "ext": "9-mark extended", "mcq": "Multiple choice", "table": "Complete a table"}
-STATUS_BTNS = '<span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span>'
+STATUS_BTNS = '<span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span>'
 
 
 def html_question(qn, q, marking=False):
@@ -341,14 +369,16 @@ def html_question(qn, q, marking=False):
     out.append('<details class="ms"><summary>Show mark scheme</summary>')
     for i, p in enumerate(q.parts, 1):
         lab = f"{qn:02d}" if single else f"{qn:02d}.{i}"
-        out.append(f"<div><b>{lab}</b> ({p.marks} marks)")
+        out.append(f'<div class="mspart"><div class="msh"><b>{lab}</b> <span class="mtot">{p.marks} mark{"s" if p.marks != 1 else ""}</span></div>')
+        rule, pts = mark_points(p)
         if p.level:
-            out.append('<div class="lvl"><b>Levels of response:</b> L3 7-9 comprehensive, well-structured, applied to context, supported judgement; L2 4-6 sound but incomplete application/evaluation; L1 1-3 basic, limited structure.</div><div class="lvl"><b>Indicative content:</b></div>')
-        elif p.ms_note:
-            out.append(f'<div class="lvl"><i>{fmt(p.ms_note)}</i></div>')
-        elif len(p.ms) > p.marks and not p.mcq:
-            out.append(f'<div class="lvl"><i>Any {p.marks} from:</i></div>')
-        out.append("<ul>" + "".join(f"<li>{fmt(m)}</li>" for m in p.ms) + "</ul>")
+            out.append(levels_table(LEVELS_9) + '<div class="lvl"><b>Indicative content</b> - credit any of the following (and other relevant, accurate points):</div>')
+            out.append('<ul class="ind">' + "".join(f"<li>{fmt(m)}</li>" for m in p.ms) + "</ul>")
+        elif p.mcq:
+            letter = chr(65 + p.mcq.index(p.ms[0])) if p.ms and p.ms[0] in p.mcq else ""
+            out.append(f'<div class="lvl">{fmt(rule)}</div><ul class="pts"><li><span class="mk">1</span><span><b>{letter}</b>&nbsp; {fmt(p.ms[0]) if p.ms else ""}</span></li></ul>')
+        else:
+            out.append(f'<div class="lvl">{fmt(rule)}</div><ul class="pts">' + "".join(f'<li><span class="mk">{lab_}</span><span>{fmt(m)}</span></li>' for m, lab_ in pts) + "</ul>")
         if marking:
             out.append(f'<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="{p.marks}" step="1" data-kind="part" data-key="{q.id}.{i}"></label> / {p.marks}</div>')
         out.append("</div>")
@@ -435,6 +465,10 @@ def subtopic_page(slug, sets):
     for k, s in enumerate(sets, 1):
         body.append(f'<tr><td>Set {k}</td><td>{len(s)}</td><td>{sum(q.marks for q in s)}</td><td><a href="../pdf/topic/{slug}-set{k}-QP.pdf">Download QP (PDF)</a></td><td><a href="../pdf/topic/{slug}-set{k}-MS.pdf">Download MS (PDF)</a></td></tr>')
     body.append("</table>")
+    real = official_rows(slug)
+    if real:
+        body.append(f'<h2 class="sec">Real AQA questions on this topic ({len(real)})</h2><div class="real">' + "".join(real) + "</div>")
+    body.append(f'<p class="note noprint">Practise this subtopic one question at a time: <a href="../quickfire.html?sub={slug}">Quick-fire &rarr;</a></p>')
     body.append(filter_bar())
     qn = 0
     for k, s in enumerate(sets, 1):
@@ -473,14 +507,15 @@ def paper_online_page(g):
                 f'<span class="score">Score <b id="scoreN">0</b>/{total} <span class="pct" id="scorePct">0%</span></span><button type="button" id="clearScore">Clear marks</button>'
                 '<button type="button" data-reveal="1">Show all mark schemes</button><button type="button" data-print="qp">Print</button><button type="button" data-print="ms">Print + MS</button>'
                 '<span class="kbd">Enter the marks you award yourself inside each mark scheme; the score is saved for this paper.</span></div>')
+    body.append('<div class="jump noprint">' + "".join(f'<a href="#{q.id}">Q{i} &middot; {q.marks}</a>' for i, q in enumerate(g["questions"], 1)) + (f'<a href="#essay">Q{len(g["questions"]) + 1} &middot; essay</a>' if g["essays"] else "") + "</div>")
     for i, q in enumerate(g["questions"], 1):
         body.append(html_question(i, q, marking=True))
     if g["essays"]:
         n = len(g["questions"]) + 1
-        body.append(f'<div class="q"><div class="qh"><span class="num">Question {n} &mdash; Essay (answer ONE)</span><span class="meta">25 marks</span></div>')
+        body.append(f'<div class="q" id="essay"><div class="qh"><span class="num">Question {n} &mdash; Essay (answer ONE)</span><span class="meta">25 marks</span></div>')
         for k, e in enumerate(g["essays"], 1):
             body.append(f'<div class="part"><span class="marks">[25 marks]</span><span class="pn">{n:02d}.{k}</span>{fmt(e.title)}</div>')
-            body.append('<details class="ms"><summary>Indicative content</summary><div class="lvl"><b>Levels:</b> L5 21-25 &middot; L4 16-20 &middot; L3 11-15 &middot; L2 6-10 &middot; L1 1-5. Reward breadth across the specification, accurate detail, application to the question and a supported conclusion.</div><ul>' + "".join(f"<li>{fmt(m)}</li>" for m in e.indicative) +
+            body.append('<details class="ms"><summary>Indicative content</summary>' + levels_table(LEVELS_25) + '<div class="lvl"><b>Indicative content</b> - students are not expected to cover all of these:</div><ul class="ind">' + "".join(f"<li>{fmt(m)}</li>" for m in e.indicative) +
                         f'</ul><div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="25" step="1" data-kind="essay" data-key="{e.id}"></label> / 25 (only the higher of the two essays counts)</div><div class="src">Source: {html.escape(BOOK)}, pp. {html.escape(e.pages)}; spec {html.escape(e.spec)}.</div></details>')
         body.append("</div>")
     body.append("</div></main>")
@@ -495,7 +530,7 @@ def essays_page(essays):
         body.append(f'<div class="paper-head"><span class="tag p{pno}">{PAPERS[pno]["name"]}</span><span class="assessed">{html.escape(PAPERS[pno]["assessed"])}</span></div>')
         for e in [x for x in essays if x.paper == pno]:
             body.append(f'<div class="q"><div class="qh"><span class="num">{fmt(e.title)}</span><span class="meta">spec {html.escape(e.spec)} &middot; Genn pp. {html.escape(e.pages)} &middot; {e.id}</span></div>'
-                        '<details class="ms"><summary>Indicative content</summary><ul>' + "".join(f"<li>{fmt(m)}</li>" for m in e.indicative) + "</ul></details></div>")
+                        '<details class="ms"><summary>Mark scheme and indicative content</summary>' + levels_table(LEVELS_25) + '<div class="lvl"><b>Indicative content</b> - students are not expected to cover all of these:</div><ul class="ind">' + "".join(f"<li>{fmt(m)}</li>" for m in e.indicative) + "</ul></details></div>")
     body.append("</div></main>")
     return page("Essay bank", "\n".join(body), active="essays.html")
 
@@ -548,18 +583,22 @@ const paperSel=$('#qfPaper'),topicSel=$('#qfTopic'),marksSel=$('#qfMarks'),skip=
 const params=new URLSearchParams(location.search);
 window.QTOPICS.forEach(t=>{const o=document.createElement('option');o.value=t.slug;o.textContent='Paper '+t.paper+' \u00b7 '+t.name;topicSel.appendChild(o);});
 if(params.get('topic'))topicSel.value=params.get('topic');
+if(params.get('sub')){const o=document.createElement('option');o.value='__sub';o.textContent='Selected subtopic only';topicSel.appendChild(o);topicSel.value='__sub';topicSel.disabled=true;}
 let seen=[],cur=null,n=0;
-function pool(){const p=prog();return bank.filter(q=>(paperSel.value==='any'||q.papers.includes(+paperSel.value))&&(topicSel.value==='any'||q.tslug===topicSel.value)&&(marksSel.value==='any'||q.marks===+marksSel.value)&&!(skip.checked&&p[q.id]===2));}
+const subParam=params.get('sub');
+function pool(){const p=prog();return bank.filter(q=>(paperSel.value==='any'||q.papers.includes(+paperSel.value))&&(topicSel.value==='any'||topicSel.value==='__sub'||q.tslug===topicSel.value)&&(!subParam||q.sub===subParam)&&(marksSel.value==='any'||q.marks===+marksSel.value)&&!(skip.checked&&p[q.id]===2));}
 function next(){const p=pool();if(!p.length){host.innerHTML='<p class="empty">No questions match these filters (or you have marked them all secure - untick "skip secure").</p>';return;}
   let c=p.filter(q=>!seen.includes(q.id));if(!c.length){seen=[];c=p;}
-  cur=c[Math.floor(Math.random()*c.length)];seen.push(cur.id);n++;
+  /* questions marked "needs work" are three times as likely to come up as untried ones */
+  const pr=prog();const w=c.map(q=>pr[q.id]===1?3:1);let r=Math.random()*w.reduce((a,b)=>a+b,0);cur=c[c.length-1];for(let i=0;i<c.length;i++){r-=w[i];if(r<0){cur=c[i];break;}}
+  seen.push(cur.id);n++;
   host.innerHTML=cur.html;window.ES.paint();stat.textContent='Question '+n+' this session \u00b7 '+p.length+' in the pool';window.scrollTo({top:host.offsetTop-90,behavior:'smooth'});}
 $('#qfNext').onclick=next;[paperSel,topicSel,marksSel,skip].forEach(e=>e.onchange=()=>{seen=[];stat.textContent=pool().length+' questions in the pool';});
 document.addEventListener('keydown',e=>{if(e.target.matches('input,select,textarea'))return;if(e.key==='n'||e.key==='N'||e.key===' '){e.preventDefault();next();}
   if(e.key==='m'||e.key==='M'){const d=host.querySelector('details.ms');if(d)d.open=!d.open;}
   if(e.key==='1'||e.key==='2'){const b=host.querySelector('.st button[data-s="'+e.key+'"]');if(b)b.click();}});
 stat.textContent=pool().length+' questions in the pool';
-if(params.get('topic'))next();
+if(params.get('topic')||params.get('sub'))next();
 })();
 """
 
@@ -602,3 +641,125 @@ def search_page():
                 '<label>Type <select id="sFlag"><option value="any">Any</option>' + "".join(f'<option value="{k}">{v}</option>' for k, v in FLAG_NAMES.items()) + '</select></label></div>'
                 '<div id="results"></div></div></main>')
     return page("Search", "\n".join(body), active="search.html", extra_js=f'<script src="qdata.js"></script><script>{SEARCH_JS}</script>')
+
+
+# ---------- real AQA past-paper questions by topic ----------
+def _series_label(name):
+    m = re.search(r"-(JUN|NOV)(\d\d)", name)
+    if m:
+        return ("June " if m.group(1) == "JUN" else "November ") + "20" + m.group(2)
+    return "Specimen"
+
+
+def _ms_for(qp_name, official):
+    """Find the mark-scheme file for a question paper (same paper number and series)."""
+    m = re.match(r"AQA-(7447\d)-(?:QP-(\w{5})|SQP)", qp_name)
+    if not m:
+        return None
+    code, series = m.group(1), m.group(2)
+    for f in official:
+        n = f["name"].upper()
+        if series and re.match(rf"AQA-{code}-(W-)?MS-{series}", n):
+            return f["name"]
+        if not series and n.startswith(f"AQA-{code}-SMS"):
+            return f["name"]
+    return None
+
+
+OFFICIAL_FILES = []   # set by build.py before pages are rendered
+
+
+def official_rows(slug, root="../"):
+    idx = subtopic_index()
+    rows = []
+    for fname, entries in OFFICIAL_INDEX.items():
+        pno = fname[8]
+        ms = _ms_for(fname, OFFICIAL_FILES)
+        for qn, page, marks, sub, title in entries:
+            if sub != slug:
+                continue
+            kind = "Essay" if qn == 11 else f"Q{qn}"
+            links = f'<a href="{root}official/{fname}#page={page}">Question (p.{page})</a>'
+            if ms:
+                links += f' <a href="{root}official/{ms}">Mark scheme</a>'
+            rows.append((fname, qn, f'<div class="row"><span class="ser">{_series_label(fname)} &middot; Paper {pno}</span><span class="qn">{kind} &middot; {marks} marks</span><span class="t">{html.escape(title)}</span>{links}</div>'))
+    def key(r):
+        m = re.search(r"-(JUN|NOV)(\d\d)", r[0])
+        return ((int(m.group(2)), 1 if m.group(1) == "JUN" else 2) if m else (0, 0), r[1])
+    rows.sort(key=key, reverse=True)
+    return [r[2] for r in rows]
+
+
+def official_counts():
+    c = {}
+    for entries in OFFICIAL_INDEX.values():
+        for qn, page, marks, sub, title in entries:
+            c[sub] = c.get(sub, 0) + 1
+    return c
+
+
+def pastq_page():
+    idx = subtopic_index()
+    counts = official_counts()
+    total = sum(len(v) for v in OFFICIAL_INDEX.values())
+    body = [hero("Real AQA questions by topic", f"Every question from the {len(OFFICIAL_INDEX)} published AQA 7447 papers ({total} questions and essay titles), sorted by specification topic. Each link opens the official paper at the right page; the mark scheme link opens AQA's mark scheme for that paper. Use it to see how a topic is really examined, then compare with the practice sets.")]
+    body.append('<main><div class="wrap">')
+    body.append('<div class="jump noprint">' + "".join(f'<a href="#{t["slug"]}">{html.escape(t["name"])}</a>' for pno, paper in PAPERS.items() for t in paper["topics"] if not (pno == 2 and t["slug"] == "research")) + "</div>")
+    seen = set()
+    for pno, paper in PAPERS.items():
+        for t in paper["topics"]:
+            if t["slug"] in seen:
+                continue
+            seen.add(t["slug"])
+            body.append(f'<h2 class="sec" id="{t["slug"]}">{html.escape(t["name"])}</h2>')
+            for slug, name, spec, pages in t["subtopics"]:
+                rows = official_rows(slug, root="")
+                body.append(f'<h3 style="margin:16px 0 4px;color:var(--head)"><a href="subtopic/{slug}.html" style="text-decoration:none;color:inherit">{html.escape(name)}</a> <span style="font-size:.85rem;color:var(--stone);font-weight:400">spec {spec} &middot; {len(rows)} question{"s" if len(rows) != 1 else ""}</span></h3>')
+                body.append('<div class="real">' + ("".join(rows) if rows else '<div class="row empty">Not yet examined in a published paper - a likely candidate for future series.</div>') + "</div>")
+    body.append("</div></main>")
+    return page("Real AQA questions by topic", "\n".join(body), active="pastq.html")
+
+
+# ---------- revision planner ----------
+PLANNER_JS = r"""
+(function(){
+const LS=window.ES.LS,SV=window.ES.SV,prog=window.ES.prog();const subs=window.PSUBS;
+/* exam countdown */
+const dIn=document.getElementById('examDate'),out=document.getElementById('countdown');
+const saved=LS('envsci.examdate');if(saved)dIn.value=saved;
+function cd(){if(!dIn.value){out.textContent='Set your first exam date to see the countdown.';return;}const d=Math.ceil((new Date(dIn.value)-new Date())/86400000);
+  out.innerHTML=d<0?'Exam date has passed.':'<span class="big">'+d+'</span> day'+(d===1?'':'s')+' to go'+(d>0?' &middot; about '+Math.max(1,Math.round(d/7))+' week'+(Math.round(d/7)===1?'':'s'):'');}
+dIn.onchange=()=>{SV('envsci.examdate',dIn.value);cd();};cd();
+/* weakest subtopics */
+const rows=subs.map(s=>{const ok=s.ids.filter(i=>prog[i]===2).length,wk=s.ids.filter(i=>prog[i]===1).length;return {...s,ok,wk,pct:s.ids.length?ok/s.ids.length:0};});
+rows.sort((a,b)=>a.pct-b.pct||b.real-a.real);
+document.getElementById('weak').innerHTML=rows.map(s=>'<tr><td><a href="subtopic/'+s.slug+'.html">'+s.name+'</a><br><span style="font-size:.8rem;color:var(--stone)">'+s.topic+' &middot; Paper '+s.papers.join(' & ')+'</span></td>'+
+  '<td><div class="bar"><div class="ok" style="width:'+(100*s.ok/s.ids.length)+'%"></div><div class="wk" style="width:'+(100*s.wk/s.ids.length)+'%"></div></div><span style="font-size:.8rem;color:var(--stone)">'+s.ok+'/'+s.ids.length+' secure'+(s.wk?', '+s.wk+' to revisit':'')+'</span></td>'+
+  '<td>'+s.real+'</td><td><a class="btn ghost" style="padding:4px 10px;font-size:.82rem" href="quickfire.html?sub='+s.slug+'">Practise</a></td></tr>').join('');
+/* mock scores */
+const sc=LS('envsci.scores')||{};const keys=Object.keys(sc).filter(k=>sc[k].total!==undefined).sort((a,b)=>(sc[b].when||0)-(sc[a].when||0));
+const mock=document.getElementById('mocks');
+if(!keys.length)mock.innerHTML='<p class="empty">No mock papers marked yet - open a paper from <a href="papers.html">Mock papers</a>, sit it with the timer and enter your marks.</p>';
+else{const avg=p=>{const k=keys.filter(x=>x.startsWith('P'+p));return k.length?Math.round(100*k.reduce((a,x)=>a+sc[x].total/sc[x].max,0)/k.length):null;};
+  mock.innerHTML='<p><b>Average:</b> Paper 1 '+(avg(1)===null?'&ndash;':avg(1)+'%')+' &middot; Paper 2 '+(avg(2)===null?'&ndash;':avg(2)+'%')+'</p><table class="list"><tr><th>Paper</th><th>Score</th><th>When</th></tr>'+
+  keys.map(k=>{const s=sc[k];const pc=Math.round(100*s.total/s.max);return '<tr><td><a href="paper/'+k+'.html">'+k.replace('P','Paper ').replace('-Set',' - Set ')+'</a></td><td><b>'+s.total+'</b>/'+s.max+' ('+pc+'%)</td><td>'+(s.when?new Date(s.when).toLocaleDateString():'')+'</td></tr>';}).join('')+'</table>';}
+/* suggestions */
+const sug=document.getElementById('sug');const weakest=rows.filter(s=>s.pct<0.5).slice(0,3);
+sug.innerHTML='<ol>'+(weakest.length?weakest.map(s=>'<li>Work through <a href="subtopic/'+s.slug+'.html">'+s.name+'</a>'+(s.real?' - examined '+s.real+' time'+(s.real===1?'':'s')+' in real papers':'')+'.</li>').join(''):'<li>Every subtopic is at least half secure - sit a full timed mock next.</li>')+
+  '<li>Do a 15-minute <a href="quickfire.html">Quick-fire</a> session; questions you marked <i>needs work</i> come up three times as often.</li><li>Sit one full <a href="papers.html">mock paper</a> a week under timed conditions and enter your marks.</li></ol>';
+})();
+"""
+
+
+def planner_page(sets_by_sub, counts_real):
+    idx = subtopic_index()
+    subs = [{"slug": slug, "name": idx[slug]["name"], "topic": idx[slug]["topic"], "papers": idx[slug]["papers"], "ids": [q.id for s in sets for q in s], "real": counts_real.get(slug, 0)}
+            for slug, sets in sets_by_sub.items()]
+    body = [hero("Revision planner", "Your weakest subtopics first, how often each has come up in real AQA papers, your mock-paper scores and a countdown to the exam. Everything here is built from the progress you mark on the site.")]
+    body.append('<main><div class="wrap plan"><div class="grid3">'
+                '<div class="card"><h3>Exam countdown</h3><p><label>First exam date <input type="date" id="examDate"></label></p><p id="countdown"></p></div>'
+                '<div class="card" style="grid-column:span 2"><h3>What to do next</h3><div id="sug"></div></div></div>')
+    body.append('<h2 class="sec">Subtopics, weakest first</h2><table class="list"><tr><th>Subtopic</th><th>Your progress</th><th>Times in real papers</th><th></th></tr><tbody id="weak"></tbody></table>')
+    body.append('<h2 class="sec">Mock-paper scores</h2><div id="mocks"></div>')
+    body.append("</div></main>")
+    return page("Revision planner", "\n".join(body), active="planner.html", extra_js="<script>window.PSUBS=" + json.dumps(subs) + ";" + PLANNER_JS + "</script>")

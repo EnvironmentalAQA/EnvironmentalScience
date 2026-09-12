@@ -69,12 +69,12 @@ footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-
 .prog .bar .ok{background:var(--ok);height:100%}.prog .bar .wk{background:var(--warn);height:100%}.prog .pl{white-space:nowrap;min-width:90px}
 .hero .prog{color:rgba(255,255,255,.85)}.hero .prog .bar{background:rgba(255,255,255,.25)}
 /* filter bar & tools */
-.filterbar{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.filterbar{position:sticky;top:var(--hdr,62px);z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .filterbar input[type=search]{flex:1 1 220px;font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
 .filterbar label{font-size:.85rem;color:var(--stone);display:inline-flex;align-items:center;gap:4px;cursor:pointer}.filterbar .chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--sand);color:var(--stone);font-size:.82rem;cursor:pointer;font-family:inherit}
 .filterbar .chip.on{background:var(--moss);color:#fff;border-color:var(--moss)}.filterbar .cnt{font-size:.85rem;color:var(--stone);margin-left:auto}
 .filterbar select{font:inherit;font-size:.88rem;padding:5px 8px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
-.tools{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:10px 0;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.tools{position:sticky;top:var(--hdr,62px);z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:10px 0;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .tools .time{font-family:Fraunces,serif;font-size:1.6rem;font-weight:700;color:var(--head);min-width:120px}.tools .time.low{color:var(--bad)}
 .tools .score{font-weight:700;color:var(--moss)}.tools .score b{font-family:Fraunces,serif;font-size:1.3rem}.tools .pct{font-size:.85rem;color:var(--stone)}
 .tools button{font-family:inherit;font-size:.88rem;padding:6px 12px;border-radius:8px;border:1px solid var(--moss);background:transparent;color:var(--moss);cursor:pointer}.tools button.primary{background:var(--moss);color:#fff}
@@ -87,6 +87,20 @@ footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-
 .res{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0;text-decoration:none;color:inherit}.res:hover{border-color:var(--moss)}
 .res .t{font-weight:700;color:var(--head)}.res .m{font-size:.82rem;color:var(--stone)}.res .s{font-size:.92rem;margin-top:4px}.res mark{background:#ffe58a;color:#222;border-radius:3px;padding:0 2px}
 .empty{color:var(--stone);font-style:italic}
+/* mark scheme points, levels, links */
+.mspart{margin:8px 0 12px}.msh{display:flex;align-items:baseline;gap:8px;margin-bottom:2px}.msh .mtot{font-size:.8rem;color:var(--earth);font-weight:700}
+ul.pts{list-style:none;margin:4px 0 6px 0!important;padding:0}ul.pts li{display:flex;gap:10px;align-items:flex-start;padding:4px 0;border-top:1px dashed var(--ms-line)}ul.pts li:first-child{border-top:0}
+.mk{flex:0 0 auto;min-width:26px;text-align:center;font-size:.75rem;font-weight:700;color:#fff;background:var(--ok);border-radius:6px;padding:2px 6px;margin-top:3px}
+table.levels{border-collapse:collapse;width:100%;margin:6px 0 10px;font-size:.86rem;background:var(--card)}table.levels th,table.levels td{border:1px solid var(--ms-line);padding:5px 8px;text-align:left;vertical-align:top}table.levels th{background:var(--sand-dark)}table.levels td.r{white-space:nowrap;font-weight:700;color:var(--earth)}
+ul.ind{margin:4px 0 8px 18px}
+.st button.lnk{padding:2px 7px}
+#totop{position:fixed;right:18px;bottom:18px;z-index:15;background:var(--moss);color:#fff;border:0;border-radius:50%;width:42px;height:42px;font-size:1.2rem;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .2s}#totop.show{opacity:1;pointer-events:auto}
+.jump{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 4px}.jump a{font-size:.82rem;padding:3px 10px;border-radius:999px;border:1px solid var(--line);background:var(--sand);color:var(--moss);text-decoration:none;font-weight:600}.jump a:hover{background:var(--leaf-light)}
+.real .row{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;padding:8px 0;border-bottom:1px dashed var(--line);font-size:.95rem}.real .row .ser{font-weight:700;color:var(--head);min-width:150px}.real .row .qn{color:var(--stone);min-width:70px}.real .row .t{flex:1 1 300px}
+.real .row a{font-size:.82rem;padding:2px 9px;border-radius:999px;border:1px solid var(--line);background:var(--sand);text-decoration:none;font-weight:600}
+.plan input[type=date]{font:inherit;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}.plan .big{font-family:Fraunces,serif;font-size:2rem;color:var(--moss)}
+table.list td .bar{height:8px;background:var(--sand-dark);border-radius:999px;overflow:hidden;display:flex;width:140px}table.list td .bar .ok{background:var(--ok)}table.list td .bar .wk{background:var(--warn)}
+@media(max-width:720px){header.top{position:static}header.top nav a{margin-left:12px;font-size:.88rem}.filterbar,.tools{top:0}.hero h1{font-size:1.8rem}.hero{padding:34px 0 28px}.sub-item .t{flex-basis:100%}}
 /* print */
 @media print{header.top,footer,.tools,.filterbar,.st,.pill,.aw,.hero .crumbs,.prog,.noprint{display:none!important}
 body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;color:#000;padding:10px 0}.hero p,.hero h1{color:#000}.hero:before{display:none}
@@ -94,14 +108,16 @@ body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;c
 svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 </style>
 <script>try{if(localStorage.getItem('envsci.theme')==='"dark"')document.documentElement.dataset.theme='dark';}catch(e){}</script></head><body >
-<header class="top"><div class="wrap"><a class="brand" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb069" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-8 0-14 4-14 12 0 1.5.3 3 1 4 2-6 6-9 11-11-4 3-7 6-8 12 8 0 12-6 10-17z"/></svg><span>AQA Environmental Science</span></a><nav><a href="../index.html" class="">Topics</a><a href="../papers.html" class="">Mock papers</a><a href="../official.html" class="">Past papers</a><a href="../essays.html" class="">Essay bank</a><a href="../quickfire.html" class="">Quick-fire</a><a href="../search.html" class="">Search</a><button class="icon-btn" id="themeBtn" type="button" title="Toggle dark mode">&#9790; Dark</button></nav></div></header>
+<header class="top"><div class="wrap"><a class="brand" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb069" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-8 0-14 4-14 12 0 1.5.3 3 1 4 2-6 6-9 11-11-4 3-7 6-8 12 8 0 12-6 10-17z"/></svg><span>AQA Environmental Science</span></a><nav><a href="../index.html" class="">Topics</a><a href="../papers.html" class="">Mock papers</a><a href="../official.html" class="">Past papers</a><a href="../essays.html" class="">Essay bank</a><a href="../pastq.html" class="">Real Qs by topic</a><a href="../quickfire.html" class="">Quick-fire</a><a href="../planner.html" class="">Planner</a><a href="../search.html" class="">Search</a><button class="icon-btn" id="themeBtn" type="button" title="Toggle dark mode">&#9790; Dark</button></nav></div></header>
 <section class="hero p1 small"><div class="wrap"><div class="crumbs"><a href="../index.html">Topics</a><span>&rsaquo;</span><a href="../topic/pollution.html">Pollution</a><span>&rsaquo;</span>Pesticides</div><h1>Pesticides</h1><p>Pollution &middot; AQA spec 3.4.3.2.8 &middot; R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 262-266</p><span class="pill">Paper 1</span><span class="pill">8 questions</span><div class="prog" data-qids="PEST-01,PEST-02,PEST-03,PEST-04,PEST-05,PEST-06,PEST-07,PEST-08"><div class="bar"><div class="ok"></div><div class="wk"></div></div><span class="pl"></span></div></div></section>
 <main><div class="wrap"><h2 class="sec">Question sets</h2><table class="list"><tr><th>Set</th><th>Questions</th><th>Marks</th><th>Question paper</th><th>Mark scheme</th></tr>
 <tr><td>Set 1</td><td>8</td><td>70</td><td><a href="../pdf/topic/pesticides-set1-QP.pdf">Download QP (PDF)</a></td><td><a href="../pdf/topic/pesticides-set1-MS.pdf">Download MS (PDF)</a></td></tr>
 </table>
+<h2 class="sec">Real AQA questions on this topic (1)</h2><div class="real"><div class="row"><span class="ser">November 2020 &middot; Paper 1</span><span class="qn">Q9 &middot; 15 marks</span><span class="t">Pesticide residues in food (MRL)</span><a href="../official/AQA-74471-QP-NOV20-CR.PDF#page=28">Question (p.28)</a> <a href="../official/AQA-74471-W-MS-NOV20.PDF">Mark scheme</a></div></div>
+<p class="note noprint">Practise this subtopic one question at a time: <a href="../quickfire.html?sub=pesticides">Quick-fire &rarr;</a></p>
 <div class="filterbar noprint"><input type="search" placeholder="Filter questions by keyword (e.g. albedo, quota, Simpson)"><button type="button" class="chip mk" data-v="5">5 marks</button><button type="button" class="chip mk" data-v="10">10 marks</button><button type="button" class="chip mk" data-v="15">15 marks</button><button type="button" class="chip fl" data-v="calc">Calculation</button><button type="button" class="chip fl" data-v="data">Data / figure</button><button type="button" class="chip fl" data-v="ext">9-mark extended</button><button type="button" class="chip fl" data-v="mcq">Multiple choice</button><button type="button" class="chip fl" data-v="table">Complete a table</button><select class="status" title="Filter by your progress"><option value="all">All progress</option><option value="todo">Not attempted</option><option value="work">Needs work</option><option value="secure">Secure</option><option value="notsecure">Not yet secure</option></select><button type="button" class="chip clear">Clear</button><span class="cnt"></span><button type="button" class="chip" data-reveal="1">Show all mark schemes</button><button type="button" class="chip" data-print="qp" title="Print the questions only">Print</button><button type="button" class="chip" data-print="ms" title="Print questions with mark schemes">Print + MS</button></div>
 <h2 class="sec set">Set 1</h2>
-<div class="q" id="PEST-01" data-qid="PEST-01" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 1</span><span class="meta">10 marks &middot; <a href="../subtopic/pesticides.html">Pesticides</a> &middot; spec 3.4.3.2.8 &middot; Genn pp. 262-263 &middot; PEST-01</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="PEST-01" data-qid="PEST-01" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 1</span><span class="meta">10 marks &middot; <a href="../subtopic/pesticides.html">Pesticides</a> &middot; spec 3.4.3.2.8 &middot; Genn pp. 262-263 &middot; PEST-01</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>Figure 1 shows how the percentage mortality of a pest species and of a non-target bee species change with the dose of an insecticide applied to a crop.</p>
 <div class="cap">Figure 1</div>
 <svg class="chart" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
@@ -150,26 +166,23 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[3 marks]</span><span class="pn">01.5</span>Explain why a pesticide with high specificity is less likely to cause environmental damage.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>01.1</b> (1 marks)
-<ul><li>25 g ha<sup>-1</sup> (accept 24-27)</li></ul>
+<div class="mspart"><div class="msh"><b>01.1</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark for the correct answer.</div><ul class="pts"><li><span class="mk">1</span><span>25 g ha<sup>-1</sup> (accept 24-27)</span></li></ul>
 </div>
-<div><b>01.2</b> (1 marks)
-<ul><li>The highest dose that can be applied without killing any members of the population / any individuals of the (non-target) species</li></ul>
+<div class="mspart"><div class="msh"><b>01.2</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>The highest dose that can be applied without killing any members of the population / any individuals of the (non-target) species</span></li></ul>
 </div>
-<div><b>01.3</b> (3 marks)
-<div class="lvl"><i>Any 3 from:</i></div>
-<ul><li>The MDAF (minimum dose always fatal) of the pest is about 50 g ha<sup>-1</sup></li><li>This is higher than the MDNF of the bee (about 20 g ha<sup>-1</sup>)</li><li>So a dose that kills all pests kills some bees / the two curves overlap between about 20 and 50 g ha<sup>-1</sup></li><li>A dose of 30-40 g ha<sup>-1</sup> would kill most pests with limited bee deaths (compromise)</li></ul>
+<div class="mspart"><div class="msh"><b>01.3</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">Any 3 from the points below - 1 mark each, maximum 3.</div><ul class="pts"><li><span class="mk">1</span><span>The MDAF (minimum dose always fatal) of the pest is about 50 g ha<sup>-1</sup></span></li><li><span class="mk">1</span><span>This is higher than the MDNF of the bee (about 20 g ha<sup>-1</sup>)</span></li><li><span class="mk">1</span><span>So a dose that kills all pests kills some bees / the two curves overlap between about 20 and 50 g ha<sup>-1</sup></span></li><li><span class="mk">1</span><span>A dose of 30-40 g ha<sup>-1</sup> would kill most pests with limited bee deaths (compromise)</span></li></ul>
 </div>
-<div><b>01.4</b> (2 marks)
-<div class="lvl"><i>Any 2 from:</i></div>
-<ul><li>Spray at night / when bees are not flying</li><li>Spray when the crop is not in flower</li><li>Spray on still days to reduce spray drift</li><li>Use a systemic pesticide / seed coating rather than spraying</li><li>Use smaller droplets for more even coverage</li></ul>
+<div class="mspart"><div class="msh"><b>01.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">Any 2 from the points below - 1 mark each, maximum 2.</div><ul class="pts"><li><span class="mk">1</span><span>Spray at night / when bees are not flying</span></li><li><span class="mk">1</span><span>Spray when the crop is not in flower</span></li><li><span class="mk">1</span><span>Spray on still days to reduce spray drift</span></li><li><span class="mk">1</span><span>Use a systemic pesticide / seed coating rather than spraying</span></li><li><span class="mk">1</span><span>Use smaller droplets for more even coverage</span></li></ul>
 </div>
-<div><b>01.5</b> (3 marks)
-<div class="lvl"><i>Any 3 from:</i></div>
-<ul><li>Specificity is the extent to which the pesticide is toxic only to the target species / range of species affected</li><li>A highly specific pesticide has low toxicity to non-target species (eg bees, fish, mammals)</li><li>So fewer non-target deaths / less loss of predators, pollinators</li><li>Fewer indirect (food chain) effects / fewer inter-species relationships lost</li><li>Example: pyrethroids have high insect toxicity but low mammal toxicity</li></ul>
+<div class="mspart"><div class="msh"><b>01.5</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">Any 3 from the points below - 1 mark each, maximum 3.</div><ul class="pts"><li><span class="mk">1</span><span>Specificity is the extent to which the pesticide is toxic only to the target species / range of species affected</span></li><li><span class="mk">1</span><span>A highly specific pesticide has low toxicity to non-target species (eg bees, fish, mammals)</span></li><li><span class="mk">1</span><span>So fewer non-target deaths / less loss of predators, pollinators</span></li><li><span class="mk">1</span><span>Fewer indirect (food chain) effects / fewer inter-species relationships lost</span></li><li><span class="mk">1</span><span>Example: pyrethroids have high insect toxicity but low mammal toxicity</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 262-263; AQA spec 3.4.3.2.8.</div></details></div>
-<div class="q" id="PEST-02" data-qid="PEST-02" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 2</span><span class="meta">10 marks &middot; <a href="../subtopic/pesticides.html">Pesticides</a> &middot; spec 3.4.3.2.8 &middot; Genn pp. 263-265 &middot; PEST-02</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="PEST-02" data-qid="PEST-02" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 2</span><span class="meta">10 marks &middot; <a href="../subtopic/pesticides.html">Pesticides</a> &middot; spec 3.4.3.2.8 &middot; Genn pp. 263-265 &middot; PEST-02</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>Table 1 shows some properties of four groups of insecticide.</p>
 <div class="cap">Table 1</div><table class="data"><tr><th>Insecticide group</th><th>Toxicity to insects</th><th>Toxicity to mammals</th><th>Persistence</th><th>Liposolubility</th></tr><tr><td>Organochlorines (eg DDT)</td><td>High</td><td>Low</td><td>High</td><td>High</td></tr><tr><td>Organophosphates (eg malathion)</td><td>High</td><td>High</td><td>Low</td><td>Low</td></tr><tr><td>Pyrethroids</td><td>High</td><td>Low</td><td>Low</td><td>Low</td></tr><tr><td>Neonicotinoids</td><td>High</td><td>Low</td><td>Moderate</td><td>Low (water soluble)</td></tr></table>
 <div class="part"><span class="marks">[4 marks]</span><span class="pn">02.1</span>Use Table 1 to explain why organochlorine insecticides caused the decline of birds of prey such as the peregrine falcon in the 1950s and 1960s.
@@ -181,22 +194,20 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[3 marks]</span><span class="pn">02.4</span>Describe how the properties of neonicotinoids allow them to be used as a seed coating, and explain why this method of application reduces harm to non-target species.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>02.1</b> (4 marks)
-<div class="lvl"><i>Any 4 from:</i></div>
-<ul><li>High persistence means DDT remains in the environment for years / decades, so it has time to disperse and be taken up</li><li>High liposolubility means it dissolves in fat and is stored in body tissues rather than excreted (bioaccumulation)</li><li>Concentration increases at each trophic level as predators eat many contaminated prey (biomagnification)</li><li>Birds of prey are at the top of the food chain so receive the highest concentrations</li><li>Sub-lethal doses caused thin eggshells that broke / reduced breeding success; higher doses caused sterility or death</li></ul>
+<div class="mspart"><div class="msh"><b>02.1</b> <span class="mtot">4 marks</span></div>
+<div class="lvl">Any 4 from the points below - 1 mark each, maximum 4.</div><ul class="pts"><li><span class="mk">1</span><span>High persistence means DDT remains in the environment for years / decades, so it has time to disperse and be taken up</span></li><li><span class="mk">1</span><span>High liposolubility means it dissolves in fat and is stored in body tissues rather than excreted (bioaccumulation)</span></li><li><span class="mk">1</span><span>Concentration increases at each trophic level as predators eat many contaminated prey (biomagnification)</span></li><li><span class="mk">1</span><span>Birds of prey are at the top of the food chain so receive the highest concentrations</span></li><li><span class="mk">1</span><span>Sub-lethal doses caused thin eggshells that broke / reduced breeding success; higher doses caused sterility or death</span></li></ul>
 </div>
-<div><b>02.2</b> (2 marks)
-<ul><li>Advantage: low persistence / low liposolubility so they do not bioaccumulate or biomagnify / break down quickly</li><li>Disadvantage: high mammalian toxicity so farm workers / humans are at risk of acute poisoning (neurotoxin inhibiting acetylcholinesterase); chronic effects (memory loss, depression); suspected carcinogens</li></ul>
+<div class="mspart"><div class="msh"><b>02.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Advantage: low persistence / low liposolubility so they do not bioaccumulate or biomagnify / break down quickly</span></li><li><span class="mk">1</span><span>Disadvantage: high mammalian toxicity so farm workers / humans are at risk of acute poisoning (neurotoxin inhibiting acetylcholinesterase); chronic effects (memory loss, depression); suspected carcinogens</span></li></ul>
 </div>
-<div><b>02.3</b> (1 marks)
-<ul><li>Pyrethroids are highly toxic to fish (even though mammal toxicity is low)</li></ul>
+<div class="mspart"><div class="msh"><b>02.3</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>Pyrethroids are highly toxic to fish (even though mammal toxicity is low)</span></li></ul>
 </div>
-<div><b>02.4</b> (3 marks)
-<div class="lvl"><i>Any 3 from:</i></div>
-<ul><li>Neonicotinoids are water soluble so they are absorbed by the roots (from the soil) and translocated through the plant (systemic)</li><li>They are moderately persistent so remain in the soil long enough to be absorbed</li><li>Seed coating avoids spraying so no spray drift / no dust onto flowers or surrounding habitats</li><li>So bees / pollinators are less exposed than when the crop is sprayed</li></ul>
+<div class="mspart"><div class="msh"><b>02.4</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">Any 3 from the points below - 1 mark each, maximum 3.</div><ul class="pts"><li><span class="mk">1</span><span>Neonicotinoids are water soluble so they are absorbed by the roots (from the soil) and translocated through the plant (systemic)</span></li><li><span class="mk">1</span><span>They are moderately persistent so remain in the soil long enough to be absorbed</span></li><li><span class="mk">1</span><span>Seed coating avoids spraying so no spray drift / no dust onto flowers or surrounding habitats</span></li><li><span class="mk">1</span><span>So bees / pollinators are less exposed than when the crop is sprayed</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 263-265; AQA spec 3.4.3.2.8.</div></details></div>
-<div class="q" id="PEST-03" data-qid="PEST-03" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 3</span><span class="meta">10 marks &middot; <a href="../subtopic/pesticides.html">Pesticides</a> &middot; spec 3.4.3.2.8 &middot; Genn pp. 263-264, 266 &middot; PEST-03</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="PEST-03" data-qid="PEST-03" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 3</span><span class="meta">10 marks &middot; <a href="../subtopic/pesticides.html">Pesticides</a> &middot; spec 3.4.3.2.8 &middot; Genn pp. 263-264, 266 &middot; PEST-03</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>A pesticide was applied to a field of oilseed rape. Table 1 shows the concentration of the pesticide in organisms sampled from a pond next to the field.</p>
 <div class="cap">Table 1</div><table class="data"><tr><th>Organism</th><th>Trophic level</th><th>Pesticide concentration / mg kg<sup>-1</sup></th></tr><tr><td>Pond water</td><td>-</td><td>0.002</td></tr><tr><td>Phytoplankton</td><td>1</td><td>0.04</td></tr><tr><td>Water fleas (Daphnia)</td><td>2</td><td>0.5</td></tr><tr><td>Small fish</td><td>3</td><td>4.2</td></tr><tr><td>Heron</td><td>4</td><td>38.0</td></tr></table>
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">03.1</span>Calculate how many times more concentrated the pesticide is in the heron than in the pond water. Give your answer to two significant figures.
@@ -208,36 +219,34 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[3 marks]</span><span class="pn">03.4</span>The pesticide was probably an organochlorine. Suggest why the use of organochlorines is now banned or heavily restricted in most countries, even though DDT is still used to control malaria mosquitoes in some houses.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>03.1</b> (2 marks)
-<ul><li>38.0 / 0.002</li><li>= 19 000 (19 000 times / 1.9 x 10<sup>4</sup>)</li></ul>
+<div class="mspart"><div class="msh"><b>03.1</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">A correct final answer (with unit where asked) scores full marks. If the answer is wrong, award 1 mark for each correct step of working shown.</div><ul class="pts"><li><span class="mk">1</span><span>38.0 / 0.002</span></li><li><span class="mk">1</span><span>= 19 000 (19 000 times / 1.9 x 10<sup>4</sup>)</span></li></ul>
 </div>
-<div><b>03.2</b> (1 marks)
-<ul><li>Biomagnification (accept bioaccumulation as part of the process only if biomagnification is also implied by increase up the food chain)</li></ul>
+<div class="mspart"><div class="msh"><b>03.2</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>Biomagnification (accept bioaccumulation as part of the process only if biomagnification is also implied by increase up the food chain)</span></li></ul>
 </div>
-<div><b>03.3</b> (4 marks)
-<ul><li>Persistence: the pesticide is not broken down (by light, microbes, enzymes) so it remains in the environment / organisms long enough to pass along the food chain</li><li>Liposolubility: the pesticide dissolves in lipids / fat so it is stored in body tissue and not excreted in (water-based) urine</li><li>Each organism eats many organisms from the level below and retains the pesticide so concentration rises at each trophic level</li><li>Herons have long lives so accumulate over time</li></ul>
+<div class="mspart"><div class="msh"><b>03.3</b> <span class="mtot">4 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Persistence: the pesticide is not broken down (by light, microbes, enzymes) so it remains in the environment / organisms long enough to pass along the food chain</span></li><li><span class="mk">1</span><span>Liposolubility: the pesticide dissolves in lipids / fat so it is stored in body tissue and not excreted in (water-based) urine</span></li><li><span class="mk">1</span><span>Each organism eats many organisms from the level below and retains the pesticide so concentration rises at each trophic level</span></li><li><span class="mk">1</span><span>Herons have long lives so accumulate over time</span></li></ul>
 </div>
-<div><b>03.4</b> (3 marks)
-<div class="lvl"><i>Any 3 from:</i></div>
-<ul><li>Organochlorines killed non-target insects (bees, butterflies) and top predators (birds of prey, otters) through biomagnification</li><li>They persist for decades so the damage continued long after use</li><li>Use in houses (on walls / nets) does not enter food chains / no runoff into water, so does not biomagnify</li><li>Benefit of preventing malaria deaths outweighs the risk (risk:benefit)</li></ul>
+<div class="mspart"><div class="msh"><b>03.4</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">Any 3 from the points below - 1 mark each, maximum 3.</div><ul class="pts"><li><span class="mk">1</span><span>Organochlorines killed non-target insects (bees, butterflies) and top predators (birds of prey, otters) through biomagnification</span></li><li><span class="mk">1</span><span>They persist for decades so the damage continued long after use</span></li><li><span class="mk">1</span><span>Use in houses (on walls / nets) does not enter food chains / no runoff into water, so does not biomagnify</span></li><li><span class="mk">1</span><span>Benefit of preventing malaria deaths outweighs the risk (risk:benefit)</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 263-264, 266; AQA spec 3.4.3.2.8.</div></details></div>
-<div class="q" id="PEST-04" data-qid="PEST-04" data-marks="10" data-flags="ext"><div class="qh"><span class="num">Question 4</span><span class="meta">10 marks &middot; <a href="../subtopic/pesticides.html">Pesticides</a> &middot; spec 3.4.3.2.8 &middot; Genn pp. 265-266 &middot; PEST-04</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="PEST-04" data-qid="PEST-04" data-marks="10" data-flags="ext"><div class="qh"><span class="num">Question 4</span><span class="meta">10 marks &middot; <a href="../subtopic/pesticides.html">Pesticides</a> &middot; spec 3.4.3.2.8 &middot; Genn pp. 265-266 &middot; PEST-04</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[9 marks]</span><span class="pn">04.1</span>Neonicotinoids are the most widely used group of insecticides. Explain how the properties of neonicotinoids affect their impact on bee populations and describe the methods used to reduce this impact.
 </div>
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">04.2</span>State <b>one</b> way in which pesticide use in agriculture may be reduced by using natural processes.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>04.1</b> (9 marks)
-<div class="lvl"><b>Levels of response:</b> L3 7-9 comprehensive, well-structured, applied to context, supported judgement; L2 4-6 sound but incomplete application/evaluation; L1 1-3 basic, limited structure.</div><div class="lvl"><b>Indicative content:</b></div>
-<ul><li>Neonicotinoids are neurotoxins similar to nicotine; they inhibit the neurotransmitter acetylcholine</li><li>High toxicity to insects but low toxicity to vertebrates because they cannot cross the vertebrate blood-brain barrier</li><li>Very toxic to bees: sub-lethal doses reduce navigation ability, foraging and immunity to disease; linked to colony decline</li><li>Water soluble and moderately persistent: remain in soil, absorbed by roots and translocated (systemic), so present in pollen and nectar</li><li>Persistence may allow build-up in aquifers / soil; broken down fastest in sunlight and by soil microbes</li><li>Synergism with some fungicides increases toxicity to bees</li><li>Exposure greatest when sprayed onto crops or when seed-coating dust is blown by wind</li><li>Control: seed coating rather than spraying; spraying when crops are not in flower / at night; still days to reduce drift</li><li>Restrictions on use (EU bans on outdoor use on flowering crops); use of alternative pest control (cultural, biological, integrated control)</li><li>Evaluation: reduced pesticide use but neonicotinoid alternatives (pyrethroids) also harm pollinators; trade-off with crop yields</li></ul>
+<div class="mspart"><div class="msh"><b>04.1</b> <span class="mtot">9 marks</span></div>
+<table class="levels"><tr><th>Level</th><th>Marks</th><th>What the answer must show</th></tr><tr><td><b>Level 3</b></td><td class="r">7-9</td><td>Answer is comprehensive, relevant and logically structured. Shows detailed knowledge and understanding of the relevant scientific ideas and applies them accurately to the context. Evaluation/analysis is well supported by evidence and a clear judgement or conclusion is reached.</td></tr><tr><td><b>Level 2</b></td><td class="r">4-6</td><td>Answer is mostly relevant and shows some structure. Knowledge and understanding of relevant ideas is sound but application to the context or evaluation may be incomplete or lack detail. A judgement may be made but is not fully supported.</td></tr><tr><td><b>Level 1</b></td><td class="r">1-3</td><td>Answer is basic, with limited structure. Some relevant knowledge is shown but there are omissions or errors. Little application to the context and little or no evaluation.</td></tr><tr><td><b>&nbsp;</b></td><td class="r">0</td><td>No relevant content.</td></tr></table><div class="lvl"><b>Indicative content</b> - credit any of the following (and other relevant, accurate points):</div>
+<ul class="ind"><li>Neonicotinoids are neurotoxins similar to nicotine; they inhibit the neurotransmitter acetylcholine</li><li>High toxicity to insects but low toxicity to vertebrates because they cannot cross the vertebrate blood-brain barrier</li><li>Very toxic to bees: sub-lethal doses reduce navigation ability, foraging and immunity to disease; linked to colony decline</li><li>Water soluble and moderately persistent: remain in soil, absorbed by roots and translocated (systemic), so present in pollen and nectar</li><li>Persistence may allow build-up in aquifers / soil; broken down fastest in sunlight and by soil microbes</li><li>Synergism with some fungicides increases toxicity to bees</li><li>Exposure greatest when sprayed onto crops or when seed-coating dust is blown by wind</li><li>Control: seed coating rather than spraying; spraying when crops are not in flower / at night; still days to reduce drift</li><li>Restrictions on use (EU bans on outdoor use on flowering crops); use of alternative pest control (cultural, biological, integrated control)</li><li>Evaluation: reduced pesticide use but neonicotinoid alternatives (pyrethroids) also harm pollinators; trade-off with crop yields</li></ul>
 </div>
-<div><b>04.2</b> (1 marks)
-<div class="lvl"><i>Any 1 from:</i></div>
-<ul><li>Biological control (introduced predators / pathogens)</li><li>Predator habitats (hedgerows, beetle banks)</li><li>Crop rotation</li><li>Companion / barrier crops</li><li>Sterile male technique / pheromone traps</li><li>Genetic resistance</li></ul>
+<div class="mspart"><div class="msh"><b>04.2</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">Any 1 from the points below - 1 mark each, maximum 1.</div><ul class="pts"><li><span class="mk">1</span><span>Biological control (introduced predators / pathogens)</span></li><li><span class="mk">1</span><span>Predator habitats (hedgerows, beetle banks)</span></li><li><span class="mk">1</span><span>Crop rotation</span></li><li><span class="mk">1</span><span>Companion / barrier crops</span></li><li><span class="mk">1</span><span>Sterile male technique / pheromone traps</span></li><li><span class="mk">1</span><span>Genetic resistance</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 265-266; AQA spec 3.4.3.2.8.</div></details></div>
-<div class="q" id="PEST-05" data-qid="PEST-05" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 5</span><span class="meta">10 marks &middot; <a href="../subtopic/pesticides.html">Pesticides</a> &middot; spec 3.4.3.2.8 &middot; Genn pp. 262-264 &middot; PEST-05</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="PEST-05" data-qid="PEST-05" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 5</span><span class="meta">10 marks &middot; <a href="../subtopic/pesticides.html">Pesticides</a> &middot; spec 3.4.3.2.8 &middot; Genn pp. 262-264 &middot; PEST-05</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>Two insecticides, X and Y, were tested on a pest insect and on a predatory ground beetle that feeds on the pest. Table 1 shows the results.</p>
 <div class="cap">Table 1</div><table class="data"><tr><th>Insecticide</th><th>LD<sub>50</sub> for pest / mg kg<sup>-1</sup></th><th>LD<sub>50</sub> for ground beetle / mg kg<sup>-1</sup></th><th>Half-life in soil / days</th><th>Solubility in water</th></tr><tr><td>X</td><td>5</td><td>6</td><td>180</td><td>Low</td></tr><tr><td>Y</td><td>8</td><td>150</td><td>4</td><td>High</td></tr></table>
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">05.1</span>Explain what is meant by LD<sub>50</sub>.
@@ -251,39 +260,36 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">05.5</span>Give <b>two</b> reasons why a systemic insecticide may be preferred to a contact insecticide.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>05.1</b> (1 marks)
-<ul><li>The dose that kills 50% of the (test) population</li></ul>
+<div class="mspart"><div class="msh"><b>05.1</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>The dose that kills 50% of the (test) population</span></li></ul>
 </div>
-<div><b>05.2</b> (3 marks)
-<ul><li>Insecticide X: LD50 for the beetle (6) is very similar to that of the pest (5) so it has low specificity / kills the predator as well</li><li>Loss of the predator removes natural control so the pest population may recover faster / increase (resurgence)</li><li>Y has a much higher LD50 for the beetle (150) so few predators killed / more specific</li></ul>
+<div class="mspart"><div class="msh"><b>05.2</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Insecticide X: LD50 for the beetle (6) is very similar to that of the pest (5) so it has low specificity / kills the predator as well</span></li><li><span class="mk">1</span><span>Loss of the predator removes natural control so the pest population may recover faster / increase (resurgence)</span></li><li><span class="mk">1</span><span>Y has a much higher LD50 for the beetle (150) so few predators killed / more specific</span></li></ul>
 </div>
-<div><b>05.3</b> (2 marks)
-<div class="lvl"><i>Any 2 from:</i></div>
-<ul><li>High water solubility so it is leached into rivers / groundwater / runoff</li><li>Toxic to aquatic organisms downstream</li><li>Mobile so it can affect areas away from the field</li><li>Washed off the crop quickly so more frequent application needed</li></ul>
+<div class="mspart"><div class="msh"><b>05.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">Any 2 from the points below - 1 mark each, maximum 2.</div><ul class="pts"><li><span class="mk">1</span><span>High water solubility so it is leached into rivers / groundwater / runoff</span></li><li><span class="mk">1</span><span>Toxic to aquatic organisms downstream</span></li><li><span class="mk">1</span><span>Mobile so it can affect areas away from the field</span></li><li><span class="mk">1</span><span>Washed off the crop quickly so more frequent application needed</span></li></ul>
 </div>
-<div><b>05.4</b> (2 marks)
-<ul><li>Long half-life = high persistence so it is not broken down quickly</li><li>So it remains in the organism / environment long enough to build up in tissues (especially if liposoluble)</li></ul>
+<div class="mspart"><div class="msh"><b>05.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Long half-life = high persistence so it is not broken down quickly</span></li><li><span class="mk">1</span><span>So it remains in the organism / environment long enough to build up in tissues (especially if liposoluble)</span></li></ul>
 </div>
-<div><b>05.5</b> (2 marks)
-<div class="lvl"><i>Any 2 from:</i></div>
-<ul><li>Absorbed and translocated within the plant so protects new growth</li><li>Not washed off by rain</li><li>Does not need to cover all leaf surfaces / less spray needed</li><li>Less spray drift so less harm to non-target species</li></ul>
+<div class="mspart"><div class="msh"><b>05.5</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">Any 2 from the points below - 1 mark each, maximum 2.</div><ul class="pts"><li><span class="mk">1</span><span>Absorbed and translocated within the plant so protects new growth</span></li><li><span class="mk">1</span><span>Not washed off by rain</span></li><li><span class="mk">1</span><span>Does not need to cover all leaf surfaces / less spray needed</span></li><li><span class="mk">1</span><span>Less spray drift so less harm to non-target species</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 262-264; AQA spec 3.4.3.2.8.</div></details></div>
-<div class="q" id="PEST-06" data-qid="PEST-06" data-marks="5" data-flags=""><div class="qh"><span class="num">Question 6</span><span class="meta">5 marks &middot; <a href="../subtopic/pesticides.html">Pesticides</a> &middot; spec 3.4.3.2.8 &middot; Genn pp. 263-266 &middot; PEST-06</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="PEST-06" data-qid="PEST-06" data-marks="5" data-flags=""><div class="qh"><span class="num">Question 6</span><span class="meta">5 marks &middot; <a href="../subtopic/pesticides.html">Pesticides</a> &middot; spec 3.4.3.2.8 &middot; Genn pp. 263-266 &middot; PEST-06</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">06.1</span>Define the term <b>persistence</b> as applied to a pollutant.
 </div>
 <div class="part"><span class="marks">[4 marks]</span><span class="pn">06.2</span>Explain how the persistence of a pesticide is affected by <b>two</b> named environmental factors.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>06.1</b> (1 marks)
-<ul><li>The length of time a pollutant remains in the environment before it is broken down / degraded (chemically or biologically)</li></ul>
+<div class="mspart"><div class="msh"><b>06.1</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>The length of time a pollutant remains in the environment before it is broken down / degraded (chemically or biologically)</span></li></ul>
 </div>
-<div><b>06.2</b> (4 marks)
-<div class="lvl"><i>Any 4 from:</i></div>
-<ul><li>Light: UV light degrades many pesticides (eg neonicotinoids break down fastest in sunlight) so persistence is shorter in bright conditions</li><li>Temperature: higher temperatures increase the rate of chemical breakdown / microbial decomposition</li><li>Soil microbes / oxygen: aerobic microbial activity breaks pesticides down so persistence is shorter in well-aerated, biologically active soils</li><li>pH / presence of other chemicals may increase or decrease the rate of degradation</li><li>Adsorption onto clay / organic matter may protect from degradation and increase persistence</li></ul>
+<div class="mspart"><div class="msh"><b>06.2</b> <span class="mtot">4 marks</span></div>
+<div class="lvl">Any 4 from the points below - 1 mark each, maximum 4.</div><ul class="pts"><li><span class="mk">1</span><span>Light: UV light degrades many pesticides (eg neonicotinoids break down fastest in sunlight) so persistence is shorter in bright conditions</span></li><li><span class="mk">1</span><span>Temperature: higher temperatures increase the rate of chemical breakdown / microbial decomposition</span></li><li><span class="mk">1</span><span>Soil microbes / oxygen: aerobic microbial activity breaks pesticides down so persistence is shorter in well-aerated, biologically active soils</span></li><li><span class="mk">1</span><span>pH / presence of other chemicals may increase or decrease the rate of degradation</span></li><li><span class="mk">1</span><span>Adsorption onto clay / organic matter may protect from degradation and increase persistence</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 263-266; AQA spec 3.4.3.2.8.</div></details></div>
-<div class="q" id="PEST-07" data-qid="PEST-07" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 7</span><span class="meta">10 marks &middot; <a href="../subtopic/pesticides.html">Pesticides</a> &middot; spec 3.4.3.2.8 &middot; Genn pp. 262-266 &middot; PEST-07</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="PEST-07" data-qid="PEST-07" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 7</span><span class="meta">10 marks &middot; <a href="../subtopic/pesticides.html">Pesticides</a> &middot; spec 3.4.3.2.8 &middot; Genn pp. 262-266 &middot; PEST-07</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>Figure 1 shows the number of breeding pairs of sparrowhawks in a study area in the UK between 1945 and 1985, and the years in which DDT use began and was banned.</p>
 <div class="cap">Figure 1</div>
 <svg class="chart" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
@@ -322,22 +328,20 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">07.4</span>Suggest why the recovery after 1970 was slow.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>07.1</b> (2 marks)
-<ul><li>Numbers fell from about 210 pairs in 1945 to a minimum of about 25 in 1965 (steepest fall 1955-1960)</li><li>Numbers then recovered / rose steadily after 1970, reaching about 190 by 1985 (not yet back to 1945 level)</li></ul>
+<div class="mspart"><div class="msh"><b>07.1</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Numbers fell from about 210 pairs in 1945 to a minimum of about 25 in 1965 (steepest fall 1955-1960)</span></li><li><span class="mk">1</span><span>Numbers then recovered / rose steadily after 1970, reaching about 190 by 1985 (not yet back to 1945 level)</span></li></ul>
 </div>
-<div><b>07.2</b> (2 marks)
-<ul><li>(200 - 25) / 200 x 100</li><li>= 87.5%</li></ul>
+<div class="mspart"><div class="msh"><b>07.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">A correct final answer (with unit where asked) scores full marks. If the answer is wrong, award 1 mark for each correct step of working shown.</div><ul class="pts"><li><span class="mk">1</span><span>(200 - 25) / 200 x 100</span></li><li><span class="mk">1</span><span>= 87.5%</span></li></ul>
 </div>
-<div><b>07.3</b> (4 marks)
-<div class="lvl"><i>Any 4 from:</i></div>
-<ul><li>DDT is persistent (remains for decades) and liposoluble so it bioaccumulates in prey (small birds) and biomagnifies in sparrowhawks (top predator)</li><li>Sub-lethal doses caused thin eggshells / reduced breeding success so the population declined even without adult deaths</li><li>Higher doses caused sterility / death</li><li>After restrictions, environmental concentrations slowly fell (persistence explains the delay before recovery)</li><li>Breeding success recovered so the population rose</li></ul>
+<div class="mspart"><div class="msh"><b>07.3</b> <span class="mtot">4 marks</span></div>
+<div class="lvl">Any 4 from the points below - 1 mark each, maximum 4.</div><ul class="pts"><li><span class="mk">1</span><span>DDT is persistent (remains for decades) and liposoluble so it bioaccumulates in prey (small birds) and biomagnifies in sparrowhawks (top predator)</span></li><li><span class="mk">1</span><span>Sub-lethal doses caused thin eggshells / reduced breeding success so the population declined even without adult deaths</span></li><li><span class="mk">1</span><span>Higher doses caused sterility / death</span></li><li><span class="mk">1</span><span>After restrictions, environmental concentrations slowly fell (persistence explains the delay before recovery)</span></li><li><span class="mk">1</span><span>Breeding success recovered so the population rose</span></li></ul>
 </div>
-<div><b>07.4</b> (2 marks)
-<div class="lvl"><i>Any 2 from:</i></div>
-<ul><li>DDT persists in soil / sediments / food chains for many years so exposure continued</li><li>Birds of prey are k-selected: few young per year, slow to mature so populations grow slowly</li><li>Other pressures (habitat loss, persecution)</li></ul>
+<div class="mspart"><div class="msh"><b>07.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">Any 2 from the points below - 1 mark each, maximum 2.</div><ul class="pts"><li><span class="mk">1</span><span>DDT persists in soil / sediments / food chains for many years so exposure continued</span></li><li><span class="mk">1</span><span>Birds of prey are k-selected: few young per year, slow to mature so populations grow slowly</span></li><li><span class="mk">1</span><span>Other pressures (habitat loss, persecution)</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 262-266; AQA spec 3.4.3.2.8.</div></details></div>
-<div class="q" id="PEST-08" data-qid="PEST-08" data-marks="5" data-flags="mcq"><div class="qh"><span class="num">Question 8</span><span class="meta">5 marks &middot; <a href="../subtopic/pesticides.html">Pesticides</a> &middot; spec 3.4.3.2.8 &middot; Genn pp. 262-266 &middot; PEST-08</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="PEST-08" data-qid="PEST-08" data-marks="5" data-flags="mcq"><div class="qh"><span class="num">Question 8</span><span class="meta">5 marks &middot; <a href="../subtopic/pesticides.html">Pesticides</a> &middot; spec 3.4.3.2.8 &middot; Genn pp. 262-266 &middot; PEST-08</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">08.1</span>Which of the following properties would make a pesticide <b>least</b> likely to biomagnify? Tick one box.
 <ul class="mcq"><li>A&nbsp; High liposolubility and high persistence</li><li>B&nbsp; Low liposolubility and low persistence</li><li>C&nbsp; High liposolubility and low persistence</li><li>D&nbsp; Low liposolubility and high persistence</li></ul>
 </div>
@@ -346,14 +350,14 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">08.3</span>Explain why pesticides are described as an unusual type of pollutant.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>08.1</b> (1 marks)
-<ul><li>B - Low liposolubility and low persistence</li></ul>
+<div class="mspart"><div class="msh"><b>08.1</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">Correct answer only.</div><ul class="pts"><li><span class="mk">1</span><span><b></b>&nbsp; B - Low liposolubility and low persistence</span></li></ul>
 </div>
-<div><b>08.2</b> (2 marks)
-<ul><li>Bioaccumulation: build-up of a pollutant in the tissues of an individual organism over time because uptake is faster than excretion / breakdown</li><li>Biomagnification: increase in concentration of the pollutant at successive trophic levels of a food chain</li></ul>
+<div class="mspart"><div class="msh"><b>08.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Bioaccumulation: build-up of a pollutant in the tissues of an individual organism over time because uptake is faster than excretion / breakdown</span></li><li><span class="mk">1</span><span>Biomagnification: increase in concentration of the pollutant at successive trophic levels of a food chain</span></li></ul>
 </div>
-<div><b>08.3</b> (2 marks)
-<ul><li>They are intended to be toxic (to the target species)</li><li>They are deliberately released / spread into the environment (rather than being an accidental or waste release)</li></ul>
+<div class="mspart"><div class="msh"><b>08.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>They are intended to be toxic (to the target species)</span></li><li><span class="mk">1</span><span>They are deliberately released / spread into the environment (rather than being an accidental or waste release)</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 262-266; AQA spec 3.4.3.2.8.</div></details></div>
 </div></main>
@@ -372,7 +376,7 @@ const tb=document.getElementById('themeBtn');if(tb)tb.onclick=()=>{const t=root.
 let prog=LS('envsci.progress')||{};
 window.ES.prog=()=>prog;
 function paint(){
-  document.querySelectorAll('.q[data-qid]').forEach(el=>{const s=prog[el.dataset.qid]||0;el.dataset.status=s;el.querySelectorAll('.st button').forEach(b=>b.classList.toggle('on',+b.dataset.s===s&&s>0));});
+  document.querySelectorAll('.q[data-qid]').forEach(el=>{const s=prog[el.dataset.qid]||0;el.dataset.status=s;el.querySelectorAll('.st button[data-s]').forEach(b=>b.classList.toggle('on',+b.dataset.s===s&&s>0));});
   document.querySelectorAll('[data-qids]').forEach(el=>{const ids=el.dataset.qids.split(',').filter(Boolean);const n=ids.length;if(!n)return;
     const ok=ids.filter(i=>prog[i]===2).length,wk=ids.filter(i=>prog[i]===1).length;
     const o=el.querySelector('.bar .ok'),w=el.querySelector('.bar .wk'),p=el.querySelector('.pl');
@@ -380,7 +384,7 @@ function paint(){
   const ov=document.getElementById('overall');if(ov){const all=(ov.dataset.qids||'').split(',').filter(Boolean);const ok=all.filter(i=>prog[i]===2).length,wk=all.filter(i=>prog[i]===1).length;ov.querySelector('.stat').textContent=Math.round(100*ok/all.length)+'%';ov.querySelector('.detail').textContent=ok+' secure, '+wk+' to revisit, '+(all.length-ok-wk)+' not attempted of '+all.length+' questions.';}
 }
 window.ES.paint=paint;
-document.addEventListener('click',e=>{const b=e.target.closest('.st button');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);paint();if(window.ES.onFilter)window.ES.onFilter();});
+document.addEventListener('click',e=>{const b=e.target.closest('.st button[data-s]');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);paint();if(window.ES.onFilter)window.ES.onFilter();});
 const rs=document.getElementById('resetProg');if(rs)rs.onclick=()=>{if(confirm('Clear all saved progress on this browser?')){prog={};SV('envsci.progress',prog);paint();}};
 paint();
 /* ---- filter bar ---- */
@@ -403,6 +407,13 @@ if(fb){
   txt.addEventListener('input',run);fb.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{c.classList.toggle('on');run();});fb.querySelector('select.status').onchange=run;
   const clr=fb.querySelector('.clear');if(clr)clr.onclick=()=>{txt.value='';fb.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));fb.querySelector('select.status').value='all';run();};
   run();}
+/* ---- sticky offset = real header height (nav can wrap) ---- */
+const hd=document.querySelector('header.top');const setH=()=>root.style.setProperty('--hdr',(getComputedStyle(hd).position==='sticky'?hd.offsetHeight:0)+'px');setH();window.addEventListener('resize',setH);
+/* ---- copy link, back to top ---- */
+document.addEventListener('click',e=>{const b=e.target.closest('[data-copy]');if(!b)return;const q=b.closest('.q');const url=location.href.split('#')[0]+'#'+q.id;
+  (navigator.clipboard?navigator.clipboard.writeText(url):Promise.reject()).then(()=>{b.textContent='\u2713';setTimeout(()=>b.innerHTML='&#128279;',1200);}).catch(()=>prompt('Copy this link:',url));});
+const tt=document.createElement('button');tt.id='totop';tt.title='Back to top';tt.innerHTML='&uarr;';tt.className='noprint';document.body.appendChild(tt);tt.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+window.addEventListener('scroll',()=>tt.classList.toggle('show',window.scrollY>600),{passive:true});
 /* ---- print & reveal ---- */
 document.querySelectorAll('[data-print]').forEach(b=>b.onclick=()=>{const ms=b.dataset.print==='ms';document.body.classList.toggle('print-ms',ms);document.querySelectorAll('details.ms').forEach(d=>d.open=ms);window.print();});
 document.querySelectorAll('[data-reveal]').forEach(b=>b.onclick=()=>{const open=b.dataset.reveal==='1';document.querySelectorAll('details.ms').forEach(d=>d.open=open);b.dataset.reveal=open?'0':'1';b.textContent=open?'Hide all mark schemes':'Show all mark schemes';});

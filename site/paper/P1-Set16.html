@@ -69,12 +69,12 @@ footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-
 .prog .bar .ok{background:var(--ok);height:100%}.prog .bar .wk{background:var(--warn);height:100%}.prog .pl{white-space:nowrap;min-width:90px}
 .hero .prog{color:rgba(255,255,255,.85)}.hero .prog .bar{background:rgba(255,255,255,.25)}
 /* filter bar & tools */
-.filterbar{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.filterbar{position:sticky;top:var(--hdr,62px);z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .filterbar input[type=search]{flex:1 1 220px;font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
 .filterbar label{font-size:.85rem;color:var(--stone);display:inline-flex;align-items:center;gap:4px;cursor:pointer}.filterbar .chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--sand);color:var(--stone);font-size:.82rem;cursor:pointer;font-family:inherit}
 .filterbar .chip.on{background:var(--moss);color:#fff;border-color:var(--moss)}.filterbar .cnt{font-size:.85rem;color:var(--stone);margin-left:auto}
 .filterbar select{font:inherit;font-size:.88rem;padding:5px 8px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
-.tools{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:10px 0;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.tools{position:sticky;top:var(--hdr,62px);z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:10px 0;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .tools .time{font-family:Fraunces,serif;font-size:1.6rem;font-weight:700;color:var(--head);min-width:120px}.tools .time.low{color:var(--bad)}
 .tools .score{font-weight:700;color:var(--moss)}.tools .score b{font-family:Fraunces,serif;font-size:1.3rem}.tools .pct{font-size:.85rem;color:var(--stone)}
 .tools button{font-family:inherit;font-size:.88rem;padding:6px 12px;border-radius:8px;border:1px solid var(--moss);background:transparent;color:var(--moss);cursor:pointer}.tools button.primary{background:var(--moss);color:#fff}
@@ -87,6 +87,20 @@ footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-
 .res{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0;text-decoration:none;color:inherit}.res:hover{border-color:var(--moss)}
 .res .t{font-weight:700;color:var(--head)}.res .m{font-size:.82rem;color:var(--stone)}.res .s{font-size:.92rem;margin-top:4px}.res mark{background:#ffe58a;color:#222;border-radius:3px;padding:0 2px}
 .empty{color:var(--stone);font-style:italic}
+/* mark scheme points, levels, links */
+.mspart{margin:8px 0 12px}.msh{display:flex;align-items:baseline;gap:8px;margin-bottom:2px}.msh .mtot{font-size:.8rem;color:var(--earth);font-weight:700}
+ul.pts{list-style:none;margin:4px 0 6px 0!important;padding:0}ul.pts li{display:flex;gap:10px;align-items:flex-start;padding:4px 0;border-top:1px dashed var(--ms-line)}ul.pts li:first-child{border-top:0}
+.mk{flex:0 0 auto;min-width:26px;text-align:center;font-size:.75rem;font-weight:700;color:#fff;background:var(--ok);border-radius:6px;padding:2px 6px;margin-top:3px}
+table.levels{border-collapse:collapse;width:100%;margin:6px 0 10px;font-size:.86rem;background:var(--card)}table.levels th,table.levels td{border:1px solid var(--ms-line);padding:5px 8px;text-align:left;vertical-align:top}table.levels th{background:var(--sand-dark)}table.levels td.r{white-space:nowrap;font-weight:700;color:var(--earth)}
+ul.ind{margin:4px 0 8px 18px}
+.st button.lnk{padding:2px 7px}
+#totop{position:fixed;right:18px;bottom:18px;z-index:15;background:var(--moss);color:#fff;border:0;border-radius:50%;width:42px;height:42px;font-size:1.2rem;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .2s}#totop.show{opacity:1;pointer-events:auto}
+.jump{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 4px}.jump a{font-size:.82rem;padding:3px 10px;border-radius:999px;border:1px solid var(--line);background:var(--sand);color:var(--moss);text-decoration:none;font-weight:600}.jump a:hover{background:var(--leaf-light)}
+.real .row{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;padding:8px 0;border-bottom:1px dashed var(--line);font-size:.95rem}.real .row .ser{font-weight:700;color:var(--head);min-width:150px}.real .row .qn{color:var(--stone);min-width:70px}.real .row .t{flex:1 1 300px}
+.real .row a{font-size:.82rem;padding:2px 9px;border-radius:999px;border:1px solid var(--line);background:var(--sand);text-decoration:none;font-weight:600}
+.plan input[type=date]{font:inherit;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}.plan .big{font-family:Fraunces,serif;font-size:2rem;color:var(--moss)}
+table.list td .bar{height:8px;background:var(--sand-dark);border-radius:999px;overflow:hidden;display:flex;width:140px}table.list td .bar .ok{background:var(--ok)}table.list td .bar .wk{background:var(--warn)}
+@media(max-width:720px){header.top{position:static}header.top nav a{margin-left:12px;font-size:.88rem}.filterbar,.tools{top:0}.hero h1{font-size:1.8rem}.hero{padding:34px 0 28px}.sub-item .t{flex-basis:100%}}
 /* print */
 @media print{header.top,footer,.tools,.filterbar,.st,.pill,.aw,.hero .crumbs,.prog,.noprint{display:none!important}
 body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;color:#000;padding:10px 0}.hero p,.hero h1{color:#000}.hero:before{display:none}
@@ -94,298 +108,179 @@ body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;c
 svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 </style>
 <script>try{if(localStorage.getItem('envsci.theme')==='"dark"')document.documentElement.dataset.theme='dark';}catch(e){}</script></head><body data-paper="P1-Set16" data-max="120">
-<header class="top"><div class="wrap"><a class="brand" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb069" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-8 0-14 4-14 12 0 1.5.3 3 1 4 2-6 6-9 11-11-4 3-7 6-8 12 8 0 12-6 10-17z"/></svg><span>AQA Environmental Science</span></a><nav><a href="../index.html" class="">Topics</a><a href="../papers.html" class="">Mock papers</a><a href="../official.html" class="">Past papers</a><a href="../essays.html" class="">Essay bank</a><a href="../quickfire.html" class="">Quick-fire</a><a href="../search.html" class="">Search</a><button class="icon-btn" id="themeBtn" type="button" title="Toggle dark mode">&#9790; Dark</button></nav></div></header>
+<header class="top"><div class="wrap"><a class="brand" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb069" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-8 0-14 4-14 12 0 1.5.3 3 1 4 2-6 6-9 11-11-4 3-7 6-8 12 8 0 12-6 10-17z"/></svg><span>AQA Environmental Science</span></a><nav><a href="../index.html" class="">Topics</a><a href="../papers.html" class="">Mock papers</a><a href="../official.html" class="">Past papers</a><a href="../essays.html" class="">Essay bank</a><a href="../pastq.html" class="">Real Qs by topic</a><a href="../quickfire.html" class="">Quick-fire</a><a href="../planner.html" class="">Planner</a><a href="../search.html" class="">Search</a><button class="icon-btn" id="themeBtn" type="button" title="Toggle dark mode">&#9790; Dark</button></nav></div></header>
 <section class="hero p1 small"><div class="wrap"><div class="crumbs"><a href="../papers.html">Mock papers</a><span>&rsaquo;</span>Set 16</div><h1>Paper 1 &mdash; Generated Set 16</h1><p>120 marks &middot; 3 hours &middot; <a style="color:#fff" href="../pdf/papers/P1-Set16-QP.pdf">Question paper PDF</a> &middot; <a style="color:#fff" href="../pdf/papers/P1-Set16-MS.pdf">Mark scheme PDF</a></p></div></section>
 <main><div class="wrap">
 <div class="tools noprint"><span class="time" id="clock">3:00:00</span><button type="button" class="primary" id="startBtn">Start exam</button><button type="button" id="resetBtn">Reset timer</button><span class="score">Score <b id="scoreN">0</b>/120 <span class="pct" id="scorePct">0%</span></span><button type="button" id="clearScore">Clear marks</button><button type="button" data-reveal="1">Show all mark schemes</button><button type="button" data-print="qp">Print</button><button type="button" data-print="ms">Print + MS</button><span class="kbd">Enter the marks you award yourself inside each mark scheme; the score is saved for this paper.</span></div>
-<div class="q" id="ECON-04" data-qid="ECON-04" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 1</span><span class="meta">10 marks &middot; <a href="../subtopic/energy-conservation.html">Energy conservation: transport, buildings, industry</a> &middot; spec 3.3.4.2.2 &middot; Genn pp. 228-231 &middot; ECON-04</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
-<p>Table 1 shows the rate of heat loss through 1 m<sup>2</sup> of different glazing systems for a 1 &deg;C temperature difference (U-value).</p>
-<div class="cap">Table 1</div><table class="data"><tr><th>Glazing</th><th>Heat loss / W m<sup>-2</sup> K<sup>-1</sup></th></tr><tr><td>Single glazing</td><td>5.8</td></tr><tr><td>Double glazing, air filled</td><td>2.8</td></tr><tr><td>Double glazing, argon filled, low-e glass</td><td>1.6</td></tr><tr><td>Triple glazing, krypton filled, low-e glass</td><td>0.8</td></tr><tr><td>Double glazing, vacuum (0.2 mm gap)</td><td>0.74</td></tr></table>
-<div class="part"><span class="marks">[3 marks]</span><span class="pn">01.1</span>A house has 20 m<sup>2</sup> of single glazing. The average temperature difference between inside and outside over the heating season is 12 &deg;C. Calculate the reduction in the rate of heat loss if the windows are replaced with argon-filled low-e double glazing.
+<div class="jump noprint"><a href="#AIR-01">Q1 &middot; 10</a><a href="#ECON-04">Q2 &middot; 10</a><a href="#BGC-05">Q3 &middot; 10</a><a href="#PPRO-05">Q4 &middot; 10</a><a href="#REN-06">Q5 &middot; 10</a><a href="#EST-03">Q6 &middot; 10</a><a href="#FN-01">Q7 &middot; 10</a><a href="#NUT-01">Q8 &middot; 10</a><a href="#RM-16">Q9 &middot; 5</a><a href="#OZ-04">Q10 &middot; 10</a><a href="#essay">Q11 &middot; essay</a></div>
+<div class="q" id="AIR-01" data-qid="AIR-01" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 1</span><span class="meta">10 marks &middot; <a href="../subtopic/air-pollution.html">Atmospheric pollution: smoke, acid rain, NOx, hydrocarbons, CO, smogs</a> &middot; spec 3.4.3.2.1 &middot; Genn pp. 245-247 &middot; AIR-01</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<p>Figure 1 shows the daily deaths in London and the mean concentration of smoke in the air during the smog of December 1952.</p>
+<div class="cap">Figure 1</div>
+<svg class="chart" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
+<polyline points="60.0,207.4 96.9,204.9 133.8,202.4 170.8,194.8 207.7,164.8 244.6,114.7 281.5,49.6 318.5,37.0 355.4,64.6 392.3,119.7 429.2,149.8 466.2,169.8 503.1,179.8 540.0,187.3" fill="none" stroke="#22302a" stroke-width="1.8"/>
+<circle cx="60.0" cy="207.4" r="2.6" fill="#22302a"/>
+<circle cx="96.9" cy="204.9" r="2.6" fill="#22302a"/>
+<circle cx="133.8" cy="202.4" r="2.6" fill="#22302a"/>
+<circle cx="170.8" cy="194.8" r="2.6" fill="#22302a"/>
+<circle cx="207.7" cy="164.8" r="2.6" fill="#22302a"/>
+<circle cx="244.6" cy="114.7" r="2.6" fill="#22302a"/>
+<circle cx="281.5" cy="49.6" r="2.6" fill="#22302a"/>
+<circle cx="318.5" cy="37.0" r="2.6" fill="#22302a"/>
+<circle cx="355.4" cy="64.6" r="2.6" fill="#22302a"/>
+<circle cx="392.3" cy="119.7" r="2.6" fill="#22302a"/>
+<circle cx="429.2" cy="149.8" r="2.6" fill="#22302a"/>
+<circle cx="466.2" cy="169.8" r="2.6" fill="#22302a"/>
+<circle cx="503.1" cy="179.8" r="2.6" fill="#22302a"/>
+<circle cx="540.0" cy="187.3" r="2.6" fill="#22302a"/>
+<line x1="60.0" y1="270" x2="60.0" y2="274" stroke="#000"/><text x="60.0" y="286" text-anchor="middle">1</text>
+<line x1="56" y1="270.0" x2="60" y2="270.0" stroke="#000"/><text x="52" y="274.0" text-anchor="end">0</text>
+<line x1="156.0" y1="270" x2="156.0" y2="274" stroke="#000"/><text x="156.0" y="286" text-anchor="middle">3.6</text>
+<line x1="56" y1="220.0" x2="60" y2="220.0" stroke="#000"/><text x="52" y="224.0" text-anchor="end">200</text>
+<line x1="252.0" y1="270" x2="252.0" y2="274" stroke="#000"/><text x="252.0" y="286" text-anchor="middle">6.2</text>
+<line x1="56" y1="170.0" x2="60" y2="170.0" stroke="#000"/><text x="52" y="174.0" text-anchor="end">399</text>
+<line x1="348.0" y1="270" x2="348.0" y2="274" stroke="#000"/><text x="348.0" y="286" text-anchor="middle">8.8</text>
+<line x1="56" y1="120.0" x2="60" y2="120.0" stroke="#000"/><text x="52" y="124.0" text-anchor="end">599</text>
+<line x1="444.0" y1="270" x2="444.0" y2="274" stroke="#000"/><text x="444.0" y="286" text-anchor="middle">11.4</text>
+<line x1="56" y1="70.0" x2="60" y2="70.0" stroke="#000"/><text x="52" y="74.0" text-anchor="end">798</text>
+<line x1="540.0" y1="270" x2="540.0" y2="274" stroke="#000"/><text x="540.0" y="286" text-anchor="middle">14</text>
+<line x1="56" y1="20.0" x2="60" y2="20.0" stroke="#000"/><text x="52" y="24.0" text-anchor="end">998</text>
+<line x1="60" y1="20" x2="60" y2="270" stroke="#000"/><line x1="60" y1="270" x2="540" y2="270" stroke="#000"/>
+<text x="300.0" y="312" text-anchor="middle" font-weight="bold">Date (December 1952)</text>
+<text transform="translate(14,145.0) rotate(-90)" text-anchor="middle" font-weight="bold">Deaths per day</text>
+</svg>
+<div class="cap">Table 1</div><table class="data"><tr><th>Date</th><th>3 Dec</th><th>5 Dec</th><th>7 Dec</th><th>8 Dec</th><th>10 Dec</th><th>12 Dec</th></tr><tr><td>Smoke / mg m<sup>-3</sup></td><td>0.4</td><td>1.5</td><td>4.4</td><td>4.5</td><td>1.2</td><td>0.5</td></tr></table>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">01.1</span>Describe the relationship between smoke concentration and daily deaths shown in Figure 1 and Table 1.
 </div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">01.2</span>Explain why the gap between the panes should be as large as possible but not too large.
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">01.2</span>Calculate the percentage increase in daily deaths between 1 December and 8 December.
 </div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">01.3</span>Explain how low-emissivity glass and inert gas filling each reduce heat loss.
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">01.3</span>Explain how the weather conditions in December 1952 caused the smog to form.
 </div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">01.4</span>Explain why vacuum double glazing has a very narrow gap and where it is used.
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">01.4</span>Explain why most of the deaths were among the elderly, the very young and people with existing respiratory disease.
 </div>
-<div class="part"><span class="marks">[1 mark]</span><span class="pn">01.5</span>State <b>one</b> reason why insulation thickness has an optimum value.
+<div class="part"><span class="marks">[1 mark]</span><span class="pn">01.5</span>State the legislation introduced in the UK in response to this smog.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>01.1</b> (3 marks)
-<ul><li>Single: 5.8 x 20 x 12 = 1392 W</li><li>Argon: 1.6 x 20 x 12 = 384 W</li><li>Reduction = 1008 W (accept 1010)</li></ul>
+<div class="mspart"><div class="msh"><b>01.1</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Deaths rise as smoke concentration rises, peaking at about 930 per day on 8 Dec when smoke was highest (4.5 mg m<sup>-3</sup>)</span></li><li><span class="mk">1</span><span>Deaths fall as smoke falls but remain above the starting level for several days (time lag / delayed effect)</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="AIR-01.1"></label> / 2</div>
+</div>
+<div class="mspart"><div class="msh"><b>01.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">A correct final answer (with unit where asked) scores full marks. If the answer is wrong, award 1 mark for each correct step of working shown.</div><ul class="pts"><li><span class="mk">1</span><span>(930 - 250) / 250 x 100</span></li><li><span class="mk">1</span><span>= 272%</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="AIR-01.2"></label> / 2</div>
+</div>
+<div class="mspart"><div class="msh"><b>01.3</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Anticyclonic conditions: clear skies allowed rapid radiation of heat from the ground at night so the ground and air near it cooled</span></li><li><span class="mk">1</span><span>Low wind velocity so air layers did not mix; London lies in a valley / basin where cold dense air collected: a temperature inversion formed</span></li><li><span class="mk">1</span><span>Smoke from coal fires was trapped below the inversion; moist air cooled to its dew point forming fog; smoke + fog = smog; the smog's high albedo prolonged the inversion</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="AIR-01.3"></label> / 3</div>
+</div>
+<div class="mspart"><div class="msh"><b>01.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Smoke particles (PM10) are inhaled deeply and irritate the lungs / kill cilia so particles and bacteria are not cleared, causing bronchitis / infections</span></li><li><span class="mk">1</span><span>These groups have weaker lungs / immune systems / less reserve so the extra stress (with sulfur dioxide acting synergistically) was fatal</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="AIR-01.4"></label> / 2</div>
+</div>
+<div class="mspart"><div class="msh"><b>01.5</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>Clean Air Act (1956)</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="1" step="1" data-kind="part" data-key="AIR-01.5"></label> / 1</div>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 245-247; AQA spec 3.4.3.2.1.</div></details></div>
+<div class="q" id="ECON-04" data-qid="ECON-04" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 2</span><span class="meta">10 marks &middot; <a href="../subtopic/energy-conservation.html">Energy conservation: transport, buildings, industry</a> &middot; spec 3.3.4.2.2 &middot; Genn pp. 228-231 &middot; ECON-04</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<p>Table 1 shows the rate of heat loss through 1 m<sup>2</sup> of different glazing systems for a 1 &deg;C temperature difference (U-value).</p>
+<div class="cap">Table 1</div><table class="data"><tr><th>Glazing</th><th>Heat loss / W m<sup>-2</sup> K<sup>-1</sup></th></tr><tr><td>Single glazing</td><td>5.8</td></tr><tr><td>Double glazing, air filled</td><td>2.8</td></tr><tr><td>Double glazing, argon filled, low-e glass</td><td>1.6</td></tr><tr><td>Triple glazing, krypton filled, low-e glass</td><td>0.8</td></tr><tr><td>Double glazing, vacuum (0.2 mm gap)</td><td>0.74</td></tr></table>
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">02.1</span>A house has 20 m<sup>2</sup> of single glazing. The average temperature difference between inside and outside over the heating season is 12 &deg;C. Calculate the reduction in the rate of heat loss if the windows are replaced with argon-filled low-e double glazing.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">02.2</span>Explain why the gap between the panes should be as large as possible but not too large.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">02.3</span>Explain how low-emissivity glass and inert gas filling each reduce heat loss.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">02.4</span>Explain why vacuum double glazing has a very narrow gap and where it is used.
+</div>
+<div class="part"><span class="marks">[1 mark]</span><span class="pn">02.5</span>State <b>one</b> reason why insulation thickness has an optimum value.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div class="mspart"><div class="msh"><b>02.1</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">A correct final answer (with unit where asked) scores full marks. If the answer is wrong, award 1 mark for each correct step of working shown.</div><ul class="pts"><li><span class="mk">1</span><span>Single: 5.8 x 20 x 12 = 1392 W</span></li><li><span class="mk">1</span><span>Argon: 1.6 x 20 x 12 = 384 W</span></li><li><span class="mk">1</span><span>Reduction = 1008 W (accept 1010)</span></li></ul>
 <div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="ECON-04.1"></label> / 3</div>
 </div>
-<div><b>01.2</b> (2 marks)
-<ul><li>A wider gap of trapped gas reduces conduction because gas is a poor conductor</li><li>If the gap is too wide convection currents start in the gas, carrying heat across; the optimum depends on the gas and window size</li></ul>
+<div class="mspart"><div class="msh"><b>02.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>A wider gap of trapped gas reduces conduction because gas is a poor conductor</span></li><li><span class="mk">1</span><span>If the gap is too wide convection currents start in the gas, carrying heat across; the optimum depends on the gas and window size</span></li></ul>
 <div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="ECON-04.2"></label> / 2</div>
 </div>
-<div><b>01.3</b> (2 marks)
-<ul><li>Low-e coating reflects long-wavelength infrared back into the room, reducing radiation losses</li><li>Argon / krypton / xenon have lower thermal conductivity than air so less conduction across the gap</li></ul>
+<div class="mspart"><div class="msh"><b>02.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Low-e coating reflects long-wavelength infrared back into the room, reducing radiation losses</span></li><li><span class="mk">1</span><span>Argon / krypton / xenon have lower thermal conductivity than air so less conduction across the gap</span></li></ul>
 <div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="ECON-04.3"></label> / 2</div>
 </div>
-<div><b>01.4</b> (2 marks)
-<ul><li>Panes must be held apart by small spacers which cannot be long, so the gap is only about 0.2 mm</li><li>Used where there is not room for thick gas-filled multiple glazing (eg historic buildings)</li></ul>
+<div class="mspart"><div class="msh"><b>02.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Panes must be held apart by small spacers which cannot be long, so the gap is only about 0.2 mm</span></li><li><span class="mk">1</span><span>Used where there is not room for thick gas-filled multiple glazing (eg historic buildings)</span></li></ul>
 <div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="ECON-04.4"></label> / 2</div>
 </div>
-<div><b>01.5</b> (1 marks)
-<ul><li>Each extra layer saves less energy (diminishing returns) while cost rises, so beyond the optimum the cost of insulation exceeds the value of energy saved</li></ul>
+<div class="mspart"><div class="msh"><b>02.5</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>Each extra layer saves less energy (diminishing returns) while cost rises, so beyond the optimum the cost of insulation exceeds the value of energy saved</span></li></ul>
 <div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="1" step="1" data-kind="part" data-key="ECON-04.5"></label> / 1</div>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 228-231; AQA spec 3.3.4.2.2.</div></details></div>
-<div class="q" id="ENF-02" data-qid="ENF-02" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 2</span><span class="meta">10 marks &middot; <a href="../subtopic/energy-features.html">Importance &amp; features of energy resources</a> &middot; spec 3.3.2 &middot; Genn pp. 175-178 &middot; ENF-02</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
-<p>Table 1 shows the approximate energy density of some energy resources.</p>
-<div class="cap">Table 1</div><table class="data"><tr><th>Energy resource</th><th>Energy density / MJ kg<sup>-1</sup></th></tr><tr><td>Uranium (natural, in fission reactor)</td><td>500 000</td></tr><tr><td>Natural gas</td><td>55</td></tr><tr><td>Petrol</td><td>46</td></tr><tr><td>Coal</td><td>28</td></tr><tr><td>Dry wood</td><td>16</td></tr><tr><td>Lithium-ion battery (stored electricity)</td><td>0.7</td></tr></table>
-<div class="part"><span class="marks">[3 marks]</span><span class="pn">02.1</span>Explain what is meant by <b>energy density</b> and why it is an important feature of an energy resource.
+<div class="q" id="BGC-05" data-qid="BGC-05" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 3</span><span class="meta">10 marks &middot; <a href="../subtopic/biogeochem.html">Biogeochemical cycles: carbon, nitrogen, phosphorus</a> &middot; spec 3.2.4.3 &middot; Genn pp. 154-155 &middot; BGC-05</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<p>Table 1 shows global reactive nitrogen fixed each year by natural processes and by human activities.</p>
+<div class="cap">Table 1</div><table class="data"><tr><th>Source</th><th>Nitrogen fixed / million tonnes per year</th></tr><tr><td>Biological fixation (natural ecosystems)</td><td>110</td></tr><tr><td>Lightning</td><td>5</td></tr><tr><td>Haber process (fertiliser manufacture)</td><td>120</td></tr><tr><td>Cultivation of legume crops</td><td>60</td></tr><tr><td>Combustion (NOx)</td><td>30</td></tr></table>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">03.1</span>Use Table 1 to calculate the percentage of total nitrogen fixation that is caused by human activities.
 </div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">02.2</span>Use Table 1 to calculate how many tonnes of coal contain the same energy as 1 kg of uranium.
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">03.2</span>Describe the Haber process and explain why it is unsustainable compared with biological nitrogen fixation.
 </div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">02.3</span>Explain why low energy density does not prevent solar and wind power from being useful.
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">03.3</span>Describe <b>three</b> consequences of the increased movement of nitrogen compounds caused by human activities.
 </div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">02.4</span>Explain the difference between an <b>intermittent</b> resource and an <b>unpredictable</b> resource, using named examples.
-</div>
-<div class="part"><span class="marks">[1 mark]</span><span class="pn">02.5</span>Explain why natural gas must be liquefied for transport by ship.
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">03.4</span>Explain how composting or anaerobic digestion of biological wastes produces a better fertiliser than raw waste.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>02.1</b> (3 marks)
-<ul><li>The amount of energy contained in a given mass of the resource (or harnessed per kg of equipment for renewables)</li><li>High energy density means smaller quantities are needed so storage and transport are easier and cheaper (eg 75 t of aviation fuel carries a 400 t aircraft 5600 km)</li><li>High energy density fuels reach high temperatures needed for smelting / steam turbines</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="ENF-02.1"></label> / 3</div>
+<div class="mspart"><div class="msh"><b>03.1</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">A correct final answer (with unit where asked) scores full marks. If the answer is wrong, award 1 mark for each correct step of working shown.</div><ul class="pts"><li><span class="mk">1</span><span>Human = 120 + 60 + 30 = 210; total = 325</span></li><li><span class="mk">1</span><span>210 / 325 x 100 = 64.6% (accept 65%)</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="BGC-05.1"></label> / 2</div>
 </div>
-<div><b>02.2</b> (2 marks)
-<ul><li>500 000 / 28 = 17 857 kg</li><li>= 17.9 tonnes (accept 18; book quotes 13 t for 0.7% enriched fuel)</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="ENF-02.2"></label> / 2</div>
+<div class="mspart"><div class="msh"><b>03.2</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Nitrogen and hydrogen react to form ammonia over an iron catalyst at high temperature and pressure; ammonia then converted to nitrates for fertiliser</span></li><li><span class="mk">1</span><span>Uses large amounts of energy from fossil fuels (also the hydrogen source), releasing CO2 and NOx</span></li><li><span class="mk">1</span><span>Biological fixation by bacteria occurs at low temperature using solar energy captured by plants (enzymes lower activation energy)</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="BGC-05.2"></label> / 3</div>
 </div>
-<div><b>02.3</b> (2 marks)
-<ul><li>The electricity they generate can power high-energy-requirement technologies</li><li>Electricity can be converted to high energy density secondary fuels, eg hydrogen by electrolysis, or stored (batteries, pumped storage)</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="ENF-02.3"></label> / 2</div>
+<div class="mspart"><div class="msh"><b>03.3</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">Any 3 from the points below - 1 mark each, maximum 3.</div><ul class="pts"><li><span class="mk">1</span><span>Eutrophication of water bodies by leached nitrates / sewage</span></li><li><span class="mk">1</span><span>Photochemical smogs and tropospheric ozone from NOx</span></li><li><span class="mk">1</span><span>Acid rain (nitric acid)</span></li><li><span class="mk">1</span><span>Nitrous oxide as a greenhouse gas</span></li><li><span class="mk">1</span><span>NOx toxicity / respiratory disease</span></li><li><span class="mk">1</span><span>Nitrate in drinking water (methaemoglobinaemia)</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="BGC-05.3"></label> / 3</div>
 </div>
-<div><b>02.4</b> (2 marks)
-<ul><li>Intermittent: not available all the time, eg tidal (but the times are predictable so alternatives can be planned)</li><li>Unpredictable: intermittent and the timing / amount cannot be forecast accurately, eg wind, solar</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="ENF-02.4"></label> / 2</div>
+<div class="mspart"><div class="msh"><b>03.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Carbon is lost as CO2 (composting) or CH4 (digestion) so the C:N ratio improves / more nitrogen-rich</span></li><li><span class="mk">1</span><span>Bulk and odour reduced, pathogens killed, easier to apply; digestion also yields biogas</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="BGC-05.4"></label> / 2</div>
 </div>
-<div><b>02.5</b> (1 marks)
-<ul><li>Gaseous natural gas has a very low energy density by volume; LNG at -160 &deg;C has 160 times the energy density so a ship can carry a worthwhile amount</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="1" step="1" data-kind="part" data-key="ENF-02.5"></label> / 1</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 154-155; AQA spec 3.2.4.3.</div></details></div>
+<div class="q" id="PPRO-05" data-qid="PPRO-05" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 4</span><span class="meta">10 marks &middot; <a href="../subtopic/pollutant-properties.html">Properties of pollutants &amp; environmental factors</a> &middot; spec 3.4.1, 3.4.2.1 &middot; Genn pp. 236-241, 254-255 &middot; PPRO-05</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<p>A factory discharges a persistent, water-soluble pollutant into a river. Table 1 shows the concentration of the pollutant measured at sites along the river on a day with normal river flow.</p>
+<div class="cap">Table 1</div><table class="data"><tr><th>Site</th><th>Distance downstream of discharge / km</th><th>Pollutant concentration / mg dm<sup>-3</sup></th><th>River flow / m<sup>3</sup> s<sup>-1</sup></th></tr><tr><td>A (upstream)</td><td>-2</td><td>0.0</td><td>12</td></tr><tr><td>B</td><td>0.5</td><td>4.8</td><td>12</td></tr><tr><td>C</td><td>5</td><td>3.9</td><td>15</td></tr><tr><td>D (below tributary)</td><td>12</td><td>1.6</td><td>36</td></tr><tr><td>E</td><td>30</td><td>1.4</td><td>38</td></tr></table>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">04.1</span>Calculate the percentage decrease in pollutant concentration between site B and site E.
 </div>
-<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 175-178; AQA spec 3.3.2.</div></details></div>
-<div class="q" id="BGC-06" data-qid="BGC-06" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 3</span><span class="meta">10 marks &middot; <a href="../subtopic/biogeochem.html">Biogeochemical cycles: carbon, nitrogen, phosphorus</a> &middot; spec 3.2.4.4 &middot; Genn pp. 156-157 &middot; BGC-06</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
-<div class="part"><span class="marks">[3 marks]</span><span class="pn">03.1</span>Explain why phosphorus is more likely than nitrogen to be a limiting factor on biological productivity.
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">04.2</span>Explain the large decrease in concentration between sites C and D.
 </div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">03.2</span>Explain how mycorrhizal fungi increase phosphate uptake by plants.
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">04.3</span>Explain why the concentration changes very little between sites D and E.
 </div>
-<div class="part"><span class="marks">[3 marks]</span><span class="pn">03.3</span>Describe how human activities have altered the phosphorus cycle.
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">04.4</span>Suggest why the pollution might be more serious if the same discharge entered a lake instead of a river.
 </div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">03.4</span>Explain <b>two</b> strategies for the sustainable management of phosphorus supplies.
-</div>
-<details class="ms"><summary>Show mark scheme</summary>
-<div><b>03.1</b> (3 marks)
-<ul><li>There is no gaseous / atmospheric reservoir of phosphorus (no equivalent of nitrogen fixation)</li><li>Most phosphorus compounds have low solubility so little is available in soil water</li><li>Phosphorus lost to marine sediments only returns through very slow processes: mountain building (uplift) and weathering of rocks</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="BGC-06.1"></label> / 3</div>
-</div>
-<div><b>03.2</b> (2 marks)
-<ul><li>Fungal hyphae form a symbiotic relationship with plant roots and spread through a large volume of soil</li><li>Greatly increasing the surface area for absorbing (poorly mobile) phosphate ions, passed to the plant in exchange for carbohydrates</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="BGC-06.2"></label> / 2</div>
-</div>
-<div><b>03.3</b> (3 marks)
-<ul><li>Mining of calcium phosphate rock (and past mining of guano deposits, eg Peru, Nauru, now largely exhausted)</li><li>Treated to make more soluble ammonium phosphate fertilisers, mobilising phosphorus into the environment</li><li>Fertiliser runoff / eroded soil / sewage effluent carry phosphates into water bodies causing eutrophication (with nitrates); harvesting removes phosphorus from farmland</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="BGC-06.3"></label> / 3</div>
-</div>
-<div><b>03.4</b> (2 marks)
-<div class="lvl"><i>Any 2 from:</i></div>
-<ul><li>Use biological wastes (manure, sewage sludge, compost) as fertiliser to return phosphates rather than mining rock</li><li>Breed crops that absorb phosphate more efficiently</li><li>Maintain conditions for mycorrhizal fungi (less tillage, fewer fungicides, organic matter)</li><li>Recover phosphate from sewage effluent by iron(III) sulfate precipitation; reduce soil erosion</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="BGC-06.4"></label> / 2</div>
-</div>
-<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 156-157; AQA spec 3.2.4.4.</div></details></div>
-<div class="q" id="RM-17" data-qid="RM-17" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 4</span><span class="meta">10 marks &middot; <a href="../subtopic/methodology.html">Scientific methodologies &amp; sampling design</a> &middot; spec 3.7.1 &middot; Genn pp. 391-393 &middot; RM-17</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
-<p>Figure 1 shows the mean number of woodlice per pitfall trap calculated as more traps were included in the mean (a running mean).</p>
-<div class="cap">Figure 1</div>
-<svg class="chart" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
-<polyline points="60.0,55.7 96.9,118.2 133.8,87.9 170.8,107.5 244.6,98.6 318.5,102.1 392.3,100.4 466.2,100.4 540.0,100.4" fill="none" stroke="#22302a" stroke-width="1.8"/>
-<circle cx="60.0" cy="55.7" r="2.6" fill="#22302a"/>
-<circle cx="96.9" cy="118.2" r="2.6" fill="#22302a"/>
-<circle cx="133.8" cy="87.9" r="2.6" fill="#22302a"/>
-<circle cx="170.8" cy="107.5" r="2.6" fill="#22302a"/>
-<circle cx="244.6" cy="98.6" r="2.6" fill="#22302a"/>
-<circle cx="318.5" cy="102.1" r="2.6" fill="#22302a"/>
-<circle cx="392.3" cy="100.4" r="2.6" fill="#22302a"/>
-<circle cx="466.2" cy="100.4" r="2.6" fill="#22302a"/>
-<circle cx="540.0" cy="100.4" r="2.6" fill="#22302a"/>
-<line x1="60.0" y1="270" x2="60.0" y2="274" stroke="#000"/><text x="60.0" y="286" text-anchor="middle">5</text>
-<line x1="56" y1="270.0" x2="60" y2="270.0" stroke="#000"/><text x="52" y="274.0" text-anchor="end">0</text>
-<line x1="156.0" y1="270" x2="156.0" y2="274" stroke="#000"/><text x="156.0" y="286" text-anchor="middle">18</text>
-<line x1="56" y1="220.0" x2="60" y2="220.0" stroke="#000"/><text x="52" y="224.0" text-anchor="end">2.8</text>
-<line x1="252.0" y1="270" x2="252.0" y2="274" stroke="#000"/><text x="252.0" y="286" text-anchor="middle">31</text>
-<line x1="56" y1="170.0" x2="60" y2="170.0" stroke="#000"/><text x="52" y="174.0" text-anchor="end">5.6</text>
-<line x1="348.0" y1="270" x2="348.0" y2="274" stroke="#000"/><text x="348.0" y="286" text-anchor="middle">44</text>
-<line x1="56" y1="120.0" x2="60" y2="120.0" stroke="#000"/><text x="52" y="124.0" text-anchor="end">8.4</text>
-<line x1="444.0" y1="270" x2="444.0" y2="274" stroke="#000"/><text x="444.0" y="286" text-anchor="middle">57</text>
-<line x1="56" y1="70.0" x2="60" y2="70.0" stroke="#000"/><text x="52" y="74.0" text-anchor="end">11.2</text>
-<line x1="540.0" y1="270" x2="540.0" y2="274" stroke="#000"/><text x="540.0" y="286" text-anchor="middle">70</text>
-<line x1="56" y1="20.0" x2="60" y2="20.0" stroke="#000"/><text x="52" y="24.0" text-anchor="end">14</text>
-<line x1="60" y1="20" x2="60" y2="270" stroke="#000"/><line x1="60" y1="270" x2="540" y2="270" stroke="#000"/>
-<text x="300.0" y="312" text-anchor="middle" font-weight="bold">Number of traps used to calculate the mean</text>
-<text transform="translate(14,145.0) rotate(-90)" text-anchor="middle" font-weight="bold">Running mean number of woodlice per trap</text>
-</svg>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">04.1</span>Use Figure 1 to suggest the minimum number of traps needed to produce a reliable mean. Give a reason for your answer.
-</div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">04.2</span>Explain why the number of samples needed depends on the degree of scatter of the results.
-</div>
-<div class="part"><span class="marks">[3 marks]</span><span class="pn">04.3</span>The student wants to compare woodlouse numbers in a woodland and in a grassland. Describe how the sampling should be standardised.
-</div>
-<div class="part"><span class="marks">[3 marks]</span><span class="pn">04.4</span>Explain why the timing of sampling would matter if the student were investigating the activity of flying insects rather than woodlice.
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">04.5</span>Explain why the factory might be permitted to discharge the effluent into the sea near a strong current but not into the river.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>04.1</b> (2 marks)
-<ul><li>About 40-50 traps</li><li>Because the running mean stops changing / fluctuating with fewer than this the mean is unreliable</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="RM-17.1"></label> / 2</div>
+<div class="mspart"><div class="msh"><b>04.1</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">A correct final answer (with unit where asked) scores full marks. If the answer is wrong, award 1 mark for each correct step of working shown.</div><ul class="pts"><li><span class="mk">1</span><span>(4.8 - 1.4) / 4.8 x 100</span></li><li><span class="mk">1</span><span>= 70.8% (accept 71%)</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="PPRO-05.1"></label> / 2</div>
 </div>
-<div><b>04.2</b> (2 marks)
-<ul><li>Widely scattered results (large standard deviation) mean a single sample may not be representative</li><li>More samples are needed so that the effect of variability is averaged out and the mean is representative / significance can be assessed</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="RM-17.2"></label> / 2</div>
+<div class="mspart"><div class="msh"><b>04.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>A tributary joins the river, more than doubling the flow (15 to 36 m<sup>3</sup> s<sup>-1</sup>)</span></li><li><span class="mk">1</span><span>So the pollutant is diluted by the extra water (dispersal), not broken down</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="PPRO-05.2"></label> / 2</div>
 </div>
-<div><b>04.3</b> (3 marks)
-<div class="lvl"><i>Any 3 from:</i></div>
-<ul><li>Same type and size of pitfall trap, set for the same length of time</li><li>Traps emptied at the same time of day / same weather conditions in both habitats</li><li>Same number of traps and same method of positioning (random or systematic) in each habitat</li><li>Other variables that could affect results (eg rainfall, temperature) monitored or controlled</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="RM-17.3"></label> / 3</div>
+<div class="mspart"><div class="msh"><b>04.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>The pollutant is persistent so it is not degraded / broken down as it travels</span></li><li><span class="mk">1</span><span>Little extra water joins the river (flow 36 to 38) so little further dilution</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="PPRO-05.3"></label> / 2</div>
 </div>
-<div><b>04.4</b> (3 marks)
-<ul><li>Flying insect activity changes with weather over minutes to weeks (temperature, wind) and diurnally</li><li>Samples on different occasions are needed to produce a mean that represents the typical value or to identify trends</li><li>The interval between samples should match the rate at which the factor changes, found from a preliminary study</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="RM-17.4"></label> / 3</div>
+<div class="mspart"><div class="msh"><b>04.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">Any 2 from the points below - 1 mark each, maximum 2.</div><ul class="pts"><li><span class="mk">1</span><span>Lake has a long residence time / water does not flow away so the pollutant accumulates rather than being carried away</span></li><li><span class="mk">1</span><span>Smaller volume of water / less dilution / less dispersal by currents</span></li><li><span class="mk">1</span><span>Persistent pollutant gradually becomes more concentrated (eg by evaporation)</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="PPRO-05.4"></label> / 2</div>
 </div>
-<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 391-393; AQA spec 3.7.1.</div></details></div>
-<div class="q" id="PEST-07" data-qid="PEST-07" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 5</span><span class="meta">10 marks &middot; <a href="../subtopic/pesticides.html">Pesticides</a> &middot; spec 3.4.3.2.8 &middot; Genn pp. 262-266 &middot; PEST-07</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
-<p>Figure 1 shows the number of breeding pairs of sparrowhawks in a study area in the UK between 1945 and 1985, and the years in which DDT use began and was banned.</p>
-<div class="cap">Figure 1</div>
-<svg class="chart" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
-<polyline points="60.0,40.2 120.0,51.2 180.0,116.8 240.0,204.4 300.0,242.6 360.0,237.2 420.0,193.4 480.0,127.8 540.0,62.1" fill="none" stroke="#22302a" stroke-width="1.8"/>
-<circle cx="60.0" cy="40.2" r="2.6" fill="#22302a"/>
-<circle cx="120.0" cy="51.2" r="2.6" fill="#22302a"/>
-<circle cx="180.0" cy="116.8" r="2.6" fill="#22302a"/>
-<circle cx="240.0" cy="204.4" r="2.6" fill="#22302a"/>
-<circle cx="300.0" cy="242.6" r="2.6" fill="#22302a"/>
-<circle cx="360.0" cy="237.2" r="2.6" fill="#22302a"/>
-<circle cx="420.0" cy="193.4" r="2.6" fill="#22302a"/>
-<circle cx="480.0" cy="127.8" r="2.6" fill="#22302a"/>
-<circle cx="540.0" cy="62.1" r="2.6" fill="#22302a"/>
-<line x1="60.0" y1="270" x2="60.0" y2="274" stroke="#000"/><text x="60.0" y="286" text-anchor="middle">1945</text>
-<line x1="56" y1="270.0" x2="60" y2="270.0" stroke="#000"/><text x="52" y="274.0" text-anchor="end">0</text>
-<line x1="156.0" y1="270" x2="156.0" y2="274" stroke="#000"/><text x="156.0" y="286" text-anchor="middle">1953</text>
-<line x1="56" y1="220.0" x2="60" y2="220.0" stroke="#000"/><text x="52" y="224.0" text-anchor="end">45.7</text>
-<line x1="252.0" y1="270" x2="252.0" y2="274" stroke="#000"/><text x="252.0" y="286" text-anchor="middle">1961</text>
-<line x1="56" y1="170.0" x2="60" y2="170.0" stroke="#000"/><text x="52" y="174.0" text-anchor="end">91.4</text>
-<line x1="348.0" y1="270" x2="348.0" y2="274" stroke="#000"/><text x="348.0" y="286" text-anchor="middle">1969</text>
-<line x1="56" y1="120.0" x2="60" y2="120.0" stroke="#000"/><text x="52" y="124.0" text-anchor="end">137</text>
-<line x1="444.0" y1="270" x2="444.0" y2="274" stroke="#000"/><text x="444.0" y="286" text-anchor="middle">1977</text>
-<line x1="56" y1="70.0" x2="60" y2="70.0" stroke="#000"/><text x="52" y="74.0" text-anchor="end">183</text>
-<line x1="540.0" y1="270" x2="540.0" y2="274" stroke="#000"/><text x="540.0" y="286" text-anchor="middle">1985</text>
-<line x1="56" y1="20.0" x2="60" y2="20.0" stroke="#000"/><text x="52" y="24.0" text-anchor="end">228</text>
-<line x1="60" y1="20" x2="60" y2="270" stroke="#000"/><line x1="60" y1="270" x2="540" y2="270" stroke="#000"/>
-<text x="300.0" y="312" text-anchor="middle" font-weight="bold">Year</text>
-<text transform="translate(14,145.0) rotate(-90)" text-anchor="middle" font-weight="bold">Breeding pairs</text>
-</svg>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">05.1</span>Describe the trend shown in Figure 1.
+<div class="mspart"><div class="msh"><b>04.5</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Marine discharge: large volume of water and currents dilute and disperse the pollutant to acceptably low concentrations (control of emission location)</span></li><li><span class="mk">1</span><span>River: small volume so concentrations stay high / drinking water abstraction / sensitive wildlife downstream</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="PPRO-05.5"></label> / 2</div>
 </div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">05.2</span>Calculate the percentage decrease in breeding pairs between 1950 and 1965. Show your working.
-</div>
-<div class="part"><span class="marks">[4 marks]</span><span class="pn">05.3</span>DDT use in the UK began in the late 1940s and was restricted from the mid 1960s. Explain how the properties of DDT could account for the pattern in Figure 1.
-</div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">05.4</span>Suggest why the recovery after 1970 was slow.
-</div>
-<details class="ms"><summary>Show mark scheme</summary>
-<div><b>05.1</b> (2 marks)
-<ul><li>Numbers fell from about 210 pairs in 1945 to a minimum of about 25 in 1965 (steepest fall 1955-1960)</li><li>Numbers then recovered / rose steadily after 1970, reaching about 190 by 1985 (not yet back to 1945 level)</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="PEST-07.1"></label> / 2</div>
-</div>
-<div><b>05.2</b> (2 marks)
-<ul><li>(200 - 25) / 200 x 100</li><li>= 87.5%</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="PEST-07.2"></label> / 2</div>
-</div>
-<div><b>05.3</b> (4 marks)
-<div class="lvl"><i>Any 4 from:</i></div>
-<ul><li>DDT is persistent (remains for decades) and liposoluble so it bioaccumulates in prey (small birds) and biomagnifies in sparrowhawks (top predator)</li><li>Sub-lethal doses caused thin eggshells / reduced breeding success so the population declined even without adult deaths</li><li>Higher doses caused sterility / death</li><li>After restrictions, environmental concentrations slowly fell (persistence explains the delay before recovery)</li><li>Breeding success recovered so the population rose</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="4" step="1" data-kind="part" data-key="PEST-07.3"></label> / 4</div>
-</div>
-<div><b>05.4</b> (2 marks)
-<div class="lvl"><i>Any 2 from:</i></div>
-<ul><li>DDT persists in soil / sediments / food chains for many years so exposure continued</li><li>Birds of prey are k-selected: few young per year, slow to mature so populations grow slowly</li><li>Other pressures (habitat loss, persecution)</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="PEST-07.4"></label> / 2</div>
-</div>
-<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 262-266; AQA spec 3.4.3.2.8.</div></details></div>
-<div class="q" id="PPRO-02" data-qid="PPRO-02" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 6</span><span class="meta">10 marks &middot; <a href="../subtopic/pollutant-properties.html">Properties of pollutants &amp; environmental factors</a> &middot; spec 3.4.1 &middot; Genn pp. 239-240 &middot; PPRO-02</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
-<div class="part"><span class="marks">[3 marks]</span><span class="pn">06.1</span>Explain the difference between a <b>mutagen</b>, a <b>carcinogen</b> and a <b>teratogen</b>.
-</div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">06.2</span>Explain why a birth abnormality caused by a teratogen cannot be inherited by future generations, whereas one caused by a mutagen may be.
-</div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">06.3</span>Distinguish between <b>somatic</b> and <b>gonadic</b> effects of a mutagen.
-</div>
-<div class="part"><span class="marks">[3 marks]</span><span class="pn">06.4</span>Explain what is meant by <b>synergism</b> and give an example.
-</div>
-<details class="ms"><summary>Show mark scheme</summary>
-<div><b>06.1</b> (3 marks)
-<ul><li>Mutagen: an agent that changes the chemical structure / base sequence of DNA (causes mutations), eg ionising radiation, UV, PCBs, cadmium, asbestos</li><li>Carcinogen: a mutagen that causes cancer / uncontrolled cell division producing a tumour</li><li>Teratogen: an agent that causes birth abnormalities by preventing normal gene expression (inhibiting proteins / enzymes) without changing DNA structure, eg mercury, 2,4,5-T</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="PPRO-02.1"></label> / 3</div>
-</div>
-<div><b>06.2</b> (2 marks)
-<ul><li>Teratogens do not change the DNA structure, so the abnormality is not in the genes and cannot be passed on</li><li>Mutagens change DNA; if the mutation is in a gamete / egg / sperm (gonadic effect) it can be inherited</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="PPRO-02.2"></label> / 2</div>
-</div>
-<div><b>06.3</b> (2 marks)
-<ul><li>Somatic: mutation in a general body cell, affecting the individual only (eg cancer / tumour)</li><li>Gonadic: mutation in cells of the ovaries or testes / gametes / embryo, which may cause abnormalities in offspring</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="PPRO-02.3"></label> / 2</div>
-</div>
-<div><b>06.4</b> (3 marks)
-<ul><li>Two or more pollutants whose effects interact to produce a different (usually more serious) effect</li><li>The pollutants themselves do not react to form a new pollutant (that would be a secondary pollutant)</li><li>Example: ozone damages leaf cuticles so sulfur dioxide can cause more damage to the exposed cells; smoke and sulfur dioxide in smogs; neonicotinoids with fungicides</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="PPRO-02.4"></label> / 3</div>
-</div>
-<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 239-240; AQA spec 3.4.1.</div></details></div>
-<div class="q" id="FN-01" data-qid="FN-01" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 7</span><span class="meta">10 marks &middot; <a href="../subtopic/fossil-nuclear.html">Fossil fuels &amp; nuclear power: sustainability and new technologies</a> &middot; spec 3.3.4.1 &middot; Genn pp. 187-188 &middot; FN-01</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
-<p>Figure 1 shows the percentage of the oil in a reservoir that can be recovered using different recovery techniques.</p>
-<div class="cap">Figure 1</div>
-<svg class="chart" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
-<rect x="84.0" y="220.0" width="112.0" height="50.0" fill="#3f6b4a"/>
-<text x="140.0" y="286" text-anchor="middle">Primary</text>
-<rect x="244.0" y="170.0" width="112.0" height="100.0" fill="#3f6b4a"/>
-<text x="300.0" y="286" text-anchor="middle">Primary + secondary</text>
-<rect x="404.0" y="120.0" width="112.0" height="150.0" fill="#3f6b4a"/>
-<text x="460.0" y="286" text-anchor="middle">Primary + secondary + tertiary</text>
-<line x1="56" y1="270.0" x2="60" y2="270.0" stroke="#000"/><text x="52" y="274.0" text-anchor="end">0</text>
-<line x1="56" y1="220.0" x2="60" y2="220.0" stroke="#000"/><text x="52" y="224.0" text-anchor="end">20</text>
-<line x1="56" y1="170.0" x2="60" y2="170.0" stroke="#000"/><text x="52" y="174.0" text-anchor="end">40</text>
-<line x1="56" y1="120.0" x2="60" y2="120.0" stroke="#000"/><text x="52" y="124.0" text-anchor="end">60</text>
-<line x1="56" y1="70.0" x2="60" y2="70.0" stroke="#000"/><text x="52" y="74.0" text-anchor="end">80</text>
-<line x1="56" y1="20.0" x2="60" y2="20.0" stroke="#000"/><text x="52" y="24.0" text-anchor="end">100</text>
-<line x1="60" y1="20" x2="60" y2="270" stroke="#000"/><line x1="60" y1="270" x2="540" y2="270" stroke="#000"/>
-<text x="300.0" y="312" text-anchor="middle" font-weight="bold">Recovery technique</text>
-<text transform="translate(14,145.0) rotate(-90)" text-anchor="middle" font-weight="bold">Cumulative oil recovered / %</text>
-</svg>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">07.1</span>Describe how primary oil recovery works and explain why it recovers only about 20% of the oil.
-</div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">07.2</span>Describe secondary recovery and explain how it can be linked to carbon capture and storage.
-</div>
-<div class="part"><span class="marks">[3 marks]</span><span class="pn">07.3</span>Describe <b>three</b> tertiary (enhanced) recovery techniques.
-</div>
-<div class="part"><span class="marks">[3 marks]</span><span class="pn">07.4</span>Explain <b>three</b> advantages of directional drilling.
-</div>
-<details class="ms"><summary>Show mark scheme</summary>
-<div><b>07.1</b> (2 marks)
-<ul><li>Natural pressure of gas above the oil (or dissolved in it) or water beneath forces oil up the production well; pump-jacks ('nodding donkeys') increase flow</li><li>Pressure falls as oil is removed so the remaining oil no longer flows to the well</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="FN-01.1"></label> / 2</div>
-</div>
-<div><b>07.2</b> (2 marks)
-<ul><li>Water or natural gas is pumped down an injection well to maintain the pressure and flow of oil (recovery to about 40%)</li><li>Captured CO2 can be pumped down instead, increasing oil recovery while storing the CO2 underground</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="FN-01.2"></label> / 2</div>
-</div>
-<div><b>07.3</b> (3 marks)
-<div class="lvl"><i>Any 3 from:</i></div>
-<ul><li>Steam injection (from combustion or solar parabolic concentrators) to heat the oil and reduce its viscosity</li><li>Controlled underground combustion to heat the oil</li><li>Detergents / solvents to reduce surface tension so oil flows more easily</li><li>Bacteria that partially digest heavy oil into lighter oils and produce CO2 to maintain pressure</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="FN-01.3"></label> / 3</div>
-</div>
-<div><b>07.4</b> (3 marks)
-<ul><li>Many wells can be drilled from a single platform, reducing land take / number of rigs</li><li>Deposits under locations where rigs cannot be placed (urban areas, sensitive habitats) can be reached</li><li>Drilling can follow softer strata (quicker) and target multiple small reservoirs up to 10 km away, increasing total recovery</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="FN-01.4"></label> / 3</div>
-</div>
-<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 187-188; AQA spec 3.3.4.1.</div></details></div>
-<div class="q" id="REN-06" data-qid="REN-06" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 8</span><span class="meta">10 marks &middot; <a href="../subtopic/renewables.html">Renewable energy technologies</a> &middot; spec 3.3.4.1 &middot; Genn pp. 214-215 &middot; REN-06</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 236-241, 254-255; AQA spec 3.4.1, 3.4.2.1.</div></details></div>
+<div class="q" id="REN-06" data-qid="REN-06" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 5</span><span class="meta">10 marks &middot; <a href="../subtopic/renewables.html">Renewable energy technologies</a> &middot; spec 3.3.4.1 &middot; Genn pp. 214-215 &middot; REN-06</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>Figure 1 shows the water level inside and outside a tidal barrage over one 12.5-hour tidal cycle and the periods when electricity is generated.</p>
 <div class="cap">Figure 1</div>
 <svg class="chart" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
@@ -427,81 +322,214 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <rect x="70" y="24" width="10" height="10" fill="#22302a"/><text x="84" y="33">Sea level</text>
 <rect x="70" y="38" width="10" height="10" fill="#2f5f73"/><text x="84" y="47">Level behind barrage</text>
 </svg>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">08.1</span>Use Figure 1 to explain when electricity is generated by the barrage.
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">05.1</span>Use Figure 1 to explain when electricity is generated by the barrage.
 </div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">08.2</span>Explain why tidal power is intermittent but predictable.
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">05.2</span>Explain why tidal power is intermittent but predictable.
 </div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">08.3</span>Explain the difference between spring and neap tides and why this affects output.
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">05.3</span>Explain the difference between spring and neap tides and why this affects output.
 </div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">08.4</span>Explain how a tidal lagoon can be used to generate electricity when there is no tidal flow.
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">05.4</span>Explain how a tidal lagoon can be used to generate electricity when there is no tidal flow.
 </div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">08.5</span>Give <b>two</b> coastal features that make a site suitable for tidal power.
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">05.5</span>Give <b>two</b> coastal features that make a site suitable for tidal power.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>08.1</b> (2 marks)
-<ul><li>When there is a difference in level between the sea and the basin: on the ebb (about 6-8 hours) water flows out through the turbines</li><li>Also possible on the flood when the sea is higher than the basin; no generation when levels are equal (slack water)</li></ul>
+<div class="mspart"><div class="msh"><b>05.1</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>When there is a difference in level between the sea and the basin: on the ebb (about 6-8 hours) water flows out through the turbines</span></li><li><span class="mk">1</span><span>Also possible on the flood when the sea is higher than the basin; no generation when levels are equal (slack water)</span></li></ul>
 <div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="REN-06.1"></label> / 2</div>
 </div>
-<div><b>08.2</b> (2 marks)
-<ul><li>Two periods of slack water in each 12.5-hour cycle (twice in about 25 hours) give no flow; the timing does not match demand</li><li>Tides depend on the positions of the Moon and Sun which are known, so output can be forecast years ahead and alternative supplies planned</li></ul>
+<div class="mspart"><div class="msh"><b>05.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Two periods of slack water in each 12.5-hour cycle (twice in about 25 hours) give no flow; the timing does not match demand</span></li><li><span class="mk">1</span><span>Tides depend on the positions of the Moon and Sun which are known, so output can be forecast years ahead and alternative supplies planned</span></li></ul>
 <div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="REN-06.2"></label> / 2</div>
 </div>
-<div><b>08.3</b> (2 marks)
-<ul><li>Spring tides: Sun and Moon aligned so their gravitational effects combine giving a large tidal range; neap: effects oppose giving a small range</li><li>Energy depends on the mass of water and height difference, so output is much greater at springs</li></ul>
+<div class="mspart"><div class="msh"><b>05.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Spring tides: Sun and Moon aligned so their gravitational effects combine giving a large tidal range; neap: effects oppose giving a small range</span></li><li><span class="mk">1</span><span>Energy depends on the mass of water and height difference, so output is much greater at springs</span></li></ul>
 <div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="REN-06.3"></label> / 2</div>
 </div>
-<div><b>08.4</b> (2 marks)
-<ul><li>When demand is low, surplus electricity pumps water into the lagoon above sea level</li><li>The stored water is released through the turbines later when demand is high (pumped storage)</li></ul>
+<div class="mspart"><div class="msh"><b>05.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>When demand is low, surplus electricity pumps water into the lagoon above sea level</span></li><li><span class="mk">1</span><span>The stored water is released through the turbines later when demand is high (pumped storage)</span></li></ul>
 <div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="REN-06.4"></label> / 2</div>
 </div>
-<div><b>08.5</b> (2 marks)
-<ul><li>Large tidal range (eg Severn Estuary)</li><li>Estuaries, bays or headlands / channels that focus the flow and increase velocity</li></ul>
+<div class="mspart"><div class="msh"><b>05.5</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Large tidal range (eg Severn Estuary)</span></li><li><span class="mk">1</span><span>Estuaries, bays or headlands / channels that focus the flow and increase velocity</span></li></ul>
 <div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="REN-06.5"></label> / 2</div>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 214-215; AQA spec 3.3.4.1.</div></details></div>
-<div class="q" id="MIN-06" data-qid="MIN-06" data-marks="5" data-flags=""><div class="qh"><span class="num">Question 9</span><span class="meta">5 marks &middot; <a href="../subtopic/minerals.html">Mineral resources (the lithosphere)</a> &middot; spec 3.2.3.6 &middot; Genn pp. 140, 142 &middot; MIN-06</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
-<p>A sand and gravel pit near a town is due to close. Three options for the site are proposed: a wetland nature reserve, housing, or return to farmland.</p>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">09.1</span>Explain why flooded sand and gravel pits are often developed as wetland nature reserves.
+<div class="q" id="EST-03" data-qid="EST-03" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 6</span><span class="meta">10 marks &middot; <a href="../subtopic/energy-storage.html">Fluctuations in supply/demand &amp; energy storage</a> &middot; spec 3.3.4.1 &middot; Genn pp. 219-221 &middot; EST-03</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="part"><span class="marks">[4 marks]</span><span class="pn">06.1</span>Explain how hydrogen can be used to store energy from intermittent renewable resources, and describe <b>two</b> ways the stored energy can be released.
 </div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">09.2</span>Explain the conditions that would need to be met for the site to be used for housing or farmland.
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">06.2</span>Compare <b>three</b> methods of storing hydrogen, giving a disadvantage of each.
 </div>
-<div class="part"><span class="marks">[1 mark]</span><span class="pn">09.3</span>Explain why moving the wildlife from a site before mining begins is rarely completely successful.
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">06.3</span>Explain how a fuel cell differs from a rechargeable battery.
+</div>
+<div class="part"><span class="marks">[1 mark]</span><span class="pn">06.4</span>Explain what is meant by the 'hydrogen economy'.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>09.1</b> (2 marks)
-<ul><li>The void fills with water naturally; wetlands are uncommon / valuable habitats in most regions</li><li>The new habitat may have greater wildlife value than the farmland lost; low cost compared with filling and levelling</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="MIN-06.1"></label> / 2</div>
+<div class="mspart"><div class="msh"><b>06.1</b> <span class="mtot">4 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Surplus electricity (eg windy nights) electrolyses water to produce hydrogen which is stored</span></li><li><span class="mk">1</span><span>Hydrogen has a high energy density so it can be transported / stored for long periods</span></li><li><span class="mk">1</span><span>Released by combustion for heat, industrial processes or steam turbines; or by fuel cells combining hydrogen and oxygen electrochemically to produce electricity and water</span></li><li><span class="mk">1</span><span>Can also be used as a vehicle fuel or converted to methane / ammonia</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="4" step="1" data-kind="part" data-key="EST-03.1"></label> / 4</div>
 </div>
-<div><b>09.2</b> (2 marks)
-<ul><li>Housing: ground must be stable (no subsidence), no toxic metal wastes (otherwise industrial use is safer)</li><li>Farmland: landscape not too steep or uneven, no toxic materials, sufficiently fertile soil (topsoil replaced)</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="MIN-06.2"></label> / 2</div>
+<div class="mspart"><div class="msh"><b>06.2</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">Any 3 from the points below - 1 mark each, maximum 3.</div><ul class="pts"><li><span class="mk">1</span><span>Compressed gas (up to 700 times normal volume) - energy to run the compressor, strong tanks</span></li><li><span class="mk">1</span><span>Liquefied at very low temperature - energy for refrigeration and compression</span></li><li><span class="mk">1</span><span>Adsorbed on a metal matrix (metal hydride) at low pressure - tanks larger and heavier than a petrol tank storing the same energy</span></li><li><span class="mk">1</span><span>Conversion to ammonia - some energy needed but less than the alternatives</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="EST-03.2"></label> / 3</div>
 </div>
-<div><b>09.3</b> (1 marks)
-<ul><li>Species that cannot be caught / found, or whose habitat requirements are unknown or hard to recreate, are lost; transplanted plants often fail</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="1" step="1" data-kind="part" data-key="MIN-06.3"></label> / 1</div>
+<div class="mspart"><div class="msh"><b>06.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Both convert chemical energy to electricity electrochemically, but a battery stores a fixed amount of chemicals which are reformed by recharging</span></li><li><span class="mk">1</span><span>A fuel cell keeps producing electricity as long as fresh fuel (hydrogen / alcohol) and oxidant are supplied</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="EST-03.3"></label> / 2</div>
 </div>
-<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 140, 142; AQA spec 3.2.3.6.</div></details></div>
-<div class="q" id="OZ-04" data-qid="OZ-04" data-marks="10" data-flags="ext"><div class="qh"><span class="num">Question 10</span><span class="meta">10 marks &middot; <a href="../subtopic/ozone.html">Ozone depletion</a> &middot; spec 3.2.1.3, 3.2.1.2 &middot; Genn pp. 108-113, 105-106 &middot; OZ-04</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="mspart"><div class="msh"><b>06.4</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>Using hydrogen made from surplus renewable electricity as the main store and carrier of energy, released when demand exceeds supply or intermittent sources fail, for heating, vehicles and electricity</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="1" step="1" data-kind="part" data-key="EST-03.4"></label> / 1</div>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 219-221; AQA spec 3.3.4.1.</div></details></div>
+<div class="q" id="FN-01" data-qid="FN-01" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 7</span><span class="meta">10 marks &middot; <a href="../subtopic/fossil-nuclear.html">Fossil fuels &amp; nuclear power: sustainability and new technologies</a> &middot; spec 3.3.4.1 &middot; Genn pp. 187-188 &middot; FN-01</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<p>Figure 1 shows the percentage of the oil in a reservoir that can be recovered using different recovery techniques.</p>
+<div class="cap">Figure 1</div>
+<svg class="chart" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
+<rect x="84.0" y="220.0" width="112.0" height="50.0" fill="#3f6b4a"/>
+<text x="140.0" y="286" text-anchor="middle">Primary</text>
+<rect x="244.0" y="170.0" width="112.0" height="100.0" fill="#3f6b4a"/>
+<text x="300.0" y="286" text-anchor="middle">Primary + secondary</text>
+<rect x="404.0" y="120.0" width="112.0" height="150.0" fill="#3f6b4a"/>
+<text x="460.0" y="286" text-anchor="middle">Primary + secondary + tertiary</text>
+<line x1="56" y1="270.0" x2="60" y2="270.0" stroke="#000"/><text x="52" y="274.0" text-anchor="end">0</text>
+<line x1="56" y1="220.0" x2="60" y2="220.0" stroke="#000"/><text x="52" y="224.0" text-anchor="end">20</text>
+<line x1="56" y1="170.0" x2="60" y2="170.0" stroke="#000"/><text x="52" y="174.0" text-anchor="end">40</text>
+<line x1="56" y1="120.0" x2="60" y2="120.0" stroke="#000"/><text x="52" y="124.0" text-anchor="end">60</text>
+<line x1="56" y1="70.0" x2="60" y2="70.0" stroke="#000"/><text x="52" y="74.0" text-anchor="end">80</text>
+<line x1="56" y1="20.0" x2="60" y2="20.0" stroke="#000"/><text x="52" y="24.0" text-anchor="end">100</text>
+<line x1="60" y1="20" x2="60" y2="270" stroke="#000"/><line x1="60" y1="270" x2="540" y2="270" stroke="#000"/>
+<text x="300.0" y="312" text-anchor="middle" font-weight="bold">Recovery technique</text>
+<text transform="translate(14,145.0) rotate(-90)" text-anchor="middle" font-weight="bold">Cumulative oil recovered / %</text>
+</svg>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">07.1</span>Describe how primary oil recovery works and explain why it recovers only about 20% of the oil.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">07.2</span>Describe secondary recovery and explain how it can be linked to carbon capture and storage.
+</div>
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">07.3</span>Describe <b>three</b> tertiary (enhanced) recovery techniques.
+</div>
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">07.4</span>Explain <b>three</b> advantages of directional drilling.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div class="mspart"><div class="msh"><b>07.1</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Natural pressure of gas above the oil (or dissolved in it) or water beneath forces oil up the production well; pump-jacks ('nodding donkeys') increase flow</span></li><li><span class="mk">1</span><span>Pressure falls as oil is removed so the remaining oil no longer flows to the well</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="FN-01.1"></label> / 2</div>
+</div>
+<div class="mspart"><div class="msh"><b>07.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Water or natural gas is pumped down an injection well to maintain the pressure and flow of oil (recovery to about 40%)</span></li><li><span class="mk">1</span><span>Captured CO2 can be pumped down instead, increasing oil recovery while storing the CO2 underground</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="FN-01.2"></label> / 2</div>
+</div>
+<div class="mspart"><div class="msh"><b>07.3</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">Any 3 from the points below - 1 mark each, maximum 3.</div><ul class="pts"><li><span class="mk">1</span><span>Steam injection (from combustion or solar parabolic concentrators) to heat the oil and reduce its viscosity</span></li><li><span class="mk">1</span><span>Controlled underground combustion to heat the oil</span></li><li><span class="mk">1</span><span>Detergents / solvents to reduce surface tension so oil flows more easily</span></li><li><span class="mk">1</span><span>Bacteria that partially digest heavy oil into lighter oils and produce CO2 to maintain pressure</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="FN-01.3"></label> / 3</div>
+</div>
+<div class="mspart"><div class="msh"><b>07.4</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Many wells can be drilled from a single platform, reducing land take / number of rigs</span></li><li><span class="mk">1</span><span>Deposits under locations where rigs cannot be placed (urban areas, sensitive habitats) can be reached</span></li><li><span class="mk">1</span><span>Drilling can follow softer strata (quicker) and target multiple small reservoirs up to 10 km away, increasing total recovery</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="FN-01.4"></label> / 3</div>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 187-188; AQA spec 3.3.4.1.</div></details></div>
+<div class="q" id="NUT-01" data-qid="NUT-01" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 8</span><span class="meta">10 marks &middot; <a href="../subtopic/nutrient-pollution.html">Nutrient pollution, sewage treatment &amp; acid mine drainage</a> &middot; spec 3.4.3.2.9 &middot; Genn pp. 266-268 &middot; NUT-01</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<p>Figure 1 shows the dissolved oxygen concentration in a shallow lowland lake over 48 hours in late summer. The lake receives runoff from arable farmland and effluent from a sewage works.</p>
+<div class="cap">Figure 1</div>
+<svg class="chart" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
+<polyline points="60.0,167.3 100.0,210.1 140.0,192.9 180.0,81.6 220.0,38.8 260.0,115.9 300.0,175.8 340.0,227.2 380.0,204.9 420.0,90.2 460.0,47.4 500.0,124.5 540.0,184.4" fill="none" stroke="#22302a" stroke-width="1.8"/>
+<circle cx="60.0" cy="167.3" r="2.6" fill="#22302a"/>
+<circle cx="100.0" cy="210.1" r="2.6" fill="#22302a"/>
+<circle cx="140.0" cy="192.9" r="2.6" fill="#22302a"/>
+<circle cx="180.0" cy="81.6" r="2.6" fill="#22302a"/>
+<circle cx="220.0" cy="38.8" r="2.6" fill="#22302a"/>
+<circle cx="260.0" cy="115.9" r="2.6" fill="#22302a"/>
+<circle cx="300.0" cy="175.8" r="2.6" fill="#22302a"/>
+<circle cx="340.0" cy="227.2" r="2.6" fill="#22302a"/>
+<circle cx="380.0" cy="204.9" r="2.6" fill="#22302a"/>
+<circle cx="420.0" cy="90.2" r="2.6" fill="#22302a"/>
+<circle cx="460.0" cy="47.4" r="2.6" fill="#22302a"/>
+<circle cx="500.0" cy="124.5" r="2.6" fill="#22302a"/>
+<circle cx="540.0" cy="184.4" r="2.6" fill="#22302a"/>
+<line x1="60.0" y1="270" x2="60.0" y2="274" stroke="#000"/><text x="60.0" y="286" text-anchor="middle">0</text>
+<line x1="56" y1="270.0" x2="60" y2="270.0" stroke="#000"/><text x="52" y="274.0" text-anchor="end">0</text>
+<line x1="156.0" y1="270" x2="156.0" y2="274" stroke="#000"/><text x="156.0" y="286" text-anchor="middle">9.6</text>
+<line x1="56" y1="220.0" x2="60" y2="220.0" stroke="#000"/><text x="52" y="224.0" text-anchor="end">2.92</text>
+<line x1="252.0" y1="270" x2="252.0" y2="274" stroke="#000"/><text x="252.0" y="286" text-anchor="middle">19.2</text>
+<line x1="56" y1="170.0" x2="60" y2="170.0" stroke="#000"/><text x="52" y="174.0" text-anchor="end">5.84</text>
+<line x1="348.0" y1="270" x2="348.0" y2="274" stroke="#000"/><text x="348.0" y="286" text-anchor="middle">28.8</text>
+<line x1="56" y1="120.0" x2="60" y2="120.0" stroke="#000"/><text x="52" y="124.0" text-anchor="end">8.76</text>
+<line x1="444.0" y1="270" x2="444.0" y2="274" stroke="#000"/><text x="444.0" y="286" text-anchor="middle">38.4</text>
+<line x1="56" y1="70.0" x2="60" y2="70.0" stroke="#000"/><text x="52" y="74.0" text-anchor="end">11.7</text>
+<line x1="540.0" y1="270" x2="540.0" y2="274" stroke="#000"/><text x="540.0" y="286" text-anchor="middle">48</text>
+<line x1="56" y1="20.0" x2="60" y2="20.0" stroke="#000"/><text x="52" y="24.0" text-anchor="end">14.6</text>
+<line x1="60" y1="20" x2="60" y2="270" stroke="#000"/><line x1="60" y1="270" x2="540" y2="270" stroke="#000"/>
+<text x="300.0" y="312" text-anchor="middle" font-weight="bold">Time / hours</text>
+<text transform="translate(14,145.0) rotate(-90)" text-anchor="middle" font-weight="bold">Dissolved oxygen / mg/dm³</text>
+</svg>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">08.1</span>Describe the pattern shown in Figure 1.
+</div>
+<div class="part"><span class="marks">[4 marks]</span><span class="pn">08.2</span>Explain the causes of the pattern shown in Figure 1.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">08.3</span>Explain why fish kills in eutrophic lakes usually happen at night or at the end of summer.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">08.4</span>Give <b>two</b> other harmful effects of algal blooms.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div class="mspart"><div class="msh"><b>08.1</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Dissolved oxygen fluctuates daily / 24-hour cycle: highest in the afternoon (about 13-13.5 mg dm<sup>-3</sup> at 16 and 40 h) and lowest at night / early morning (2.5-3.5 mg dm<sup>-3</sup> at 4 and 28 h)</span></li><li><span class="mk">1</span><span>The night-time minimum is lower on the second night (2.5 vs 3.5)</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="NUT-01.1"></label> / 2</div>
+</div>
+<div class="mspart"><div class="msh"><b>08.2</b> <span class="mtot">4 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Nitrates (from fertiliser runoff) and phosphates (from sewage effluent) cause eutrophication: rapid growth of algae / cyanobacteria (algal bloom)</span></li><li><span class="mk">1</span><span>During the day photosynthesis by the dense algae releases oxygen so concentrations rise (above the normal saturation level)</span></li><li><span class="mk">1</span><span>At night there is no photosynthesis but respiration by algae / animals / bacteria continues, using oxygen</span></li><li><span class="mk">1</span><span>Aerobic bacterial decomposition of dead algae / shaded macrophytes uses oxygen; warm summer water holds less oxygen and decay is rapid</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="4" step="1" data-kind="part" data-key="NUT-01.2"></label> / 4</div>
+</div>
+<div class="mspart"><div class="msh"><b>08.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>At night no photosynthesis replaces the oxygen used in respiration / decomposition so concentrations fall below the minimum fish can tolerate</span></li><li><span class="mk">1</span><span>At the end of summer large amounts of dead vegetation decay rapidly in warm water causing severe deoxygenation</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="NUT-01.3"></label> / 2</div>
+</div>
+<div class="mspart"><div class="msh"><b>08.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">Any 2 from the points below - 1 mark each, maximum 2.</div><ul class="pts"><li><span class="mk">1</span><span>Cyanobacteria release toxins harmful to livestock, pets and people</span></li><li><span class="mk">1</span><span>Floating algae shade submerged / rooted macrophytes which die, disrupting food webs</span></li><li><span class="mk">1</span><span>Algae are an unreliable food source (die off rapidly) so food webs are poor</span></li><li><span class="mk">1</span><span>Blocked filters / unpleasant taste and smell in water supplies</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="NUT-01.4"></label> / 2</div>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 266-268; AQA spec 3.4.3.2.9.</div></details></div>
+<div class="q" id="RM-16" data-qid="RM-16" data-marks="5" data-flags="mcq"><div class="qh"><span class="num">Question 9</span><span class="meta">5 marks &middot; <a href="../subtopic/methodology.html">Scientific methodologies &amp; sampling design</a> &middot; spec 3.7.1 &middot; Genn pp. 390-391 &middot; RM-16</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="part"><span class="marks">[1 mark]</span><span class="pn">09.1</span>A student measured the pH of a stream with a meter that reads to 0.01 pH units but had not been calibrated. Which statement is correct? Tick <b>one</b> box.
+<ul class="mcq"><li>A&nbsp; The readings are precise but may not be accurate</li><li>B&nbsp; The readings are accurate but not precise</li><li>C&nbsp; The readings are both accurate and precise</li><li>D&nbsp; The readings are reliable because the meter is electronic</li></ul>
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">09.2</span>Explain what is meant by an <b>anomalous result</b> and how a student should decide whether to include it.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">09.3</span>Explain why a preliminary study is carried out before the main investigation.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div class="mspart"><div class="msh"><b>09.1</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">Correct answer only.</div><ul class="pts"><li><span class="mk">1</span><span><b>A</b>&nbsp; The readings are precise but may not be accurate</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="1" step="1" data-kind="part" data-key="RM-16.1"></label> / 1</div>
+</div>
+<div class="mspart"><div class="msh"><b>09.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>A result that differs from other results with which it was expected to be similar</span></li><li><span class="mk">1</span><span>Repeat the study / measurement: if it recurs it is a 'real' result caused by another variable; if not it was an error and can be excluded</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="RM-16.2"></label> / 2</div>
+</div>
+<div class="mspart"><div class="msh"><b>09.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>To test the reliability of the method / equipment</span></li><li><span class="mk">1</span><span>To decide the sample size, number of samples, spacing or timing needed to detect the variation without collecting unnecessary data</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="RM-16.3"></label> / 2</div>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 390-391; AQA spec 3.7.1.</div></details></div>
+<div class="q" id="OZ-04" data-qid="OZ-04" data-marks="10" data-flags="ext"><div class="qh"><span class="num">Question 10</span><span class="meta">10 marks &middot; <a href="../subtopic/ozone.html">Ozone depletion</a> &middot; spec 3.2.1.3, 3.2.1.2 &middot; Genn pp. 108-113, 105-106 &middot; OZ-04</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[9 marks]</span><span class="pn">10.1</span>Ozone depletion is often described as an environmental problem that has been tackled successfully. Compare the effectiveness of the methods used to restore the ozone layer with the effectiveness of attempts to tackle global climate change, and explain the reasons for the difference.
 </div>
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">10.2</span>Name the international agreement of 1985 that preceded the Montreal Protocol and state its main weakness.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>10.1</b> (9 marks)
-<div class="lvl"><b>Levels of response:</b> L3 7-9 comprehensive, well-structured, applied to context, supported judgement; L2 4-6 sound but incomplete application/evaluation; L1 1-3 basic, limited structure.</div><div class="lvl"><b>Indicative content:</b></div>
-<ul><li>Stages of scientific method illustrated by ozone: identification (Antarctic UV data), hypothesis (Rowland-Molina 1974), data collection / analysis (Dobson units, satellites, balloons confirming ClO), proposed solutions, enactment (Vienna 1985, Montreal 1987)</li><li>Evidence of success: ozone hole area and depth stabilised and beginning to shrink; CFC concentrations in the atmosphere falling; UV levels not rising further; global ozone loss limited to about 4%</li><li>Reasons for success: international recognition of serious consequences (skin cancer); agreement of nearly every country; legally binding targets with a fund for developing countries; relatively few producers / products; alternatives (HCFCs, HFCs, pump sprays, hydrocarbons) already available and cheap; no lifestyle change needed</li><li>Limits: persistence of CFCs means recovery takes decades; some ODSs still used; HFC replacements are greenhouse gases</li><li>Climate change contrast: greenhouse gases come from almost every human activity (energy, transport, agriculture, industry) in every country; fossil fuels underpin economies so control requires major lifestyle and economic change</li><li>Agreements (Kyoto, Paris) have weaker / non-binding targets, disputes between developed and developing nations; emissions still rising; natural fluctuations, time delays and tipping points make cause-effect less clear to the public</li><li>Judgement: ozone control was a technical substitution problem; climate change is a systemic one, so the ozone success is only partly transferable</li></ul>
+<div class="mspart"><div class="msh"><b>10.1</b> <span class="mtot">9 marks</span></div>
+<table class="levels"><tr><th>Level</th><th>Marks</th><th>What the answer must show</th></tr><tr><td><b>Level 3</b></td><td class="r">7-9</td><td>Answer is comprehensive, relevant and logically structured. Shows detailed knowledge and understanding of the relevant scientific ideas and applies them accurately to the context. Evaluation/analysis is well supported by evidence and a clear judgement or conclusion is reached.</td></tr><tr><td><b>Level 2</b></td><td class="r">4-6</td><td>Answer is mostly relevant and shows some structure. Knowledge and understanding of relevant ideas is sound but application to the context or evaluation may be incomplete or lack detail. A judgement may be made but is not fully supported.</td></tr><tr><td><b>Level 1</b></td><td class="r">1-3</td><td>Answer is basic, with limited structure. Some relevant knowledge is shown but there are omissions or errors. Little application to the context and little or no evaluation.</td></tr><tr><td><b>&nbsp;</b></td><td class="r">0</td><td>No relevant content.</td></tr></table><div class="lvl"><b>Indicative content</b> - credit any of the following (and other relevant, accurate points):</div>
+<ul class="ind"><li>Stages of scientific method illustrated by ozone: identification (Antarctic UV data), hypothesis (Rowland-Molina 1974), data collection / analysis (Dobson units, satellites, balloons confirming ClO), proposed solutions, enactment (Vienna 1985, Montreal 1987)</li><li>Evidence of success: ozone hole area and depth stabilised and beginning to shrink; CFC concentrations in the atmosphere falling; UV levels not rising further; global ozone loss limited to about 4%</li><li>Reasons for success: international recognition of serious consequences (skin cancer); agreement of nearly every country; legally binding targets with a fund for developing countries; relatively few producers / products; alternatives (HCFCs, HFCs, pump sprays, hydrocarbons) already available and cheap; no lifestyle change needed</li><li>Limits: persistence of CFCs means recovery takes decades; some ODSs still used; HFC replacements are greenhouse gases</li><li>Climate change contrast: greenhouse gases come from almost every human activity (energy, transport, agriculture, industry) in every country; fossil fuels underpin economies so control requires major lifestyle and economic change</li><li>Agreements (Kyoto, Paris) have weaker / non-binding targets, disputes between developed and developing nations; emissions still rising; natural fluctuations, time delays and tipping points make cause-effect less clear to the public</li><li>Judgement: ozone control was a technical substitution problem; climate change is a systemic one, so the ozone success is only partly transferable</li></ul>
 <div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="9" step="1" data-kind="part" data-key="OZ-04.1"></label> / 9</div>
 </div>
-<div><b>10.2</b> (1 marks)
-<ul><li>Vienna Convention for the Protection of the Ozone Layer - no legally binding goals</li></ul>
+<div class="mspart"><div class="msh"><b>10.2</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>Vienna Convention for the Protection of the Ozone Layer - no legally binding goals</span></li></ul>
 <div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="1" step="1" data-kind="part" data-key="OZ-04.2"></label> / 1</div>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 108-113, 105-106; AQA spec 3.2.1.3, 3.2.1.2.</div></details></div>
-<div class="q"><div class="qh"><span class="num">Question 11 &mdash; Essay (answer ONE)</span><span class="meta">25 marks</span></div>
+<div class="q" id="essay"><div class="qh"><span class="num">Question 11 &mdash; Essay (answer ONE)</span><span class="meta">25 marks</span></div>
 <div class="part"><span class="marks">[25 marks]</span><span class="pn">11.1</span>Soil is often described as a non-renewable resource. Discuss the causes and consequences of soil degradation and evaluate the strategies that can be used to manage soils sustainably.</div>
-<details class="ms"><summary>Indicative content</summary><div class="lvl"><b>Levels:</b> L5 21-25 &middot; L4 16-20 &middot; L3 11-15 &middot; L2 6-10 &middot; L1 1-5. Reward breadth across the specification, accurate detail, application to the question and a supported conclusion.</div><ul><li>Features of fertile soil: water, nutrients, air, organic matter, pH, biota, texture, structure, depth; slow rate of soil formation vs rapid erosion (dynamic equilibrium broken)</li><li>Causes of degradation: vegetation removal, ploughing vulnerable soils, overgrazing, reduced organic matter and biota, cultivating steep slopes, compaction, salinisation from irrigation, nutrient depletion, pollution</li><li>Types of erosion: rain splash, runoff, wind, slumping; consequences: reduced productivity, river and reservoir sedimentation, flooding, coastal sedimentation, particulates, desertification, landslides</li><li>USLE as a tool for estimating loss and testing management</li><li>Management: long-term crops, low / zero tillage, contour ploughing, tied ridging, terracing, stone rows, windbreaks, multicropping / strip cropping, mulching, organic matter, livestock control, drainage / pH / nutrient management, conservation of soil biota</li><li>Links to sustainable agriculture, carbon storage, hydrological cycle, circular economy</li><li>Evaluation and judgement on which strategies are most effective in different environments</li></ul><div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="25" step="1" data-kind="essay" data-key="ESS-P1-SOIL"></label> / 25 (only the higher of the two essays counts)</div><div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 158-169, 328-337; spec 3.2.5, 3.5.1.3, 3.5.1.5.</div></details>
+<details class="ms"><summary>Indicative content</summary><table class="levels"><tr><th>Level</th><th>Marks</th><th>What the answer must show</th></tr><tr><td><b>Level 5</b></td><td class="r">21-25</td><td>Comprehensive and detailed knowledge and understanding drawn from across the specification, applied accurately to the question. Argument is coherent, well-structured and supported by a wide range of relevant, well-chosen examples and quantitative detail where appropriate. Interconnections between topics are made explicitly and a clear, justified conclusion is reached.</td></tr><tr><td><b>Level 4</b></td><td class="r">16-20</td><td>Detailed knowledge and understanding with good application to the question. Argument is logically organised with relevant examples; some links between different areas of the specification are made. Conclusions are drawn but may be less fully justified.</td></tr><tr><td><b>Level 3</b></td><td class="r">11-15</td><td>Sound knowledge and understanding, mostly applied to the question. Some structure and relevant examples, but coverage may be uneven or descriptive rather than analytical. Limited linking of topics.</td></tr><tr><td><b>Level 2</b></td><td class="r">6-10</td><td>Basic knowledge and understanding with partial relevance. Answer is largely descriptive with few examples and limited structure; some errors or omissions.</td></tr><tr><td><b>Level 1</b></td><td class="r">1-5</td><td>Limited, fragmented knowledge with little relevance to the question. Little structure; examples absent or inappropriate.</td></tr><tr><td><b>&nbsp;</b></td><td class="r">0</td><td>No relevant content.</td></tr></table><div class="lvl"><b>Indicative content</b> - students are not expected to cover all of these:</div><ul class="ind"><li>Features of fertile soil: water, nutrients, air, organic matter, pH, biota, texture, structure, depth; slow rate of soil formation vs rapid erosion (dynamic equilibrium broken)</li><li>Causes of degradation: vegetation removal, ploughing vulnerable soils, overgrazing, reduced organic matter and biota, cultivating steep slopes, compaction, salinisation from irrigation, nutrient depletion, pollution</li><li>Types of erosion: rain splash, runoff, wind, slumping; consequences: reduced productivity, river and reservoir sedimentation, flooding, coastal sedimentation, particulates, desertification, landslides</li><li>USLE as a tool for estimating loss and testing management</li><li>Management: long-term crops, low / zero tillage, contour ploughing, tied ridging, terracing, stone rows, windbreaks, multicropping / strip cropping, mulching, organic matter, livestock control, drainage / pH / nutrient management, conservation of soil biota</li><li>Links to sustainable agriculture, carbon storage, hydrological cycle, circular economy</li><li>Evaluation and judgement on which strategies are most effective in different environments</li></ul><div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="25" step="1" data-kind="essay" data-key="ESS-P1-SOIL"></label> / 25 (only the higher of the two essays counts)</div><div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 158-169, 328-337; spec 3.2.5, 3.5.1.3, 3.5.1.5.</div></details>
 <div class="part"><span class="marks">[25 marks]</span><span class="pn">11.2</span>Discuss the difficulties in monitoring and predicting global climate change and evaluate the methods used to overcome them.</div>
-<details class="ms"><summary>Indicative content</summary><div class="lvl"><b>Levels:</b> L5 21-25 &middot; L4 16-20 &middot; L3 11-15 &middot; L2 6-10 &middot; L1 1-5. Reward breadth across the specification, accurate detail, application to the question and a supported conclusion.</div><ul><li>Nature of the problem: interconnected atmosphere-hydrosphere-biosphere systems; changes over different time and spatial scales; natural fluctuations (solar output, orbit) masking or exaggerating anthropogenic change; time delay between cause and effect (ocean heat capacity)</li><li>Limitations of historic data: sparse global coverage, unsophisticated equipment, heat island bias, no atmospheric composition records</li><li>Proxy data and their reliability: dendrochronology, coral growth rings, pollen in dated sediments, ice cores (gas bubbles, isotope ratios, volcanic ash layers, compaction problems)</li><li>Modern monitoring: long-term data sets (Mauna Loa), electronic equipment, satellites (LEO vs geostationary), Argo floats, remote sensing of ice thickness / area / sea level</li><li>Feedback mechanisms and tipping points adding uncertainty; ecological uncertainty (species survival, distribution, fragmentation)</li><li>Computer models: how they are tested and refined; importance of accurate representative data; scenario-based predictions and ranges</li><li>Uncertainty over ENSO / Conveyor / jet stream responses</li><li>Evaluation and conclusion: confidence in the overall trend and human cause despite detailed uncertainty; role of peer review and international bodies (IPCC)</li></ul><div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="25" step="1" data-kind="essay" data-key="ESS-P1-CLIMATE"></label> / 25 (only the higher of the two essays counts)</div><div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 89-90, 100-104, 10; spec 3.2.1.2, 3.1.1.3.</div></details>
+<details class="ms"><summary>Indicative content</summary><table class="levels"><tr><th>Level</th><th>Marks</th><th>What the answer must show</th></tr><tr><td><b>Level 5</b></td><td class="r">21-25</td><td>Comprehensive and detailed knowledge and understanding drawn from across the specification, applied accurately to the question. Argument is coherent, well-structured and supported by a wide range of relevant, well-chosen examples and quantitative detail where appropriate. Interconnections between topics are made explicitly and a clear, justified conclusion is reached.</td></tr><tr><td><b>Level 4</b></td><td class="r">16-20</td><td>Detailed knowledge and understanding with good application to the question. Argument is logically organised with relevant examples; some links between different areas of the specification are made. Conclusions are drawn but may be less fully justified.</td></tr><tr><td><b>Level 3</b></td><td class="r">11-15</td><td>Sound knowledge and understanding, mostly applied to the question. Some structure and relevant examples, but coverage may be uneven or descriptive rather than analytical. Limited linking of topics.</td></tr><tr><td><b>Level 2</b></td><td class="r">6-10</td><td>Basic knowledge and understanding with partial relevance. Answer is largely descriptive with few examples and limited structure; some errors or omissions.</td></tr><tr><td><b>Level 1</b></td><td class="r">1-5</td><td>Limited, fragmented knowledge with little relevance to the question. Little structure; examples absent or inappropriate.</td></tr><tr><td><b>&nbsp;</b></td><td class="r">0</td><td>No relevant content.</td></tr></table><div class="lvl"><b>Indicative content</b> - students are not expected to cover all of these:</div><ul class="ind"><li>Nature of the problem: interconnected atmosphere-hydrosphere-biosphere systems; changes over different time and spatial scales; natural fluctuations (solar output, orbit) masking or exaggerating anthropogenic change; time delay between cause and effect (ocean heat capacity)</li><li>Limitations of historic data: sparse global coverage, unsophisticated equipment, heat island bias, no atmospheric composition records</li><li>Proxy data and their reliability: dendrochronology, coral growth rings, pollen in dated sediments, ice cores (gas bubbles, isotope ratios, volcanic ash layers, compaction problems)</li><li>Modern monitoring: long-term data sets (Mauna Loa), electronic equipment, satellites (LEO vs geostationary), Argo floats, remote sensing of ice thickness / area / sea level</li><li>Feedback mechanisms and tipping points adding uncertainty; ecological uncertainty (species survival, distribution, fragmentation)</li><li>Computer models: how they are tested and refined; importance of accurate representative data; scenario-based predictions and ranges</li><li>Uncertainty over ENSO / Conveyor / jet stream responses</li><li>Evaluation and conclusion: confidence in the overall trend and human cause despite detailed uncertainty; role of peer review and international bodies (IPCC)</li></ul><div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="25" step="1" data-kind="essay" data-key="ESS-P1-CLIMATE"></label> / 25 (only the higher of the two essays counts)</div><div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 89-90, 100-104, 10; spec 3.2.1.2, 3.1.1.3.</div></details>
 </div>
 </div></main>
 <footer><div class="wrap">Original practice questions and mark schemes written to the AQA A-level Environmental Science (7447) specification. Every question cites the printed page numbers of R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018). AQA past papers are &copy; AQA. Progress, scores and timers are saved only in this browser. &nbsp;&middot;&nbsp; <a href="../index.html">Topics</a> &middot; <a href="../papers.html">Mock papers</a> &middot; <a href="../official.html">Past papers</a> &middot; <a href="../essays.html">Essay bank</a> &middot; <a href="../quickfire.html">Quick-fire</a> &middot; <a href="../search.html">Search</a></div></footer>
@@ -519,7 +547,7 @@ const tb=document.getElementById('themeBtn');if(tb)tb.onclick=()=>{const t=root.
 let prog=LS('envsci.progress')||{};
 window.ES.prog=()=>prog;
 function paint(){
-  document.querySelectorAll('.q[data-qid]').forEach(el=>{const s=prog[el.dataset.qid]||0;el.dataset.status=s;el.querySelectorAll('.st button').forEach(b=>b.classList.toggle('on',+b.dataset.s===s&&s>0));});
+  document.querySelectorAll('.q[data-qid]').forEach(el=>{const s=prog[el.dataset.qid]||0;el.dataset.status=s;el.querySelectorAll('.st button[data-s]').forEach(b=>b.classList.toggle('on',+b.dataset.s===s&&s>0));});
   document.querySelectorAll('[data-qids]').forEach(el=>{const ids=el.dataset.qids.split(',').filter(Boolean);const n=ids.length;if(!n)return;
     const ok=ids.filter(i=>prog[i]===2).length,wk=ids.filter(i=>prog[i]===1).length;
     const o=el.querySelector('.bar .ok'),w=el.querySelector('.bar .wk'),p=el.querySelector('.pl');
@@ -527,7 +555,7 @@ function paint(){
   const ov=document.getElementById('overall');if(ov){const all=(ov.dataset.qids||'').split(',').filter(Boolean);const ok=all.filter(i=>prog[i]===2).length,wk=all.filter(i=>prog[i]===1).length;ov.querySelector('.stat').textContent=Math.round(100*ok/all.length)+'%';ov.querySelector('.detail').textContent=ok+' secure, '+wk+' to revisit, '+(all.length-ok-wk)+' not attempted of '+all.length+' questions.';}
 }
 window.ES.paint=paint;
-document.addEventListener('click',e=>{const b=e.target.closest('.st button');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);paint();if(window.ES.onFilter)window.ES.onFilter();});
+document.addEventListener('click',e=>{const b=e.target.closest('.st button[data-s]');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);paint();if(window.ES.onFilter)window.ES.onFilter();});
 const rs=document.getElementById('resetProg');if(rs)rs.onclick=()=>{if(confirm('Clear all saved progress on this browser?')){prog={};SV('envsci.progress',prog);paint();}};
 paint();
 /* ---- filter bar ---- */
@@ -550,6 +578,13 @@ if(fb){
   txt.addEventListener('input',run);fb.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{c.classList.toggle('on');run();});fb.querySelector('select.status').onchange=run;
   const clr=fb.querySelector('.clear');if(clr)clr.onclick=()=>{txt.value='';fb.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));fb.querySelector('select.status').value='all';run();};
   run();}
+/* ---- sticky offset = real header height (nav can wrap) ---- */
+const hd=document.querySelector('header.top');const setH=()=>root.style.setProperty('--hdr',(getComputedStyle(hd).position==='sticky'?hd.offsetHeight:0)+'px');setH();window.addEventListener('resize',setH);
+/* ---- copy link, back to top ---- */
+document.addEventListener('click',e=>{const b=e.target.closest('[data-copy]');if(!b)return;const q=b.closest('.q');const url=location.href.split('#')[0]+'#'+q.id;
+  (navigator.clipboard?navigator.clipboard.writeText(url):Promise.reject()).then(()=>{b.textContent='\u2713';setTimeout(()=>b.innerHTML='&#128279;',1200);}).catch(()=>prompt('Copy this link:',url));});
+const tt=document.createElement('button');tt.id='totop';tt.title='Back to top';tt.innerHTML='&uarr;';tt.className='noprint';document.body.appendChild(tt);tt.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+window.addEventListener('scroll',()=>tt.classList.toggle('show',window.scrollY>600),{passive:true});
 /* ---- print & reveal ---- */
 document.querySelectorAll('[data-print]').forEach(b=>b.onclick=()=>{const ms=b.dataset.print==='ms';document.body.classList.toggle('print-ms',ms);document.querySelectorAll('details.ms').forEach(d=>d.open=ms);window.print();});
 document.querySelectorAll('[data-reveal]').forEach(b=>b.onclick=()=>{const open=b.dataset.reveal==='1';document.querySelectorAll('details.ms').forEach(d=>d.open=open);b.dataset.reveal=open?'0':'1';b.textContent=open?'Hide all mark schemes':'Show all mark schemes';});

@@ -69,12 +69,12 @@ footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-
 .prog .bar .ok{background:var(--ok);height:100%}.prog .bar .wk{background:var(--warn);height:100%}.prog .pl{white-space:nowrap;min-width:90px}
 .hero .prog{color:rgba(255,255,255,.85)}.hero .prog .bar{background:rgba(255,255,255,.25)}
 /* filter bar & tools */
-.filterbar{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.filterbar{position:sticky;top:var(--hdr,62px);z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .filterbar input[type=search]{flex:1 1 220px;font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
 .filterbar label{font-size:.85rem;color:var(--stone);display:inline-flex;align-items:center;gap:4px;cursor:pointer}.filterbar .chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--sand);color:var(--stone);font-size:.82rem;cursor:pointer;font-family:inherit}
 .filterbar .chip.on{background:var(--moss);color:#fff;border-color:var(--moss)}.filterbar .cnt{font-size:.85rem;color:var(--stone);margin-left:auto}
 .filterbar select{font:inherit;font-size:.88rem;padding:5px 8px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
-.tools{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:10px 0;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.tools{position:sticky;top:var(--hdr,62px);z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:10px 0;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .tools .time{font-family:Fraunces,serif;font-size:1.6rem;font-weight:700;color:var(--head);min-width:120px}.tools .time.low{color:var(--bad)}
 .tools .score{font-weight:700;color:var(--moss)}.tools .score b{font-family:Fraunces,serif;font-size:1.3rem}.tools .pct{font-size:.85rem;color:var(--stone)}
 .tools button{font-family:inherit;font-size:.88rem;padding:6px 12px;border-radius:8px;border:1px solid var(--moss);background:transparent;color:var(--moss);cursor:pointer}.tools button.primary{background:var(--moss);color:#fff}
@@ -87,6 +87,20 @@ footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-
 .res{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0;text-decoration:none;color:inherit}.res:hover{border-color:var(--moss)}
 .res .t{font-weight:700;color:var(--head)}.res .m{font-size:.82rem;color:var(--stone)}.res .s{font-size:.92rem;margin-top:4px}.res mark{background:#ffe58a;color:#222;border-radius:3px;padding:0 2px}
 .empty{color:var(--stone);font-style:italic}
+/* mark scheme points, levels, links */
+.mspart{margin:8px 0 12px}.msh{display:flex;align-items:baseline;gap:8px;margin-bottom:2px}.msh .mtot{font-size:.8rem;color:var(--earth);font-weight:700}
+ul.pts{list-style:none;margin:4px 0 6px 0!important;padding:0}ul.pts li{display:flex;gap:10px;align-items:flex-start;padding:4px 0;border-top:1px dashed var(--ms-line)}ul.pts li:first-child{border-top:0}
+.mk{flex:0 0 auto;min-width:26px;text-align:center;font-size:.75rem;font-weight:700;color:#fff;background:var(--ok);border-radius:6px;padding:2px 6px;margin-top:3px}
+table.levels{border-collapse:collapse;width:100%;margin:6px 0 10px;font-size:.86rem;background:var(--card)}table.levels th,table.levels td{border:1px solid var(--ms-line);padding:5px 8px;text-align:left;vertical-align:top}table.levels th{background:var(--sand-dark)}table.levels td.r{white-space:nowrap;font-weight:700;color:var(--earth)}
+ul.ind{margin:4px 0 8px 18px}
+.st button.lnk{padding:2px 7px}
+#totop{position:fixed;right:18px;bottom:18px;z-index:15;background:var(--moss);color:#fff;border:0;border-radius:50%;width:42px;height:42px;font-size:1.2rem;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .2s}#totop.show{opacity:1;pointer-events:auto}
+.jump{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 4px}.jump a{font-size:.82rem;padding:3px 10px;border-radius:999px;border:1px solid var(--line);background:var(--sand);color:var(--moss);text-decoration:none;font-weight:600}.jump a:hover{background:var(--leaf-light)}
+.real .row{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;padding:8px 0;border-bottom:1px dashed var(--line);font-size:.95rem}.real .row .ser{font-weight:700;color:var(--head);min-width:150px}.real .row .qn{color:var(--stone);min-width:70px}.real .row .t{flex:1 1 300px}
+.real .row a{font-size:.82rem;padding:2px 9px;border-radius:999px;border:1px solid var(--line);background:var(--sand);text-decoration:none;font-weight:600}
+.plan input[type=date]{font:inherit;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}.plan .big{font-family:Fraunces,serif;font-size:2rem;color:var(--moss)}
+table.list td .bar{height:8px;background:var(--sand-dark);border-radius:999px;overflow:hidden;display:flex;width:140px}table.list td .bar .ok{background:var(--ok)}table.list td .bar .wk{background:var(--warn)}
+@media(max-width:720px){header.top{position:static}header.top nav a{margin-left:12px;font-size:.88rem}.filterbar,.tools{top:0}.hero h1{font-size:1.8rem}.hero{padding:34px 0 28px}.sub-item .t{flex-basis:100%}}
 /* print */
 @media print{header.top,footer,.tools,.filterbar,.st,.pill,.aw,.hero .crumbs,.prog,.noprint{display:none!important}
 body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;color:#000;padding:10px 0}.hero p,.hero h1{color:#000}.hero:before{display:none}
@@ -94,14 +108,16 @@ body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;c
 svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 </style>
 <script>try{if(localStorage.getItem('envsci.theme')==='"dark"')document.documentElement.dataset.theme='dark';}catch(e){}</script></head><body >
-<header class="top"><div class="wrap"><a class="brand" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb069" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-8 0-14 4-14 12 0 1.5.3 3 1 4 2-6 6-9 11-11-4 3-7 6-8 12 8 0 12-6 10-17z"/></svg><span>AQA Environmental Science</span></a><nav><a href="../index.html" class="">Topics</a><a href="../papers.html" class="">Mock papers</a><a href="../official.html" class="">Past papers</a><a href="../essays.html" class="">Essay bank</a><a href="../quickfire.html" class="">Quick-fire</a><a href="../search.html" class="">Search</a><button class="icon-btn" id="themeBtn" type="button" title="Toggle dark mode">&#9790; Dark</button></nav></div></header>
+<header class="top"><div class="wrap"><a class="brand" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb069" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-8 0-14 4-14 12 0 1.5.3 3 1 4 2-6 6-9 11-11-4 3-7 6-8 12 8 0 12-6 10-17z"/></svg><span>AQA Environmental Science</span></a><nav><a href="../index.html" class="">Topics</a><a href="../papers.html" class="">Mock papers</a><a href="../official.html" class="">Past papers</a><a href="../essays.html" class="">Essay bank</a><a href="../pastq.html" class="">Real Qs by topic</a><a href="../quickfire.html" class="">Quick-fire</a><a href="../planner.html" class="">Planner</a><a href="../search.html" class="">Search</a><button class="icon-btn" id="themeBtn" type="button" title="Toggle dark mode">&#9790; Dark</button></nav></div></header>
 <section class="hero p1 small"><div class="wrap"><div class="crumbs"><a href="../index.html">Topics</a><span>&rsaquo;</span><a href="../topic/physical.html">The physical environment</a><span>&rsaquo;</span>The hydrosphere: hydrological cycle &amp; unsustainable exploitation</div><h1>The hydrosphere: hydrological cycle &amp; unsustainable exploitation</h1><p>The physical environment &middot; AQA spec 3.2.2.1-3.2.2.3 &middot; R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 114-121</p><span class="pill">Paper 1</span><span class="pill">6 questions</span><div class="prog" data-qids="HYD-01,HYD-02,HYD-03,HYD-04,HYD-05,HYD-06"><div class="bar"><div class="ok"></div><div class="wk"></div></div><span class="pl"></span></div></div></section>
 <main><div class="wrap"><h2 class="sec">Question sets</h2><table class="list"><tr><th>Set</th><th>Questions</th><th>Marks</th><th>Question paper</th><th>Mark scheme</th></tr>
 <tr><td>Set 1</td><td>6</td><td>60</td><td><a href="../pdf/topic/hydro-cycle-set1-QP.pdf">Download QP (PDF)</a></td><td><a href="../pdf/topic/hydro-cycle-set1-MS.pdf">Download MS (PDF)</a></td></tr>
 </table>
+<h2 class="sec">Real AQA questions on this topic (3)</h2><div class="real"><div class="row"><span class="ser">June 2023 &middot; Paper 1</span><span class="qn">Q7 &middot; 5 marks</span><span class="t">Hydrological cycle transfers and residence time</span><a href="../official/AQA-74471-QP-JUN23.PDF#page=18">Question (p.18)</a> <a href="../official/AQA-74471-MS-JUN23.PDF">Mark scheme</a></div><div class="row"><span class="ser">November 2020 &middot; Paper 1</span><span class="qn">Q10 &middot; 10 marks</span><span class="t">Dead Sea water budget</span><a href="../official/AQA-74471-QP-NOV20-CR.PDF#page=32">Question (p.32)</a> <a href="../official/AQA-74471-W-MS-NOV20.PDF">Mark scheme</a></div><div class="row"><span class="ser">Specimen &middot; Paper 2</span><span class="qn">Q4 &middot; 10 marks</span><span class="t">Water table in a coastal aquifer</span><a href="../official/AQA-74472-SQP-CR.PDF#page=7">Question (p.7)</a> <a href="../official/AQA-74472-SMS.PDF">Mark scheme</a></div></div>
+<p class="note noprint">Practise this subtopic one question at a time: <a href="../quickfire.html?sub=hydro-cycle">Quick-fire &rarr;</a></p>
 <div class="filterbar noprint"><input type="search" placeholder="Filter questions by keyword (e.g. albedo, quota, Simpson)"><button type="button" class="chip mk" data-v="5">5 marks</button><button type="button" class="chip mk" data-v="10">10 marks</button><button type="button" class="chip mk" data-v="15">15 marks</button><button type="button" class="chip fl" data-v="calc">Calculation</button><button type="button" class="chip fl" data-v="data">Data / figure</button><button type="button" class="chip fl" data-v="ext">9-mark extended</button><button type="button" class="chip fl" data-v="mcq">Multiple choice</button><button type="button" class="chip fl" data-v="table">Complete a table</button><select class="status" title="Filter by your progress"><option value="all">All progress</option><option value="todo">Not attempted</option><option value="work">Needs work</option><option value="secure">Secure</option><option value="notsecure">Not yet secure</option></select><button type="button" class="chip clear">Clear</button><span class="cnt"></span><button type="button" class="chip" data-reveal="1">Show all mark schemes</button><button type="button" class="chip" data-print="qp" title="Print the questions only">Print</button><button type="button" class="chip" data-print="ms" title="Print questions with mark schemes">Print + MS</button></div>
 <h2 class="sec set">Set 1</h2>
-<div class="q" id="HYD-01" data-qid="HYD-01" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 1</span><span class="meta">10 marks &middot; <a href="../subtopic/hydro-cycle.html">The hydrosphere: hydrological cycle &amp; unsustainable exploitation</a> &middot; spec 3.2.2.1 &middot; Genn pp. 115-116 &middot; HYD-01</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="HYD-01" data-qid="HYD-01" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 1</span><span class="meta">10 marks &middot; <a href="../subtopic/hydro-cycle.html">The hydrosphere: hydrological cycle &amp; unsustainable exploitation</a> &middot; spec 3.2.2.1 &middot; Genn pp. 115-116 &middot; HYD-01</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>Table 1 shows the volume of water in some reservoirs of the hydrological cycle and the annual transfer rates through them.</p>
 <div class="cap">Table 1</div><table class="data"><tr><th>Reservoir</th><th>Volume / x 10<sup>15</sup> dm<sup>3</sup></th><th>Annual transfer (inflow = outflow) / x 10<sup>15</sup> dm<sup>3</sup> yr<sup>-1</sup></th><th>Percentage of global water / %</th></tr><tr><td>Oceans</td><td>1 340 000</td><td>425</td><td>97</td></tr><tr><td>Ice caps and glaciers</td><td>24 000</td><td>3</td><td>1.7</td></tr><tr><td>Groundwater</td><td>23 000</td><td>12</td><td>1.7</td></tr><tr><td>Lakes and rivers</td><td>180</td><td>40</td><td>0.013</td></tr><tr><td>Soil moisture</td><td>17</td><td>80</td><td>0.001</td></tr><tr><td>Atmosphere</td><td>13</td><td>480</td><td>0.001</td></tr></table>
 <div class="part"><span class="marks">[3 marks]</span><span class="pn">01.1</span>The residence time of water in a reservoir is given by: residence time = volume in reservoir / annual transfer rate. Use Table 1 to calculate the residence time of water in the atmosphere. Give your answer to the nearest whole day.
@@ -115,23 +131,23 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">01.5</span>Explain why the hydrological cycle is described as being in dynamic equilibrium.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>01.1</b> (3 marks)
-<ul><li>13 / 480 = 0.0271 years</li><li>0.0271 x 365</li><li>= 10 days (accept 9.9-10)</li></ul>
+<div class="mspart"><div class="msh"><b>01.1</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">A correct final answer (with unit where asked) scores full marks. If the answer is wrong, award 1 mark for each correct step of working shown.</div><ul class="pts"><li><span class="mk">1</span><span>13 / 480 = 0.0271 years</span></li><li><span class="mk">1</span><span>0.0271 x 365</span></li><li><span class="mk">1</span><span>= 10 days (accept 9.9-10)</span></li></ul>
 </div>
-<div><b>01.2</b> (1 marks)
-<ul><li>1 340 000 / 425 = 3153 years (accept 3100-3200)</li></ul>
+<div class="mspart"><div class="msh"><b>01.2</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark for the correct answer.</div><ul class="pts"><li><span class="mk">1</span><span>1 340 000 / 425 = 3153 years (accept 3100-3200)</span></li></ul>
 </div>
-<div><b>01.3</b> (2 marks)
-<ul><li>It has a very short residence time / very rapid transfer rate (480 x 10<sup>15</sup> dm<sup>3</sup> per year)</li><li>So it moves large volumes of water each year, delivering precipitation to land; small reservoirs with fast transfers respond quickly to change</li></ul>
+<div class="mspart"><div class="msh"><b>01.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>It has a very short residence time / very rapid transfer rate (480 x 10<sup>15</sup> dm<sup>3</sup> per year)</span></li><li><span class="mk">1</span><span>So it moves large volumes of water each year, delivering precipitation to land; small reservoirs with fast transfers respond quickly to change</span></li></ul>
 </div>
-<div><b>01.4</b> (2 marks)
-<ul><li>The ocean is so large that an added or removed volume is a tiny proportion of the total</li><li>The same volume is a large proportion of a small reservoir so its level / residence time changes noticeably</li></ul>
+<div class="mspart"><div class="msh"><b>01.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>The ocean is so large that an added or removed volume is a tiny proportion of the total</span></li><li><span class="mk">1</span><span>The same volume is a large proportion of a small reservoir so its level / residence time changes noticeably</span></li></ul>
 </div>
-<div><b>01.5</b> (2 marks)
-<ul><li>Water is constantly moving between reservoirs (evaporation, precipitation, runoff, infiltration, transpiration)</li><li>But inflows and outflows for each reservoir balance so the volume in each reservoir stays constant over long periods</li></ul>
+<div class="mspart"><div class="msh"><b>01.5</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Water is constantly moving between reservoirs (evaporation, precipitation, runoff, infiltration, transpiration)</span></li><li><span class="mk">1</span><span>But inflows and outflows for each reservoir balance so the volume in each reservoir stays constant over long periods</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 115-116; AQA spec 3.2.2.1.</div></details></div>
-<div class="q" id="HYD-02" data-qid="HYD-02" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 2</span><span class="meta">10 marks &middot; <a href="../subtopic/hydro-cycle.html">The hydrosphere: hydrological cycle &amp; unsustainable exploitation</a> &middot; spec 3.2.2.1 &middot; Genn pp. 116-117 &middot; HYD-02</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="HYD-02" data-qid="HYD-02" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 2</span><span class="meta">10 marks &middot; <a href="../subtopic/hydro-cycle.html">The hydrosphere: hydrological cycle &amp; unsustainable exploitation</a> &middot; spec 3.2.2.1 &middot; Genn pp. 116-117 &middot; HYD-02</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[6 marks]</span><span class="pn">02.1</span>Explain how each of the following human activities alters processes in the hydrological cycle.
 </div>
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">02.2</span>Describe <b>two</b> ways in which global climate change alters the hydrological cycle.
@@ -139,18 +155,17 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">02.3</span>Explain why the impact of industrial and domestic water use on the hydrological cycle is usually local.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>02.1</b> (6 marks)
-<ul><li>Deforestation: less interception so less evaporation from leaves; less transpiration so less water returned to the atmosphere and less precipitation downwind; more infiltration and surface runoff, higher river flows / flooding</li><li>Urban development: impermeable concrete / tarmac reduce infiltration and aquifer recharge; runoff is faster and greater, increasing river flooding downstream; drains carry water quickly to rivers</li><li>Agriculture: soil compaction by machinery / trampling reduces infiltration and soil moisture, increases runoff; irrigation increases evaporation; loss of soil biota (worms) reduces infiltration and water retention; drainage lowers water tables</li></ul>
+<div class="mspart"><div class="msh"><b>02.1</b> <span class="mtot">6 marks</span></div>
+<div class="lvl">2 marks for each point (partial credit for a partly correct point).</div><ul class="pts"><li><span class="mk">2</span><span>Deforestation: less interception so less evaporation from leaves; less transpiration so less water returned to the atmosphere and less precipitation downwind; more infiltration and surface runoff, higher river flows / flooding</span></li><li><span class="mk">2</span><span>Urban development: impermeable concrete / tarmac reduce infiltration and aquifer recharge; runoff is faster and greater, increasing river flooding downstream; drains carry water quickly to rivers</span></li><li><span class="mk">2</span><span>Agriculture: soil compaction by machinery / trampling reduces infiltration and soil moisture, increases runoff; irrigation increases evaporation; loss of soil biota (worms) reduces infiltration and water retention; drainage lowers water tables</span></li></ul>
 </div>
-<div><b>02.2</b> (2 marks)
-<div class="lvl"><i>Any 2 from:</i></div>
-<ul><li>Higher temperatures increase evaporation and change the amount, timing, type (rain vs snow) and location of precipitation</li><li>More rapid melting of snow and ice changes river regimes: more flooding after rain, lower flows in dry periods</li><li>Changed wind patterns move humid air to different areas</li><li>Sea level rise / salt incursion into coastal aquifers</li></ul>
+<div class="mspart"><div class="msh"><b>02.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">Any 2 from the points below - 1 mark each, maximum 2.</div><ul class="pts"><li><span class="mk">1</span><span>Higher temperatures increase evaporation and change the amount, timing, type (rain vs snow) and location of precipitation</span></li><li><span class="mk">1</span><span>More rapid melting of snow and ice changes river regimes: more flooding after rain, lower flows in dry periods</span></li><li><span class="mk">1</span><span>Changed wind patterns move humid air to different areas</span></li><li><span class="mk">1</span><span>Sea level rise / salt incursion into coastal aquifers</span></li></ul>
 </div>
-<div><b>02.3</b> (2 marks)
-<ul><li>Most water abstracted is cleaned and returned to the river / sea so the main impact is on quality (pollution) not quantity</li><li>Effects are noticeable only where large urban centres draw on restricted local supplies (aquifers, small rivers)</li></ul>
+<div class="mspart"><div class="msh"><b>02.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Most water abstracted is cleaned and returned to the river / sea so the main impact is on quality (pollution) not quantity</span></li><li><span class="mk">1</span><span>Effects are noticeable only where large urban centres draw on restricted local supplies (aquifers, small rivers)</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 116-117; AQA spec 3.2.2.1.</div></details></div>
-<div class="q" id="HYD-03" data-qid="HYD-03" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 3</span><span class="meta">10 marks &middot; <a href="../subtopic/hydro-cycle.html">The hydrosphere: hydrological cycle &amp; unsustainable exploitation</a> &middot; spec 3.2.2.1-3.2.2.2 &middot; Genn pp. 117-118 &middot; HYD-03</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="HYD-03" data-qid="HYD-03" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 3</span><span class="meta">10 marks &middot; <a href="../subtopic/hydro-cycle.html">The hydrosphere: hydrological cycle &amp; unsustainable exploitation</a> &middot; spec 3.2.2.1-3.2.2.2 &middot; Genn pp. 117-118 &middot; HYD-03</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>The Aral Sea in central Asia was once the fourth largest lake in the world. From the 1960s water from the two rivers feeding it (the Amu Darya and Syr Darya) was diverted to irrigate cotton and rice. Table 1 shows changes in the lake.</p>
 <div class="cap">Table 1</div><table class="data"><tr><th>Year</th><th>1960</th><th>1980</th><th>2000</th><th>2015</th></tr><tr><td>Lake area / km<sup>2</sup></td><td>68 000</td><td>52 000</td><td>24 000</td><td>7 000</td></tr><tr><td>Salinity / g dm<sup>-3</sup></td><td>10</td><td>18</td><td>45</td><td>over 100</td></tr><tr><td>Commercial fish catch / thousand tonnes</td><td>40</td><td>10</td><td>0</td><td>0</td></tr></table>
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">03.1</span>Calculate the percentage reduction in the area of the Aral Sea between 1960 and 2015.
@@ -162,20 +177,20 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">03.4</span>Suggest why disagreements over the rivers continue between the countries of the region.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>03.1</b> (2 marks)
-<ul><li>(68 000 - 7 000) / 68 000 x 100</li><li>= 89.7% (accept 90%)</li></ul>
+<div class="mspart"><div class="msh"><b>03.1</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">A correct final answer (with unit where asked) scores full marks. If the answer is wrong, award 1 mark for each correct step of working shown.</div><ul class="pts"><li><span class="mk">1</span><span>(68 000 - 7 000) / 68 000 x 100</span></li><li><span class="mk">1</span><span>= 89.7% (accept 90%)</span></li></ul>
 </div>
-<div><b>03.2</b> (2 marks)
-<ul><li>Inflow from the rivers was reduced (sometimes to zero) so less water entered while evaporation continued</li><li>Evaporation removes pure water leaving the dissolved salts behind, so they became concentrated in a smaller volume</li></ul>
+<div class="mspart"><div class="msh"><b>03.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Inflow from the rivers was reduced (sometimes to zero) so less water entered while evaporation continued</span></li><li><span class="mk">1</span><span>Evaporation removes pure water leaving the dissolved salts behind, so they became concentrated in a smaller volume</span></li></ul>
 </div>
-<div><b>03.3</b> (4 marks)
-<ul><li>Salinity rose above the range of tolerance of the freshwater fish species / osmotic stress; pollution by pesticides, fertilisers and industrial waste concentrated in the lake</li><li>Exposed lake bed of salt and pesticide-contaminated dust blown by wind onto farmland and settlements (health problems, soil salinisation)</li><li>Loss of wetland habitats and wildlife; local climate more extreme (loss of the moderating effect of the water body)</li><li>Loss of livelihoods; conflict between the countries sharing the rivers</li></ul>
+<div class="mspart"><div class="msh"><b>03.3</b> <span class="mtot">4 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Salinity rose above the range of tolerance of the freshwater fish species / osmotic stress; pollution by pesticides, fertilisers and industrial waste concentrated in the lake</span></li><li><span class="mk">1</span><span>Exposed lake bed of salt and pesticide-contaminated dust blown by wind onto farmland and settlements (health problems, soil salinisation)</span></li><li><span class="mk">1</span><span>Loss of wetland habitats and wildlife; local climate more extreme (loss of the moderating effect of the water body)</span></li><li><span class="mk">1</span><span>Loss of livelihoods; conflict between the countries sharing the rivers</span></li></ul>
 </div>
-<div><b>03.4</b> (2 marks)
-<ul><li>Upstream abstraction for irrigation reduces the flow available downstream</li><li>Upstream HEP dams hold water in summer for winter generation, reducing summer irrigation water downstream; growing populations increase demand</li></ul>
+<div class="mspart"><div class="msh"><b>03.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Upstream abstraction for irrigation reduces the flow available downstream</span></li><li><span class="mk">1</span><span>Upstream HEP dams hold water in summer for winter generation, reducing summer irrigation water downstream; growing populations increase demand</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 117-118; AQA spec 3.2.2.1-3.2.2.2.</div></details></div>
-<div class="q" id="HYD-04" data-qid="HYD-04" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 4</span><span class="meta">10 marks &middot; <a href="../subtopic/hydro-cycle.html">The hydrosphere: hydrological cycle &amp; unsustainable exploitation</a> &middot; spec 3.2.2.1-3.2.2.2 &middot; Genn pp. 119-121 &middot; HYD-04</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="HYD-04" data-qid="HYD-04" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 4</span><span class="meta">10 marks &middot; <a href="../subtopic/hydro-cycle.html">The hydrosphere: hydrological cycle &amp; unsustainable exploitation</a> &middot; spec 3.2.2.1-3.2.2.2 &middot; Genn pp. 119-121 &middot; HYD-04</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>Figure 1 shows the depth of the water table below the ground surface in an aquifer beneath a coastal farming region between 1970 and 2020.</p>
 <div class="cap">Figure 1</div>
 <svg class="chart" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
@@ -211,21 +226,20 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[4 marks]</span><span class="pn">04.4</span>Describe <b>four</b> consequences of over-exploiting this coastal aquifer.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>04.1</b> (1 marks)
-<ul><li>(44 - 8) / 50 = 0.72 m yr<sup>-1</sup></li></ul>
+<div class="mspart"><div class="msh"><b>04.1</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark for the correct answer.</div><ul class="pts"><li><span class="mk">1</span><span>(44 - 8) / 50 = 0.72 m yr<sup>-1</sup></span></li></ul>
 </div>
-<div><b>04.2</b> (2 marks)
-<ul><li>Abstraction (for irrigation) exceeds the rate of natural recharge by infiltration / percolation of precipitation</li><li>The dynamic equilibrium between inflow and outflow has been upset so the stored volume declines</li></ul>
+<div class="mspart"><div class="msh"><b>04.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Abstraction (for irrigation) exceeds the rate of natural recharge by infiltration / percolation of precipitation</span></li><li><span class="mk">1</span><span>The dynamic equilibrium between inflow and outflow has been upset so the stored volume declines</span></li></ul>
 </div>
-<div><b>04.3</b> (3 marks)
-<ul><li>Porosity: a high proportion of the rock volume is space that can hold water (chalk, limestone, sandstone)</li><li>Permeability: the spaces are interconnected and large enough for water to flow through (clay is porous but not permeable)</li><li>Impermeable rock (granite, clay) beneath to stop water escaping, and permeable rock / soil above to allow recharge</li></ul>
+<div class="mspart"><div class="msh"><b>04.3</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Porosity: a high proportion of the rock volume is space that can hold water (chalk, limestone, sandstone)</span></li><li><span class="mk">1</span><span>Permeability: the spaces are interconnected and large enough for water to flow through (clay is porous but not permeable)</span></li><li><span class="mk">1</span><span>Impermeable rock (granite, clay) beneath to stop water escaping, and permeable rock / soil above to allow recharge</span></li></ul>
 </div>
-<div><b>04.4</b> (4 marks)
-<div class="lvl"><i>Any 4 from:</i></div>
-<ul><li>Salt water incursion: seawater flows into the aquifer to replace the fresh water, making it unusable for irrigation (osmotic dehydration of crops)</li><li>Subsidence: emptied pore spaces no longer support the rock so it compacts, damaging buildings and pipes (eg Mexico City)</li><li>Drying up of groundwater-fed rivers, lakes and wetlands as the water table falls below their beds</li><li>Ecological impacts: plants needing high water availability die; wetland animals lost; food chain effects</li><li>Reduced supplies: abstraction may suddenly have to stop after years of hidden decline</li></ul>
+<div class="mspart"><div class="msh"><b>04.4</b> <span class="mtot">4 marks</span></div>
+<div class="lvl">Any 4 from the points below - 1 mark each, maximum 4.</div><ul class="pts"><li><span class="mk">1</span><span>Salt water incursion: seawater flows into the aquifer to replace the fresh water, making it unusable for irrigation (osmotic dehydration of crops)</span></li><li><span class="mk">1</span><span>Subsidence: emptied pore spaces no longer support the rock so it compacts, damaging buildings and pipes (eg Mexico City)</span></li><li><span class="mk">1</span><span>Drying up of groundwater-fed rivers, lakes and wetlands as the water table falls below their beds</span></li><li><span class="mk">1</span><span>Ecological impacts: plants needing high water availability die; wetland animals lost; food chain effects</span></li><li><span class="mk">1</span><span>Reduced supplies: abstraction may suddenly have to stop after years of hidden decline</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 119-121; AQA spec 3.2.2.1-3.2.2.2.</div></details></div>
-<div class="q" id="HYD-05" data-qid="HYD-05" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 5</span><span class="meta">10 marks &middot; <a href="../subtopic/hydro-cycle.html">The hydrosphere: hydrological cycle &amp; unsustainable exploitation</a> &middot; spec 3.2.2.1-3.2.2.2 &middot; Genn pp. 119-121 &middot; HYD-05</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="HYD-05" data-qid="HYD-05" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 5</span><span class="meta">10 marks &middot; <a href="../subtopic/hydro-cycle.html">The hydrosphere: hydrological cycle &amp; unsustainable exploitation</a> &middot; spec 3.2.2.1-3.2.2.2 &middot; Genn pp. 119-121 &middot; HYD-05</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[3 marks]</span><span class="pn">05.1</span>Explain why abstraction from an aquifer containing 'fossil' (palaeo) water, such as the High Plains / Ogallala Aquifer in the USA, cannot be sustainable.
 </div>
 <div class="part"><span class="marks">[3 marks]</span><span class="pn">05.2</span>Describe how the GRACE satellites are used to monitor aquifer depletion and give <b>one</b> advantage over monitoring boreholes.
@@ -235,21 +249,20 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">05.4</span>Suggest why large-scale afforestation on the North China Plain may reduce aquifer recharge even though trees reduce soil erosion.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>05.1</b> (3 marks)
-<ul><li>The water was recharged during or before the last ice age (10 000-20 000 years ago) when the climate was wetter</li><li>Current recharge is little or none so any abstraction reduces the stored volume</li><li>The large volume means shortages take a long time to appear, but eventually the supply runs out; ancient water is often saline, causing soil salinisation</li></ul>
+<div class="mspart"><div class="msh"><b>05.1</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>The water was recharged during or before the last ice age (10 000-20 000 years ago) when the climate was wetter</span></li><li><span class="mk">1</span><span>Current recharge is little or none so any abstraction reduces the stored volume</span></li><li><span class="mk">1</span><span>The large volume means shortages take a long time to appear, but eventually the supply runs out; ancient water is often saline, causing soil salinisation</span></li></ul>
 </div>
-<div><b>05.2</b> (3 marks)
-<ul><li>Two satellites whose orbits are affected by the force of gravity</li><li>The mass of water in aquifers below changes gravity, so changes in the orbit / distance between the satellites indicate changes in groundwater mass</li><li>Advantage: the whole Earth is surveyed every 30 days, whereas borehole water-table measurements are slow and hard to coordinate over large areas</li></ul>
+<div class="mspart"><div class="msh"><b>05.2</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Two satellites whose orbits are affected by the force of gravity</span></li><li><span class="mk">1</span><span>The mass of water in aquifers below changes gravity, so changes in the orbit / distance between the satellites indicate changes in groundwater mass</span></li><li><span class="mk">1</span><span>Advantage: the whole Earth is surveyed every 30 days, whereas borehole water-table measurements are slow and hard to coordinate over large areas</span></li></ul>
 </div>
-<div><b>05.3</b> (3 marks)
-<div class="lvl"><i>Any 3 from:</i></div>
-<ul><li>Low-pressure irrigation pipes to reduce leaks</li><li>Growing crops that need less water than wheat / maize</li><li>Charging consumers by volume used (metering)</li><li>Inter-basin transfer of water 450 km from the Yangtze</li></ul>
+<div class="mspart"><div class="msh"><b>05.3</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">Any 3 from the points below - 1 mark each, maximum 3.</div><ul class="pts"><li><span class="mk">1</span><span>Low-pressure irrigation pipes to reduce leaks</span></li><li><span class="mk">1</span><span>Growing crops that need less water than wheat / maize</span></li><li><span class="mk">1</span><span>Charging consumers by volume used (metering)</span></li><li><span class="mk">1</span><span>Inter-basin transfer of water 450 km from the Yangtze</span></li></ul>
 </div>
-<div><b>05.4</b> (1 marks)
-<ul><li>Trees intercept rainfall and transpire large volumes, reducing soil moisture and the water percolating down to the aquifer</li></ul>
+<div class="mspart"><div class="msh"><b>05.4</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>Trees intercept rainfall and transpire large volumes, reducing soil moisture and the water percolating down to the aquifer</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 119-121; AQA spec 3.2.2.1-3.2.2.2.</div></details></div>
-<div class="q" id="HYD-06" data-qid="HYD-06" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 6</span><span class="meta">10 marks &middot; <a href="../subtopic/hydro-cycle.html">The hydrosphere: hydrological cycle &amp; unsustainable exploitation</a> &middot; spec 3.2.2.1 &middot; Genn pp. 117 &middot; HYD-06</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="HYD-06" data-qid="HYD-06" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 6</span><span class="meta">10 marks &middot; <a href="../subtopic/hydro-cycle.html">The hydrosphere: hydrological cycle &amp; unsustainable exploitation</a> &middot; spec 3.2.2.1 &middot; Genn pp. 117 &middot; HYD-06</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>A dam and reservoir are to be built on a river to supply water and regulate flow.</p>
 <div class="part"><span class="marks">[6 marks]</span><span class="pn">06.1</span>Explain <b>three</b> effects the reservoir may have on wildlife in and around the river.
 </div>
@@ -258,14 +271,14 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">06.3</span>Explain how a river-regulation reservoir reduces both flooding and water shortages downstream.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>06.1</b> (6 marks)
-<ul><li>Habitat change: flooding destroys the previous terrestrial / river habitats but creates a wetland which may be valuable (wetlands are uncommon)</li><li>Wildlife barrier: the dam blocks migrating fish (salmon, sturgeon) and prevents recolonisation along the river</li><li>Changed river regime downstream: regulated flow removes low-flow periods needed by species such as river turtles nesting on sandbanks and high flows that wash sediment from gravel spawning beds</li><li>Sedimentation: sediment settles in the reservoir instead of fertilising the floodplain and building river banks / coastlines downstream, increasing erosion</li><li>Microclimate: water's high heat capacity reduces temperature fluctuations; higher wind speeds; more evaporation, humidity, cloud and precipitation downwind</li></ul>
+<div class="mspart"><div class="msh"><b>06.1</b> <span class="mtot">6 marks</span></div>
+<div class="lvl">Up to 6 marks in total; award marks in proportion to the completeness of each point.</div><ul class="pts"><li><span class="mk">up to 2</span><span>Habitat change: flooding destroys the previous terrestrial / river habitats but creates a wetland which may be valuable (wetlands are uncommon)</span></li><li><span class="mk">up to 2</span><span>Wildlife barrier: the dam blocks migrating fish (salmon, sturgeon) and prevents recolonisation along the river</span></li><li><span class="mk">up to 2</span><span>Changed river regime downstream: regulated flow removes low-flow periods needed by species such as river turtles nesting on sandbanks and high flows that wash sediment from gravel spawning beds</span></li><li><span class="mk">up to 2</span><span>Sedimentation: sediment settles in the reservoir instead of fertilising the floodplain and building river banks / coastlines downstream, increasing erosion</span></li><li><span class="mk">up to 2</span><span>Microclimate: water's high heat capacity reduces temperature fluctuations; higher wind speeds; more evaporation, humidity, cloud and precipitation downwind</span></li></ul>
 </div>
-<div><b>06.2</b> (2 marks)
-<ul><li>Vegetation / dead organic matter under water decays anaerobically</li><li>Releasing methane, a powerful greenhouse gas</li></ul>
+<div class="mspart"><div class="msh"><b>06.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Vegetation / dead organic matter under water decays anaerobically</span></li><li><span class="mk">1</span><span>Releasing methane, a powerful greenhouse gas</span></li></ul>
 </div>
-<div><b>06.3</b> (2 marks)
-<ul><li>After heavy rain surplus water is stored, reducing peak flow / flooding downstream</li><li>In dry periods the dam releases water to maintain river levels / supplies</li></ul>
+<div class="mspart"><div class="msh"><b>06.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>After heavy rain surplus water is stored, reducing peak flow / flooding downstream</span></li><li><span class="mk">1</span><span>In dry periods the dam releases water to maintain river levels / supplies</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 117; AQA spec 3.2.2.1.</div></details></div>
 </div></main>
@@ -284,7 +297,7 @@ const tb=document.getElementById('themeBtn');if(tb)tb.onclick=()=>{const t=root.
 let prog=LS('envsci.progress')||{};
 window.ES.prog=()=>prog;
 function paint(){
-  document.querySelectorAll('.q[data-qid]').forEach(el=>{const s=prog[el.dataset.qid]||0;el.dataset.status=s;el.querySelectorAll('.st button').forEach(b=>b.classList.toggle('on',+b.dataset.s===s&&s>0));});
+  document.querySelectorAll('.q[data-qid]').forEach(el=>{const s=prog[el.dataset.qid]||0;el.dataset.status=s;el.querySelectorAll('.st button[data-s]').forEach(b=>b.classList.toggle('on',+b.dataset.s===s&&s>0));});
   document.querySelectorAll('[data-qids]').forEach(el=>{const ids=el.dataset.qids.split(',').filter(Boolean);const n=ids.length;if(!n)return;
     const ok=ids.filter(i=>prog[i]===2).length,wk=ids.filter(i=>prog[i]===1).length;
     const o=el.querySelector('.bar .ok'),w=el.querySelector('.bar .wk'),p=el.querySelector('.pl');
@@ -292,7 +305,7 @@ function paint(){
   const ov=document.getElementById('overall');if(ov){const all=(ov.dataset.qids||'').split(',').filter(Boolean);const ok=all.filter(i=>prog[i]===2).length,wk=all.filter(i=>prog[i]===1).length;ov.querySelector('.stat').textContent=Math.round(100*ok/all.length)+'%';ov.querySelector('.detail').textContent=ok+' secure, '+wk+' to revisit, '+(all.length-ok-wk)+' not attempted of '+all.length+' questions.';}
 }
 window.ES.paint=paint;
-document.addEventListener('click',e=>{const b=e.target.closest('.st button');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);paint();if(window.ES.onFilter)window.ES.onFilter();});
+document.addEventListener('click',e=>{const b=e.target.closest('.st button[data-s]');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);paint();if(window.ES.onFilter)window.ES.onFilter();});
 const rs=document.getElementById('resetProg');if(rs)rs.onclick=()=>{if(confirm('Clear all saved progress on this browser?')){prog={};SV('envsci.progress',prog);paint();}};
 paint();
 /* ---- filter bar ---- */
@@ -315,6 +328,13 @@ if(fb){
   txt.addEventListener('input',run);fb.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{c.classList.toggle('on');run();});fb.querySelector('select.status').onchange=run;
   const clr=fb.querySelector('.clear');if(clr)clr.onclick=()=>{txt.value='';fb.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));fb.querySelector('select.status').value='all';run();};
   run();}
+/* ---- sticky offset = real header height (nav can wrap) ---- */
+const hd=document.querySelector('header.top');const setH=()=>root.style.setProperty('--hdr',(getComputedStyle(hd).position==='sticky'?hd.offsetHeight:0)+'px');setH();window.addEventListener('resize',setH);
+/* ---- copy link, back to top ---- */
+document.addEventListener('click',e=>{const b=e.target.closest('[data-copy]');if(!b)return;const q=b.closest('.q');const url=location.href.split('#')[0]+'#'+q.id;
+  (navigator.clipboard?navigator.clipboard.writeText(url):Promise.reject()).then(()=>{b.textContent='\u2713';setTimeout(()=>b.innerHTML='&#128279;',1200);}).catch(()=>prompt('Copy this link:',url));});
+const tt=document.createElement('button');tt.id='totop';tt.title='Back to top';tt.innerHTML='&uarr;';tt.className='noprint';document.body.appendChild(tt);tt.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+window.addEventListener('scroll',()=>tt.classList.toggle('show',window.scrollY>600),{passive:true});
 /* ---- print & reveal ---- */
 document.querySelectorAll('[data-print]').forEach(b=>b.onclick=()=>{const ms=b.dataset.print==='ms';document.body.classList.toggle('print-ms',ms);document.querySelectorAll('details.ms').forEach(d=>d.open=ms);window.print();});
 document.querySelectorAll('[data-reveal]').forEach(b=>b.onclick=()=>{const open=b.dataset.reveal==='1';document.querySelectorAll('details.ms').forEach(d=>d.open=open);b.dataset.reveal=open?'0':'1';b.textContent=open?'Hide all mark schemes':'Show all mark schemes';});

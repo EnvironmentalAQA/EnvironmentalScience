@@ -69,12 +69,12 @@ footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-
 .prog .bar .ok{background:var(--ok);height:100%}.prog .bar .wk{background:var(--warn);height:100%}.prog .pl{white-space:nowrap;min-width:90px}
 .hero .prog{color:rgba(255,255,255,.85)}.hero .prog .bar{background:rgba(255,255,255,.25)}
 /* filter bar & tools */
-.filterbar{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.filterbar{position:sticky;top:var(--hdr,62px);z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .filterbar input[type=search]{flex:1 1 220px;font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
 .filterbar label{font-size:.85rem;color:var(--stone);display:inline-flex;align-items:center;gap:4px;cursor:pointer}.filterbar .chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--sand);color:var(--stone);font-size:.82rem;cursor:pointer;font-family:inherit}
 .filterbar .chip.on{background:var(--moss);color:#fff;border-color:var(--moss)}.filterbar .cnt{font-size:.85rem;color:var(--stone);margin-left:auto}
 .filterbar select{font:inherit;font-size:.88rem;padding:5px 8px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
-.tools{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:10px 0;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.tools{position:sticky;top:var(--hdr,62px);z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:10px 0;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .tools .time{font-family:Fraunces,serif;font-size:1.6rem;font-weight:700;color:var(--head);min-width:120px}.tools .time.low{color:var(--bad)}
 .tools .score{font-weight:700;color:var(--moss)}.tools .score b{font-family:Fraunces,serif;font-size:1.3rem}.tools .pct{font-size:.85rem;color:var(--stone)}
 .tools button{font-family:inherit;font-size:.88rem;padding:6px 12px;border-radius:8px;border:1px solid var(--moss);background:transparent;color:var(--moss);cursor:pointer}.tools button.primary{background:var(--moss);color:#fff}
@@ -87,6 +87,20 @@ footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-
 .res{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0;text-decoration:none;color:inherit}.res:hover{border-color:var(--moss)}
 .res .t{font-weight:700;color:var(--head)}.res .m{font-size:.82rem;color:var(--stone)}.res .s{font-size:.92rem;margin-top:4px}.res mark{background:#ffe58a;color:#222;border-radius:3px;padding:0 2px}
 .empty{color:var(--stone);font-style:italic}
+/* mark scheme points, levels, links */
+.mspart{margin:8px 0 12px}.msh{display:flex;align-items:baseline;gap:8px;margin-bottom:2px}.msh .mtot{font-size:.8rem;color:var(--earth);font-weight:700}
+ul.pts{list-style:none;margin:4px 0 6px 0!important;padding:0}ul.pts li{display:flex;gap:10px;align-items:flex-start;padding:4px 0;border-top:1px dashed var(--ms-line)}ul.pts li:first-child{border-top:0}
+.mk{flex:0 0 auto;min-width:26px;text-align:center;font-size:.75rem;font-weight:700;color:#fff;background:var(--ok);border-radius:6px;padding:2px 6px;margin-top:3px}
+table.levels{border-collapse:collapse;width:100%;margin:6px 0 10px;font-size:.86rem;background:var(--card)}table.levels th,table.levels td{border:1px solid var(--ms-line);padding:5px 8px;text-align:left;vertical-align:top}table.levels th{background:var(--sand-dark)}table.levels td.r{white-space:nowrap;font-weight:700;color:var(--earth)}
+ul.ind{margin:4px 0 8px 18px}
+.st button.lnk{padding:2px 7px}
+#totop{position:fixed;right:18px;bottom:18px;z-index:15;background:var(--moss);color:#fff;border:0;border-radius:50%;width:42px;height:42px;font-size:1.2rem;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .2s}#totop.show{opacity:1;pointer-events:auto}
+.jump{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 4px}.jump a{font-size:.82rem;padding:3px 10px;border-radius:999px;border:1px solid var(--line);background:var(--sand);color:var(--moss);text-decoration:none;font-weight:600}.jump a:hover{background:var(--leaf-light)}
+.real .row{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;padding:8px 0;border-bottom:1px dashed var(--line);font-size:.95rem}.real .row .ser{font-weight:700;color:var(--head);min-width:150px}.real .row .qn{color:var(--stone);min-width:70px}.real .row .t{flex:1 1 300px}
+.real .row a{font-size:.82rem;padding:2px 9px;border-radius:999px;border:1px solid var(--line);background:var(--sand);text-decoration:none;font-weight:600}
+.plan input[type=date]{font:inherit;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}.plan .big{font-family:Fraunces,serif;font-size:2rem;color:var(--moss)}
+table.list td .bar{height:8px;background:var(--sand-dark);border-radius:999px;overflow:hidden;display:flex;width:140px}table.list td .bar .ok{background:var(--ok)}table.list td .bar .wk{background:var(--warn)}
+@media(max-width:720px){header.top{position:static}header.top nav a{margin-left:12px;font-size:.88rem}.filterbar,.tools{top:0}.hero h1{font-size:1.8rem}.hero{padding:34px 0 28px}.sub-item .t{flex-basis:100%}}
 /* print */
 @media print{header.top,footer,.tools,.filterbar,.st,.pill,.aw,.hero .crumbs,.prog,.noprint{display:none!important}
 body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;color:#000;padding:10px 0}.hero p,.hero h1{color:#000}.hero:before{display:none}
@@ -94,14 +108,16 @@ body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;c
 svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 </style>
 <script>try{if(localStorage.getItem('envsci.theme')==='"dark"')document.documentElement.dataset.theme='dark';}catch(e){}</script></head><body >
-<header class="top"><div class="wrap"><a class="brand" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb069" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-8 0-14 4-14 12 0 1.5.3 3 1 4 2-6 6-9 11-11-4 3-7 6-8 12 8 0 12-6 10-17z"/></svg><span>AQA Environmental Science</span></a><nav><a href="../index.html" class="">Topics</a><a href="../papers.html" class="">Mock papers</a><a href="../official.html" class="">Past papers</a><a href="../essays.html" class="">Essay bank</a><a href="../quickfire.html" class="">Quick-fire</a><a href="../search.html" class="">Search</a><button class="icon-btn" id="themeBtn" type="button" title="Toggle dark mode">&#9790; Dark</button></nav></div></header>
+<header class="top"><div class="wrap"><a class="brand" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb069" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-8 0-14 4-14 12 0 1.5.3 3 1 4 2-6 6-9 11-11-4 3-7 6-8 12 8 0 12-6 10-17z"/></svg><span>AQA Environmental Science</span></a><nav><a href="../index.html" class="">Topics</a><a href="../papers.html" class="">Mock papers</a><a href="../official.html" class="">Past papers</a><a href="../essays.html" class="">Essay bank</a><a href="../pastq.html" class="">Real Qs by topic</a><a href="../quickfire.html" class="">Quick-fire</a><a href="../planner.html" class="">Planner</a><a href="../search.html" class="">Search</a><button class="icon-btn" id="themeBtn" type="button" title="Toggle dark mode">&#9790; Dark</button></nav></div></header>
 <section class="hero p1 small"><div class="wrap"><div class="crumbs"><a href="../index.html">Topics</a><span>&rsaquo;</span><a href="../topic/physical.html">The physical environment</a><span>&rsaquo;</span>Ozone depletion</div><h1>Ozone depletion</h1><p>The physical environment &middot; AQA spec 3.2.1.3 &middot; R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 108-113</p><span class="pill">Paper 1</span><span class="pill">5 questions</span><div class="prog" data-qids="OZ-01,OZ-02,OZ-03,OZ-04,OZ-05"><div class="bar"><div class="ok"></div><div class="wk"></div></div><span class="pl"></span></div></div></section>
 <main><div class="wrap"><h2 class="sec">Question sets</h2><table class="list"><tr><th>Set</th><th>Questions</th><th>Marks</th><th>Question paper</th><th>Mark scheme</th></tr>
 <tr><td>Set 1</td><td>5</td><td>50</td><td><a href="../pdf/topic/ozone-set1-QP.pdf">Download QP (PDF)</a></td><td><a href="../pdf/topic/ozone-set1-MS.pdf">Download MS (PDF)</a></td></tr>
 </table>
+<h2 class="sec">Real AQA questions on this topic (3)</h2><div class="real"><div class="row"><span class="ser">June 2024 &middot; Paper 1</span><span class="qn">Q10 &middot; 15 marks</span><span class="t">Ozone concentration and ozone-depleting substance emissions</span><a href="../official/AQA-74471-QP-JUN24-CR.PDF#page=25">Question (p.25)</a> <a href="../official/AQA-74471-MS-JUN24.PDF">Mark scheme</a></div><div class="row"><span class="ser">November 2021 &middot; Paper 1</span><span class="qn">Q2 &middot; 10 marks</span><span class="t">Rowland-Molina hypothesis and CFCs</span><a href="../official/AQA-74471-QP-NOV21-CR.PDF#page=3">Question (p.3)</a> <a href="../official/AQA-74471-MS-NOV21.PDF">Mark scheme</a></div><div class="row"><span class="ser">Specimen &middot; Paper 1</span><span class="qn">Q5 &middot; 5 marks</span><span class="t">CFCs and stratospheric ozone depletion</span><a href="../official/AQA-74471-SQP-CR.PDF#page=15">Question (p.15)</a> <a href="../official/AQA-74471-SMS.PDF">Mark scheme</a></div></div>
+<p class="note noprint">Practise this subtopic one question at a time: <a href="../quickfire.html?sub=ozone">Quick-fire &rarr;</a></p>
 <div class="filterbar noprint"><input type="search" placeholder="Filter questions by keyword (e.g. albedo, quota, Simpson)"><button type="button" class="chip mk" data-v="5">5 marks</button><button type="button" class="chip mk" data-v="10">10 marks</button><button type="button" class="chip mk" data-v="15">15 marks</button><button type="button" class="chip fl" data-v="calc">Calculation</button><button type="button" class="chip fl" data-v="data">Data / figure</button><button type="button" class="chip fl" data-v="ext">9-mark extended</button><button type="button" class="chip fl" data-v="mcq">Multiple choice</button><button type="button" class="chip fl" data-v="table">Complete a table</button><select class="status" title="Filter by your progress"><option value="all">All progress</option><option value="todo">Not attempted</option><option value="work">Needs work</option><option value="secure">Secure</option><option value="notsecure">Not yet secure</option></select><button type="button" class="chip clear">Clear</button><span class="cnt"></span><button type="button" class="chip" data-reveal="1">Show all mark schemes</button><button type="button" class="chip" data-print="qp" title="Print the questions only">Print</button><button type="button" class="chip" data-print="ms" title="Print questions with mark schemes">Print + MS</button></div>
 <h2 class="sec set">Set 1</h2>
-<div class="q" id="OZ-01" data-qid="OZ-01" data-marks="15" data-flags=""><div class="qh"><span class="num">Question 1</span><span class="meta">15 marks &middot; <a href="../subtopic/ozone.html">Ozone depletion</a> &middot; spec 3.2.1.3 &middot; Genn pp. 108-109 &middot; OZ-01</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="OZ-01" data-qid="OZ-01" data-marks="15" data-flags=""><div class="qh"><span class="num">Question 1</span><span class="meta">15 marks &middot; <a href="../subtopic/ozone.html">Ozone depletion</a> &middot; spec 3.2.1.3 &middot; Genn pp. 108-109 &middot; OZ-01</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[3 marks]</span><span class="pn">01.1</span>Describe how ozone is formed and destroyed naturally in the stratosphere.
 </div>
 <div class="part"><span class="marks">[6 marks]</span><span class="pn">01.2</span>Explain the properties of CFCs that made them useful, and the properties that cause ozone depletion (the Rowland-Molina hypothesis).
@@ -115,26 +131,26 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">01.6</span>Give <b>one</b> reason why the first evidence for ozone depletion came from ground-based measurements.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>01.1</b> (3 marks)
-<ul><li>UV light splits diatomic oxygen (O2) into two monatomic oxygen atoms (O)</li><li>Monatomic oxygen reacts with diatomic oxygen to form ozone (O3)</li><li>UV light also splits ozone into O2 and O; the reactions form a dynamic equilibrium which absorbs UV (converting it to chemical energy / heat)</li></ul>
+<div class="mspart"><div class="msh"><b>01.1</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>UV light splits diatomic oxygen (O2) into two monatomic oxygen atoms (O)</span></li><li><span class="mk">1</span><span>Monatomic oxygen reacts with diatomic oxygen to form ozone (O3)</span></li><li><span class="mk">1</span><span>UV light also splits ozone into O2 and O; the reactions form a dynamic equilibrium which absorbs UV (converting it to chemical energy / heat)</span></li></ul>
 </div>
-<div><b>01.2</b> (6 marks)
-<ul><li>Useful: boiling points near ambient temperature so easily liquefied under low pressure (aerosol propellants, fridge / air-conditioning coolants); dissolve grease but do not damage electrical components (solvents); non-flammable; non-toxic</li><li>Persistence: chemically stable / unreactive in the troposphere so they remain long enough to be carried up to the stratosphere</li><li>Dissociation by UV: in the stratosphere higher UV levels break the carbon-chlorine bonds releasing chlorine free radicals</li><li>Chlorine reacts with monatomic oxygen (and ozone), preventing ozone formation; chlorine is regenerated so one atom destroys many ozone molecules; bromine / iodine act similarly</li></ul>
+<div class="mspart"><div class="msh"><b>01.2</b> <span class="mtot">6 marks</span></div>
+<div class="lvl">Up to 6 marks in total; award marks in proportion to the completeness of each point.</div><ul class="pts"><li><span class="mk">up to 2</span><span>Useful: boiling points near ambient temperature so easily liquefied under low pressure (aerosol propellants, fridge / air-conditioning coolants); dissolve grease but do not damage electrical components (solvents); non-flammable; non-toxic</span></li><li><span class="mk">up to 2</span><span>Persistence: chemically stable / unreactive in the troposphere so they remain long enough to be carried up to the stratosphere</span></li><li><span class="mk">up to 2</span><span>Dissociation by UV: in the stratosphere higher UV levels break the carbon-chlorine bonds releasing chlorine free radicals</span></li><li><span class="mk">up to 2</span><span>Chlorine reacts with monatomic oxygen (and ozone), preventing ozone formation; chlorine is regenerated so one atom destroys many ozone molecules; bromine / iodine act similarly</span></li></ul>
 </div>
-<div><b>01.3</b> (3 marks)
-<ul><li>UVB energy is absorbed by cells and breaks up biological molecules / DNA causing mutations, skin cancer, cataracts, sunburn (human health)</li><li>Damage to leaf tissue and reduced photosynthesis / crop yields (plants)</li><li>Damage to marine algae, phytoplankton, corals and planktonic larvae (marine organisms), reducing productivity and food webs</li></ul>
+<div class="mspart"><div class="msh"><b>01.3</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>UVB energy is absorbed by cells and breaks up biological molecules / DNA causing mutations, skin cancer, cataracts, sunburn (human health)</span></li><li><span class="mk">1</span><span>Damage to leaf tissue and reduced photosynthesis / crop yields (plants)</span></li><li><span class="mk">1</span><span>Damage to marine algae, phytoplankton, corals and planktonic larvae (marine organisms), reducing productivity and food webs</span></li></ul>
 </div>
-<div><b>01.4</b> (1 marks)
-<ul><li>An area where the total ozone column falls below 220 Dobson Units (normal is about 300 DU) - a level never recorded before CFC pollution</li></ul>
+<div class="mspart"><div class="msh"><b>01.4</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>An area where the total ozone column falls below 220 Dobson Units (normal is about 300 DU) - a level never recorded before CFC pollution</span></li></ul>
 </div>
-<div><b>01.5</b> (1 marks)
-<ul><li>Concentration varies with altitude and the stratosphere is not normally sampled; Dobson Units measure the total column thickness instead</li></ul>
+<div class="mspart"><div class="msh"><b>01.5</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>Concentration varies with altitude and the stratosphere is not normally sampled; Dobson Units measure the total column thickness instead</span></li></ul>
 </div>
-<div><b>01.6</b> (1 marks)
-<ul><li>The British Antarctic Survey at Halley detected higher UV at ground level, showing ozone above had decreased (satellites above the stratosphere cannot measure downward UV directly)</li></ul>
+<div class="mspart"><div class="msh"><b>01.6</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>The British Antarctic Survey at Halley detected higher UV at ground level, showing ozone above had decreased (satellites above the stratosphere cannot measure downward UV directly)</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 108-109; AQA spec 3.2.1.3.</div></details></div>
-<div class="q" id="OZ-02" data-qid="OZ-02" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 2</span><span class="meta">10 marks &middot; <a href="../subtopic/ozone.html">Ozone depletion</a> &middot; spec 3.2.1.3 &middot; Genn pp. 110-111 &middot; OZ-02</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="OZ-02" data-qid="OZ-02" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 2</span><span class="meta">10 marks &middot; <a href="../subtopic/ozone.html">Ozone depletion</a> &middot; spec 3.2.1.3 &middot; Genn pp. 110-111 &middot; OZ-02</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>Figure 1 shows the minimum ozone concentration recorded over Antarctica each spring between 1979 and 2015.</p>
 <div class="cap">Figure 1</div>
 <svg class="chart" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
@@ -174,20 +190,20 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">02.4</span>Explain why the data in Figure 1 alone could not confirm that CFCs were the cause of the depletion, and describe how the cause was confirmed.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>02.1</b> (2 marks)
-<ul><li>Minimum ozone fell steeply from about 225 DU in 1979 to about 95 DU in the mid 1990s</li><li>Since then it has fluctuated around 100-115 DU with a slight recovery / no further decline</li></ul>
+<div class="mspart"><div class="msh"><b>02.1</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Minimum ozone fell steeply from about 225 DU in 1979 to about 95 DU in the mid 1990s</span></li><li><span class="mk">1</span><span>Since then it has fluctuated around 100-115 DU with a slight recovery / no further decline</span></li></ul>
 </div>
-<div><b>02.2</b> (2 marks)
-<ul><li>(225 - 95) / 225 x 100</li><li>= 57.8% (accept 58%)</li></ul>
+<div class="mspart"><div class="msh"><b>02.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">A correct final answer (with unit where asked) scores full marks. If the answer is wrong, award 1 mark for each correct step of working shown.</div><ul class="pts"><li><span class="mk">1</span><span>(225 - 95) / 225 x 100</span></li><li><span class="mk">1</span><span>= 57.8% (accept 58%)</span></li></ul>
 </div>
-<div><b>02.3</b> (4 marks)
-<ul><li>Stratospheric temperatures over Antarctica are the lowest on Earth so stratospheric clouds / ice crystals form</li><li>Ice crystal surfaces allow reactions that convert the chlorine released from CFCs into chlorine molecules (Cl2) during the dark winter</li><li>The polar vortex (rotating winds) prevents mixing with the rest of the atmosphere, keeping temperatures low and chlorine concentrated</li><li>When sunlight returns in spring (September) it splits the chlorine molecules into free radicals that destroy ozone; levels recover by December as the vortex breaks down</li></ul>
+<div class="mspart"><div class="msh"><b>02.3</b> <span class="mtot">4 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Stratospheric temperatures over Antarctica are the lowest on Earth so stratospheric clouds / ice crystals form</span></li><li><span class="mk">1</span><span>Ice crystal surfaces allow reactions that convert the chlorine released from CFCs into chlorine molecules (Cl2) during the dark winter</span></li><li><span class="mk">1</span><span>The polar vortex (rotating winds) prevents mixing with the rest of the atmosphere, keeping temperatures low and chlorine concentrated</span></li><li><span class="mk">1</span><span>When sunlight returns in spring (September) it splits the chlorine molecules into free radicals that destroy ozone; levels recover by December as the vortex breaks down</span></li></ul>
 </div>
-<div><b>02.4</b> (2 marks)
-<ul><li>Ground and satellite UV / ozone measurements show depletion but not the chemistry / correlation is not causation</li><li>Air samples collected from the stratosphere by helium balloons and high-flying research aircraft detected chlorine and chlorine monoxide, confirming the Rowland-Molina hypothesis</li></ul>
+<div class="mspart"><div class="msh"><b>02.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Ground and satellite UV / ozone measurements show depletion but not the chemistry / correlation is not causation</span></li><li><span class="mk">1</span><span>Air samples collected from the stratosphere by helium balloons and high-flying research aircraft detected chlorine and chlorine monoxide, confirming the Rowland-Molina hypothesis</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 110-111; AQA spec 3.2.1.3.</div></details></div>
-<div class="q" id="OZ-03" data-qid="OZ-03" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 3</span><span class="meta">10 marks &middot; <a href="../subtopic/ozone.html">Ozone depletion</a> &middot; spec 3.2.1.3 &middot; Genn pp. 112-113 &middot; OZ-03</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="OZ-03" data-qid="OZ-03" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 3</span><span class="meta">10 marks &middot; <a href="../subtopic/ozone.html">Ozone depletion</a> &middot; spec 3.2.1.3 &middot; Genn pp. 112-113 &middot; OZ-03</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[3 marks]</span><span class="pn">03.1</span>Describe the main features of the Montreal Protocol (1987).
 </div>
 <div class="part"><span class="marks">[4 marks]</span><span class="pn">03.2</span>For each of the following CFC uses, give the alternative process or material now used and one disadvantage of the alternative.
@@ -197,34 +213,34 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">03.4</span>State <b>one</b> reason why the ozone layer is not expected to recover fully for many decades.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>03.1</b> (3 marks)
-<ul><li>Manufacture and use of CFCs and other ozone-depleting substances (ODSs) phased out then banned</li><li>HCFCs to be phased out (by 2030); some essential uses (eg halon fire extinguishers in aircraft) still permitted</li><li>A fund to help (developing) countries implement the Protocol; legally binding targets (unlike the 1985 Vienna Convention)</li></ul>
+<div class="mspart"><div class="msh"><b>03.1</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Manufacture and use of CFCs and other ozone-depleting substances (ODSs) phased out then banned</span></li><li><span class="mk">1</span><span>HCFCs to be phased out (by 2030); some essential uses (eg halon fire extinguishers in aircraft) still permitted</span></li><li><span class="mk">1</span><span>A fund to help (developing) countries implement the Protocol; legally binding targets (unlike the 1985 Vienna Convention)</span></li></ul>
 </div>
-<div><b>03.2</b> (4 marks)
-<ul><li>Aerosols: pump-action sprays / roll-on deodorants (alternative process), or hydrocarbon propellants (propane, butane) - flammable / fire risk</li><li>Refrigerants: HCFCs (less stable so break down in the troposphere, but still some ozone depletion) then HFCs (no chlorine) - more expensive, less effective, powerful greenhouse gases</li></ul>
+<div class="mspart"><div class="msh"><b>03.2</b> <span class="mtot">4 marks</span></div>
+<div class="lvl">2 marks for each point (partial credit for a partly correct point).</div><ul class="pts"><li><span class="mk">2</span><span>Aerosols: pump-action sprays / roll-on deodorants (alternative process), or hydrocarbon propellants (propane, butane) - flammable / fire risk</span></li><li><span class="mk">2</span><span>Refrigerants: HCFCs (less stable so break down in the troposphere, but still some ozone depletion) then HFCs (no chlorine) - more expensive, less effective, powerful greenhouse gases</span></li></ul>
 </div>
-<div><b>03.3</b> (2 marks)
-<ul><li>CFCs are drained from the appliance and incinerated / broken down at high temperature</li><li>Products are CO2 and acidic gases (HCl, HF) which are neutralised with crushed lime</li></ul>
+<div class="mspart"><div class="msh"><b>03.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>CFCs are drained from the appliance and incinerated / broken down at high temperature</span></li><li><span class="mk">1</span><span>Products are CO2 and acidic gases (HCl, HF) which are neutralised with crushed lime</span></li></ul>
 </div>
-<div><b>03.4</b> (1 marks)
-<ul><li>CFCs are persistent, so those already released continue to reach the stratosphere and destroy ozone for many years; some ODSs (eg dichloromethane) are not banned</li></ul>
+<div class="mspart"><div class="msh"><b>03.4</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>CFCs are persistent, so those already released continue to reach the stratosphere and destroy ozone for many years; some ODSs (eg dichloromethane) are not banned</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 112-113; AQA spec 3.2.1.3.</div></details></div>
-<div class="q" id="OZ-04" data-qid="OZ-04" data-marks="10" data-flags="ext"><div class="qh"><span class="num">Question 4</span><span class="meta">10 marks &middot; <a href="../subtopic/ozone.html">Ozone depletion</a> &middot; spec 3.2.1.3, 3.2.1.2 &middot; Genn pp. 108-113, 105-106 &middot; OZ-04</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="OZ-04" data-qid="OZ-04" data-marks="10" data-flags="ext"><div class="qh"><span class="num">Question 4</span><span class="meta">10 marks &middot; <a href="../subtopic/ozone.html">Ozone depletion</a> &middot; spec 3.2.1.3, 3.2.1.2 &middot; Genn pp. 108-113, 105-106 &middot; OZ-04</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[9 marks]</span><span class="pn">04.1</span>Ozone depletion is often described as an environmental problem that has been tackled successfully. Compare the effectiveness of the methods used to restore the ozone layer with the effectiveness of attempts to tackle global climate change, and explain the reasons for the difference.
 </div>
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">04.2</span>Name the international agreement of 1985 that preceded the Montreal Protocol and state its main weakness.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>04.1</b> (9 marks)
-<div class="lvl"><b>Levels of response:</b> L3 7-9 comprehensive, well-structured, applied to context, supported judgement; L2 4-6 sound but incomplete application/evaluation; L1 1-3 basic, limited structure.</div><div class="lvl"><b>Indicative content:</b></div>
-<ul><li>Stages of scientific method illustrated by ozone: identification (Antarctic UV data), hypothesis (Rowland-Molina 1974), data collection / analysis (Dobson units, satellites, balloons confirming ClO), proposed solutions, enactment (Vienna 1985, Montreal 1987)</li><li>Evidence of success: ozone hole area and depth stabilised and beginning to shrink; CFC concentrations in the atmosphere falling; UV levels not rising further; global ozone loss limited to about 4%</li><li>Reasons for success: international recognition of serious consequences (skin cancer); agreement of nearly every country; legally binding targets with a fund for developing countries; relatively few producers / products; alternatives (HCFCs, HFCs, pump sprays, hydrocarbons) already available and cheap; no lifestyle change needed</li><li>Limits: persistence of CFCs means recovery takes decades; some ODSs still used; HFC replacements are greenhouse gases</li><li>Climate change contrast: greenhouse gases come from almost every human activity (energy, transport, agriculture, industry) in every country; fossil fuels underpin economies so control requires major lifestyle and economic change</li><li>Agreements (Kyoto, Paris) have weaker / non-binding targets, disputes between developed and developing nations; emissions still rising; natural fluctuations, time delays and tipping points make cause-effect less clear to the public</li><li>Judgement: ozone control was a technical substitution problem; climate change is a systemic one, so the ozone success is only partly transferable</li></ul>
+<div class="mspart"><div class="msh"><b>04.1</b> <span class="mtot">9 marks</span></div>
+<table class="levels"><tr><th>Level</th><th>Marks</th><th>What the answer must show</th></tr><tr><td><b>Level 3</b></td><td class="r">7-9</td><td>Answer is comprehensive, relevant and logically structured. Shows detailed knowledge and understanding of the relevant scientific ideas and applies them accurately to the context. Evaluation/analysis is well supported by evidence and a clear judgement or conclusion is reached.</td></tr><tr><td><b>Level 2</b></td><td class="r">4-6</td><td>Answer is mostly relevant and shows some structure. Knowledge and understanding of relevant ideas is sound but application to the context or evaluation may be incomplete or lack detail. A judgement may be made but is not fully supported.</td></tr><tr><td><b>Level 1</b></td><td class="r">1-3</td><td>Answer is basic, with limited structure. Some relevant knowledge is shown but there are omissions or errors. Little application to the context and little or no evaluation.</td></tr><tr><td><b>&nbsp;</b></td><td class="r">0</td><td>No relevant content.</td></tr></table><div class="lvl"><b>Indicative content</b> - credit any of the following (and other relevant, accurate points):</div>
+<ul class="ind"><li>Stages of scientific method illustrated by ozone: identification (Antarctic UV data), hypothesis (Rowland-Molina 1974), data collection / analysis (Dobson units, satellites, balloons confirming ClO), proposed solutions, enactment (Vienna 1985, Montreal 1987)</li><li>Evidence of success: ozone hole area and depth stabilised and beginning to shrink; CFC concentrations in the atmosphere falling; UV levels not rising further; global ozone loss limited to about 4%</li><li>Reasons for success: international recognition of serious consequences (skin cancer); agreement of nearly every country; legally binding targets with a fund for developing countries; relatively few producers / products; alternatives (HCFCs, HFCs, pump sprays, hydrocarbons) already available and cheap; no lifestyle change needed</li><li>Limits: persistence of CFCs means recovery takes decades; some ODSs still used; HFC replacements are greenhouse gases</li><li>Climate change contrast: greenhouse gases come from almost every human activity (energy, transport, agriculture, industry) in every country; fossil fuels underpin economies so control requires major lifestyle and economic change</li><li>Agreements (Kyoto, Paris) have weaker / non-binding targets, disputes between developed and developing nations; emissions still rising; natural fluctuations, time delays and tipping points make cause-effect less clear to the public</li><li>Judgement: ozone control was a technical substitution problem; climate change is a systemic one, so the ozone success is only partly transferable</li></ul>
 </div>
-<div><b>04.2</b> (1 marks)
-<ul><li>Vienna Convention for the Protection of the Ozone Layer - no legally binding goals</li></ul>
+<div class="mspart"><div class="msh"><b>04.2</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>Vienna Convention for the Protection of the Ozone Layer - no legally binding goals</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 108-113, 105-106; AQA spec 3.2.1.3, 3.2.1.2.</div></details></div>
-<div class="q" id="OZ-05" data-qid="OZ-05" data-marks="5" data-flags="mcq"><div class="qh"><span class="num">Question 5</span><span class="meta">5 marks &middot; <a href="../subtopic/ozone.html">Ozone depletion</a> &middot; spec 3.2.1.3 &middot; Genn pp. 108-112 &middot; OZ-05</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="OZ-05" data-qid="OZ-05" data-marks="5" data-flags="mcq"><div class="qh"><span class="num">Question 5</span><span class="meta">5 marks &middot; <a href="../subtopic/ozone.html">Ozone depletion</a> &middot; spec 3.2.1.3 &middot; Genn pp. 108-112 &middot; OZ-05</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">05.1</span>Which of the following statements about stratospheric ozone is correct? Tick one box.
 <ul class="mcq"><li>A&nbsp; Ozone is destroyed only by CFCs</li><li>B&nbsp; Ozone absorbs mainly infrared radiation</li><li>C&nbsp; Ozone is formed when monatomic oxygen reacts with diatomic oxygen</li><li>D&nbsp; Ozone concentrations are highest at ground level</li></ul>
 </div>
@@ -233,14 +249,14 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">05.3</span>Explain why HCFCs cause less ozone depletion than CFCs.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>05.1</b> (1 marks)
-<ul><li>C</li></ul>
+<div class="mspart"><div class="msh"><b>05.1</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">Correct answer only.</div><ul class="pts"><li><span class="mk">1</span><span><b></b>&nbsp; C</span></li></ul>
 </div>
-<div><b>05.2</b> (2 marks)
-<ul><li>Stratospheric ozone is natural and beneficial: absorbs UV, protecting living organisms</li><li>Tropospheric ozone is a secondary pollutant (from NOx photochemistry) that is toxic to plants and humans and is a greenhouse gas</li></ul>
+<div class="mspart"><div class="msh"><b>05.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Stratospheric ozone is natural and beneficial: absorbs UV, protecting living organisms</span></li><li><span class="mk">1</span><span>Tropospheric ozone is a secondary pollutant (from NOx photochemistry) that is toxic to plants and humans and is a greenhouse gas</span></li></ul>
 </div>
-<div><b>05.3</b> (2 marks)
-<ul><li>HCFCs are less chemically stable / contain hydrogen so they are broken down in the troposphere</li><li>So most do not persist long enough to reach the stratosphere where UV would release their chlorine</li></ul>
+<div class="mspart"><div class="msh"><b>05.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>HCFCs are less chemically stable / contain hydrogen so they are broken down in the troposphere</span></li><li><span class="mk">1</span><span>So most do not persist long enough to reach the stratosphere where UV would release their chlorine</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 108-112; AQA spec 3.2.1.3.</div></details></div>
 </div></main>
@@ -259,7 +275,7 @@ const tb=document.getElementById('themeBtn');if(tb)tb.onclick=()=>{const t=root.
 let prog=LS('envsci.progress')||{};
 window.ES.prog=()=>prog;
 function paint(){
-  document.querySelectorAll('.q[data-qid]').forEach(el=>{const s=prog[el.dataset.qid]||0;el.dataset.status=s;el.querySelectorAll('.st button').forEach(b=>b.classList.toggle('on',+b.dataset.s===s&&s>0));});
+  document.querySelectorAll('.q[data-qid]').forEach(el=>{const s=prog[el.dataset.qid]||0;el.dataset.status=s;el.querySelectorAll('.st button[data-s]').forEach(b=>b.classList.toggle('on',+b.dataset.s===s&&s>0));});
   document.querySelectorAll('[data-qids]').forEach(el=>{const ids=el.dataset.qids.split(',').filter(Boolean);const n=ids.length;if(!n)return;
     const ok=ids.filter(i=>prog[i]===2).length,wk=ids.filter(i=>prog[i]===1).length;
     const o=el.querySelector('.bar .ok'),w=el.querySelector('.bar .wk'),p=el.querySelector('.pl');
@@ -267,7 +283,7 @@ function paint(){
   const ov=document.getElementById('overall');if(ov){const all=(ov.dataset.qids||'').split(',').filter(Boolean);const ok=all.filter(i=>prog[i]===2).length,wk=all.filter(i=>prog[i]===1).length;ov.querySelector('.stat').textContent=Math.round(100*ok/all.length)+'%';ov.querySelector('.detail').textContent=ok+' secure, '+wk+' to revisit, '+(all.length-ok-wk)+' not attempted of '+all.length+' questions.';}
 }
 window.ES.paint=paint;
-document.addEventListener('click',e=>{const b=e.target.closest('.st button');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);paint();if(window.ES.onFilter)window.ES.onFilter();});
+document.addEventListener('click',e=>{const b=e.target.closest('.st button[data-s]');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);paint();if(window.ES.onFilter)window.ES.onFilter();});
 const rs=document.getElementById('resetProg');if(rs)rs.onclick=()=>{if(confirm('Clear all saved progress on this browser?')){prog={};SV('envsci.progress',prog);paint();}};
 paint();
 /* ---- filter bar ---- */
@@ -290,6 +306,13 @@ if(fb){
   txt.addEventListener('input',run);fb.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{c.classList.toggle('on');run();});fb.querySelector('select.status').onchange=run;
   const clr=fb.querySelector('.clear');if(clr)clr.onclick=()=>{txt.value='';fb.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));fb.querySelector('select.status').value='all';run();};
   run();}
+/* ---- sticky offset = real header height (nav can wrap) ---- */
+const hd=document.querySelector('header.top');const setH=()=>root.style.setProperty('--hdr',(getComputedStyle(hd).position==='sticky'?hd.offsetHeight:0)+'px');setH();window.addEventListener('resize',setH);
+/* ---- copy link, back to top ---- */
+document.addEventListener('click',e=>{const b=e.target.closest('[data-copy]');if(!b)return;const q=b.closest('.q');const url=location.href.split('#')[0]+'#'+q.id;
+  (navigator.clipboard?navigator.clipboard.writeText(url):Promise.reject()).then(()=>{b.textContent='\u2713';setTimeout(()=>b.innerHTML='&#128279;',1200);}).catch(()=>prompt('Copy this link:',url));});
+const tt=document.createElement('button');tt.id='totop';tt.title='Back to top';tt.innerHTML='&uarr;';tt.className='noprint';document.body.appendChild(tt);tt.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+window.addEventListener('scroll',()=>tt.classList.toggle('show',window.scrollY>600),{passive:true});
 /* ---- print & reveal ---- */
 document.querySelectorAll('[data-print]').forEach(b=>b.onclick=()=>{const ms=b.dataset.print==='ms';document.body.classList.toggle('print-ms',ms);document.querySelectorAll('details.ms').forEach(d=>d.open=ms);window.print();});
 document.querySelectorAll('[data-reveal]').forEach(b=>b.onclick=()=>{const open=b.dataset.reveal==='1';document.querySelectorAll('details.ms').forEach(d=>d.open=open);b.dataset.reveal=open?'0':'1';b.textContent=open?'Hide all mark schemes':'Show all mark schemes';});

@@ -90,6 +90,8 @@ def main():
     for d in ("pdf/topic", "pdf/papers", "topic", "subtopic", "paper", "official"):
         os.makedirs(os.path.join(SITE, d), exist_ok=True)
 
+    site.OFFICIAL_FILES = official_files()   # needed for the real-question links on subtopic pages
+
     # ---- topic sets ----
     by_sub = {}
     for q in questions:
@@ -165,6 +167,10 @@ def main():
         f.write(site.quickfire_page())
     with open(os.path.join(SITE, "search.html"), "w", encoding="utf-8") as f:
         f.write(site.search_page())
+    with open(os.path.join(SITE, "pastq.html"), "w", encoding="utf-8") as f:
+        f.write(site.pastq_page())
+    with open(os.path.join(SITE, "planner.html"), "w", encoding="utf-8") as f:
+        f.write(site.planner_page(sets_by_sub, site.official_counts()))
     print(f"Done -> {os.path.join(SITE, 'index.html')}")
 
 

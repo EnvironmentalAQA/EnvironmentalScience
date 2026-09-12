@@ -1,0 +1,110 @@
+"""Extra 15-mark questions (each ends with a 9-mark levels-of-response part) so that the mock-paper
+assembler can use the real AQA pattern (2 x 15, 5 x 10, 3 x 5) more often.
+Genn pp. 10-19, 243-245, 303-304, 370-374, 390-393, 402-407, 420-423."""
+from gen.model import Q, P, Table, Chart
+
+QUESTIONS = [
+    # ---------------- Paper 1: principles of pollution control ----------------
+    Q("PCON-08", "pollution-control", "3.4.3.1, 3.4.3.3", "243-245, 303-304",
+      intro="Figure 1 shows how the cost of controlling emissions from a factory changes with the proportion of the pollutant that is prevented from being released.",
+      figures=[Chart("line", "Proportion of pollution prevented / %", "Cost / &pound; million", {"Cost": [(0, 0), (20, 0.4), (40, 0.9), (60, 1.6), (80, 3.0), (90, 5.0), (95, 8.0), (99, 16.0)]}, y_min=0, y_max=18)],
+      parts=[
+          P("Use Figure 1 to calculate the extra cost of increasing control from 90% to 99% of the pollutant.", 1, calc=True, unit="&pound; million", ms=["16.0 - 5.0 = &pound;11 million"]),
+          P("Explain how the terms <b>ALARA</b> and <b>BATNEEC</b> are used when deciding how much pollution control is required.", 3,
+            ms=["It is rarely practical to reduce emissions to zero and the impact of low-level emissions may be acceptable, so an acceptable level must be decided",
+                "ALARA: emissions should be As Low As Reasonably Achievable", "BATNEEC: the Best Available Technology Not Entailing Excessive Cost is chosen to achieve this"]),
+          P("Explain why the control methods that were originally adequate for a factory may no longer be sufficient.", 2,
+            ms=["As industries expand or cities grow the number of pollutant sources increases", "So the total emissions / combined concentration rises even if each source is unchanged, and higher standards are needed"]),
+          P("Evaluate the principles and general strategies that can be used to decide how pollution should be controlled.", 9, level=True,
+            ms=["Critical Pathway Analysis: predicting movement of mobile persistent pollutants (state of effluent, wind, currents, geology, pH / oxygen and solubility, bioaccumulation, food sources, half-lives) so monitoring focuses on sites at risk; mainly radioactive discharges; checked by sampling",
+                "Critical Group Monitoring: exposure of the most-exposed group monitored before health effects; if their risk is acceptable everyone else is safer; emissions reduced if not",
+                "Emission control strategies: location (marine discharges, downwind of cities, not over aquifers) and timing (avoiding temperature inversions, low river flow)",
+                "Principles: polluter pays (incentive depends on penalties and enforcement), precautionary principle (assume harm until shown otherwise; ignorance no excuse), ALARA / BATNEEC and the non-linear cost-efficiency relationship",
+                "Selection of methods: production prevention (desulfurisation), prevention of release (precipitators, catalytic converters), post-release remediation (oil spill clean-up, phytoremediation), alternative processes (electric vehicles, renewables, pyrethroids)",
+                "Evaluation: prevention usually cheaper and more effective than remediation; costs rise steeply near 100%; CPA relies on understanding of pathways; enforcement and international agreement needed for transboundary pollutants; judgement about acceptable risk is political as well as scientific",
+                "Justified conclusion"]),
+      ]),
+
+    # ---------------- Both papers: research methods ----------------
+    Q("RM-21", "methodology", "3.7.1, 3.7.2.3", "390-393, 420-423",
+      intro="A student investigated whether the number of earthworms per m<sup>2</sup> differs between an organic field and a conventionally farmed field. Table 1 shows the results.",
+      figures=[Table(["Field", "Number of samples", "Mean earthworms per m^2", "Standard deviation"], [["Organic", "10", "48", "14"], ["Conventional", "10", "31", "12"]])],
+      parts=[
+          P("Name the statistical test the student should use and explain why it is appropriate.", 2,
+            ms=["t-test (or Mann-Whitney U if not normally distributed)", "Comparing two means of counted / measured data from two independent samples"]),
+          P("The test gave p = 0.01. State the conclusion the student should draw.", 2,
+            ms=["The difference is statistically significant (less than 1% probability that it arose by chance)", "The null hypothesis (no difference between fields) is rejected; the organic field has significantly more earthworms"]),
+          P("Explain why the student cannot conclude that organic farming <b>caused</b> the higher earthworm numbers.", 2,
+            ms=["A significant difference does not show a causal relationship", "Other variables (soil type, moisture, pH, cultivation history) may differ between the two fields and cause the difference"]),
+          P("Evaluate the decisions that must be made when planning a fieldwork investigation so that valid conclusions can be drawn.", 9, level=True,
+            ms=["Scientific methodology: identifying the topic, reviewing existing knowledge, formulating a testable hypothesis and null hypothesis, designing the study, analysing and drawing conclusions, planning further research",
+                "Sample location: random (grid coordinates / numbered sites) or systematic (transects, fixed intervals) to avoid bias; interval chosen so variation is detected without excess data",
+                "Sample timing: diurnal, seasonal, weather-related and long-term changes; sampling on different occasions; interval matched to rate of change",
+                "Sample size and number: larger and more samples for non-homogeneous variables; running mean and standard deviation show when the mean is reliable; preliminary study to decide",
+                "Standardisation and control of variables; accuracy, precision, reliability, representativeness; anomalies and repeats; calibration of equipment; appropriate techniques and risk management",
+                "Statistical analysis: choosing the test (Spearman, chi-squared, t-test, Mann-Whitney), significance and p-values, error bars, correlation vs causation",
+                "Evaluation: trade-offs between cost, time, disturbance and reliability; limitations of sub-sampling; justified conclusion"]),
+      ]),
+
+    # ---------------- Paper 2: value of biodiversity ----------------
+    Q("BIOV-08", "biodiversity-value", "3.1.2.1", "10-19",
+      intro="Table 1 shows some medicines that were discovered in wild species.",
+      figures=[Table(["Medicine", "Source species", "Use"], [["Taxol", "Yew tree", "Cancers of the breast, ovary, lung, bladder and prostate"], ["Quinine", "Cinchona tree", "Malaria"], ["AZT", "Caribbean marine sponge", "HIV / AIDS"], ["Diosgenin (steroids)", "Mexican yam", "Contraceptive pill, cortisone"]])],
+      parts=[
+          P("Explain why many plants produce chemicals that turn out to be useful medicines.", 2,
+            ms=["Plants produce chemicals (often alkaloids) that are toxic to the herbivores that would eat them", "In carefully controlled amounts these chemicals have beneficial physiological effects in humans"]),
+          P("Explain why the medicines in Table 1 provide an argument for conserving whole habitats rather than individual species.", 2,
+            ms=["Only a very small proportion of species have been studied for medicinal substances, so it is not known which species will be useful",
+                "Conserving the habitat protects all the species in it, including those not yet studied and the species they depend on"]),
+          P("Describe how <b>one</b> named species is being studied to help solve a human health problem other than by providing a medicine.", 2,
+            ms=["Marsupials (kangaroo / wallaby): young develop in the pouch so are easier to study than a human foetus - developmental problems",
+                "Hippopotamus: hipposudoric acid skin secretion (sunscreen / antimicrobial) - burns treatment", "Marine sponges: proteins preventing graft rejection - organ transplants"]),
+          P("Discuss the extent to which the resources and ecosystem services provided by other species justify the conservation of biodiversity.", 9, level=True,
+            ms=["Resources: wood, fibres, oils, fuels, food; new food species adapted to local conditions (morama bean, yeheb, perennial maize, Kernza, bison, eland)",
+                "Biomimetics: whale flipper tubercles, shark skin, termite-mound ventilation, bird bones, gecko adhesion, burrs / Velcro, lotus self-cleaning, spider silk",
+                "Medicines and physiological research; genetic resources - crop wild relatives, Vavilov centres, gene pools, inbreeding",
+                "Ecosystem services: atmospheric composition, hydrological cycle, biogeochemical cycles, soil maintenance; interspecies relationships - food, pollination, seed dispersal, habitat provision",
+                "Evaluation: services go unnoticed because of dynamic equilibrium; unknown future value; economic vs moral / intrinsic arguments; conservation also needed for aesthetic and cultural reasons",
+                "Justified conclusion"]),
+      ]),
+
+    # ---------------- Paper 2: sustainability ----------------
+    Q("SUS-16", "dynamic-equilibria", "3.6.1-3.6.3", "370-374",
+      parts=[
+          P("State the Brundtland Commission definition of sustainable development.", 1,
+            ms=["Development that meets the needs of the present generation without compromising the ability of future generations to meet their own needs"]),
+          P("Explain the difference between a negative feedback mechanism and a positive feedback mechanism, giving <b>one</b> example of each in the climate system.", 4,
+            ms=["Negative feedback resists change / returns the system towards its previous state", "eg increased temperature increases cloud cover and albedo, or higher CO<sub>2</sub> increases photosynthesis",
+                "Positive feedback increases the change / makes it self-sustaining", "eg melting permafrost releasing methane, declining albedo as ice melts, forest and peat fires"]),
+          P("Explain why a diverse ecosystem is more likely to resist change than an agroecosystem.", 1,
+            ms=["Many species with a complex food web so the loss of one has a small effect; agroecosystems have few species and lack detritivores, pollinators and pest predators that maintain stability"]),
+          P("Evaluate the extent to which copying the principles of natural systems could make human activities more sustainable.", 9, level=True,
+            ms=["Principles of natural systems: dynamic equilibria and negative feedback; diverse systems resistant to change; low energy-density renewable energy (solar-driven hydrological, carbon and nitrogen cycles); low-temperature processes using enzymes; material cycles with wastes as raw materials; small number of abundant elements; biodegradable non-toxic wastes",
+                "Human systems: non-renewable energy, high temperatures (Haber process, incineration, manufacturing), linear resource use, dispersal of minerals and mixtures that are hard to separate, persistent toxins (PCBs, organochlorines, toxic metals in electronics)",
+                "Applications: renewable energy and heat pumps, bioleaching, recycling and design for re-use, industrial symbiosis, organic and integrated agriculture, retaining hedgerows and pollinators, circular economy",
+                "Human responses that override feedback (fertilisers, irrigation, pesticides) and positive feedback triggered by human activity (permafrost, methane hydrates, fires); tipping points",
+                "Barriers: population size and affluence, attitudes of urban populations to distant resources, economics, need for international cooperation, existing infrastructure",
+                "Justified conclusion on how far natural principles can be applied"]),
+      ]),
+
+    # ---------------- Paper 2: ecological monitoring ----------------
+    Q("MON-07", "eco-monitoring", "3.1.2.3.5-3.1.2.3.6", "402-407",
+      intro="Table 1 shows the number of adult great crested newts caught in bottle traps in a pond over five years, and the number of ponds in the area in which the species was detected using environmental DNA (eDNA).",
+      figures=[Table(["Year", "Adults caught in traps", "Ponds with newts detected by eDNA (out of 20)"], [["2019", "14", "6"], ["2020", "22", "9"], ["2021", "18", "11"], ["2022", "31", "13"], ["2023", "27", "15"]])],
+      parts=[
+          P("Calculate the percentage increase in the number of ponds where newts were detected between 2019 and 2023.", 2, calc=True, unit="%", ms=["(15 - 6) / 6 x 100", "= 150%"]),
+          P("Explain how eDNA detects the presence of newts without catching them.", 2,
+            ms=["Cells shed by the newts into the water contain their DNA", "Water samples are analysed for DNA sequences unique to the species"]),
+          P("Suggest why trap catches are a less reliable measure of population change than the eDNA survey.", 2,
+            ms=["Catches depend on trapping effort, weather and newt activity on the night, so they vary from year to year", "Trapping only samples one pond and one part of the population, whereas eDNA surveys all 20 ponds with a standard method"]),
+          P("Evaluate the contribution of new technologies to ecological monitoring and wildlife conservation.", 9, level=True,
+            ms=["Image databases of unique markings (tiger stripes, whale shark spots, dolphin fins) giving territory size, movements, lifespan and social groups; limited to species with unique features",
+                "Motion-sensitive and infrared cameras, CCTV of nests with less disturbance; marking (rings, wing tags)",
+                "DNA: eDNA to detect presence (great crested newts, invasive carp); DNA databases to identify regional populations and trace timber, ivory and fish",
+                "Auditory monitoring: bat detectors and sonograms for presence, abundance and activity",
+                "Position monitoring: radio, GPS and acoustic transmitters; geolocator tags for small birds; data recorders; carrier systems - ROVs / drones, AUVs, balloons, aircraft, satellites, animals",
+                "Satellites: visible light for land use and deforestation, infrared for vegetation and temperature, radar for wind, waves, sea level and oil; GPS for tracking",
+                "Evaluation: greater coverage, less disturbance and continuous data vs cost, battery / weight limits, calibration, need for ground-truthing, ethical issues of tagging; indirect evidence and traditional methods still needed",
+                "Justified conclusion"]),
+      ]),
+]

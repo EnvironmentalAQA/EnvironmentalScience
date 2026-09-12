@@ -69,12 +69,12 @@ footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-
 .prog .bar .ok{background:var(--ok);height:100%}.prog .bar .wk{background:var(--warn);height:100%}.prog .pl{white-space:nowrap;min-width:90px}
 .hero .prog{color:rgba(255,255,255,.85)}.hero .prog .bar{background:rgba(255,255,255,.25)}
 /* filter bar & tools */
-.filterbar{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.filterbar{position:sticky;top:var(--hdr,62px);z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .filterbar input[type=search]{flex:1 1 220px;font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
 .filterbar label{font-size:.85rem;color:var(--stone);display:inline-flex;align-items:center;gap:4px;cursor:pointer}.filterbar .chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--sand);color:var(--stone);font-size:.82rem;cursor:pointer;font-family:inherit}
 .filterbar .chip.on{background:var(--moss);color:#fff;border-color:var(--moss)}.filterbar .cnt{font-size:.85rem;color:var(--stone);margin-left:auto}
 .filterbar select{font:inherit;font-size:.88rem;padding:5px 8px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
-.tools{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:10px 0;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.tools{position:sticky;top:var(--hdr,62px);z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:10px 0;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .tools .time{font-family:Fraunces,serif;font-size:1.6rem;font-weight:700;color:var(--head);min-width:120px}.tools .time.low{color:var(--bad)}
 .tools .score{font-weight:700;color:var(--moss)}.tools .score b{font-family:Fraunces,serif;font-size:1.3rem}.tools .pct{font-size:.85rem;color:var(--stone)}
 .tools button{font-family:inherit;font-size:.88rem;padding:6px 12px;border-radius:8px;border:1px solid var(--moss);background:transparent;color:var(--moss);cursor:pointer}.tools button.primary{background:var(--moss);color:#fff}
@@ -87,6 +87,20 @@ footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-
 .res{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0;text-decoration:none;color:inherit}.res:hover{border-color:var(--moss)}
 .res .t{font-weight:700;color:var(--head)}.res .m{font-size:.82rem;color:var(--stone)}.res .s{font-size:.92rem;margin-top:4px}.res mark{background:#ffe58a;color:#222;border-radius:3px;padding:0 2px}
 .empty{color:var(--stone);font-style:italic}
+/* mark scheme points, levels, links */
+.mspart{margin:8px 0 12px}.msh{display:flex;align-items:baseline;gap:8px;margin-bottom:2px}.msh .mtot{font-size:.8rem;color:var(--earth);font-weight:700}
+ul.pts{list-style:none;margin:4px 0 6px 0!important;padding:0}ul.pts li{display:flex;gap:10px;align-items:flex-start;padding:4px 0;border-top:1px dashed var(--ms-line)}ul.pts li:first-child{border-top:0}
+.mk{flex:0 0 auto;min-width:26px;text-align:center;font-size:.75rem;font-weight:700;color:#fff;background:var(--ok);border-radius:6px;padding:2px 6px;margin-top:3px}
+table.levels{border-collapse:collapse;width:100%;margin:6px 0 10px;font-size:.86rem;background:var(--card)}table.levels th,table.levels td{border:1px solid var(--ms-line);padding:5px 8px;text-align:left;vertical-align:top}table.levels th{background:var(--sand-dark)}table.levels td.r{white-space:nowrap;font-weight:700;color:var(--earth)}
+ul.ind{margin:4px 0 8px 18px}
+.st button.lnk{padding:2px 7px}
+#totop{position:fixed;right:18px;bottom:18px;z-index:15;background:var(--moss);color:#fff;border:0;border-radius:50%;width:42px;height:42px;font-size:1.2rem;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .2s}#totop.show{opacity:1;pointer-events:auto}
+.jump{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 4px}.jump a{font-size:.82rem;padding:3px 10px;border-radius:999px;border:1px solid var(--line);background:var(--sand);color:var(--moss);text-decoration:none;font-weight:600}.jump a:hover{background:var(--leaf-light)}
+.real .row{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;padding:8px 0;border-bottom:1px dashed var(--line);font-size:.95rem}.real .row .ser{font-weight:700;color:var(--head);min-width:150px}.real .row .qn{color:var(--stone);min-width:70px}.real .row .t{flex:1 1 300px}
+.real .row a{font-size:.82rem;padding:2px 9px;border-radius:999px;border:1px solid var(--line);background:var(--sand);text-decoration:none;font-weight:600}
+.plan input[type=date]{font:inherit;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}.plan .big{font-family:Fraunces,serif;font-size:2rem;color:var(--moss)}
+table.list td .bar{height:8px;background:var(--sand-dark);border-radius:999px;overflow:hidden;display:flex;width:140px}table.list td .bar .ok{background:var(--ok)}table.list td .bar .wk{background:var(--warn)}
+@media(max-width:720px){header.top{position:static}header.top nav a{margin-left:12px;font-size:.88rem}.filterbar,.tools{top:0}.hero h1{font-size:1.8rem}.hero{padding:34px 0 28px}.sub-item .t{flex-basis:100%}}
 /* print */
 @media print{header.top,footer,.tools,.filterbar,.st,.pill,.aw,.hero .crumbs,.prog,.noprint{display:none!important}
 body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;color:#000;padding:10px 0}.hero p,.hero h1{color:#000}.hero:before{display:none}
@@ -94,255 +108,200 @@ body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;c
 svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 </style>
 <script>try{if(localStorage.getItem('envsci.theme')==='"dark"')document.documentElement.dataset.theme='dark';}catch(e){}</script></head><body data-paper="P2-Set27" data-max="120">
-<header class="top"><div class="wrap"><a class="brand" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb069" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-8 0-14 4-14 12 0 1.5.3 3 1 4 2-6 6-9 11-11-4 3-7 6-8 12 8 0 12-6 10-17z"/></svg><span>AQA Environmental Science</span></a><nav><a href="../index.html" class="">Topics</a><a href="../papers.html" class="">Mock papers</a><a href="../official.html" class="">Past papers</a><a href="../essays.html" class="">Essay bank</a><a href="../quickfire.html" class="">Quick-fire</a><a href="../search.html" class="">Search</a><button class="icon-btn" id="themeBtn" type="button" title="Toggle dark mode">&#9790; Dark</button></nav></div></header>
+<header class="top"><div class="wrap"><a class="brand" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb069" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-8 0-14 4-14 12 0 1.5.3 3 1 4 2-6 6-9 11-11-4 3-7 6-8 12 8 0 12-6 10-17z"/></svg><span>AQA Environmental Science</span></a><nav><a href="../index.html" class="">Topics</a><a href="../papers.html" class="">Mock papers</a><a href="../official.html" class="">Past papers</a><a href="../essays.html" class="">Essay bank</a><a href="../pastq.html" class="">Real Qs by topic</a><a href="../quickfire.html" class="">Quick-fire</a><a href="../planner.html" class="">Planner</a><a href="../search.html" class="">Search</a><button class="icon-btn" id="themeBtn" type="button" title="Toggle dark mode">&#9790; Dark</button></nav></div></header>
 <section class="hero p2 small"><div class="wrap"><div class="crumbs"><a href="../papers.html">Mock papers</a><span>&rsaquo;</span>Set 27</div><h1>Paper 2 &mdash; Generated Set 27</h1><p>120 marks &middot; 3 hours &middot; <a style="color:#fff" href="../pdf/papers/P2-Set27-QP.pdf">Question paper PDF</a> &middot; <a style="color:#fff" href="../pdf/papers/P2-Set27-MS.pdf">Mark scheme PDF</a></p></div></section>
 <main><div class="wrap">
 <div class="tools noprint"><span class="time" id="clock">3:00:00</span><button type="button" class="primary" id="startBtn">Start exam</button><button type="button" id="resetBtn">Reset timer</button><span class="score">Score <b id="scoreN">0</b>/120 <span class="pct" id="scorePct">0%</span></span><button type="button" id="clearScore">Clear marks</button><button type="button" data-reveal="1">Show all mark schemes</button><button type="button" data-print="qp">Print</button><button type="button" data-print="ms">Print + MS</button><span class="kbd">Enter the marks you award yourself inside each mark scheme; the score is saved for this paper.</span></div>
-<div class="q" id="RM-17" data-qid="RM-17" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 1</span><span class="meta">10 marks &middot; <a href="../subtopic/methodology.html">Scientific methodologies &amp; sampling design</a> &middot; spec 3.7.1 &middot; Genn pp. 391-393 &middot; RM-17</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
-<p>Figure 1 shows the mean number of woodlice per pitfall trap calculated as more traps were included in the mean (a running mean).</p>
-<div class="cap">Figure 1</div>
-<svg class="chart" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
-<polyline points="60.0,55.7 96.9,118.2 133.8,87.9 170.8,107.5 244.6,98.6 318.5,102.1 392.3,100.4 466.2,100.4 540.0,100.4" fill="none" stroke="#22302a" stroke-width="1.8"/>
-<circle cx="60.0" cy="55.7" r="2.6" fill="#22302a"/>
-<circle cx="96.9" cy="118.2" r="2.6" fill="#22302a"/>
-<circle cx="133.8" cy="87.9" r="2.6" fill="#22302a"/>
-<circle cx="170.8" cy="107.5" r="2.6" fill="#22302a"/>
-<circle cx="244.6" cy="98.6" r="2.6" fill="#22302a"/>
-<circle cx="318.5" cy="102.1" r="2.6" fill="#22302a"/>
-<circle cx="392.3" cy="100.4" r="2.6" fill="#22302a"/>
-<circle cx="466.2" cy="100.4" r="2.6" fill="#22302a"/>
-<circle cx="540.0" cy="100.4" r="2.6" fill="#22302a"/>
-<line x1="60.0" y1="270" x2="60.0" y2="274" stroke="#000"/><text x="60.0" y="286" text-anchor="middle">5</text>
-<line x1="56" y1="270.0" x2="60" y2="270.0" stroke="#000"/><text x="52" y="274.0" text-anchor="end">0</text>
-<line x1="156.0" y1="270" x2="156.0" y2="274" stroke="#000"/><text x="156.0" y="286" text-anchor="middle">18</text>
-<line x1="56" y1="220.0" x2="60" y2="220.0" stroke="#000"/><text x="52" y="224.0" text-anchor="end">2.8</text>
-<line x1="252.0" y1="270" x2="252.0" y2="274" stroke="#000"/><text x="252.0" y="286" text-anchor="middle">31</text>
-<line x1="56" y1="170.0" x2="60" y2="170.0" stroke="#000"/><text x="52" y="174.0" text-anchor="end">5.6</text>
-<line x1="348.0" y1="270" x2="348.0" y2="274" stroke="#000"/><text x="348.0" y="286" text-anchor="middle">44</text>
-<line x1="56" y1="120.0" x2="60" y2="120.0" stroke="#000"/><text x="52" y="124.0" text-anchor="end">8.4</text>
-<line x1="444.0" y1="270" x2="444.0" y2="274" stroke="#000"/><text x="444.0" y="286" text-anchor="middle">57</text>
-<line x1="56" y1="70.0" x2="60" y2="70.0" stroke="#000"/><text x="52" y="74.0" text-anchor="end">11.2</text>
-<line x1="540.0" y1="270" x2="540.0" y2="274" stroke="#000"/><text x="540.0" y="286" text-anchor="middle">70</text>
-<line x1="56" y1="20.0" x2="60" y2="20.0" stroke="#000"/><text x="52" y="24.0" text-anchor="end">14</text>
-<line x1="60" y1="20" x2="60" y2="270" stroke="#000"/><line x1="60" y1="270" x2="540" y2="270" stroke="#000"/>
-<text x="300.0" y="312" text-anchor="middle" font-weight="bold">Number of traps used to calculate the mean</text>
-<text transform="translate(14,145.0) rotate(-90)" text-anchor="middle" font-weight="bold">Running mean number of woodlice per trap</text>
-</svg>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">01.1</span>Use Figure 1 to suggest the minimum number of traps needed to produce a reliable mean. Give a reason for your answer.
+<div class="jump noprint"><a href="#SUS-14">Q1 &middot; 10</a><a href="#FS-05">Q2 &middot; 5</a><a href="#CBR-02">Q3 &middot; 10</a><a href="#SUS-08">Q4 &middot; 10</a><a href="#HAB-12">Q5 &middot; 10</a><a href="#LP-02">Q6 &middot; 10</a><a href="#RM-04">Q7 &middot; 5</a><a href="#PRI-02">Q8 &middot; 10</a><a href="#BIOV-02">Q9 &middot; 10</a><a href="#FISH-07">Q10 &middot; 15</a><a href="#essay">Q11 &middot; essay</a></div>
+<div class="q" id="SUS-14" data-qid="SUS-14" data-marks="10" data-flags="data table"><div class="qh"><span class="num">Question 1</span><span class="meta">10 marks &middot; <a href="../subtopic/natural-systems.html">Energy &amp; material cycles: natural vs human systems</a> &middot; spec 3.6.2-3.6.3 &middot; Genn pp. 373-374 &middot; SUS-14</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="part"><span class="marks">[4 marks]</span><span class="pn">01.1</span>Complete Table 1 to compare natural systems with typical linear human systems.
+<div class="cap">Table 1</div><table class="data"><tr><th>Feature</th><th>Natural systems</th><th>Linear human systems</th></tr><tr><td>Energy source</td><td></td><td></td></tr><tr><td>Use of materials</td><td></td><td></td></tr><tr><td>Nature of wastes</td><td></td><td></td></tr><tr><td>Temperature of processes</td><td></td><td></td></tr></table>
 </div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">01.2</span>Explain why the number of samples needed depends on the degree of scatter of the results.
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">01.2</span>Explain why natural systems can be sustained using a relatively small number of elements.
 </div>
-<div class="part"><span class="marks">[3 marks]</span><span class="pn">01.3</span>The student wants to compare woodlouse numbers in a woodland and in a grassland. Describe how the sampling should be standardised.
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">01.3</span>Explain why the human use of minerals makes them difficult to recover and re-use.
 </div>
-<div class="part"><span class="marks">[3 marks]</span><span class="pn">01.4</span>Explain why the timing of sampling would matter if the student were investigating the activity of flying insects rather than woodlice.
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">01.4</span>Explain why toxic metals in electronic products cause problems that the wastes of natural systems do not.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>01.1</b> (2 marks)
-<ul><li>About 40-50 traps</li><li>Because the running mean stops changing / fluctuating with fewer than this the mean is unreliable</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="RM-17.1"></label> / 2</div>
+<div class="mspart"><div class="msh"><b>01.1</b> <span class="mtot">4 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Energy: low energy-density renewable (solar) / non-renewable fossil fuels</span></li><li><span class="mk">1</span><span>Materials: cyclic - wastes of one process are raw materials of the next / linear - used once then discarded, depletion</span></li><li><span class="mk">1</span><span>Wastes: biodegradable, non-toxic or do not build up / toxic, persistent (eg PCBs, organochlorines, toxic metals) that bioaccumulate</span></li><li><span class="mk">1</span><span>Temperature: low / high (Haber process, incineration)</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="4" step="1" data-kind="part" data-key="SUS-14.1"></label> / 4</div>
 </div>
-<div><b>01.2</b> (2 marks)
-<ul><li>Widely scattered results (large standard deviation) mean a single sample may not be representative</li><li>More samples are needed so that the effect of variability is averaged out and the mean is representative / significance can be assessed</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="RM-17.2"></label> / 2</div>
+<div class="mspart"><div class="msh"><b>01.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Abundant simple raw materials build into monomers and then a wide range of polymers (carbohydrates, proteins)</span></li><li><span class="mk">1</span><span>They are re-used in cycles so there is no depletion of raw materials or build-up of wastes</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="SUS-14.2"></label> / 2</div>
 </div>
-<div><b>01.3</b> (3 marks)
-<div class="lvl"><i>Any 3 from:</i></div>
-<ul><li>Same type and size of pitfall trap, set for the same length of time</li><li>Traps emptied at the same time of day / same weather conditions in both habitats</li><li>Same number of traps and same method of positioning (random or systematic) in each habitat</li><li>Other variables that could affect results (eg rainfall, temperature) monitored or controlled</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="RM-17.3"></label> / 3</div>
+<div class="mspart"><div class="msh"><b>01.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Use often disperses the minerals (eg in products spread over the world / corrosion)</span></li><li><span class="mk">1</span><span>Or produces mixtures of materials that are difficult to separate, so sustainable exploitation is reduced</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="SUS-14.3"></label> / 2</div>
 </div>
-<div><b>01.4</b> (3 marks)
-<ul><li>Flying insect activity changes with weather over minutes to weeks (temperature, wind) and diurnally</li><li>Samples on different occasions are needed to produce a mean that represents the typical value or to identify trends</li><li>The interval between samples should match the rate at which the factor changes, found from a preliminary study</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="RM-17.4"></label> / 3</div>
+<div class="mspart"><div class="msh"><b>01.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>They cannot easily be removed from end-of-life appliances and are not biodegradable</span></li><li><span class="mk">1</span><span>Natural wastes are non-toxic / broken down to raw materials for other processes, whereas persistent toxins may bioaccumulate and biomagnify</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="SUS-14.4"></label> / 2</div>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 373-374; AQA spec 3.6.2-3.6.3.</div></details></div>
+<div class="q" id="FS-05" data-qid="FS-05" data-marks="5" data-flags=""><div class="qh"><span class="num">Question 2</span><span class="meta">5 marks &middot; <a href="../subtopic/food-species.html">Manipulation of food species &amp; agricultural energetics</a> &middot; spec 3.5.1.2 &middot; Genn pp. 321-322 &middot; FS-05</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="part"><span class="marks">[1 mark]</span><span class="pn">02.1</span>State what is meant by <b>hybrid vigour</b>.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">02.2</span>Explain how cross-breeding Zebu and Ayrshire cattle produced a breed suited to hot climates.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">02.3</span>Give <b>two</b> potential applications of cloning to livestock farming.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div class="mspart"><div class="msh"><b>02.1</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>Cross-bred offspring are healthier / more productive because the problems caused by homozygous recessive genes in inbred varieties are reduced (heterosis)</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="1" step="1" data-kind="part" data-key="FS-05.1"></label> / 1</div>
+</div>
+<div class="mspart"><div class="msh"><b>02.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Zebu tolerate heat but have a low milk yield; Ayrshire have a high milk yield but are not heat tolerant</span></li><li><span class="mk">1</span><span>Cross-breeding combined the desirable characteristics: heat tolerance with a high milk yield</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="FS-05.2"></label> / 2</div>
+</div>
+<div class="mspart"><div class="msh"><b>02.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">Any 2 from the points below - 1 mark each, maximum 2.</div><ul class="pts"><li><span class="mk">1</span><span>Replacement of valuable animals that die with genetically identical individuals</span></li><li><span class="mk">1</span><span>Replacement of herds culled during a disease outbreak</span></li><li><span class="mk">1</span><span>Production of large numbers of individuals with desirable characteristics</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="FS-05.3"></label> / 2</div>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 321-322; AQA spec 3.5.1.2.</div></details></div>
+<div class="q" id="CBR-02" data-qid="CBR-02" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 3</span><span class="meta">10 marks &middot; <a href="../subtopic/cbr-habitat.html">Captive breeding, habitat creation &amp; management</a> &middot; spec 3.1.2.3.3 &middot; Genn pp. 33-35 &middot; CBR-02</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<p>The Hawaiian goose (nene) was reduced by hunting, habitat loss and introduced predators to about 30 birds. A captive breeding programme started with just seven individuals and has increased the wild population to over 2000.</p>
+<div class="part"><span class="marks">[4 marks]</span><span class="pn">03.1</span>Explain why starting the programme with seven individuals caused problems, and describe how these problems are managed.
+</div>
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">03.2</span>Explain <b>three</b> reasons, other than gene pool size, why species kept in captivity may fail to breed.
+</div>
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">03.3</span>Describe how artificial insemination and embryo transfer increase breeding success in captive mammals.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div class="mspart"><div class="msh"><b>03.1</b> <span class="mtot">4 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Very small gene pool so individuals are closely related and inbreeding is likely</span></li><li><span class="mk">1</span><span>Harmful recessive genes are expressed when both parents carry them: some goslings had thin hair-like feathers with poor insulation so survival in cold weather was low</span></li><li><span class="mk">1</span><span>A stud book records family trees so breeding is arranged between the least related individuals (often coordinated by a specialist zoo)</span></li><li><span class="mk">1</span><span>Exchange of individuals / semen between zoos; avoid hybridisation with related species / subspecies</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="4" step="1" data-kind="part" data-key="CBR-02.1"></label> / 4</div>
+</div>
+<div class="mspart"><div class="msh"><b>03.2</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">Any 3 from the points below - 1 mark each, maximum 3.</div><ul class="pts"><li><span class="mk">1</span><span>Breeding is triggered by stimuli (day length, light, temperature, food, body fat) which may be unknown / not provided</span></li><li><span class="mk">1</span><span>Population interactions: mixing breeding and non-breeding individuals causes conflict; some need a choice of partners, others pair for life</span></li><li><span class="mk">1</span><span>Breeding habitat needed: courtship display sites, nest sites, social groups (flamingos only breed in large groups - mirrors used)</span></li><li><span class="mk">1</span><span>Stress / disturbance</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="CBR-02.2"></label> / 3</div>
+</div>
+<div class="mspart"><div class="msh"><b>03.3</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>AI: semen collected (and can be stored / cryopreserved for years) and inserted into the female, so animals need not be transported or meet; avoids dangerous mating (elephants, rhinos) and partner rejection</span></li><li><span class="mk">1</span><span>Embryo transfer: a female of the endangered species (eg bongo) is treated with hormones to release many eggs, which are fertilised and implanted into surrogate females of a common related species (eland)</span></li><li><span class="mk">1</span><span>So many offspring are produced per cycle instead of one calf per year, overcoming the shortage of breeding females</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="CBR-02.3"></label> / 3</div>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 33-35; AQA spec 3.1.2.3.3.</div></details></div>
+<div class="q" id="SUS-08" data-qid="SUS-08" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 4</span><span class="meta">10 marks &middot; <a href="../subtopic/circular-economy.html">The circular economy, biocapacity &amp; ecological footprints</a> &middot; spec 3.6.4.2 &middot; Genn pp. 380-383 &middot; SUS-08</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">04.1</span>Explain what a carbon footprint should include when calculated for a car.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">04.2</span>Describe what the WWF Living Planet Index measures and how it is used.
+</div>
+<div class="part"><span class="marks">[5 marks]</span><span class="pn">04.3</span>Describe how the Ol Pejeta reserve in Kenya combines commercial cattle ranching with wildlife conservation.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div class="mspart"><div class="msh"><b>04.1</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>All greenhouse gases expressed as CO2 equivalent (allowing for different warming strengths)</span></li><li><span class="mk">1</span><span>Direct emissions from fuel combustion plus indirect: manufacture of components, maintenance items, final disposal (life-cycle analysis)</span></li><li><span class="mk">1</span><span>A fair share of the infrastructure: roads, car parks, signals, street lighting</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="SUS-08.1"></label> / 3</div>
+</div>
+<div class="mspart"><div class="msh"><b>04.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Compares the populations of over 18 000 populations of 3700 vertebrate species (terrestrial, freshwater, marine) with 1970 levels</span></li><li><span class="mk">1</span><span>Published in the Living Planet Report as a measure of the state of the planet's ecosystems / biodiversity loss over time</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="SUS-08.2"></label> / 2</div>
+</div>
+<div class="mspart"><div class="msh"><b>04.3</b> <span class="mtot">5 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Hardy, disease-resistant Boran cattle; regular tick dipping reduces ticks for wild herbivores too</span></li><li><span class="mk">1</span><span>Mobile bomas (night enclosures) protect cattle from lions and leave dung that enriches soil and plant growth</span></li><li><span class="mk">1</span><span>Electric fences keep game in and poachers out; biological corridors let animals (except rhinos) move to other reserves; problem elephants relocated</span></li><li><span class="mk">1</span><span>Monitoring: radio-collared lions, drones, camera traps, track surveys; endangered species (Grevy's zebra, northern white rhino) protected</span></li><li><span class="mk">1</span><span>Community links: ecotourism income funds health, education and water projects; local employment; cattle breeding help for local farmers</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="5" step="1" data-kind="part" data-key="SUS-08.3"></label> / 5</div>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 380-383; AQA spec 3.6.4.2.</div></details></div>
+<div class="q" id="HAB-12" data-qid="HAB-12" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 5</span><span class="meta">10 marks &middot; <a href="../subtopic/habitats.html">Habitat case studies: woodland, rainforest, reefs, islands, mangroves, Antarctica</a> &middot; spec 3.1.2.3.4 &middot; Genn pp. 69-71 &middot; HAB-12</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="part"><span class="marks">[4 marks]</span><span class="pn">05.1</span>Describe how each of the following threatens Antarctica.
+</div>
+<div class="part"><span class="marks">[6 marks]</span><span class="pn">05.2</span>Describe the main features of the Antarctic Treaty (1959) and the regulations that protect Antarctica.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div class="mspart"><div class="msh"><b>05.1</b> <span class="mtot">4 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Warming melts ice shelves that hold back glaciers and lubricates ice flow so land ice reaches the sea faster (Antarctic Peninsula most affected); sea ice loss removes krill habitat and lowers albedo</span></li><li><span class="mk">1</span><span>Raised UV harms planktonic algae, krill and fish / sea urchin larvae in surface waters (land animals protected by fur / feathers)</span></li><li><span class="mk">1</span><span>Disturbance of wildlife, introduction of non-indigenous species and pathogens, fuel and sewage pollution; visitor numbers rising rapidly at a few landing sites</span></li><li><span class="mk">1</span><span>Reserves of coal, oil, gold, uranium, platinum etc; pressure to exploit will rise as reserves elsewhere deplete though currently banned and operations extremely difficult</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="4" step="1" data-kind="part" data-key="HAB-12.1"></label> / 4</div>
+</div>
+<div class="mspart"><div class="msh"><b>05.2</b> <span class="mtot">6 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Treaty signed by 52 countries including all active there; no military activity (except supporting research), no nuclear explosions or radioactive waste dumping</span></li><li><span class="mk">1</span><span>No commercial mineral exploitation</span></li><li><span class="mk">1</span><span>Fisheries regulated by CCAMLR: krill and some fish exploited, fisheries closed if over-exploited; no commercial exploitation of mammals</span></li><li><span class="mk">1</span><span>Tourism control: no accommodation on land (wastes stay on ships), one ship per site with maximum 100 ashore, trained guides, keep 5 m from wildlife, no litter, cleaned protective clothing to prevent introductions</span></li><li><span class="mk">1</span><span>Waste management: all wastes removed (fuel containers, batteries, plastics, oil); sewage only discharged where sea currents disperse it; old waste removed unless removal causes more damage</span></li><li><span class="mk">1</span><span>Only long-term residents are research scientists and support staff; strict regulation of research impacts</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="6" step="1" data-kind="part" data-key="HAB-12.2"></label> / 6</div>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 69-71; AQA spec 3.1.2.3.4.</div></details></div>
+<div class="q" id="LP-02" data-qid="LP-02" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 6</span><span class="meta">10 marks &middot; <a href="../subtopic/life-processes.html">Adaptation, terminology, succession &amp; population control</a> &middot; spec 3.1.3.2 &middot; Genn pp. 82-85 &middot; LP-02</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="part"><span class="marks">[8 marks]</span><span class="pn">06.1</span>Define each of the following ecological terms and give an example.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">06.2</span>Explain the difference between an ecosystem and a biome.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div class="mspart"><div class="msh"><b>06.1</b> <span class="mtot">8 marks</span></div>
+<div class="lvl">2 marks for each point (partial credit for a partly correct point).</div><ul class="pts"><li><span class="mk">2</span><span>Species: a group of closely related organisms that naturally interbreed to produce fertile offspring and are reproductively isolated from other groups (Passer domesticus, house sparrow); the only 'real' taxon</span></li><li><span class="mk">2</span><span>Niche: the role a species plays in its habitat - how it uses resources and relates to other species (tawny owl: nocturnal carnivore nesting in tree holes eating small mammals); two species cannot share exactly the same niche in one habitat</span></li><li><span class="mk">2</span><span>Community: all the populations of all species (plants, animals, fungi, bacteria, protists, archaea) living in an area</span></li><li><span class="mk">2</span><span>Biome: a large geographical region with a specific climate and characteristic community, including all areas where it occurs (all tropical rainforests, tundra, savannah)</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="8" step="1" data-kind="part" data-key="LP-02.1"></label> / 8</div>
+</div>
+<div class="mspart"><div class="msh"><b>06.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>An ecosystem is the biotic community plus abiotic factors of one area, relatively self-contained (a particular coral reef)</span></li><li><span class="mk">1</span><span>A biome includes all separate ecosystems with the same climate and community type (all coral reefs); each reef is a different ecosystem within the same biome</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="LP-02.2"></label> / 2</div>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 82-85; AQA spec 3.1.3.2.</div></details></div>
+<div class="q" id="RM-04" data-qid="RM-04" data-marks="5" data-flags="mcq"><div class="qh"><span class="num">Question 7</span><span class="meta">5 marks &middot; <a href="../subtopic/methodology.html">Scientific methodologies &amp; sampling design</a> &middot; spec 3.7.1 &middot; Genn pp. 391-393 &middot; RM-04</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="part"><span class="marks">[1 mark]</span><span class="pn">07.1</span>Which of the following best describes a <b>representative</b> sample? Tick one box.
+<ul class="mcq"><li>A&nbsp; A sample taken from the most convenient location</li><li>B&nbsp; A sub-sample that accurately reflects the complete data set</li><li>C&nbsp; The largest sample that can be collected</li><li>D&nbsp; A sample that supports the hypothesis</li></ul>
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">07.2</span>Describe how random sampling sites would be selected in an irregularly shaped meadow.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">07.3</span>Explain why deliberately choosing sampling sites introduces bias.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div class="mspart"><div class="msh"><b>07.1</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">Correct answer only.</div><ul class="pts"><li><span class="mk">1</span><span><b></b>&nbsp; B</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="1" step="1" data-kind="part" data-key="RM-04.1"></label> / 1</div>
+</div>
+<div class="mspart"><div class="msh"><b>07.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Number all possible sampling sites (eg on a grid map)</span></li><li><span class="mk">1</span><span>Select the sites using a random number generator / table; (regular shape: grid coordinates from random numbers)</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="RM-04.2"></label> / 2</div>
+</div>
+<div class="mspart"><div class="msh"><b>07.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Sites may be chosen for convenience or because they appear to support (or dismiss) the hypothesis</span></li><li><span class="mk">1</span><span>So the sample does not represent the whole area and conclusions are invalid</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="RM-04.3"></label> / 2</div>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 391-393; AQA spec 3.7.1.</div></details></div>
-<div class="q" id="HAB-14" data-qid="HAB-14" data-marks="15" data-flags="ext"><div class="qh"><span class="num">Question 2</span><span class="meta">15 marks &middot; <a href="../subtopic/habitats.html">Habitat case studies: woodland, rainforest, reefs, islands, mangroves, Antarctica</a> &middot; spec 3.1.2.3.4 &middot; Genn pp. 57-62 &middot; HAB-14</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
-<div class="part"><span class="marks">[4 marks]</span><span class="pn">02.1</span>Explain how the relationship between coral polyps and zooxanthellae allows a high biomass of life in nutrient-poor tropical seas.
+<div class="q" id="PRI-02" data-qid="PRI-02" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 8</span><span class="meta">10 marks &middot; <a href="../subtopic/conservation-priorities.html">Conservation priorities, legislation &amp; protocols</a> &middot; spec 3.1.2.3.1 &middot; Genn pp. 28-29 &middot; PRI-02</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="part"><span class="marks">[8 marks]</span><span class="pn">08.1</span>Explain the meaning of each of the following terms and explain why such species are given conservation priority.
 </div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">02.2</span>Explain why growing coral reefs help to resist climate change.
-</div>
-<div class="part"><span class="marks">[9 marks]</span><span class="pn">02.3</span>Discuss the importance of tropical coral reefs and evaluate the methods used to conserve them.
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">08.2</span>Explain why the degree of population dispersal is considered when setting priorities.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>02.1</b> (4 marks)
-<div class="lvl"><i>Any 4 from:</i></div>
-<ul><li>Zooxanthellae are photosynthetic algae living inside the polyp cells</li><li>The algae absorb CO<sub>2</sub> and excretory wastes from the polyp for photosynthesis and growth (efficient nutrient recycling)</li><li>They supply the polyp with oxygen and glucose - over 95% of its food energy</li><li>In return the algae gain a protected habitat and nutrients they could not absorb from the nutrient-deficient water</li><li>Polyps also feed on plankton captured by cilia and nematocysts</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="4" step="1" data-kind="part" data-key="HAB-14.1"></label> / 4</div>
-</div>
-<div><b>02.2</b> (2 marks)
-<ul><li>Corals deposit a skeleton of calcium carbonate (calcite)</li><li>Each carbonate molecule requires the absorption of a molecule of carbon dioxide, so reefs are a carbon sink</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="HAB-14.2"></label> / 2</div>
-</div>
-<div><b>02.3</b> (9 marks)
-<div class="lvl"><b>Levels of response:</b> L3 7-9 comprehensive, well-structured, applied to context, supported judgement; L2 4-6 sound but incomplete application/evaluation; L1 1-3 basic, limited structure.</div><div class="lvl"><b>Indicative content:</b></div>
-<ul><li>Importance: cover 1% of ocean area but support over a quarter of marine species; fisheries (fish, lobsters, conch); medicines (AZT, Ara-C, dolastatin, secosteroids, bryostatin, trabectedin, bone grafts); climate control as carbon sink; erosion protection of low-lying islands; tourism income</li><li>Threats: physical damage (anchors, divers, litter, coral extraction), collection of ornaments (CITES Appendix II), sedimentation from rivers and coastal development, pollution (oil, nutrients causing algal shading, sewage, pesticides, sunscreen), ocean acidification, bleaching from warming, overfishing (giant triton / crown of thorns starfish), introduced species (red lionfish), loss of mangroves and seagrass nurseries</li><li>Conservation: marine protected areas / national parks (Great Barrier Reef, Belize, Chagos), mooring buoys, diver education, No Take Zones which can increase catches elsewhere, sustainable ecotourism and fishing, protection of mangroves and seagrass, erosion and pollution control, planning control of ports and resorts</li><li>Fishing controls: closed seasons, minimum and maximum catchable sizes, bans on dynamite, trawling and small-mesh nets</li><li>Evaluation: local measures cannot control global threats (warming, acidification) which need international action; enforcement in remote areas is difficult; conflicts with local livelihoods; large vs small NTZs</li><li>Justified conclusion</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="9" step="1" data-kind="part" data-key="HAB-14.3"></label> / 9</div>
-</div>
-<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 57-62; AQA spec 3.1.2.3.4.</div></details></div>
-<div class="q" id="BIOV-05" data-qid="BIOV-05" data-marks="5" data-flags=""><div class="qh"><span class="num">Question 3</span><span class="meta">5 marks &middot; <a href="../subtopic/biodiversity-value.html">Importance of biodiversity: resources &amp; ecosystem services</a> &middot; spec 3.1.2.1.1 &middot; Genn pp. 11 &middot; BIOV-05</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">03.1</span>Give <b>two</b> wild species with potential as new food species and, for each, one characteristic that makes it useful.
-</div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">03.2</span>Explain why indigenous species may be better for domestication than introduced livestock or crops.
-</div>
-<div class="part"><span class="marks">[1 mark]</span><span class="pn">03.3</span>Explain how species of the spinach family could help to solve a problem caused by irrigation.
-</div>
-<details class="ms"><summary>Show mark scheme</summary>
-<div><b>03.1</b> (2 marks)
-<div class="lvl"><i>Any 2 from:</i></div>
-<ul><li>Potato bean (N America): high protein content</li><li>Morama bean (southern Africa): protein content similar to soya, drought resistant</li><li>Yeheb tree (Somalia): edible nuts, drought resistant, grows on poor soils</li><li>Perennial maize (Mexico) / Kernza: no need to buy seed each year, less ploughing so less soil erosion</li><li>American bison: graze grassland too poor for cattle</li><li>Common eland: browse and graze so can be kept with cattle without severe competition</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="BIOV-05.1"></label> / 2</div>
-</div>
-<div><b>03.2</b> (2 marks)
-<ul><li>Indigenous species are better adapted to local conditions such as climate, pests / diseases and soil</li><li>So they have higher survival rates / productivity is not reduced, as it is when introduced species are kept in areas to which they are not adapted</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="BIOV-05.2"></label> / 2</div>
-</div>
-<div><b>03.3</b> (1 marks)
-<ul><li>They grow in soils with a high salt content, so their genes could be used in breeding programmes to increase the salt tolerance of crops grown on soils salinised by irrigation</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="1" step="1" data-kind="part" data-key="BIOV-05.3"></label> / 1</div>
-</div>
-<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 11; AQA spec 3.1.2.1.1.</div></details></div>
-<div class="q" id="SUS-09" data-qid="SUS-09" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 4</span><span class="meta">10 marks &middot; <a href="../subtopic/circular-economy.html">The circular economy, biocapacity &amp; ecological footprints</a> &middot; spec 3.6.4 &middot; Genn pp. 384-389 &middot; SUS-09</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
-<p>The Isle of Eigg (area 31 km<sup>2</sup>, population about 100) is not connected to the national grid. Table 1 shows its electricity sources.</p>
-<div class="cap">Table 1</div><table class="data"><tr><th>Source</th><th>Capacity / kW</th></tr><tr><td>Hydroelectric (3 generators)</td><td>110</td></tr><tr><td>Solar PV</td><td>50</td></tr><tr><td>Wind (4 turbines)</td><td>24</td></tr><tr><td>Diesel generators (back-up)</td><td>160</td></tr></table>
-<div class="part"><span class="marks">[3 marks]</span><span class="pn">04.1</span>Explain why Eigg uses a mix of three renewable resources rather than one, and why diesel back-up is still needed.
-</div>
-<div class="part"><span class="marks">[3 marks]</span><span class="pn">04.2</span>Describe <b>three</b> other ways in which the Eigg community has increased its sustainability.
-</div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">04.3</span>Explain why small self-contained communities often find it easier to adopt sustainable lifestyles than large cities.
-</div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">04.4</span>Explain how large-scale DC electricity grids such as Desertec could increase the use of renewable energy.
-</div>
-<details class="ms"><summary>Show mark scheme</summary>
-<div><b>04.1</b> (3 marks)
-<ul><li>Diversity: HEP (wet winters), solar (summer) and wind peak at different times so supply is more reliable - diverse systems resist change</li><li>No single source could meet demand all year; battery storage on the island grid smooths fluctuations</li><li>Calm, dry, dull periods still leave gaps so diesel generators provide security (fossil fuel use minimised, not yet eliminated)</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="SUS-09.1"></label> / 3</div>
-</div>
-<div><b>04.2</b> (3 marks)
-<div class="lvl"><i>Any 3 from:</i></div>
-<ul><li>Community ownership (Isle of Eigg Trust with Scottish Wildlife Trust) managing the island for people and wildlife</li><li>Wood biomass heating; insulation such as straw-bale housing; some electric vehicles</li><li>Habitat protection and creation: fencing rare plants from grazing, planting indigenous woodland (rowan, birch, willow); eagles and hen harriers nesting</li><li>Recyclables shipped off; garden / food waste composted; low-impact food production; beach litter collection</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="SUS-09.2"></label> / 3</div>
-</div>
-<div><b>04.3</b> (2 marks)
-<ul><li>Small groups can organise, agree and act quickly; decisions benefit people who see the results directly</li><li>Resources and wastes are local and visible so feedback is immediate, unlike cities supplied from far away</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="SUS-09.3"></label> / 2</div>
-</div>
-<div><b>04.4</b> (2 marks)
-<ul><li>Renewable energy is abundant but geographically and temporally variable; a continental grid moves electricity from areas of surplus (desert solar, offshore wind) to areas of demand</li><li>DC grids do not need every generator synchronised in phase as AC grids do, so coordination across many countries is easier</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="SUS-09.4"></label> / 2</div>
-</div>
-<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 384-389; AQA spec 3.6.4.</div></details></div>
-<div class="q" id="LIFE-04" data-qid="LIFE-04" data-marks="5" data-flags="mcq"><div class="qh"><span class="num">Question 5</span><span class="meta">5 marks &middot; <a href="../subtopic/life-conditions.html">Conditions for life on Earth</a> &middot; spec 3.1.1.1 &middot; Genn pp. 5-7 &middot; LIFE-04</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
-<div class="part"><span class="marks">[1 mark]</span><span class="pn">05.1</span>Which feature of the Earth prevents most atmospheric gases from escaping into space? Tick <b>one</b> box.
-<ul class="mcq"><li>A&nbsp; Its mass</li><li>B&nbsp; Its magnetic field</li><li>C&nbsp; Its distance from the Sun</li><li>D&nbsp; Its speed of rotation</li></ul>
-</div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">05.2</span>Explain how the speed of rotation of the Earth and the tilt of its axis affect the conditions for life.
-</div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">05.3</span>Explain why the presence of liquid water on Earth depends on <b>both</b> the distance from the Sun <b>and</b> atmospheric pressure.
-</div>
-<details class="ms"><summary>Show mark scheme</summary>
-<div><b>05.1</b> (1 marks)
-<ul><li>Its mass</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="1" step="1" data-kind="part" data-key="LIFE-04.1"></label> / 1</div>
-</div>
-<div><b>05.2</b> (2 marks)
-<ul><li>The 24-hour rotation period means the surface is not exposed to sunlight for long, so temperature extremes / excessive heating and cooling are reduced</li><li>The axis is tilted relative to the orbit so the amount of insolation at each latitude changes through the year, producing seasonal variations in conditions</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="LIFE-04.2"></label> / 2</div>
-</div>
-<div><b>05.3</b> (2 marks)
-<ul><li>The distance from the Sun gives surface temperatures between 0 and 35 &deg;C in most areas: too close and water would boil / evaporate, too far and it would freeze</li><li>Atmospheric pressure (produced by the mass of gases held by gravity) is high enough to stop the water boiling / evaporating away; at much lower pressure there would be no liquid water</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="LIFE-04.3"></label> / 2</div>
-</div>
-<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 5-7; AQA spec 3.1.1.1.</div></details></div>
-<div class="q" id="PRI-02" data-qid="PRI-02" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 6</span><span class="meta">10 marks &middot; <a href="../subtopic/conservation-priorities.html">Conservation priorities, legislation &amp; protocols</a> &middot; spec 3.1.2.3.1 &middot; Genn pp. 28-29 &middot; PRI-02</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
-<div class="part"><span class="marks">[8 marks]</span><span class="pn">06.1</span>Explain the meaning of each of the following terms and explain why such species are given conservation priority.
-</div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">06.2</span>Explain why the degree of population dispersal is considered when setting priorities.
-</div>
-<details class="ms"><summary>Show mark scheme</summary>
-<div><b>06.1</b> (8 marks)
-<ul><li>EDGE: Evolutionarily Distinct and Globally Endangered - few close relatives, often the last species of their genus / family (Bactrian camel, pygmy hippo, northern bald ibis); loss would remove a unique branch of evolution / genes</li><li>Endemic: found in only one area (often islands - Galapagos, Madagascar, Seychelles: Aldabra giant tortoise, red ruffed lemur); if lost locally there is no population elsewhere to recolonise</li><li>Keystone: disproportionately important for the structure of the community relative to its abundance - predation of dominant species, seed dispersal, habitat creation (jaguar, forest elephants keeping paths and water holes open, wolves, beavers); losing them causes loss of many other species</li><li>Flagship: high public profile (tiger, panda, elephant, orang-utan) raising funds and support that also protects the whole habitat and less charismatic species (fungi, bats, moths)</li></ul>
+<div class="mspart"><div class="msh"><b>08.1</b> <span class="mtot">8 marks</span></div>
+<div class="lvl">2 marks for each point (partial credit for a partly correct point).</div><ul class="pts"><li><span class="mk">2</span><span>EDGE: Evolutionarily Distinct and Globally Endangered - few close relatives, often the last species of their genus / family (Bactrian camel, pygmy hippo, northern bald ibis); loss would remove a unique branch of evolution / genes</span></li><li><span class="mk">2</span><span>Endemic: found in only one area (often islands - Galapagos, Madagascar, Seychelles: Aldabra giant tortoise, red ruffed lemur); if lost locally there is no population elsewhere to recolonise</span></li><li><span class="mk">2</span><span>Keystone: disproportionately important for the structure of the community relative to its abundance - predation of dominant species, seed dispersal, habitat creation (jaguar, forest elephants keeping paths and water holes open, wolves, beavers); losing them causes loss of many other species</span></li><li><span class="mk">2</span><span>Flagship: high public profile (tiger, panda, elephant, orang-utan) raising funds and support that also protects the whole habitat and less charismatic species (fungi, bats, moths)</span></li></ul>
 <div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="8" step="1" data-kind="part" data-key="PRI-02.1"></label> / 8</div>
 </div>
-<div><b>06.2</b> (2 marks)
-<ul><li>A fragmented population may consist of isolated groups each too small to be viable (resources, inbreeding) even if total numbers are large</li><li>A species confined to a single area (eg bonobos in one country) is vulnerable to any local change / conflict, unlike chimpanzees spread across many countries</li></ul>
+<div class="mspart"><div class="msh"><b>08.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>A fragmented population may consist of isolated groups each too small to be viable (resources, inbreeding) even if total numbers are large</span></li><li><span class="mk">1</span><span>A species confined to a single area (eg bonobos in one country) is vulnerable to any local change / conflict, unlike chimpanzees spread across many countries</span></li></ul>
 <div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="PRI-02.2"></label> / 2</div>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 28-29; AQA spec 3.1.2.3.1.</div></details></div>
-<div class="q" id="SUS-13" data-qid="SUS-13" data-marks="5" data-flags=""><div class="qh"><span class="num">Question 7</span><span class="meta">5 marks &middot; <a href="../subtopic/natural-systems.html">Energy &amp; material cycles: natural vs human systems</a> &middot; spec 3.6.2 &middot; Genn pp. 373 &middot; SUS-13</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">07.1</span>Give <b>two</b> natural processes that are driven by solar energy.
+<div class="q" id="BIOV-02" data-qid="BIOV-02" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 9</span><span class="meta">10 marks &middot; <a href="../subtopic/biodiversity-value.html">Importance of biodiversity: resources &amp; ecosystem services</a> &middot; spec 3.1.2.1.2 &middot; Genn pp. 15-17 &middot; BIOV-02</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<p>Table 1 shows characteristics introduced into commercial crops from crop wild relatives (CWRs).</p>
+<div class="cap">Table 1</div><table class="data"><tr><th>Crop</th><th>Wild relative source</th><th>Characteristic introduced</th></tr><tr><td>Sugar cane</td><td>Wild sugar cane, Indonesia</td><td>Resistance to mosaic virus</td></tr><tr><td>Tomato</td><td>Single wild species</td><td>Resistance to nine major diseases</td></tr><tr><td>Rice / barley</td><td>Wild salt-marsh varieties</td><td>Salt tolerance</td></tr><tr><td>Oil palm</td><td>Wild palms, central Africa</td><td>25% higher yield</td></tr><tr><td>Wheat</td><td>Wild wheat</td><td>Better mycorrhizal associations / phosphate uptake</td></tr></table>
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">09.1</span>Explain why commercial crop varieties often lack the characteristics shown in Table 1.
 </div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">07.2</span>Explain why natural processes can take place at low temperatures.
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">09.2</span>Explain what is meant by a <b>Vavilov centre</b> (centre of diversity) and why these areas are conservation priorities.
 </div>
-<div class="part"><span class="marks">[1 mark]</span><span class="pn">07.3</span>Give <b>one</b> human activity that uses high temperatures to achieve a result that natural systems achieve at low temperature.
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">09.3</span>Explain why a large population does not necessarily have a large gene pool, and why a small gene pool is a problem.
 </div>
-<details class="ms"><summary>Show mark scheme</summary>
-<div><b>07.1</b> (2 marks)
-<div class="lvl"><i>Any 2 from:</i></div>
-<ul><li>Hydrological cycle</li><li>Carbon cycle</li><li>Nitrogen cycle</li><li>Atmospheric circulation</li><li>Thermohaline circulation</li><li>Photosynthesis</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="SUS-13.1"></label> / 2</div>
-</div>
-<div><b>07.2</b> (2 marks)
-<ul><li>Enzymes reduce the activation energy of reactions</li><li>So reactions such as photosynthesis, decomposition and nitrogen fixation do not need high temperatures</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="SUS-13.2"></label> / 2</div>
-</div>
-<div><b>07.3</b> (1 marks)
-<div class="lvl"><i>Any 1 from:</i></div>
-<ul><li>Haber process (nitrogen fixation)</li><li>Incineration of wastes (decomposition)</li><li>Many manufacturing processes</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="1" step="1" data-kind="part" data-key="SUS-13.3"></label> / 1</div>
-</div>
-<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 373; AQA spec 3.6.2.</div></details></div>
-<div class="q" id="MON-05" data-qid="MON-05" data-marks="10" data-flags="data table"><div class="qh"><span class="num">Question 8</span><span class="meta">10 marks &middot; <a href="../subtopic/eco-monitoring.html">Ecological monitoring &amp; new technologies</a> &middot; spec 3.1.2.3.6 &middot; Genn pp. 402-403, 406-407 &middot; MON-05</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
-<div class="part"><span class="marks">[3 marks]</span><span class="pn">08.1</span>Complete Table 1 to show the environmental information that can be collected by satellite sensors detecting each type of radiation.
-<div class="cap">Table 1</div><table class="data"><tr><th>Radiation detected</th><th>Environmental information collected</th></tr><tr><td>Reflected visible light</td><td></td></tr><tr><td>Infrared emitted by the Earth's surface</td><td></td></tr><tr><td>Reflected radar microwaves emitted by the satellite</td><td></td></tr></table>
-</div>
-<div class="part"><span class="marks">[1 mark]</span><span class="pn">08.2</span>Explain why radar surveys are not interrupted by cloudy weather.
-</div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">08.3</span>Explain <b>two</b> advantages of satellite surveys over ground surveys for monitoring deforestation.
-</div>
-<div class="part"><span class="marks">[4 marks]</span><span class="pn">08.4</span>Describe how motion-sensitive cameras and image databases could be used together to estimate the size of a tiger population.
+<div class="part"><span class="marks">[1 mark]</span><span class="pn">09.4</span>Give <b>one</b> wild plant species with potential as a new commercial food crop and the characteristic that makes it valuable.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>08.1</b> (3 marks)
-<ul><li>Images / maps of large areas; land-use change, deforestation, flooding</li><li>Vegetation density and surface temperature</li><li>Wind velocity, sea-surface altitude, wave height, oil pollution</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="MON-05.1"></label> / 3</div>
+<div class="mspart"><div class="msh"><b>09.1</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Domesticated crops were bred from a small number of original plants so they have a small gene pool / low genetic diversity</span></li><li><span class="mk">1</span><span>Selective breeding for yield, appearance or shelf life may have lost other useful genes (eg taste, disease resistance)</span></li><li><span class="mk">1</span><span>Genetically similar plants share the same susceptibilities so a new disease or environmental change can affect the whole crop</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="BIOV-02.1"></label> / 3</div>
 </div>
-<div><b>08.2</b> (1 marks)
-<ul><li>Microwaves pass through clouds (unlike visible light)</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="1" step="1" data-kind="part" data-key="MON-05.2"></label> / 1</div>
+<div class="mspart"><div class="msh"><b>09.2</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>A region with a high concentration of the wild relatives of important crops - usually where the crop was first domesticated (eg wheat / barley in the Middle East; potato, tomato in South America; rice in India; maize in Central America)</span></li><li><span class="mk">1</span><span>They hold the largest gene pools / most genetic variety for future crop breeding (disease resistance, drought and salt tolerance, yield)</span></li><li><span class="mk">1</span><span>Many are in regions where environmental degradation / habitat loss threatens the wild plants</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="BIOV-02.2"></label> / 3</div>
 </div>
-<div><b>08.3</b> (2 marks)
-<ul><li>Very large / remote areas can be surveyed quickly and repeatedly so changes over time are detected</li><li>No need for researchers to visit inaccessible areas, reducing cost and disturbance; data are standardised across the whole area</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="MON-05.3"></label> / 2</div>
+<div class="mspart"><div class="msh"><b>09.3</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>A large population may all descend from a few closely related individuals so they are genetically similar</span></li><li><span class="mk">1</span><span>Similar adaptations mean all are susceptible to the same change (disease, climate)</span></li><li><span class="mk">1</span><span>Greater risk of inbreeding so disadvantageous recessive genes are expressed (eg amelanism, poor muscle development in lion cubs); so species should be protected across their whole range to retain regional genes</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="BIOV-02.3"></label> / 3</div>
 </div>
-<div><b>08.4</b> (4 marks)
-<div class="lvl"><i>Any 4 from:</i></div>
-<ul><li>Motion-sensitive cameras placed along trails record animals passing, using visible light by day and infrared at night</li><li>Each tiger has a unique pattern of facial / body stripes</li><li>Images are compared with the database so individuals are recognised rather than counted twice</li><li>The number of different individuals recorded gives a minimum population; repeated captures give territory size, movements, lifespans and social groupings</li><li>Limitation: only works for species with unique visible features</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="4" step="1" data-kind="part" data-key="MON-05.4"></label> / 4</div>
+<div class="mspart"><div class="msh"><b>09.4</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>Morama bean (drought resistant, soya-like protein); yeheb tree (drought resistant nuts, poor soils); potato bean (high protein); perennial maize / Kernza (no annual replanting, less ploughing / erosion); salt-tolerant spinach relatives</span></li></ul>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="1" step="1" data-kind="part" data-key="BIOV-02.4"></label> / 1</div>
 </div>
-<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 402-403, 406-407; AQA spec 3.1.2.3.6.</div></details></div>
-<div class="q" id="AGR-04" data-qid="AGR-04" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 9</span><span class="meta">10 marks &middot; <a href="../subtopic/agroecosystems.html">Agroecosystems: abiotic &amp; biotic factors</a> &middot; spec 3.5.1.1 &middot; Genn pp. 314-318 &middot; AGR-04</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
-<p>Table 1 shows the yield of a vegetable crop under different pest control methods over three years on one farm.</p>
-<div class="cap">Table 1</div><table class="data"><tr><th>Method</th><th>Mean yield / t ha<sup>-1</sup></th><th>Pesticide applications per year</th><th>Non-target insect species recorded in field margins</th></tr><tr><td>Chemical insecticide only</td><td>18.5</td><td>6</td><td>8</td></tr><tr><td>Crop rotation + beetle banks + hedgerows</td><td>16.2</td><td>0</td><td>31</td></tr><tr><td>Integrated control</td><td>18.1</td><td>1-2</td><td>26</td></tr></table>
-<div class="part"><span class="marks">[4 marks]</span><span class="pn">09.1</span>Explain how crop rotation and beetle banks reduce pest damage.
-</div>
-<div class="part"><span class="marks">[3 marks]</span><span class="pn">09.2</span>Use Table 1 to evaluate integrated control compared with the other two methods.
-</div>
-<div class="part"><span class="marks">[3 marks]</span><span class="pn">09.3</span>Describe how the sterile male technique controls insect pests and explain why it is species-specific.
-</div>
-<details class="ms"><summary>Show mark scheme</summary>
-<div><b>09.1</b> (4 marks)
-<ul><li>Rotation: each crop has its own pests; growing a different crop each year (4-5 year cycle) means pests left at the end of a season die before that crop returns, so populations cannot build up early</li><li>Beetle banks / hedgerows provide habitat and overwintering sites for natural predators (ground beetles, ladybirds) that eat aphids</li><li>Rotation also evens out nutrient demands and includes legumes</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="4" step="1" data-kind="part" data-key="AGR-04.1"></label> / 4</div>
-</div>
-<div><b>09.2</b> (3 marks)
-<ul><li>Integrated control gives almost the same yield as chemical control (18.1 vs 18.5) with far fewer applications (1-2 vs 6)</li><li>It retains most of the biodiversity of cultural control (26 vs 31 species) whereas chemical control alone leaves only 8</li><li>Cultural control alone loses about 12% yield; integrated control combines cultural methods, resistant varieties and carefully timed specific non-persistent pesticides only when essential - best balance of yield, cost and impact</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="AGR-04.2"></label> / 3</div>
-</div>
-<div><b>09.3</b> (3 marks)
-<ul><li>Large numbers of males are sterilised with gamma radiation and released</li><li>Females of many insects mate only once and store sperm, so mating with a sterile male produces no offspring; enough sterile males reduce fertile matings below replacement level (screw worm fly, Mediterranean fruit fly)</li><li>Only the target species' females mate with them so non-target species are unaffected; fails if sterilised males behave abnormally or re-colonisation occurs</li></ul>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="AGR-04.3"></label> / 3</div>
-</div>
-<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 314-318; AQA spec 3.5.1.1.</div></details></div>
-<div class="q" id="FISH-07" data-qid="FISH-07" data-marks="15" data-flags="calc data ext"><div class="qh"><span class="num">Question 10</span><span class="meta">15 marks &middot; <a href="../subtopic/fishing.html">Marine productivity &amp; fishing</a> &middot; spec 3.5.2.2 &middot; Genn pp. 341-345 &middot; FISH-07</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 15-17; AQA spec 3.1.2.1.2.</div></details></div>
+<div class="q" id="FISH-07" data-qid="FISH-07" data-marks="15" data-flags="calc data ext"><div class="qh"><span class="num">Question 10</span><span class="meta">15 marks &middot; <a href="../subtopic/fishing.html">Marine productivity &amp; fishing</a> &middot; spec 3.5.2.2 &middot; Genn pp. 341-345 &middot; FISH-07</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>Table 1 shows the catch made by a shrimp trawler during one fishing trip.</p>
 <div class="cap">Table 1</div><table class="data"><tr><th>Component of catch</th><th>Mass / tonnes</th></tr><tr><td>Shrimps (target species)</td><td>0.6</td></tr><tr><td>Crabs, sea urchins, molluscs and starfish</td><td>5.9</td></tr><tr><td>Immature fish of commercial species</td><td>1.9</td></tr></table>
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">10.1</span>Calculate the percentage of the total catch that was by-catch.
@@ -354,29 +313,29 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[9 marks]</span><span class="pn">10.4</span>Evaluate the methods that can be used to reduce the environmental impacts of fishing.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>10.1</b> (2 marks)
-<ul><li>By-catch = 5.9 + 1.9 = 7.8 t; total = 8.4 t</li><li>7.8 / 8.4 x 100 = 92.9% (accept 93%)</li></ul>
+<div class="mspart"><div class="msh"><b>10.1</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">A correct final answer (with unit where asked) scores full marks. If the answer is wrong, award 1 mark for each correct step of working shown.</div><ul class="pts"><li><span class="mk">1</span><span>By-catch = 5.9 + 1.9 = 7.8 t; total = 8.4 t</span></li><li><span class="mk">1</span><span>7.8 / 8.4 x 100 = 92.9% (accept 93%)</span></li></ul>
 <div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="FISH-07.1"></label> / 2</div>
 </div>
-<div><b>10.2</b> (1 marks)
-<ul><li>The nets have a very small mesh size so few non-target animals can escape</li></ul>
+<div class="mspart"><div class="msh"><b>10.2</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>The nets have a very small mesh size so few non-target animals can escape</span></li></ul>
 <div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="1" step="1" data-kind="part" data-key="FISH-07.2"></label> / 1</div>
 </div>
-<div><b>10.3</b> (3 marks)
-<ul><li>They breed at an old age (skate about 11 years; Greenland shark 100-150 years) and produce few young</li><li>They may reach a catchable size before they are sexually mature, so fishing can remove the whole breeding population before it has bred</li><li>Populations recover slowly, unlike r-selected species (herring, mackerel) which breed young and produce many young; they are caught as by-catch in demersal trawls so fishing continues even though they have no commercial value</li></ul>
+<div class="mspart"><div class="msh"><b>10.3</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>They breed at an old age (skate about 11 years; Greenland shark 100-150 years) and produce few young</span></li><li><span class="mk">1</span><span>They may reach a catchable size before they are sexually mature, so fishing can remove the whole breeding population before it has bred</span></li><li><span class="mk">1</span><span>Populations recover slowly, unlike r-selected species (herring, mackerel) which breed young and produce many young; they are caught as by-catch in demersal trawls so fishing continues even though they have no commercial value</span></li></ul>
 <div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="FISH-07.3"></label> / 3</div>
 </div>
-<div><b>10.4</b> (9 marks)
-<div class="lvl"><b>Levels of response:</b> L3 7-9 comprehensive, well-structured, applied to context, supported judgement; L2 4-6 sound but incomplete application/evaluation; L1 1-3 basic, limited structure.</div><div class="lvl"><b>Indicative content:</b></div>
-<ul><li>Impacts: population decline of k-selected species, by-catch (immature target fish, over-quota fish, non-commercial species; drift nets - whales, dolphins, turtles; longlines - albatrosses; pair trawls - porpoises), ghost fishing, seabed damage by demersal trawls, coral and seagrass damage, dynamite fishing, food-web effects</li><li>Catch quotas: limit weight landed; work well for single-species pelagic shoals but in mixed fisheries over-quota fish are discarded dead so the quota fails to protect them</li><li>Gear design: mesh size and square-mesh escape panels let small fish escape (diagonal mesh closes under drag); turtle exclusion devices; acoustic pingers for dolphins; curved hooks, decoys, sinkers and night setting to protect albatrosses; biodegradable / radio-tracked traps to reduce ghost fishing</li><li>Restricted effort: limits on boat size, engine power and days at sea; decommissioning; restricted methods - drift-net bans, demersal trawling bans on sensitive seabeds (Rockall Bank, Hatton Bank)</li><li>Evaluation: enforcement at sea is difficult; some methods reduce catch or raise costs; quotas need reliable stock data; effectiveness depends on species (single vs mixed shoals) and on international cooperation as fish migrate; as local stocks decline fishing moves to more distant waters</li><li>Justified conclusion weighing effectiveness of different methods</li></ul>
+<div class="mspart"><div class="msh"><b>10.4</b> <span class="mtot">9 marks</span></div>
+<table class="levels"><tr><th>Level</th><th>Marks</th><th>What the answer must show</th></tr><tr><td><b>Level 3</b></td><td class="r">7-9</td><td>Answer is comprehensive, relevant and logically structured. Shows detailed knowledge and understanding of the relevant scientific ideas and applies them accurately to the context. Evaluation/analysis is well supported by evidence and a clear judgement or conclusion is reached.</td></tr><tr><td><b>Level 2</b></td><td class="r">4-6</td><td>Answer is mostly relevant and shows some structure. Knowledge and understanding of relevant ideas is sound but application to the context or evaluation may be incomplete or lack detail. A judgement may be made but is not fully supported.</td></tr><tr><td><b>Level 1</b></td><td class="r">1-3</td><td>Answer is basic, with limited structure. Some relevant knowledge is shown but there are omissions or errors. Little application to the context and little or no evaluation.</td></tr><tr><td><b>&nbsp;</b></td><td class="r">0</td><td>No relevant content.</td></tr></table><div class="lvl"><b>Indicative content</b> - credit any of the following (and other relevant, accurate points):</div>
+<ul class="ind"><li>Impacts: population decline of k-selected species, by-catch (immature target fish, over-quota fish, non-commercial species; drift nets - whales, dolphins, turtles; longlines - albatrosses; pair trawls - porpoises), ghost fishing, seabed damage by demersal trawls, coral and seagrass damage, dynamite fishing, food-web effects</li><li>Catch quotas: limit weight landed; work well for single-species pelagic shoals but in mixed fisheries over-quota fish are discarded dead so the quota fails to protect them</li><li>Gear design: mesh size and square-mesh escape panels let small fish escape (diagonal mesh closes under drag); turtle exclusion devices; acoustic pingers for dolphins; curved hooks, decoys, sinkers and night setting to protect albatrosses; biodegradable / radio-tracked traps to reduce ghost fishing</li><li>Restricted effort: limits on boat size, engine power and days at sea; decommissioning; restricted methods - drift-net bans, demersal trawling bans on sensitive seabeds (Rockall Bank, Hatton Bank)</li><li>Evaluation: enforcement at sea is difficult; some methods reduce catch or raise costs; quotas need reliable stock data; effectiveness depends on species (single vs mixed shoals) and on international cooperation as fish migrate; as local stocks decline fishing moves to more distant waters</li><li>Justified conclusion weighing effectiveness of different methods</li></ul>
 <div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="9" step="1" data-kind="part" data-key="FISH-07.4"></label> / 9</div>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 341-345; AQA spec 3.5.2.2.</div></details></div>
-<div class="q"><div class="qh"><span class="num">Question 11 &mdash; Essay (answer ONE)</span><span class="meta">25 marks</span></div>
+<div class="q" id="essay"><div class="qh"><span class="num">Question 11 &mdash; Essay (answer ONE)</span><span class="meta">25 marks</span></div>
 <div class="part"><span class="marks">[25 marks]</span><span class="pn">11.1</span>Discuss how human activities influence biodiversity, using examples from a range of different contexts.</div>
-<details class="ms"><summary>Indicative content</summary><div class="lvl"><b>Levels:</b> L5 21-25 &middot; L4 16-20 &middot; L3 11-15 &middot; L2 6-10 &middot; L1 1-5. Reward breadth across the specification, accurate detail, application to the question and a supported conclusion.</div><ul><li>Direct exploitation: food (fisheries, bushmeat), fashion, entertainment / pets, furniture and ornaments, traditional medicines, other products (whale oil); deliberate eradication of predators, competitors, vectors, pests</li><li>Changes in abiotic factors: water availability (drainage, abstraction, HEP), light (forest clearance), oxygen (organic pollution, thermal), nutrients (eutrophication), pH (acid mine drainage, acid rain), temperature (thermal pollution, climate change), turbidity, physical damage; inactivity (stopping plagioclimax management)</li><li>Changes in biotic factors: introduced competitors, predators, pathogens, hybridisation; loss of pollinators, seed dispersers, keystone species; food chain impacts (sea otters, puffins, jellyfish)</li><li>Habitat destruction: deforestation, farmland expansion, urbanisation, mining, reservoirs; fragmentation and edge effects</li><li>Contexts: temperate woodland, rainforest, coral reefs, oceanic islands, mangroves, Antarctica; agriculture, fishing, forestry</li><li>Positive influences: habitat creation, conservation management, reintroductions, legislation</li><li>Evaluation of which influences are most damaging and hardest to reverse; conclusion</li></ul><div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="25" step="1" data-kind="essay" data-key="ESS-P2-HUMANIMPACT"></label> / 25 (only the higher of the two essays counts)</div><div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 20-26, 328-330, 341-344, 367-369; spec 3.1.2.2, 3.5.1.3, 3.5.2.2, 3.5.3.3.</div></details>
+<details class="ms"><summary>Indicative content</summary><table class="levels"><tr><th>Level</th><th>Marks</th><th>What the answer must show</th></tr><tr><td><b>Level 5</b></td><td class="r">21-25</td><td>Comprehensive and detailed knowledge and understanding drawn from across the specification, applied accurately to the question. Argument is coherent, well-structured and supported by a wide range of relevant, well-chosen examples and quantitative detail where appropriate. Interconnections between topics are made explicitly and a clear, justified conclusion is reached.</td></tr><tr><td><b>Level 4</b></td><td class="r">16-20</td><td>Detailed knowledge and understanding with good application to the question. Argument is logically organised with relevant examples; some links between different areas of the specification are made. Conclusions are drawn but may be less fully justified.</td></tr><tr><td><b>Level 3</b></td><td class="r">11-15</td><td>Sound knowledge and understanding, mostly applied to the question. Some structure and relevant examples, but coverage may be uneven or descriptive rather than analytical. Limited linking of topics.</td></tr><tr><td><b>Level 2</b></td><td class="r">6-10</td><td>Basic knowledge and understanding with partial relevance. Answer is largely descriptive with few examples and limited structure; some errors or omissions.</td></tr><tr><td><b>Level 1</b></td><td class="r">1-5</td><td>Limited, fragmented knowledge with little relevance to the question. Little structure; examples absent or inappropriate.</td></tr><tr><td><b>&nbsp;</b></td><td class="r">0</td><td>No relevant content.</td></tr></table><div class="lvl"><b>Indicative content</b> - students are not expected to cover all of these:</div><ul class="ind"><li>Direct exploitation: food (fisheries, bushmeat), fashion, entertainment / pets, furniture and ornaments, traditional medicines, other products (whale oil); deliberate eradication of predators, competitors, vectors, pests</li><li>Changes in abiotic factors: water availability (drainage, abstraction, HEP), light (forest clearance), oxygen (organic pollution, thermal), nutrients (eutrophication), pH (acid mine drainage, acid rain), temperature (thermal pollution, climate change), turbidity, physical damage; inactivity (stopping plagioclimax management)</li><li>Changes in biotic factors: introduced competitors, predators, pathogens, hybridisation; loss of pollinators, seed dispersers, keystone species; food chain impacts (sea otters, puffins, jellyfish)</li><li>Habitat destruction: deforestation, farmland expansion, urbanisation, mining, reservoirs; fragmentation and edge effects</li><li>Contexts: temperate woodland, rainforest, coral reefs, oceanic islands, mangroves, Antarctica; agriculture, fishing, forestry</li><li>Positive influences: habitat creation, conservation management, reintroductions, legislation</li><li>Evaluation of which influences are most damaging and hardest to reverse; conclusion</li></ul><div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="25" step="1" data-kind="essay" data-key="ESS-P2-HUMANIMPACT"></label> / 25 (only the higher of the two essays counts)</div><div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 20-26, 328-330, 341-344, 367-369; spec 3.1.2.2, 3.5.1.3, 3.5.2.2, 3.5.3.3.</div></details>
 <div class="part"><span class="marks">[25 marks]</span><span class="pn">11.2</span>Discuss the extent to which the principles of the circular economy could be used to develop sustainable lifestyles.</div>
-<details class="ms"><summary>Indicative content</summary><div class="lvl"><b>Levels:</b> L5 21-25 &middot; L4 16-20 &middot; L3 11-15 &middot; L2 6-10 &middot; L1 1-5. Reward breadth across the specification, accurate detail, application to the question and a supported conclusion.</div><ul><li>Definition of sustainability (Brundtland); population x per capita impact; dynamic equilibria, feedback, tipping points, diversity</li><li>Principles of natural systems: renewable low-density energy, low temperatures, material cycles, non-toxic wastes; contrast with linear human systems</li><li>Circular economy principles: cycling materials, renewable energy, supporting ecosystems, separation of technical and biological materials, diversity, connected systems, design for extended use and re-use, optimum production, new technologies</li><li>Application to land use, water, minerals, waste, pollution, energy, food with examples (Kalundborg, Eigg, Ol Pejeta, Rio Bravo, EU initiatives, DC grids)</li><li>Measuring progress: ecological footprint, biocapacity, global hectares, Earth Overshoot Day, carbon footprint, Living Planet Index</li><li>Barriers: economics, competition, consumer behaviour, need for international agreement, existing infrastructure</li><li>Judgement on the extent achievable</li></ul><div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="25" step="1" data-kind="essay" data-key="ESS-P2-CIRCULAR"></label> / 25 (only the higher of the two essays counts)</div><div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 370-389; spec 3.6.</div></details>
+<details class="ms"><summary>Indicative content</summary><table class="levels"><tr><th>Level</th><th>Marks</th><th>What the answer must show</th></tr><tr><td><b>Level 5</b></td><td class="r">21-25</td><td>Comprehensive and detailed knowledge and understanding drawn from across the specification, applied accurately to the question. Argument is coherent, well-structured and supported by a wide range of relevant, well-chosen examples and quantitative detail where appropriate. Interconnections between topics are made explicitly and a clear, justified conclusion is reached.</td></tr><tr><td><b>Level 4</b></td><td class="r">16-20</td><td>Detailed knowledge and understanding with good application to the question. Argument is logically organised with relevant examples; some links between different areas of the specification are made. Conclusions are drawn but may be less fully justified.</td></tr><tr><td><b>Level 3</b></td><td class="r">11-15</td><td>Sound knowledge and understanding, mostly applied to the question. Some structure and relevant examples, but coverage may be uneven or descriptive rather than analytical. Limited linking of topics.</td></tr><tr><td><b>Level 2</b></td><td class="r">6-10</td><td>Basic knowledge and understanding with partial relevance. Answer is largely descriptive with few examples and limited structure; some errors or omissions.</td></tr><tr><td><b>Level 1</b></td><td class="r">1-5</td><td>Limited, fragmented knowledge with little relevance to the question. Little structure; examples absent or inappropriate.</td></tr><tr><td><b>&nbsp;</b></td><td class="r">0</td><td>No relevant content.</td></tr></table><div class="lvl"><b>Indicative content</b> - students are not expected to cover all of these:</div><ul class="ind"><li>Definition of sustainability (Brundtland); population x per capita impact; dynamic equilibria, feedback, tipping points, diversity</li><li>Principles of natural systems: renewable low-density energy, low temperatures, material cycles, non-toxic wastes; contrast with linear human systems</li><li>Circular economy principles: cycling materials, renewable energy, supporting ecosystems, separation of technical and biological materials, diversity, connected systems, design for extended use and re-use, optimum production, new technologies</li><li>Application to land use, water, minerals, waste, pollution, energy, food with examples (Kalundborg, Eigg, Ol Pejeta, Rio Bravo, EU initiatives, DC grids)</li><li>Measuring progress: ecological footprint, biocapacity, global hectares, Earth Overshoot Day, carbon footprint, Living Planet Index</li><li>Barriers: economics, competition, consumer behaviour, need for international agreement, existing infrastructure</li><li>Judgement on the extent achievable</li></ul><div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="25" step="1" data-kind="essay" data-key="ESS-P2-CIRCULAR"></label> / 25 (only the higher of the two essays counts)</div><div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 370-389; spec 3.6.</div></details>
 </div>
 </div></main>
 <footer><div class="wrap">Original practice questions and mark schemes written to the AQA A-level Environmental Science (7447) specification. Every question cites the printed page numbers of R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018). AQA past papers are &copy; AQA. Progress, scores and timers are saved only in this browser. &nbsp;&middot;&nbsp; <a href="../index.html">Topics</a> &middot; <a href="../papers.html">Mock papers</a> &middot; <a href="../official.html">Past papers</a> &middot; <a href="../essays.html">Essay bank</a> &middot; <a href="../quickfire.html">Quick-fire</a> &middot; <a href="../search.html">Search</a></div></footer>
@@ -394,7 +353,7 @@ const tb=document.getElementById('themeBtn');if(tb)tb.onclick=()=>{const t=root.
 let prog=LS('envsci.progress')||{};
 window.ES.prog=()=>prog;
 function paint(){
-  document.querySelectorAll('.q[data-qid]').forEach(el=>{const s=prog[el.dataset.qid]||0;el.dataset.status=s;el.querySelectorAll('.st button').forEach(b=>b.classList.toggle('on',+b.dataset.s===s&&s>0));});
+  document.querySelectorAll('.q[data-qid]').forEach(el=>{const s=prog[el.dataset.qid]||0;el.dataset.status=s;el.querySelectorAll('.st button[data-s]').forEach(b=>b.classList.toggle('on',+b.dataset.s===s&&s>0));});
   document.querySelectorAll('[data-qids]').forEach(el=>{const ids=el.dataset.qids.split(',').filter(Boolean);const n=ids.length;if(!n)return;
     const ok=ids.filter(i=>prog[i]===2).length,wk=ids.filter(i=>prog[i]===1).length;
     const o=el.querySelector('.bar .ok'),w=el.querySelector('.bar .wk'),p=el.querySelector('.pl');
@@ -402,7 +361,7 @@ function paint(){
   const ov=document.getElementById('overall');if(ov){const all=(ov.dataset.qids||'').split(',').filter(Boolean);const ok=all.filter(i=>prog[i]===2).length,wk=all.filter(i=>prog[i]===1).length;ov.querySelector('.stat').textContent=Math.round(100*ok/all.length)+'%';ov.querySelector('.detail').textContent=ok+' secure, '+wk+' to revisit, '+(all.length-ok-wk)+' not attempted of '+all.length+' questions.';}
 }
 window.ES.paint=paint;
-document.addEventListener('click',e=>{const b=e.target.closest('.st button');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);paint();if(window.ES.onFilter)window.ES.onFilter();});
+document.addEventListener('click',e=>{const b=e.target.closest('.st button[data-s]');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);paint();if(window.ES.onFilter)window.ES.onFilter();});
 const rs=document.getElementById('resetProg');if(rs)rs.onclick=()=>{if(confirm('Clear all saved progress on this browser?')){prog={};SV('envsci.progress',prog);paint();}};
 paint();
 /* ---- filter bar ---- */
@@ -425,6 +384,13 @@ if(fb){
   txt.addEventListener('input',run);fb.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{c.classList.toggle('on');run();});fb.querySelector('select.status').onchange=run;
   const clr=fb.querySelector('.clear');if(clr)clr.onclick=()=>{txt.value='';fb.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));fb.querySelector('select.status').value='all';run();};
   run();}
+/* ---- sticky offset = real header height (nav can wrap) ---- */
+const hd=document.querySelector('header.top');const setH=()=>root.style.setProperty('--hdr',(getComputedStyle(hd).position==='sticky'?hd.offsetHeight:0)+'px');setH();window.addEventListener('resize',setH);
+/* ---- copy link, back to top ---- */
+document.addEventListener('click',e=>{const b=e.target.closest('[data-copy]');if(!b)return;const q=b.closest('.q');const url=location.href.split('#')[0]+'#'+q.id;
+  (navigator.clipboard?navigator.clipboard.writeText(url):Promise.reject()).then(()=>{b.textContent='\u2713';setTimeout(()=>b.innerHTML='&#128279;',1200);}).catch(()=>prompt('Copy this link:',url));});
+const tt=document.createElement('button');tt.id='totop';tt.title='Back to top';tt.innerHTML='&uarr;';tt.className='noprint';document.body.appendChild(tt);tt.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+window.addEventListener('scroll',()=>tt.classList.toggle('show',window.scrollY>600),{passive:true});
 /* ---- print & reveal ---- */
 document.querySelectorAll('[data-print]').forEach(b=>b.onclick=()=>{const ms=b.dataset.print==='ms';document.body.classList.toggle('print-ms',ms);document.querySelectorAll('details.ms').forEach(d=>d.open=ms);window.print();});
 document.querySelectorAll('[data-reveal]').forEach(b=>b.onclick=()=>{const open=b.dataset.reveal==='1';document.querySelectorAll('details.ms').forEach(d=>d.open=open);b.dataset.reveal=open?'0':'1';b.textContent=open?'Hide all mark schemes':'Show all mark schemes';});

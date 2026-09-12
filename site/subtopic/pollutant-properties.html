@@ -69,12 +69,12 @@ footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-
 .prog .bar .ok{background:var(--ok);height:100%}.prog .bar .wk{background:var(--warn);height:100%}.prog .pl{white-space:nowrap;min-width:90px}
 .hero .prog{color:rgba(255,255,255,.85)}.hero .prog .bar{background:rgba(255,255,255,.25)}
 /* filter bar & tools */
-.filterbar{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.filterbar{position:sticky;top:var(--hdr,62px);z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .filterbar input[type=search]{flex:1 1 220px;font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
 .filterbar label{font-size:.85rem;color:var(--stone);display:inline-flex;align-items:center;gap:4px;cursor:pointer}.filterbar .chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--sand);color:var(--stone);font-size:.82rem;cursor:pointer;font-family:inherit}
 .filterbar .chip.on{background:var(--moss);color:#fff;border-color:var(--moss)}.filterbar .cnt{font-size:.85rem;color:var(--stone);margin-left:auto}
 .filterbar select{font:inherit;font-size:.88rem;padding:5px 8px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
-.tools{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:10px 0;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.tools{position:sticky;top:var(--hdr,62px);z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:10px 0;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .tools .time{font-family:Fraunces,serif;font-size:1.6rem;font-weight:700;color:var(--head);min-width:120px}.tools .time.low{color:var(--bad)}
 .tools .score{font-weight:700;color:var(--moss)}.tools .score b{font-family:Fraunces,serif;font-size:1.3rem}.tools .pct{font-size:.85rem;color:var(--stone)}
 .tools button{font-family:inherit;font-size:.88rem;padding:6px 12px;border-radius:8px;border:1px solid var(--moss);background:transparent;color:var(--moss);cursor:pointer}.tools button.primary{background:var(--moss);color:#fff}
@@ -87,6 +87,20 @@ footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-
 .res{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0;text-decoration:none;color:inherit}.res:hover{border-color:var(--moss)}
 .res .t{font-weight:700;color:var(--head)}.res .m{font-size:.82rem;color:var(--stone)}.res .s{font-size:.92rem;margin-top:4px}.res mark{background:#ffe58a;color:#222;border-radius:3px;padding:0 2px}
 .empty{color:var(--stone);font-style:italic}
+/* mark scheme points, levels, links */
+.mspart{margin:8px 0 12px}.msh{display:flex;align-items:baseline;gap:8px;margin-bottom:2px}.msh .mtot{font-size:.8rem;color:var(--earth);font-weight:700}
+ul.pts{list-style:none;margin:4px 0 6px 0!important;padding:0}ul.pts li{display:flex;gap:10px;align-items:flex-start;padding:4px 0;border-top:1px dashed var(--ms-line)}ul.pts li:first-child{border-top:0}
+.mk{flex:0 0 auto;min-width:26px;text-align:center;font-size:.75rem;font-weight:700;color:#fff;background:var(--ok);border-radius:6px;padding:2px 6px;margin-top:3px}
+table.levels{border-collapse:collapse;width:100%;margin:6px 0 10px;font-size:.86rem;background:var(--card)}table.levels th,table.levels td{border:1px solid var(--ms-line);padding:5px 8px;text-align:left;vertical-align:top}table.levels th{background:var(--sand-dark)}table.levels td.r{white-space:nowrap;font-weight:700;color:var(--earth)}
+ul.ind{margin:4px 0 8px 18px}
+.st button.lnk{padding:2px 7px}
+#totop{position:fixed;right:18px;bottom:18px;z-index:15;background:var(--moss);color:#fff;border:0;border-radius:50%;width:42px;height:42px;font-size:1.2rem;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .2s}#totop.show{opacity:1;pointer-events:auto}
+.jump{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 4px}.jump a{font-size:.82rem;padding:3px 10px;border-radius:999px;border:1px solid var(--line);background:var(--sand);color:var(--moss);text-decoration:none;font-weight:600}.jump a:hover{background:var(--leaf-light)}
+.real .row{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;padding:8px 0;border-bottom:1px dashed var(--line);font-size:.95rem}.real .row .ser{font-weight:700;color:var(--head);min-width:150px}.real .row .qn{color:var(--stone);min-width:70px}.real .row .t{flex:1 1 300px}
+.real .row a{font-size:.82rem;padding:2px 9px;border-radius:999px;border:1px solid var(--line);background:var(--sand);text-decoration:none;font-weight:600}
+.plan input[type=date]{font:inherit;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}.plan .big{font-family:Fraunces,serif;font-size:2rem;color:var(--moss)}
+table.list td .bar{height:8px;background:var(--sand-dark);border-radius:999px;overflow:hidden;display:flex;width:140px}table.list td .bar .ok{background:var(--ok)}table.list td .bar .wk{background:var(--warn)}
+@media(max-width:720px){header.top{position:static}header.top nav a{margin-left:12px;font-size:.88rem}.filterbar,.tools{top:0}.hero h1{font-size:1.8rem}.hero{padding:34px 0 28px}.sub-item .t{flex-basis:100%}}
 /* print */
 @media print{header.top,footer,.tools,.filterbar,.st,.pill,.aw,.hero .crumbs,.prog,.noprint{display:none!important}
 body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;color:#000;padding:10px 0}.hero p,.hero h1{color:#000}.hero:before{display:none}
@@ -94,14 +108,16 @@ body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;c
 svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 </style>
 <script>try{if(localStorage.getItem('envsci.theme')==='"dark"')document.documentElement.dataset.theme='dark';}catch(e){}</script></head><body >
-<header class="top"><div class="wrap"><a class="brand" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb069" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-8 0-14 4-14 12 0 1.5.3 3 1 4 2-6 6-9 11-11-4 3-7 6-8 12 8 0 12-6 10-17z"/></svg><span>AQA Environmental Science</span></a><nav><a href="../index.html" class="">Topics</a><a href="../papers.html" class="">Mock papers</a><a href="../official.html" class="">Past papers</a><a href="../essays.html" class="">Essay bank</a><a href="../quickfire.html" class="">Quick-fire</a><a href="../search.html" class="">Search</a><button class="icon-btn" id="themeBtn" type="button" title="Toggle dark mode">&#9790; Dark</button></nav></div></header>
+<header class="top"><div class="wrap"><a class="brand" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb069" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-8 0-14 4-14 12 0 1.5.3 3 1 4 2-6 6-9 11-11-4 3-7 6-8 12 8 0 12-6 10-17z"/></svg><span>AQA Environmental Science</span></a><nav><a href="../index.html" class="">Topics</a><a href="../papers.html" class="">Mock papers</a><a href="../official.html" class="">Past papers</a><a href="../essays.html" class="">Essay bank</a><a href="../pastq.html" class="">Real Qs by topic</a><a href="../quickfire.html" class="">Quick-fire</a><a href="../planner.html" class="">Planner</a><a href="../search.html" class="">Search</a><button class="icon-btn" id="themeBtn" type="button" title="Toggle dark mode">&#9790; Dark</button></nav></div></header>
 <section class="hero p1 small"><div class="wrap"><div class="crumbs"><a href="../index.html">Topics</a><span>&rsaquo;</span><a href="../topic/pollution.html">Pollution</a><span>&rsaquo;</span>Properties of pollutants &amp; environmental factors</div><h1>Properties of pollutants &amp; environmental factors</h1><p>Pollution &middot; AQA spec 3.4.1-3.4.2 &middot; R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 236-242</p><span class="pill">Paper 1</span><span class="pill">8 questions</span><div class="prog" data-qids="PPRO-01,PPRO-02,PPRO-03,PPRO-04,PPRO-05,PPRO-06,PPRO-07,PPRO-08"><div class="bar"><div class="ok"></div><div class="wk"></div></div><span class="pl"></span></div></div></section>
 <main><div class="wrap"><h2 class="sec">Question sets</h2><table class="list"><tr><th>Set</th><th>Questions</th><th>Marks</th><th>Question paper</th><th>Mark scheme</th></tr>
 <tr><td>Set 1</td><td>8</td><td>75</td><td><a href="../pdf/topic/pollutant-properties-set1-QP.pdf">Download QP (PDF)</a></td><td><a href="../pdf/topic/pollutant-properties-set1-MS.pdf">Download MS (PDF)</a></td></tr>
 </table>
+<h2 class="sec">Real AQA questions on this topic (2)</h2><div class="real"><div class="row"><span class="ser">June 2024 &middot; Paper 1</span><span class="qn">Essay &middot; 25 marks</span><span class="t">Essay: anthropogenic and environmental factors affecting the dispersal and severity of pollution</span><a href="../official/AQA-74471-QP-JUN24-CR.PDF#page=28">Question (p.28)</a> <a href="../official/AQA-74471-MS-JUN24.PDF">Mark scheme</a></div><div class="row"><span class="ser">June 2023 &middot; Paper 1</span><span class="qn">Essay &middot; 25 marks</span><span class="t">Essay: how knowledge of the properties of pollutants reduces their impacts</span><a href="../official/AQA-74471-QP-JUN23.PDF#page=29">Question (p.29)</a> <a href="../official/AQA-74471-MS-JUN23.PDF">Mark scheme</a></div></div>
+<p class="note noprint">Practise this subtopic one question at a time: <a href="../quickfire.html?sub=pollutant-properties">Quick-fire &rarr;</a></p>
 <div class="filterbar noprint"><input type="search" placeholder="Filter questions by keyword (e.g. albedo, quota, Simpson)"><button type="button" class="chip mk" data-v="5">5 marks</button><button type="button" class="chip mk" data-v="10">10 marks</button><button type="button" class="chip mk" data-v="15">15 marks</button><button type="button" class="chip fl" data-v="calc">Calculation</button><button type="button" class="chip fl" data-v="data">Data / figure</button><button type="button" class="chip fl" data-v="ext">9-mark extended</button><button type="button" class="chip fl" data-v="mcq">Multiple choice</button><button type="button" class="chip fl" data-v="table">Complete a table</button><select class="status" title="Filter by your progress"><option value="all">All progress</option><option value="todo">Not attempted</option><option value="work">Needs work</option><option value="secure">Secure</option><option value="notsecure">Not yet secure</option></select><button type="button" class="chip clear">Clear</button><span class="cnt"></span><button type="button" class="chip" data-reveal="1">Show all mark schemes</button><button type="button" class="chip" data-print="qp" title="Print the questions only">Print</button><button type="button" class="chip" data-print="ms" title="Print questions with mark schemes">Print + MS</button></div>
 <h2 class="sec set">Set 1</h2>
-<div class="q" id="PPRO-01" data-qid="PPRO-01" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 1</span><span class="meta">10 marks &middot; <a href="../subtopic/pollutant-properties.html">Properties of pollutants &amp; environmental factors</a> &middot; spec 3.4.1 &middot; Genn pp. 236-240 &middot; PPRO-01</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="PPRO-01" data-qid="PPRO-01" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 1</span><span class="meta">10 marks &middot; <a href="../subtopic/pollutant-properties.html">Properties of pollutants &amp; environmental factors</a> &middot; spec 3.4.1 &middot; Genn pp. 236-240 &middot; PPRO-01</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>Table 1 shows some properties of three pollutants.</p>
 <div class="cap">Table 1</div><table class="data"><tr><th>Pollutant</th><th>State at 20 &deg;C</th><th>Solubility in water</th><th>Solubility in lipids</th><th>Environmental half-life</th></tr><tr><td>DDT (insecticide)</td><td>Solid</td><td>Very low</td><td>High</td><td>About 15 years in soil</td></tr><tr><td>Nitrate ions</td><td>Dissolved ion</td><td>Very high</td><td>Very low</td><td>Not applicable (not degraded)</td></tr><tr><td>Hydrogen cyanide</td><td>Gas (denser than air)</td><td>High</td><td>Low</td><td>Hours</td></tr></table>
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">01.1</span>Define the term <b>environmental half-life</b>.
@@ -115,25 +131,23 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">01.5</span>Give <b>two</b> examples of pollutants that are forms of energy rather than substances.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>01.1</b> (1 marks)
-<ul><li>The time taken for half of a pollutant (released into the environment) to break down / degrade</li></ul>
+<div class="mspart"><div class="msh"><b>01.1</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>The time taken for half of a pollutant (released into the environment) to break down / degrade</span></li></ul>
 </div>
-<div><b>01.2</b> (3 marks)
-<ul><li>DDT is liposoluble so it is stored in fat / can pass through phospholipid cell membranes and is not excreted (nitrates are water soluble and excreted easily)</li><li>DDT is persistent (long half-life) so it is not broken down before it is passed to the next trophic level</li><li>So DDT bioaccumulates in each organism and becomes more concentrated at each successive trophic level</li></ul>
+<div class="mspart"><div class="msh"><b>01.2</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>DDT is liposoluble so it is stored in fat / can pass through phospholipid cell membranes and is not excreted (nitrates are water soluble and excreted easily)</span></li><li><span class="mk">1</span><span>DDT is persistent (long half-life) so it is not broken down before it is passed to the next trophic level</span></li><li><span class="mk">1</span><span>So DDT bioaccumulates in each organism and becomes more concentrated at each successive trophic level</span></li></ul>
 </div>
-<div><b>01.3</b> (2 marks)
-<div class="lvl"><i>Any 2 from:</i></div>
-<ul><li>The gas is denser than air so it settled close to the ground / did not rise and disperse</li><li>Low wind velocity (at night) meant it was not dispersed / diluted</li><li>Short half-life so it broke down before travelling far</li></ul>
+<div class="mspart"><div class="msh"><b>01.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">Any 2 from the points below - 1 mark each, maximum 2.</div><ul class="pts"><li><span class="mk">1</span><span>The gas is denser than air so it settled close to the ground / did not rise and disperse</span></li><li><span class="mk">1</span><span>Low wind velocity (at night) meant it was not dispersed / diluted</span></li><li><span class="mk">1</span><span>Short half-life so it broke down before travelling far</span></li></ul>
 </div>
-<div><b>01.4</b> (2 marks)
-<ul><li>High solubility means nitrates are easily dispersed / leached / carried by water so they affect a larger area (eg rivers, aquifers, the sea)</li><li>But dispersal dilutes the pollutant so the concentration at any one point may be lower</li></ul>
+<div class="mspart"><div class="msh"><b>01.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>High solubility means nitrates are easily dispersed / leached / carried by water so they affect a larger area (eg rivers, aquifers, the sea)</span></li><li><span class="mk">1</span><span>But dispersal dilutes the pollutant so the concentration at any one point may be lower</span></li></ul>
 </div>
-<div><b>01.5</b> (2 marks)
-<div class="lvl"><i>Any 2 from:</i></div>
-<ul><li>Noise / sound</li><li>Heat / thermal pollution</li><li>Ionising radiation</li><li>Light</li></ul>
+<div class="mspart"><div class="msh"><b>01.5</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">Any 2 from the points below - 1 mark each, maximum 2.</div><ul class="pts"><li><span class="mk">1</span><span>Noise / sound</span></li><li><span class="mk">1</span><span>Heat / thermal pollution</span></li><li><span class="mk">1</span><span>Ionising radiation</span></li><li><span class="mk">1</span><span>Light</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 236-240; AQA spec 3.4.1.</div></details></div>
-<div class="q" id="PPRO-02" data-qid="PPRO-02" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 2</span><span class="meta">10 marks &middot; <a href="../subtopic/pollutant-properties.html">Properties of pollutants &amp; environmental factors</a> &middot; spec 3.4.1 &middot; Genn pp. 239-240 &middot; PPRO-02</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="PPRO-02" data-qid="PPRO-02" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 2</span><span class="meta">10 marks &middot; <a href="../subtopic/pollutant-properties.html">Properties of pollutants &amp; environmental factors</a> &middot; spec 3.4.1 &middot; Genn pp. 239-240 &middot; PPRO-02</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[3 marks]</span><span class="pn">02.1</span>Explain the difference between a <b>mutagen</b>, a <b>carcinogen</b> and a <b>teratogen</b>.
 </div>
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">02.2</span>Explain why a birth abnormality caused by a teratogen cannot be inherited by future generations, whereas one caused by a mutagen may be.
@@ -143,20 +157,20 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[3 marks]</span><span class="pn">02.4</span>Explain what is meant by <b>synergism</b> and give an example.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>02.1</b> (3 marks)
-<ul><li>Mutagen: an agent that changes the chemical structure / base sequence of DNA (causes mutations), eg ionising radiation, UV, PCBs, cadmium, asbestos</li><li>Carcinogen: a mutagen that causes cancer / uncontrolled cell division producing a tumour</li><li>Teratogen: an agent that causes birth abnormalities by preventing normal gene expression (inhibiting proteins / enzymes) without changing DNA structure, eg mercury, 2,4,5-T</li></ul>
+<div class="mspart"><div class="msh"><b>02.1</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Mutagen: an agent that changes the chemical structure / base sequence of DNA (causes mutations), eg ionising radiation, UV, PCBs, cadmium, asbestos</span></li><li><span class="mk">1</span><span>Carcinogen: a mutagen that causes cancer / uncontrolled cell division producing a tumour</span></li><li><span class="mk">1</span><span>Teratogen: an agent that causes birth abnormalities by preventing normal gene expression (inhibiting proteins / enzymes) without changing DNA structure, eg mercury, 2,4,5-T</span></li></ul>
 </div>
-<div><b>02.2</b> (2 marks)
-<ul><li>Teratogens do not change the DNA structure, so the abnormality is not in the genes and cannot be passed on</li><li>Mutagens change DNA; if the mutation is in a gamete / egg / sperm (gonadic effect) it can be inherited</li></ul>
+<div class="mspart"><div class="msh"><b>02.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Teratogens do not change the DNA structure, so the abnormality is not in the genes and cannot be passed on</span></li><li><span class="mk">1</span><span>Mutagens change DNA; if the mutation is in a gamete / egg / sperm (gonadic effect) it can be inherited</span></li></ul>
 </div>
-<div><b>02.3</b> (2 marks)
-<ul><li>Somatic: mutation in a general body cell, affecting the individual only (eg cancer / tumour)</li><li>Gonadic: mutation in cells of the ovaries or testes / gametes / embryo, which may cause abnormalities in offspring</li></ul>
+<div class="mspart"><div class="msh"><b>02.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Somatic: mutation in a general body cell, affecting the individual only (eg cancer / tumour)</span></li><li><span class="mk">1</span><span>Gonadic: mutation in cells of the ovaries or testes / gametes / embryo, which may cause abnormalities in offspring</span></li></ul>
 </div>
-<div><b>02.4</b> (3 marks)
-<ul><li>Two or more pollutants whose effects interact to produce a different (usually more serious) effect</li><li>The pollutants themselves do not react to form a new pollutant (that would be a secondary pollutant)</li><li>Example: ozone damages leaf cuticles so sulfur dioxide can cause more damage to the exposed cells; smoke and sulfur dioxide in smogs; neonicotinoids with fungicides</li></ul>
+<div class="mspart"><div class="msh"><b>02.4</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Two or more pollutants whose effects interact to produce a different (usually more serious) effect</span></li><li><span class="mk">1</span><span>The pollutants themselves do not react to form a new pollutant (that would be a secondary pollutant)</span></li><li><span class="mk">1</span><span>Example: ozone damages leaf cuticles so sulfur dioxide can cause more damage to the exposed cells; smoke and sulfur dioxide in smogs; neonicotinoids with fungicides</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 239-240; AQA spec 3.4.1.</div></details></div>
-<div class="q" id="PPRO-03" data-qid="PPRO-03" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 3</span><span class="meta">10 marks &middot; <a href="../subtopic/pollutant-properties.html">Properties of pollutants &amp; environmental factors</a> &middot; spec 3.4.2.2 &middot; Genn pp. 241-242 &middot; PPRO-03</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="PPRO-03" data-qid="PPRO-03" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 3</span><span class="meta">10 marks &middot; <a href="../subtopic/pollutant-properties.html">Properties of pollutants &amp; environmental factors</a> &middot; spec 3.4.2.2 &middot; Genn pp. 241-242 &middot; PPRO-03</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>Figure 1 shows how air temperature changes with altitude above a city in a valley on two different nights. Line A shows normal conditions. Line B shows the conditions on a still, cloudless night.</p>
 <div class="cap">Figure 1</div>
 <svg class="chart" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
@@ -200,22 +214,20 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">03.4</span>Give <b>two</b> types of pollution event that are made more severe by temperature inversions.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>03.1</b> (1 marks)
-<ul><li>Temperature inversion</li></ul>
+<div class="mspart"><div class="msh"><b>03.1</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>Temperature inversion</span></li></ul>
 </div>
-<div><b>03.2</b> (4 marks)
-<ul><li>On night A, temperature falls with altitude; warm effluent gases are less dense / more buoyant than the surrounding air so they rise</li><li>As they rise they cool but the surrounding air is also cooler so they stay buoyant and continue to rise, dispersing and diluting</li><li>On night B the air near the ground is colder / denser than the air above (inversion layer at about 400 m)</li><li>Pollutants cool as they rise and become denser than the warmer air above so they are trapped below the inversion layer and become concentrated</li></ul>
+<div class="mspart"><div class="msh"><b>03.2</b> <span class="mtot">4 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>On night A, temperature falls with altitude; warm effluent gases are less dense / more buoyant than the surrounding air so they rise</span></li><li><span class="mk">1</span><span>As they rise they cool but the surrounding air is also cooler so they stay buoyant and continue to rise, dispersing and diluting</span></li><li><span class="mk">1</span><span>On night B the air near the ground is colder / denser than the air above (inversion layer at about 400 m)</span></li><li><span class="mk">1</span><span>Pollutants cool as they rise and become denser than the warmer air above so they are trapped below the inversion layer and become concentrated</span></li></ul>
 </div>
-<div><b>03.3</b> (3 marks)
-<div class="lvl"><i>Any 3 from:</i></div>
-<ul><li>Cloudless sky allows infrared energy to be radiated from the ground so the ground cools rapidly</li><li>The cold ground cools the air in contact with it, producing a cold dense layer near the ground</li><li>Low wind velocity means the air layers of different temperatures do not mix</li><li>Valley allows cold dense air to collect / drain into the low ground</li></ul>
+<div class="mspart"><div class="msh"><b>03.3</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">Any 3 from the points below - 1 mark each, maximum 3.</div><ul class="pts"><li><span class="mk">1</span><span>Cloudless sky allows infrared energy to be radiated from the ground so the ground cools rapidly</span></li><li><span class="mk">1</span><span>The cold ground cools the air in contact with it, producing a cold dense layer near the ground</span></li><li><span class="mk">1</span><span>Low wind velocity means the air layers of different temperatures do not mix</span></li><li><span class="mk">1</span><span>Valley allows cold dense air to collect / drain into the low ground</span></li></ul>
 </div>
-<div><b>03.4</b> (2 marks)
-<div class="lvl"><i>Any 2 from:</i></div>
-<ul><li>Smoke smogs (eg London 1952)</li><li>Photochemical smogs (eg Los Angeles, Mexico City)</li><li>Build-up of NOx / carbon monoxide / PM10 in cities</li></ul>
+<div class="mspart"><div class="msh"><b>03.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">Any 2 from the points below - 1 mark each, maximum 2.</div><ul class="pts"><li><span class="mk">1</span><span>Smoke smogs (eg London 1952)</span></li><li><span class="mk">1</span><span>Photochemical smogs (eg Los Angeles, Mexico City)</span></li><li><span class="mk">1</span><span>Build-up of NOx / carbon monoxide / PM10 in cities</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 241-242; AQA spec 3.4.2.2.</div></details></div>
-<div class="q" id="PPRO-04" data-qid="PPRO-04" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 4</span><span class="meta">10 marks &middot; <a href="../subtopic/pollutant-properties.html">Properties of pollutants &amp; environmental factors</a> &middot; spec 3.4.2.2 &middot; Genn pp. 240-242, 255 &middot; PPRO-04</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="PPRO-04" data-qid="PPRO-04" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 4</span><span class="meta">10 marks &middot; <a href="../subtopic/pollutant-properties.html">Properties of pollutants &amp; environmental factors</a> &middot; spec 3.4.2.2 &middot; Genn pp. 240-242, 255 &middot; PPRO-04</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[6 marks]</span><span class="pn">04.1</span>Explain how each of the following environmental factors affects the rate of degradation of pollutants. Give a named example of a pollutant for each factor.
 </div>
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">04.2</span>Explain how the presence of adsorbent materials such as clay can reduce the severity of pollution by heavy metals or radioactive caesium-137.
@@ -223,18 +235,17 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">04.3</span>Explain why a fall in pH increases the harm caused by many heavy metals.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>04.1</b> (6 marks)
-<ul><li>Temperature: most chemical / biological reactions are faster at higher temperature so degradable pollutants (eg sewage) break down faster; but faster decomposition may increase deoxygenation</li><li>Light: provides the activation energy for chemical reactions; photodegradation of pesticides (eg neonicotinoids break down fastest in sunlight); light drives photochemical smog reactions producing secondary pollutants</li><li>Oxygen: needed for aerobic bacterial decomposition of organic wastes / sewage; oxidation of sulfide ores produces sulfur dioxide / acid mine drainage; oxidation state affects the solubility of metals</li></ul>
+<div class="mspart"><div class="msh"><b>04.1</b> <span class="mtot">6 marks</span></div>
+<div class="lvl">2 marks for each point (partial credit for a partly correct point).</div><ul class="pts"><li><span class="mk">2</span><span>Temperature: most chemical / biological reactions are faster at higher temperature so degradable pollutants (eg sewage) break down faster; but faster decomposition may increase deoxygenation</span></li><li><span class="mk">2</span><span>Light: provides the activation energy for chemical reactions; photodegradation of pesticides (eg neonicotinoids break down fastest in sunlight); light drives photochemical smog reactions producing secondary pollutants</span></li><li><span class="mk">2</span><span>Oxygen: needed for aerobic bacterial decomposition of organic wastes / sewage; oxidation of sulfide ores produces sulfur dioxide / acid mine drainage; oxidation state affects the solubility of metals</span></li></ul>
 </div>
-<div><b>04.2</b> (2 marks)
-<div class="lvl"><i>Any 2 from:</i></div>
-<ul><li>Pollutant ions adsorb onto (the surface of) clay particles / organic matter in soil or sediment</li><li>So they are immobilised and cannot be absorbed by organisms / leached into water; radiation is absorbed in the ground</li><li>But they may be released later if conditions change (eg storms disturbing sediment, low pH)</li></ul>
+<div class="mspart"><div class="msh"><b>04.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">Any 2 from the points below - 1 mark each, maximum 2.</div><ul class="pts"><li><span class="mk">1</span><span>Pollutant ions adsorb onto (the surface of) clay particles / organic matter in soil or sediment</span></li><li><span class="mk">1</span><span>So they are immobilised and cannot be absorbed by organisms / leached into water; radiation is absorbed in the ground</span></li><li><span class="mk">1</span><span>But they may be released later if conditions change (eg storms disturbing sediment, low pH)</span></li></ul>
 </div>
-<div><b>04.3</b> (2 marks)
-<ul><li>Many heavy metals (eg lead, aluminium) are more soluble at low pH</li><li>So they are mobilised / leached from soil or sediments and can be absorbed by organisms / enter water bodies</li></ul>
+<div class="mspart"><div class="msh"><b>04.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Many heavy metals (eg lead, aluminium) are more soluble at low pH</span></li><li><span class="mk">1</span><span>So they are mobilised / leached from soil or sediments and can be absorbed by organisms / enter water bodies</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 240-242, 255; AQA spec 3.4.2.2.</div></details></div>
-<div class="q" id="PPRO-05" data-qid="PPRO-05" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 5</span><span class="meta">10 marks &middot; <a href="../subtopic/pollutant-properties.html">Properties of pollutants &amp; environmental factors</a> &middot; spec 3.4.1, 3.4.2.1 &middot; Genn pp. 236-241, 254-255 &middot; PPRO-05</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="PPRO-05" data-qid="PPRO-05" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 5</span><span class="meta">10 marks &middot; <a href="../subtopic/pollutant-properties.html">Properties of pollutants &amp; environmental factors</a> &middot; spec 3.4.1, 3.4.2.1 &middot; Genn pp. 236-241, 254-255 &middot; PPRO-05</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>A factory discharges a persistent, water-soluble pollutant into a river. Table 1 shows the concentration of the pollutant measured at sites along the river on a day with normal river flow.</p>
 <div class="cap">Table 1</div><table class="data"><tr><th>Site</th><th>Distance downstream of discharge / km</th><th>Pollutant concentration / mg dm<sup>-3</sup></th><th>River flow / m<sup>3</sup> s<sup>-1</sup></th></tr><tr><td>A (upstream)</td><td>-2</td><td>0.0</td><td>12</td></tr><tr><td>B</td><td>0.5</td><td>4.8</td><td>12</td></tr><tr><td>C</td><td>5</td><td>3.9</td><td>15</td></tr><tr><td>D (below tributary)</td><td>12</td><td>1.6</td><td>36</td></tr><tr><td>E</td><td>30</td><td>1.4</td><td>38</td></tr></table>
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">05.1</span>Calculate the percentage decrease in pollutant concentration between site B and site E.
@@ -248,52 +259,51 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">05.5</span>Explain why the factory might be permitted to discharge the effluent into the sea near a strong current but not into the river.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>05.1</b> (2 marks)
-<ul><li>(4.8 - 1.4) / 4.8 x 100</li><li>= 70.8% (accept 71%)</li></ul>
+<div class="mspart"><div class="msh"><b>05.1</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">A correct final answer (with unit where asked) scores full marks. If the answer is wrong, award 1 mark for each correct step of working shown.</div><ul class="pts"><li><span class="mk">1</span><span>(4.8 - 1.4) / 4.8 x 100</span></li><li><span class="mk">1</span><span>= 70.8% (accept 71%)</span></li></ul>
 </div>
-<div><b>05.2</b> (2 marks)
-<ul><li>A tributary joins the river, more than doubling the flow (15 to 36 m<sup>3</sup> s<sup>-1</sup>)</li><li>So the pollutant is diluted by the extra water (dispersal), not broken down</li></ul>
+<div class="mspart"><div class="msh"><b>05.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>A tributary joins the river, more than doubling the flow (15 to 36 m<sup>3</sup> s<sup>-1</sup>)</span></li><li><span class="mk">1</span><span>So the pollutant is diluted by the extra water (dispersal), not broken down</span></li></ul>
 </div>
-<div><b>05.3</b> (2 marks)
-<ul><li>The pollutant is persistent so it is not degraded / broken down as it travels</li><li>Little extra water joins the river (flow 36 to 38) so little further dilution</li></ul>
+<div class="mspart"><div class="msh"><b>05.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>The pollutant is persistent so it is not degraded / broken down as it travels</span></li><li><span class="mk">1</span><span>Little extra water joins the river (flow 36 to 38) so little further dilution</span></li></ul>
 </div>
-<div><b>05.4</b> (2 marks)
-<div class="lvl"><i>Any 2 from:</i></div>
-<ul><li>Lake has a long residence time / water does not flow away so the pollutant accumulates rather than being carried away</li><li>Smaller volume of water / less dilution / less dispersal by currents</li><li>Persistent pollutant gradually becomes more concentrated (eg by evaporation)</li></ul>
+<div class="mspart"><div class="msh"><b>05.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">Any 2 from the points below - 1 mark each, maximum 2.</div><ul class="pts"><li><span class="mk">1</span><span>Lake has a long residence time / water does not flow away so the pollutant accumulates rather than being carried away</span></li><li><span class="mk">1</span><span>Smaller volume of water / less dilution / less dispersal by currents</span></li><li><span class="mk">1</span><span>Persistent pollutant gradually becomes more concentrated (eg by evaporation)</span></li></ul>
 </div>
-<div><b>05.5</b> (2 marks)
-<ul><li>Marine discharge: large volume of water and currents dilute and disperse the pollutant to acceptably low concentrations (control of emission location)</li><li>River: small volume so concentrations stay high / drinking water abstraction / sensitive wildlife downstream</li></ul>
+<div class="mspart"><div class="msh"><b>05.5</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Marine discharge: large volume of water and currents dilute and disperse the pollutant to acceptably low concentrations (control of emission location)</span></li><li><span class="mk">1</span><span>River: small volume so concentrations stay high / drinking water abstraction / sensitive wildlife downstream</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 236-241, 254-255; AQA spec 3.4.1, 3.4.2.1.</div></details></div>
-<div class="q" id="PPRO-06" data-qid="PPRO-06" data-marks="5" data-flags="mcq"><div class="qh"><span class="num">Question 6</span><span class="meta">5 marks &middot; <a href="../subtopic/pollutant-properties.html">Properties of pollutants &amp; environmental factors</a> &middot; spec 3.4.1 &middot; Genn pp. 237-238 &middot; PPRO-06</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="PPRO-06" data-qid="PPRO-06" data-marks="5" data-flags="mcq"><div class="qh"><span class="num">Question 6</span><span class="meta">5 marks &middot; <a href="../subtopic/pollutant-properties.html">Properties of pollutants &amp; environmental factors</a> &middot; spec 3.4.1 &middot; Genn pp. 237-238 &middot; PPRO-06</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">06.1</span>Which of the following is a <b>secondary</b> pollutant? Tick one box.
 <ul class="mcq"><li>A&nbsp; Sulfur dioxide from a coal-fired power station</li><li>B&nbsp; Tropospheric ozone</li><li>C&nbsp; Carbon monoxide from a car exhaust</li><li>D&nbsp; Nitrogen monoxide from a diesel engine</li></ul>
 </div>
 <div class="part"><span class="marks">[4 marks]</span><span class="pn">06.2</span>Explain the difference between a primary pollutant and a secondary pollutant, using acid rain as an example.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>06.1</b> (1 marks)
-<ul><li>B - Tropospheric ozone (formed by reactions of NOx in sunlight)</li></ul>
+<div class="mspart"><div class="msh"><b>06.1</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">Correct answer only.</div><ul class="pts"><li><span class="mk">1</span><span><b></b>&nbsp; B - Tropospheric ozone (formed by reactions of NOx in sunlight)</span></li></ul>
 </div>
-<div><b>06.2</b> (4 marks)
-<ul><li>Primary pollutant: released directly by human activities, eg sulfur dioxide from burning coal / smelting sulfide ores; NOx from high-temperature combustion</li><li>Secondary pollutant: produced by chemical reactions between primary pollutants, often with non-pollutants (water, oxygen, sunlight)</li><li>Sulfur dioxide is oxidised by ozone to sulfur trioxide which dissolves to form sulfuric acid; NOx dissolve to form nitric acid</li><li>The acids (sulfurous, sulfuric, nitric) are secondary pollutants; ozone itself is a secondary pollutant of NOx photochemistry</li></ul>
+<div class="mspart"><div class="msh"><b>06.2</b> <span class="mtot">4 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Primary pollutant: released directly by human activities, eg sulfur dioxide from burning coal / smelting sulfide ores; NOx from high-temperature combustion</span></li><li><span class="mk">1</span><span>Secondary pollutant: produced by chemical reactions between primary pollutants, often with non-pollutants (water, oxygen, sunlight)</span></li><li><span class="mk">1</span><span>Sulfur dioxide is oxidised by ozone to sulfur trioxide which dissolves to form sulfuric acid; NOx dissolve to form nitric acid</span></li><li><span class="mk">1</span><span>The acids (sulfurous, sulfuric, nitric) are secondary pollutants; ozone itself is a secondary pollutant of NOx photochemistry</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 237-238; AQA spec 3.4.1.</div></details></div>
-<div class="q" id="PPRO-07" data-qid="PPRO-07" data-marks="10" data-flags="ext"><div class="qh"><span class="num">Question 7</span><span class="meta">10 marks &middot; <a href="../subtopic/pollutant-properties.html">Properties of pollutants &amp; environmental factors</a> &middot; spec 3.4.1 &middot; Genn pp. 236-240 &middot; PPRO-07</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="PPRO-07" data-qid="PPRO-07" data-marks="10" data-flags="ext"><div class="qh"><span class="num">Question 7</span><span class="meta">10 marks &middot; <a href="../subtopic/pollutant-properties.html">Properties of pollutants &amp; environmental factors</a> &middot; spec 3.4.1 &middot; Genn pp. 236-240 &middot; PPRO-07</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[9 marks]</span><span class="pn">07.1</span>Discuss how an understanding of the properties of pollutants can be used to predict their behaviour in the environment and to plan strategies to control them.
 </div>
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">07.2</span>State what is meant by <b>bioaccumulation</b>.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>07.1</b> (9 marks)
-<div class="lvl"><b>Levels of response:</b> L3 7-9 comprehensive, well-structured, applied to context, supported judgement; L2 4-6 sound but incomplete application/evaluation; L1 1-3 basic, limited structure.</div><div class="lvl"><b>Indicative content:</b></div>
-<ul><li>State of matter: solids deposit near the source, gases disperse widely in the atmosphere; density (lead dust, hydrogen cyanide at Bhopal) controls how far particles/gases travel</li><li>Persistence / half-life: persistent pollutants (organochlorines, CFCs, heavy metals, radioactive wastes with long half-lives) travel further, accumulate and need containment rather than dilution; non-persistent pollutants (sewage, organophosphates) can be allowed to degrade</li><li>Toxicity, specificity, mode of action (enzyme inhibition, neurotoxins) determine acceptable concentrations and which species are at risk; LD50 / MDAF / MDNF used to set doses</li><li>Solubility in water (nitrates disperse and leach - control by nitrate vulnerable zones) vs liposolubility (DDT, mercury bioaccumulate and biomagnify - control by bans / restrictions)</li><li>Reactivity: reactive pollutants may degrade quickly or form secondary pollutants (ozone, acid rain, PANs) - controlling primary pollutants (catalytic converters, FGD) prevents secondary pollutants</li><li>Adsorption onto clay / sediments immobilises metals and caesium; can be used deliberately (activated carbon filters, polymer adsorption)</li><li>Mutagenic / carcinogenic / teratogenic action means no safe dose; exposure kept As Low As Reasonably Achievable (ALARA)</li><li>Synergism (ozone + SO2; smoke + SO2) means pollutants must be considered together</li><li>Environmental features (temperature inversions, currents, pH, oxygen) interact with properties: Critical Pathway Analysis uses properties + environment to predict where pollutants go and to focus monitoring</li><li>Evaluation: properties of new chemicals can be predicted from similar ones (precautionary principle); understanding allows prevention rather than clean-up</li></ul>
+<div class="mspart"><div class="msh"><b>07.1</b> <span class="mtot">9 marks</span></div>
+<table class="levels"><tr><th>Level</th><th>Marks</th><th>What the answer must show</th></tr><tr><td><b>Level 3</b></td><td class="r">7-9</td><td>Answer is comprehensive, relevant and logically structured. Shows detailed knowledge and understanding of the relevant scientific ideas and applies them accurately to the context. Evaluation/analysis is well supported by evidence and a clear judgement or conclusion is reached.</td></tr><tr><td><b>Level 2</b></td><td class="r">4-6</td><td>Answer is mostly relevant and shows some structure. Knowledge and understanding of relevant ideas is sound but application to the context or evaluation may be incomplete or lack detail. A judgement may be made but is not fully supported.</td></tr><tr><td><b>Level 1</b></td><td class="r">1-3</td><td>Answer is basic, with limited structure. Some relevant knowledge is shown but there are omissions or errors. Little application to the context and little or no evaluation.</td></tr><tr><td><b>&nbsp;</b></td><td class="r">0</td><td>No relevant content.</td></tr></table><div class="lvl"><b>Indicative content</b> - credit any of the following (and other relevant, accurate points):</div>
+<ul class="ind"><li>State of matter: solids deposit near the source, gases disperse widely in the atmosphere; density (lead dust, hydrogen cyanide at Bhopal) controls how far particles/gases travel</li><li>Persistence / half-life: persistent pollutants (organochlorines, CFCs, heavy metals, radioactive wastes with long half-lives) travel further, accumulate and need containment rather than dilution; non-persistent pollutants (sewage, organophosphates) can be allowed to degrade</li><li>Toxicity, specificity, mode of action (enzyme inhibition, neurotoxins) determine acceptable concentrations and which species are at risk; LD50 / MDAF / MDNF used to set doses</li><li>Solubility in water (nitrates disperse and leach - control by nitrate vulnerable zones) vs liposolubility (DDT, mercury bioaccumulate and biomagnify - control by bans / restrictions)</li><li>Reactivity: reactive pollutants may degrade quickly or form secondary pollutants (ozone, acid rain, PANs) - controlling primary pollutants (catalytic converters, FGD) prevents secondary pollutants</li><li>Adsorption onto clay / sediments immobilises metals and caesium; can be used deliberately (activated carbon filters, polymer adsorption)</li><li>Mutagenic / carcinogenic / teratogenic action means no safe dose; exposure kept As Low As Reasonably Achievable (ALARA)</li><li>Synergism (ozone + SO2; smoke + SO2) means pollutants must be considered together</li><li>Environmental features (temperature inversions, currents, pH, oxygen) interact with properties: Critical Pathway Analysis uses properties + environment to predict where pollutants go and to focus monitoring</li><li>Evaluation: properties of new chemicals can be predicted from similar ones (precautionary principle); understanding allows prevention rather than clean-up</li></ul>
 </div>
-<div><b>07.2</b> (1 marks)
-<ul><li>The increase in the amount / concentration of a substance within an (individual) organism over time, because intake exceeds excretion or breakdown</li></ul>
+<div class="mspart"><div class="msh"><b>07.2</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>The increase in the amount / concentration of a substance within an (individual) organism over time, because intake exceeds excretion or breakdown</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 236-240; AQA spec 3.4.1.</div></details></div>
-<div class="q" id="PPRO-08" data-qid="PPRO-08" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 8</span><span class="meta">10 marks &middot; <a href="../subtopic/pollutant-properties.html">Properties of pollutants &amp; environmental factors</a> &middot; spec 3.4.1, 3.4.2 &middot; Genn pp. 238-242 &middot; PPRO-08</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="PPRO-08" data-qid="PPRO-08" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 8</span><span class="meta">10 marks &middot; <a href="../subtopic/pollutant-properties.html">Properties of pollutants &amp; environmental factors</a> &middot; spec 3.4.1, 3.4.2 &middot; Genn pp. 238-242 &middot; PPRO-08</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>Mercury released into a lake from a factory was in the inorganic form. Fish in the lake were later found to contain high concentrations of methyl mercury, an organic form.</p>
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">08.1</span>Suggest how the inorganic mercury was converted to methyl mercury.
 </div>
@@ -304,18 +314,17 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[3 marks]</span><span class="pn">08.4</span>Suggest <b>three</b> factors that should be included in a Critical Pathway Analysis of a proposed mercury discharge.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>08.1</b> (2 marks)
-<ul><li>Inorganic mercury sank into the sediments / deep water where conditions are anaerobic / low oxygen</li><li>It was chemically reduced / converted by (anaerobic) bacteria to methyl mercury</li></ul>
+<div class="mspart"><div class="msh"><b>08.1</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Inorganic mercury sank into the sediments / deep water where conditions are anaerobic / low oxygen</span></li><li><span class="mk">1</span><span>It was chemically reduced / converted by (anaerobic) bacteria to methyl mercury</span></li></ul>
 </div>
-<div><b>08.2</b> (3 marks)
-<ul><li>Methyl mercury is liposoluble so it passes through cell membranes and is stored in fat / not excreted</li><li>So it bioaccumulates in organisms and biomagnifies along the food chain (eg in fish, then humans eating fish)</li><li>It is a neurotoxin / teratogen causing brain damage and birth abnormalities (eg Minamata)</li></ul>
+<div class="mspart"><div class="msh"><b>08.2</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Methyl mercury is liposoluble so it passes through cell membranes and is stored in fat / not excreted</span></li><li><span class="mk">1</span><span>So it bioaccumulates in organisms and biomagnifies along the food chain (eg in fish, then humans eating fish)</span></li><li><span class="mk">1</span><span>It is a neurotoxin / teratogen causing brain damage and birth abnormalities (eg Minamata)</span></li></ul>
 </div>
-<div><b>08.3</b> (2 marks)
-<ul><li>Mercury is persistent / not degraded; it is an element so cannot be broken down</li><li>It remains in the sediments and continues to be released / converted and taken up by the food chain; long-lived fish continue to accumulate it</li></ul>
+<div class="mspart"><div class="msh"><b>08.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Mercury is persistent / not degraded; it is an element so cannot be broken down</span></li><li><span class="mk">1</span><span>It remains in the sediments and continues to be released / converted and taken up by the food chain; long-lived fish continue to accumulate it</span></li></ul>
 </div>
-<div><b>08.4</b> (3 marks)
-<div class="lvl"><i>Any 3 from:</i></div>
-<ul><li>Water current velocity and direction (dispersal)</li><li>Properties of the pollutant: solubility, persistence, liposolubility / potential to bioaccumulate</li><li>Food chain pathways to humans (fish, shellfish) / the critical group</li><li>Sediment type / adsorption onto clay</li><li>Volume of the water body / residence time / dilution</li><li>Sensitive locations downstream (fisheries, drinking water abstraction)</li></ul>
+<div class="mspart"><div class="msh"><b>08.4</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">Any 3 from the points below - 1 mark each, maximum 3.</div><ul class="pts"><li><span class="mk">1</span><span>Water current velocity and direction (dispersal)</span></li><li><span class="mk">1</span><span>Properties of the pollutant: solubility, persistence, liposolubility / potential to bioaccumulate</span></li><li><span class="mk">1</span><span>Food chain pathways to humans (fish, shellfish) / the critical group</span></li><li><span class="mk">1</span><span>Sediment type / adsorption onto clay</span></li><li><span class="mk">1</span><span>Volume of the water body / residence time / dilution</span></li><li><span class="mk">1</span><span>Sensitive locations downstream (fisheries, drinking water abstraction)</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 238-242; AQA spec 3.4.1, 3.4.2.</div></details></div>
 </div></main>
@@ -334,7 +343,7 @@ const tb=document.getElementById('themeBtn');if(tb)tb.onclick=()=>{const t=root.
 let prog=LS('envsci.progress')||{};
 window.ES.prog=()=>prog;
 function paint(){
-  document.querySelectorAll('.q[data-qid]').forEach(el=>{const s=prog[el.dataset.qid]||0;el.dataset.status=s;el.querySelectorAll('.st button').forEach(b=>b.classList.toggle('on',+b.dataset.s===s&&s>0));});
+  document.querySelectorAll('.q[data-qid]').forEach(el=>{const s=prog[el.dataset.qid]||0;el.dataset.status=s;el.querySelectorAll('.st button[data-s]').forEach(b=>b.classList.toggle('on',+b.dataset.s===s&&s>0));});
   document.querySelectorAll('[data-qids]').forEach(el=>{const ids=el.dataset.qids.split(',').filter(Boolean);const n=ids.length;if(!n)return;
     const ok=ids.filter(i=>prog[i]===2).length,wk=ids.filter(i=>prog[i]===1).length;
     const o=el.querySelector('.bar .ok'),w=el.querySelector('.bar .wk'),p=el.querySelector('.pl');
@@ -342,7 +351,7 @@ function paint(){
   const ov=document.getElementById('overall');if(ov){const all=(ov.dataset.qids||'').split(',').filter(Boolean);const ok=all.filter(i=>prog[i]===2).length,wk=all.filter(i=>prog[i]===1).length;ov.querySelector('.stat').textContent=Math.round(100*ok/all.length)+'%';ov.querySelector('.detail').textContent=ok+' secure, '+wk+' to revisit, '+(all.length-ok-wk)+' not attempted of '+all.length+' questions.';}
 }
 window.ES.paint=paint;
-document.addEventListener('click',e=>{const b=e.target.closest('.st button');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);paint();if(window.ES.onFilter)window.ES.onFilter();});
+document.addEventListener('click',e=>{const b=e.target.closest('.st button[data-s]');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);paint();if(window.ES.onFilter)window.ES.onFilter();});
 const rs=document.getElementById('resetProg');if(rs)rs.onclick=()=>{if(confirm('Clear all saved progress on this browser?')){prog={};SV('envsci.progress',prog);paint();}};
 paint();
 /* ---- filter bar ---- */
@@ -365,6 +374,13 @@ if(fb){
   txt.addEventListener('input',run);fb.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{c.classList.toggle('on');run();});fb.querySelector('select.status').onchange=run;
   const clr=fb.querySelector('.clear');if(clr)clr.onclick=()=>{txt.value='';fb.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));fb.querySelector('select.status').value='all';run();};
   run();}
+/* ---- sticky offset = real header height (nav can wrap) ---- */
+const hd=document.querySelector('header.top');const setH=()=>root.style.setProperty('--hdr',(getComputedStyle(hd).position==='sticky'?hd.offsetHeight:0)+'px');setH();window.addEventListener('resize',setH);
+/* ---- copy link, back to top ---- */
+document.addEventListener('click',e=>{const b=e.target.closest('[data-copy]');if(!b)return;const q=b.closest('.q');const url=location.href.split('#')[0]+'#'+q.id;
+  (navigator.clipboard?navigator.clipboard.writeText(url):Promise.reject()).then(()=>{b.textContent='\u2713';setTimeout(()=>b.innerHTML='&#128279;',1200);}).catch(()=>prompt('Copy this link:',url));});
+const tt=document.createElement('button');tt.id='totop';tt.title='Back to top';tt.innerHTML='&uarr;';tt.className='noprint';document.body.appendChild(tt);tt.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+window.addEventListener('scroll',()=>tt.classList.toggle('show',window.scrollY>600),{passive:true});
 /* ---- print & reveal ---- */
 document.querySelectorAll('[data-print]').forEach(b=>b.onclick=()=>{const ms=b.dataset.print==='ms';document.body.classList.toggle('print-ms',ms);document.querySelectorAll('details.ms').forEach(d=>d.open=ms);window.print();});
 document.querySelectorAll('[data-reveal]').forEach(b=>b.onclick=()=>{const open=b.dataset.reveal==='1';document.querySelectorAll('details.ms').forEach(d=>d.open=open);b.dataset.reveal=open?'0':'1';b.textContent=open?'Hide all mark schemes':'Show all mark schemes';});

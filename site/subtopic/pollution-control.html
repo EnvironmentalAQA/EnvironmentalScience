@@ -69,12 +69,12 @@ footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-
 .prog .bar .ok{background:var(--ok);height:100%}.prog .bar .wk{background:var(--warn);height:100%}.prog .pl{white-space:nowrap;min-width:90px}
 .hero .prog{color:rgba(255,255,255,.85)}.hero .prog .bar{background:rgba(255,255,255,.25)}
 /* filter bar & tools */
-.filterbar{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.filterbar{position:sticky;top:var(--hdr,62px);z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .filterbar input[type=search]{flex:1 1 220px;font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
 .filterbar label{font-size:.85rem;color:var(--stone);display:inline-flex;align-items:center;gap:4px;cursor:pointer}.filterbar .chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--sand);color:var(--stone);font-size:.82rem;cursor:pointer;font-family:inherit}
 .filterbar .chip.on{background:var(--moss);color:#fff;border-color:var(--moss)}.filterbar .cnt{font-size:.85rem;color:var(--stone);margin-left:auto}
 .filterbar select{font:inherit;font-size:.88rem;padding:5px 8px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
-.tools{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:10px 0;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.tools{position:sticky;top:var(--hdr,62px);z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:10px 0;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .tools .time{font-family:Fraunces,serif;font-size:1.6rem;font-weight:700;color:var(--head);min-width:120px}.tools .time.low{color:var(--bad)}
 .tools .score{font-weight:700;color:var(--moss)}.tools .score b{font-family:Fraunces,serif;font-size:1.3rem}.tools .pct{font-size:.85rem;color:var(--stone)}
 .tools button{font-family:inherit;font-size:.88rem;padding:6px 12px;border-radius:8px;border:1px solid var(--moss);background:transparent;color:var(--moss);cursor:pointer}.tools button.primary{background:var(--moss);color:#fff}
@@ -87,6 +87,20 @@ footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-
 .res{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0;text-decoration:none;color:inherit}.res:hover{border-color:var(--moss)}
 .res .t{font-weight:700;color:var(--head)}.res .m{font-size:.82rem;color:var(--stone)}.res .s{font-size:.92rem;margin-top:4px}.res mark{background:#ffe58a;color:#222;border-radius:3px;padding:0 2px}
 .empty{color:var(--stone);font-style:italic}
+/* mark scheme points, levels, links */
+.mspart{margin:8px 0 12px}.msh{display:flex;align-items:baseline;gap:8px;margin-bottom:2px}.msh .mtot{font-size:.8rem;color:var(--earth);font-weight:700}
+ul.pts{list-style:none;margin:4px 0 6px 0!important;padding:0}ul.pts li{display:flex;gap:10px;align-items:flex-start;padding:4px 0;border-top:1px dashed var(--ms-line)}ul.pts li:first-child{border-top:0}
+.mk{flex:0 0 auto;min-width:26px;text-align:center;font-size:.75rem;font-weight:700;color:#fff;background:var(--ok);border-radius:6px;padding:2px 6px;margin-top:3px}
+table.levels{border-collapse:collapse;width:100%;margin:6px 0 10px;font-size:.86rem;background:var(--card)}table.levels th,table.levels td{border:1px solid var(--ms-line);padding:5px 8px;text-align:left;vertical-align:top}table.levels th{background:var(--sand-dark)}table.levels td.r{white-space:nowrap;font-weight:700;color:var(--earth)}
+ul.ind{margin:4px 0 8px 18px}
+.st button.lnk{padding:2px 7px}
+#totop{position:fixed;right:18px;bottom:18px;z-index:15;background:var(--moss);color:#fff;border:0;border-radius:50%;width:42px;height:42px;font-size:1.2rem;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .2s}#totop.show{opacity:1;pointer-events:auto}
+.jump{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 4px}.jump a{font-size:.82rem;padding:3px 10px;border-radius:999px;border:1px solid var(--line);background:var(--sand);color:var(--moss);text-decoration:none;font-weight:600}.jump a:hover{background:var(--leaf-light)}
+.real .row{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;padding:8px 0;border-bottom:1px dashed var(--line);font-size:.95rem}.real .row .ser{font-weight:700;color:var(--head);min-width:150px}.real .row .qn{color:var(--stone);min-width:70px}.real .row .t{flex:1 1 300px}
+.real .row a{font-size:.82rem;padding:2px 9px;border-radius:999px;border:1px solid var(--line);background:var(--sand);text-decoration:none;font-weight:600}
+.plan input[type=date]{font:inherit;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}.plan .big{font-family:Fraunces,serif;font-size:2rem;color:var(--moss)}
+table.list td .bar{height:8px;background:var(--sand-dark);border-radius:999px;overflow:hidden;display:flex;width:140px}table.list td .bar .ok{background:var(--ok)}table.list td .bar .wk{background:var(--warn)}
+@media(max-width:720px){header.top{position:static}header.top nav a{margin-left:12px;font-size:.88rem}.filterbar,.tools{top:0}.hero h1{font-size:1.8rem}.hero{padding:34px 0 28px}.sub-item .t{flex-basis:100%}}
 /* print */
 @media print{header.top,footer,.tools,.filterbar,.st,.pill,.aw,.hero .crumbs,.prog,.noprint{display:none!important}
 body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;color:#000;padding:10px 0}.hero p,.hero h1{color:#000}.hero:before{display:none}
@@ -94,14 +108,16 @@ body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;c
 svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 </style>
 <script>try{if(localStorage.getItem('envsci.theme')==='"dark"')document.documentElement.dataset.theme='dark';}catch(e){}</script></head><body >
-<header class="top"><div class="wrap"><a class="brand" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb069" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-8 0-14 4-14 12 0 1.5.3 3 1 4 2-6 6-9 11-11-4 3-7 6-8 12 8 0 12-6 10-17z"/></svg><span>AQA Environmental Science</span></a><nav><a href="../index.html" class="">Topics</a><a href="../papers.html" class="">Mock papers</a><a href="../official.html" class="">Past papers</a><a href="../essays.html" class="">Essay bank</a><a href="../quickfire.html" class="">Quick-fire</a><a href="../search.html" class="">Search</a><button class="icon-btn" id="themeBtn" type="button" title="Toggle dark mode">&#9790; Dark</button></nav></div></header>
-<section class="hero p1 small"><div class="wrap"><div class="crumbs"><a href="../index.html">Topics</a><span>&rsaquo;</span><a href="../topic/pollution.html">Pollution</a><span>&rsaquo;</span>Principles of pollution control (CPA, CGM, new technologies)</div><h1>Principles of pollution control (CPA, CGM, new technologies)</h1><p>Pollution &middot; AQA spec 3.4.3.1, 3.4.3.3 &middot; R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 243-245, 303-304</p><span class="pill">Paper 1</span><span class="pill">7 questions</span><div class="prog" data-qids="PCON-01,PCON-02,PCON-03,PCON-04,PCON-05,PCON-06,PCON-07"><div class="bar"><div class="ok"></div><div class="wk"></div></div><span class="pl"></span></div></div></section>
+<header class="top"><div class="wrap"><a class="brand" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb069" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-8 0-14 4-14 12 0 1.5.3 3 1 4 2-6 6-9 11-11-4 3-7 6-8 12 8 0 12-6 10-17z"/></svg><span>AQA Environmental Science</span></a><nav><a href="../index.html" class="">Topics</a><a href="../papers.html" class="">Mock papers</a><a href="../official.html" class="">Past papers</a><a href="../essays.html" class="">Essay bank</a><a href="../pastq.html" class="">Real Qs by topic</a><a href="../quickfire.html" class="">Quick-fire</a><a href="../planner.html" class="">Planner</a><a href="../search.html" class="">Search</a><button class="icon-btn" id="themeBtn" type="button" title="Toggle dark mode">&#9790; Dark</button></nav></div></header>
+<section class="hero p1 small"><div class="wrap"><div class="crumbs"><a href="../index.html">Topics</a><span>&rsaquo;</span><a href="../topic/pollution.html">Pollution</a><span>&rsaquo;</span>Principles of pollution control (CPA, CGM, new technologies)</div><h1>Principles of pollution control (CPA, CGM, new technologies)</h1><p>Pollution &middot; AQA spec 3.4.3.1, 3.4.3.3 &middot; R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 243-245, 303-304</p><span class="pill">Paper 1</span><span class="pill">8 questions</span><div class="prog" data-qids="PCON-01,PCON-02,PCON-03,PCON-04,PCON-05,PCON-06,PCON-07,PCON-08"><div class="bar"><div class="ok"></div><div class="wk"></div></div><span class="pl"></span></div></div></section>
 <main><div class="wrap"><h2 class="sec">Question sets</h2><table class="list"><tr><th>Set</th><th>Questions</th><th>Marks</th><th>Question paper</th><th>Mark scheme</th></tr>
-<tr><td>Set 1</td><td>7</td><td>60</td><td><a href="../pdf/topic/pollution-control-set1-QP.pdf">Download QP (PDF)</a></td><td><a href="../pdf/topic/pollution-control-set1-MS.pdf">Download MS (PDF)</a></td></tr>
+<tr><td>Set 1</td><td>8</td><td>75</td><td><a href="../pdf/topic/pollution-control-set1-QP.pdf">Download QP (PDF)</a></td><td><a href="../pdf/topic/pollution-control-set1-MS.pdf">Download MS (PDF)</a></td></tr>
 </table>
+<h2 class="sec">Real AQA questions on this topic (4)</h2><div class="real"><div class="row"><span class="ser">June 2024 &middot; Paper 1</span><span class="qn">Q1 &middot; 5 marks</span><span class="t">Atmospheric pollution control technologies (complete the table)</span><a href="../official/AQA-74471-QP-JUN24-CR.PDF#page=2">Question (p.2)</a> <a href="../official/AQA-74471-MS-JUN24.PDF">Mark scheme</a></div><div class="row"><span class="ser">June 2022 &middot; Paper 1</span><span class="qn">Q1 &middot; 5 marks</span><span class="t">Pollution control technologies (complete the table)</span><a href="../official/AQA-74471-QP-JUN22.PDF#page=3">Question (p.3)</a> <a href="../official/AQA-74471-MS-JUN22.PDF">Mark scheme</a></div><div class="row"><span class="ser">November 2021 &middot; Paper 1</span><span class="qn">Essay &middot; 25 marks</span><span class="t">Essay: extent to which control methods reduce the impacts of pollutants</span><a href="../official/AQA-74471-QP-NOV21-CR.PDF#page=28">Question (p.28)</a> <a href="../official/AQA-74471-MS-NOV21.PDF">Mark scheme</a></div><div class="row"><span class="ser">Specimen &middot; Paper 1</span><span class="qn">Essay &middot; 25 marks</span><span class="t">Essay: new technologies and the impacts of pollutants</span><a href="../official/AQA-74471-SQP-CR.PDF#page=29">Question (p.29)</a> <a href="../official/AQA-74471-SMS.PDF">Mark scheme</a></div></div>
+<p class="note noprint">Practise this subtopic one question at a time: <a href="../quickfire.html?sub=pollution-control">Quick-fire &rarr;</a></p>
 <div class="filterbar noprint"><input type="search" placeholder="Filter questions by keyword (e.g. albedo, quota, Simpson)"><button type="button" class="chip mk" data-v="5">5 marks</button><button type="button" class="chip mk" data-v="10">10 marks</button><button type="button" class="chip mk" data-v="15">15 marks</button><button type="button" class="chip fl" data-v="calc">Calculation</button><button type="button" class="chip fl" data-v="data">Data / figure</button><button type="button" class="chip fl" data-v="ext">9-mark extended</button><button type="button" class="chip fl" data-v="mcq">Multiple choice</button><button type="button" class="chip fl" data-v="table">Complete a table</button><select class="status" title="Filter by your progress"><option value="all">All progress</option><option value="todo">Not attempted</option><option value="work">Needs work</option><option value="secure">Secure</option><option value="notsecure">Not yet secure</option></select><button type="button" class="chip clear">Clear</button><span class="cnt"></span><button type="button" class="chip" data-reveal="1">Show all mark schemes</button><button type="button" class="chip" data-print="qp" title="Print the questions only">Print</button><button type="button" class="chip" data-print="ms" title="Print questions with mark schemes">Print + MS</button></div>
 <h2 class="sec set">Set 1</h2>
-<div class="q" id="PCON-01" data-qid="PCON-01" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 1</span><span class="meta">10 marks &middot; <a href="../subtopic/pollution-control.html">Principles of pollution control (CPA, CGM, new technologies)</a> &middot; spec 3.4.3.1 &middot; Genn pp. 243, 303-304 &middot; PCON-01</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="PCON-01" data-qid="PCON-01" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 1</span><span class="meta">10 marks &middot; <a href="../subtopic/pollution-control.html">Principles of pollution control (CPA, CGM, new technologies)</a> &middot; spec 3.4.3.1 &middot; Genn pp. 243, 303-304 &middot; PCON-01</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>A nuclear reprocessing plant on the coast discharges low-level liquid radioactive waste into the sea through a pipeline.</p>
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">01.1</span>Explain what is meant by <b>Critical Pathway Analysis</b> (CPA).
 </div>
@@ -112,23 +128,20 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">01.4</span>Suggest <b>two</b> types of environmental sample that would be collected to check the CPA predictions.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>01.1</b> (2 marks)
-<ul><li>Predicting the route / movement a pollutant will take through the environment (based on its properties and features of the environment)</li><li>To assess where it will become concentrated / which locations and organisms are most at risk, so monitoring can focus on those sites</li></ul>
+<div class="mspart"><div class="msh"><b>01.1</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Predicting the route / movement a pollutant will take through the environment (based on its properties and features of the environment)</span></li><li><span class="mk">1</span><span>To assess where it will become concentrated / which locations and organisms are most at risk, so monitoring can focus on those sites</span></li></ul>
 </div>
-<div><b>01.2</b> (3 marks)
-<div class="lvl"><i>Any 3 from:</i></div>
-<ul><li>Sea current velocity and direction</li><li>Properties of the radionuclides: half-life, solubility, tendency to adsorb onto sediments / bioaccumulate</li><li>Food chain pathways, eg uptake by seaweed, shellfish, fish eaten by people</li><li>Geology / hydrology of the coast; sediment deposition areas (mud flats)</li><li>Human activities in the area: fishing, seaweed collection, beach use</li></ul>
+<div class="mspart"><div class="msh"><b>01.2</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">Any 3 from the points below - 1 mark each, maximum 3.</div><ul class="pts"><li><span class="mk">1</span><span>Sea current velocity and direction</span></li><li><span class="mk">1</span><span>Properties of the radionuclides: half-life, solubility, tendency to adsorb onto sediments / bioaccumulate</span></li><li><span class="mk">1</span><span>Food chain pathways, eg uptake by seaweed, shellfish, fish eaten by people</span></li><li><span class="mk">1</span><span>Geology / hydrology of the coast; sediment deposition areas (mud flats)</span></li><li><span class="mk">1</span><span>Human activities in the area: fishing, seaweed collection, beach use</span></li></ul>
 </div>
-<div><b>01.3</b> (3 marks)
-<div class="lvl"><i>Any 3 from:</i></div>
-<ul><li>Identify the group of people whose lifestyle gives them the highest exposure (eg people who eat a lot of locally caught shellfish / fish, live near the mud flats, collect seaweed)</li><li>Monitor their exposure / the concentration of radioactive material in the foods they eat or their body</li><li>If their exposure / risk is acceptably low, everyone else is assumed to be at even lower risk; if not, emissions are controlled</li><li>CGM assesses exposure before health effects occur (not used to detect damage)</li></ul>
+<div class="mspart"><div class="msh"><b>01.3</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">Any 3 from the points below - 1 mark each, maximum 3.</div><ul class="pts"><li><span class="mk">1</span><span>Identify the group of people whose lifestyle gives them the highest exposure (eg people who eat a lot of locally caught shellfish / fish, live near the mud flats, collect seaweed)</span></li><li><span class="mk">1</span><span>Monitor their exposure / the concentration of radioactive material in the foods they eat or their body</span></li><li><span class="mk">1</span><span>If their exposure / risk is acceptably low, everyone else is assumed to be at even lower risk; if not, emissions are controlled</span></li><li><span class="mk">1</span><span>CGM assesses exposure before health effects occur (not used to detect damage)</span></li></ul>
 </div>
-<div><b>01.4</b> (2 marks)
-<div class="lvl"><i>Any 2 from:</i></div>
-<ul><li>Seawater</li><li>Sediment / mud</li><li>Seaweed</li><li>Shellfish / molluscs / fish</li><li>Milk, vegetables or meat from nearby farms</li><li>Atmospheric dust</li><li>Soil</li></ul>
+<div class="mspart"><div class="msh"><b>01.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">Any 2 from the points below - 1 mark each, maximum 2.</div><ul class="pts"><li><span class="mk">1</span><span>Seawater</span></li><li><span class="mk">1</span><span>Sediment / mud</span></li><li><span class="mk">1</span><span>Seaweed</span></li><li><span class="mk">1</span><span>Shellfish / molluscs / fish</span></li><li><span class="mk">1</span><span>Milk, vegetables or meat from nearby farms</span></li><li><span class="mk">1</span><span>Atmospheric dust</span></li><li><span class="mk">1</span><span>Soil</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 243, 303-304; AQA spec 3.4.3.1.</div></details></div>
-<div class="q" id="PCON-02" data-qid="PCON-02" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 2</span><span class="meta">10 marks &middot; <a href="../subtopic/pollution-control.html">Principles of pollution control (CPA, CGM, new technologies)</a> &middot; spec 3.4.3.1 &middot; Genn pp. 243-245 &middot; PCON-02</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="PCON-02" data-qid="PCON-02" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 2</span><span class="meta">10 marks &middot; <a href="../subtopic/pollution-control.html">Principles of pollution control (CPA, CGM, new technologies)</a> &middot; spec 3.4.3.1 &middot; Genn pp. 243-245 &middot; PCON-02</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[6 marks]</span><span class="pn">02.1</span>Explain how the control of emission <b>location</b> and emission <b>timing</b> can reduce the severity of pollution. Use examples.
 </div>
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">02.2</span>Explain the <b>polluter pays</b> principle and suggest why it encourages pollution prevention.
@@ -136,17 +149,17 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">02.3</span>Explain the <b>precautionary principle</b> as applied to the release of a new chemical.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>02.1</b> (6 marks)
-<ul><li>Location: discharge into the sea / large water bodies where currents dilute and disperse the pollutant</li><li>Location: chimneys / emissions sited downwind of urban areas so pollutants are not carried over populations; avoiding valleys and enclosed water bodies where pollutants concentrate</li><li>Location: not discharging wastes onto permeable rock above an aquifer / not siting landfill on aquifers</li><li>Timing: restrict polluting activities (industrial combustion, vehicle use) during temperature inversions when dispersal is poor</li><li>Timing: discharge liquid effluent when river flow is high / on an ebb tide so it is diluted and carried away</li><li>Timing: pesticide spraying at night / on still days; noisy operations restricted to daytime; night-flight restrictions</li></ul>
+<div class="mspart"><div class="msh"><b>02.1</b> <span class="mtot">6 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Location: discharge into the sea / large water bodies where currents dilute and disperse the pollutant</span></li><li><span class="mk">1</span><span>Location: chimneys / emissions sited downwind of urban areas so pollutants are not carried over populations; avoiding valleys and enclosed water bodies where pollutants concentrate</span></li><li><span class="mk">1</span><span>Location: not discharging wastes onto permeable rock above an aquifer / not siting landfill on aquifers</span></li><li><span class="mk">1</span><span>Timing: restrict polluting activities (industrial combustion, vehicle use) during temperature inversions when dispersal is poor</span></li><li><span class="mk">1</span><span>Timing: discharge liquid effluent when river flow is high / on an ebb tide so it is diluted and carried away</span></li><li><span class="mk">1</span><span>Timing: pesticide spraying at night / on still days; noisy operations restricted to daytime; night-flight restrictions</span></li></ul>
 </div>
-<div><b>02.2</b> (2 marks)
-<ul><li>The organisation / person that causes the pollution is responsible for (paying for) the damage caused</li><li>If the cost of preventing the pollution is less than the cost of the damage / fines, there is a financial incentive to prevent it; works best when penalties are high and escape is unlikely</li></ul>
+<div class="mspart"><div class="msh"><b>02.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>The organisation / person that causes the pollution is responsible for (paying for) the damage caused</span></li><li><span class="mk">1</span><span>If the cost of preventing the pollution is less than the cost of the damage / fines, there is a financial incentive to prevent it; works best when penalties are high and escape is unlikely</span></li></ul>
 </div>
-<div><b>02.3</b> (2 marks)
-<ul><li>It is assumed that the waste will cause pollution / harm until research shows it is unlikely to</li><li>So release is not permitted until it has been tested; lack of knowledge of a problem is not an excuse / does not reduce responsibility</li></ul>
+<div class="mspart"><div class="msh"><b>02.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>It is assumed that the waste will cause pollution / harm until research shows it is unlikely to</span></li><li><span class="mk">1</span><span>So release is not permitted until it has been tested; lack of knowledge of a problem is not an excuse / does not reduce responsibility</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 243-245; AQA spec 3.4.3.1.</div></details></div>
-<div class="q" id="PCON-03" data-qid="PCON-03" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 3</span><span class="meta">10 marks &middot; <a href="../subtopic/pollution-control.html">Principles of pollution control (CPA, CGM, new technologies)</a> &middot; spec 3.4.3.1 &middot; Genn pp. 244-245 &middot; PCON-03</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="PCON-03" data-qid="PCON-03" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 3</span><span class="meta">10 marks &middot; <a href="../subtopic/pollution-control.html">Principles of pollution control (CPA, CGM, new technologies)</a> &middot; spec 3.4.3.1 &middot; Genn pp. 244-245 &middot; PCON-03</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>Figure 1 shows the relationship between the cost of pollution control equipment at a factory and the percentage of a pollutant emission that is prevented.</p>
 <div class="cap">Figure 1</div>
 <svg class="chart" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
@@ -184,21 +197,20 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[3 marks]</span><span class="pn">03.4</span>Suggest why the control methods used originally by a factory may no longer be sufficient after several years.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>03.1</b> (2 marks)
-<ul><li>Cost increases as the percentage prevented increases</li><li>The relationship is not linear: cost rises slowly at first then very steeply / exponentially above about 80-90%</li></ul>
+<div class="mspart"><div class="msh"><b>03.1</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Cost increases as the percentage prevented increases</span></li><li><span class="mk">1</span><span>The relationship is not linear: cost rises slowly at first then very steeply / exponentially above about 80-90%</span></li></ul>
 </div>
-<div><b>03.2</b> (1 marks)
-<ul><li>16.0 - 5.0 = 11.0 (&pound; million)</li></ul>
+<div class="mspart"><div class="msh"><b>03.2</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark for the correct answer.</div><ul class="pts"><li><span class="mk">1</span><span>16.0 - 5.0 = 11.0 (&pound; million)</span></li></ul>
 </div>
-<div><b>03.3</b> (4 marks)
-<ul><li>ALARA: emissions should be As Low As Reasonably Achievable</li><li>It is rarely practical / affordable to reduce emissions to zero; low-level emissions may have acceptable impacts so an acceptable emission level is set</li><li>BATNEEC: Best Available Technology Not Entailing Excessive Cost - choosing the most effective control equipment whose cost is not excessive</li><li>The factory would install equipment that gives a high level of control (eg 80-90%) rather than paying &pound;16 million for 99%</li></ul>
+<div class="mspart"><div class="msh"><b>03.3</b> <span class="mtot">4 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>ALARA: emissions should be As Low As Reasonably Achievable</span></li><li><span class="mk">1</span><span>It is rarely practical / affordable to reduce emissions to zero; low-level emissions may have acceptable impacts so an acceptable emission level is set</span></li><li><span class="mk">1</span><span>BATNEEC: Best Available Technology Not Entailing Excessive Cost - choosing the most effective control equipment whose cost is not excessive</span></li><li><span class="mk">1</span><span>The factory would install equipment that gives a high level of control (eg 80-90%) rather than paying &pound;16 million for 99%</span></li></ul>
 </div>
-<div><b>03.4</b> (3 marks)
-<div class="lvl"><i>Any 3 from:</i></div>
-<ul><li>Industry / city may have expanded so there are more pollutant sources and total emissions have risen</li><li>Better understanding of the health / environmental effects so stricter standards are set</li><li>Improved technology becomes available (BATNEEC changes) / cost of better control falls</li><li>Pollutant may have accumulated (persistent) so background levels are higher</li></ul>
+<div class="mspart"><div class="msh"><b>03.4</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">Any 3 from the points below - 1 mark each, maximum 3.</div><ul class="pts"><li><span class="mk">1</span><span>Industry / city may have expanded so there are more pollutant sources and total emissions have risen</span></li><li><span class="mk">1</span><span>Better understanding of the health / environmental effects so stricter standards are set</span></li><li><span class="mk">1</span><span>Improved technology becomes available (BATNEEC changes) / cost of better control falls</span></li><li><span class="mk">1</span><span>Pollutant may have accumulated (persistent) so background levels are higher</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 244-245; AQA spec 3.4.3.1.</div></details></div>
-<div class="q" id="PCON-04" data-qid="PCON-04" data-marks="10" data-flags="data table"><div class="qh"><span class="num">Question 4</span><span class="meta">10 marks &middot; <a href="../subtopic/pollution-control.html">Principles of pollution control (CPA, CGM, new technologies)</a> &middot; spec 3.4.3.1, 3.4.3.3 &middot; Genn pp. 244, 303-304 &middot; PCON-04</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="PCON-04" data-qid="PCON-04" data-marks="10" data-flags="data table"><div class="qh"><span class="num">Question 4</span><span class="meta">10 marks &middot; <a href="../subtopic/pollution-control.html">Principles of pollution control (CPA, CGM, new technologies)</a> &middot; spec 3.4.3.1, 3.4.3.3 &middot; Genn pp. 244, 303-304 &middot; PCON-04</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>Table 1 shows four general approaches to pollution control.</p>
 <div class="part"><span class="marks">[4 marks]</span><span class="pn">04.1</span>Complete Table 1 by giving one example of each approach.
 <div class="cap">Table 1</div><table class="data"><tr><th>Approach</th><th>Example</th></tr><tr><td>Production prevention</td><td></td></tr><tr><td>Prevention of release</td><td></td></tr><tr><td>Post-release remediation</td><td></td></tr><tr><td>Alternative processes</td><td></td></tr></table>
@@ -208,17 +220,17 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[4 marks]</span><span class="pn">04.3</span>Describe how each of the following new technologies helps to control pollution.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>04.1</b> (4 marks)
-<ul><li>Production prevention: desulfurisation of fuels before combustion; low-temperature (fluidised bed) combustion to prevent NOx; smokeless fuels</li><li>Prevention of release: electrostatic precipitators / bag filters / cyclones for smoke; catalytic converters; flue gas desulfurisation; bund walls; landfill liners</li><li>Post-release remediation: oil spill clean-up (booms, skimmers, dispersants, bioremediation); phytoremediation of metal-contaminated land; liming of acidified lakes</li><li>Alternative processes: electric vehicles instead of petrol / diesel; renewable energy instead of fossil fuels; pyrethroids instead of organochlorines; fuel cells instead of internal combustion engines</li></ul>
+<div class="mspart"><div class="msh"><b>04.1</b> <span class="mtot">4 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Production prevention: desulfurisation of fuels before combustion; low-temperature (fluidised bed) combustion to prevent NOx; smokeless fuels</span></li><li><span class="mk">1</span><span>Prevention of release: electrostatic precipitators / bag filters / cyclones for smoke; catalytic converters; flue gas desulfurisation; bund walls; landfill liners</span></li><li><span class="mk">1</span><span>Post-release remediation: oil spill clean-up (booms, skimmers, dispersants, bioremediation); phytoremediation of metal-contaminated land; liming of acidified lakes</span></li><li><span class="mk">1</span><span>Alternative processes: electric vehicles instead of petrol / diesel; renewable energy instead of fossil fuels; pyrethroids instead of organochlorines; fuel cells instead of internal combustion engines</span></li></ul>
 </div>
-<div><b>04.2</b> (2 marks)
-<ul><li>Remediation is often incomplete / cannot recover all the pollutant (eg oil spills, dispersed pollutants), so some damage still occurs</li><li>Prevention avoids the damage entirely and is usually cheaper than clean-up / avoids polluter-pays costs; moving from post-production treatment to non-release is a circular economy principle</li></ul>
+<div class="mspart"><div class="msh"><b>04.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Remediation is often incomplete / cannot recover all the pollutant (eg oil spills, dispersed pollutants), so some damage still occurs</span></li><li><span class="mk">1</span><span>Prevention avoids the damage entirely and is usually cheaper than clean-up / avoids polluter-pays costs; moving from post-production treatment to non-release is a circular economy principle</span></li></ul>
 </div>
-<div><b>04.3</b> (4 marks)
-<ul><li>Satellites detect and track the extent / movement of oil slicks over large areas, quickly and repeatedly, so clean-up can be directed and polluters identified</li><li>GPS tracking monitors ship positions so navigation errors / collisions / groundings are reduced and offshore shipping routes are enforced</li><li>Polymers with a high surface area adsorb metal ions from contaminated water / effluent so they can be removed and recovered</li><li>Plants that absorb heavy metals (hyperaccumulators) are grown on contaminated land, harvested and disposed of / metals recovered, cleaning the soil</li></ul>
+<div class="mspart"><div class="msh"><b>04.3</b> <span class="mtot">4 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Satellites detect and track the extent / movement of oil slicks over large areas, quickly and repeatedly, so clean-up can be directed and polluters identified</span></li><li><span class="mk">1</span><span>GPS tracking monitors ship positions so navigation errors / collisions / groundings are reduced and offshore shipping routes are enforced</span></li><li><span class="mk">1</span><span>Polymers with a high surface area adsorb metal ions from contaminated water / effluent so they can be removed and recovered</span></li><li><span class="mk">1</span><span>Plants that absorb heavy metals (hyperaccumulators) are grown on contaminated land, harvested and disposed of / metals recovered, cleaning the soil</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 244, 303-304; AQA spec 3.4.3.1, 3.4.3.3.</div></details></div>
-<div class="q" id="PCON-05" data-qid="PCON-05" data-marks="5" data-flags="mcq"><div class="qh"><span class="num">Question 5</span><span class="meta">5 marks &middot; <a href="../subtopic/pollution-control.html">Principles of pollution control (CPA, CGM, new technologies)</a> &middot; spec 3.4.3.1 &middot; Genn pp. 243-245 &middot; PCON-05</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="PCON-05" data-qid="PCON-05" data-marks="5" data-flags="mcq"><div class="qh"><span class="num">Question 5</span><span class="meta">5 marks &middot; <a href="../subtopic/pollution-control.html">Principles of pollution control (CPA, CGM, new technologies)</a> &middot; spec 3.4.3.1 &middot; Genn pp. 243-245 &middot; PCON-05</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">05.1</span>Which of the following best describes the purpose of Critical Group Monitoring? Tick one box.
 <ul class="mcq"><li>A&nbsp; To detect health damage in the population most affected by a pollutant</li><li>B&nbsp; To predict the route a pollutant will take through the environment</li><li>C&nbsp; To assess exposure of the people most at risk so that everyone else can be assumed to be safe</li><li>D&nbsp; To measure the concentration of a pollutant at the point of release</li></ul>
 </div>
@@ -227,17 +239,17 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">05.3</span>A new chemical has properties similar to PCBs (persistent, liposoluble chlorinated organic compounds). Explain how knowledge of PCBs helps decisions about the new chemical.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>05.1</b> (1 marks)
-<ul><li>C</li></ul>
+<div class="mspart"><div class="msh"><b>05.1</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">Correct answer only.</div><ul class="pts"><li><span class="mk">1</span><span><b></b>&nbsp; C</span></li></ul>
 </div>
-<div><b>05.2</b> (2 marks)
-<ul><li>Monitoring can be focused on the sites predicted to be most at risk / where the pollutant will concentrate</li><li>No need to sample sites that were never likely to be polluted; sampling also checks the accuracy of the predictions</li></ul>
+<div class="mspart"><div class="msh"><b>05.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Monitoring can be focused on the sites predicted to be most at risk / where the pollutant will concentrate</span></li><li><span class="mk">1</span><span>No need to sample sites that were never likely to be polluted; sampling also checks the accuracy of the predictions</span></li></ul>
 </div>
-<div><b>05.3</b> (2 marks)
-<ul><li>Behaviour of new chemicals can be predicted from similar existing chemicals: it is likely to persist, bioaccumulate and biomagnify</li><li>So acceptable emission limits, control methods and monitoring programmes can be set before release (precautionary principle)</li></ul>
+<div class="mspart"><div class="msh"><b>05.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Behaviour of new chemicals can be predicted from similar existing chemicals: it is likely to persist, bioaccumulate and biomagnify</span></li><li><span class="mk">1</span><span>So acceptable emission limits, control methods and monitoring programmes can be set before release (precautionary principle)</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 243-245; AQA spec 3.4.3.1.</div></details></div>
-<div class="q" id="PCON-06" data-qid="PCON-06" data-marks="5" data-flags="mcq"><div class="qh"><span class="num">Question 6</span><span class="meta">5 marks &middot; <a href="../subtopic/pollution-control.html">Principles of pollution control (CPA, CGM, new technologies)</a> &middot; spec 3.4.3.1 &middot; Genn pp. 243-244 &middot; PCON-06</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="PCON-06" data-qid="PCON-06" data-marks="5" data-flags="mcq"><div class="qh"><span class="num">Question 6</span><span class="meta">5 marks &middot; <a href="../subtopic/pollution-control.html">Principles of pollution control (CPA, CGM, new technologies)</a> &middot; spec 3.4.3.1 &middot; Genn pp. 243-244 &middot; PCON-06</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">06.1</span>Which of the following best describes the <b>precautionary principle</b>? Tick <b>one</b> box.
 <ul class="mcq"><li>A&nbsp; A waste is assumed to cause pollution until research shows it is unlikely to do so</li><li>B&nbsp; The polluter must pay for any damage caused</li><li>C&nbsp; Emissions should be as low as reasonably achievable</li><li>D&nbsp; Only pollutants known to be toxic need to be controlled</li></ul>
 </div>
@@ -246,18 +258,17 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">06.3</span>Give <b>two</b> choices about emission location that reduce the severity of pollution.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>06.1</b> (1 marks)
-<ul><li>A waste is assumed to cause pollution until research shows it is unlikely to do so</li></ul>
+<div class="mspart"><div class="msh"><b>06.1</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">Correct answer only.</div><ul class="pts"><li><span class="mk">1</span><span><b>A</b>&nbsp; A waste is assumed to cause pollution until research shows it is unlikely to do so</span></li></ul>
 </div>
-<div><b>06.2</b> (2 marks)
-<ul><li>If the cost of preventing damage is less than the (penalty for) damage there is a financial incentive to prevent pollution</li><li>If polluters can escape their responsibilities / penalties are low, there is little incentive to comply</li></ul>
+<div class="mspart"><div class="msh"><b>06.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>If the cost of preventing damage is less than the (penalty for) damage there is a financial incentive to prevent pollution</span></li><li><span class="mk">1</span><span>If polluters can escape their responsibilities / penalties are low, there is little incentive to comply</span></li></ul>
 </div>
-<div><b>06.3</b> (2 marks)
-<div class="lvl"><i>Any 2 from:</i></div>
-<ul><li>Marine discharges where currents dilute and disperse emissions</li><li>Emissions downwind of urban areas</li><li>Not discharging waste onto permeable rock above an aquifer</li></ul>
+<div class="mspart"><div class="msh"><b>06.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">Any 2 from the points below - 1 mark each, maximum 2.</div><ul class="pts"><li><span class="mk">1</span><span>Marine discharges where currents dilute and disperse emissions</span></li><li><span class="mk">1</span><span>Emissions downwind of urban areas</span></li><li><span class="mk">1</span><span>Not discharging waste onto permeable rock above an aquifer</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 243-244; AQA spec 3.4.3.1.</div></details></div>
-<div class="q" id="PCON-07" data-qid="PCON-07" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 7</span><span class="meta">10 marks &middot; <a href="../subtopic/pollution-control.html">Principles of pollution control (CPA, CGM, new technologies)</a> &middot; spec 3.4.3.1, 3.4.3.3 &middot; Genn pp. 243-245, 303-304 &middot; PCON-07</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="PCON-07" data-qid="PCON-07" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 7</span><span class="meta">10 marks &middot; <a href="../subtopic/pollution-control.html">Principles of pollution control (CPA, CGM, new technologies)</a> &middot; spec 3.4.3.1, 3.4.3.3 &middot; Genn pp. 243-245, 303-304 &middot; PCON-07</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>A nuclear fuel reprocessing plant discharges small amounts of radioactive material in liquid effluent to a coastal sea.</p>
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">07.1</span>Explain why it cannot be assumed that the discharge will be diluted to insignificant levels.
 </div>
@@ -268,18 +279,69 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">07.4</span>Explain why Critical Group Monitoring measures exposure rather than damage to health.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>07.1</b> (2 marks)
-<ul><li>Natural processes may concentrate the material (eg adsorption onto sediments, bioaccumulation and food-chain concentration)</li><li>It may be carried to locations where it is hazardous, such as fishing grounds or beaches used by people</li></ul>
+<div class="mspart"><div class="msh"><b>07.1</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Natural processes may concentrate the material (eg adsorption onto sediments, bioaccumulation and food-chain concentration)</span></li><li><span class="mk">1</span><span>It may be carried to locations where it is hazardous, such as fishing grounds or beaches used by people</span></li></ul>
 </div>
-<div><b>07.2</b> (4 marks)
-<div class="lvl"><i>Any 4 from:</i></div>
-<ul><li>Physical state of the effluent (solution / solid)</li><li>Ocean currents / river flow</li><li>Effect of pH and oxygen on solubility</li><li>Bioaccumulation and food-chain concentration</li><li>Food sources and consumption by local people (eg shellfish, seaweed)</li><li>Half-lives of the isotopes</li><li>Meteorological conditions for any gaseous release</li><li>Nature of the environment - geology, vegetation</li></ul>
+<div class="mspart"><div class="msh"><b>07.2</b> <span class="mtot">4 marks</span></div>
+<div class="lvl">Any 4 from the points below - 1 mark each, maximum 4.</div><ul class="pts"><li><span class="mk">1</span><span>Physical state of the effluent (solution / solid)</span></li><li><span class="mk">1</span><span>Ocean currents / river flow</span></li><li><span class="mk">1</span><span>Effect of pH and oxygen on solubility</span></li><li><span class="mk">1</span><span>Bioaccumulation and food-chain concentration</span></li><li><span class="mk">1</span><span>Food sources and consumption by local people (eg shellfish, seaweed)</span></li><li><span class="mk">1</span><span>Half-lives of the isotopes</span></li><li><span class="mk">1</span><span>Meteorological conditions for any gaseous release</span></li><li><span class="mk">1</span><span>Nature of the environment - geology, vegetation</span></li></ul>
 </div>
-<div><b>07.3</b> (2 marks)
-<ul><li>Monitoring focuses on the sites most at risk of contamination</li><li>No need to sample sites that were never likely to be polluted; sampling checks the accuracy of the predictions</li></ul>
+<div class="mspart"><div class="msh"><b>07.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Monitoring focuses on the sites most at risk of contamination</span></li><li><span class="mk">1</span><span>No need to sample sites that were never likely to be polluted; sampling checks the accuracy of the predictions</span></li></ul>
 </div>
-<div><b>07.4</b> (2 marks)
-<ul><li>It assesses the risk to the people most exposed because of their lifestyle before any health effects occur</li><li>If their risk is acceptably low everyone else has a lower risk; if unacceptable, emissions are reduced to prevent future exposure</li></ul>
+<div class="mspart"><div class="msh"><b>07.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>It assesses the risk to the people most exposed because of their lifestyle before any health effects occur</span></li><li><span class="mk">1</span><span>If their risk is acceptably low everyone else has a lower risk; if unacceptable, emissions are reduced to prevent future exposure</span></li></ul>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 243-245, 303-304; AQA spec 3.4.3.1, 3.4.3.3.</div></details></div>
+<div class="q" id="PCON-08" data-qid="PCON-08" data-marks="15" data-flags="calc data ext"><div class="qh"><span class="num">Question 8</span><span class="meta">15 marks &middot; <a href="../subtopic/pollution-control.html">Principles of pollution control (CPA, CGM, new technologies)</a> &middot; spec 3.4.3.1, 3.4.3.3 &middot; Genn pp. 243-245, 303-304 &middot; PCON-08</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<p>Figure 1 shows how the cost of controlling emissions from a factory changes with the proportion of the pollutant that is prevented from being released.</p>
+<div class="cap">Figure 1</div>
+<svg class="chart" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
+<polyline points="60.0,270.0 157.0,264.4 253.9,257.5 350.9,247.8 447.9,228.3 496.4,200.6 520.6,158.9 540.0,47.8" fill="none" stroke="#22302a" stroke-width="1.8"/>
+<circle cx="60.0" cy="270.0" r="2.6" fill="#22302a"/>
+<circle cx="157.0" cy="264.4" r="2.6" fill="#22302a"/>
+<circle cx="253.9" cy="257.5" r="2.6" fill="#22302a"/>
+<circle cx="350.9" cy="247.8" r="2.6" fill="#22302a"/>
+<circle cx="447.9" cy="228.3" r="2.6" fill="#22302a"/>
+<circle cx="496.4" cy="200.6" r="2.6" fill="#22302a"/>
+<circle cx="520.6" cy="158.9" r="2.6" fill="#22302a"/>
+<circle cx="540.0" cy="47.8" r="2.6" fill="#22302a"/>
+<line x1="60.0" y1="270" x2="60.0" y2="274" stroke="#000"/><text x="60.0" y="286" text-anchor="middle">0</text>
+<line x1="56" y1="270.0" x2="60" y2="270.0" stroke="#000"/><text x="52" y="274.0" text-anchor="end">0</text>
+<line x1="156.0" y1="270" x2="156.0" y2="274" stroke="#000"/><text x="156.0" y="286" text-anchor="middle">19.8</text>
+<line x1="56" y1="220.0" x2="60" y2="220.0" stroke="#000"/><text x="52" y="224.0" text-anchor="end">3.6</text>
+<line x1="252.0" y1="270" x2="252.0" y2="274" stroke="#000"/><text x="252.0" y="286" text-anchor="middle">39.6</text>
+<line x1="56" y1="170.0" x2="60" y2="170.0" stroke="#000"/><text x="52" y="174.0" text-anchor="end">7.2</text>
+<line x1="348.0" y1="270" x2="348.0" y2="274" stroke="#000"/><text x="348.0" y="286" text-anchor="middle">59.4</text>
+<line x1="56" y1="120.0" x2="60" y2="120.0" stroke="#000"/><text x="52" y="124.0" text-anchor="end">10.8</text>
+<line x1="444.0" y1="270" x2="444.0" y2="274" stroke="#000"/><text x="444.0" y="286" text-anchor="middle">79.2</text>
+<line x1="56" y1="70.0" x2="60" y2="70.0" stroke="#000"/><text x="52" y="74.0" text-anchor="end">14.4</text>
+<line x1="540.0" y1="270" x2="540.0" y2="274" stroke="#000"/><text x="540.0" y="286" text-anchor="middle">99</text>
+<line x1="56" y1="20.0" x2="60" y2="20.0" stroke="#000"/><text x="52" y="24.0" text-anchor="end">18</text>
+<line x1="60" y1="20" x2="60" y2="270" stroke="#000"/><line x1="60" y1="270" x2="540" y2="270" stroke="#000"/>
+<text x="300.0" y="312" text-anchor="middle" font-weight="bold">Proportion of pollution prevented / %</text>
+<text transform="translate(14,145.0) rotate(-90)" text-anchor="middle" font-weight="bold">Cost / &amp;pound; million</text>
+</svg>
+<div class="part"><span class="marks">[1 mark]</span><span class="pn">08.1</span>Use Figure 1 to calculate the extra cost of increasing control from 90% to 99% of the pollutant.
+</div>
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">08.2</span>Explain how the terms <b>ALARA</b> and <b>BATNEEC</b> are used when deciding how much pollution control is required.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">08.3</span>Explain why the control methods that were originally adequate for a factory may no longer be sufficient.
+</div>
+<div class="part"><span class="marks">[9 marks]</span><span class="pn">08.4</span>Evaluate the principles and general strategies that can be used to decide how pollution should be controlled.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div class="mspart"><div class="msh"><b>08.1</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark for the correct answer.</div><ul class="pts"><li><span class="mk">1</span><span>16.0 - 5.0 = &pound;11 million</span></li></ul>
+</div>
+<div class="mspart"><div class="msh"><b>08.2</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>It is rarely practical to reduce emissions to zero and the impact of low-level emissions may be acceptable, so an acceptable level must be decided</span></li><li><span class="mk">1</span><span>ALARA: emissions should be As Low As Reasonably Achievable</span></li><li><span class="mk">1</span><span>BATNEEC: the Best Available Technology Not Entailing Excessive Cost is chosen to achieve this</span></li></ul>
+</div>
+<div class="mspart"><div class="msh"><b>08.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>As industries expand or cities grow the number of pollutant sources increases</span></li><li><span class="mk">1</span><span>So the total emissions / combined concentration rises even if each source is unchanged, and higher standards are needed</span></li></ul>
+</div>
+<div class="mspart"><div class="msh"><b>08.4</b> <span class="mtot">9 marks</span></div>
+<table class="levels"><tr><th>Level</th><th>Marks</th><th>What the answer must show</th></tr><tr><td><b>Level 3</b></td><td class="r">7-9</td><td>Answer is comprehensive, relevant and logically structured. Shows detailed knowledge and understanding of the relevant scientific ideas and applies them accurately to the context. Evaluation/analysis is well supported by evidence and a clear judgement or conclusion is reached.</td></tr><tr><td><b>Level 2</b></td><td class="r">4-6</td><td>Answer is mostly relevant and shows some structure. Knowledge and understanding of relevant ideas is sound but application to the context or evaluation may be incomplete or lack detail. A judgement may be made but is not fully supported.</td></tr><tr><td><b>Level 1</b></td><td class="r">1-3</td><td>Answer is basic, with limited structure. Some relevant knowledge is shown but there are omissions or errors. Little application to the context and little or no evaluation.</td></tr><tr><td><b>&nbsp;</b></td><td class="r">0</td><td>No relevant content.</td></tr></table><div class="lvl"><b>Indicative content</b> - credit any of the following (and other relevant, accurate points):</div>
+<ul class="ind"><li>Critical Pathway Analysis: predicting movement of mobile persistent pollutants (state of effluent, wind, currents, geology, pH / oxygen and solubility, bioaccumulation, food sources, half-lives) so monitoring focuses on sites at risk; mainly radioactive discharges; checked by sampling</li><li>Critical Group Monitoring: exposure of the most-exposed group monitored before health effects; if their risk is acceptable everyone else is safer; emissions reduced if not</li><li>Emission control strategies: location (marine discharges, downwind of cities, not over aquifers) and timing (avoiding temperature inversions, low river flow)</li><li>Principles: polluter pays (incentive depends on penalties and enforcement), precautionary principle (assume harm until shown otherwise; ignorance no excuse), ALARA / BATNEEC and the non-linear cost-efficiency relationship</li><li>Selection of methods: production prevention (desulfurisation), prevention of release (precipitators, catalytic converters), post-release remediation (oil spill clean-up, phytoremediation), alternative processes (electric vehicles, renewables, pyrethroids)</li><li>Evaluation: prevention usually cheaper and more effective than remediation; costs rise steeply near 100%; CPA relies on understanding of pathways; enforcement and international agreement needed for transboundary pollutants; judgement about acceptable risk is political as well as scientific</li><li>Justified conclusion</li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 243-245, 303-304; AQA spec 3.4.3.1, 3.4.3.3.</div></details></div>
 </div></main>
@@ -298,7 +360,7 @@ const tb=document.getElementById('themeBtn');if(tb)tb.onclick=()=>{const t=root.
 let prog=LS('envsci.progress')||{};
 window.ES.prog=()=>prog;
 function paint(){
-  document.querySelectorAll('.q[data-qid]').forEach(el=>{const s=prog[el.dataset.qid]||0;el.dataset.status=s;el.querySelectorAll('.st button').forEach(b=>b.classList.toggle('on',+b.dataset.s===s&&s>0));});
+  document.querySelectorAll('.q[data-qid]').forEach(el=>{const s=prog[el.dataset.qid]||0;el.dataset.status=s;el.querySelectorAll('.st button[data-s]').forEach(b=>b.classList.toggle('on',+b.dataset.s===s&&s>0));});
   document.querySelectorAll('[data-qids]').forEach(el=>{const ids=el.dataset.qids.split(',').filter(Boolean);const n=ids.length;if(!n)return;
     const ok=ids.filter(i=>prog[i]===2).length,wk=ids.filter(i=>prog[i]===1).length;
     const o=el.querySelector('.bar .ok'),w=el.querySelector('.bar .wk'),p=el.querySelector('.pl');
@@ -306,7 +368,7 @@ function paint(){
   const ov=document.getElementById('overall');if(ov){const all=(ov.dataset.qids||'').split(',').filter(Boolean);const ok=all.filter(i=>prog[i]===2).length,wk=all.filter(i=>prog[i]===1).length;ov.querySelector('.stat').textContent=Math.round(100*ok/all.length)+'%';ov.querySelector('.detail').textContent=ok+' secure, '+wk+' to revisit, '+(all.length-ok-wk)+' not attempted of '+all.length+' questions.';}
 }
 window.ES.paint=paint;
-document.addEventListener('click',e=>{const b=e.target.closest('.st button');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);paint();if(window.ES.onFilter)window.ES.onFilter();});
+document.addEventListener('click',e=>{const b=e.target.closest('.st button[data-s]');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);paint();if(window.ES.onFilter)window.ES.onFilter();});
 const rs=document.getElementById('resetProg');if(rs)rs.onclick=()=>{if(confirm('Clear all saved progress on this browser?')){prog={};SV('envsci.progress',prog);paint();}};
 paint();
 /* ---- filter bar ---- */
@@ -329,6 +391,13 @@ if(fb){
   txt.addEventListener('input',run);fb.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{c.classList.toggle('on');run();});fb.querySelector('select.status').onchange=run;
   const clr=fb.querySelector('.clear');if(clr)clr.onclick=()=>{txt.value='';fb.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));fb.querySelector('select.status').value='all';run();};
   run();}
+/* ---- sticky offset = real header height (nav can wrap) ---- */
+const hd=document.querySelector('header.top');const setH=()=>root.style.setProperty('--hdr',(getComputedStyle(hd).position==='sticky'?hd.offsetHeight:0)+'px');setH();window.addEventListener('resize',setH);
+/* ---- copy link, back to top ---- */
+document.addEventListener('click',e=>{const b=e.target.closest('[data-copy]');if(!b)return;const q=b.closest('.q');const url=location.href.split('#')[0]+'#'+q.id;
+  (navigator.clipboard?navigator.clipboard.writeText(url):Promise.reject()).then(()=>{b.textContent='\u2713';setTimeout(()=>b.innerHTML='&#128279;',1200);}).catch(()=>prompt('Copy this link:',url));});
+const tt=document.createElement('button');tt.id='totop';tt.title='Back to top';tt.innerHTML='&uarr;';tt.className='noprint';document.body.appendChild(tt);tt.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+window.addEventListener('scroll',()=>tt.classList.toggle('show',window.scrollY>600),{passive:true});
 /* ---- print & reveal ---- */
 document.querySelectorAll('[data-print]').forEach(b=>b.onclick=()=>{const ms=b.dataset.print==='ms';document.body.classList.toggle('print-ms',ms);document.querySelectorAll('details.ms').forEach(d=>d.open=ms);window.print();});
 document.querySelectorAll('[data-reveal]').forEach(b=>b.onclick=()=>{const open=b.dataset.reveal==='1';document.querySelectorAll('details.ms').forEach(d=>d.open=open);b.dataset.reveal=open?'0':'1';b.textContent=open?'Hide all mark schemes':'Show all mark schemes';});

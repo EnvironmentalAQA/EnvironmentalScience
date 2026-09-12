@@ -13,6 +13,7 @@ from reportlab.graphics.charts.legends import Legend
 from reportlab.graphics.widgets.markers import makeMarker
 import re, html
 
+from .marking import mark_points
 from .model import Q, P, Table as QTable, Chart, Essay
 from bank.topics import BOOK
 
@@ -536,12 +537,10 @@ def ms_rows(qn, q: Q):
             for m in p.ms:
                 body.append(Paragraph("&bull; " + esc(m), MSCELL))
         else:
-            if p.ms_note:
-                body.append(Paragraph(f"<i>{esc(p.ms_note)}</i>", MSCELL))
-            elif len(p.ms) > p.marks and not p.mcq:
-                body.append(Paragraph(f"<i>Any {p.marks} from:</i>", MSCELL))
-            for m in p.ms:
-                body.append(Paragraph("&bull; " + esc(m), MSCELL))
+            rule, pts = mark_points(p)
+            body.append(Paragraph(f"<i>{esc(rule)}</i>", MSCELL))
+            for m, lab in pts:
+                body.append(Paragraph("&bull; " + esc(m) + (f"  <b>({lab})</b>" if lab else ""), MSCELL))
         rows.append([Paragraph(label, CELLB), body, Paragraph(str(p.marks), CELL)])
     src = f"<b>Source:</b> {esc(BOOK)}, pp. {esc(q.pages)}; AQA spec {esc(q.spec)}."
     rows.append([Paragraph("", CELL), Paragraph(src, SMALL), Paragraph("", CELL)])
@@ -571,7 +570,7 @@ def build_mark_scheme(path, code, title, questions, essays=None, subtitle=""):
     if subtitle:
         story.append(Paragraph(esc(subtitle), BASE))
     story += [Spacer(1, 10), Paragraph("<b>Marking guidance</b>", H2),
-              Paragraph("&bull; Marking points are separated by bullets; each bullet is worth 1 mark unless stated.<br/>"
+              Paragraph("&bull; The number in brackets after each marking point is the mark it earns; the note above the points says how many are needed.<br/>"
                         "&bull; Where a question asks for a fixed number of points (eg <i>two</i> reasons), credit only the first points given.<br/>"
                         "&bull; Alternative correct wording and other relevant, accurate points are credited.<br/>"
                         "&bull; For levels-of-response questions, first determine the level using the descriptors, then position the mark within the level using the indicative content.<br/>"

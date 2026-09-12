@@ -69,12 +69,12 @@ footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-
 .prog .bar .ok{background:var(--ok);height:100%}.prog .bar .wk{background:var(--warn);height:100%}.prog .pl{white-space:nowrap;min-width:90px}
 .hero .prog{color:rgba(255,255,255,.85)}.hero .prog .bar{background:rgba(255,255,255,.25)}
 /* filter bar & tools */
-.filterbar{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.filterbar{position:sticky;top:var(--hdr,62px);z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .filterbar input[type=search]{flex:1 1 220px;font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
 .filterbar label{font-size:.85rem;color:var(--stone);display:inline-flex;align-items:center;gap:4px;cursor:pointer}.filterbar .chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--sand);color:var(--stone);font-size:.82rem;cursor:pointer;font-family:inherit}
 .filterbar .chip.on{background:var(--moss);color:#fff;border-color:var(--moss)}.filterbar .cnt{font-size:.85rem;color:var(--stone);margin-left:auto}
 .filterbar select{font:inherit;font-size:.88rem;padding:5px 8px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
-.tools{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:10px 0;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.tools{position:sticky;top:var(--hdr,62px);z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:10px 0;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .tools .time{font-family:Fraunces,serif;font-size:1.6rem;font-weight:700;color:var(--head);min-width:120px}.tools .time.low{color:var(--bad)}
 .tools .score{font-weight:700;color:var(--moss)}.tools .score b{font-family:Fraunces,serif;font-size:1.3rem}.tools .pct{font-size:.85rem;color:var(--stone)}
 .tools button{font-family:inherit;font-size:.88rem;padding:6px 12px;border-radius:8px;border:1px solid var(--moss);background:transparent;color:var(--moss);cursor:pointer}.tools button.primary{background:var(--moss);color:#fff}
@@ -87,6 +87,20 @@ footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-
 .res{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0;text-decoration:none;color:inherit}.res:hover{border-color:var(--moss)}
 .res .t{font-weight:700;color:var(--head)}.res .m{font-size:.82rem;color:var(--stone)}.res .s{font-size:.92rem;margin-top:4px}.res mark{background:#ffe58a;color:#222;border-radius:3px;padding:0 2px}
 .empty{color:var(--stone);font-style:italic}
+/* mark scheme points, levels, links */
+.mspart{margin:8px 0 12px}.msh{display:flex;align-items:baseline;gap:8px;margin-bottom:2px}.msh .mtot{font-size:.8rem;color:var(--earth);font-weight:700}
+ul.pts{list-style:none;margin:4px 0 6px 0!important;padding:0}ul.pts li{display:flex;gap:10px;align-items:flex-start;padding:4px 0;border-top:1px dashed var(--ms-line)}ul.pts li:first-child{border-top:0}
+.mk{flex:0 0 auto;min-width:26px;text-align:center;font-size:.75rem;font-weight:700;color:#fff;background:var(--ok);border-radius:6px;padding:2px 6px;margin-top:3px}
+table.levels{border-collapse:collapse;width:100%;margin:6px 0 10px;font-size:.86rem;background:var(--card)}table.levels th,table.levels td{border:1px solid var(--ms-line);padding:5px 8px;text-align:left;vertical-align:top}table.levels th{background:var(--sand-dark)}table.levels td.r{white-space:nowrap;font-weight:700;color:var(--earth)}
+ul.ind{margin:4px 0 8px 18px}
+.st button.lnk{padding:2px 7px}
+#totop{position:fixed;right:18px;bottom:18px;z-index:15;background:var(--moss);color:#fff;border:0;border-radius:50%;width:42px;height:42px;font-size:1.2rem;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .2s}#totop.show{opacity:1;pointer-events:auto}
+.jump{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 4px}.jump a{font-size:.82rem;padding:3px 10px;border-radius:999px;border:1px solid var(--line);background:var(--sand);color:var(--moss);text-decoration:none;font-weight:600}.jump a:hover{background:var(--leaf-light)}
+.real .row{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;padding:8px 0;border-bottom:1px dashed var(--line);font-size:.95rem}.real .row .ser{font-weight:700;color:var(--head);min-width:150px}.real .row .qn{color:var(--stone);min-width:70px}.real .row .t{flex:1 1 300px}
+.real .row a{font-size:.82rem;padding:2px 9px;border-radius:999px;border:1px solid var(--line);background:var(--sand);text-decoration:none;font-weight:600}
+.plan input[type=date]{font:inherit;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}.plan .big{font-family:Fraunces,serif;font-size:2rem;color:var(--moss)}
+table.list td .bar{height:8px;background:var(--sand-dark);border-radius:999px;overflow:hidden;display:flex;width:140px}table.list td .bar .ok{background:var(--ok)}table.list td .bar .wk{background:var(--warn)}
+@media(max-width:720px){header.top{position:static}header.top nav a{margin-left:12px;font-size:.88rem}.filterbar,.tools{top:0}.hero h1{font-size:1.8rem}.hero{padding:34px 0 28px}.sub-item .t{flex-basis:100%}}
 /* print */
 @media print{header.top,footer,.tools,.filterbar,.st,.pill,.aw,.hero .crumbs,.prog,.noprint{display:none!important}
 body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;color:#000;padding:10px 0}.hero p,.hero h1{color:#000}.hero:before{display:none}
@@ -94,14 +108,16 @@ body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;c
 svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 </style>
 <script>try{if(localStorage.getItem('envsci.theme')==='"dark"')document.documentElement.dataset.theme='dark';}catch(e){}</script></head><body >
-<header class="top"><div class="wrap"><a class="brand" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb069" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-8 0-14 4-14 12 0 1.5.3 3 1 4 2-6 6-9 11-11-4 3-7 6-8 12 8 0 12-6 10-17z"/></svg><span>AQA Environmental Science</span></a><nav><a href="../index.html" class="">Topics</a><a href="../papers.html" class="">Mock papers</a><a href="../official.html" class="">Past papers</a><a href="../essays.html" class="">Essay bank</a><a href="../quickfire.html" class="">Quick-fire</a><a href="../search.html" class="">Search</a><button class="icon-btn" id="themeBtn" type="button" title="Toggle dark mode">&#9790; Dark</button></nav></div></header>
+<header class="top"><div class="wrap"><a class="brand" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb069" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-8 0-14 4-14 12 0 1.5.3 3 1 4 2-6 6-9 11-11-4 3-7 6-8 12 8 0 12-6 10-17z"/></svg><span>AQA Environmental Science</span></a><nav><a href="../index.html" class="">Topics</a><a href="../papers.html" class="">Mock papers</a><a href="../official.html" class="">Past papers</a><a href="../essays.html" class="">Essay bank</a><a href="../pastq.html" class="">Real Qs by topic</a><a href="../quickfire.html" class="">Quick-fire</a><a href="../planner.html" class="">Planner</a><a href="../search.html" class="">Search</a><button class="icon-btn" id="themeBtn" type="button" title="Toggle dark mode">&#9790; Dark</button></nav></div></header>
 <section class="hero p1 small"><div class="wrap"><div class="crumbs"><a href="../index.html">Topics</a><span>&rsaquo;</span><a href="../topic/physical.html">The physical environment</a><span>&rsaquo;</span>Soils: fertility, erosion &amp; management</div><h1>Soils: fertility, erosion &amp; management</h1><p>The physical environment &middot; AQA spec 3.2.5 &middot; R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 158-169</p><span class="pill">Paper 1</span><span class="pill">8 questions</span><div class="prog" data-qids="SOIL-01,SOIL-02,SOIL-03,SOIL-04,SOIL-05,SOIL-06,SOIL-07,SOIL-08"><div class="bar"><div class="ok"></div><div class="wk"></div></div><span class="pl"></span></div></div></section>
 <main><div class="wrap"><h2 class="sec">Question sets</h2><table class="list"><tr><th>Set</th><th>Questions</th><th>Marks</th><th>Question paper</th><th>Mark scheme</th></tr>
 <tr><td>Set 1</td><td>8</td><td>75</td><td><a href="../pdf/topic/soils-set1-QP.pdf">Download QP (PDF)</a></td><td><a href="../pdf/topic/soils-set1-MS.pdf">Download MS (PDF)</a></td></tr>
 </table>
+<h2 class="sec">Real AQA questions on this topic (7)</h2><div class="real"><div class="row"><span class="ser">June 2024 &middot; Paper 1</span><span class="qn">Q3 &middot; 10 marks</span><span class="t">Soil erosion and land use in the Sap drainage basin; USLE</span><a href="../official/AQA-74471-QP-JUN24-CR.PDF#page=6">Question (p.6)</a> <a href="../official/AQA-74471-MS-JUN24.PDF">Mark scheme</a></div><div class="row"><span class="ser">June 2023 &middot; Paper 1</span><span class="qn">Q4 &middot; 10 marks</span><span class="t">Soil erosion, slope gradient and land use (southern China)</span><a href="../official/AQA-74471-QP-JUN23.PDF#page=10">Question (p.10)</a> <a href="../official/AQA-74471-MS-JUN23.PDF">Mark scheme</a></div><div class="row"><span class="ser">June 2023 &middot; Paper 1</span><span class="qn">Q3 &middot; 10 marks</span><span class="t">Soil texture triangle</span><a href="../official/AQA-74471-QP-JUN23.PDF#page=6">Question (p.6)</a> <a href="../official/AQA-74471-MS-JUN23.PDF">Mark scheme</a></div><div class="row"><span class="ser">June 2022 &middot; Paper 1</span><span class="qn">Q9 &middot; 10 marks</span><span class="t">Soil water and organic matter content investigation</span><a href="../official/AQA-74471-QP-JUN22.PDF#page=26">Question (p.26)</a> <a href="../official/AQA-74471-MS-JUN22.PDF">Mark scheme</a></div><div class="row"><span class="ser">November 2021 &middot; Paper 1</span><span class="qn">Q7 &middot; 10 marks</span><span class="t">Agricultural practices and soil erosion; stone walls</span><a href="../official/AQA-74471-QP-NOV21-CR.PDF#page=16">Question (p.16)</a> <a href="../official/AQA-74471-MS-NOV21.PDF">Mark scheme</a></div><div class="row"><span class="ser">November 2020 &middot; Paper 1</span><span class="qn">Essay &middot; 25 marks</span><span class="t">Essay: soil management and environmental damage at local, regional and global scales</span><a href="../official/AQA-74471-QP-NOV20-CR.PDF#page=35">Question (p.35)</a> <a href="../official/AQA-74471-W-MS-NOV20.PDF">Mark scheme</a></div><div class="row"><span class="ser">Specimen &middot; Paper 1</span><span class="qn">Q9 &middot; 15 marks</span><span class="t">Universal Soil Loss Equation</span><a href="../official/AQA-74471-SQP-CR.PDF#page=22">Question (p.22)</a> <a href="../official/AQA-74471-SMS.PDF">Mark scheme</a></div></div>
+<p class="note noprint">Practise this subtopic one question at a time: <a href="../quickfire.html?sub=soils">Quick-fire &rarr;</a></p>
 <div class="filterbar noprint"><input type="search" placeholder="Filter questions by keyword (e.g. albedo, quota, Simpson)"><button type="button" class="chip mk" data-v="5">5 marks</button><button type="button" class="chip mk" data-v="10">10 marks</button><button type="button" class="chip mk" data-v="15">15 marks</button><button type="button" class="chip fl" data-v="calc">Calculation</button><button type="button" class="chip fl" data-v="data">Data / figure</button><button type="button" class="chip fl" data-v="ext">9-mark extended</button><button type="button" class="chip fl" data-v="mcq">Multiple choice</button><button type="button" class="chip fl" data-v="table">Complete a table</button><select class="status" title="Filter by your progress"><option value="all">All progress</option><option value="todo">Not attempted</option><option value="work">Needs work</option><option value="secure">Secure</option><option value="notsecure">Not yet secure</option></select><button type="button" class="chip clear">Clear</button><span class="cnt"></span><button type="button" class="chip" data-reveal="1">Show all mark schemes</button><button type="button" class="chip" data-print="qp" title="Print the questions only">Print</button><button type="button" class="chip" data-print="ms" title="Print questions with mark schemes">Print + MS</button></div>
 <h2 class="sec set">Set 1</h2>
-<div class="q" id="SOIL-01" data-qid="SOIL-01" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 1</span><span class="meta">10 marks &middot; <a href="../subtopic/soils.html">Soils: fertility, erosion &amp; management</a> &middot; spec 3.2.5.1 &middot; Genn pp. 158-160, 412 &middot; SOIL-01</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="SOIL-01" data-qid="SOIL-01" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 1</span><span class="meta">10 marks &middot; <a href="../subtopic/soils.html">Soils: fertility, erosion &amp; management</a> &middot; spec 3.2.5.1 &middot; Genn pp. 158-160, 412 &middot; SOIL-01</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>Table 1 shows the textural composition of four soil samples.</p>
 <div class="cap">Table 1</div><table class="data"><tr><th>Soil sample</th><th>Sand / %</th><th>Silt / %</th><th>Clay / %</th></tr><tr><td>A</td><td>85</td><td>10</td><td>5</td></tr><tr><td>B</td><td>40</td><td>40</td><td>20</td></tr><tr><td>C</td><td>20</td><td>25</td><td>55</td></tr><tr><td>D</td><td>10</td><td>80</td><td>10</td></tr></table>
 <div class="part"><span class="marks">[3 marks]</span><span class="pn">01.1</span>Identify the sample that is a loam and explain why loams are ideal for cultivating most crops.
@@ -113,20 +129,20 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">01.4</span>Describe how the texture of a soil sample could be determined by sedimentation.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>01.1</b> (3 marks)
-<ul><li>B (about 40:40:20 sand:silt:clay)</li><li>Balanced mix gives good drainage and aeration from the sand fraction</li><li>Water retention and nutrient (ion) retention from the clay fraction; easy root penetration and cultivation</li></ul>
+<div class="mspart"><div class="msh"><b>01.1</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>B (about 40:40:20 sand:silt:clay)</span></li><li><span class="mk">1</span><span>Balanced mix gives good drainage and aeration from the sand fraction</span></li><li><span class="mk">1</span><span>Water retention and nutrient (ion) retention from the clay fraction; easy root penetration and cultivation</span></li></ul>
 </div>
-<div><b>01.2</b> (3 marks)
-<ul><li>Large sand particles leave large pore spaces so water drains rapidly (high permeability / aeration)</li><li>Nutrient ions adsorb onto the (charged) surfaces of clay particles but not onto sand</li><li>With only 5% clay there is little surface to hold ions so nutrients are leached; low water retention too</li></ul>
+<div class="mspart"><div class="msh"><b>01.2</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Large sand particles leave large pore spaces so water drains rapidly (high permeability / aeration)</span></li><li><span class="mk">1</span><span>Nutrient ions adsorb onto the (charged) surfaces of clay particles but not onto sand</span></li><li><span class="mk">1</span><span>With only 5% clay there is little surface to hold ions so nutrients are leached; low water retention too</span></li></ul>
 </div>
-<div><b>01.3</b> (2 marks)
-<ul><li>C (clay) holds much water so has a high thermal capacity: warms and cools slowly; A warms rapidly after cold weather</li><li>Clay particles held together by capillary water so roots find it hard to push between them; penetration is easy in sandy A</li></ul>
+<div class="mspart"><div class="msh"><b>01.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>C (clay) holds much water so has a high thermal capacity: warms and cools slowly; A warms rapidly after cold weather</span></li><li><span class="mk">1</span><span>Clay particles held together by capillary water so roots find it hard to push between them; penetration is easy in sandy A</span></li></ul>
 </div>
-<div><b>01.4</b> (2 marks)
-<ul><li>Shake a known mass of soil with water in a measuring cylinder and leave to settle; particles settle in order of size (sand first, then silt, then clay; organic matter floats)</li><li>Measure the depth / volume of each layer to calculate the percentage of each fraction, then use the soil triangle to name the textural class</li></ul>
+<div class="mspart"><div class="msh"><b>01.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Shake a known mass of soil with water in a measuring cylinder and leave to settle; particles settle in order of size (sand first, then silt, then clay; organic matter floats)</span></li><li><span class="mk">1</span><span>Measure the depth / volume of each layer to calculate the percentage of each fraction, then use the soil triangle to name the textural class</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 158-160, 412; AQA spec 3.2.5.1.</div></details></div>
-<div class="q" id="SOIL-02" data-qid="SOIL-02" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 2</span><span class="meta">10 marks &middot; <a href="../subtopic/soils.html">Soils: fertility, erosion &amp; management</a> &middot; spec 3.2.5.1 &middot; Genn pp. 158-161 &middot; SOIL-02</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="SOIL-02" data-qid="SOIL-02" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 2</span><span class="meta">10 marks &middot; <a href="../subtopic/soils.html">Soils: fertility, erosion &amp; management</a> &middot; spec 3.2.5.1 &middot; Genn pp. 158-161 &middot; SOIL-02</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[6 marks]</span><span class="pn">02.1</span>Explain the roles of <b>three</b> named groups of soil organisms in maintaining soil fertility.
 </div>
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">02.2</span>Explain why a soil pH between 5.5 and 7.0 is best for fertility.
@@ -134,17 +150,17 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">02.3</span>Explain how soil compaction by heavy machinery reduces fertility.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>02.1</b> (6 marks)
-<ul><li>Detritivores (worms, beetle larvae, millipedes, woodlice) physically break up dead organic matter, increasing its surface area, and release nutrients; worms create tunnels improving drainage and aeration</li><li>Decomposers (bacteria, fungi) secrete enzymes that break down dead organic matter, releasing nutrient ions (ammonification) and forming humus which binds particles into crumb peds</li><li>Nitrogen-fixing bacteria convert nitrogen gas to ammonium ions; nitrifying bacteria oxidise ammonium to nitrite then nitrate for root absorption</li><li>Mycorrhizal fungi form symbiotic associations with roots increasing phosphate uptake</li></ul>
+<div class="mspart"><div class="msh"><b>02.1</b> <span class="mtot">6 marks</span></div>
+<div class="lvl">Up to 6 marks in total; award marks in proportion to the completeness of each point.</div><ul class="pts"><li><span class="mk">up to 2</span><span>Detritivores (worms, beetle larvae, millipedes, woodlice) physically break up dead organic matter, increasing its surface area, and release nutrients; worms create tunnels improving drainage and aeration</span></li><li><span class="mk">up to 2</span><span>Decomposers (bacteria, fungi) secrete enzymes that break down dead organic matter, releasing nutrient ions (ammonification) and forming humus which binds particles into crumb peds</span></li><li><span class="mk">up to 2</span><span>Nitrogen-fixing bacteria convert nitrogen gas to ammonium ions; nitrifying bacteria oxidise ammonium to nitrite then nitrate for root absorption</span></li><li><span class="mk">up to 2</span><span>Mycorrhizal fungi form symbiotic associations with roots increasing phosphate uptake</span></li></ul>
 </div>
-<div><b>02.2</b> (2 marks)
-<ul><li>This is the range of tolerance of most plants and soil biota; acidic soils leach nutrients and mobilise toxic aluminium, damaging root membranes</li><li>In alkaline soils phosphates become insoluble / unavailable</li></ul>
+<div class="mspart"><div class="msh"><b>02.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>This is the range of tolerance of most plants and soil biota; acidic soils leach nutrients and mobilise toxic aluminium, damaging root membranes</span></li><li><span class="mk">1</span><span>In alkaline soils phosphates become insoluble / unavailable</span></li></ul>
 </div>
-<div><b>02.3</b> (2 marks)
-<ul><li>Interstitial spaces are reduced so aeration falls (aerobic processes such as nitrification and decomposition slow) and roots cannot penetrate</li><li>Infiltration falls so waterlogging is more likely and runoff / erosion increase</li></ul>
+<div class="mspart"><div class="msh"><b>02.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Interstitial spaces are reduced so aeration falls (aerobic processes such as nitrification and decomposition slow) and roots cannot penetrate</span></li><li><span class="mk">1</span><span>Infiltration falls so waterlogging is more likely and runoff / erosion increase</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 158-161; AQA spec 3.2.5.1.</div></details></div>
-<div class="q" id="SOIL-03" data-qid="SOIL-03" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 3</span><span class="meta">10 marks &middot; <a href="../subtopic/soils.html">Soils: fertility, erosion &amp; management</a> &middot; spec 3.2.5.2 &middot; Genn pp. 162-164 &middot; SOIL-03</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="SOIL-03" data-qid="SOIL-03" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 3</span><span class="meta">10 marks &middot; <a href="../subtopic/soils.html">Soils: fertility, erosion &amp; management</a> &middot; spec 3.2.5.2 &middot; Genn pp. 162-164 &middot; SOIL-03</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>Figure 1 shows the annual soil loss measured on experimental plots with different vegetation cover on a 10% slope in a region with heavy seasonal rain.</p>
 <div class="cap">Figure 1</div>
 <svg class="chart" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
@@ -177,21 +193,20 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">03.4</span>Explain why the region's climate makes the soil vulnerable to <b>both</b> wind and water erosion.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>03.1</b> (2 marks)
-<ul><li>Soil loss increases as vegetation cover decreases: forest lowest (0.5), bare soil highest (60 t ha<sup>-1</sup> yr<sup>-1</sup>) - over 100 times more</li><li>Ploughing downslope loses nearly three times as much as contour ploughing for the same crop</li></ul>
+<div class="mspart"><div class="msh"><b>03.1</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Soil loss increases as vegetation cover decreases: forest lowest (0.5), bare soil highest (60 t ha<sup>-1</sup> yr<sup>-1</sup>) - over 100 times more</span></li><li><span class="mk">1</span><span>Ploughing downslope loses nearly three times as much as contour ploughing for the same crop</span></li></ul>
 </div>
-<div><b>03.2</b> (4 marks)
-<div class="lvl"><i>Any 4 from:</i></div>
-<ul><li>Leaves / leaf litter intercept raindrops so soil particles are not dislodged by rain splash</li><li>Roots bind soil particles together</li><li>Vegetation acts as a windbreak reducing wind velocity and the kinetic energy available to carry particles</li><li>Plants increase infiltration (root channels, organic matter) so less surface runoff</li><li>Organic matter / humus from vegetation binds particles into stable peds</li></ul>
+<div class="mspart"><div class="msh"><b>03.2</b> <span class="mtot">4 marks</span></div>
+<div class="lvl">Any 4 from the points below - 1 mark each, maximum 4.</div><ul class="pts"><li><span class="mk">1</span><span>Leaves / leaf litter intercept raindrops so soil particles are not dislodged by rain splash</span></li><li><span class="mk">1</span><span>Roots bind soil particles together</span></li><li><span class="mk">1</span><span>Vegetation acts as a windbreak reducing wind velocity and the kinetic energy available to carry particles</span></li><li><span class="mk">1</span><span>Plants increase infiltration (root channels, organic matter) so less surface runoff</span></li><li><span class="mk">1</span><span>Organic matter / humus from vegetation binds particles into stable peds</span></li></ul>
 </div>
-<div><b>03.3</b> (2 marks)
-<ul><li>Furrows running downslope act as channels / gulleys that increase the velocity (kinetic energy) of runoff</li><li>Furrows along the contour trap the water so it loses energy, deposits particles and infiltrates</li></ul>
+<div class="mspart"><div class="msh"><b>03.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Furrows running downslope act as channels / gulleys that increase the velocity (kinetic energy) of runoff</span></li><li><span class="mk">1</span><span>Furrows along the contour trap the water so it loses energy, deposits particles and infiltrates</span></li></ul>
 </div>
-<div><b>03.4</b> (2 marks)
-<ul><li>In the dry season the soil (especially low-clay soils) is loose and dry with little cohesion so wind blows it away</li><li>In the wet season heavy rain causes rain splash and surface runoff when infiltration capacity is exceeded</li></ul>
+<div class="mspart"><div class="msh"><b>03.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>In the dry season the soil (especially low-clay soils) is loose and dry with little cohesion so wind blows it away</span></li><li><span class="mk">1</span><span>In the wet season heavy rain causes rain splash and surface runoff when infiltration capacity is exceeded</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 162-164; AQA spec 3.2.5.2.</div></details></div>
-<div class="q" id="SOIL-04" data-qid="SOIL-04" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 4</span><span class="meta">10 marks &middot; <a href="../subtopic/soils.html">Soils: fertility, erosion &amp; management</a> &middot; spec 3.2.5.2 &middot; Genn pp. 162-164 &middot; SOIL-04</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="SOIL-04" data-qid="SOIL-04" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 4</span><span class="meta">10 marks &middot; <a href="../subtopic/soils.html">Soils: fertility, erosion &amp; management</a> &middot; spec 3.2.5.2 &middot; Genn pp. 162-164 &middot; SOIL-04</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[4 marks]</span><span class="pn">04.1</span>Explain how each of the following human activities increases soil erosion.
 </div>
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">04.2</span>Explain why landslides become more likely on steep slopes some years after deforestation.
@@ -199,18 +214,17 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[4 marks]</span><span class="pn">04.3</span>Describe <b>four</b> environmental impacts of accelerated soil erosion away from the field where it occurs.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>04.1</b> (4 marks)
-<ul><li>Overgrazing: vegetation is eaten faster than it grows so soil is exposed; hooves disturb the soil, damage roots and compact it, reducing infiltration and increasing runoff</li><li>Reduced biota (ploughing, agrochemicals, less organic matter): less humus so less adhesion between particles; fewer worms so less aeration and lower infiltration capacity; fewer nutrients released so less vegetation cover</li></ul>
+<div class="mspart"><div class="msh"><b>04.1</b> <span class="mtot">4 marks</span></div>
+<div class="lvl">2 marks for each point (partial credit for a partly correct point).</div><ul class="pts"><li><span class="mk">2</span><span>Overgrazing: vegetation is eaten faster than it grows so soil is exposed; hooves disturb the soil, damage roots and compact it, reducing infiltration and increasing runoff</span></li><li><span class="mk">2</span><span>Reduced biota (ploughing, agrochemicals, less organic matter): less humus so less adhesion between particles; fewer worms so less aeration and lower infiltration capacity; fewer nutrients released so less vegetation cover</span></li></ul>
 </div>
-<div><b>04.2</b> (2 marks)
-<ul><li>Tree roots that held the soil together decompose so the soil is bound less strongly</li><li>Heavy rain adds mass and lubricates particles; without interception more water enters the soil, making slumping more likely</li></ul>
+<div class="mspart"><div class="msh"><b>04.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Tree roots that held the soil together decompose so the soil is bound less strongly</span></li><li><span class="mk">1</span><span>Heavy rain adds mass and lubricates particles; without interception more water enters the soil, making slumping more likely</span></li></ul>
 </div>
-<div><b>04.3</b> (4 marks)
-<div class="lvl"><i>Any 4 from:</i></div>
-<ul><li>Sedimentation in rivers reduces flow capacity so flooding downstream is more likely</li><li>Sedimentation in reservoirs reduces their storage volume</li><li>Coastal sedimentation covering reefs / seagrass; turbidity reducing light for aquatic plants</li><li>Increased atmospheric particulates from wind erosion worsening asthma; dust covering crops / urban areas</li><li>Desertification as vegetation cannot re-establish; reduced rainfall</li><li>Nutrients (phosphates) carried on soil particles causing eutrophication</li></ul>
+<div class="mspart"><div class="msh"><b>04.3</b> <span class="mtot">4 marks</span></div>
+<div class="lvl">Any 4 from the points below - 1 mark each, maximum 4.</div><ul class="pts"><li><span class="mk">1</span><span>Sedimentation in rivers reduces flow capacity so flooding downstream is more likely</span></li><li><span class="mk">1</span><span>Sedimentation in reservoirs reduces their storage volume</span></li><li><span class="mk">1</span><span>Coastal sedimentation covering reefs / seagrass; turbidity reducing light for aquatic plants</span></li><li><span class="mk">1</span><span>Increased atmospheric particulates from wind erosion worsening asthma; dust covering crops / urban areas</span></li><li><span class="mk">1</span><span>Desertification as vegetation cannot re-establish; reduced rainfall</span></li><li><span class="mk">1</span><span>Nutrients (phosphates) carried on soil particles causing eutrophication</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 162-164; AQA spec 3.2.5.2.</div></details></div>
-<div class="q" id="SOIL-05" data-qid="SOIL-05" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 5</span><span class="meta">10 marks &middot; <a href="../subtopic/soils.html">Soils: fertility, erosion &amp; management</a> &middot; spec 3.2.5.2 &middot; Genn pp. 167-169 &middot; SOIL-05</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="SOIL-05" data-qid="SOIL-05" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 5</span><span class="meta">10 marks &middot; <a href="../subtopic/soils.html">Soils: fertility, erosion &amp; management</a> &middot; spec 3.2.5.2 &middot; Genn pp. 167-169 &middot; SOIL-05</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>The Universal Soil Loss Equation (USLE) is A = R x K x LS x C x P. Table 1 gives factor values for a farm.</p>
 <div class="cap">Table 1</div><table class="data"><tr><th>Factor</th><th>Description</th><th>Value</th></tr><tr><td>R</td><td>Rainfall erosivity for the farm</td><td>110</td></tr><tr><td>K</td><td>Soil erodibility: loam</td><td>0.67</td></tr><tr><td>LS</td><td>Slope length and gradient: 120 m, 6%</td><td>1.35</td></tr><tr><td>C (crop type x tillage)</td><td>Beans (0.50) with spring ploughing (0.90); or wheat (0.35) with mulch tillage (0.60)</td><td>see question</td></tr><tr><td>P</td><td>Ploughing up and down slope 1.0; contour ploughing 0.50; strip cropping with contour ploughing 0.25</td><td>see question</td></tr></table>
 <div class="cap">Table 2</div><table class="data"><tr><th>Soil erosion class</th><th>Rate of soil loss / t ha<sup>-1</sup> yr<sup>-1</sup></th></tr><tr><td>Low</td><td>under 5</td></tr><tr><td>Moderate</td><td>5-10</td></tr><tr><td>High</td><td>10-20</td></tr><tr><td>Very high</td><td>20-30</td></tr><tr><td>Severe</td><td>over 30</td></tr></table>
@@ -225,23 +239,23 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">05.5</span>Suggest which single factor in the USLE a farmer can change most easily.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>05.1</b> (2 marks)
-<ul><li>110 x 0.67 x 1.35 x (0.50 x 0.90) x 1.0</li><li>= 44.8 t ha<sup>-1</sup> yr<sup>-1</sup> (accept 44.7-44.8)</li></ul>
+<div class="mspart"><div class="msh"><b>05.1</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">A correct final answer (with unit where asked) scores full marks. If the answer is wrong, award 1 mark for each correct step of working shown.</div><ul class="pts"><li><span class="mk">1</span><span>110 x 0.67 x 1.35 x (0.50 x 0.90) x 1.0</span></li><li><span class="mk">1</span><span>= 44.8 t ha<sup>-1</sup> yr<sup>-1</sup> (accept 44.7-44.8)</span></li></ul>
 </div>
-<div><b>05.2</b> (2 marks)
-<ul><li>110 x 0.67 x 1.35 x (0.35 x 0.60) x 0.25</li><li>= 5.2 t ha<sup>-1</sup> yr<sup>-1</sup></li></ul>
+<div class="mspart"><div class="msh"><b>05.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">A correct final answer (with unit where asked) scores full marks. If the answer is wrong, award 1 mark for each correct step of working shown.</div><ul class="pts"><li><span class="mk">1</span><span>110 x 0.67 x 1.35 x (0.35 x 0.60) x 0.25</span></li><li><span class="mk">1</span><span>= 5.2 t ha<sup>-1</sup> yr<sup>-1</sup></span></li></ul>
 </div>
-<div><b>05.3</b> (3 marks)
-<ul><li>Beans / up-and-down ploughing: severe class (over 30) and about 45 times the formation rate - clearly unsustainable, soil depth will fall</li><li>Wheat / mulch / strip cropping: moderate class, reduced by about 88% but still 5 times the formation rate so not fully sustainable</li><li>Further measures (long-term crops, terracing, windbreaks, more organic matter) or grazing land (C = 0.02) needed to bring loss below 1 t ha<sup>-1</sup> yr<sup>-1</sup></li></ul>
+<div class="mspart"><div class="msh"><b>05.3</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Beans / up-and-down ploughing: severe class (over 30) and about 45 times the formation rate - clearly unsustainable, soil depth will fall</span></li><li><span class="mk">1</span><span>Wheat / mulch / strip cropping: moderate class, reduced by about 88% but still 5 times the formation rate so not fully sustainable</span></li><li><span class="mk">1</span><span>Further measures (long-term crops, terracing, windbreaks, more organic matter) or grazing land (C = 0.02) needed to bring loss below 1 t ha<sup>-1</sup> yr<sup>-1</sup></span></li></ul>
 </div>
-<div><b>05.4</b> (2 marks)
-<ul><li>Factors are averages / arbitrary values for typical conditions; rainfall erosivity varies between years / storms</li><li>Does not include gully erosion, landslides, wind erosion or local variation in soil; based on data from particular regions</li></ul>
+<div class="mspart"><div class="msh"><b>05.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Factors are averages / arbitrary values for typical conditions; rainfall erosivity varies between years / storms</span></li><li><span class="mk">1</span><span>Does not include gully erosion, landslides, wind erosion or local variation in soil; based on data from particular regions</span></li></ul>
 </div>
-<div><b>05.5</b> (1 marks)
-<ul><li>C (crop / tillage) or P (erosion control practice) - R, K and LS are fixed by climate, soil and topography</li></ul>
+<div class="mspart"><div class="msh"><b>05.5</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>C (crop / tillage) or P (erosion control practice) - R, K and LS are fixed by climate, soil and topography</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 167-169; AQA spec 3.2.5.2.</div></details></div>
-<div class="q" id="SOIL-06" data-qid="SOIL-06" data-marks="10" data-flags="data table"><div class="qh"><span class="num">Question 6</span><span class="meta">10 marks &middot; <a href="../subtopic/soils.html">Soils: fertility, erosion &amp; management</a> &middot; spec 3.2.5.3 &middot; Genn pp. 164-166 &middot; SOIL-06</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="SOIL-06" data-qid="SOIL-06" data-marks="10" data-flags="data table"><div class="qh"><span class="num">Question 6</span><span class="meta">10 marks &middot; <a href="../subtopic/soils.html">Soils: fertility, erosion &amp; management</a> &middot; spec 3.2.5.3 &middot; Genn pp. 164-166 &middot; SOIL-06</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[5 marks]</span><span class="pn">06.1</span>Complete Table 1 to explain how each method reduces soil erosion.
 <div class="cap">Table 1</div><table class="data"><tr><th>Method</th><th>How it reduces erosion</th></tr><tr><td>Terracing</td><td></td></tr><tr><td>Tied ridging</td><td></td></tr><tr><td>Windbreaks / hedgerows</td><td></td></tr><tr><td>Mulching</td><td></td></tr><tr><td>Strip cropping</td><td></td></tr></table>
 </div>
@@ -250,18 +264,17 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[3 marks]</span><span class="pn">06.3</span>Describe <b>three</b> ways livestock can be managed to reduce soil erosion.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>06.1</b> (5 marks)
-<ul><li>Terracing: sloping land divided into narrow level fields held by retaining walls along contours; water slows as it crosses each terrace and infiltrates instead of running off</li><li>Tied ridging: on nearly flat land a criss-cross of intersecting ridges retains rainwater, increasing infiltration and preventing runoff</li><li>Windbreaks: hedgerows / tree rows reduce wind velocity (for up to 30 times their height) so the wind has less kinetic energy to carry particles; protect bare fields after harvest</li><li>Mulching: organic matter on the surface protects soil from raindrop impact and wind; decomposes to humus which binds particles; retains moisture</li><li>Strip cropping: strips of different crops harvested at different times (at 90&deg; to the wind) so there is always a crop protecting part of the field; slows runoff</li></ul>
+<div class="mspart"><div class="msh"><b>06.1</b> <span class="mtot">5 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Terracing: sloping land divided into narrow level fields held by retaining walls along contours; water slows as it crosses each terrace and infiltrates instead of running off</span></li><li><span class="mk">1</span><span>Tied ridging: on nearly flat land a criss-cross of intersecting ridges retains rainwater, increasing infiltration and preventing runoff</span></li><li><span class="mk">1</span><span>Windbreaks: hedgerows / tree rows reduce wind velocity (for up to 30 times their height) so the wind has less kinetic energy to carry particles; protect bare fields after harvest</span></li><li><span class="mk">1</span><span>Mulching: organic matter on the surface protects soil from raindrop impact and wind; decomposes to humus which binds particles; retains moisture</span></li><li><span class="mk">1</span><span>Strip cropping: strips of different crops harvested at different times (at 90&deg; to the wind) so there is always a crop protecting part of the field; slows runoff</span></li></ul>
 </div>
-<div><b>06.2</b> (2 marks)
-<ul><li>No frequent replanting / soil disturbance (ploughing) that breaks up soil structure and exposes particles</li><li>Permanent root systems and canopy cover protect the soil all year</li></ul>
+<div class="mspart"><div class="msh"><b>06.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>No frequent replanting / soil disturbance (ploughing) that breaks up soil structure and exposes particles</span></li><li><span class="mk">1</span><span>Permanent root systems and canopy cover protect the soil all year</span></li></ul>
 </div>
-<div><b>06.3</b> (3 marks)
-<div class="lvl"><i>Any 3 from:</i></div>
-<ul><li>Control stocking density so vegetation regrows faster than it is eaten</li><li>Restrict access to vulnerable areas such as river banks (fencing)</li><li>Move / remove livestock at high-risk times, eg after heavy rain when soil is wet</li><li>Rotational grazing to rest pastures</li></ul>
+<div class="mspart"><div class="msh"><b>06.3</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">Any 3 from the points below - 1 mark each, maximum 3.</div><ul class="pts"><li><span class="mk">1</span><span>Control stocking density so vegetation regrows faster than it is eaten</span></li><li><span class="mk">1</span><span>Restrict access to vulnerable areas such as river banks (fencing)</span></li><li><span class="mk">1</span><span>Move / remove livestock at high-risk times, eg after heavy rain when soil is wet</span></li><li><span class="mk">1</span><span>Rotational grazing to rest pastures</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 164-166; AQA spec 3.2.5.3.</div></details></div>
-<div class="q" id="SOIL-07" data-qid="SOIL-07" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 7</span><span class="meta">10 marks &middot; <a href="../subtopic/soils.html">Soils: fertility, erosion &amp; management</a> &middot; spec 3.2.5.1, 3.7.2.1 &middot; Genn pp. 158-159, 412 &middot; SOIL-07</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="SOIL-07" data-qid="SOIL-07" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 7</span><span class="meta">10 marks &middot; <a href="../subtopic/soils.html">Soils: fertility, erosion &amp; management</a> &middot; spec 3.2.5.1, 3.7.2.1 &middot; Genn pp. 158-159, 412 &middot; SOIL-07</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>A student determined the water and organic matter content of a soil sample. Table 1 shows the results.</p>
 <div class="cap">Table 1</div><table class="data"><tr><th>Measurement</th><th>Mass / g</th></tr><tr><td>Empty crucible</td><td>25.0</td></tr><tr><td>Crucible + fresh soil</td><td>65.0</td></tr><tr><td>Crucible + soil after drying at 105 &deg;C to constant mass</td><td>55.0</td></tr><tr><td>Crucible + soil after heating in a furnace at 550 &deg;C</td><td>52.6</td></tr></table>
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">07.1</span>Calculate the percentage water content of the fresh soil.
@@ -275,23 +288,23 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">07.5</span>Suggest <b>one</b> reason why two students measuring the same field might get different organic matter results.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>07.1</b> (2 marks)
-<ul><li>Water = 65.0 - 55.0 = 10.0 g; fresh soil = 40.0 g</li><li>10.0 / 40.0 x 100 = 25.0%</li></ul>
+<div class="mspart"><div class="msh"><b>07.1</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">A correct final answer (with unit where asked) scores full marks. If the answer is wrong, award 1 mark for each correct step of working shown.</div><ul class="pts"><li><span class="mk">1</span><span>Water = 65.0 - 55.0 = 10.0 g; fresh soil = 40.0 g</span></li><li><span class="mk">1</span><span>10.0 / 40.0 x 100 = 25.0%</span></li></ul>
 </div>
-<div><b>07.2</b> (2 marks)
-<ul><li>Organic matter = 55.0 - 52.6 = 2.4 g; dry soil = 30.0 g</li><li>2.4 / 30.0 x 100 = 8.0%</li></ul>
+<div class="mspart"><div class="msh"><b>07.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">A correct final answer (with unit where asked) scores full marks. If the answer is wrong, award 1 mark for each correct step of working shown.</div><ul class="pts"><li><span class="mk">1</span><span>Organic matter = 55.0 - 52.6 = 2.4 g; dry soil = 30.0 g</span></li><li><span class="mk">1</span><span>2.4 / 30.0 x 100 = 8.0%</span></li></ul>
 </div>
-<div><b>07.3</b> (2 marks)
-<ul><li>So all water is removed and the mass loss on burning is due to organic matter only</li><li>Heating until mass no longer changes shows all water has evaporated</li></ul>
+<div class="mspart"><div class="msh"><b>07.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>So all water is removed and the mass loss on burning is due to organic matter only</span></li><li><span class="mk">1</span><span>Heating until mass no longer changes shows all water has evaporated</span></li></ul>
 </div>
-<div><b>07.4</b> (3 marks)
-<ul><li>Organic matter releases nutrients as it decomposes and provides food for soil biota</li><li>Increases water retention and, as humus, binds particles into crumb peds improving structure / aeration</li><li>Surface organic matter / humus adhesion reduce rain splash and wind erosion</li></ul>
+<div class="mspart"><div class="msh"><b>07.4</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Organic matter releases nutrients as it decomposes and provides food for soil biota</span></li><li><span class="mk">1</span><span>Increases water retention and, as humus, binds particles into crumb peds improving structure / aeration</span></li><li><span class="mk">1</span><span>Surface organic matter / humus adhesion reduce rain splash and wind erosion</span></li></ul>
 </div>
-<div><b>07.5</b> (1 marks)
-<ul><li>Samples taken from different depths / locations (organic matter is concentrated near the surface); incomplete burning; different heating times</li></ul>
+<div class="mspart"><div class="msh"><b>07.5</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>Samples taken from different depths / locations (organic matter is concentrated near the surface); incomplete burning; different heating times</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 158-159, 412; AQA spec 3.2.5.1, 3.7.2.1.</div></details></div>
-<div class="q" id="SOIL-08" data-qid="SOIL-08" data-marks="5" data-flags="mcq"><div class="qh"><span class="num">Question 8</span><span class="meta">5 marks &middot; <a href="../subtopic/soils.html">Soils: fertility, erosion &amp; management</a> &middot; spec 3.2.5 &middot; Genn pp. 158-169 &middot; SOIL-08</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="SOIL-08" data-qid="SOIL-08" data-marks="5" data-flags="mcq"><div class="qh"><span class="num">Question 8</span><span class="meta">5 marks &middot; <a href="../subtopic/soils.html">Soils: fertility, erosion &amp; management</a> &middot; spec 3.2.5 &middot; Genn pp. 158-169 &middot; SOIL-08</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">08.1</span>Which soil property is most directly responsible for capillary rise of water from below? Tick one box.
 <ul class="mcq"><li>A&nbsp; High sand content</li><li>B&nbsp; High clay content</li><li>C&nbsp; Crumb peds</li><li>D&nbsp; High pH</li></ul>
 </div>
@@ -300,14 +313,14 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">08.3</span>Explain why crumb peds produce more fertile soil than platy peds.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>08.1</b> (1 marks)
-<ul><li>B - tiny pores between clay particles allow capillary rise; none in sand</li></ul>
+<div class="mspart"><div class="msh"><b>08.1</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">Correct answer only.</div><ul class="pts"><li><span class="mk">1</span><span><b></b>&nbsp; B - tiny pores between clay particles allow capillary rise; none in sand</span></li></ul>
 </div>
-<div><b>08.2</b> (3 marks)
-<ul><li>Hygroscopic: held tightly by adhesive forces on particle surfaces; cannot drain and cannot be absorbed by plants</li><li>Capillary: held in pores by surface tension; does not drain but can be absorbed by plants</li><li>Gravitational: drains freely through large pores; available to plants only briefly as it passes</li></ul>
+<div class="mspart"><div class="msh"><b>08.2</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Hygroscopic: held tightly by adhesive forces on particle surfaces; cannot drain and cannot be absorbed by plants</span></li><li><span class="mk">1</span><span>Capillary: held in pores by surface tension; does not drain but can be absorbed by plants</span></li><li><span class="mk">1</span><span>Gravitational: drains freely through large pores; available to plants only briefly as it passes</span></li></ul>
 </div>
-<div><b>08.3</b> (1 marks)
-<ul><li>Small round crumbs leave spaces giving good drainage, aeration and easy root penetration; large flat platy peds pack together reducing all three</li></ul>
+<div class="mspart"><div class="msh"><b>08.3</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>Small round crumbs leave spaces giving good drainage, aeration and easy root penetration; large flat platy peds pack together reducing all three</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 158-169; AQA spec 3.2.5.</div></details></div>
 </div></main>
@@ -326,7 +339,7 @@ const tb=document.getElementById('themeBtn');if(tb)tb.onclick=()=>{const t=root.
 let prog=LS('envsci.progress')||{};
 window.ES.prog=()=>prog;
 function paint(){
-  document.querySelectorAll('.q[data-qid]').forEach(el=>{const s=prog[el.dataset.qid]||0;el.dataset.status=s;el.querySelectorAll('.st button').forEach(b=>b.classList.toggle('on',+b.dataset.s===s&&s>0));});
+  document.querySelectorAll('.q[data-qid]').forEach(el=>{const s=prog[el.dataset.qid]||0;el.dataset.status=s;el.querySelectorAll('.st button[data-s]').forEach(b=>b.classList.toggle('on',+b.dataset.s===s&&s>0));});
   document.querySelectorAll('[data-qids]').forEach(el=>{const ids=el.dataset.qids.split(',').filter(Boolean);const n=ids.length;if(!n)return;
     const ok=ids.filter(i=>prog[i]===2).length,wk=ids.filter(i=>prog[i]===1).length;
     const o=el.querySelector('.bar .ok'),w=el.querySelector('.bar .wk'),p=el.querySelector('.pl');
@@ -334,7 +347,7 @@ function paint(){
   const ov=document.getElementById('overall');if(ov){const all=(ov.dataset.qids||'').split(',').filter(Boolean);const ok=all.filter(i=>prog[i]===2).length,wk=all.filter(i=>prog[i]===1).length;ov.querySelector('.stat').textContent=Math.round(100*ok/all.length)+'%';ov.querySelector('.detail').textContent=ok+' secure, '+wk+' to revisit, '+(all.length-ok-wk)+' not attempted of '+all.length+' questions.';}
 }
 window.ES.paint=paint;
-document.addEventListener('click',e=>{const b=e.target.closest('.st button');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);paint();if(window.ES.onFilter)window.ES.onFilter();});
+document.addEventListener('click',e=>{const b=e.target.closest('.st button[data-s]');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);paint();if(window.ES.onFilter)window.ES.onFilter();});
 const rs=document.getElementById('resetProg');if(rs)rs.onclick=()=>{if(confirm('Clear all saved progress on this browser?')){prog={};SV('envsci.progress',prog);paint();}};
 paint();
 /* ---- filter bar ---- */
@@ -357,6 +370,13 @@ if(fb){
   txt.addEventListener('input',run);fb.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{c.classList.toggle('on');run();});fb.querySelector('select.status').onchange=run;
   const clr=fb.querySelector('.clear');if(clr)clr.onclick=()=>{txt.value='';fb.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));fb.querySelector('select.status').value='all';run();};
   run();}
+/* ---- sticky offset = real header height (nav can wrap) ---- */
+const hd=document.querySelector('header.top');const setH=()=>root.style.setProperty('--hdr',(getComputedStyle(hd).position==='sticky'?hd.offsetHeight:0)+'px');setH();window.addEventListener('resize',setH);
+/* ---- copy link, back to top ---- */
+document.addEventListener('click',e=>{const b=e.target.closest('[data-copy]');if(!b)return;const q=b.closest('.q');const url=location.href.split('#')[0]+'#'+q.id;
+  (navigator.clipboard?navigator.clipboard.writeText(url):Promise.reject()).then(()=>{b.textContent='\u2713';setTimeout(()=>b.innerHTML='&#128279;',1200);}).catch(()=>prompt('Copy this link:',url));});
+const tt=document.createElement('button');tt.id='totop';tt.title='Back to top';tt.innerHTML='&uarr;';tt.className='noprint';document.body.appendChild(tt);tt.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+window.addEventListener('scroll',()=>tt.classList.toggle('show',window.scrollY>600),{passive:true});
 /* ---- print & reveal ---- */
 document.querySelectorAll('[data-print]').forEach(b=>b.onclick=()=>{const ms=b.dataset.print==='ms';document.body.classList.toggle('print-ms',ms);document.querySelectorAll('details.ms').forEach(d=>d.open=ms);window.print();});
 document.querySelectorAll('[data-reveal]').forEach(b=>b.onclick=()=>{const open=b.dataset.reveal==='1';document.querySelectorAll('details.ms').forEach(d=>d.open=open);b.dataset.reveal=open?'0':'1';b.textContent=open?'Hide all mark schemes':'Show all mark schemes';});

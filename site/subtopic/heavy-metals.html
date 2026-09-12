@@ -69,12 +69,12 @@ footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-
 .prog .bar .ok{background:var(--ok);height:100%}.prog .bar .wk{background:var(--warn);height:100%}.prog .pl{white-space:nowrap;min-width:90px}
 .hero .prog{color:rgba(255,255,255,.85)}.hero .prog .bar{background:rgba(255,255,255,.25)}
 /* filter bar & tools */
-.filterbar{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.filterbar{position:sticky;top:var(--hdr,62px);z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .filterbar input[type=search]{flex:1 1 220px;font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
 .filterbar label{font-size:.85rem;color:var(--stone);display:inline-flex;align-items:center;gap:4px;cursor:pointer}.filterbar .chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--sand);color:var(--stone);font-size:.82rem;cursor:pointer;font-family:inherit}
 .filterbar .chip.on{background:var(--moss);color:#fff;border-color:var(--moss)}.filterbar .cnt{font-size:.85rem;color:var(--stone);margin-left:auto}
 .filterbar select{font:inherit;font-size:.88rem;padding:5px 8px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
-.tools{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:10px 0;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.tools{position:sticky;top:var(--hdr,62px);z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:10px 0;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .tools .time{font-family:Fraunces,serif;font-size:1.6rem;font-weight:700;color:var(--head);min-width:120px}.tools .time.low{color:var(--bad)}
 .tools .score{font-weight:700;color:var(--moss)}.tools .score b{font-family:Fraunces,serif;font-size:1.3rem}.tools .pct{font-size:.85rem;color:var(--stone)}
 .tools button{font-family:inherit;font-size:.88rem;padding:6px 12px;border-radius:8px;border:1px solid var(--moss);background:transparent;color:var(--moss);cursor:pointer}.tools button.primary{background:var(--moss);color:#fff}
@@ -87,6 +87,20 @@ footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-
 .res{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0;text-decoration:none;color:inherit}.res:hover{border-color:var(--moss)}
 .res .t{font-weight:700;color:var(--head)}.res .m{font-size:.82rem;color:var(--stone)}.res .s{font-size:.92rem;margin-top:4px}.res mark{background:#ffe58a;color:#222;border-radius:3px;padding:0 2px}
 .empty{color:var(--stone);font-style:italic}
+/* mark scheme points, levels, links */
+.mspart{margin:8px 0 12px}.msh{display:flex;align-items:baseline;gap:8px;margin-bottom:2px}.msh .mtot{font-size:.8rem;color:var(--earth);font-weight:700}
+ul.pts{list-style:none;margin:4px 0 6px 0!important;padding:0}ul.pts li{display:flex;gap:10px;align-items:flex-start;padding:4px 0;border-top:1px dashed var(--ms-line)}ul.pts li:first-child{border-top:0}
+.mk{flex:0 0 auto;min-width:26px;text-align:center;font-size:.75rem;font-weight:700;color:#fff;background:var(--ok);border-radius:6px;padding:2px 6px;margin-top:3px}
+table.levels{border-collapse:collapse;width:100%;margin:6px 0 10px;font-size:.86rem;background:var(--card)}table.levels th,table.levels td{border:1px solid var(--ms-line);padding:5px 8px;text-align:left;vertical-align:top}table.levels th{background:var(--sand-dark)}table.levels td.r{white-space:nowrap;font-weight:700;color:var(--earth)}
+ul.ind{margin:4px 0 8px 18px}
+.st button.lnk{padding:2px 7px}
+#totop{position:fixed;right:18px;bottom:18px;z-index:15;background:var(--moss);color:#fff;border:0;border-radius:50%;width:42px;height:42px;font-size:1.2rem;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .2s}#totop.show{opacity:1;pointer-events:auto}
+.jump{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 4px}.jump a{font-size:.82rem;padding:3px 10px;border-radius:999px;border:1px solid var(--line);background:var(--sand);color:var(--moss);text-decoration:none;font-weight:600}.jump a:hover{background:var(--leaf-light)}
+.real .row{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;padding:8px 0;border-bottom:1px dashed var(--line);font-size:.95rem}.real .row .ser{font-weight:700;color:var(--head);min-width:150px}.real .row .qn{color:var(--stone);min-width:70px}.real .row .t{flex:1 1 300px}
+.real .row a{font-size:.82rem;padding:2px 9px;border-radius:999px;border:1px solid var(--line);background:var(--sand);text-decoration:none;font-weight:600}
+.plan input[type=date]{font:inherit;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}.plan .big{font-family:Fraunces,serif;font-size:2rem;color:var(--moss)}
+table.list td .bar{height:8px;background:var(--sand-dark);border-radius:999px;overflow:hidden;display:flex;width:140px}table.list td .bar .ok{background:var(--ok)}table.list td .bar .wk{background:var(--warn)}
+@media(max-width:720px){header.top{position:static}header.top nav a{margin-left:12px;font-size:.88rem}.filterbar,.tools{top:0}.hero h1{font-size:1.8rem}.hero{padding:34px 0 28px}.sub-item .t{flex-basis:100%}}
 /* print */
 @media print{header.top,footer,.tools,.filterbar,.st,.pill,.aw,.hero .crumbs,.prog,.noprint{display:none!important}
 body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;color:#000;padding:10px 0}.hero p,.hero h1{color:#000}.hero:before{display:none}
@@ -94,14 +108,16 @@ body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;c
 svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 </style>
 <script>try{if(localStorage.getItem('envsci.theme')==='"dark"')document.documentElement.dataset.theme='dark';}catch(e){}</script></head><body >
-<header class="top"><div class="wrap"><a class="brand" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb069" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-8 0-14 4-14 12 0 1.5.3 3 1 4 2-6 6-9 11-11-4 3-7 6-8 12 8 0 12-6 10-17z"/></svg><span>AQA Environmental Science</span></a><nav><a href="../index.html" class="">Topics</a><a href="../papers.html" class="">Mock papers</a><a href="../official.html" class="">Past papers</a><a href="../essays.html" class="">Essay bank</a><a href="../quickfire.html" class="">Quick-fire</a><a href="../search.html" class="">Search</a><button class="icon-btn" id="themeBtn" type="button" title="Toggle dark mode">&#9790; Dark</button></nav></div></header>
+<header class="top"><div class="wrap"><a class="brand" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb069" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-8 0-14 4-14 12 0 1.5.3 3 1 4 2-6 6-9 11-11-4 3-7 6-8 12 8 0 12-6 10-17z"/></svg><span>AQA Environmental Science</span></a><nav><a href="../index.html" class="">Topics</a><a href="../papers.html" class="">Mock papers</a><a href="../official.html" class="">Past papers</a><a href="../essays.html" class="">Essay bank</a><a href="../pastq.html" class="">Real Qs by topic</a><a href="../quickfire.html" class="">Quick-fire</a><a href="../planner.html" class="">Planner</a><a href="../search.html" class="">Search</a><button class="icon-btn" id="themeBtn" type="button" title="Toggle dark mode">&#9790; Dark</button></nav></div></header>
 <section class="hero p1 small"><div class="wrap"><div class="crumbs"><a href="../index.html">Topics</a><span>&rsaquo;</span><a href="../topic/pollution.html">Pollution</a><span>&rsaquo;</span>Heavy metals: lead, mercury</div><h1>Heavy metals: lead, mercury</h1><p>Pollution &middot; AQA spec 3.4.3.2.11 &middot; R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 275-279</p><span class="pill">Paper 1</span><span class="pill">6 questions</span><div class="prog" data-qids="HM-01,HM-02,HM-03,HM-04,HM-05,HM-06"><div class="bar"><div class="ok"></div><div class="wk"></div></div><span class="pl"></span></div></div></section>
 <main><div class="wrap"><h2 class="sec">Question sets</h2><table class="list"><tr><th>Set</th><th>Questions</th><th>Marks</th><th>Question paper</th><th>Mark scheme</th></tr>
 <tr><td>Set 1</td><td>6</td><td>55</td><td><a href="../pdf/topic/heavy-metals-set1-QP.pdf">Download QP (PDF)</a></td><td><a href="../pdf/topic/heavy-metals-set1-MS.pdf">Download MS (PDF)</a></td></tr>
 </table>
+<h2 class="sec">Real AQA questions on this topic (1)</h2><div class="real"><div class="row"><span class="ser">Specimen &middot; Paper 1</span><span class="qn">Q7 &middot; 5 marks</span><span class="t">Minamata Bay mercury</span><a href="../official/AQA-74471-SQP-CR.PDF#page=18">Question (p.18)</a> <a href="../official/AQA-74471-SMS.PDF">Mark scheme</a></div></div>
+<p class="note noprint">Practise this subtopic one question at a time: <a href="../quickfire.html?sub=heavy-metals">Quick-fire &rarr;</a></p>
 <div class="filterbar noprint"><input type="search" placeholder="Filter questions by keyword (e.g. albedo, quota, Simpson)"><button type="button" class="chip mk" data-v="5">5 marks</button><button type="button" class="chip mk" data-v="10">10 marks</button><button type="button" class="chip mk" data-v="15">15 marks</button><button type="button" class="chip fl" data-v="calc">Calculation</button><button type="button" class="chip fl" data-v="data">Data / figure</button><button type="button" class="chip fl" data-v="ext">9-mark extended</button><button type="button" class="chip fl" data-v="mcq">Multiple choice</button><button type="button" class="chip fl" data-v="table">Complete a table</button><select class="status" title="Filter by your progress"><option value="all">All progress</option><option value="todo">Not attempted</option><option value="work">Needs work</option><option value="secure">Secure</option><option value="notsecure">Not yet secure</option></select><button type="button" class="chip clear">Clear</button><span class="cnt"></span><button type="button" class="chip" data-reveal="1">Show all mark schemes</button><button type="button" class="chip" data-print="qp" title="Print the questions only">Print</button><button type="button" class="chip" data-print="ms" title="Print questions with mark schemes">Print + MS</button></div>
 <h2 class="sec set">Set 1</h2>
-<div class="q" id="HM-01" data-qid="HM-01" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 1</span><span class="meta">10 marks &middot; <a href="../subtopic/heavy-metals.html">Heavy metals: lead, mercury</a> &middot; spec 3.4.3.2.11 &middot; Genn pp. 275-276 &middot; HM-01</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="HM-01" data-qid="HM-01" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 1</span><span class="meta">10 marks &middot; <a href="../subtopic/heavy-metals.html">Heavy metals: lead, mercury</a> &middot; spec 3.4.3.2.11 &middot; Genn pp. 275-276 &middot; HM-01</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>Figure 1 shows the mean concentration of lead in the blood of children in a large city between 1976 and 2000, and the year in which lead additives in petrol began to be phased out.</p>
 <div class="cap">Figure 1</div>
 <svg class="chart" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
@@ -140,24 +156,23 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">01.5</span>Explain why discarded lead fishing weights and shotgun pellets can poison waterfowl.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>01.1</b> (2 marks)
-<ul><li>(15.0 - 2.2) / 15.0 x 100</li><li>= 85.3% (accept 85%)</li></ul>
+<div class="mspart"><div class="msh"><b>01.1</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">A correct final answer (with unit where asked) scores full marks. If the answer is wrong, award 1 mark for each correct step of working shown.</div><ul class="pts"><li><span class="mk">1</span><span>(15.0 - 2.2) / 15.0 x 100</span></li><li><span class="mk">1</span><span>= 85.3% (accept 85%)</span></li></ul>
 </div>
-<div><b>01.2</b> (3 marks)
-<ul><li>Added as an anti-knock agent to smooth combustion and reduce engine wear</li><li>Lead particulates were released in exhaust gases into the air of cities and inhaled / deposited on soil and food</li><li>Lead is a neurotoxin that bioaccumulates; chronic exposure damages the nervous system / brain development in children</li></ul>
+<div class="mspart"><div class="msh"><b>01.2</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Added as an anti-knock agent to smooth combustion and reduce engine wear</span></li><li><span class="mk">1</span><span>Lead particulates were released in exhaust gases into the air of cities and inhaled / deposited on soil and food</span></li><li><span class="mk">1</span><span>Lead is a neurotoxin that bioaccumulates; chronic exposure damages the nervous system / brain development in children</span></li></ul>
 </div>
-<div><b>01.3</b> (2 marks)
-<div class="lvl"><i>Any 2 from:</i></div>
-<ul><li>Replacement of lead water pipes / lead solder with copper / tin-based solder; phosphoric acid dosing of water supplies forming insoluble lead phosphate</li><li>Phasing out of lead-based paint / safer paint removal</li><li>Lead-free electrical solder</li><li>Restrictions on lead fishing weights / shotgun pellets</li><li>Industrial emission controls</li></ul>
+<div class="mspart"><div class="msh"><b>01.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">Any 2 from the points below - 1 mark each, maximum 2.</div><ul class="pts"><li><span class="mk">1</span><span>Replacement of lead water pipes / lead solder with copper / tin-based solder; phosphoric acid dosing of water supplies forming insoluble lead phosphate</span></li><li><span class="mk">1</span><span>Phasing out of lead-based paint / safer paint removal</span></li><li><span class="mk">1</span><span>Lead-free electrical solder</span></li><li><span class="mk">1</span><span>Restrictions on lead fishing weights / shotgun pellets</span></li><li><span class="mk">1</span><span>Industrial emission controls</span></li></ul>
 </div>
-<div><b>01.4</b> (2 marks)
-<ul><li>Reacts with the lead in old pipes to form an insoluble layer of lead phosphate on the inside of the pipe</li><li>This prevents lead dissolving into the water</li></ul>
+<div class="mspart"><div class="msh"><b>01.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Reacts with the lead in old pipes to form an insoluble layer of lead phosphate on the inside of the pipe</span></li><li><span class="mk">1</span><span>This prevents lead dissolving into the water</span></li></ul>
 </div>
-<div><b>01.5</b> (1 marks)
-<ul><li>Swans / ducks swallow them (mistaking them for snails / grit) and the lead is absorbed, causing lead poisoning</li></ul>
+<div class="mspart"><div class="msh"><b>01.5</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>Swans / ducks swallow them (mistaking them for snails / grit) and the lead is absorbed, causing lead poisoning</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 275-276; AQA spec 3.4.3.2.11.</div></details></div>
-<div class="q" id="HM-02" data-qid="HM-02" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 2</span><span class="meta">10 marks &middot; <a href="../subtopic/heavy-metals.html">Heavy metals: lead, mercury</a> &middot; spec 3.4.3.2.11 &middot; Genn pp. 276-277 &middot; HM-02</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="HM-02" data-qid="HM-02" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 2</span><span class="meta">10 marks &middot; <a href="../subtopic/heavy-metals.html">Heavy metals: lead, mercury</a> &middot; spec 3.4.3.2.11 &middot; Genn pp. 276-277 &middot; HM-02</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>In the 1950s a chemical factory at Minamata, Japan, discharged inorganic mercury compounds into a shallow bay. Thousands of local people who ate fish and shellfish from the bay suffered severe neurological damage and many babies were born with birth abnormalities.</p>
 <div class="part"><span class="marks">[4 marks]</span><span class="pn">02.1</span>Explain how the low-toxicity inorganic mercury discharged into the bay came to cause such severe poisoning.
 </div>
@@ -166,17 +181,17 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[3 marks]</span><span class="pn">02.3</span>Compare the toxicity of the three chemical forms of mercury.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>02.1</b> (4 marks)
-<ul><li>Inorganic mercury settled into anaerobic sediments where anaerobic microbes converted it to organic (methyl) mercury</li><li>Methyl mercury is liposoluble so it is absorbed easily and stored in fat / passes through cell membranes</li><li>It bioaccumulated in fish and shellfish and biomagnified along the food chain to reach much higher concentrations than in the water</li><li>Local people ate large amounts of fish (critical group) so received toxic doses</li></ul>
+<div class="mspart"><div class="msh"><b>02.1</b> <span class="mtot">4 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Inorganic mercury settled into anaerobic sediments where anaerobic microbes converted it to organic (methyl) mercury</span></li><li><span class="mk">1</span><span>Methyl mercury is liposoluble so it is absorbed easily and stored in fat / passes through cell membranes</span></li><li><span class="mk">1</span><span>It bioaccumulated in fish and shellfish and biomagnified along the food chain to reach much higher concentrations than in the water</span></li><li><span class="mk">1</span><span>Local people ate large amounts of fish (critical group) so received toxic doses</span></li></ul>
 </div>
-<div><b>02.2</b> (3 marks)
-<ul><li>Liposoluble so it crosses the blood-brain barrier into the brain, inhibiting enzymes / nerve function (neurotoxin)</li><li>It crosses the placenta and harms the developing unborn baby</li><li>Mercury is a teratogen, preventing normal gene expression / development</li></ul>
+<div class="mspart"><div class="msh"><b>02.2</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Liposoluble so it crosses the blood-brain barrier into the brain, inhibiting enzymes / nerve function (neurotoxin)</span></li><li><span class="mk">1</span><span>It crosses the placenta and harms the developing unborn baby</span></li><li><span class="mk">1</span><span>Mercury is a teratogen, preventing normal gene expression / development</span></li></ul>
 </div>
-<div><b>02.3</b> (3 marks)
-<ul><li>Elemental (liquid) mercury: not easily absorbed through skin or gut, though vapour is absorbed in the lungs</li><li>Inorganic compounds (eg mercury oxide): moderately well absorbed in the gut</li><li>Organic compounds (eg methyl mercury): easily absorbed through skin, gut and lungs; liposoluble so most toxic and bioaccumulates</li></ul>
+<div class="mspart"><div class="msh"><b>02.3</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Elemental (liquid) mercury: not easily absorbed through skin or gut, though vapour is absorbed in the lungs</span></li><li><span class="mk">1</span><span>Inorganic compounds (eg mercury oxide): moderately well absorbed in the gut</span></li><li><span class="mk">1</span><span>Organic compounds (eg methyl mercury): easily absorbed through skin, gut and lungs; liposoluble so most toxic and bioaccumulates</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 276-277; AQA spec 3.4.3.2.11.</div></details></div>
-<div class="q" id="HM-03" data-qid="HM-03" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 3</span><span class="meta">10 marks &middot; <a href="../subtopic/heavy-metals.html">Heavy metals: lead, mercury</a> &middot; spec 3.4.3.2.11 &middot; Genn pp. 275-278 &middot; HM-03</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="HM-03" data-qid="HM-03" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 3</span><span class="meta">10 marks &middot; <a href="../subtopic/heavy-metals.html">Heavy metals: lead, mercury</a> &middot; spec 3.4.3.2.11 &middot; Genn pp. 275-278 &middot; HM-03</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[3 marks]</span><span class="pn">03.1</span>Give <b>three</b> sources of mercury pollution.
 </div>
 <div class="part"><span class="marks">[3 marks]</span><span class="pn">03.2</span>Describe <b>three</b> methods used to control mercury pollution.
@@ -186,22 +201,20 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">03.4</span>State what is meant by synergism and give an example involving a heavy metal.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>03.1</b> (3 marks)
-<div class="lvl"><i>Any 3 from:</i></div>
-<ul><li>Disposal of items containing mercury: batteries, thermometers, fluorescent lights</li><li>Chemical plants producing chlorine using mercury electrodes</li><li>Combustion of coal</li><li>Gold mining (amalgamation)</li></ul>
+<div class="mspart"><div class="msh"><b>03.1</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">Any 3 from the points below - 1 mark each, maximum 3.</div><ul class="pts"><li><span class="mk">1</span><span>Disposal of items containing mercury: batteries, thermometers, fluorescent lights</span></li><li><span class="mk">1</span><span>Chemical plants producing chlorine using mercury electrodes</span></li><li><span class="mk">1</span><span>Combustion of coal</span></li><li><span class="mk">1</span><span>Gold mining (amalgamation)</span></li></ul>
 </div>
-<div><b>03.2</b> (3 marks)
-<div class="lvl"><i>Any 3 from:</i></div>
-<ul><li>Replacement of mercury thermometers with alcohol / electronic thermometers (discontinued uses)</li><li>Removal from effluents by reverse osmosis / activated carbon filters / ion exchange filters</li><li>Disposal / storage of wastes at high pH to reduce solubility</li><li>Encapsulation of mercury-containing hazardous waste in cement</li></ul>
+<div class="mspart"><div class="msh"><b>03.2</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">Any 3 from the points below - 1 mark each, maximum 3.</div><ul class="pts"><li><span class="mk">1</span><span>Replacement of mercury thermometers with alcohol / electronic thermometers (discontinued uses)</span></li><li><span class="mk">1</span><span>Removal from effluents by reverse osmosis / activated carbon filters / ion exchange filters</span></li><li><span class="mk">1</span><span>Disposal / storage of wastes at high pH to reduce solubility</span></li><li><span class="mk">1</span><span>Encapsulation of mercury-containing hazardous waste in cement</span></li></ul>
 </div>
-<div><b>03.3</b> (2 marks)
-<ul><li>Most heavy metals are more soluble at low pH / less soluble at high pH</li><li>So at high pH they remain insoluble / immobile and cannot be leached into water or absorbed by organisms</li></ul>
+<div class="mspart"><div class="msh"><b>03.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Most heavy metals are more soluble at low pH / less soluble at high pH</span></li><li><span class="mk">1</span><span>So at high pH they remain insoluble / immobile and cannot be leached into water or absorbed by organisms</span></li></ul>
 </div>
-<div><b>03.4</b> (2 marks)
-<ul><li>The effects of two pollutants interact to produce a different (greater) effect than either alone</li><li>Cadmium and zinc; ozone and sulfur dioxide</li></ul>
+<div class="mspart"><div class="msh"><b>03.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>The effects of two pollutants interact to produce a different (greater) effect than either alone</span></li><li><span class="mk">1</span><span>Cadmium and zinc; ozone and sulfur dioxide</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 275-278; AQA spec 3.4.3.2.11.</div></details></div>
-<div class="q" id="HM-04" data-qid="HM-04" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 4</span><span class="meta">10 marks &middot; <a href="../subtopic/heavy-metals.html">Heavy metals: lead, mercury</a> &middot; spec 3.4.3.2.11 &middot; Genn pp. 275-279 &middot; HM-04</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="HM-04" data-qid="HM-04" data-marks="10" data-flags="calc data"><div class="qh"><span class="num">Question 4</span><span class="meta">10 marks &middot; <a href="../subtopic/heavy-metals.html">Heavy metals: lead, mercury</a> &middot; spec 3.4.3.2.11 &middot; Genn pp. 275-279 &middot; HM-04</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>Table 1 shows the concentration of cadmium in rice and in the kidneys of people living in two villages in Japan. Village A is downstream of a zinc mine.</p>
 <div class="cap">Table 1</div><table class="data"><tr><th>Village</th><th>Cadmium in rice / mg kg<sup>-1</sup></th><th>Cadmium in kidney of residents / mg kg<sup>-1</sup></th><th>Cases of bone disease (itai-itai) per 1000 people</th></tr><tr><td>A (downstream of mine)</td><td>1.2</td><td>180</td><td>34</td></tr><tr><td>B (control)</td><td>0.05</td><td>22</td><td>0</td></tr></table>
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">04.1</span>Calculate how many times more concentrated cadmium is in the kidneys of village A residents than in their rice.
@@ -215,24 +228,23 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">04.5</span>Cadmium is used in cadmium-telluride photovoltaic panels. Suggest why this new use may cause pollution in the future.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>04.1</b> (1 marks)
-<ul><li>180 / 1.2 = 150</li></ul>
+<div class="mspart"><div class="msh"><b>04.1</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark for the correct answer.</div><ul class="pts"><li><span class="mk">1</span><span>180 / 1.2 = 150</span></li></ul>
 </div>
-<div><b>04.2</b> (1 marks)
-<ul><li>Cadmium and zinc occur together in the same ores so mine drainage / smelting releases both</li></ul>
+<div class="mspart"><div class="msh"><b>04.2</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>Cadmium and zinc occur together in the same ores so mine drainage / smelting releases both</span></li></ul>
 </div>
-<div><b>04.3</b> (4 marks)
-<ul><li>Mine drainage water contaminated irrigation water / paddy soil so rice absorbed cadmium (1.2 vs 0.05 mg kg<sup>-1</sup>)</li><li>Cadmium is liposoluble / not excreted so it bioaccumulates in the body (kidneys) with chronic exposure to small doses over years</li><li>Cadmium causes kidney failure and bone decalcification / skeletal collapse (itai-itai disease)</li><li>Rice is the staple food so residents receive a large dose; village B has no exposure and no disease (correlation supports causation)</li></ul>
+<div class="mspart"><div class="msh"><b>04.3</b> <span class="mtot">4 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Mine drainage water contaminated irrigation water / paddy soil so rice absorbed cadmium (1.2 vs 0.05 mg kg<sup>-1</sup>)</span></li><li><span class="mk">1</span><span>Cadmium is liposoluble / not excreted so it bioaccumulates in the body (kidneys) with chronic exposure to small doses over years</span></li><li><span class="mk">1</span><span>Cadmium causes kidney failure and bone decalcification / skeletal collapse (itai-itai disease)</span></li><li><span class="mk">1</span><span>Rice is the staple food so residents receive a large dose; village B has no exposure and no disease (correlation supports causation)</span></li></ul>
 </div>
-<div><b>04.4</b> (2 marks)
-<div class="lvl"><i>Any 2 from:</i></div>
-<ul><li>Collect mine drainage water and neutralise / raise pH with lime so cadmium precipitates and stays insoluble</li><li>Cover / cap spoil heaps to prevent leaching and dust</li><li>Recycle nickel-cadmium batteries / hazardous waste landfill</li><li>Phytoremediation of contaminated paddy soils</li></ul>
+<div class="mspart"><div class="msh"><b>04.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">Any 2 from the points below - 1 mark each, maximum 2.</div><ul class="pts"><li><span class="mk">1</span><span>Collect mine drainage water and neutralise / raise pH with lime so cadmium precipitates and stays insoluble</span></li><li><span class="mk">1</span><span>Cover / cap spoil heaps to prevent leaching and dust</span></li><li><span class="mk">1</span><span>Recycle nickel-cadmium batteries / hazardous waste landfill</span></li><li><span class="mk">1</span><span>Phytoremediation of contaminated paddy soils</span></li></ul>
 </div>
-<div><b>04.5</b> (2 marks)
-<ul><li>Manufacture may release cadmium in effluents / dust</li><li>Panels have a limited life; disposal of old panels (landfill, incineration of pigments) could release cadmium unless recycled</li></ul>
+<div class="mspart"><div class="msh"><b>04.5</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Manufacture may release cadmium in effluents / dust</span></li><li><span class="mk">1</span><span>Panels have a limited life; disposal of old panels (landfill, incineration of pigments) could release cadmium unless recycled</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 275-279; AQA spec 3.4.3.2.11.</div></details></div>
-<div class="q" id="HM-05" data-qid="HM-05" data-marks="10" data-flags="mcq"><div class="qh"><span class="num">Question 5</span><span class="meta">10 marks &middot; <a href="../subtopic/heavy-metals.html">Heavy metals: lead, mercury</a> &middot; spec 3.4.3.2.11 &middot; Genn pp. 275-279 &middot; HM-05</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="HM-05" data-qid="HM-05" data-marks="10" data-flags="mcq"><div class="qh"><span class="num">Question 5</span><span class="meta">10 marks &middot; <a href="../subtopic/heavy-metals.html">Heavy metals: lead, mercury</a> &middot; spec 3.4.3.2.11 &middot; Genn pp. 275-279 &middot; HM-05</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">05.1</span>Which of the following is the main reason that lead-based paint is a greater risk to children than to adults? Tick one box.
 <ul class="mcq"><li>A&nbsp; Children inhale more lead vapour</li><li>B&nbsp; Children pick up dust / flakes and suck their fingers</li><li>C&nbsp; Lead is more soluble in children's blood</li><li>D&nbsp; Children spend more time near roads</li></ul>
 </div>
@@ -245,24 +257,23 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">05.5</span>Explain why heavy metals are described as neurotoxins.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>05.1</b> (1 marks)
-<ul><li>B</li></ul>
+<div class="mspart"><div class="msh"><b>05.1</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">Correct answer only.</div><ul class="pts"><li><span class="mk">1</span><span><b></b>&nbsp; B</span></li></ul>
 </div>
-<div><b>05.2</b> (3 marks)
-<ul><li>TBT is highly toxic to marine molluscs / crustaceans and an endocrine disruptor altering growth and reproduction of oysters / whelks even at very low concentrations</li><li>It bioaccumulated in shellfish and could pass to humans eating them</li><li>It was assumed dilution would make it harmless (illustrates the need for the precautionary principle); now prohibited and replaced by copper</li></ul>
+<div class="mspart"><div class="msh"><b>05.2</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>TBT is highly toxic to marine molluscs / crustaceans and an endocrine disruptor altering growth and reproduction of oysters / whelks even at very low concentrations</span></li><li><span class="mk">1</span><span>It bioaccumulated in shellfish and could pass to humans eating them</span></li><li><span class="mk">1</span><span>It was assumed dilution would make it harmless (illustrates the need for the precautionary principle); now prohibited and replaced by copper</span></li></ul>
 </div>
-<div><b>05.3</b> (3 marks)
-<ul><li>In the low-oxygen conditions of the spoil heap iron is in its soluble reduced form and is leached into the river</li><li>In the river it is oxidised to insoluble iron oxide (orange sediment); the oxidation uses dissolved oxygen so the river is deoxygenated, killing aerobic organisms</li><li>Control: drainage water is passed over mesh screens where the iron oxidises and is deposited before the water reaches the river; the solid iron is removed periodically</li></ul>
+<div class="mspart"><div class="msh"><b>05.3</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>In the low-oxygen conditions of the spoil heap iron is in its soluble reduced form and is leached into the river</span></li><li><span class="mk">1</span><span>In the river it is oxidised to insoluble iron oxide (orange sediment); the oxidation uses dissolved oxygen so the river is deoxygenated, killing aerobic organisms</span></li><li><span class="mk">1</span><span>Control: drainage water is passed over mesh screens where the iron oxidises and is deposited before the water reaches the river; the solid iron is removed periodically</span></li></ul>
 </div>
-<div><b>05.4</b> (2 marks)
-<div class="lvl"><i>Any 2 from:</i></div>
-<ul><li>Lead-acid car batteries (recycled)</li><li>Lead flashing on roofs / windows</li><li>Radiation shielding</li></ul>
+<div class="mspart"><div class="msh"><b>05.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">Any 2 from the points below - 1 mark each, maximum 2.</div><ul class="pts"><li><span class="mk">1</span><span>Lead-acid car batteries (recycled)</span></li><li><span class="mk">1</span><span>Lead flashing on roofs / windows</span></li><li><span class="mk">1</span><span>Radiation shielding</span></li></ul>
 </div>
-<div><b>05.5</b> (1 marks)
-<ul><li>They inhibit enzyme function, especially the enzymes of the nervous system / nerve cells</li></ul>
+<div class="mspart"><div class="msh"><b>05.5</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>They inhibit enzyme function, especially the enzymes of the nervous system / nerve cells</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 275-279; AQA spec 3.4.3.2.11.</div></details></div>
-<div class="q" id="HM-06" data-qid="HM-06" data-marks="5" data-flags="mcq"><div class="qh"><span class="num">Question 6</span><span class="meta">5 marks &middot; <a href="../subtopic/heavy-metals.html">Heavy metals: lead, mercury</a> &middot; spec 3.4.3.2.11 &middot; Genn pp. 275-279 &middot; HM-06</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="HM-06" data-qid="HM-06" data-marks="5" data-flags="mcq"><div class="qh"><span class="num">Question 6</span><span class="meta">5 marks &middot; <a href="../subtopic/heavy-metals.html">Heavy metals: lead, mercury</a> &middot; spec 3.4.3.2.11 &middot; Genn pp. 275-279 &middot; HM-06</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">06.1</span>Which chemical form of mercury is most easily absorbed and biomagnified in food chains? Tick <b>one</b> box.
 <ul class="mcq"><li>A&nbsp; Elemental (liquid) mercury</li><li>B&nbsp; Inorganic mercury compounds</li><li>C&nbsp; Organic (methyl) mercury</li><li>D&nbsp; Mercury vapour</li></ul>
 </div>
@@ -271,14 +282,14 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">06.3</span>Explain why heavy metal wastes are stored under alkaline conditions.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>06.1</b> (1 marks)
-<ul><li>Organic (methyl) mercury</li></ul>
+<div class="mspart"><div class="msh"><b>06.1</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">Correct answer only.</div><ul class="pts"><li><span class="mk">1</span><span><b>C</b>&nbsp; Organic (methyl) mercury</span></li></ul>
 </div>
-<div><b>06.2</b> (2 marks)
-<ul><li>Anaerobic microbes converted the inorganic mercury into organic methyl mercury</li><li>Methyl mercury is liposoluble so it is absorbed, crosses into the brain and biomagnifies along the food chain to fish eaten by people</li></ul>
+<div class="mspart"><div class="msh"><b>06.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Anaerobic microbes converted the inorganic mercury into organic methyl mercury</span></li><li><span class="mk">1</span><span>Methyl mercury is liposoluble so it is absorbed, crosses into the brain and biomagnifies along the food chain to fish eaten by people</span></li></ul>
 </div>
-<div><b>06.3</b> (2 marks)
-<ul><li>Most heavy metals are less soluble at high pH</li><li>So they remain immobile and are not leached into water or absorbed by organisms</li></ul>
+<div class="mspart"><div class="msh"><b>06.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Most heavy metals are less soluble at high pH</span></li><li><span class="mk">1</span><span>So they remain immobile and are not leached into water or absorbed by organisms</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 275-279; AQA spec 3.4.3.2.11.</div></details></div>
 </div></main>
@@ -297,7 +308,7 @@ const tb=document.getElementById('themeBtn');if(tb)tb.onclick=()=>{const t=root.
 let prog=LS('envsci.progress')||{};
 window.ES.prog=()=>prog;
 function paint(){
-  document.querySelectorAll('.q[data-qid]').forEach(el=>{const s=prog[el.dataset.qid]||0;el.dataset.status=s;el.querySelectorAll('.st button').forEach(b=>b.classList.toggle('on',+b.dataset.s===s&&s>0));});
+  document.querySelectorAll('.q[data-qid]').forEach(el=>{const s=prog[el.dataset.qid]||0;el.dataset.status=s;el.querySelectorAll('.st button[data-s]').forEach(b=>b.classList.toggle('on',+b.dataset.s===s&&s>0));});
   document.querySelectorAll('[data-qids]').forEach(el=>{const ids=el.dataset.qids.split(',').filter(Boolean);const n=ids.length;if(!n)return;
     const ok=ids.filter(i=>prog[i]===2).length,wk=ids.filter(i=>prog[i]===1).length;
     const o=el.querySelector('.bar .ok'),w=el.querySelector('.bar .wk'),p=el.querySelector('.pl');
@@ -305,7 +316,7 @@ function paint(){
   const ov=document.getElementById('overall');if(ov){const all=(ov.dataset.qids||'').split(',').filter(Boolean);const ok=all.filter(i=>prog[i]===2).length,wk=all.filter(i=>prog[i]===1).length;ov.querySelector('.stat').textContent=Math.round(100*ok/all.length)+'%';ov.querySelector('.detail').textContent=ok+' secure, '+wk+' to revisit, '+(all.length-ok-wk)+' not attempted of '+all.length+' questions.';}
 }
 window.ES.paint=paint;
-document.addEventListener('click',e=>{const b=e.target.closest('.st button');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);paint();if(window.ES.onFilter)window.ES.onFilter();});
+document.addEventListener('click',e=>{const b=e.target.closest('.st button[data-s]');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);paint();if(window.ES.onFilter)window.ES.onFilter();});
 const rs=document.getElementById('resetProg');if(rs)rs.onclick=()=>{if(confirm('Clear all saved progress on this browser?')){prog={};SV('envsci.progress',prog);paint();}};
 paint();
 /* ---- filter bar ---- */
@@ -328,6 +339,13 @@ if(fb){
   txt.addEventListener('input',run);fb.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{c.classList.toggle('on');run();});fb.querySelector('select.status').onchange=run;
   const clr=fb.querySelector('.clear');if(clr)clr.onclick=()=>{txt.value='';fb.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));fb.querySelector('select.status').value='all';run();};
   run();}
+/* ---- sticky offset = real header height (nav can wrap) ---- */
+const hd=document.querySelector('header.top');const setH=()=>root.style.setProperty('--hdr',(getComputedStyle(hd).position==='sticky'?hd.offsetHeight:0)+'px');setH();window.addEventListener('resize',setH);
+/* ---- copy link, back to top ---- */
+document.addEventListener('click',e=>{const b=e.target.closest('[data-copy]');if(!b)return;const q=b.closest('.q');const url=location.href.split('#')[0]+'#'+q.id;
+  (navigator.clipboard?navigator.clipboard.writeText(url):Promise.reject()).then(()=>{b.textContent='\u2713';setTimeout(()=>b.innerHTML='&#128279;',1200);}).catch(()=>prompt('Copy this link:',url));});
+const tt=document.createElement('button');tt.id='totop';tt.title='Back to top';tt.innerHTML='&uarr;';tt.className='noprint';document.body.appendChild(tt);tt.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+window.addEventListener('scroll',()=>tt.classList.toggle('show',window.scrollY>600),{passive:true});
 /* ---- print & reveal ---- */
 document.querySelectorAll('[data-print]').forEach(b=>b.onclick=()=>{const ms=b.dataset.print==='ms';document.body.classList.toggle('print-ms',ms);document.querySelectorAll('details.ms').forEach(d=>d.open=ms);window.print();});
 document.querySelectorAll('[data-reveal]').forEach(b=>b.onclick=()=>{const open=b.dataset.reveal==='1';document.querySelectorAll('details.ms').forEach(d=>d.open=open);b.dataset.reveal=open?'0':'1';b.textContent=open?'Hide all mark schemes':'Show all mark schemes';});

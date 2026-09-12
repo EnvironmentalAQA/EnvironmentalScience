@@ -69,12 +69,12 @@ footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-
 .prog .bar .ok{background:var(--ok);height:100%}.prog .bar .wk{background:var(--warn);height:100%}.prog .pl{white-space:nowrap;min-width:90px}
 .hero .prog{color:rgba(255,255,255,.85)}.hero .prog .bar{background:rgba(255,255,255,.25)}
 /* filter bar & tools */
-.filterbar{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.filterbar{position:sticky;top:var(--hdr,62px);z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .filterbar input[type=search]{flex:1 1 220px;font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
 .filterbar label{font-size:.85rem;color:var(--stone);display:inline-flex;align-items:center;gap:4px;cursor:pointer}.filterbar .chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--sand);color:var(--stone);font-size:.82rem;cursor:pointer;font-family:inherit}
 .filterbar .chip.on{background:var(--moss);color:#fff;border-color:var(--moss)}.filterbar .cnt{font-size:.85rem;color:var(--stone);margin-left:auto}
 .filterbar select{font:inherit;font-size:.88rem;padding:5px 8px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
-.tools{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:10px 0;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.tools{position:sticky;top:var(--hdr,62px);z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:10px 0;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .tools .time{font-family:Fraunces,serif;font-size:1.6rem;font-weight:700;color:var(--head);min-width:120px}.tools .time.low{color:var(--bad)}
 .tools .score{font-weight:700;color:var(--moss)}.tools .score b{font-family:Fraunces,serif;font-size:1.3rem}.tools .pct{font-size:.85rem;color:var(--stone)}
 .tools button{font-family:inherit;font-size:.88rem;padding:6px 12px;border-radius:8px;border:1px solid var(--moss);background:transparent;color:var(--moss);cursor:pointer}.tools button.primary{background:var(--moss);color:#fff}
@@ -87,6 +87,20 @@ footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-
 .res{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0;text-decoration:none;color:inherit}.res:hover{border-color:var(--moss)}
 .res .t{font-weight:700;color:var(--head)}.res .m{font-size:.82rem;color:var(--stone)}.res .s{font-size:.92rem;margin-top:4px}.res mark{background:#ffe58a;color:#222;border-radius:3px;padding:0 2px}
 .empty{color:var(--stone);font-style:italic}
+/* mark scheme points, levels, links */
+.mspart{margin:8px 0 12px}.msh{display:flex;align-items:baseline;gap:8px;margin-bottom:2px}.msh .mtot{font-size:.8rem;color:var(--earth);font-weight:700}
+ul.pts{list-style:none;margin:4px 0 6px 0!important;padding:0}ul.pts li{display:flex;gap:10px;align-items:flex-start;padding:4px 0;border-top:1px dashed var(--ms-line)}ul.pts li:first-child{border-top:0}
+.mk{flex:0 0 auto;min-width:26px;text-align:center;font-size:.75rem;font-weight:700;color:#fff;background:var(--ok);border-radius:6px;padding:2px 6px;margin-top:3px}
+table.levels{border-collapse:collapse;width:100%;margin:6px 0 10px;font-size:.86rem;background:var(--card)}table.levels th,table.levels td{border:1px solid var(--ms-line);padding:5px 8px;text-align:left;vertical-align:top}table.levels th{background:var(--sand-dark)}table.levels td.r{white-space:nowrap;font-weight:700;color:var(--earth)}
+ul.ind{margin:4px 0 8px 18px}
+.st button.lnk{padding:2px 7px}
+#totop{position:fixed;right:18px;bottom:18px;z-index:15;background:var(--moss);color:#fff;border:0;border-radius:50%;width:42px;height:42px;font-size:1.2rem;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .2s}#totop.show{opacity:1;pointer-events:auto}
+.jump{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 4px}.jump a{font-size:.82rem;padding:3px 10px;border-radius:999px;border:1px solid var(--line);background:var(--sand);color:var(--moss);text-decoration:none;font-weight:600}.jump a:hover{background:var(--leaf-light)}
+.real .row{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;padding:8px 0;border-bottom:1px dashed var(--line);font-size:.95rem}.real .row .ser{font-weight:700;color:var(--head);min-width:150px}.real .row .qn{color:var(--stone);min-width:70px}.real .row .t{flex:1 1 300px}
+.real .row a{font-size:.82rem;padding:2px 9px;border-radius:999px;border:1px solid var(--line);background:var(--sand);text-decoration:none;font-weight:600}
+.plan input[type=date]{font:inherit;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}.plan .big{font-family:Fraunces,serif;font-size:2rem;color:var(--moss)}
+table.list td .bar{height:8px;background:var(--sand-dark);border-radius:999px;overflow:hidden;display:flex;width:140px}table.list td .bar .ok{background:var(--ok)}table.list td .bar .wk{background:var(--warn)}
+@media(max-width:720px){header.top{position:static}header.top nav a{margin-left:12px;font-size:.88rem}.filterbar,.tools{top:0}.hero h1{font-size:1.8rem}.hero{padding:34px 0 28px}.sub-item .t{flex-basis:100%}}
 /* print */
 @media print{header.top,footer,.tools,.filterbar,.st,.pill,.aw,.hero .crumbs,.prog,.noprint{display:none!important}
 body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;color:#000;padding:10px 0}.hero p,.hero h1{color:#000}.hero:before{display:none}
@@ -94,14 +108,15 @@ body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;c
 svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 </style>
 <script>try{if(localStorage.getItem('envsci.theme')==='"dark"')document.documentElement.dataset.theme='dark';}catch(e){}</script></head><body >
-<header class="top"><div class="wrap"><a class="brand" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb069" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-8 0-14 4-14 12 0 1.5.3 3 1 4 2-6 6-9 11-11-4 3-7 6-8 12 8 0 12-6 10-17z"/></svg><span>AQA Environmental Science</span></a><nav><a href="../index.html" class="">Topics</a><a href="../papers.html" class="">Mock papers</a><a href="../official.html" class="">Past papers</a><a href="../essays.html" class="">Essay bank</a><a href="../quickfire.html" class="">Quick-fire</a><a href="../search.html" class="">Search</a><button class="icon-btn" id="themeBtn" type="button" title="Toggle dark mode">&#9790; Dark</button></nav></div></header>
+<header class="top"><div class="wrap"><a class="brand" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb069" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-8 0-14 4-14 12 0 1.5.3 3 1 4 2-6 6-9 11-11-4 3-7 6-8 12 8 0 12-6 10-17z"/></svg><span>AQA Environmental Science</span></a><nav><a href="../index.html" class="">Topics</a><a href="../papers.html" class="">Mock papers</a><a href="../official.html" class="">Past papers</a><a href="../essays.html" class="">Essay bank</a><a href="../pastq.html" class="">Real Qs by topic</a><a href="../quickfire.html" class="">Quick-fire</a><a href="../planner.html" class="">Planner</a><a href="../search.html" class="">Search</a><button class="icon-btn" id="themeBtn" type="button" title="Toggle dark mode">&#9790; Dark</button></nav></div></header>
 <section class="hero p1 small"><div class="wrap"><div class="crumbs"><a href="../index.html">Topics</a><span>&rsaquo;</span><a href="../topic/pollution.html">Pollution</a><span>&rsaquo;</span>Solid wastes</div><h1>Solid wastes</h1><p>Pollution &middot; AQA spec 3.4.3.2.12 &middot; R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 279-285</p><span class="pill">Paper 1</span><span class="pill">6 questions</span><div class="prog" data-qids="SW-01,SW-02,SW-03,SW-04,SW-05,SW-06"><div class="bar"><div class="ok"></div><div class="wk"></div></div><span class="pl"></span></div></div></section>
 <main><div class="wrap"><h2 class="sec">Question sets</h2><table class="list"><tr><th>Set</th><th>Questions</th><th>Marks</th><th>Question paper</th><th>Mark scheme</th></tr>
 <tr><td>Set 1</td><td>6</td><td>55</td><td><a href="../pdf/topic/solid-waste-set1-QP.pdf">Download QP (PDF)</a></td><td><a href="../pdf/topic/solid-waste-set1-MS.pdf">Download MS (PDF)</a></td></tr>
 </table>
+<p class="note noprint">Practise this subtopic one question at a time: <a href="../quickfire.html?sub=solid-waste">Quick-fire &rarr;</a></p>
 <div class="filterbar noprint"><input type="search" placeholder="Filter questions by keyword (e.g. albedo, quota, Simpson)"><button type="button" class="chip mk" data-v="5">5 marks</button><button type="button" class="chip mk" data-v="10">10 marks</button><button type="button" class="chip mk" data-v="15">15 marks</button><button type="button" class="chip fl" data-v="calc">Calculation</button><button type="button" class="chip fl" data-v="data">Data / figure</button><button type="button" class="chip fl" data-v="ext">9-mark extended</button><button type="button" class="chip fl" data-v="mcq">Multiple choice</button><button type="button" class="chip fl" data-v="table">Complete a table</button><select class="status" title="Filter by your progress"><option value="all">All progress</option><option value="todo">Not attempted</option><option value="work">Needs work</option><option value="secure">Secure</option><option value="notsecure">Not yet secure</option></select><button type="button" class="chip clear">Clear</button><span class="cnt"></span><button type="button" class="chip" data-reveal="1">Show all mark schemes</button><button type="button" class="chip" data-print="qp" title="Print the questions only">Print</button><button type="button" class="chip" data-print="ms" title="Print questions with mark schemes">Print + MS</button></div>
 <h2 class="sec set">Set 1</h2>
-<div class="q" id="SW-01" data-qid="SW-01" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 1</span><span class="meta">10 marks &middot; <a href="../subtopic/solid-waste.html">Solid wastes</a> &middot; spec 3.4.3.2.12 &middot; Genn pp. 280-282 &middot; SW-01</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="SW-01" data-qid="SW-01" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 1</span><span class="meta">10 marks &middot; <a href="../subtopic/solid-waste.html">Solid wastes</a> &middot; spec 3.4.3.2.12 &middot; Genn pp. 280-282 &middot; SW-01</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>Figure 1 shows how municipal solid waste was treated in the UK in 2000 and 2019.</p>
 <div class="cap">Figure 1</div>
 <svg class="chart" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
@@ -138,22 +153,20 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">01.4</span>Suggest why incineration has increased more than recycling for some waste types.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>01.1</b> (2 marks)
-<ul><li>Landfill fell from 79% to 14% (large decrease)</li><li>Incineration rose from 9% to 42% and recycling / composting rose from 11% to 43% (now the largest)</li></ul>
+<div class="mspart"><div class="msh"><b>01.1</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Landfill fell from 79% to 14% (large decrease)</span></li><li><span class="mk">1</span><span>Incineration rose from 9% to 42% and recycling / composting rose from 11% to 43% (now the largest)</span></li></ul>
 </div>
-<div><b>01.2</b> (3 marks)
-<div class="lvl"><i>Any 3 from:</i></div>
-<ul><li>Organic matter decays anaerobically releasing methane (and CO2) - greenhouse gases</li><li>Toxic leachate may leak into groundwater / rivers from poorly managed sites</li><li>Uses large areas of land; loss of habitats / farmland; contamination prevents later use</li><li>Resource value of metals, glass, plastics is lost</li><li>Transport noise / congestion / litter / pests / odour</li></ul>
+<div class="mspart"><div class="msh"><b>01.2</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">Any 3 from the points below - 1 mark each, maximum 3.</div><ul class="pts"><li><span class="mk">1</span><span>Organic matter decays anaerobically releasing methane (and CO2) - greenhouse gases</span></li><li><span class="mk">1</span><span>Toxic leachate may leak into groundwater / rivers from poorly managed sites</span></li><li><span class="mk">1</span><span>Uses large areas of land; loss of habitats / farmland; contamination prevents later use</span></li><li><span class="mk">1</span><span>Resource value of metals, glass, plastics is lost</span></li><li><span class="mk">1</span><span>Transport noise / congestion / litter / pests / odour</span></li></ul>
 </div>
-<div><b>01.3</b> (4 marks)
-<div class="lvl"><i>Any 4 from:</i></div>
-<ul><li>Polymer / clay liner to prevent escape of leachate</li><li>Collection and treatment of leachate</li><li>Collection of methane and use as a fuel</li><li>Impermeable cap (clay and polymer) when complete to stop water entering</li><li>Regular covering with soil (pests, odour); deodorising sprays</li><li>Perimeter fence to trap wind-blown litter</li><li>Separation and recording of waste types; reactive / flammable wastes not dumped together</li></ul>
+<div class="mspart"><div class="msh"><b>01.3</b> <span class="mtot">4 marks</span></div>
+<div class="lvl">Any 4 from the points below - 1 mark each, maximum 4.</div><ul class="pts"><li><span class="mk">1</span><span>Polymer / clay liner to prevent escape of leachate</span></li><li><span class="mk">1</span><span>Collection and treatment of leachate</span></li><li><span class="mk">1</span><span>Collection of methane and use as a fuel</span></li><li><span class="mk">1</span><span>Impermeable cap (clay and polymer) when complete to stop water entering</span></li><li><span class="mk">1</span><span>Regular covering with soil (pests, odour); deodorising sprays</span></li><li><span class="mk">1</span><span>Perimeter fence to trap wind-blown litter</span></li><li><span class="mk">1</span><span>Separation and recording of waste types; reactive / flammable wastes not dumped together</span></li></ul>
 </div>
-<div><b>01.4</b> (1 marks)
-<ul><li>Mixed / contaminated / dirty wastes (plastics, dirty paper) are difficult and costly to separate and recycle but can be burnt with energy recovery</li></ul>
+<div class="mspart"><div class="msh"><b>01.4</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>Mixed / contaminated / dirty wastes (plastics, dirty paper) are difficult and costly to separate and recycle but can be burnt with energy recovery</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 280-282; AQA spec 3.4.3.2.12.</div></details></div>
-<div class="q" id="SW-02" data-qid="SW-02" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 2</span><span class="meta">10 marks &middot; <a href="../subtopic/solid-waste.html">Solid wastes</a> &middot; spec 3.4.3.2.12 &middot; Genn pp. 283-284 &middot; SW-02</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="SW-02" data-qid="SW-02" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 2</span><span class="meta">10 marks &middot; <a href="../subtopic/solid-waste.html">Solid wastes</a> &middot; spec 3.4.3.2.12 &middot; Genn pp. 283-284 &middot; SW-02</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[3 marks]</span><span class="pn">02.1</span>Give <b>three</b> advantages of incinerating domestic waste.
 </div>
 <div class="part"><span class="marks">[4 marks]</span><span class="pn">02.2</span>Explain how each of the following features of a modern incinerator reduces pollution.
@@ -163,22 +176,20 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">02.4</span>State <b>one</b> reason why incineration is expensive.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>02.1</b> (3 marks)
-<div class="lvl"><i>Any 3 from:</i></div>
-<ul><li>Volume of ash is much less than the original waste (less landfill)</li><li>Heat used for district heating / electricity generation (energy recovery)</li><li>No sorting / complicated management needed</li><li>Destroys pathogens / flammable organic wastes converted to CO2 and water</li><li>Refuse-derived fuel can replace fossil fuels (eg cement kilns)</li></ul>
+<div class="mspart"><div class="msh"><b>02.1</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">Any 3 from the points below - 1 mark each, maximum 3.</div><ul class="pts"><li><span class="mk">1</span><span>Volume of ash is much less than the original waste (less landfill)</span></li><li><span class="mk">1</span><span>Heat used for district heating / electricity generation (energy recovery)</span></li><li><span class="mk">1</span><span>No sorting / complicated management needed</span></li><li><span class="mk">1</span><span>Destroys pathogens / flammable organic wastes converted to CO2 and water</span></li><li><span class="mk">1</span><span>Refuse-derived fuel can replace fossil fuels (eg cement kilns)</span></li></ul>
 </div>
-<div><b>02.2</b> (4 marks)
-<ul><li>High temperature and rapid cooling reduce the formation of toxic dioxins (from organic wastes reacting with chlorine)</li><li>Scrubber dissolves hydrogen chloride (from chlorine in PVC) which is then neutralised with alkali / limestone; also removes heavy metals for storage at high pH</li><li>Wet waste needs extra fuel to burn and lowers combustion temperature; composting recovers its nutrient value</li><li>Recycling conserves the resource value of metals, glass and plastics that would otherwise be lost</li></ul>
+<div class="mspart"><div class="msh"><b>02.2</b> <span class="mtot">4 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>High temperature and rapid cooling reduce the formation of toxic dioxins (from organic wastes reacting with chlorine)</span></li><li><span class="mk">1</span><span>Scrubber dissolves hydrogen chloride (from chlorine in PVC) which is then neutralised with alkali / limestone; also removes heavy metals for storage at high pH</span></li><li><span class="mk">1</span><span>Wet waste needs extra fuel to burn and lowers combustion temperature; composting recovers its nutrient value</span></li><li><span class="mk">1</span><span>Recycling conserves the resource value of metals, glass and plastics that would otherwise be lost</span></li></ul>
 </div>
-<div><b>02.3</b> (2 marks)
-<ul><li>Ash may contain concentrated heavy metals / toxic residues</li><li>Must be stored in solid form at high pH / hazardous waste landfill so the metals remain insoluble</li></ul>
+<div class="mspart"><div class="msh"><b>02.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Ash may contain concentrated heavy metals / toxic residues</span></li><li><span class="mk">1</span><span>Must be stored in solid form at high pH / hazardous waste landfill so the metals remain insoluble</span></li></ul>
 </div>
-<div><b>02.4</b> (1 marks)
-<div class="lvl"><i>Any 1 from:</i></div>
-<ul><li>Fuel (natural gas) needed to burn wet / non-flammable wastes</li><li>Cost of treating effluent gases (SO2, NOx, HCl, smoke)</li></ul>
+<div class="mspart"><div class="msh"><b>02.4</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">Any 1 from the points below - 1 mark each, maximum 1.</div><ul class="pts"><li><span class="mk">1</span><span>Fuel (natural gas) needed to burn wet / non-flammable wastes</span></li><li><span class="mk">1</span><span>Cost of treating effluent gases (SO2, NOx, HCl, smoke)</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 283-284; AQA spec 3.4.3.2.12.</div></details></div>
-<div class="q" id="SW-03" data-qid="SW-03" data-marks="10" data-flags="data table"><div class="qh"><span class="num">Question 3</span><span class="meta">10 marks &middot; <a href="../subtopic/solid-waste.html">Solid wastes</a> &middot; spec 3.4.3.2.12 &middot; Genn pp. 284-285, 303 &middot; SW-03</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="SW-03" data-qid="SW-03" data-marks="10" data-flags="data table"><div class="qh"><span class="num">Question 3</span><span class="meta">10 marks &middot; <a href="../subtopic/solid-waste.html">Solid wastes</a> &middot; spec 3.4.3.2.12 &middot; Genn pp. 284-285, 303 &middot; SW-03</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>Table 1 shows three specialist solid wastes.</p>
 <div class="part"><span class="marks">[6 marks]</span><span class="pn">03.1</span>Complete Table 1 to show the main hazard of each waste and the disposal method used.
 <div class="cap">Table 1</div><table class="data"><tr><th>Waste</th><th>Main hazard</th><th>Disposal method</th></tr><tr><td>Asbestos</td><td></td><td></td></tr><tr><td>Cyanide compounds</td><td></td><td></td></tr><tr><td>High-level radioactive waste</td><td></td><td></td></tr></table>
@@ -190,20 +201,20 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">03.4</span>Explain why vitrification is preferred to encapsulation in cement for high-level waste.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>03.1</b> (6 marks)
-<ul><li>Asbestos: fibres become airborne when it disintegrates and are inhaled, causing asbestosis (scar tissue thickens alveoli) and mesothelioma; disposal: double-wrapped in heavy-duty polythene in a specialised, recorded landfill (secure, permanent, sealed storage)</li><li>Cyanide: very toxic enzyme inhibitor (aerobic respiration) if inhaled / ingested; disposal: incineration so carbon and nitrogen are separated and oxidised to CO2 and NOx (much smaller problem)</li><li>High-level radioactive waste: intense ionising radiation, heat generation, long half-lives; disposal: vitrification - mixed with molten glass in sealed stainless steel containers in ventilated concrete stores</li></ul>
+<div class="mspart"><div class="msh"><b>03.1</b> <span class="mtot">6 marks</span></div>
+<div class="lvl">2 marks for each point (partial credit for a partly correct point).</div><ul class="pts"><li><span class="mk">2</span><span>Asbestos: fibres become airborne when it disintegrates and are inhaled, causing asbestosis (scar tissue thickens alveoli) and mesothelioma; disposal: double-wrapped in heavy-duty polythene in a specialised, recorded landfill (secure, permanent, sealed storage)</span></li><li><span class="mk">2</span><span>Cyanide: very toxic enzyme inhibitor (aerobic respiration) if inhaled / ingested; disposal: incineration so carbon and nitrogen are separated and oxidised to CO2 and NOx (much smaller problem)</span></li><li><span class="mk">2</span><span>High-level radioactive waste: intense ionising radiation, heat generation, long half-lives; disposal: vitrification - mixed with molten glass in sealed stainless steel containers in ventilated concrete stores</span></li></ul>
 </div>
-<div><b>03.2</b> (1 marks)
-<ul><li>The fibres are bound / cannot become airborne so cannot be inhaled</li></ul>
+<div class="mspart"><div class="msh"><b>03.2</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>The fibres are bound / cannot become airborne so cannot be inhaled</span></li></ul>
 </div>
-<div><b>03.3</b> (2 marks)
-<ul><li>Waste is mixed with a cement slurry and poured into containers of impermeable, unreactive material</li><li>The solid cement immobilises the waste so it cannot leak / leach out</li></ul>
+<div class="mspart"><div class="msh"><b>03.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Waste is mixed with a cement slurry and poured into containers of impermeable, unreactive material</span></li><li><span class="mk">1</span><span>The solid cement immobilises the waste so it cannot leak / leach out</span></li></ul>
 </div>
-<div><b>03.4</b> (1 marks)
-<ul><li>Even if the glass shatters the waste stays encapsulated in the fragments; glass is more stable / resistant to heat and leaching over very long timescales</li></ul>
+<div class="mspart"><div class="msh"><b>03.4</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>Even if the glass shatters the waste stays encapsulated in the fragments; glass is more stable / resistant to heat and leaching over very long timescales</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 284-285, 303; AQA spec 3.4.3.2.12.</div></details></div>
-<div class="q" id="SW-04" data-qid="SW-04" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 4</span><span class="meta">10 marks &middot; <a href="../subtopic/solid-waste.html">Solid wastes</a> &middot; spec 3.4.3.2.12 &middot; Genn pp. 282-283 &middot; SW-04</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="SW-04" data-qid="SW-04" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 4</span><span class="meta">10 marks &middot; <a href="../subtopic/solid-waste.html">Solid wastes</a> &middot; spec 3.4.3.2.12 &middot; Genn pp. 282-283 &middot; SW-04</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>A coal-mine spoil heap on a hillside has been abandoned. The spoil contains shale with some iron pyrites and residual coal.</p>
 <div class="part"><span class="marks">[6 marks]</span><span class="pn">04.1</span>Explain <b>three</b> problems this spoil heap could cause and describe how each could be managed.
 </div>
@@ -212,17 +223,17 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">04.3</span>Explain why an old steel-works spoil heap may be valuable for wildlife conservation.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>04.1</b> (6 marks)
-<ul><li>Instability / landslips on the hillside, especially after heavy rain - compaction, drainage, establishing vegetation whose roots bind the spoil, regrading slopes</li><li>Acid drainage from oxidation of pyrites, with toxic metals - collect and treat leachate, add lime to raise pH</li><li>Spontaneous combustion of residual coal / hydrocarbons - layers of fine-grained material to reduce air flow</li><li>Lack of nutrients / poor plant growth - add topsoil, sewage sludge, fertiliser</li><li>Unattractive topography - landscaping / reshaping</li><li>Dust / heavy metals - cover and keep at high pH</li></ul>
+<div class="mspart"><div class="msh"><b>04.1</b> <span class="mtot">6 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Instability / landslips on the hillside, especially after heavy rain - compaction, drainage, establishing vegetation whose roots bind the spoil, regrading slopes</span></li><li><span class="mk">1</span><span>Acid drainage from oxidation of pyrites, with toxic metals - collect and treat leachate, add lime to raise pH</span></li><li><span class="mk">1</span><span>Spontaneous combustion of residual coal / hydrocarbons - layers of fine-grained material to reduce air flow</span></li><li><span class="mk">1</span><span>Lack of nutrients / poor plant growth - add topsoil, sewage sludge, fertiliser</span></li><li><span class="mk">1</span><span>Unattractive topography - landscaping / reshaping</span></li><li><span class="mk">1</span><span>Dust / heavy metals - cover and keep at high pH</span></li></ul>
 </div>
-<div><b>04.2</b> (2 marks)
-<ul><li>So that plant roots cannot reach the toxic layer</li><li>Otherwise toxins could be taken up and brought to the surface / dispersed via leaf litter and food chains</li></ul>
+<div class="mspart"><div class="msh"><b>04.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>So that plant roots cannot reach the toxic layer</span></li><li><span class="mk">1</span><span>Otherwise toxins could be taken up and brought to the surface / dispersed via leaf litter and food chains</span></li></ul>
 </div>
-<div><b>04.3</b> (2 marks)
-<ul><li>Steel slag is alkaline, producing unusual calcareous / high-pH soil conditions</li><li>Supports uncommon plants such as cowslips / orchids that cannot compete on fertile neutral soils</li></ul>
+<div class="mspart"><div class="msh"><b>04.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Steel slag is alkaline, producing unusual calcareous / high-pH soil conditions</span></li><li><span class="mk">1</span><span>Supports uncommon plants such as cowslips / orchids that cannot compete on fertile neutral soils</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 282-283; AQA spec 3.4.3.2.12.</div></details></div>
-<div class="q" id="SW-05" data-qid="SW-05" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 5</span><span class="meta">10 marks &middot; <a href="../subtopic/solid-waste.html">Solid wastes</a> &middot; spec 3.4.3.2.12 &middot; Genn pp. 279-282 &middot; SW-05</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="SW-05" data-qid="SW-05" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 5</span><span class="meta">10 marks &middot; <a href="../subtopic/solid-waste.html">Solid wastes</a> &middot; spec 3.4.3.2.12 &middot; Genn pp. 279-282 &middot; SW-05</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[4 marks]</span><span class="pn">05.1</span>Explain how affluence and the strategies of manufacturers increase the amount of solid waste produced.
 </div>
 <div class="part"><span class="marks">[3 marks]</span><span class="pn">05.2</span>Give <b>three</b> factors that affect the choice of disposal method for a solid waste.
@@ -232,21 +243,20 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">05.4</span>Explain why mixed municipal waste is difficult to recycle.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>05.1</b> (4 marks)
-<ul><li>Affluent people buy more consumer goods / trivia / disposable items and throw items away rather than repairing them</li><li>Built-in obsolescence: products designed to have short lives / wear out / go out of fashion so customers upgrade</li><li>Disposable products (razors, lighters, pens) that must be replaced</li><li>Over-packaging to make products attractive; also increases wastes from manufacture and mineral extraction</li></ul>
+<div class="mspart"><div class="msh"><b>05.1</b> <span class="mtot">4 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Affluent people buy more consumer goods / trivia / disposable items and throw items away rather than repairing them</span></li><li><span class="mk">1</span><span>Built-in obsolescence: products designed to have short lives / wear out / go out of fashion so customers upgrade</span></li><li><span class="mk">1</span><span>Disposable products (razors, lighters, pens) that must be replaced</span></li><li><span class="mk">1</span><span>Over-packaging to make products attractive; also increases wastes from manufacture and mineral extraction</span></li></ul>
 </div>
-<div><b>05.2</b> (3 marks)
-<div class="lvl"><i>Any 3 from:</i></div>
-<ul><li>Properties of the waste: toxicity, flammability, degradability, radioactivity</li><li>Population density (collection costs)</li><li>Land availability for landfill</li><li>Availability of recycling technology / markets</li><li>Legislation / regulatory framework (landfill tax)</li><li>Public willingness to recycle / environmental awareness</li><li>Processing costs / household income</li></ul>
+<div class="mspart"><div class="msh"><b>05.2</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">Any 3 from the points below - 1 mark each, maximum 3.</div><ul class="pts"><li><span class="mk">1</span><span>Properties of the waste: toxicity, flammability, degradability, radioactivity</span></li><li><span class="mk">1</span><span>Population density (collection costs)</span></li><li><span class="mk">1</span><span>Land availability for landfill</span></li><li><span class="mk">1</span><span>Availability of recycling technology / markets</span></li><li><span class="mk">1</span><span>Legislation / regulatory framework (landfill tax)</span></li><li><span class="mk">1</span><span>Public willingness to recycle / environmental awareness</span></li><li><span class="mk">1</span><span>Processing costs / household income</span></li></ul>
 </div>
-<div><b>05.3</b> (2 marks)
-<ul><li>Advantage: aerobic decomposition produces little methane; nutrients / organic matter returned to soil (circular economy); reduces landfill volume</li><li>Disadvantage: needs separation / collection of clean organic waste; odour / pests / pathogens if poorly managed; low-value product; not suitable for mixed waste</li></ul>
+<div class="mspart"><div class="msh"><b>05.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Advantage: aerobic decomposition produces little methane; nutrients / organic matter returned to soil (circular economy); reduces landfill volume</span></li><li><span class="mk">1</span><span>Disadvantage: needs separation / collection of clean organic waste; odour / pests / pathogens if poorly managed; low-value product; not suitable for mixed waste</span></li></ul>
 </div>
-<div><b>05.4</b> (1 marks)
-<ul><li>Many different materials are mixed together / contaminated so identification and separation are costly and the quality of recovered material is reduced</li></ul>
+<div class="mspart"><div class="msh"><b>05.4</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>Many different materials are mixed together / contaminated so identification and separation are costly and the quality of recovered material is reduced</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 279-282; AQA spec 3.4.3.2.12.</div></details></div>
-<div class="q" id="SW-06" data-qid="SW-06" data-marks="5" data-flags="mcq"><div class="qh"><span class="num">Question 6</span><span class="meta">5 marks &middot; <a href="../subtopic/solid-waste.html">Solid wastes</a> &middot; spec 3.4.3.2.12 &middot; Genn pp. 279-285 &middot; SW-06</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="SW-06" data-qid="SW-06" data-marks="5" data-flags="mcq"><div class="qh"><span class="num">Question 6</span><span class="meta">5 marks &middot; <a href="../subtopic/solid-waste.html">Solid wastes</a> &middot; spec 3.4.3.2.12 &middot; Genn pp. 279-285 &middot; SW-06</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">06.1</span>Which of the following is the main advantage of composting organic waste rather than landfilling it? Tick <b>one</b> box.
 <ul class="mcq"><li>A&nbsp; Aerobic decomposition produces little methane and returns nutrients to the soil</li><li>B&nbsp; It produces more electricity</li><li>C&nbsp; It removes heavy metals</li><li>D&nbsp; It destroys asbestos fibres</li></ul>
 </div>
@@ -255,15 +265,14 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">06.3</span>Give <b>two</b> features of a well-managed landfill site that reduce pollution.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>06.1</b> (1 marks)
-<ul><li>Aerobic decomposition produces little methane and returns nutrients to the soil</li></ul>
+<div class="mspart"><div class="msh"><b>06.1</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">Correct answer only.</div><ul class="pts"><li><span class="mk">1</span><span><b>A</b>&nbsp; Aerobic decomposition produces little methane and returns nutrients to the soil</span></li></ul>
 </div>
-<div><b>06.2</b> (2 marks)
-<ul><li>It may contain concentrated heavy metals / toxic residues</li><li>It is stored in solid form at high pH / in hazardous-waste landfill so the metals stay insoluble</li></ul>
+<div class="mspart"><div class="msh"><b>06.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>It may contain concentrated heavy metals / toxic residues</span></li><li><span class="mk">1</span><span>It is stored in solid form at high pH / in hazardous-waste landfill so the metals stay insoluble</span></li></ul>
 </div>
-<div><b>06.3</b> (2 marks)
-<div class="lvl"><i>Any 2 from:</i></div>
-<ul><li>Impermeable polymer / clay liner to stop leachate escaping</li><li>Collection and treatment of leachate</li><li>Collection of methane and use as fuel</li><li>Daily covering of waste / final capping and restoration</li></ul>
+<div class="mspart"><div class="msh"><b>06.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">Any 2 from the points below - 1 mark each, maximum 2.</div><ul class="pts"><li><span class="mk">1</span><span>Impermeable polymer / clay liner to stop leachate escaping</span></li><li><span class="mk">1</span><span>Collection and treatment of leachate</span></li><li><span class="mk">1</span><span>Collection of methane and use as fuel</span></li><li><span class="mk">1</span><span>Daily covering of waste / final capping and restoration</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 279-285; AQA spec 3.4.3.2.12.</div></details></div>
 </div></main>
@@ -282,7 +291,7 @@ const tb=document.getElementById('themeBtn');if(tb)tb.onclick=()=>{const t=root.
 let prog=LS('envsci.progress')||{};
 window.ES.prog=()=>prog;
 function paint(){
-  document.querySelectorAll('.q[data-qid]').forEach(el=>{const s=prog[el.dataset.qid]||0;el.dataset.status=s;el.querySelectorAll('.st button').forEach(b=>b.classList.toggle('on',+b.dataset.s===s&&s>0));});
+  document.querySelectorAll('.q[data-qid]').forEach(el=>{const s=prog[el.dataset.qid]||0;el.dataset.status=s;el.querySelectorAll('.st button[data-s]').forEach(b=>b.classList.toggle('on',+b.dataset.s===s&&s>0));});
   document.querySelectorAll('[data-qids]').forEach(el=>{const ids=el.dataset.qids.split(',').filter(Boolean);const n=ids.length;if(!n)return;
     const ok=ids.filter(i=>prog[i]===2).length,wk=ids.filter(i=>prog[i]===1).length;
     const o=el.querySelector('.bar .ok'),w=el.querySelector('.bar .wk'),p=el.querySelector('.pl');
@@ -290,7 +299,7 @@ function paint(){
   const ov=document.getElementById('overall');if(ov){const all=(ov.dataset.qids||'').split(',').filter(Boolean);const ok=all.filter(i=>prog[i]===2).length,wk=all.filter(i=>prog[i]===1).length;ov.querySelector('.stat').textContent=Math.round(100*ok/all.length)+'%';ov.querySelector('.detail').textContent=ok+' secure, '+wk+' to revisit, '+(all.length-ok-wk)+' not attempted of '+all.length+' questions.';}
 }
 window.ES.paint=paint;
-document.addEventListener('click',e=>{const b=e.target.closest('.st button');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);paint();if(window.ES.onFilter)window.ES.onFilter();});
+document.addEventListener('click',e=>{const b=e.target.closest('.st button[data-s]');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);paint();if(window.ES.onFilter)window.ES.onFilter();});
 const rs=document.getElementById('resetProg');if(rs)rs.onclick=()=>{if(confirm('Clear all saved progress on this browser?')){prog={};SV('envsci.progress',prog);paint();}};
 paint();
 /* ---- filter bar ---- */
@@ -313,6 +322,13 @@ if(fb){
   txt.addEventListener('input',run);fb.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{c.classList.toggle('on');run();});fb.querySelector('select.status').onchange=run;
   const clr=fb.querySelector('.clear');if(clr)clr.onclick=()=>{txt.value='';fb.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));fb.querySelector('select.status').value='all';run();};
   run();}
+/* ---- sticky offset = real header height (nav can wrap) ---- */
+const hd=document.querySelector('header.top');const setH=()=>root.style.setProperty('--hdr',(getComputedStyle(hd).position==='sticky'?hd.offsetHeight:0)+'px');setH();window.addEventListener('resize',setH);
+/* ---- copy link, back to top ---- */
+document.addEventListener('click',e=>{const b=e.target.closest('[data-copy]');if(!b)return;const q=b.closest('.q');const url=location.href.split('#')[0]+'#'+q.id;
+  (navigator.clipboard?navigator.clipboard.writeText(url):Promise.reject()).then(()=>{b.textContent='\u2713';setTimeout(()=>b.innerHTML='&#128279;',1200);}).catch(()=>prompt('Copy this link:',url));});
+const tt=document.createElement('button');tt.id='totop';tt.title='Back to top';tt.innerHTML='&uarr;';tt.className='noprint';document.body.appendChild(tt);tt.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+window.addEventListener('scroll',()=>tt.classList.toggle('show',window.scrollY>600),{passive:true});
 /* ---- print & reveal ---- */
 document.querySelectorAll('[data-print]').forEach(b=>b.onclick=()=>{const ms=b.dataset.print==='ms';document.body.classList.toggle('print-ms',ms);document.querySelectorAll('details.ms').forEach(d=>d.open=ms);window.print();});
 document.querySelectorAll('[data-reveal]').forEach(b=>b.onclick=()=>{const open=b.dataset.reveal==='1';document.querySelectorAll('details.ms').forEach(d=>d.open=open);b.dataset.reveal=open?'0':'1';b.textContent=open?'Hide all mark schemes':'Show all mark schemes';});

@@ -69,12 +69,12 @@ footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-
 .prog .bar .ok{background:var(--ok);height:100%}.prog .bar .wk{background:var(--warn);height:100%}.prog .pl{white-space:nowrap;min-width:90px}
 .hero .prog{color:rgba(255,255,255,.85)}.hero .prog .bar{background:rgba(255,255,255,.25)}
 /* filter bar & tools */
-.filterbar{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.filterbar{position:sticky;top:var(--hdr,62px);z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .filterbar input[type=search]{flex:1 1 220px;font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
 .filterbar label{font-size:.85rem;color:var(--stone);display:inline-flex;align-items:center;gap:4px;cursor:pointer}.filterbar .chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--sand);color:var(--stone);font-size:.82rem;cursor:pointer;font-family:inherit}
 .filterbar .chip.on{background:var(--moss);color:#fff;border-color:var(--moss)}.filterbar .cnt{font-size:.85rem;color:var(--stone);margin-left:auto}
 .filterbar select{font:inherit;font-size:.88rem;padding:5px 8px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
-.tools{position:sticky;top:62px;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:10px 0;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.tools{position:sticky;top:var(--hdr,62px);z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:10px 0;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .tools .time{font-family:Fraunces,serif;font-size:1.6rem;font-weight:700;color:var(--head);min-width:120px}.tools .time.low{color:var(--bad)}
 .tools .score{font-weight:700;color:var(--moss)}.tools .score b{font-family:Fraunces,serif;font-size:1.3rem}.tools .pct{font-size:.85rem;color:var(--stone)}
 .tools button{font-family:inherit;font-size:.88rem;padding:6px 12px;border-radius:8px;border:1px solid var(--moss);background:transparent;color:var(--moss);cursor:pointer}.tools button.primary{background:var(--moss);color:#fff}
@@ -87,6 +87,20 @@ footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-
 .res{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0;text-decoration:none;color:inherit}.res:hover{border-color:var(--moss)}
 .res .t{font-weight:700;color:var(--head)}.res .m{font-size:.82rem;color:var(--stone)}.res .s{font-size:.92rem;margin-top:4px}.res mark{background:#ffe58a;color:#222;border-radius:3px;padding:0 2px}
 .empty{color:var(--stone);font-style:italic}
+/* mark scheme points, levels, links */
+.mspart{margin:8px 0 12px}.msh{display:flex;align-items:baseline;gap:8px;margin-bottom:2px}.msh .mtot{font-size:.8rem;color:var(--earth);font-weight:700}
+ul.pts{list-style:none;margin:4px 0 6px 0!important;padding:0}ul.pts li{display:flex;gap:10px;align-items:flex-start;padding:4px 0;border-top:1px dashed var(--ms-line)}ul.pts li:first-child{border-top:0}
+.mk{flex:0 0 auto;min-width:26px;text-align:center;font-size:.75rem;font-weight:700;color:#fff;background:var(--ok);border-radius:6px;padding:2px 6px;margin-top:3px}
+table.levels{border-collapse:collapse;width:100%;margin:6px 0 10px;font-size:.86rem;background:var(--card)}table.levels th,table.levels td{border:1px solid var(--ms-line);padding:5px 8px;text-align:left;vertical-align:top}table.levels th{background:var(--sand-dark)}table.levels td.r{white-space:nowrap;font-weight:700;color:var(--earth)}
+ul.ind{margin:4px 0 8px 18px}
+.st button.lnk{padding:2px 7px}
+#totop{position:fixed;right:18px;bottom:18px;z-index:15;background:var(--moss);color:#fff;border:0;border-radius:50%;width:42px;height:42px;font-size:1.2rem;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .2s}#totop.show{opacity:1;pointer-events:auto}
+.jump{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 4px}.jump a{font-size:.82rem;padding:3px 10px;border-radius:999px;border:1px solid var(--line);background:var(--sand);color:var(--moss);text-decoration:none;font-weight:600}.jump a:hover{background:var(--leaf-light)}
+.real .row{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;padding:8px 0;border-bottom:1px dashed var(--line);font-size:.95rem}.real .row .ser{font-weight:700;color:var(--head);min-width:150px}.real .row .qn{color:var(--stone);min-width:70px}.real .row .t{flex:1 1 300px}
+.real .row a{font-size:.82rem;padding:2px 9px;border-radius:999px;border:1px solid var(--line);background:var(--sand);text-decoration:none;font-weight:600}
+.plan input[type=date]{font:inherit;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}.plan .big{font-family:Fraunces,serif;font-size:2rem;color:var(--moss)}
+table.list td .bar{height:8px;background:var(--sand-dark);border-radius:999px;overflow:hidden;display:flex;width:140px}table.list td .bar .ok{background:var(--ok)}table.list td .bar .wk{background:var(--warn)}
+@media(max-width:720px){header.top{position:static}header.top nav a{margin-left:12px;font-size:.88rem}.filterbar,.tools{top:0}.hero h1{font-size:1.8rem}.hero{padding:34px 0 28px}.sub-item .t{flex-basis:100%}}
 /* print */
 @media print{header.top,footer,.tools,.filterbar,.st,.pill,.aw,.hero .crumbs,.prog,.noprint{display:none!important}
 body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;color:#000;padding:10px 0}.hero p,.hero h1{color:#000}.hero:before{display:none}
@@ -94,14 +108,16 @@ body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;c
 svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 </style>
 <script>try{if(localStorage.getItem('envsci.theme')==='"dark"')document.documentElement.dataset.theme='dark';}catch(e){}</script></head><body >
-<header class="top"><div class="wrap"><a class="brand" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb069" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-8 0-14 4-14 12 0 1.5.3 3 1 4 2-6 6-9 11-11-4 3-7 6-8 12 8 0 12-6 10-17z"/></svg><span>AQA Environmental Science</span></a><nav><a href="../index.html" class="">Topics</a><a href="../papers.html" class="">Mock papers</a><a href="../official.html" class="">Past papers</a><a href="../essays.html" class="">Essay bank</a><a href="../quickfire.html" class="">Quick-fire</a><a href="../search.html" class="">Search</a><button class="icon-btn" id="themeBtn" type="button" title="Toggle dark mode">&#9790; Dark</button></nav></div></header>
+<header class="top"><div class="wrap"><a class="brand" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb069" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-8 0-14 4-14 12 0 1.5.3 3 1 4 2-6 6-9 11-11-4 3-7 6-8 12 8 0 12-6 10-17z"/></svg><span>AQA Environmental Science</span></a><nav><a href="../index.html" class="">Topics</a><a href="../papers.html" class="">Mock papers</a><a href="../official.html" class="">Past papers</a><a href="../essays.html" class="">Essay bank</a><a href="../pastq.html" class="">Real Qs by topic</a><a href="../quickfire.html" class="">Quick-fire</a><a href="../planner.html" class="">Planner</a><a href="../search.html" class="">Search</a><button class="icon-btn" id="themeBtn" type="button" title="Toggle dark mode">&#9790; Dark</button></nav></div></header>
 <section class="hero p1 small"><div class="wrap"><div class="crumbs"><a href="../index.html">Topics</a><span>&rsaquo;</span><a href="../topic/energy.html">Energy resources</a><span>&rsaquo;</span>Fluctuations in supply/demand &amp; energy storage</div><h1>Fluctuations in supply/demand &amp; energy storage</h1><p>Energy resources &middot; AQA spec 3.3.4.1 &middot; R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 217-224</p><span class="pill">Paper 1</span><span class="pill">6 questions</span><div class="prog" data-qids="EST-01,EST-02,EST-03,EST-04,EST-05,EST-06"><div class="bar"><div class="ok"></div><div class="wk"></div></div><span class="pl"></span></div></div></section>
 <main><div class="wrap"><h2 class="sec">Question sets</h2><table class="list"><tr><th>Set</th><th>Questions</th><th>Marks</th><th>Question paper</th><th>Mark scheme</th></tr>
 <tr><td>Set 1</td><td>6</td><td>60</td><td><a href="../pdf/topic/energy-storage-set1-QP.pdf">Download QP (PDF)</a></td><td><a href="../pdf/topic/energy-storage-set1-MS.pdf">Download MS (PDF)</a></td></tr>
 </table>
+<h2 class="sec">Real AQA questions on this topic (2)</h2><div class="real"><div class="row"><span class="ser">June 2023 &middot; Paper 1</span><span class="qn">Q6 &middot; 5 marks</span><span class="t">UK 24-hour electricity demand and supply mix</span><a href="../official/AQA-74471-QP-JUN23.PDF#page=17">Question (p.17)</a> <a href="../official/AQA-74471-MS-JUN23.PDF">Mark scheme</a></div><div class="row"><span class="ser">November 2020 &middot; Paper 1</span><span class="qn">Q6 &middot; 10 marks</span><span class="t">Hydrogen as a secondary fuel; fuel cells</span><a href="../official/AQA-74471-QP-NOV20-CR.PDF#page=19">Question (p.19)</a> <a href="../official/AQA-74471-W-MS-NOV20.PDF">Mark scheme</a></div></div>
+<p class="note noprint">Practise this subtopic one question at a time: <a href="../quickfire.html?sub=energy-storage">Quick-fire &rarr;</a></p>
 <div class="filterbar noprint"><input type="search" placeholder="Filter questions by keyword (e.g. albedo, quota, Simpson)"><button type="button" class="chip mk" data-v="5">5 marks</button><button type="button" class="chip mk" data-v="10">10 marks</button><button type="button" class="chip mk" data-v="15">15 marks</button><button type="button" class="chip fl" data-v="calc">Calculation</button><button type="button" class="chip fl" data-v="data">Data / figure</button><button type="button" class="chip fl" data-v="ext">9-mark extended</button><button type="button" class="chip fl" data-v="mcq">Multiple choice</button><button type="button" class="chip fl" data-v="table">Complete a table</button><select class="status" title="Filter by your progress"><option value="all">All progress</option><option value="todo">Not attempted</option><option value="work">Needs work</option><option value="secure">Secure</option><option value="notsecure">Not yet secure</option></select><button type="button" class="chip clear">Clear</button><span class="cnt"></span><button type="button" class="chip" data-reveal="1">Show all mark schemes</button><button type="button" class="chip" data-print="qp" title="Print the questions only">Print</button><button type="button" class="chip" data-print="ms" title="Print questions with mark schemes">Print + MS</button></div>
 <h2 class="sec set">Set 1</h2>
-<div class="q" id="EST-01" data-qid="EST-01" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 1</span><span class="meta">10 marks &middot; <a href="../subtopic/energy-storage.html">Fluctuations in supply/demand &amp; energy storage</a> &middot; spec 3.3.4.1 &middot; Genn pp. 221-222 &middot; EST-01</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="EST-01" data-qid="EST-01" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 1</span><span class="meta">10 marks &middot; <a href="../subtopic/energy-storage.html">Fluctuations in supply/demand &amp; energy storage</a> &middot; spec 3.3.4.1 &middot; Genn pp. 221-222 &middot; EST-01</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>Figure 1 shows the demand for electricity in the UK over a 24-hour period on a weekday in winter.</p>
 <div class="cap">Figure 1</div>
 <svg class="chart" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
@@ -144,21 +160,20 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">01.4</span>Give <b>two</b> causes of fluctuations in energy <b>supply</b>.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>01.1</b> (2 marks)
-<ul><li>Lowest overnight (about 25 GW at 04:00), rising steeply from 06:00 to about 40 GW by 08:00</li><li>Fairly steady through the day then a peak of about 50 GW at 18:00 (evening) before falling overnight</li></ul>
+<div class="mspart"><div class="msh"><b>01.1</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Lowest overnight (about 25 GW at 04:00), rising steeply from 06:00 to about 40 GW by 08:00</span></li><li><span class="mk">1</span><span>Fairly steady through the day then a peak of about 50 GW at 18:00 (evening) before falling overnight</span></li></ul>
 </div>
-<div><b>01.2</b> (4 marks)
-<ul><li>24-hour day / night cycle: people asleep overnight; morning rise as heating, lighting, cooking, industry and offices start</li><li>Evening peak: lighting, cooking, heating as people return home; short-term 'TV pickup' at programme breaks / mealtimes</li><li>Other causes: seasonal (winter heating / lighting, summer air conditioning); weather-related (cold snaps); weekday / weekend differences in industrial use</li></ul>
+<div class="mspart"><div class="msh"><b>01.2</b> <span class="mtot">4 marks</span></div>
+<div class="lvl">Up to 4 marks in total; award marks in proportion to the completeness of each point.</div><ul class="pts"><li><span class="mk">up to 2</span><span>24-hour day / night cycle: people asleep overnight; morning rise as heating, lighting, cooking, industry and offices start</span></li><li><span class="mk">up to 2</span><span>Evening peak: lighting, cooking, heating as people return home; short-term 'TV pickup' at programme breaks / mealtimes</span></li><li><span class="mk">up to 2</span><span>Other causes: seasonal (winter heating / lighting, summer air conditioning); weather-related (cold snaps); weekday / weekend differences in industrial use</span></li></ul>
 </div>
-<div><b>01.3</b> (2 marks)
-<ul><li>They generate 24 hours a day because it is uneconomic / slow to turn them off and on, and output changes slowly</li><li>Demand falls faster at night than output can be reduced, so the surplus must be stored or is lost as heat from cables</li></ul>
+<div class="mspart"><div class="msh"><b>01.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>They generate 24 hours a day because it is uneconomic / slow to turn them off and on, and output changes slowly</span></li><li><span class="mk">1</span><span>Demand falls faster at night than output can be reduced, so the surplus must be stored or is lost as heat from cables</span></li></ul>
 </div>
-<div><b>01.4</b> (2 marks)
-<div class="lvl"><i>Any 2 from:</i></div>
-<ul><li>Intermittent renewable resources: wind, solar, tidal</li><li>Bulk delivery of transported fuels (oil tankers, coal trains, biofuel harvests)</li><li>Breakdowns / maintenance of power stations</li></ul>
+<div class="mspart"><div class="msh"><b>01.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">Any 2 from the points below - 1 mark each, maximum 2.</div><ul class="pts"><li><span class="mk">1</span><span>Intermittent renewable resources: wind, solar, tidal</span></li><li><span class="mk">1</span><span>Bulk delivery of transported fuels (oil tankers, coal trains, biofuel harvests)</span></li><li><span class="mk">1</span><span>Breakdowns / maintenance of power stations</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 221-222; AQA spec 3.3.4.1.</div></details></div>
-<div class="q" id="EST-02" data-qid="EST-02" data-marks="10" data-flags="calc"><div class="qh"><span class="num">Question 2</span><span class="meta">10 marks &middot; <a href="../subtopic/energy-storage.html">Fluctuations in supply/demand &amp; energy storage</a> &middot; spec 3.3.4.1 &middot; Genn pp. 222 &middot; EST-02</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="EST-02" data-qid="EST-02" data-marks="10" data-flags="calc"><div class="qh"><span class="num">Question 2</span><span class="meta">10 marks &middot; <a href="../subtopic/energy-storage.html">Fluctuations in supply/demand &amp; energy storage</a> &middot; spec 3.3.4.1 &middot; Genn pp. 222 &middot; EST-02</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>A pumped-storage HEP station has an upper reservoir 500 m above its turbines. It can hold 7 million m<sup>3</sup> of water. The density of water is 1000 kg m<sup>-3</sup> and g = 9.8 N kg<sup>-1</sup>.</p>
 <div class="part"><span class="marks">[3 marks]</span><span class="pn">02.1</span>Describe how pumped-storage HEP is used for peak shaving.
 </div>
@@ -169,21 +184,20 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">02.4</span>Give <b>two</b> locational requirements of a pumped-storage station.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>02.1</b> (3 marks)
-<ul><li>At times of low demand / surplus supply (night, windy periods) surplus electricity pumps water from the lower to the upper reservoir, storing it as gravitational potential energy</li><li>At peaks in demand water flows down through the turbines generating electricity</li><li>Can go from standby to full power in under 15 seconds so it meets sudden peaks (TV pickup) that fossil / nuclear stations cannot follow</li></ul>
+<div class="mspart"><div class="msh"><b>02.1</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>At times of low demand / surplus supply (night, windy periods) surplus electricity pumps water from the lower to the upper reservoir, storing it as gravitational potential energy</span></li><li><span class="mk">1</span><span>At peaks in demand water flows down through the turbines generating electricity</span></li><li><span class="mk">1</span><span>Can go from standby to full power in under 15 seconds so it meets sudden peaks (TV pickup) that fossil / nuclear stations cannot follow</span></li></ul>
 </div>
-<div><b>02.2</b> (3 marks)
-<ul><li>Mass = 7 x 10<sup>6</sup> x 1000 = 7 x 10<sup>9</sup> kg</li><li>PE = m g h = 7 x 10<sup>9</sup> x 9.8 x 500</li><li>= 3.43 x 10<sup>13</sup> J (accept 3.4 x 10<sup>13</sup>)</li></ul>
+<div class="mspart"><div class="msh"><b>02.2</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">A correct final answer (with unit where asked) scores full marks. If the answer is wrong, award 1 mark for each correct step of working shown.</div><ul class="pts"><li><span class="mk">1</span><span>Mass = 7 x 10<sup>6</sup> x 1000 = 7 x 10<sup>9</sup> kg</span></li><li><span class="mk">1</span><span>PE = m g h = 7 x 10<sup>9</sup> x 9.8 x 500</span></li><li><span class="mk">1</span><span>= 3.43 x 10<sup>13</sup> J (accept 3.4 x 10<sup>13</sup>)</span></li></ul>
 </div>
-<div><b>02.3</b> (2 marks)
-<ul><li>The electricity used for pumping is surplus that would otherwise be wasted / lost as heat, or cheap off-peak electricity</li><li>It avoids building rapid-response low-efficiency peaking plants (open-cycle gas turbines) and allows intermittent renewables to be used</li></ul>
+<div class="mspart"><div class="msh"><b>02.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>The electricity used for pumping is surplus that would otherwise be wasted / lost as heat, or cheap off-peak electricity</span></li><li><span class="mk">1</span><span>It avoids building rapid-response low-efficiency peaking plants (open-cycle gas turbines) and allows intermittent renewables to be used</span></li></ul>
 </div>
-<div><b>02.4</b> (2 marks)
-<div class="lvl"><i>Any 2 from:</i></div>
-<ul><li>Two water bodies / sites with a large height difference close together (mountainous)</li><li>Impermeable, stable rock</li><li>Close to the grid / demand</li><li>Adequate water supply</li></ul>
+<div class="mspart"><div class="msh"><b>02.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">Any 2 from the points below - 1 mark each, maximum 2.</div><ul class="pts"><li><span class="mk">1</span><span>Two water bodies / sites with a large height difference close together (mountainous)</span></li><li><span class="mk">1</span><span>Impermeable, stable rock</span></li><li><span class="mk">1</span><span>Close to the grid / demand</span></li><li><span class="mk">1</span><span>Adequate water supply</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 222; AQA spec 3.3.4.1.</div></details></div>
-<div class="q" id="EST-03" data-qid="EST-03" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 3</span><span class="meta">10 marks &middot; <a href="../subtopic/energy-storage.html">Fluctuations in supply/demand &amp; energy storage</a> &middot; spec 3.3.4.1 &middot; Genn pp. 219-221 &middot; EST-03</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="EST-03" data-qid="EST-03" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 3</span><span class="meta">10 marks &middot; <a href="../subtopic/energy-storage.html">Fluctuations in supply/demand &amp; energy storage</a> &middot; spec 3.3.4.1 &middot; Genn pp. 219-221 &middot; EST-03</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[4 marks]</span><span class="pn">03.1</span>Explain how hydrogen can be used to store energy from intermittent renewable resources, and describe <b>two</b> ways the stored energy can be released.
 </div>
 <div class="part"><span class="marks">[3 marks]</span><span class="pn">03.2</span>Compare <b>three</b> methods of storing hydrogen, giving a disadvantage of each.
@@ -193,21 +207,20 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">03.4</span>Explain what is meant by the 'hydrogen economy'.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>03.1</b> (4 marks)
-<ul><li>Surplus electricity (eg windy nights) electrolyses water to produce hydrogen which is stored</li><li>Hydrogen has a high energy density so it can be transported / stored for long periods</li><li>Released by combustion for heat, industrial processes or steam turbines; or by fuel cells combining hydrogen and oxygen electrochemically to produce electricity and water</li><li>Can also be used as a vehicle fuel or converted to methane / ammonia</li></ul>
+<div class="mspart"><div class="msh"><b>03.1</b> <span class="mtot">4 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Surplus electricity (eg windy nights) electrolyses water to produce hydrogen which is stored</span></li><li><span class="mk">1</span><span>Hydrogen has a high energy density so it can be transported / stored for long periods</span></li><li><span class="mk">1</span><span>Released by combustion for heat, industrial processes or steam turbines; or by fuel cells combining hydrogen and oxygen electrochemically to produce electricity and water</span></li><li><span class="mk">1</span><span>Can also be used as a vehicle fuel or converted to methane / ammonia</span></li></ul>
 </div>
-<div><b>03.2</b> (3 marks)
-<div class="lvl"><i>Any 3 from:</i></div>
-<ul><li>Compressed gas (up to 700 times normal volume) - energy to run the compressor, strong tanks</li><li>Liquefied at very low temperature - energy for refrigeration and compression</li><li>Adsorbed on a metal matrix (metal hydride) at low pressure - tanks larger and heavier than a petrol tank storing the same energy</li><li>Conversion to ammonia - some energy needed but less than the alternatives</li></ul>
+<div class="mspart"><div class="msh"><b>03.2</b> <span class="mtot">3 marks</span></div>
+<div class="lvl">Any 3 from the points below - 1 mark each, maximum 3.</div><ul class="pts"><li><span class="mk">1</span><span>Compressed gas (up to 700 times normal volume) - energy to run the compressor, strong tanks</span></li><li><span class="mk">1</span><span>Liquefied at very low temperature - energy for refrigeration and compression</span></li><li><span class="mk">1</span><span>Adsorbed on a metal matrix (metal hydride) at low pressure - tanks larger and heavier than a petrol tank storing the same energy</span></li><li><span class="mk">1</span><span>Conversion to ammonia - some energy needed but less than the alternatives</span></li></ul>
 </div>
-<div><b>03.3</b> (2 marks)
-<ul><li>Both convert chemical energy to electricity electrochemically, but a battery stores a fixed amount of chemicals which are reformed by recharging</li><li>A fuel cell keeps producing electricity as long as fresh fuel (hydrogen / alcohol) and oxidant are supplied</li></ul>
+<div class="mspart"><div class="msh"><b>03.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Both convert chemical energy to electricity electrochemically, but a battery stores a fixed amount of chemicals which are reformed by recharging</span></li><li><span class="mk">1</span><span>A fuel cell keeps producing electricity as long as fresh fuel (hydrogen / alcohol) and oxidant are supplied</span></li></ul>
 </div>
-<div><b>03.4</b> (1 marks)
-<ul><li>Using hydrogen made from surplus renewable electricity as the main store and carrier of energy, released when demand exceeds supply or intermittent sources fail, for heating, vehicles and electricity</li></ul>
+<div class="mspart"><div class="msh"><b>03.4</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>Using hydrogen made from surplus renewable electricity as the main store and carrier of energy, released when demand exceeds supply or intermittent sources fail, for heating, vehicles and electricity</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 219-221; AQA spec 3.3.4.1.</div></details></div>
-<div class="q" id="EST-04" data-qid="EST-04" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 4</span><span class="meta">10 marks &middot; <a href="../subtopic/energy-storage.html">Fluctuations in supply/demand &amp; energy storage</a> &middot; spec 3.3.4.1 &middot; Genn pp. 223-224 &middot; EST-04</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="EST-04" data-qid="EST-04" data-marks="10" data-flags="data"><div class="qh"><span class="num">Question 4</span><span class="meta">10 marks &middot; <a href="../subtopic/energy-storage.html">Fluctuations in supply/demand &amp; energy storage</a> &middot; spec 3.3.4.1 &middot; Genn pp. 223-224 &middot; EST-04</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>Table 1 shows features of three rechargeable battery types.</p>
 <div class="cap">Table 1</div><table class="data"><tr><th>Battery type</th><th>Energy density / Wh kg<sup>-1</sup></th><th>Charge-discharge cycles</th><th>Storage efficiency / %</th><th>Cost per kWh / &pound;</th><th>Safety issues</th></tr><tr><td>Lead-acid</td><td>35</td><td>500</td><td>80</td><td>100</td><td>Toxic lead, acid</td></tr><tr><td>Nickel-cadmium</td><td>50</td><td>1500</td><td>75</td><td>250</td><td>Toxic cadmium</td></tr><tr><td>Lithium-ion</td><td>200</td><td>2000</td><td>92</td><td>150</td><td>Fire risk</td></tr></table>
 <div class="part"><span class="marks">[4 marks]</span><span class="pn">04.1</span>Use Table 1 to explain why lithium-ion batteries are used in electric vehicles but lead-acid batteries are still used for stationary storage in some off-grid solar systems.
@@ -219,21 +232,20 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">04.4</span>Explain how Power-to-Gas (P2G) systems use existing infrastructure.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>04.1</b> (4 marks)
-<ul><li>Vehicles: high energy density (200 Wh kg<sup>-1</sup>) minimises battery mass so range is greater; many cycles and high efficiency</li><li>Stationary storage: mass is unimportant so the low energy density of lead-acid does not matter; lowest cost per kWh; well-established, recyclable</li><li>Lead-acid drawbacks: fewer cycles and lower efficiency; lithium fire risk needs management</li><li>Nickel-cadmium largely replaced because of cadmium toxicity and cost</li></ul>
+<div class="mspart"><div class="msh"><b>04.1</b> <span class="mtot">4 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Vehicles: high energy density (200 Wh kg<sup>-1</sup>) minimises battery mass so range is greater; many cycles and high efficiency</span></li><li><span class="mk">1</span><span>Stationary storage: mass is unimportant so the low energy density of lead-acid does not matter; lowest cost per kWh; well-established, recyclable</span></li><li><span class="mk">1</span><span>Lead-acid drawbacks: fewer cycles and lower efficiency; lithium fire risk needs management</span></li><li><span class="mk">1</span><span>Nickel-cadmium largely replaced because of cadmium toxicity and cost</span></li></ul>
 </div>
-<div><b>04.2</b> (2 marks)
-<div class="lvl"><i>Any 2 from:</i></div>
-<ul><li>Recharging speed</li><li>Self-discharge during non-use</li><li>Availability of raw materials (lithium, cobalt)</li><li>Recyclability / disposal</li></ul>
+<div class="mspart"><div class="msh"><b>04.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">Any 2 from the points below - 1 mark each, maximum 2.</div><ul class="pts"><li><span class="mk">1</span><span>Recharging speed</span></li><li><span class="mk">1</span><span>Self-discharge during non-use</span></li><li><span class="mk">1</span><span>Availability of raw materials (lithium, cobalt)</span></li><li><span class="mk">1</span><span>Recyclability / disposal</span></li></ul>
 </div>
-<div><b>04.3</b> (2 marks)
-<ul><li>Parked electric vehicles plugged into the grid form a very large distributed battery</li><li>At peaks a small proportion of their stored energy is fed back to the grid; surplus grid energy recharges them - avoiding costly, low-efficiency open-cycle gas turbines</li></ul>
+<div class="mspart"><div class="msh"><b>04.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Parked electric vehicles plugged into the grid form a very large distributed battery</span></li><li><span class="mk">1</span><span>At peaks a small proportion of their stored energy is fed back to the grid; surplus grid energy recharges them - avoiding costly, low-efficiency open-cycle gas turbines</span></li></ul>
 </div>
-<div><b>04.4</b> (2 marks)
-<ul><li>Surplus electricity electrolyses water to hydrogen, which can be converted to methane</li><li>Methane is fed into the existing natural gas pipe network and storage, so no new distribution system is needed</li></ul>
+<div class="mspart"><div class="msh"><b>04.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Surplus electricity electrolyses water to hydrogen, which can be converted to methane</span></li><li><span class="mk">1</span><span>Methane is fed into the existing natural gas pipe network and storage, so no new distribution system is needed</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 223-224; AQA spec 3.3.4.1.</div></details></div>
-<div class="q" id="EST-05" data-qid="EST-05" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 5</span><span class="meta">10 marks &middot; <a href="../subtopic/energy-storage.html">Fluctuations in supply/demand &amp; energy storage</a> &middot; spec 3.3.4.1 &middot; Genn pp. 222-224 &middot; EST-05</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="EST-05" data-qid="EST-05" data-marks="10" data-flags=""><div class="qh"><span class="num">Question 5</span><span class="meta">10 marks &middot; <a href="../subtopic/energy-storage.html">Fluctuations in supply/demand &amp; energy storage</a> &middot; spec 3.3.4.1 &middot; Genn pp. 222-224 &middot; EST-05</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">05.1</span>Explain why compressed air energy storage with heat recovery can achieve over 90% efficiency.
 </div>
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">05.2</span>Explain why large-volume hot water stores lose heat more slowly per unit of stored energy than small ones.
@@ -245,35 +257,34 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">05.5</span>Describe <b>one</b> other energy storage technology.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>05.1</b> (2 marks)
-<ul><li>Surplus energy drives a pump compressing air stored in underground caverns (salt mines); releasing it drives machinery / turbines</li><li>Compression produces a lot of heat; storing this heat (hot oil / molten salt) and returning it when the air expands recovers energy that would otherwise be lost</li></ul>
+<div class="mspart"><div class="msh"><b>05.1</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Surplus energy drives a pump compressing air stored in underground caverns (salt mines); releasing it drives machinery / turbines</span></li><li><span class="mk">1</span><span>Compression produces a lot of heat; storing this heat (hot oil / molten salt) and returning it when the air expands recovers energy that would otherwise be lost</span></li></ul>
 </div>
-<div><b>05.2</b> (2 marks)
-<ul><li>As volume increases the surface area : volume ratio decreases</li><li>Heat is lost through the surface so there is less surface per unit of stored heat; very large stores can carry summer solar heat into winter (inter-seasonal storage)</li></ul>
+<div class="mspart"><div class="msh"><b>05.2</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>As volume increases the surface area : volume ratio decreases</span></li><li><span class="mk">1</span><span>Heat is lost through the surface so there is less surface per unit of stored heat; very large stores can carry summer solar heat into winter (inter-seasonal storage)</span></li></ul>
 </div>
-<div><b>05.3</b> (2 marks)
-<ul><li>Potassium nitrate has a much higher boiling point so it stores heat at up to 550 &deg;C without pressurisation</li><li>Water could only reach such temperatures under high pressure, increasing costs; high temperature needed to raise steam for turbines</li></ul>
+<div class="mspart"><div class="msh"><b>05.3</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Potassium nitrate has a much higher boiling point so it stores heat at up to 550 &deg;C without pressurisation</span></li><li><span class="mk">1</span><span>Water could only reach such temperatures under high pressure, increasing costs; high temperature needed to raise steam for turbines</span></li></ul>
 </div>
-<div><b>05.4</b> (2 marks)
-<ul><li>Materials with high specific heat capacity (concrete, water) warm and cool slowly</li><li>They absorb heat in hot weather reducing overheating / air conditioning, and release it as the weather cools, delaying the need for heating</li></ul>
+<div class="mspart"><div class="msh"><b>05.4</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">1 mark for each point.</div><ul class="pts"><li><span class="mk">1</span><span>Materials with high specific heat capacity (concrete, water) warm and cool slowly</span></li><li><span class="mk">1</span><span>They absorb heat in hot weather reducing overheating / air conditioning, and release it as the weather cools, delaying the need for heating</span></li></ul>
 </div>
-<div><b>05.5</b> (2 marks)
-<div class="lvl"><i>Any 2 from:</i></div>
-<ul><li>Flywheels: rotating mass stores kinetic energy for short-term smoothing / generation</li><li>Supercapacitors: electrochemical capacitors with 10-100 times the energy density of conventional capacitors; possible future large-scale electricity storage</li><li>Thermal storage in molten salt / high-volume tanks; hydrogen / P2G; batteries</li></ul>
+<div class="mspart"><div class="msh"><b>05.5</b> <span class="mtot">2 marks</span></div>
+<div class="lvl">Any 2 from the points below - 1 mark each, maximum 2.</div><ul class="pts"><li><span class="mk">1</span><span>Flywheels: rotating mass stores kinetic energy for short-term smoothing / generation</span></li><li><span class="mk">1</span><span>Supercapacitors: electrochemical capacitors with 10-100 times the energy density of conventional capacitors; possible future large-scale electricity storage</span></li><li><span class="mk">1</span><span>Thermal storage in molten salt / high-volume tanks; hydrogen / P2G; batteries</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 222-224; AQA spec 3.3.4.1.</div></details></div>
-<div class="q" id="EST-06" data-qid="EST-06" data-marks="10" data-flags="ext"><div class="qh"><span class="num">Question 6</span><span class="meta">10 marks &middot; <a href="../subtopic/energy-storage.html">Fluctuations in supply/demand &amp; energy storage</a> &middot; spec 3.3.4.1 &middot; Genn pp. 217-224 &middot; EST-06</span><span class="st noprint"><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="q" id="EST-06" data-qid="EST-06" data-marks="10" data-flags="ext"><div class="qh"><span class="num">Question 6</span><span class="meta">10 marks &middot; <a href="../subtopic/energy-storage.html">Fluctuations in supply/demand &amp; energy storage</a> &middot; spec 3.3.4.1 &middot; Genn pp. 217-224 &middot; EST-06</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <div class="part"><span class="marks">[9 marks]</span><span class="pn">06.1</span>Explain why the development of energy storage technologies is essential if renewable energy resources are to provide most of a country's electricity.
 </div>
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">06.2</span>State what is meant by <b>peak shaving</b>.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div><b>06.1</b> (9 marks)
-<div class="lvl"><b>Levels of response:</b> L3 7-9 comprehensive, well-structured, applied to context, supported judgement; L2 4-6 sound but incomplete application/evaluation; L1 1-3 basic, limited structure.</div><div class="lvl"><b>Indicative content:</b></div>
-<ul><li>Renewables are intermittent (solar at night, calm days, slack tides) and some unpredictable; demand fluctuates daily, weekly, seasonally and short-term; supply and demand rarely match</li><li>Without storage, surplus is wasted and shortages must be met by fossil-fuel peaking plants; large-scale electricity storage not yet possible directly so energy must be converted</li><li>Pumped-storage HEP: proven, rapid response, peak shaving, but limited sites</li><li>Batteries: lithium-ion for grid and vehicles; factors affecting viability; V2G</li><li>Hydrogen: electrolysis, storage methods, fuel cells, hydrogen economy, P2G into the gas grid; high energy density enables vehicle use</li><li>Compressed air with heat recovery; thermal storage (molten salt for CSP, high-volume stores, thermal mass); flywheels; supercapacitors</li><li>Grid management / ICT and diversity of resources (wind + solar + tidal + biofuel) reduce but do not remove the need for storage; energy conservation reduces peaks</li><li>Evaluation of efficiency losses, costs, resource limits (lithium), and which technologies suit short-term vs inter-seasonal storage; judgement</li></ul>
+<div class="mspart"><div class="msh"><b>06.1</b> <span class="mtot">9 marks</span></div>
+<table class="levels"><tr><th>Level</th><th>Marks</th><th>What the answer must show</th></tr><tr><td><b>Level 3</b></td><td class="r">7-9</td><td>Answer is comprehensive, relevant and logically structured. Shows detailed knowledge and understanding of the relevant scientific ideas and applies them accurately to the context. Evaluation/analysis is well supported by evidence and a clear judgement or conclusion is reached.</td></tr><tr><td><b>Level 2</b></td><td class="r">4-6</td><td>Answer is mostly relevant and shows some structure. Knowledge and understanding of relevant ideas is sound but application to the context or evaluation may be incomplete or lack detail. A judgement may be made but is not fully supported.</td></tr><tr><td><b>Level 1</b></td><td class="r">1-3</td><td>Answer is basic, with limited structure. Some relevant knowledge is shown but there are omissions or errors. Little application to the context and little or no evaluation.</td></tr><tr><td><b>&nbsp;</b></td><td class="r">0</td><td>No relevant content.</td></tr></table><div class="lvl"><b>Indicative content</b> - credit any of the following (and other relevant, accurate points):</div>
+<ul class="ind"><li>Renewables are intermittent (solar at night, calm days, slack tides) and some unpredictable; demand fluctuates daily, weekly, seasonally and short-term; supply and demand rarely match</li><li>Without storage, surplus is wasted and shortages must be met by fossil-fuel peaking plants; large-scale electricity storage not yet possible directly so energy must be converted</li><li>Pumped-storage HEP: proven, rapid response, peak shaving, but limited sites</li><li>Batteries: lithium-ion for grid and vehicles; factors affecting viability; V2G</li><li>Hydrogen: electrolysis, storage methods, fuel cells, hydrogen economy, P2G into the gas grid; high energy density enables vehicle use</li><li>Compressed air with heat recovery; thermal storage (molten salt for CSP, high-volume stores, thermal mass); flywheels; supercapacitors</li><li>Grid management / ICT and diversity of resources (wind + solar + tidal + biofuel) reduce but do not remove the need for storage; energy conservation reduces peaks</li><li>Evaluation of efficiency losses, costs, resource limits (lithium), and which technologies suit short-term vs inter-seasonal storage; judgement</li></ul>
 </div>
-<div><b>06.2</b> (1 marks)
-<ul><li>Storing surplus energy at times of low demand / high supply to meet later peaks in demand, so peak generating capacity can be reduced</li></ul>
+<div class="mspart"><div class="msh"><b>06.2</b> <span class="mtot">1 mark</span></div>
+<div class="lvl">1 mark.</div><ul class="pts"><li><span class="mk">1</span><span>Storing surplus energy at times of low demand / high supply to meet later peaks in demand, so peak generating capacity can be reduced</span></li></ul>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 217-224; AQA spec 3.3.4.1.</div></details></div>
 </div></main>
@@ -292,7 +303,7 @@ const tb=document.getElementById('themeBtn');if(tb)tb.onclick=()=>{const t=root.
 let prog=LS('envsci.progress')||{};
 window.ES.prog=()=>prog;
 function paint(){
-  document.querySelectorAll('.q[data-qid]').forEach(el=>{const s=prog[el.dataset.qid]||0;el.dataset.status=s;el.querySelectorAll('.st button').forEach(b=>b.classList.toggle('on',+b.dataset.s===s&&s>0));});
+  document.querySelectorAll('.q[data-qid]').forEach(el=>{const s=prog[el.dataset.qid]||0;el.dataset.status=s;el.querySelectorAll('.st button[data-s]').forEach(b=>b.classList.toggle('on',+b.dataset.s===s&&s>0));});
   document.querySelectorAll('[data-qids]').forEach(el=>{const ids=el.dataset.qids.split(',').filter(Boolean);const n=ids.length;if(!n)return;
     const ok=ids.filter(i=>prog[i]===2).length,wk=ids.filter(i=>prog[i]===1).length;
     const o=el.querySelector('.bar .ok'),w=el.querySelector('.bar .wk'),p=el.querySelector('.pl');
@@ -300,7 +311,7 @@ function paint(){
   const ov=document.getElementById('overall');if(ov){const all=(ov.dataset.qids||'').split(',').filter(Boolean);const ok=all.filter(i=>prog[i]===2).length,wk=all.filter(i=>prog[i]===1).length;ov.querySelector('.stat').textContent=Math.round(100*ok/all.length)+'%';ov.querySelector('.detail').textContent=ok+' secure, '+wk+' to revisit, '+(all.length-ok-wk)+' not attempted of '+all.length+' questions.';}
 }
 window.ES.paint=paint;
-document.addEventListener('click',e=>{const b=e.target.closest('.st button');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);paint();if(window.ES.onFilter)window.ES.onFilter();});
+document.addEventListener('click',e=>{const b=e.target.closest('.st button[data-s]');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);paint();if(window.ES.onFilter)window.ES.onFilter();});
 const rs=document.getElementById('resetProg');if(rs)rs.onclick=()=>{if(confirm('Clear all saved progress on this browser?')){prog={};SV('envsci.progress',prog);paint();}};
 paint();
 /* ---- filter bar ---- */
@@ -323,6 +334,13 @@ if(fb){
   txt.addEventListener('input',run);fb.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{c.classList.toggle('on');run();});fb.querySelector('select.status').onchange=run;
   const clr=fb.querySelector('.clear');if(clr)clr.onclick=()=>{txt.value='';fb.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));fb.querySelector('select.status').value='all';run();};
   run();}
+/* ---- sticky offset = real header height (nav can wrap) ---- */
+const hd=document.querySelector('header.top');const setH=()=>root.style.setProperty('--hdr',(getComputedStyle(hd).position==='sticky'?hd.offsetHeight:0)+'px');setH();window.addEventListener('resize',setH);
+/* ---- copy link, back to top ---- */
+document.addEventListener('click',e=>{const b=e.target.closest('[data-copy]');if(!b)return;const q=b.closest('.q');const url=location.href.split('#')[0]+'#'+q.id;
+  (navigator.clipboard?navigator.clipboard.writeText(url):Promise.reject()).then(()=>{b.textContent='\u2713';setTimeout(()=>b.innerHTML='&#128279;',1200);}).catch(()=>prompt('Copy this link:',url));});
+const tt=document.createElement('button');tt.id='totop';tt.title='Back to top';tt.innerHTML='&uarr;';tt.className='noprint';document.body.appendChild(tt);tt.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+window.addEventListener('scroll',()=>tt.classList.toggle('show',window.scrollY>600),{passive:true});
 /* ---- print & reveal ---- */
 document.querySelectorAll('[data-print]').forEach(b=>b.onclick=()=>{const ms=b.dataset.print==='ms';document.body.classList.toggle('print-ms',ms);document.querySelectorAll('details.ms').forEach(d=>d.open=ms);window.print();});
 document.querySelectorAll('[data-reveal]').forEach(b=>b.onclick=()=>{const open=b.dataset.reveal==='1';document.querySelectorAll('details.ms').forEach(d=>d.open=open);b.dataset.reveal=open?'0':'1';b.textContent=open?'Hide all mark schemes':'Show all mark schemes';});
