@@ -1,7 +1,3 @@
 __pycache__/
 *.pyc
 .claude/
-# AQA's own papers are copyright AQA - keep them local, not in the public repo
-official-papers/*.pdf
-official-papers/*.PDF
-site/official/

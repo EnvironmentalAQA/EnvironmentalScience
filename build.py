@@ -63,10 +63,13 @@ def official_files():
         if not name.lower().endswith(".pdf"):
             continue
         m = re.match(r"AQA-7447(\d)-(QP|MS|W-MS|ER|WRE|RE)-([A-Z]{3}\d{2})", name.upper())
+        sp = re.match(r"AQA-7447(\d)-(SQP|SMS)", name.upper())
+        kinds = {"QP": "Question paper", "MS": "Mark scheme", "W-MS": "Mark scheme", "ER": "Examiner report", "WRE": "Examiner report", "RE": "Examiner report",
+                 "SQP": "Specimen question paper", "SMS": "Specimen mark scheme"}
         if m:
-            paper = f"Paper {m.group(1)}"
-            kind = {"QP": "Question paper", "MS": "Mark scheme", "W-MS": "Mark scheme", "ER": "Examiner report", "WRE": "Examiner report", "RE": "Examiner report"}[m.group(2)]
-            series = m.group(3)
+            paper, kind, series = f"Paper {m.group(1)}", kinds[m.group(2)], m.group(3)
+        elif sp:   # specimen papers (AQA-74471-SQP-CR.PDF, AQA-74471-SMS.PDF)
+            paper, kind, series = f"Paper {sp.group(1)}", kinds[sp.group(2)], "SPECIMEN"
         else:
             paper, kind, series = "Unknown", "Document", "Other"
         out.append({"name": name, "paper": paper, "kind": kind, "series": series})
@@ -146,7 +149,7 @@ def main():
     for f in files:
         shutil.copy2(os.path.join(ROOT, "official-papers", f["name"]), os.path.join(SITE, "official", f["name"]))
 
-    counts = {"questions": len(questions), "subtopics": len(sets_by_sub), "papers": len(generated)}
+    counts = {"questions": len(questions), "subtopics": len(sets_by_sub), "papers": len(generated), "official": len(files)}
     with open(os.path.join(SITE, "index.html"), "w", encoding="utf-8") as f:
         f.write(site.index_page(sets_by_sub, counts))
     with open(os.path.join(SITE, "papers.html"), "w", encoding="utf-8") as f:

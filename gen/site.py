@@ -387,7 +387,7 @@ def index_page(sets_by_sub, counts):
     body.append('<div class="grid4">'
                 f'<div class="card"><div class="stat">{counts["questions"]}</div><h3>Questions by topic</h3><p>Across {counts["subtopics"]} subtopics, each with an AQA-format question paper PDF and a separate mark-scheme PDF.</p><a class="btn" href="#topics">Browse topics</a></div>'
                 f'<div class="card"><div class="stat">{counts["papers"]}</div><h3>Mock papers</h3><p>Full 3-hour papers (120 marks) with an exam timer and self-marking scorecard.</p><a class="btn" href="papers.html">Open mock papers</a></div>'
-                '<div class="card"><div class="stat">AQA</div><h3>Official past papers</h3><p>Real question papers and mark schemes. Drop AQA PDFs into the <code>official-papers</code> folder and rebuild to list them.</p><a class="btn ghost" href="official.html">Open past papers</a></div>'
+                '<div class="card"><div class="stat">{counts["official"]}</div><h3>Official AQA papers</h3><p>Real question papers and mark schemes for every series so far (plus the specimen papers), grouped by year and paper.</p><a class="btn ghost" href="official.html">Open past papers</a></div>'
                 f'<div class="card" id="overall" data-qids="{",".join(all_ids)}"><div class="stat">0%</div><h3>Your progress</h3><p class="detail"></p><a class="btn ghost" href="quickfire.html">Quick-fire practice</a> <button type="button" class="chip" id="resetProg" style="margin-top:8px;font-family:inherit;font-size:.8rem;border:1px solid var(--line);background:var(--sand);color:var(--stone);border-radius:999px;padding:3px 10px;cursor:pointer">Reset</button></div></div>')
     body.append('<h2 class="sec" id="topics">Topics by paper</h2><div class="two">')
     for pno, paper in PAPERS.items():
@@ -501,16 +501,17 @@ def essays_page(essays):
 
 
 def official_page(files):
-    body = [hero("Official AQA past papers", "Real question papers, mark schemes and examiner reports for AQA 7447. To add more, copy the AQA PDFs into the <code>official-papers</code> folder (keep AQA file names such as <code>AQA-74471-QP-JUN23.PDF</code>) and run <code>build.py</code> again.")]
+    body = [hero("Official AQA past papers", "Every real AQA 7447 question paper and mark scheme published so far, plus the specimen papers, grouped by series. Sit them under timed conditions (3 hours, 120 marks) and mark with the official mark scheme. &copy; AQA.")]
     body.append('<main><div class="wrap">')
     if not files:
         body.append('<p class="note">No official papers found yet. Copy AQA PDFs into <code>official-papers/</code> and rebuild.</p>')
     series = {}
     for f in files:
         series.setdefault(f["series"], []).append(f)
-    order = sorted(series, key=lambda s: (s[-2:], {"JUN": 1, "NOV": 2, "SAM": 0}.get(s[:3], 3)), reverse=True)
+    order = sorted(series, key=lambda s: ("00" if s == "SPECIMEN" else s[-2:], {"JUN": 1, "NOV": 2}.get(s[:3], 0)), reverse=True)
     for s in order:
-        body.append(f'<h2 class="sec">{html.escape(s)}</h2><table class="list"><tr><th>Paper</th><th>Document</th><th>File</th></tr>')
+        label = "Specimen papers" if s == "SPECIMEN" else {"JUN": "June 20", "NOV": "November 20"}.get(s[:3], "") + s[3:]
+        body.append(f'<h2 class="sec">{html.escape(label)}</h2><table class="list"><tr><th>Paper</th><th>Document</th><th>File</th></tr>')
         for f in sorted(series[s], key=lambda f: (f["paper"], f["kind"])):
             body.append(f'<tr><td>{html.escape(f["paper"])}</td><td>{html.escape(f["kind"])}</td><td><a href="official/{html.escape(f["name"])}">{html.escape(f["name"])}</a></td></tr>')
         body.append("</table>")
