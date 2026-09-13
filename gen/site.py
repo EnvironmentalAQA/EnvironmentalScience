@@ -8,6 +8,8 @@ from .model import Table as QTable, Chart
 from .pdf import plain, LEVELS_9, LEVELS_25
 from .marking import mark_points
 from bank.official_index import OFFICIAL_INDEX
+from bank.exemplars import EXEMPLARS, ESSAY_EXEMPLARS
+from bank.terms import TERMS
 
 EXAM_SECONDS = 3 * 60 * 60   # AQA 7447: each paper is 3 hours
 
@@ -113,6 +115,24 @@ ul.ind{margin:4px 0 8px 18px}
 .plan input[type=date]{font:inherit;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}.plan .big{font-family:Fraunces,serif;font-size:2rem;color:var(--moss)}
 table.list td .bar{height:8px;background:var(--sand-dark);border-radius:999px;overflow:hidden;display:flex;width:140px}table.list td .bar .ok{background:var(--ok)}table.list td .bar .wk{background:var(--warn)}
 @media(max-width:720px){header.top{position:static}header.top nav a{margin-left:12px;font-size:.88rem}.filterbar,.tools{top:0}.hero h1{font-size:1.8rem}.hero{padding:34px 0 28px}.sub-item .t{flex-basis:100%}}
+/* write-first mode, exemplars, drills */
+.modew{font-size:.85rem;color:var(--stone);display:inline-flex;align-items:center;gap:5px;cursor:pointer;border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--sand)}
+body.wmode .q:not(.revealed) details.ms{display:none}
+.wa{display:block;width:100%;min-height:70px;font:inherit;font-size:.95rem;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink);margin:6px 0 2px;resize:vertical}
+.wctl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:10px 0 4px}.wctl .hint{font-size:.82rem;color:var(--stone)}
+.sm{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin:8px 0;padding:8px 12px;border:1px dashed var(--ms-line);border-radius:8px;font-size:.88rem}.sm input{width:60px;font:inherit;padding:3px 6px;border:1px solid var(--line);border-radius:6px;background:var(--input);color:var(--ink)}
+.sm .res{font-weight:700}.sm .res.ok{color:var(--ok)}.sm .res.wk{color:var(--warn)}
+details.ex{margin:10px 0 4px;background:var(--card);border:1px solid var(--ms-line);border-radius:8px;padding:8px 12px}details.ex summary{cursor:pointer;font-weight:700;color:var(--earth)}
+.exwrap{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px}@media(max-width:860px){.exwrap{grid-template-columns:1fr}}
+.exa{border-radius:8px;padding:10px 14px;font-size:.93rem;line-height:1.5}.exa p{margin:0 0 8px}.exa.top{background:var(--leaf-light);border-left:4px solid var(--ok)}.exa.low{background:var(--note-bg);border-left:4px solid var(--warn)}
+.exh{font-weight:700;font-size:.85rem;margin-bottom:6px;color:var(--head)}.exn{margin-top:10px;font-size:.9rem}.exn ul{margin:4px 0 0 18px}
+.drill{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 26px;margin:14px 0;min-height:160px}
+.drill .term{font-family:Fraunces,serif;font-size:1.6rem;color:var(--head);margin:0 0 6px}.drill .def{font-size:1.05rem;margin:8px 0}.drill .src{font-size:.82rem;color:var(--stone)}
+.drill .btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.drill input.ans{font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink);width:100%;max-width:520px}
+.drill .fb{margin-top:8px;font-weight:700}.drill .fb.ok{color:var(--ok)}.drill .fb.bad{color:var(--bad)}
+.drill .work{white-space:pre-line;background:var(--sand-dark);border-radius:8px;padding:10px 14px;font-size:.92rem;margin-top:8px}
+.modecard{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:14px}.modecard .mi{font-size:1.6rem;flex:0 0 40px;text-align:center}.modecard h3{margin:0 0 4px;color:var(--head)}.modecard p{margin:0 0 8px;color:var(--stone)}
+.due{font-size:.85rem;color:var(--stone)}
 /* print */
 @media print{header.top,footer,.tools,.filterbar,.st,.pill,.aw,.hero .crumbs,.prog,.noprint{display:none!important}
 body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;color:#000;padding:10px 0}.hero p,.hero h1{color:#000}.hero:before{display:none}
@@ -154,9 +174,33 @@ function paint(){
   const ov=document.getElementById('overall');if(ov){const all=(ov.dataset.qids||'').split(',').filter(Boolean);const ok=all.filter(i=>prog[i]===2).length,wk=all.filter(i=>prog[i]===1).length;ov.querySelector('.stat').textContent=Math.round(100*ok/all.length)+'%';ov.querySelector('.detail').textContent=ok+' secure, '+wk+' to revisit, '+(all.length-ok-wk)+' not attempted of '+all.length+' questions.';}
 }
 window.ES.paint=paint;
-document.addEventListener('click',e=>{const b=e.target.closest('.st button[data-s]');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);paint();if(window.ES.onFilter)window.ES.onFilter();});
+document.addEventListener('click',e=>{const b=e.target.closest('.st button[data-s]');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);window.ES.schedule(q.dataset.qid,prog[q.dataset.qid]||0);paint();if(window.ES.onFilter)window.ES.onFilter();});
 const rs=document.getElementById('resetProg');if(rs)rs.onclick=()=>{if(confirm('Clear all saved progress on this browser?')){prog={};SV('envsci.progress',prog);paint();}};
 paint();
+/* ---- spaced repetition: secure questions come back after 1, 3, 7, 14, 30 days ---- */
+const IVL=[1,3,7,14,30];let srs=LS('envsci.srs')||{};
+window.ES.srs=()=>srs;window.ES.isDue=id=>{const r=srs[id];return !r||!r.due||r.due<=Date.now();};
+window.ES.schedule=(id,s)=>{if(s===2){const prev=srs[id]&&srs[id].ivl||0;const i=IVL[Math.min(IVL.indexOf(prev)+1,IVL.length-1)]||1;srs[id]={ivl:i,due:Date.now()+i*86400000};}else delete srs[id];SV('envsci.srs',srs);};
+/* ---- write-first mode (opt-in): answer boxes first, mark scheme after reveal ---- */
+let mode=LS('envsci.mode')||'read';
+function applyMode(){document.body.classList.toggle('wmode',mode==='write');document.querySelectorAll('input.modeW').forEach(c=>c.checked=mode==='write');
+  document.querySelectorAll('.q[data-qid]').forEach(setupW);}
+function setupW(q){if(mode!=='write'){q.querySelectorAll('.wbox').forEach(e=>e.remove());q.classList.remove('revealed');return;}
+  if(q.querySelector('.wbox'))return;const id=q.dataset.qid;const ans=LS('envsci.answers')||{};
+  q.querySelectorAll('.part').forEach((part,i)=>{const w=document.createElement('div');w.className='wbox';const ta=document.createElement('textarea');ta.className='wa';ta.placeholder='Write your answer here before revealing the mark scheme...';ta.value=ans[id+'.'+(i+1)]||'';
+    ta.addEventListener('input',()=>{const a=LS('envsci.answers')||{};a[id+'.'+(i+1)]=ta.value;SV('envsci.answers',a);});w.appendChild(ta);part.after(w);});
+  const ctl=document.createElement('div');ctl.className='wbox wctl';ctl.innerHTML='<button type="button" class="btn reveal">Reveal mark scheme &amp; self-mark</button><span class="hint">Your answers are saved in this browser.</span>';
+  const ms=q.querySelector('details.ms');if(ms)ms.before(ctl);
+  ctl.querySelector('.reveal').onclick=()=>{q.classList.add('revealed');if(ms)ms.open=true;ctl.remove();buildSelfMark(q);};}
+function buildSelfMark(q){if(q.querySelector('.sm'))return;const pm=(q.dataset.pm||'').split(',').map(Number);const max=pm.reduce((a,b)=>a+b,0);
+  const sm=document.createElement('div');sm.className='sm wbox';sm.innerHTML='<b>Self-mark:</b> '+pm.map((m,i)=>'<label>Part '+(i+1)+' <input type="number" min="0" max="'+m+'" data-i="'+i+'"> / '+m+'</label>').join('')+'<button type="button" class="chip save">Save &amp; set status</button><span class="res"></span>';
+  const ms=q.querySelector('details.ms');ms.appendChild(sm);
+  sm.querySelector('.save').onclick=()=>{let t=0;sm.querySelectorAll('input').forEach(i=>t+=Math.min(+i.max,+i.value||0));const pc=t/max;const s=pc>=0.7?2:1;
+    const id=q.dataset.qid;if(s===2)prog[id]=2;else prog[id]=1;SV('envsci.progress',prog);window.ES.schedule(id,s);paint();
+    const r=sm.querySelector('.res');r.textContent=t+'/'+max+' ('+Math.round(pc*100)+'%) - marked '+(s===2?'secure':'needs work');r.className='res '+(s===2?'ok':'wk');if(window.ES.onFilter)window.ES.onFilter();};}
+window.ES.applyMode=applyMode;
+document.addEventListener('change',e=>{if(!e.target.matches('input.modeW'))return;mode=e.target.checked?'write':'read';SV('envsci.mode',mode);applyMode();});
+applyMode();
 /* ---- filter bar ---- */
 const fb=document.querySelector('.filterbar');
 if(fb){
@@ -223,14 +267,14 @@ PAPERS_JS = r"""
 
 def page(title, body, root="", active="", extra_js="", body_attrs=""):
     nav = "".join(f'<a href="{root}{h}" class="{"on" if active == h else ""}">{t}</a>' for h, t in
-                  [("index.html", "Topics"), ("papers.html", "Mock papers"), ("official.html", "Past papers"), ("essays.html", "Essay bank"),
-                   ("pastq.html", "Real Qs by topic"), ("quickfire.html", "Quick-fire"), ("planner.html", "Planner"), ("search.html", "Search")])
+                  [("index.html", "Topics"), ("papers.html", "Mock papers"), ("official.html", "Past papers"), ("practice.html", "Practice modes"),
+                   ("planner.html", "Planner"), ("search.html", "Search")])
     return f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(title)} - AQA Environmental Science</title><style>{CSS}</style>
 <script>try{{if(localStorage.getItem('envsci.theme')==='"dark"')document.documentElement.dataset.theme='dark';}}catch(e){{}}</script></head><body {body_attrs}>
 <header class="top"><div class="wrap"><a class="brand" href="{root}index.html">{LEAF}<span>AQA Environmental Science</span></a><nav>{nav}<button class="icon-btn" id="themeBtn" type="button" title="Toggle dark mode">&#9790; Dark</button></nav></div></header>
 {body}
-<footer><div class="wrap">Original practice questions and mark schemes written to the AQA A-level Environmental Science (7447) specification. Every question cites the printed page numbers of {html.escape(BOOK)}. AQA past papers are &copy; AQA. Progress, scores and timers are saved only in this browser. &nbsp;&middot;&nbsp; <a href="{root}index.html">Topics</a> &middot; <a href="{root}papers.html">Mock papers</a> &middot; <a href="{root}official.html">Past papers</a> &middot; <a href="{root}essays.html">Essay bank</a> &middot; <a href="{root}quickfire.html">Quick-fire</a> &middot; <a href="{root}search.html">Search</a></div></footer>
+<footer><div class="wrap">Original practice questions and mark schemes written to the AQA A-level Environmental Science (7447) specification. Every question cites the printed page numbers of {html.escape(BOOK)}. AQA past papers are &copy; AQA. Progress, scores and timers are saved only in this browser. &nbsp;&middot;&nbsp; <a href="{root}index.html">Topics</a> &middot; <a href="{root}papers.html">Mock papers</a> &middot; <a href="{root}official.html">Past papers</a> &middot; <a href="{root}essays.html">Essay bank</a> &middot; <a href="{root}practice.html">Practice modes</a> &middot; <a href="{root}essays.html">Essay bank</a> &middot; <a href="{root}pastq.html">Real questions by topic</a> &middot; <a href="{root}planner.html">Planner</a> &middot; <a href="{root}search.html">Search</a></div></footer>
 <script>{JS}</script>{extra_js}</body></html>"""
 
 
@@ -335,6 +379,16 @@ def q_flags(q):
     return f
 
 
+def exemplar_html(ex, essay=False):
+    """Model answers (Level 3 / weaker) with annotated differences, shown inside the mark scheme."""
+    if not ex:
+        return ""
+    low = f'<div class="exa low"><div class="exh">Weaker answer &middot; {html.escape(ex["low_level"])}</div>{ex["low"]}</div>' if ex.get("low") else ""
+    return (f'<details class="ex"><summary>Model answers: what a {html.escape(ex["top_level"].split(" (")[0])} answer looks like</summary><div class="exwrap">'
+            f'<div class="exa top"><div class="exh">Model answer &middot; {html.escape(ex["top_level"])}</div>{ex["top"]}</div>{low}</div>'
+            '<div class="exn"><b>What makes the difference</b><ul>' + "".join(f"<li>{n}</li>" for n in ex["notes"]) + "</ul></div></details>")
+
+
 def levels_table(levels):
     rows = "".join(f'<tr><td><b>{html.escape(lv) if lv else "&nbsp;"}</b></td><td class="r">{html.escape(rng)}</td><td>{html.escape(desc)}</td></tr>' for lv, rng, desc in levels)
     return f'<table class="levels"><tr><th>Level</th><th>Marks</th><th>What the answer must show</th></tr>{rows}</table>'
@@ -348,7 +402,7 @@ def html_question(qn, q, marking=False):
     """One question card.  marking=True adds 'marks awarded' inputs (mock-paper self-marking)."""
     idx = subtopic_index()
     fig, tab = [0], [0]
-    out = [f'<div class="q" id="{q.id}" data-qid="{q.id}" data-marks="{q.marks}" data-flags="{" ".join(q_flags(q))}"><div class="qh"><span class="num">Question {qn}</span>'
+    out = [f'<div class="q" id="{q.id}" data-qid="{q.id}" data-marks="{q.marks}" data-pm="{",".join(str(p.marks) for p in q.parts)}" data-flags="{" ".join(q_flags(q))}"><div class="qh"><span class="num">Question {qn}</span>'
            f'<span class="meta">{q.marks} marks &middot; <a href="../subtopic/{q.topic}.html">{html.escape(idx[q.topic]["name"])}</a> &middot; spec {html.escape(q.spec)} &middot; Genn pp. {html.escape(q.pages)} &middot; {q.id}</span>{STATUS_BTNS}</div>']
     if q.intro:
         out.append(f"<p>{fmt(q.intro)}</p>")
@@ -374,6 +428,7 @@ def html_question(qn, q, marking=False):
         if p.level:
             out.append(levels_table(LEVELS_9) + '<div class="lvl"><b>Indicative content</b> - credit any of the following (and other relevant, accurate points):</div>')
             out.append('<ul class="ind">' + "".join(f"<li>{fmt(m)}</li>" for m in p.ms) + "</ul>")
+            out.append(exemplar_html(EXEMPLARS.get(q.id)))
         elif p.mcq:
             letter = chr(65 + p.mcq.index(p.ms[0])) if p.ms and p.ms[0] in p.mcq else ""
             out.append(f'<div class="lvl">{fmt(rule)}</div><ul class="pts"><li><span class="mk">1</span><span><b>{letter}</b>&nbsp; {fmt(p.ms[0]) if p.ms else ""}</span></li></ul>')
@@ -392,7 +447,7 @@ def filter_bar(show_status=True):
     status = ('<select class="status" title="Filter by your progress"><option value="all">All progress</option><option value="todo">Not attempted</option>'
               '<option value="work">Needs work</option><option value="secure">Secure</option><option value="notsecure">Not yet secure</option></select>')
     return (f'<div class="filterbar noprint"><input type="search" placeholder="Filter questions by keyword (e.g. albedo, quota, Simpson)">{chips}{status}'
-            '<button type="button" class="chip clear">Clear</button><span class="cnt"></span>'
+            '<button type="button" class="chip clear">Clear</button><label class="modew" title="Type your answer before the mark scheme can be opened"><input type="checkbox" class="modeW"> Write-first mode</label><span class="cnt"></span>'
             '<button type="button" class="chip" data-reveal="1">Show all mark schemes</button>'
             '<button type="button" class="chip" data-print="qp" title="Print the questions only">Print</button><button type="button" class="chip" data-print="ms" title="Print questions with mark schemes">Print + MS</button></div>')
 
@@ -506,6 +561,7 @@ def paper_online_page(g):
     body.append('<div class="tools noprint"><span class="time" id="clock">3:00:00</span><button type="button" class="primary" id="startBtn">Start exam</button><button type="button" id="resetBtn">Reset timer</button>'
                 f'<span class="score">Score <b id="scoreN">0</b>/{total} <span class="pct" id="scorePct">0%</span></span><button type="button" id="clearScore">Clear marks</button>'
                 '<button type="button" data-reveal="1">Show all mark schemes</button><button type="button" data-print="qp">Print</button><button type="button" data-print="ms">Print + MS</button>'
+                '<label class="modew"><input type="checkbox" class="modeW"> Write-first mode</label>'
                 '<span class="kbd">Enter the marks you award yourself inside each mark scheme; the score is saved for this paper.</span></div>')
     body.append('<div class="jump noprint">' + "".join(f'<a href="#{q.id}">Q{i} &middot; {q.marks}</a>' for i, q in enumerate(g["questions"], 1)) + (f'<a href="#essay">Q{len(g["questions"]) + 1} &middot; essay</a>' if g["essays"] else "") + "</div>")
     for i, q in enumerate(g["questions"], 1):
@@ -516,7 +572,7 @@ def paper_online_page(g):
         for k, e in enumerate(g["essays"], 1):
             body.append(f'<div class="part"><span class="marks">[25 marks]</span><span class="pn">{n:02d}.{k}</span>{fmt(e.title)}</div>')
             body.append('<details class="ms"><summary>Indicative content</summary>' + levels_table(LEVELS_25) + '<div class="lvl"><b>Indicative content</b> - students are not expected to cover all of these:</div><ul class="ind">' + "".join(f"<li>{fmt(m)}</li>" for m in e.indicative) +
-                        f'</ul><div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="25" step="1" data-kind="essay" data-key="{e.id}"></label> / 25 (only the higher of the two essays counts)</div><div class="src">Source: {html.escape(BOOK)}, pp. {html.escape(e.pages)}; spec {html.escape(e.spec)}.</div></details>')
+                        f'</ul>' + exemplar_html(ESSAY_EXEMPLARS.get(e.id), essay=True) + f'<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="25" step="1" data-kind="essay" data-key="{e.id}"></label> / 25 (only the higher of the two essays counts)</div><div class="src">Source: {html.escape(BOOK)}, pp. {html.escape(e.pages)}; spec {html.escape(e.spec)}.</div></details>')
         body.append("</div>")
     body.append("</div></main>")
     return page(f"Generated Set {g['set']:02d}", "\n".join(body), root="../", extra_js=f"<script>{PAPER_JS % EXAM_SECONDS}</script>",
@@ -530,7 +586,7 @@ def essays_page(essays):
         body.append(f'<div class="paper-head"><span class="tag p{pno}">{PAPERS[pno]["name"]}</span><span class="assessed">{html.escape(PAPERS[pno]["assessed"])}</span></div>')
         for e in [x for x in essays if x.paper == pno]:
             body.append(f'<div class="q"><div class="qh"><span class="num">{fmt(e.title)}</span><span class="meta">spec {html.escape(e.spec)} &middot; Genn pp. {html.escape(e.pages)} &middot; {e.id}</span></div>'
-                        '<details class="ms"><summary>Mark scheme and indicative content</summary>' + levels_table(LEVELS_25) + '<div class="lvl"><b>Indicative content</b> - students are not expected to cover all of these:</div><ul class="ind">' + "".join(f"<li>{fmt(m)}</li>" for m in e.indicative) + "</ul></details></div>")
+                        '<details class="ms"><summary>Mark scheme and indicative content</summary>' + levels_table(LEVELS_25) + '<div class="lvl"><b>Indicative content</b> - students are not expected to cover all of these:</div><ul class="ind">' + "".join(f"<li>{fmt(m)}</li>" for m in e.indicative) + "</ul>" + exemplar_html(ESSAY_EXEMPLARS.get(e.id), essay=True) + "</details></div>")
     body.append("</div></main>")
     return page("Essay bank", "\n".join(body), active="essays.html")
 
@@ -586,19 +642,22 @@ if(params.get('topic'))topicSel.value=params.get('topic');
 if(params.get('sub')){const o=document.createElement('option');o.value='__sub';o.textContent='Selected subtopic only';topicSel.appendChild(o);topicSel.value='__sub';topicSel.disabled=true;}
 let seen=[],cur=null,n=0;
 const subParam=params.get('sub');
-function pool(){const p=prog();return bank.filter(q=>(paperSel.value==='any'||q.papers.includes(+paperSel.value))&&(topicSel.value==='any'||topicSel.value==='__sub'||q.tslug===topicSel.value)&&(!subParam||q.sub===subParam)&&(marksSel.value==='any'||q.marks===+marksSel.value)&&!(skip.checked&&p[q.id]===2));}
+const dueOnly=params.get('due')==='1';
+function pool(){const p=prog();return bank.filter(q=>(paperSel.value==='any'||q.papers.includes(+paperSel.value))&&(topicSel.value==='any'||topicSel.value==='__sub'||topicSel.value==='__due'||q.tslug===topicSel.value)&&(!subParam||q.sub===subParam)&&(marksSel.value==='any'||q.marks===+marksSel.value)
+  &&!(skip.checked&&p[q.id]===2&&!window.ES.isDue(q.id))&&(!dueOnly||(p[q.id]===1||(p[q.id]===2&&window.ES.isDue(q.id)))));}
 function next(){const p=pool();if(!p.length){host.innerHTML='<p class="empty">No questions match these filters (or you have marked them all secure - untick "skip secure").</p>';return;}
   let c=p.filter(q=>!seen.includes(q.id));if(!c.length){seen=[];c=p;}
   /* questions marked "needs work" are three times as likely to come up as untried ones */
-  const pr=prog();const w=c.map(q=>pr[q.id]===1?3:1);let r=Math.random()*w.reduce((a,b)=>a+b,0);cur=c[c.length-1];for(let i=0;i<c.length;i++){r-=w[i];if(r<0){cur=c[i];break;}}
+  const pr=prog();const w=c.map(q=>pr[q.id]===1?3:(pr[q.id]===2?2:1));let r=Math.random()*w.reduce((a,b)=>a+b,0);cur=c[c.length-1];for(let i=0;i<c.length;i++){r-=w[i];if(r<0){cur=c[i];break;}}
   seen.push(cur.id);n++;
-  host.innerHTML=cur.html;window.ES.paint();stat.textContent='Question '+n+' this session \u00b7 '+p.length+' in the pool';window.scrollTo({top:host.offsetTop-90,behavior:'smooth'});}
+  host.innerHTML=cur.html;window.ES.paint();window.ES.applyMode();stat.textContent='Question '+n+' this session \u00b7 '+p.length+' in the pool';window.scrollTo({top:host.offsetTop-90,behavior:'smooth'});}
 $('#qfNext').onclick=next;[paperSel,topicSel,marksSel,skip].forEach(e=>e.onchange=()=>{seen=[];stat.textContent=pool().length+' questions in the pool';});
 document.addEventListener('keydown',e=>{if(e.target.matches('input,select,textarea'))return;if(e.key==='n'||e.key==='N'||e.key===' '){e.preventDefault();next();}
   if(e.key==='m'||e.key==='M'){const d=host.querySelector('details.ms');if(d)d.open=!d.open;}
   if(e.key==='1'||e.key==='2'){const b=host.querySelector('.st button[data-s="'+e.key+'"]');if(b)b.click();}});
 stat.textContent=pool().length+' questions in the pool';
-if(params.get('topic')||params.get('sub'))next();
+if(params.get('topic')||params.get('sub')||dueOnly)next();
+if(dueOnly){const o=document.createElement('option');o.value='__due';o.textContent='Due for review only';topicSel.appendChild(o);topicSel.value='__due';topicSel.disabled=true;}
 })();
 """
 
@@ -626,7 +685,7 @@ def quickfire_page():
                 '<label>Paper <select id="qfPaper"><option value="any">Both papers</option><option value="1">Paper 1</option><option value="2">Paper 2</option></select></label>'
                 '<label>Topic <select id="qfTopic"><option value="any">All topics</option></select></label>'
                 '<label>Marks <select id="qfMarks"><option value="any">Any</option><option value="5">5</option><option value="10">10</option><option value="15">15</option></select></label>'
-                '<label><input type="checkbox" id="qfSkip" checked> Skip questions marked secure</label>'
+                '<label><input type="checkbox" id="qfSkip" checked> Skip secure questions until they are due for review</label><label class="modew"><input type="checkbox" class="modeW"> Write-first mode</label>'
                 '<button type="button" class="btn" id="qfNext">Next question &rarr;</button><span class="kbd" id="qfStat"></span></div>'
                 '<p class="kbd">Shortcuts: <kbd>N</kbd> or <kbd>space</kbd> next question &middot; <kbd>M</kbd> toggle mark scheme &middot; <kbd>1</kbd> needs work &middot; <kbd>2</kbd> secure</p>'
                 '<div id="qfHost"><p class="empty">Press <b>Next question</b> to begin.</p></div></div></main>')
@@ -730,6 +789,9 @@ const saved=LS('envsci.examdate');if(saved)dIn.value=saved;
 function cd(){if(!dIn.value){out.textContent='Set your first exam date to see the countdown.';return;}const d=Math.ceil((new Date(dIn.value)-new Date())/86400000);
   out.innerHTML=d<0?'Exam date has passed.':'<span class="big">'+d+'</span> day'+(d===1?'':'s')+' to go'+(d>0?' &middot; about '+Math.max(1,Math.round(d/7))+' week'+(Math.round(d/7)===1?'':'s'):'');}
 dIn.onchange=()=>{SV('envsci.examdate',dIn.value);cd();};cd();
+/* due for review */
+const allIds=subs.flatMap(s=>s.ids);const due=allIds.filter(i=>prog[i]===2&&window.ES.isDue(i)).length,work=allIds.filter(i=>prog[i]===1).length;
+document.getElementById('due').innerHTML=(due+work)?'<span class="big">'+(due+work)+'</span> to review today: '+work+' marked needs work, '+due+' secure questions due for a spaced review. <a class="btn" href="quickfire.html?due=1">Review now</a>':'<span class="big">0</span> due today - nothing is waiting for review.';
 /* weakest subtopics */
 const rows=subs.map(s=>{const ok=s.ids.filter(i=>prog[i]===2).length,wk=s.ids.filter(i=>prog[i]===1).length;return {...s,ok,wk,pct:s.ids.length?ok/s.ids.length:0};});
 rows.sort((a,b)=>a.pct-b.pct||b.real-a.real);
@@ -758,8 +820,128 @@ def planner_page(sets_by_sub, counts_real):
     body = [hero("Revision planner", "Your weakest subtopics first, how often each has come up in real AQA papers, your mock-paper scores and a countdown to the exam. Everything here is built from the progress you mark on the site.")]
     body.append('<main><div class="wrap plan"><div class="grid3">'
                 '<div class="card"><h3>Exam countdown</h3><p><label>First exam date <input type="date" id="examDate"></label></p><p id="countdown"></p></div>'
-                '<div class="card" style="grid-column:span 2"><h3>What to do next</h3><div id="sug"></div></div></div>')
+                '<div class="card"><h3>Spaced review</h3><p id="due"></p><p class="due">Secure questions come back after 1, 3, 7, 14 and 30 days; get them right each time and the gap grows.</p></div>'
+                '<div class="card"><h3>What to do next</h3><div id="sug"></div></div></div>')
     body.append('<h2 class="sec">Subtopics, weakest first</h2><table class="list"><tr><th>Subtopic</th><th>Your progress</th><th>Times in real papers</th><th></th></tr><tbody id="weak"></tbody></table>')
     body.append('<h2 class="sec">Mock-paper scores</h2><div id="mocks"></div>')
     body.append("</div></main>")
     return page("Revision planner", "\n".join(body), active="planner.html", extra_js="<script>window.PSUBS=" + json.dumps(subs) + ";" + PLANNER_JS + "</script>")
+
+
+# ---------- practice hub ----------
+def practice_page(counts):
+    modes = [
+        ("&#9889;", "Quick-fire", "quickfire.html", "One random question at a time from the whole bank, filtered by paper, topic or marks. Questions you mark <i>needs work</i> come up three times as often, and secure questions return after 1, 3, 7, 14 and 30 days."),
+        ("&#9998;", "Write-first mode", "quickfire.html", "Tick <b>Write-first mode</b> on any question page (quick-fire, subtopic pages, mock papers). Answer boxes appear under every part and the mark scheme stays hidden until you reveal it; then you self-mark against the point-by-point scheme and your status is set automatically."),
+        ("&#128203;", "Definitions drill", "terms.html", f"Question 1 of every real paper is a 5-mark table of terms and definitions. Flashcards and a timed table test on {counts['terms']} key terms from every subtopic, with spaced repetition."),
+        ("&#128290;", "Calculations", "calc.html", "Fresh numbers every time: percentage change, standard form, Lincoln index, energy ratios, Simpson's index, residence time, USLE, half-lives, decibels and more, each with worked solutions."),
+        ("&#128214;", "Model answers", "essays.html", "Every 9-mark question has a Level 3 model answer beside a weaker one, with notes on what makes the difference - open <i>Model answers</i> inside its mark scheme. Two full Level 5 essays are in the essay bank."),
+        ("&#127891;", "Real questions by topic", "pastq.html", "All 132 questions from the published AQA papers indexed by subtopic, each linking to the official paper and mark scheme."),
+        ("&#9203;", "Timed mock papers", "papers.html", f"{counts['papers']} generated papers in exact AQA format with a 3-hour timer and a self-marking scorecard."),
+    ]
+    body = [hero("Practice modes", "Different ways to use the same question bank. Read-and-check is the default everywhere; the modes below are there when you want retrieval practice, drills or timed conditions.")]
+    body.append('<main><div class="wrap">' + "".join(f'<a class="modecard" href="{h}" style="text-decoration:none;color:inherit"><div class="mi">{i}</div><div><h3>{t}</h3><p>{d}</p></div></a>' for i, t, h, d in modes) + "</div></main>")
+    return page("Practice modes", "\n".join(body), active="practice.html")
+
+
+# ---------- definitions drill ----------
+TERMS_JS = r"""
+(function(){
+const T=window.TERMS,LS=window.ES.LS,SV=window.ES.SV,$=s=>document.querySelector(s);
+const paperSel=$('#tPaper'),topicSel=$('#tTopic'),host=$('#tHost'),stat=$('#tStat');
+window.QTOPICS.forEach(t=>{const o=document.createElement('option');o.value=t.slug;o.textContent='Paper '+t.paper+' \u00b7 '+t.name;topicSel.appendChild(o);});
+const params=new URLSearchParams(location.search);if(params.get('topic'))topicSel.value=params.get('topic');
+let box=LS('envsci.terms')||{};   /* key -> {lvl 0-4, due} */
+const IVL=[0,1,3,7,14];
+function pool(){return T.filter(t=>(paperSel.value==='any'||t.papers.includes(+paperSel.value))&&(topicSel.value==='any'||t.tslug===topicSel.value));}
+function dueList(p){const now=Date.now();return p.filter(t=>{const b=box[t.key];return !b||b.due<=now;});}
+function norm(s){return s.toLowerCase().replace(/\(.*?\)/g,'').replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim();}
+function match(typed,term){const a=norm(typed),b=norm(term);if(!a)return false;if(a===b)return true;const alts=term.split('/').map(norm);if(alts.some(x=>x&&x===a))return true;
+  const kw=b.split(' ').filter(w=>w.length>3);return kw.length>0&&kw.every(w=>a.includes(w.slice(0,Math.max(4,w.length-2))));}
+let mode='cards',cur=null,n=0,right=0,test=[];
+function grade(t,ok){const b=box[t.key]||{lvl:0};b.lvl=ok?Math.min(4,b.lvl+1):0;b.due=Date.now()+IVL[b.lvl]*86400000;box[t.key]=b;SV('envsci.terms',box);}
+function card(){const p=pool();let c=dueList(p);if(!c.length)c=p;if(!c.length){host.innerHTML='<p class="empty">No terms match.</p>';return;}
+  cur=c[Math.floor(Math.random()*c.length)];n++;
+  host.innerHTML='<div class="drill"><div class="src">'+cur.subname+' \u00b7 Paper '+cur.papers.join(' & ')+' \u00b7 Genn pp. '+cur.pages+'</div><div class="term">'+cur.term+'</div><div class="def" id="def" hidden>'+cur.def+'</div>'+
+    '<div class="btns"><button type="button" class="btn" id="show">Show definition</button><span id="grade" hidden><button type="button" class="btn ghost" id="again">Again</button> <button type="button" class="btn" id="got">Got it</button></span></div></div>';
+  $('#show').onclick=()=>{$('#def').hidden=false;$('#show').hidden=true;$('#grade').hidden=false;};
+  $('#again').onclick=()=>{grade(cur,false);card();};$('#got').onclick=()=>{grade(cur,true);right++;card();};
+  stat.textContent=n+' seen this session \u00b7 '+dueList(p).length+' due of '+p.length;}
+function table(){const p=pool();if(p.length<5){host.innerHTML='<p class="empty">Not enough terms in this filter.</p>';return;}
+  test=[...p].sort(()=>Math.random()-0.5).slice(0,5);
+  host.innerHTML='<div class="drill"><p><b>Complete the table</b> - write the term that matches each definition (5 marks, as in Question 1 of the real papers).</p><table class="list">'+
+    test.map((t,i)=>'<tr><td style="width:60%">'+t.def+'</td><td><input class="ans" data-i="'+i+'" placeholder="Term"></td></tr>').join('')+'</table><div class="btns"><button type="button" class="btn" id="check">Check answers</button></div><div id="tres"></div></div>';
+  $('#check').onclick=()=>{let sc=0;host.querySelectorAll('input.ans').forEach(inp=>{const t=test[+inp.dataset.i];const ok=match(inp.value,t.term);if(ok)sc++;grade(t,ok);inp.style.borderColor=ok?'var(--ok)':'var(--bad)';inp.insertAdjacentHTML('afterend','<div class="fb '+(ok?'ok':'bad')+'">'+(ok?'\u2713 ':'\u2717 ')+t.term+'</div>');});
+    $('#tres').innerHTML='<p class="fb '+(sc>=4?'ok':'bad')+'">'+sc+' / 5</p><button type="button" class="btn" id="again2">Another table</button>';$('#again2').onclick=table;$('#check').disabled=true;};}
+document.querySelectorAll('[data-tmode]').forEach(b=>b.onclick=()=>{mode=b.dataset.tmode;document.querySelectorAll('[data-tmode]').forEach(x=>x.classList.toggle('on',x===b));mode==='cards'?card():table();});
+[paperSel,topicSel].forEach(e=>e.onchange=()=>{mode==='cards'?card():table();});
+document.addEventListener('keydown',e=>{if(mode!=='cards'||e.target.matches('input,textarea'))return;if(e.key===' '){e.preventDefault();const s=$('#show');if(s&&!s.hidden)s.click();}if(e.key==='1'){const a=$('#again');if(a&&!$('#grade').hidden)a.click();}if(e.key==='2'){const g=$('#got');if(g&&!$('#grade').hidden)g.click();}});
+card();
+})();
+"""
+
+
+def terms_page():
+    idx = subtopic_index()
+    rows = []
+    for slug, items in TERMS.items():
+        info = idx[slug]
+        for term, d in items:
+            rows.append({"key": f"{slug}|{term}", "term": term, "def": d, "sub": slug, "subname": info["name"], "tslug": info["topic_slug"], "papers": info["papers"], "pages": info["pages"]})
+    topics = [{"slug": t["slug"], "name": t["name"], "paper": pno} for pno, paper in PAPERS.items() for t in paper["topics"]]
+    body = [hero("Definitions drill", f"{len(rows)} key terms from every subtopic, defined from the textbook. Flashcards use spaced repetition (a term you get right comes back after 1, 3, 7 then 14 days); the table test copies Question 1 of the real papers.")]
+    body.append('<main><div class="wrap"><div class="qf-controls">'
+                '<button type="button" class="chip on" data-tmode="cards">Flashcards</button><button type="button" class="chip" data-tmode="table">Table test (5 marks)</button>'
+                '<label>Paper <select id="tPaper"><option value="any">Both</option><option value="1">Paper 1</option><option value="2">Paper 2</option></select></label>'
+                '<label>Topic <select id="tTopic"><option value="any">All topics</option></select></label><span class="kbd" id="tStat"></span></div>'
+                '<p class="kbd">Flashcards: <kbd>space</kbd> show definition &middot; <kbd>1</kbd> again &middot; <kbd>2</kbd> got it</p><div id="tHost"></div></div></main>')
+    return page("Definitions drill", "\n".join(body), active="practice.html",
+                extra_js="<script>window.TERMS=" + json.dumps(rows, ensure_ascii=False) + ";window.QTOPICS=" + json.dumps(topics) + ";" + TERMS_JS + "</script>")
+
+
+def terms_count():
+    return sum(len(v) for v in TERMS.values())
+
+
+# ---------- calculations drill ----------
+CALC_JS = r"""
+(function(){
+const $=s=>document.querySelector(s);const R=(a,b)=>a+Math.random()*(b-a);const ri=(a,b)=>Math.floor(R(a,b+1));const r1=x=>Math.round(x*10)/10,r2=x=>Math.round(x*100)/100,sf3=x=>+x.toPrecision(3);
+const G={
+ pct:{name:'Percentage change',pages:'89-103',make(){const a=ri(280,330),b=a+ri(60,140);return {q:'Atmospheric CO<sub>2</sub> concentration rose from '+a+' ppm to '+b+' ppm. Calculate the percentage increase. Give your answer to one decimal place.',unit:'%',ans:r1((b-a)/a*100),tol:0.15,work:'Increase = '+b+' - '+a+' = '+(b-a)+' ppm\n% increase = '+(b-a)+' / '+a+' x 100 = '+r1((b-a)/a*100)+'%'};}},
+ pctdec:{name:'Percentage decrease',pages:'275-277',make(){const a=ri(12,20),b=r1(R(1.5,4));return {q:'Mean blood lead concentration in children fell from '+a+' &micro;g dl<sup>-1</sup> to '+b+' &micro;g dl<sup>-1</sup> after lead was removed from petrol. Calculate the percentage decrease.',unit:'%',ans:r1((a-b)/a*100),tol:0.15,work:'Decrease = '+a+' - '+b+' = '+r1(a-b)+'\n% decrease = '+r1(a-b)+' / '+a+' x 100 = '+r1((a-b)/a*100)+'%'};}},
+ sf:{name:'Standard form',pages:'148-151',make(){const gt=ri(600,900);return {q:'The atmosphere holds about '+gt+' Gt (gigatonnes) of carbon. 1 Gt = 10<sup>9</sup> tonnes. Give this mass in tonnes in standard form (enter as e.g. 7.5e11).',unit:'tonnes',ans:gt*1e9,tol:0.005,work:gt+' x 10^9 = '+(gt/100).toFixed(2)+' x 10^11 tonnes = '+sf3(gt*1e9).toExponential(2)};}},
+ lincoln:{name:'Lincoln index',pages:'401-402',make(){const m=ri(20,60),c=ri(25,70),r=ri(4,Math.min(m,c)-2);return {q:'In a mark-release-recapture study '+m+' woodlice were caught, marked and released. Later '+c+' were caught, of which '+r+' were marked. Estimate the population size.',unit:'',ans:Math.round(m*c/r),tol:0.02,work:'N = (M x C) / R = ('+m+' x '+c+') / '+r+' = '+r1(m*c/r)+' \u2248 '+Math.round(m*c/r)};}},
+ eratio:{name:'Energy ratio',pages:'325-326',make(){const inp=ri(8,40),out=r1(inp*R(0.2,4));return {q:'A farming system uses '+inp+' GJ ha<sup>-1</sup> of energy inputs and produces '+out+' GJ ha<sup>-1</sup> of food energy. Calculate the energy ratio to two decimal places.',unit:'',ans:r2(out/inp),tol:0.02,work:'Energy ratio = output / input = '+out+' / '+inp+' = '+r2(out/inp)+(out/inp<1?'\nLess than 1: more energy is put in than comes out (typical of intensive livestock systems)':'')};}},
+ fcr:{name:'Food conversion ratio',pages:'326',make(){const feed=ri(40,200),gain=r1(feed/R(1.2,8));return {q:'Farmed fish were fed '+feed+' kg of feed and gained '+gain+' kg in mass. Calculate the food conversion ratio to one decimal place.',unit:'',ans:r1(feed/gain),tol:0.03,work:'FCR = feed mass / mass gained = '+feed+' / '+gain+' = '+r1(feed/gain)+'\n(the lower the FCR, the better the conversion)'};}},
+ simpson:{name:"Simpson's index of diversity",pages:'402',make(){const ns=[ri(20,50),ri(10,40),ri(5,30),ri(2,20)];const N=ns.reduce((a,b)=>a+b,0);const sum=ns.reduce((a,n)=>a+n*(n-1),0);const D=N*(N-1)/sum;return {q:'A quadrat survey found four species with '+ns.join(', ')+' individuals (total N = '+N+'). Using D = N(N-1) / &Sigma;n(n-1), calculate Simpson\'s index of diversity to two decimal places.',unit:'',ans:r2(D),tol:0.02,work:'\u03a3n(n-1) = '+ns.map(n=>n+'x'+(n-1)).join(' + ')+' = '+sum+'\nN(N-1) = '+N+' x '+(N-1)+' = '+N*(N-1)+'\nD = '+N*(N-1)+' / '+sum+' = '+r2(D)};}},
+ res:{name:'Residence time',pages:'116-117',make(){const vol=ri(8,20)*1000,flow=ri(300,600);return {q:'A lake holds '+vol+' x 10<sup>6</sup> m<sup>3</sup> of water and the river flowing out of it carries '+flow+' x 10<sup>6</sup> m<sup>3</sup> per year. Calculate the mean residence time of water in the lake to one decimal place.',unit:'years',ans:r1(vol/flow),tol:0.03,work:'Residence time = volume / flow rate = '+vol+' / '+flow+' = '+r1(vol/flow)+' years'};}},
+ usle:{name:'Universal Soil Loss Equation',pages:'162-164',make(){const Rf=ri(80,300),K=r2(R(0.1,0.5)),LS_=r1(R(0.5,3)),C=r2(R(0.05,0.6)),P=[1,0.5,0.25][ri(0,2)];const A=Rf*K*LS_*C*P;return {q:'Use the USLE, A = R x K x LS x C x P, with R = '+Rf+', K = '+K+', LS = '+LS_+', C = '+C+' and P = '+P+'. Calculate the predicted soil loss A to one decimal place.',unit:'t ha<sup>-1</sup> yr<sup>-1</sup>',ans:r1(A),tol:0.03,work:'A = '+Rf+' x '+K+' x '+LS_+' x '+C+' x '+P+' = '+r1(A)+' t/ha/yr'+(P<1?'\n(P below 1 shows that contour ploughing / terracing reduces the loss)':'')};}},
+ edens:{name:'Energy density',pages:'175-177',make(){const mass=ri(2,12),e=ri(60,500);return {q:'A '+mass+' kg sample of biomass fuel releases '+e+' MJ when burnt. Calculate its energy density in MJ kg<sup>-1</sup> to one decimal place.',unit:'MJ kg<sup>-1</sup>',ans:r1(e/mass),tol:0.03,work:'Energy density = energy / mass = '+e+' / '+mass+' = '+r1(e/mass)+' MJ/kg'};}},
+ half:{name:'Radioactive half-life',pages:'296-299',make(){const n=ri(2,5),hl=[8,30,5.3,28][ri(0,3)],start=ri(200,900);return {q:'A sample contains '+start+' Bq of an isotope with a half-life of '+hl+' years. What activity remains after '+(n*hl)+' years?',unit:'Bq',ans:r1(start/Math.pow(2,n)),tol:0.03,work:(n*hl)+' / '+hl+' = '+n+' half-lives\nRemaining = '+start+' / 2^'+n+' = '+start+' / '+Math.pow(2,n)+' = '+r1(start/Math.pow(2,n))+' Bq'};}},
+ db:{name:'Decibel scale',pages:'286-288',make(){const d=[10,20,30][ri(0,2)];const a=ri(50,80);return {q:'Road noise at a house is '+(a+d)+' dB. An acoustic barrier reduces it to '+a+' dB. By what factor has the sound intensity been reduced? (Every 10 dB is a factor of 10.)',unit:'times',ans:Math.pow(10,d/10),tol:0.01,work:'Reduction = '+d+' dB = '+(d/10)+' x 10 dB\nIntensity factor = 10^'+(d/10)+' = '+Math.pow(10,d/10)};}},
+ eff:{name:'Efficiency',pages:'178-179',make(){const inp=ri(200,900),out=Math.round(inp*R(0.3,0.6));return {q:'A power station uses fuel with an energy content of '+inp+' MJ to generate '+out+' MJ of electricity. Calculate its efficiency to one decimal place.',unit:'%',ans:r1(out/inp*100),tol:0.15,work:'Efficiency = useful output / input x 100 = '+out+' / '+inp+' x 100 = '+r1(out/inp*100)+'%'};}},
+ ap:{name:'Area : perimeter ratio',pages:'41-42',make(){const w=ri(40,120),h=ri(40,120);const ap=(w*h)/(2*(w+h));return {q:'A rectangular nature reserve is '+w+' m by '+h+' m. Calculate its area : perimeter ratio to one decimal place (as a value : 1).',unit:': 1',ans:r1(ap),tol:0.03,work:'Area = '+w+' x '+h+' = '+w*h+' m\u00b2\nPerimeter = 2 x ('+w+' + '+h+') = '+2*(w+h)+' m\nRatio = '+w*h+' / '+2*(w+h)+' = '+r1(ap)+' : 1\n(a larger ratio means less edge effect)'};}},
+ growth:{name:'Population growth rate',pages:'78-80',make(){const b=ri(18,45),d=ri(5,20),pop=ri(2,9)*1000;return {q:'A population of '+pop+' has a birth rate of '+b+' per 1000 per year and a death rate of '+d+' per 1000 per year. Calculate the population after one year.',unit:'',ans:Math.round(pop*(1+(b-d)/1000)),tol:0.005,work:'Growth rate = '+b+' - '+d+' = '+(b-d)+' per 1000 = '+((b-d)/10)+'%\nIncrease = '+pop+' x '+(b-d)+'/1000 = '+pop*(b-d)/1000+'\nPopulation = '+Math.round(pop*(1+(b-d)/1000))};}},
+ mean:{name:'Mean and standard deviation check',pages:'420',make(){const v=[ri(10,30),ri(10,30),ri(10,30),ri(10,30),ri(10,30)];const m=v.reduce((a,b)=>a+b,0)/5;return {q:'Five quadrats gave counts of '+v.join(', ')+'. Calculate the mean to one decimal place.',unit:'',ans:r1(m),tol:0.03,work:'Mean = ('+v.join(' + ')+') / 5 = '+v.reduce((a,b)=>a+b,0)+' / 5 = '+r1(m)};}},
+};
+const keys=Object.keys(G);const sel=$('#cType');keys.forEach(k=>{const o=document.createElement('option');o.value=k;o.textContent=G[k].name;sel.appendChild(o);});
+const host=$('#cHost'),stat=$('#cStat');let cur=null,n=0,right=0,answered=0;let hist=window.ES.LS('envsci.calc')||{};
+function next(){const k=sel.value==='any'?keys[Math.floor(Math.random()*keys.length)]:sel.value;cur=G[k].make();cur.k=k;n++;
+  host.innerHTML='<div class="drill"><div class="src">'+G[k].name+' \u00b7 Genn pp. '+G[k].pages+'</div><p class="def">'+cur.q+'</p><div class="btns"><input class="ans" id="cAns" placeholder="Your answer" autocomplete="off"> <span>'+cur.unit+'</span></div><div class="btns"><button type="button" class="btn" id="cCheck">Check</button><button type="button" class="btn ghost" id="cShow">Show working</button><button type="button" class="btn ghost" id="cNext">Next &rarr;</button></div><div id="cFb"></div></div>';
+  $('#cAns').focus();$('#cCheck').onclick=check;$('#cShow').onclick=()=>show(false);$('#cNext').onclick=next;$('#cAns').addEventListener('keydown',e=>{if(e.key==='Enter')check();});
+  stat.textContent=right+' / '+answered+' correct this session';}
+function show(ok){const fb=$('#cFb');fb.innerHTML=(ok===true?'<div class="fb ok">\u2713 Correct: '+cur.ans+' '+cur.unit+'</div>':ok===false?'<div class="fb bad">\u2717 Answer: '+cur.ans+' '+cur.unit+'</div>':'')+'<div class="work">'+cur.work+'</div>';}
+function check(){const v=parseFloat(($('#cAns').value||'').replace(/,/g,'').replace(/x ?10\^/i,'e'));if(isNaN(v)){$('#cFb').innerHTML='<div class="fb bad">Enter a number</div>';return;}
+  const ok=Math.abs(v-cur.ans)<=Math.max(Math.abs(cur.ans)*cur.tol,0.051);if(ok)right++;answered++;const h=hist[cur.k]||{n:0,ok:0};h.n++;if(ok)h.ok++;hist[cur.k]=h;window.ES.SV('envsci.calc',hist);show(ok);$('#cCheck').disabled=true;stat.textContent=right+' / '+answered+' correct this session';
+  $('#cHist').innerHTML=keys.filter(k=>hist[k]).map(k=>G[k].name+': '+hist[k].ok+'/'+hist[k].n).join(' \u00b7 ');}
+sel.onchange=next;$('#cHist').innerHTML=keys.filter(k=>hist[k]).map(k=>G[k].name+': '+hist[k].ok+'/'+hist[k].n).join(' \u00b7 ');next();
+})();
+"""
+
+
+def calc_page():
+    body = [hero("Calculations", "The real papers are heavier on maths than most students expect. Every question here is generated with fresh numbers, so you can practise the method until the working is automatic. Answers are checked with a small tolerance; each shows the worked solution and the textbook pages the method comes from.")]
+    body.append('<main><div class="wrap"><div class="qf-controls"><label>Type <select id="cType"><option value="any">Random mix</option></select></label><span class="kbd" id="cStat"></span></div>'
+                '<p class="kbd">Type the answer and press <kbd>Enter</kbd>. Standard form can be entered as 7.5e11.</p><div id="cHost"></div><p class="kbd" id="cHist"></p></div></main>')
+    return page("Calculations", "\n".join(body), active="practice.html", extra_js=f"<script>{CALC_JS}</script>")

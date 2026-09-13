@@ -15,6 +15,8 @@ specification reference. Printed page = PDF page − 2 in the compressed PDF.
 ```
 build.py            rebuilds everything (site/ is output — never edit it by hand)
 bank/official_index.py  which subtopic each question in the real AQA papers covers (edit when a new series is added)
+bank/exemplars.py   model answers (Level 3 vs weaker) for the 9-mark questions and two essays
+bank/terms.py       key terms and definitions per subtopic for the definitions drill
 bank/topics.py      the topic tree: Paper 1 / Paper 2 → topic → subtopic (slug, spec ref, book pages)
 bank/p1_*.py        Paper 1 question bank (physical environment, energy, pollution)
 bank/p2_*.py        Paper 2 question bank (living environment, biological resources, sustainability)
@@ -100,6 +102,13 @@ They are grouped by series and paper on `site/official.html`.
 - **Explicit mark schemes** - every marking point shows the mark it earns and a rule line ("Any 3 from",
   "2 marks for each point", calculation rules); levels-of-response questions show the full level
   descriptor table (`gen/marking.py`, shared by the PDFs and the site).
+- **Practice modes** (`practice.html` hub): **Write-first mode** (opt-in tick box on any question page -
+  answer boxes appear, the mark scheme stays hidden until revealed, then you self-mark and your status is set);
+  **Definitions drill** (`terms.html`, flashcards with spaced repetition and a Question-1-style table test,
+  from `bank/terms.py`); **Calculations** (`calc.html`, generated questions with fresh numbers and worked
+  solutions); **Model answers** for every 9-mark question and two essays (`bank/exemplars.py`, shown inside
+  mark schemes online and in the MS PDFs); **Spaced repetition** - secure questions return in quick-fire after
+  1, 3, 7, 14, 30 days and the planner shows what is due (`quickfire.html?due=1`).
 - Quick-fire weights questions marked *needs work* three times more heavily; `quickfire.html?sub=<slug>`
   practises one subtopic. Copy-link button on every question; jump list on mock papers; back-to-top.
 

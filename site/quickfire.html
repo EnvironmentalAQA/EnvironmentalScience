@@ -101,6 +101,24 @@ ul.ind{margin:4px 0 8px 18px}
 .plan input[type=date]{font:inherit;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}.plan .big{font-family:Fraunces,serif;font-size:2rem;color:var(--moss)}
 table.list td .bar{height:8px;background:var(--sand-dark);border-radius:999px;overflow:hidden;display:flex;width:140px}table.list td .bar .ok{background:var(--ok)}table.list td .bar .wk{background:var(--warn)}
 @media(max-width:720px){header.top{position:static}header.top nav a{margin-left:12px;font-size:.88rem}.filterbar,.tools{top:0}.hero h1{font-size:1.8rem}.hero{padding:34px 0 28px}.sub-item .t{flex-basis:100%}}
+/* write-first mode, exemplars, drills */
+.modew{font-size:.85rem;color:var(--stone);display:inline-flex;align-items:center;gap:5px;cursor:pointer;border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--sand)}
+body.wmode .q:not(.revealed) details.ms{display:none}
+.wa{display:block;width:100%;min-height:70px;font:inherit;font-size:.95rem;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink);margin:6px 0 2px;resize:vertical}
+.wctl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:10px 0 4px}.wctl .hint{font-size:.82rem;color:var(--stone)}
+.sm{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin:8px 0;padding:8px 12px;border:1px dashed var(--ms-line);border-radius:8px;font-size:.88rem}.sm input{width:60px;font:inherit;padding:3px 6px;border:1px solid var(--line);border-radius:6px;background:var(--input);color:var(--ink)}
+.sm .res{font-weight:700}.sm .res.ok{color:var(--ok)}.sm .res.wk{color:var(--warn)}
+details.ex{margin:10px 0 4px;background:var(--card);border:1px solid var(--ms-line);border-radius:8px;padding:8px 12px}details.ex summary{cursor:pointer;font-weight:700;color:var(--earth)}
+.exwrap{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px}@media(max-width:860px){.exwrap{grid-template-columns:1fr}}
+.exa{border-radius:8px;padding:10px 14px;font-size:.93rem;line-height:1.5}.exa p{margin:0 0 8px}.exa.top{background:var(--leaf-light);border-left:4px solid var(--ok)}.exa.low{background:var(--note-bg);border-left:4px solid var(--warn)}
+.exh{font-weight:700;font-size:.85rem;margin-bottom:6px;color:var(--head)}.exn{margin-top:10px;font-size:.9rem}.exn ul{margin:4px 0 0 18px}
+.drill{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 26px;margin:14px 0;min-height:160px}
+.drill .term{font-family:Fraunces,serif;font-size:1.6rem;color:var(--head);margin:0 0 6px}.drill .def{font-size:1.05rem;margin:8px 0}.drill .src{font-size:.82rem;color:var(--stone)}
+.drill .btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.drill input.ans{font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink);width:100%;max-width:520px}
+.drill .fb{margin-top:8px;font-weight:700}.drill .fb.ok{color:var(--ok)}.drill .fb.bad{color:var(--bad)}
+.drill .work{white-space:pre-line;background:var(--sand-dark);border-radius:8px;padding:10px 14px;font-size:.92rem;margin-top:8px}
+.modecard{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:14px}.modecard .mi{font-size:1.6rem;flex:0 0 40px;text-align:center}.modecard h3{margin:0 0 4px;color:var(--head)}.modecard p{margin:0 0 8px;color:var(--stone)}
+.due{font-size:.85rem;color:var(--stone)}
 /* print */
 @media print{header.top,footer,.tools,.filterbar,.st,.pill,.aw,.hero .crumbs,.prog,.noprint{display:none!important}
 body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;color:#000;padding:10px 0}.hero p,.hero h1{color:#000}.hero:before{display:none}
@@ -108,10 +126,10 @@ body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;c
 svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 </style>
 <script>try{if(localStorage.getItem('envsci.theme')==='"dark"')document.documentElement.dataset.theme='dark';}catch(e){}</script></head><body >
-<header class="top"><div class="wrap"><a class="brand" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb069" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-8 0-14 4-14 12 0 1.5.3 3 1 4 2-6 6-9 11-11-4 3-7 6-8 12 8 0 12-6 10-17z"/></svg><span>AQA Environmental Science</span></a><nav><a href="index.html" class="">Topics</a><a href="papers.html" class="">Mock papers</a><a href="official.html" class="">Past papers</a><a href="essays.html" class="">Essay bank</a><a href="pastq.html" class="">Real Qs by topic</a><a href="quickfire.html" class="on">Quick-fire</a><a href="planner.html" class="">Planner</a><a href="search.html" class="">Search</a><button class="icon-btn" id="themeBtn" type="button" title="Toggle dark mode">&#9790; Dark</button></nav></div></header>
+<header class="top"><div class="wrap"><a class="brand" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb069" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-8 0-14 4-14 12 0 1.5.3 3 1 4 2-6 6-9 11-11-4 3-7 6-8 12 8 0 12-6 10-17z"/></svg><span>AQA Environmental Science</span></a><nav><a href="index.html" class="">Topics</a><a href="papers.html" class="">Mock papers</a><a href="official.html" class="">Past papers</a><a href="practice.html" class="">Practice modes</a><a href="planner.html" class="">Planner</a><a href="search.html" class="">Search</a><button class="icon-btn" id="themeBtn" type="button" title="Toggle dark mode">&#9790; Dark</button></nav></div></header>
 <section class="hero "><div class="wrap"><h1>Quick-fire practice</h1><p>One random question at a time from the whole bank. Filter by paper, topic or mark size, reveal the mark scheme, then mark yourself <b>Needs work</b> or <b>Secure</b> - questions you have marked secure can be skipped so you spend time where it counts.</p></div></section>
-<main><div class="wrap"><div class="qf-controls"><label>Paper <select id="qfPaper"><option value="any">Both papers</option><option value="1">Paper 1</option><option value="2">Paper 2</option></select></label><label>Topic <select id="qfTopic"><option value="any">All topics</option></select></label><label>Marks <select id="qfMarks"><option value="any">Any</option><option value="5">5</option><option value="10">10</option><option value="15">15</option></select></label><label><input type="checkbox" id="qfSkip" checked> Skip questions marked secure</label><button type="button" class="btn" id="qfNext">Next question &rarr;</button><span class="kbd" id="qfStat"></span></div><p class="kbd">Shortcuts: <kbd>N</kbd> or <kbd>space</kbd> next question &middot; <kbd>M</kbd> toggle mark scheme &middot; <kbd>1</kbd> needs work &middot; <kbd>2</kbd> secure</p><div id="qfHost"><p class="empty">Press <b>Next question</b> to begin.</p></div></div></main>
-<footer><div class="wrap">Original practice questions and mark schemes written to the AQA A-level Environmental Science (7447) specification. Every question cites the printed page numbers of R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018). AQA past papers are &copy; AQA. Progress, scores and timers are saved only in this browser. &nbsp;&middot;&nbsp; <a href="index.html">Topics</a> &middot; <a href="papers.html">Mock papers</a> &middot; <a href="official.html">Past papers</a> &middot; <a href="essays.html">Essay bank</a> &middot; <a href="quickfire.html">Quick-fire</a> &middot; <a href="search.html">Search</a></div></footer>
+<main><div class="wrap"><div class="qf-controls"><label>Paper <select id="qfPaper"><option value="any">Both papers</option><option value="1">Paper 1</option><option value="2">Paper 2</option></select></label><label>Topic <select id="qfTopic"><option value="any">All topics</option></select></label><label>Marks <select id="qfMarks"><option value="any">Any</option><option value="5">5</option><option value="10">10</option><option value="15">15</option></select></label><label><input type="checkbox" id="qfSkip" checked> Skip secure questions until they are due for review</label><label class="modew"><input type="checkbox" class="modeW"> Write-first mode</label><button type="button" class="btn" id="qfNext">Next question &rarr;</button><span class="kbd" id="qfStat"></span></div><p class="kbd">Shortcuts: <kbd>N</kbd> or <kbd>space</kbd> next question &middot; <kbd>M</kbd> toggle mark scheme &middot; <kbd>1</kbd> needs work &middot; <kbd>2</kbd> secure</p><div id="qfHost"><p class="empty">Press <b>Next question</b> to begin.</p></div></div></main>
+<footer><div class="wrap">Original practice questions and mark schemes written to the AQA A-level Environmental Science (7447) specification. Every question cites the printed page numbers of R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018). AQA past papers are &copy; AQA. Progress, scores and timers are saved only in this browser. &nbsp;&middot;&nbsp; <a href="index.html">Topics</a> &middot; <a href="papers.html">Mock papers</a> &middot; <a href="official.html">Past papers</a> &middot; <a href="essays.html">Essay bank</a> &middot; <a href="practice.html">Practice modes</a> &middot; <a href="essays.html">Essay bank</a> &middot; <a href="pastq.html">Real questions by topic</a> &middot; <a href="planner.html">Planner</a> &middot; <a href="search.html">Search</a></div></footer>
 <script>
 (function(){
 const LS=k=>{try{return JSON.parse(localStorage.getItem(k)||'null')}catch(e){return null}};
@@ -134,9 +152,33 @@ function paint(){
   const ov=document.getElementById('overall');if(ov){const all=(ov.dataset.qids||'').split(',').filter(Boolean);const ok=all.filter(i=>prog[i]===2).length,wk=all.filter(i=>prog[i]===1).length;ov.querySelector('.stat').textContent=Math.round(100*ok/all.length)+'%';ov.querySelector('.detail').textContent=ok+' secure, '+wk+' to revisit, '+(all.length-ok-wk)+' not attempted of '+all.length+' questions.';}
 }
 window.ES.paint=paint;
-document.addEventListener('click',e=>{const b=e.target.closest('.st button[data-s]');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);paint();if(window.ES.onFilter)window.ES.onFilter();});
+document.addEventListener('click',e=>{const b=e.target.closest('.st button[data-s]');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);window.ES.schedule(q.dataset.qid,prog[q.dataset.qid]||0);paint();if(window.ES.onFilter)window.ES.onFilter();});
 const rs=document.getElementById('resetProg');if(rs)rs.onclick=()=>{if(confirm('Clear all saved progress on this browser?')){prog={};SV('envsci.progress',prog);paint();}};
 paint();
+/* ---- spaced repetition: secure questions come back after 1, 3, 7, 14, 30 days ---- */
+const IVL=[1,3,7,14,30];let srs=LS('envsci.srs')||{};
+window.ES.srs=()=>srs;window.ES.isDue=id=>{const r=srs[id];return !r||!r.due||r.due<=Date.now();};
+window.ES.schedule=(id,s)=>{if(s===2){const prev=srs[id]&&srs[id].ivl||0;const i=IVL[Math.min(IVL.indexOf(prev)+1,IVL.length-1)]||1;srs[id]={ivl:i,due:Date.now()+i*86400000};}else delete srs[id];SV('envsci.srs',srs);};
+/* ---- write-first mode (opt-in): answer boxes first, mark scheme after reveal ---- */
+let mode=LS('envsci.mode')||'read';
+function applyMode(){document.body.classList.toggle('wmode',mode==='write');document.querySelectorAll('input.modeW').forEach(c=>c.checked=mode==='write');
+  document.querySelectorAll('.q[data-qid]').forEach(setupW);}
+function setupW(q){if(mode!=='write'){q.querySelectorAll('.wbox').forEach(e=>e.remove());q.classList.remove('revealed');return;}
+  if(q.querySelector('.wbox'))return;const id=q.dataset.qid;const ans=LS('envsci.answers')||{};
+  q.querySelectorAll('.part').forEach((part,i)=>{const w=document.createElement('div');w.className='wbox';const ta=document.createElement('textarea');ta.className='wa';ta.placeholder='Write your answer here before revealing the mark scheme...';ta.value=ans[id+'.'+(i+1)]||'';
+    ta.addEventListener('input',()=>{const a=LS('envsci.answers')||{};a[id+'.'+(i+1)]=ta.value;SV('envsci.answers',a);});w.appendChild(ta);part.after(w);});
+  const ctl=document.createElement('div');ctl.className='wbox wctl';ctl.innerHTML='<button type="button" class="btn reveal">Reveal mark scheme &amp; self-mark</button><span class="hint">Your answers are saved in this browser.</span>';
+  const ms=q.querySelector('details.ms');if(ms)ms.before(ctl);
+  ctl.querySelector('.reveal').onclick=()=>{q.classList.add('revealed');if(ms)ms.open=true;ctl.remove();buildSelfMark(q);};}
+function buildSelfMark(q){if(q.querySelector('.sm'))return;const pm=(q.dataset.pm||'').split(',').map(Number);const max=pm.reduce((a,b)=>a+b,0);
+  const sm=document.createElement('div');sm.className='sm wbox';sm.innerHTML='<b>Self-mark:</b> '+pm.map((m,i)=>'<label>Part '+(i+1)+' <input type="number" min="0" max="'+m+'" data-i="'+i+'"> / '+m+'</label>').join('')+'<button type="button" class="chip save">Save &amp; set status</button><span class="res"></span>';
+  const ms=q.querySelector('details.ms');ms.appendChild(sm);
+  sm.querySelector('.save').onclick=()=>{let t=0;sm.querySelectorAll('input').forEach(i=>t+=Math.min(+i.max,+i.value||0));const pc=t/max;const s=pc>=0.7?2:1;
+    const id=q.dataset.qid;if(s===2)prog[id]=2;else prog[id]=1;SV('envsci.progress',prog);window.ES.schedule(id,s);paint();
+    const r=sm.querySelector('.res');r.textContent=t+'/'+max+' ('+Math.round(pc*100)+'%) - marked '+(s===2?'secure':'needs work');r.className='res '+(s===2?'ok':'wk');if(window.ES.onFilter)window.ES.onFilter();};}
+window.ES.applyMode=applyMode;
+document.addEventListener('change',e=>{if(!e.target.matches('input.modeW'))return;mode=e.target.checked?'write':'read';SV('envsci.mode',mode);applyMode();});
+applyMode();
 /* ---- filter bar ---- */
 const fb=document.querySelector('.filterbar');
 if(fb){
@@ -178,18 +220,21 @@ if(params.get('topic'))topicSel.value=params.get('topic');
 if(params.get('sub')){const o=document.createElement('option');o.value='__sub';o.textContent='Selected subtopic only';topicSel.appendChild(o);topicSel.value='__sub';topicSel.disabled=true;}
 let seen=[],cur=null,n=0;
 const subParam=params.get('sub');
-function pool(){const p=prog();return bank.filter(q=>(paperSel.value==='any'||q.papers.includes(+paperSel.value))&&(topicSel.value==='any'||topicSel.value==='__sub'||q.tslug===topicSel.value)&&(!subParam||q.sub===subParam)&&(marksSel.value==='any'||q.marks===+marksSel.value)&&!(skip.checked&&p[q.id]===2));}
+const dueOnly=params.get('due')==='1';
+function pool(){const p=prog();return bank.filter(q=>(paperSel.value==='any'||q.papers.includes(+paperSel.value))&&(topicSel.value==='any'||topicSel.value==='__sub'||topicSel.value==='__due'||q.tslug===topicSel.value)&&(!subParam||q.sub===subParam)&&(marksSel.value==='any'||q.marks===+marksSel.value)
+  &&!(skip.checked&&p[q.id]===2&&!window.ES.isDue(q.id))&&(!dueOnly||(p[q.id]===1||(p[q.id]===2&&window.ES.isDue(q.id)))));}
 function next(){const p=pool();if(!p.length){host.innerHTML='<p class="empty">No questions match these filters (or you have marked them all secure - untick "skip secure").</p>';return;}
   let c=p.filter(q=>!seen.includes(q.id));if(!c.length){seen=[];c=p;}
   /* questions marked "needs work" are three times as likely to come up as untried ones */
-  const pr=prog();const w=c.map(q=>pr[q.id]===1?3:1);let r=Math.random()*w.reduce((a,b)=>a+b,0);cur=c[c.length-1];for(let i=0;i<c.length;i++){r-=w[i];if(r<0){cur=c[i];break;}}
+  const pr=prog();const w=c.map(q=>pr[q.id]===1?3:(pr[q.id]===2?2:1));let r=Math.random()*w.reduce((a,b)=>a+b,0);cur=c[c.length-1];for(let i=0;i<c.length;i++){r-=w[i];if(r<0){cur=c[i];break;}}
   seen.push(cur.id);n++;
-  host.innerHTML=cur.html;window.ES.paint();stat.textContent='Question '+n+' this session \u00b7 '+p.length+' in the pool';window.scrollTo({top:host.offsetTop-90,behavior:'smooth'});}
+  host.innerHTML=cur.html;window.ES.paint();window.ES.applyMode();stat.textContent='Question '+n+' this session \u00b7 '+p.length+' in the pool';window.scrollTo({top:host.offsetTop-90,behavior:'smooth'});}
 $('#qfNext').onclick=next;[paperSel,topicSel,marksSel,skip].forEach(e=>e.onchange=()=>{seen=[];stat.textContent=pool().length+' questions in the pool';});
 document.addEventListener('keydown',e=>{if(e.target.matches('input,select,textarea'))return;if(e.key==='n'||e.key==='N'||e.key===' '){e.preventDefault();next();}
   if(e.key==='m'||e.key==='M'){const d=host.querySelector('details.ms');if(d)d.open=!d.open;}
   if(e.key==='1'||e.key==='2'){const b=host.querySelector('.st button[data-s="'+e.key+'"]');if(b)b.click();}});
 stat.textContent=pool().length+' questions in the pool';
-if(params.get('topic')||params.get('sub'))next();
+if(params.get('topic')||params.get('sub')||dueOnly)next();
+if(dueOnly){const o=document.createElement('option');o.value='__due';o.textContent='Due for review only';topicSel.appendChild(o);topicSel.value='__due';topicSel.disabled=true;}
 })();
 </script></body></html>

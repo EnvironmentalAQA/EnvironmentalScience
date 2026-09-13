@@ -171,6 +171,13 @@ def main():
         f.write(site.pastq_page())
     with open(os.path.join(SITE, "planner.html"), "w", encoding="utf-8") as f:
         f.write(site.planner_page(sets_by_sub, site.official_counts()))
+    counts["terms"] = site.terms_count()
+    with open(os.path.join(SITE, "practice.html"), "w", encoding="utf-8") as f:
+        f.write(site.practice_page(counts))
+    with open(os.path.join(SITE, "terms.html"), "w", encoding="utf-8") as f:
+        f.write(site.terms_page())
+    with open(os.path.join(SITE, "calc.html"), "w", encoding="utf-8") as f:
+        f.write(site.calc_page())
     print(f"Done -> {os.path.join(SITE, 'index.html')}")
 
 

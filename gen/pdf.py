@@ -14,6 +14,7 @@ from reportlab.graphics.widgets.markers import makeMarker
 import re, html
 
 from .marking import mark_points
+from bank.exemplars import EXEMPLARS, ESSAY_EXEMPLARS
 from .model import Q, P, Table as QTable, Chart, Essay
 from bank.topics import BOOK
 
@@ -522,6 +523,32 @@ LEVELS_25 = [
 ]
 
 
+def _html_paras(h, style):
+    """Very small HTML -> Paragraph list: split on <p>, keep inline tags reportlab understands."""
+    import re as _re
+    out = []
+    for part in _re.split(r"</?p>", h):
+        part = part.strip()
+        if part:
+            part = _re.sub(r"</?(?!b|i|sub|sup|br)\w+[^>]*>", "", part)
+            out.append(Paragraph(part, style))
+    return out
+
+
+def exemplar_flowables(ex):
+    body = [Paragraph(f"<b>Model answer - {esc(ex['top_level'])}</b>", MSCELL)]
+    body += _html_paras(ex["top"], MSCELL)
+    if ex.get("low"):
+        body.append(Spacer(1, 3))
+        body.append(Paragraph(f"<b>Weaker answer - {esc(ex['low_level'])}</b>", MSCELL))
+        body += _html_paras(ex["low"], MSCELL)
+    body.append(Spacer(1, 3))
+    body.append(Paragraph("<b>What makes the difference</b>", MSCELL))
+    for n in ex["notes"]:
+        body += _html_paras("<p>&bull; " + n + "</p>", MSCELL)
+    return body
+
+
 def ms_rows(qn, q: Q):
     rows = []
     single = len(q.parts) == 1 and not q.intro and not q.figures
@@ -542,6 +569,8 @@ def ms_rows(qn, q: Q):
             for m, lab in pts:
                 body.append(Paragraph("&bull; " + esc(m) + (f"  <b>({lab})</b>" if lab else ""), MSCELL))
         rows.append([Paragraph(label, CELLB), body, Paragraph(str(p.marks), CELL)])
+        if p.level and q.id in EXEMPLARS:
+            rows += exemplar_rows(EXEMPLARS[q.id])
     src = f"<b>Source:</b> {esc(BOOK)}, pp. {esc(q.pages)}; AQA spec {esc(q.spec)}."
     rows.append([Paragraph("", CELL), Paragraph(src, SMALL), Paragraph("", CELL)])
     return rows
@@ -559,7 +588,14 @@ def essay_ms_rows(qn, pair):
             body.append(Paragraph("&bull; " + esc(m), MSCELL))
         body.append(Paragraph(f"<b>Source:</b> {esc(BOOK)}, pp. {esc(e.pages)}; AQA spec {esc(e.spec)}.", SMALL))
         rows.append([Paragraph(f"{qn:02d}.{k}", CELLB), body, Paragraph("25", CELL)])
+        if e.id in ESSAY_EXEMPLARS:
+            rows += exemplar_rows(ESSAY_EXEMPLARS[e.id])
     return rows
+
+
+def exemplar_rows(ex):
+    """One table row per paragraph so the (long) model answer can break across pages."""
+    return [[Paragraph("", CELL), [f], Paragraph("", CELL)] for f in exemplar_flowables(ex) if not isinstance(f, Spacer)]
 
 
 def build_mark_scheme(path, code, title, questions, essays=None, subtitle=""):
