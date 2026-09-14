@@ -15,6 +15,8 @@ specification reference. Printed page = PDF page − 2 in the compressed PDF.
 ```
 build.py            rebuilds everything (site/ is output — never edit it by hand)
 bank/official_index.py  which subtopic each question in the real AQA papers covers (edit when a new series is added)
+bank/notes_*.py     revision notes per subtopic (sections under the book's headings with page refs, diagram specs, key numbers, exam pointers)
+gen/diagrams.py     SVG diagram generators (flow / cycle / layers / chart) used by the notes
 bank/exemplars.py   model answers (Level 3 vs weaker) for the 9-mark questions and two essays
 bank/terms.py       key terms and definitions per subtopic for the definitions drill
 bank/topics.py      the topic tree: Paper 1 / Paper 2 → topic → subtopic (slug, spec ref, book pages)
@@ -26,7 +28,7 @@ gen/pdf.py          AQA-style PDF renderer (reportlab; uses Arial from C:\Window
 gen/papers.py       assembles 10-question / 95-mark mock papers + essay pair (120 marks)
 gen/site.py         static HTML generator (PMT-style layout)
 official-papers/    drop real AQA PDFs here (keep AQA names e.g. AQA-74471-QP-JUN23.PDF)
-site/               OUTPUT: index.html, topic/<topic>.html (hub per spec topic), subtopic/<slug>.html, paper/*.html,
+site/               OUTPUT: index.html, notes.html + notes/<slug>.html, topic/<topic>.html (hub per spec topic), subtopic/<slug>.html, paper/*.html,
                     quickfire.html, search.html, qdata.js (question data for those two), pdf/topic/*, pdf/papers/*
 ```
 
@@ -102,6 +104,9 @@ They are grouped by series and paper on `site/official.html`.
 - **Explicit mark schemes** - every marking point shows the mark it earns and a rule line ("Any 3 from",
   "2 marks for each point", calculation rules); levels-of-response questions show the full level
   descriptor table (`gen/marking.py`, shared by the PDFs and the site).
+- **Revision notes** (`notes.html`, `notes/<slug>.html`) - full notes for all 43 subtopics, each organised under the
+  textbook's own headings with the printed pages to read alongside, redrawn diagrams, key numbers and a list of how
+  the subtopic has been examined (linked to the real papers). Written in `bank/notes_*.py`.
 - **Practice modes** (`practice.html` hub): **Write-first mode** (opt-in tick box on any question page -
   answer boxes appear, the mark scheme stays hidden until revealed, then you self-mark and your status is set);
   **Definitions drill** (`terms.html`, flashcards with spaced repetition and a Question-1-style table test,

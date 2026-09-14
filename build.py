@@ -87,7 +87,15 @@ def main():
     idx = subtopic_index()
     print(f"Bank: {len(questions)} questions, {len(essays)} essays")
 
-    for d in ("pdf/topic", "pdf/papers", "topic", "subtopic", "paper", "official"):
+    # revision notes from bank/notes_*.py
+    for m in pkgutil.iter_modules(bank.__path__):
+        if m.name.startswith("notes_"):
+            site.NOTES_ALL.update(importlib.import_module(f"bank.{m.name}").NOTES)
+    missing = [slug for slug in idx if slug not in site.NOTES_ALL]
+    if missing:
+        print("  ! no revision notes for:", ", ".join(missing))
+
+    for d in ("pdf/topic", "pdf/papers", "topic", "subtopic", "paper", "official", "notes"):
         os.makedirs(os.path.join(SITE, d), exist_ok=True)
 
     site.OFFICIAL_FILES = official_files()   # needed for the real-question links on subtopic pages
@@ -112,6 +120,9 @@ def main():
                                       subtitle=f"AQA spec {info['spec']}; {info['topic']}; textbook pp. {info['pages']}")
         with open(os.path.join(SITE, "subtopic", f"{slug}.html"), "w", encoding="utf-8") as f:
             f.write(site.subtopic_page(slug, sets))
+        if slug in site.NOTES_ALL:
+            with open(os.path.join(SITE, "notes", f"{slug}.html"), "w", encoding="utf-8") as f:
+                f.write(site.notes_page(slug, site.NOTES_ALL[slug], sets))
         print(f"  {slug}: {len(by_sub[slug])} questions in {len(sets)} set(s)")
 
     # ---- topic hub pages (one per spec topic) ----
@@ -178,6 +189,8 @@ def main():
         f.write(site.terms_page())
     with open(os.path.join(SITE, "calc.html"), "w", encoding="utf-8") as f:
         f.write(site.calc_page())
+    with open(os.path.join(SITE, "notes.html"), "w", encoding="utf-8") as f:
+        f.write(site.notes_index_page(sets_by_sub))
     print(f"Done -> {os.path.join(SITE, 'index.html')}")
 
 

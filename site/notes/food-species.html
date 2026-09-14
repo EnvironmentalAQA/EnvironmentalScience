@@ -1,0 +1,270 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Notes: Manipulation of food species &amp; agricultural energetics - AQA Environmental Science</title><style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap');
+:root{--forest:#1f3d2b;--moss:#3f6b4a;--leaf:#7fb069;--leaf-light:#e6f0dc;--sand:#f6f3ec;--sand-dark:#ece6d8;--earth:#8b5e3c;--stone:#5c6660;--ink:#22302a;--line:#dcd6c8;
+--p1:#2f5f73;--p1-light:#e2edf2;--p2:#3f6b4a;--p2-light:#e6f0dc;--card:#ffffff;--head:#1f3d2b;--ms-bg:#e6f0dc;--ms-line:#cfe0bf;--note-bg:#fff8e6;--note-line:#ecd9a3;--input:#fff;
+--ok:#3f8f5a;--warn:#d9a441;--bad:#c0554a}
+[data-theme=dark]{--forest:#0f1a13;--moss:#8fc17f;--leaf:#7fb069;--leaf-light:#22301f;--sand:#131a15;--sand-dark:#1c2620;--earth:#d6a878;--stone:#a6b0a8;--ink:#e4e8e2;--line:#2c3a31;
+--p1-light:#1c3140;--p2-light:#22301f;--card:#192219;--head:#dfe9d9;--ms-bg:#1f2d21;--ms-line:#33513a;--note-bg:#2b2716;--note-line:#5a4c22;--input:#0f1611}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:'Source Sans 3',Segoe UI,Arial,sans-serif;font-size:17px;color:var(--ink);background:var(--sand);line-height:1.55}
+h1,h2,h3,.brand{font-family:Fraunces,Georgia,'Times New Roman',serif;font-weight:700;letter-spacing:-.01em}
+a{color:var(--moss)}code{background:var(--sand-dark);padding:1px 5px;border-radius:4px;font-size:.9em}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+header.top{background:var(--forest);color:#fff;position:sticky;top:0;z-index:20;box-shadow:0 2px 12px rgba(0,0,0,.18)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;min-height:62px}
+header.top a{color:#fff;text-decoration:none}.brand{font-size:1.25rem;display:flex;align-items:center;gap:10px}.brand svg{width:30px;height:30px}
+header.top nav{display:flex;align-items:center;flex-wrap:wrap}header.top nav a{margin-left:18px;font-size:.96rem;opacity:.9;padding:6px 0;border-bottom:2px solid transparent}header.top nav a:hover,header.top nav a.on{opacity:1;border-color:var(--leaf)}
+button.icon-btn{margin-left:18px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:8px;padding:5px 10px;cursor:pointer;font-size:.9rem;font-family:inherit}button.icon-btn:hover{background:rgba(255,255,255,.22)}
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#1f3d2b 0%,#2f5a3f 55%,#3f6b4a 100%);color:#fff;padding:54px 0 48px}
+.hero:before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'><g fill='none' stroke='rgba(255,255,255,0.10)' stroke-width='1.2'><path d='M0 300c60-40 120-40 180 0s120 40 220 0'/><path d='M0 240c60-40 120-40 180 0s120 40 220 0'/><path d='M0 180c60-40 120-40 180 0s120 40 220 0'/><path d='M0 120c60-40 120-40 180 0s120 40 220 0'/><path d='M0 60c60-40 120-40 180 0s120 40 220 0'/><path d='M0 360c60-40 120-40 180 0s120 40 220 0'/></g></svg>");opacity:.9}
+.hero .wrap{position:relative}.hero h1{margin:0 0 10px;font-size:2.4rem;line-height:1.15}.hero p{margin:0;max-width:760px;color:rgba(255,255,255,.88);font-size:1.08rem}
+.hero .crumbs{font-size:.9rem;margin-bottom:14px;color:rgba(255,255,255,.75)}.hero .crumbs a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4)}.hero .crumbs span{margin:0 8px;opacity:.6}
+.hero.p1{background:linear-gradient(135deg,#1e3f4d 0%,#2f5f73 60%,#3e7a90 100%)}.hero.p2{background:linear-gradient(135deg,#1f3d2b 0%,#3f6b4a 60%,#5e8f5a 100%)}
+.hero.small{padding:34px 0 30px}.hero.small h1{font-size:1.9rem}
+.pill{display:inline-block;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:3px 12px;font-size:.82rem;margin-right:8px;margin-top:10px}
+main{padding:30px 0 40px}
+h2.sec{font-size:1.55rem;color:var(--head);margin:34px 0 14px;display:flex;align-items:center;gap:12px}h2.sec:after{content:"";flex:1;height:1px;background:var(--line)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}@media(max-width:860px){.grid3{grid-template-columns:1fr}}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}@media(max-width:900px){.grid4{grid-template-columns:1fr 1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;box-shadow:0 1px 3px rgba(31,61,43,.06)}
+.card h3{margin:0 0 8px;font-size:1.25rem;color:var(--head)}.card p{margin:0 0 10px;color:var(--stone)}
+.stat{font-family:Fraunces,serif;font-size:2.2rem;color:var(--moss);line-height:1}
+a.btn,button.btn{display:inline-block;background:var(--moss);color:#fff;text-decoration:none;padding:9px 16px;border-radius:8px;font-weight:600;font-size:.95rem;border:0;cursor:pointer;font-family:inherit}a.btn:hover,button.btn:hover{background:var(--forest)}
+[data-theme=dark] a.btn:hover,[data-theme=dark] button.btn:hover{background:#6fa562}
+a.btn.ghost,button.btn.ghost{background:transparent;color:var(--moss);border:1.5px solid var(--moss)}a.btn.ghost:hover,button.btn.ghost:hover{background:var(--leaf-light)}
+.paper-head{display:flex;align-items:center;gap:14px;margin:8px 0 14px}.paper-head .tag{white-space:nowrap;font-family:Fraunces,serif;font-size:1.05rem;font-weight:700;color:#fff;border-radius:8px;padding:4px 12px}
+.tag.p1{background:var(--p1)}.tag.p2{background:var(--p2)}.paper-head span.assessed{color:var(--stone);font-size:.95rem}
+.topic-card{display:flex;gap:16px;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;transition:transform .12s,box-shadow .12s}
+.topic-card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(31,61,43,.12)}
+.topic-card .icon{flex:0 0 52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center}.topic-card .icon svg{width:30px;height:30px}
+.icon.p1{background:var(--p1-light);color:var(--p1)}.icon.p2{background:var(--p2-light);color:var(--p2)}[data-theme=dark] .icon.p1{color:#8fc3d8}[data-theme=dark] .icon.p2{color:#9fd08f}
+.topic-card>div:last-child{flex:1}.topic-card h3{margin:0 0 4px;font-size:1.2rem;color:var(--head)}.topic-card .meta{color:var(--stone);font-size:.9rem}.topic-card .subs{margin:8px 0 0;color:var(--stone);font-size:.9rem;line-height:1.4}
+.sub-list{list-style:none;padding:0;margin:0}
+.sub-item{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:12px 0;display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}
+.sub-item .t{flex:1 1 380px}.sub-item .t a.name{font-family:Fraunces,serif;font-size:1.15rem;font-weight:700;color:var(--head);text-decoration:none}.sub-item .t a.name:hover{color:var(--moss)}
+.sub-item .meta{color:var(--stone);font-size:.88rem;margin-top:2px}
+.links{display:flex;flex-wrap:wrap;gap:6px}.links a{font-size:.82rem;padding:4px 11px;border-radius:999px;text-decoration:none;border:1px solid var(--line);background:var(--sand);color:var(--moss);font-weight:600}
+.links a:hover{background:var(--leaf-light);border-color:var(--leaf)}.links a.qp{background:var(--leaf-light)}
+table.list{border-collapse:collapse;width:100%;margin:10px 0 24px;background:var(--card);border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+table.list th,table.list td{padding:10px 14px;text-align:left;font-size:.95rem;vertical-align:top;border-bottom:1px solid var(--line)}table.list th{background:var(--sand-dark);color:var(--head)}table.list tr:last-child td{border-bottom:0}
+.q{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 24px;margin:20px 0;box-shadow:0 1px 3px rgba(31,61,43,.05);border-left-width:5px}
+.q[data-status="1"]{border-left-color:var(--warn)}.q[data-status="2"]{border-left-color:var(--ok)}
+.q .qh{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:8px}
+.q .qh .num{font-family:Fraunces,serif;font-weight:700;color:var(--head);font-size:1.15rem}.q .meta{font-size:.82rem;color:var(--stone)}
+.q .part{margin:12px 0 6px;padding:8px 0 8px 12px;border-left:3px solid var(--leaf)}.q .part .pn{font-weight:700;color:var(--moss);margin-right:8px;font-family:Fraunces,serif}.q .marks{float:right;font-weight:700;color:var(--earth);font-size:.9rem}
+.q table.data{border-collapse:collapse;margin:12px auto;background:var(--card)}.q table.data th,.q table.data td{border:1px solid var(--stone);padding:5px 12px;text-align:center;font-size:.92rem}.q table.data th{background:var(--sand-dark)}
+.q .cap{text-align:center;font-weight:700;margin:10px 0 2px;font-family:Fraunces,serif;color:var(--head)}
+.q ul.mcq{list-style:none;padding-left:10px}.q ul.mcq li:before{content:"\2610  ";}
+svg.chart{max-width:100%;height:auto;display:block;margin:6px auto;background:#fff;border-radius:8px}
+details.ms{margin-top:12px;background:var(--ms-bg);border:1px solid var(--ms-line);border-radius:10px;padding:10px 14px}details.ms summary{cursor:pointer;font-weight:700;color:var(--moss)}
+details.ms ul{margin:6px 0 8px 18px;padding:0}details.ms .lvl{font-size:.88rem;margin:4px 0;color:var(--stone)}details.ms .src{font-size:.85rem;color:var(--earth);margin-top:8px;border-top:1px dashed var(--ms-line);padding-top:6px}
+.note{background:var(--note-bg);border:1px solid var(--note-line);border-radius:10px;padding:12px 16px;font-size:.95rem}
+footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-size:.88rem;margin-top:40px}footer a{color:#fff}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:24px}@media(max-width:860px){.two{grid-template-columns:1fr}}
+/* progress */
+.st{display:inline-flex;gap:4px;margin-left:auto}.st button{font-family:inherit;font-size:.78rem;border:1px solid var(--line);background:var(--sand);color:var(--stone);border-radius:999px;padding:2px 10px;cursor:pointer}
+.st button:hover{border-color:var(--moss)}.st button.on[data-s="1"]{background:var(--warn);color:#222;border-color:var(--warn)}.st button.on[data-s="2"]{background:var(--ok);color:#fff;border-color:var(--ok)}
+.prog{display:flex;align-items:center;gap:10px;font-size:.82rem;color:var(--stone);margin-top:8px}.prog .bar{flex:1;height:8px;background:var(--sand-dark);border-radius:999px;overflow:hidden;display:flex;max-width:260px}
+.prog .bar .ok{background:var(--ok);height:100%}.prog .bar .wk{background:var(--warn);height:100%}.prog .pl{white-space:nowrap;min-width:90px}
+.hero .prog{color:rgba(255,255,255,.85)}.hero .prog .bar{background:rgba(255,255,255,.25)}
+/* filter bar & tools */
+.filterbar{position:sticky;top:var(--hdr,62px);z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.filterbar input[type=search]{flex:1 1 220px;font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
+.filterbar label{font-size:.85rem;color:var(--stone);display:inline-flex;align-items:center;gap:4px;cursor:pointer}.filterbar .chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--sand);color:var(--stone);font-size:.82rem;cursor:pointer;font-family:inherit}
+.filterbar .chip.on{background:var(--moss);color:#fff;border-color:var(--moss)}.filterbar .cnt{font-size:.85rem;color:var(--stone);margin-left:auto}
+.filterbar select{font:inherit;font-size:.88rem;padding:5px 8px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
+.tools{position:sticky;top:var(--hdr,62px);z-index:10;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:10px 0;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.tools .time{font-family:Fraunces,serif;font-size:1.6rem;font-weight:700;color:var(--head);min-width:120px}.tools .time.low{color:var(--bad)}
+.tools .score{font-weight:700;color:var(--moss)}.tools .score b{font-family:Fraunces,serif;font-size:1.3rem}.tools .pct{font-size:.85rem;color:var(--stone)}
+.tools button{font-family:inherit;font-size:.88rem;padding:6px 12px;border-radius:8px;border:1px solid var(--moss);background:transparent;color:var(--moss);cursor:pointer}.tools button.primary{background:var(--moss);color:#fff}
+.aw{display:flex;align-items:center;gap:8px;margin:4px 0 8px;font-size:.88rem;color:var(--stone)}.aw input{width:64px;font:inherit;padding:3px 6px;border:1px solid var(--line);border-radius:6px;background:var(--input);color:var(--ink)}
+.q.hide{display:none}
+/* quick-fire & search */
+.qf-controls{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin:10px 0 16px}.qf-controls label{font-size:.9rem;color:var(--stone);display:inline-flex;gap:5px;align-items:center}
+.qf-controls select,.qf-controls input[type=search]{font:inherit;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}
+.kbd{font-size:.8rem;color:var(--stone)}.kbd kbd{border:1px solid var(--line);border-radius:4px;padding:0 5px;background:var(--sand-dark);font-family:inherit}
+.res{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0;text-decoration:none;color:inherit}.res:hover{border-color:var(--moss)}
+.res .t{font-weight:700;color:var(--head)}.res .m{font-size:.82rem;color:var(--stone)}.res .s{font-size:.92rem;margin-top:4px}.res mark{background:#ffe58a;color:#222;border-radius:3px;padding:0 2px}
+.empty{color:var(--stone);font-style:italic}
+/* mark scheme points, levels, links */
+.mspart{margin:8px 0 12px}.msh{display:flex;align-items:baseline;gap:8px;margin-bottom:2px}.msh .mtot{font-size:.8rem;color:var(--earth);font-weight:700}
+ul.pts{list-style:none;margin:4px 0 6px 0!important;padding:0}ul.pts li{display:flex;gap:10px;align-items:flex-start;padding:4px 0;border-top:1px dashed var(--ms-line)}ul.pts li:first-child{border-top:0}
+.mk{flex:0 0 auto;min-width:26px;text-align:center;font-size:.75rem;font-weight:700;color:#fff;background:var(--ok);border-radius:6px;padding:2px 6px;margin-top:3px}
+table.levels{border-collapse:collapse;width:100%;margin:6px 0 10px;font-size:.86rem;background:var(--card)}table.levels th,table.levels td{border:1px solid var(--ms-line);padding:5px 8px;text-align:left;vertical-align:top}table.levels th{background:var(--sand-dark)}table.levels td.r{white-space:nowrap;font-weight:700;color:var(--earth)}
+ul.ind{margin:4px 0 8px 18px}
+.st button.lnk{padding:2px 7px}
+#totop{position:fixed;right:18px;bottom:18px;z-index:15;background:var(--moss);color:#fff;border:0;border-radius:50%;width:42px;height:42px;font-size:1.2rem;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .2s}#totop.show{opacity:1;pointer-events:auto}
+.jump{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 4px}.jump a{font-size:.82rem;padding:3px 10px;border-radius:999px;border:1px solid var(--line);background:var(--sand);color:var(--moss);text-decoration:none;font-weight:600}.jump a:hover{background:var(--leaf-light)}
+.real .row{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;padding:8px 0;border-bottom:1px dashed var(--line);font-size:.95rem}.real .row .ser{font-weight:700;color:var(--head);min-width:150px}.real .row .qn{color:var(--stone);min-width:70px}.real .row .t{flex:1 1 300px}
+.real .row a{font-size:.82rem;padding:2px 9px;border-radius:999px;border:1px solid var(--line);background:var(--sand);text-decoration:none;font-weight:600}
+.plan input[type=date]{font:inherit;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink)}.plan .big{font-family:Fraunces,serif;font-size:2rem;color:var(--moss)}
+table.list td .bar{height:8px;background:var(--sand-dark);border-radius:999px;overflow:hidden;display:flex;width:140px}table.list td .bar .ok{background:var(--ok)}table.list td .bar .wk{background:var(--warn)}
+@media(max-width:720px){header.top{position:static}header.top nav a{margin-left:12px;font-size:.88rem}.filterbar,.tools{top:0}.hero h1{font-size:1.8rem}.hero{padding:34px 0 28px}.sub-item .t{flex-basis:100%}}
+/* write-first mode, exemplars, drills */
+.modew{font-size:.85rem;color:var(--stone);display:inline-flex;align-items:center;gap:5px;cursor:pointer;border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--sand)}
+body.wmode .q:not(.revealed) details.ms{display:none}
+.wa{display:block;width:100%;min-height:70px;font:inherit;font-size:.95rem;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink);margin:6px 0 2px;resize:vertical}
+.wctl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:10px 0 4px}.wctl .hint{font-size:.82rem;color:var(--stone)}
+.sm{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin:8px 0;padding:8px 12px;border:1px dashed var(--ms-line);border-radius:8px;font-size:.88rem}.sm input{width:60px;font:inherit;padding:3px 6px;border:1px solid var(--line);border-radius:6px;background:var(--input);color:var(--ink)}
+.sm .res{font-weight:700}.sm .res.ok{color:var(--ok)}.sm .res.wk{color:var(--warn)}
+details.ex{margin:10px 0 4px;background:var(--card);border:1px solid var(--ms-line);border-radius:8px;padding:8px 12px}details.ex summary{cursor:pointer;font-weight:700;color:var(--earth)}
+.exwrap{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px}@media(max-width:860px){.exwrap{grid-template-columns:1fr}}
+.exa{border-radius:8px;padding:10px 14px;font-size:.93rem;line-height:1.5}.exa p{margin:0 0 8px}.exa.top{background:var(--leaf-light);border-left:4px solid var(--ok)}.exa.low{background:var(--note-bg);border-left:4px solid var(--warn)}
+.exh{font-weight:700;font-size:.85rem;margin-bottom:6px;color:var(--head)}.exn{margin-top:10px;font-size:.9rem}.exn ul{margin:4px 0 0 18px}
+.drill{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 26px;margin:14px 0;min-height:160px}
+.drill .term{font-family:Fraunces,serif;font-size:1.6rem;color:var(--head);margin:0 0 6px}.drill .def{font-size:1.05rem;margin:8px 0}.drill .src{font-size:.82rem;color:var(--stone)}
+.drill .btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.drill input.ans{font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--input);color:var(--ink);width:100%;max-width:520px}
+.drill .fb{margin-top:8px;font-weight:700}.drill .fb.ok{color:var(--ok)}.drill .fb.bad{color:var(--bad)}
+.drill .work{white-space:pre-line;background:var(--sand-dark);border-radius:8px;padding:10px 14px;font-size:.92rem;margin-top:8px}
+.modecard{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:14px}.modecard .mi{font-size:1.6rem;flex:0 0 40px;text-align:center}.modecard h3{margin:0 0 4px;color:var(--head)}.modecard p{margin:0 0 8px;color:var(--stone)}
+.due{font-size:.85rem;color:var(--stone)}
+/* revision notes */
+.notes{max-width:900px}.notes h2{font-size:1.4rem;color:var(--head);margin:34px 0 8px;padding-top:8px;border-top:1px solid var(--line);display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.notes h2 .pg{font-family:'Source Sans 3',sans-serif;font-size:.8rem;font-weight:600;color:var(--earth);background:var(--sand-dark);border-radius:999px;padding:2px 10px;white-space:nowrap}
+.notes p{margin:8px 0}.notes ul,.notes ol{margin:6px 0 10px 22px;padding:0}.notes li{margin:4px 0}
+.notes .summary{font-size:1.1rem;line-height:1.6;background:var(--leaf-light);border-left:4px solid var(--leaf);border-radius:0 12px 12px 0;padding:14px 18px;margin:18px 0}
+table.nt{border-collapse:collapse;width:100%;margin:10px 0 14px;font-size:.93rem;background:var(--card)}table.nt th,table.nt td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}table.nt th{background:var(--sand-dark);color:var(--head)}
+figure.diag{margin:18px 0;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px 8px}figure.diag figcaption{font-family:Fraunces,serif;font-weight:700;color:var(--head);margin-bottom:6px}
+figure.diag svg{max-width:100%;height:auto;display:block;margin:0 auto;background:#fff;border-radius:8px}figure.diag .dcap{font-size:.85rem;color:var(--stone);margin-top:6px}
+[data-theme=dark] figure.diag svg{background:#f6f3ec}
+.toc{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 18px;margin:14px 0 6px;font-size:.92rem}.toc b{color:var(--head)}.toc a{margin-right:14px;white-space:nowrap;line-height:1.9}
+.nums{background:var(--note-bg);border:1px solid var(--note-line);border-radius:12px;padding:12px 18px;margin:16px 0}.nums h3,.examh h3{margin:0 0 6px;font-size:1.05rem;color:var(--head)}
+.examh{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 18px;margin:16px 0}
+.nlinks{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+.notes-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:860px){.notes-grid{grid-template-columns:1fr}}
+.ncard{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;text-decoration:none;color:inherit}.ncard:hover{border-color:var(--moss)}.ncard b{color:var(--head)}.ncard span{display:block;font-size:.85rem;color:var(--stone)}
+/* print */
+@media print{header.top,footer,.tools,.filterbar,.st,.pill,.aw,.hero .crumbs,.prog,.noprint{display:none!important}
+body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;color:#000;padding:10px 0}.hero p,.hero h1{color:#000}.hero:before{display:none}
+.q{break-inside:avoid;box-shadow:none;border:1px solid #999;page-break-inside:avoid}details.ms{display:none}body.print-ms details.ms{display:block;background:#f3f3f3}body.print-ms details.ms summary{display:none}
+svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
+</style>
+<script>try{if(localStorage.getItem('envsci.theme')==='"dark"')document.documentElement.dataset.theme='dark';}catch(e){}</script></head><body >
+<header class="top"><div class="wrap"><a class="brand" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb069" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-8 0-14 4-14 12 0 1.5.3 3 1 4 2-6 6-9 11-11-4 3-7 6-8 12 8 0 12-6 10-17z"/></svg><span>AQA Environmental Science</span></a><nav><a href="../index.html" class="">Topics</a><a href="../notes.html" class="on">Notes</a><a href="../papers.html" class="">Mock papers</a><a href="../official.html" class="">Past papers</a><a href="../practice.html" class="">Practice modes</a><a href="../planner.html" class="">Planner</a><a href="../search.html" class="">Search</a><button class="icon-btn" id="themeBtn" type="button" title="Toggle dark mode">&#9790; Dark</button></nav></div></header>
+<section class="hero p2 small"><div class="wrap"><div class="crumbs"><a href="../index.html">Topics</a><span>&rsaquo;</span><a href="../topic/bioresources.html">Biological resources</a><span>&rsaquo;</span><a href="../notes.html">Notes</a><span>&rsaquo;</span>Manipulation of food species &amp; agricultural energetics</div><h1>Manipulation of food species &amp; agricultural energetics</h1><p>Revision notes &middot; Biological resources &middot; AQA spec 3.5.1.2 &middot; R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 321-327</p><span class="pill">Paper 2</span><span class="pill">6 sections</span><span class="pill">2 diagrams</span></div></section>
+<main><div class="wrap notes">
+<div class="summary">Yields are raised by controlling the genetics of crops and livestock - asexual reproduction and cloning, selective and cross-breeding, artificial insemination and embryo transfer, genetic modification - and by understanding agricultural energetics: intensity, energy subsidies, energy ratios, food conversion ratios and the trophic level at which food is produced.</div>
+<div class="nlinks noprint"><a class="btn" href="../subtopic/food-species.html">Practice questions (7)</a> <a class="btn ghost" href="../quickfire.html?sub=food-species">Quick-fire</a> <a class="btn ghost" href="../terms.html?topic=bioresources">Definitions drill</a> <a class="btn ghost" href="../pastq.html#bioresources">Real AQA questions (6)</a> <button type="button" class="btn ghost" data-print="qp">Print notes</button></div>
+<div class="toc noprint"><b>Contents:</b> <a href="#s1">Control of genetics: asexual reproduction</a> <a href="#s2">Sexual reproduction: selective and cross-breeding</a> <a href="#s3">Genetic modification (transgenics)</a> <a href="#s4">Intensive and extensive agriculture</a> <a href="#s5">Energy subsidies and energy ratios</a> <a href="#s6">Control of food chain energy losses</a> <a href="#diagrams">Diagrams</a> <a href="#numbers">Key numbers</a> <a href="#exam">How it is examined</a></div>
+<h2 id="s1">Control of genetics: asexual reproduction <span class="pg">Genn pp. 321</span></h2><p><b>Plants:</b> natural asexual reproduction (strawberry runners) and artificial propagation from cuttings or tissue culture (micropropagation) give genetically identical offspring - predictable, high survival, but no variation for improvement and fewer offspring than seed. <b>Animals - cloning:</b> nucleus from a donor cell placed in an enucleated egg, implanted in a surrogate; applications: replacing valuable animals, restocking after disease culls, multiplying elite individuals; still being developed.</p>
+<h2 id="s2">Sexual reproduction: selective and cross-breeding <span class="pg">Genn pp. 322-323</span></h2><p>Offspring combine genes from two parents so characteristics are unpredictable; producing a breed with desired traits and without unwanted ones takes generations. <b>Selective breeding</b> chooses parents for traits - Limousin cattle (muscle growth), Belted Galloway (milk, growth), Highland (hardy, even temper), Large White and Tamworth pigs (bacon, litters), Merino (wool), Cheviot sheep (hardy, foot-rot resistant); but breeding similar individuals risks inbreeding. <b>Cross-breeding</b> between breeds combines traits with <b>hybrid vigour</b> (heterosis) and fewer homozygous recessive problems - Zebu (heat tolerant, low milk) x Ayrshire (high milk, not heat tolerant) gives heat-tolerant high-yield cattle. <b>Artificial insemination:</b> semen from a selected male impregnates many females; frozen semen is transported and stored easily. <b>Embryo transfer:</b> FSH stimulates a selected female to release many eggs; fertilised in vitro and implanted in surrogates so she produces far more offspring.</p>
+<h2 id="s3">Genetic modification (transgenics) <span class="pg">Genn pp. 323-324</span></h2><p>GM transfers single genes between species, beyond what selective breeding (limited to the species' gene pool) can do. <b>Case studies:</b> <b>Roundup Ready soya</b> (glyphosate resistance gene from Agrobacterium - weeds sprayed without harming the crop); <b>Bt crops</b> (Bacillus thuringiensis toxin gene in maize, corn, cotton - kills insect pests, less spraying); <b>Golden rice</b> (daffodil and Erwinia genes make vitamin A in the grain against blindness in India and Africa); <b>omega-3 oilseed rape</b> (gene from a marine alga). <b>Advantages:</b> single traits without unwanted ones; genes from unrelated species; less pesticide; disease resistance; higher nutrition. <b>Concerns:</b> allergies; gene transfer to gut bacteria or to wild relatives and organic crops via pollen (Bt gene in wild plants killing insects); crossing into the food chain from animal-feed varieties; antibiotic-resistance marker genes; cost and seed patents disadvantaging LEDC farmers; loss of local crop diversity and seed saving; more evidence needed - so the precautionary principle has delayed adoption.</p>
+<h2 id="s4">Intensive and extensive agriculture <span class="pg">Genn pp. 324-325</span></h2><p><b>Intensive</b> farming uses large inputs per unit area where land is scarce - high yield per hectare but not necessarily per unit of input; <b>extensive</b> farming spreads limited inputs over a large area. The <b>law of diminishing returns</b>: each extra unit of input raises yield by less than the last, so if land is available, spreading inputs thinly gives a greater total yield. Uneven global use of inputs is partly rational (some land is more productive) and partly economic (affluent farmers can buy more).</p>
+<h2 id="s5">Energy subsidies and energy ratios <span class="pg">Genn pp. 325-326</span></h2><p>An <b>energy subsidy</b> is any input that aids productivity but needs energy: manufacture of nitrate fertiliser (Haber process) and pesticides, pumping irrigation water, fuel for machinery, embodied energy of equipment, grain drying, food processing and transport. Intensive systems depend on fossil-fuel subsidies. <b>Energy ratio</b> = food energy output / energy input: wheat and rice several units out per unit in; beef and milk below 1 - productive per hectare but inefficient. <b>Food conversion ratio</b> = mass of feed per unit mass gained: farmed salmon about 1.2, chicken about 2, pork 3-4, beef 6-10 - lower is better.</p>
+<h2 id="s6">Control of food chain energy losses <span class="pg">Genn pp. 326-328</span></h2><p><b>Autotrophs</b> capture light (photoautotrophs) or chemical energy (chemoautotrophs); <b>heterotrophs</b> depend on them. Of 100 000 units of solar energy about 4 000 are captured in photosynthesis and 1 000 stored in biomass; each trophic level loses most energy as heat in respiration, so few chains exceed four levels. Hence <b>plant food gives most food per hectare</b>; where crops cannot grow (uplands, semi-arid areas), grazing sheep and cattle with cellulose-digesting gut bacteria is best; omnivorous pigs convert food wastes; keeping livestock warm, restricting movement and choosing young fast-growing animals reduce losses.</p>
+<h2 id="diagrams">Diagrams</h2>
+<figure class="diag"><figcaption>Law of diminishing returns</figcaption><div class="cap"></div>
+<svg class="chart" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
+<polyline points="60.0,220.0 156.0,145.0 252.0,95.0 348.0,65.0 444.0,45.0 540.0,35.0" fill="none" stroke="#22302a" stroke-width="1.8"/>
+<circle cx="60.0" cy="220.0" r="2.6" fill="#22302a"/>
+<circle cx="156.0" cy="145.0" r="2.6" fill="#22302a"/>
+<circle cx="252.0" cy="95.0" r="2.6" fill="#22302a"/>
+<circle cx="348.0" cy="65.0" r="2.6" fill="#22302a"/>
+<circle cx="444.0" cy="45.0" r="2.6" fill="#22302a"/>
+<circle cx="540.0" cy="35.0" r="2.6" fill="#22302a"/>
+<line x1="60.0" y1="270" x2="60.0" y2="274" stroke="#000"/><text x="60.0" y="286" text-anchor="middle">0</text>
+<line x1="56" y1="270.0" x2="60" y2="270.0" stroke="#000"/><text x="52" y="274.0" text-anchor="end">0</text>
+<line x1="156.0" y1="270" x2="156.0" y2="274" stroke="#000"/><text x="156.0" y="286" text-anchor="middle">1</text>
+<line x1="56" y1="220.0" x2="60" y2="220.0" stroke="#000"/><text x="52" y="224.0" text-anchor="end">20</text>
+<line x1="252.0" y1="270" x2="252.0" y2="274" stroke="#000"/><text x="252.0" y="286" text-anchor="middle">2</text>
+<line x1="56" y1="170.0" x2="60" y2="170.0" stroke="#000"/><text x="52" y="174.0" text-anchor="end">40</text>
+<line x1="348.0" y1="270" x2="348.0" y2="274" stroke="#000"/><text x="348.0" y="286" text-anchor="middle">3</text>
+<line x1="56" y1="120.0" x2="60" y2="120.0" stroke="#000"/><text x="52" y="124.0" text-anchor="end">60</text>
+<line x1="444.0" y1="270" x2="444.0" y2="274" stroke="#000"/><text x="444.0" y="286" text-anchor="middle">4</text>
+<line x1="56" y1="70.0" x2="60" y2="70.0" stroke="#000"/><text x="52" y="74.0" text-anchor="end">80</text>
+<line x1="540.0" y1="270" x2="540.0" y2="274" stroke="#000"/><text x="540.0" y="286" text-anchor="middle">5</text>
+<line x1="56" y1="20.0" x2="60" y2="20.0" stroke="#000"/><text x="52" y="24.0" text-anchor="end">100</text>
+<line x1="60" y1="20" x2="60" y2="270" stroke="#000"/><line x1="60" y1="270" x2="540" y2="270" stroke="#000"/>
+<text x="300.0" y="312" text-anchor="middle" font-weight="bold">Inputs / arbitrary units</text>
+<text transform="translate(14,145.0) rotate(-90)" text-anchor="middle" font-weight="bold">Yield / arbitrary units</text>
+</svg><div class="dcap">Each extra unit of input adds less yield (Genn p. 325).</div></figure>
+<figure class="diag"><figcaption>Energy flow through an agroecosystem (units from 100 000 of sunlight)</figcaption><svg viewBox="0 0 820 212" xmlns="http://www.w3.org/2000/svg" font-family="Source Sans 3, Segoe UI, Arial, sans-serif"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3f6b4a"/></marker></defs><rect x="28.0" y="31.0" width="164" height="54" rx="9" fill="#ffffff" stroke="#3f6b4a" stroke-width="1.5"/><text x="110.0" y="62.0" text-anchor="middle" font-size="12" font-weight="normal" fill="#22302a"><tspan x="110.0" dy="0.0">Sunlight 100 000</tspan></text><rect x="228.0" y="127.0" width="164" height="54" rx="9" fill="#ffffff" stroke="#3f6b4a" stroke-width="1.5"/><text x="310.0" y="150.8" text-anchor="middle" font-size="12" font-weight="normal" fill="#22302a"><tspan x="310.0" dy="0.0">Reflected, transmitted,</tspan><tspan x="310.0" dy="14.4">wrong wavelength</tspan></text><rect x="228.0" y="31.0" width="164" height="54" rx="9" fill="#ffffff" stroke="#3f6b4a" stroke-width="1.5"/><text x="310.0" y="54.8" text-anchor="middle" font-size="12" font-weight="normal" fill="#22302a"><tspan x="310.0" dy="0.0">Captured in</tspan><tspan x="310.0" dy="14.4">photosynthesis 4 000</tspan></text><rect x="428.0" y="127.0" width="164" height="54" rx="9" fill="#ffffff" stroke="#3f6b4a" stroke-width="1.5"/><text x="510.0" y="150.8" text-anchor="middle" font-size="12" font-weight="normal" fill="#22302a"><tspan x="510.0" dy="0.0">Plant respiration</tspan><tspan x="510.0" dy="14.4">(heat)</tspan></text><rect x="428.0" y="31.0" width="164" height="54" rx="9" fill="#e6f0dc" stroke="#3f6b4a" stroke-width="1.5"/><text x="510.0" y="62.0" text-anchor="middle" font-size="12" font-weight="600" fill="#22302a"><tspan x="510.0" dy="0.0">Crop biomass 1 000</tspan></text><rect x="628.0" y="31.0" width="164" height="54" rx="9" fill="#ffffff" stroke="#3f6b4a" stroke-width="1.5"/><text x="710.0" y="54.8" text-anchor="middle" font-size="12" font-weight="normal" fill="#22302a"><tspan x="710.0" dy="0.0">Livestock: ~10%</tspan><tspan x="710.0" dy="14.4">passes on</tspan></text><line x1="195.0" y1="58.0" x2="225.0" y2="58.0" stroke="#3f6b4a" stroke-width="1.6" marker-end="url(#ah)"/><line x1="169.0" y1="86.3" x2="251.0" y2="125.7" stroke="#3f6b4a" stroke-width="1.6" marker-end="url(#ah)"/><line x1="395.0" y1="58.0" x2="425.0" y2="58.0" stroke="#3f6b4a" stroke-width="1.6" marker-end="url(#ah)"/><line x1="369.0" y1="86.3" x2="451.0" y2="125.7" stroke="#3f6b4a" stroke-width="1.6" marker-end="url(#ah)"/><line x1="595.0" y1="58.0" x2="625.0" y2="58.0" stroke="#3f6b4a" stroke-width="1.6" marker-end="url(#ah)"/></svg><div class="dcap">Genn p. 327. Eating crops directly captures more food energy per hectare than feeding them to animals.</div></figure>
+<div class="nums" id="numbers"><h3>Key numbers and facts to remember</h3><ul><li>Energy ratios: wheat / rice several : 1; beef, milk below 1</li><li>FCR: salmon ~1.2, chicken ~2, pork 3-4, beef 6-10</li><li>100 000 units sun -> 4 000 captured -> 1 000 in biomass</li></ul></div>
+<div class="examh" id="exam"><h3>How this subtopic is examined</h3><ul><li>Compare breeding methods; explain AI and embryo transfer; hybrid vigour.</li><li>GM case studies, advantages and concerns; Bt corn pollen investigation (June 2023 Q7, 15 marks).</li><li>Calculate energy ratios and FCRs and interpret them (June 2023 Q6, Nov 2020 Q6); micropropagation (June 2022 Q6).</li><li>Explain diminishing returns and intensive vs extensive.</li><li>Embodied energy losses along the food chain (Nov 2021 Q10); essay on genetic manipulation (Nov 2021).</li></ul>
+<p><b>Real AQA questions on this subtopic (6):</b></p><div class="real"><div class="row"><span class="ser">June 2023 &middot; Paper 2</span><span class="qn">Q7 &middot; 15 marks</span><span class="t">Bt corn (GM) and pollen drift investigation</span><a href="../official/AQA-74472-QP-JUN23-CR.PDF#page=20">Question (p.20)</a> <a href="../official/AQA-74472-MS-JUN23-1.PDF">Mark scheme</a></div><div class="row"><span class="ser">June 2023 &middot; Paper 2</span><span class="qn">Q6 &middot; 5 marks</span><span class="t">Energy ratios of livestock systems</span><a href="../official/AQA-74472-QP-JUN23-CR.PDF#page=18">Question (p.18)</a> <a href="../official/AQA-74472-MS-JUN23-1.PDF">Mark scheme</a></div><div class="row"><span class="ser">June 2022 &middot; Paper 2</span><span class="qn">Q6 &middot; 10 marks</span><span class="t">Micropropagation</span><a href="../official/AQA-74472-QP-JUN22-CR.PDF#page=10">Question (p.10)</a> <a href="../official/AQA-74472-MS-JUN22.PDF">Mark scheme</a></div><div class="row"><span class="ser">November 2021 &middot; Paper 2</span><span class="qn">Essay &middot; 25 marks</span><span class="t">Essay: genetic manipulation of food species - advantages and problems</span><a href="../official/AQA-74472-QP-NOV21.PDF#page=32">Question (p.32)</a> <a href="../official/AQA-74472-MS-NOV21.PDF">Mark scheme</a></div><div class="row"><span class="ser">November 2021 &middot; Paper 2</span><span class="qn">Q10 &middot; 10 marks</span><span class="t">Embodied energy losses in the food supply chain</span><a href="../official/AQA-74472-QP-NOV21.PDF#page=28">Question (p.28)</a> <a href="../official/AQA-74472-MS-NOV21.PDF">Mark scheme</a></div><div class="row"><span class="ser">November 2020 &middot; Paper 2</span><span class="qn">Q6 &middot; 10 marks</span><span class="t">Intensive agriculture energy inputs; orange production</span><a href="../official/AQA-74472-QP-NOV20.PDF#page=14">Question (p.14)</a> <a href="../official/AQA-74472-W-MS-NOV20.PDF">Mark scheme</a></div></div>
+</div>
+<p class="note">These notes are written from R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018) - the page numbers on each heading are where to read the original. Diagrams are redrawn, not copied. AQA question references show where the topic has come up in real papers.</p>
+</div></main>
+<footer><div class="wrap">Original practice questions and mark schemes written to the AQA A-level Environmental Science (7447) specification. Every question cites the printed page numbers of R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018). AQA past papers are &copy; AQA. Progress, scores and timers are saved only in this browser. &nbsp;&middot;&nbsp; <a href="../index.html">Topics</a> &middot; <a href="../papers.html">Mock papers</a> &middot; <a href="../official.html">Past papers</a> &middot; <a href="../essays.html">Essay bank</a> &middot; <a href="../practice.html">Practice modes</a> &middot; <a href="../essays.html">Essay bank</a> &middot; <a href="../pastq.html">Real questions by topic</a> &middot; <a href="../planner.html">Planner</a> &middot; <a href="../search.html">Search</a></div></footer>
+<script>
+(function(){
+const LS=k=>{try{return JSON.parse(localStorage.getItem(k)||'null')}catch(e){return null}};
+const SV=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+window.ES={LS,SV};
+/* ---- theme ---- */
+const root=document.documentElement;
+function applyTheme(t){if(t==='dark')root.dataset.theme='dark';else delete root.dataset.theme;const b=document.getElementById('themeBtn');if(b)b.textContent=t==='dark'?'\u2600 Light':'\u263E Dark';}
+applyTheme(LS('envsci.theme')||'light');
+const tb=document.getElementById('themeBtn');if(tb)tb.onclick=()=>{const t=root.dataset.theme==='dark'?'light':'dark';SV('envsci.theme',t);applyTheme(t);};
+/* ---- progress ---- */
+let prog=LS('envsci.progress')||{};
+window.ES.prog=()=>prog;
+function paint(){
+  document.querySelectorAll('.q[data-qid]').forEach(el=>{const s=prog[el.dataset.qid]||0;el.dataset.status=s;el.querySelectorAll('.st button[data-s]').forEach(b=>b.classList.toggle('on',+b.dataset.s===s&&s>0));});
+  document.querySelectorAll('[data-qids]').forEach(el=>{const ids=el.dataset.qids.split(',').filter(Boolean);const n=ids.length;if(!n)return;
+    const ok=ids.filter(i=>prog[i]===2).length,wk=ids.filter(i=>prog[i]===1).length;
+    const o=el.querySelector('.bar .ok'),w=el.querySelector('.bar .wk'),p=el.querySelector('.pl');
+    if(o)o.style.width=(100*ok/n)+'%';if(w)w.style.width=(100*wk/n)+'%';if(p)p.textContent=ok+'/'+n+' secure'+(wk?' \u00b7 '+wk+' to revisit':'');});
+  const ov=document.getElementById('overall');if(ov){const all=(ov.dataset.qids||'').split(',').filter(Boolean);const ok=all.filter(i=>prog[i]===2).length,wk=all.filter(i=>prog[i]===1).length;ov.querySelector('.stat').textContent=Math.round(100*ok/all.length)+'%';ov.querySelector('.detail').textContent=ok+' secure, '+wk+' to revisit, '+(all.length-ok-wk)+' not attempted of '+all.length+' questions.';}
+}
+window.ES.paint=paint;
+document.addEventListener('click',e=>{const b=e.target.closest('.st button[data-s]');if(!b)return;const q=b.closest('.q');const s=+b.dataset.s;const cur=prog[q.dataset.qid]||0;if(s===cur||s===0)delete prog[q.dataset.qid];else prog[q.dataset.qid]=s;SV('envsci.progress',prog);window.ES.schedule(q.dataset.qid,prog[q.dataset.qid]||0);paint();if(window.ES.onFilter)window.ES.onFilter();});
+const rs=document.getElementById('resetProg');if(rs)rs.onclick=()=>{if(confirm('Clear all saved progress on this browser?')){prog={};SV('envsci.progress',prog);paint();}};
+paint();
+/* ---- spaced repetition: secure questions come back after 1, 3, 7, 14, 30 days ---- */
+const IVL=[1,3,7,14,30];let srs=LS('envsci.srs')||{};
+window.ES.srs=()=>srs;window.ES.isDue=id=>{const r=srs[id];return !r||!r.due||r.due<=Date.now();};
+window.ES.schedule=(id,s)=>{if(s===2){const prev=srs[id]&&srs[id].ivl||0;const i=IVL[Math.min(IVL.indexOf(prev)+1,IVL.length-1)]||1;srs[id]={ivl:i,due:Date.now()+i*86400000};}else delete srs[id];SV('envsci.srs',srs);};
+/* ---- write-first mode (opt-in): answer boxes first, mark scheme after reveal ---- */
+let mode=LS('envsci.mode')||'read';
+function applyMode(){document.body.classList.toggle('wmode',mode==='write');document.querySelectorAll('input.modeW').forEach(c=>c.checked=mode==='write');
+  document.querySelectorAll('.q[data-qid]').forEach(setupW);}
+function setupW(q){if(mode!=='write'){q.querySelectorAll('.wbox').forEach(e=>e.remove());q.classList.remove('revealed');return;}
+  if(q.querySelector('.wbox'))return;const id=q.dataset.qid;const ans=LS('envsci.answers')||{};
+  q.querySelectorAll('.part').forEach((part,i)=>{const w=document.createElement('div');w.className='wbox';const ta=document.createElement('textarea');ta.className='wa';ta.placeholder='Write your answer here before revealing the mark scheme...';ta.value=ans[id+'.'+(i+1)]||'';
+    ta.addEventListener('input',()=>{const a=LS('envsci.answers')||{};a[id+'.'+(i+1)]=ta.value;SV('envsci.answers',a);});w.appendChild(ta);part.after(w);});
+  const ctl=document.createElement('div');ctl.className='wbox wctl';ctl.innerHTML='<button type="button" class="btn reveal">Reveal mark scheme &amp; self-mark</button><span class="hint">Your answers are saved in this browser.</span>';
+  const ms=q.querySelector('details.ms');if(ms)ms.before(ctl);
+  ctl.querySelector('.reveal').onclick=()=>{q.classList.add('revealed');if(ms)ms.open=true;ctl.remove();buildSelfMark(q);};}
+function buildSelfMark(q){if(q.querySelector('.sm'))return;const pm=(q.dataset.pm||'').split(',').map(Number);const max=pm.reduce((a,b)=>a+b,0);
+  const sm=document.createElement('div');sm.className='sm wbox';sm.innerHTML='<b>Self-mark:</b> '+pm.map((m,i)=>'<label>Part '+(i+1)+' <input type="number" min="0" max="'+m+'" data-i="'+i+'"> / '+m+'</label>').join('')+'<button type="button" class="chip save">Save &amp; set status</button><span class="res"></span>';
+  const ms=q.querySelector('details.ms');ms.appendChild(sm);
+  sm.querySelector('.save').onclick=()=>{let t=0;sm.querySelectorAll('input').forEach(i=>t+=Math.min(+i.max,+i.value||0));const pc=t/max;const s=pc>=0.7?2:1;
+    const id=q.dataset.qid;if(s===2)prog[id]=2;else prog[id]=1;SV('envsci.progress',prog);window.ES.schedule(id,s);paint();
+    const r=sm.querySelector('.res');r.textContent=t+'/'+max+' ('+Math.round(pc*100)+'%) - marked '+(s===2?'secure':'needs work');r.className='res '+(s===2?'ok':'wk');if(window.ES.onFilter)window.ES.onFilter();};}
+window.ES.applyMode=applyMode;
+document.addEventListener('change',e=>{if(!e.target.matches('input.modeW'))return;mode=e.target.checked?'write':'read';SV('envsci.mode',mode);applyMode();});
+applyMode();
+/* ---- filter bar ---- */
+const fb=document.querySelector('.filterbar');
+if(fb){
+  const qs=[...document.querySelectorAll('.q[data-qid]')];
+  const txt=fb.querySelector('input[type=search]');const cnt=fb.querySelector('.cnt');
+  function run(){const words=(txt.value||'').toLowerCase().split(/\s+/).filter(Boolean);
+    const marks=[...fb.querySelectorAll('.chip.mk.on')].map(c=>c.dataset.v);const flags=[...fb.querySelectorAll('.chip.fl.on')].map(c=>c.dataset.v);
+    const st=fb.querySelector('select.status').value;let shown=0;
+    qs.forEach(el=>{let ok=true;const t=el.textContent.toLowerCase();
+      if(words.length&&!words.every(w=>t.includes(w)))ok=false;
+      if(marks.length&&!marks.includes(el.dataset.marks))ok=false;
+      if(flags.length&&!flags.every(f=>(' '+el.dataset.flags+' ').includes(' '+f+' ')))ok=false;
+      const s=prog[el.dataset.qid]||0;if(st==='todo'&&s!==0)ok=false;if(st==='work'&&s!==1)ok=false;if(st==='secure'&&s!==2)ok=false;if(st==='notsecure'&&s===2)ok=false;
+      el.classList.toggle('hide',!ok);if(ok)shown++;});
+    cnt.textContent='Showing '+shown+' of '+qs.length;
+    document.querySelectorAll('h2.sec.set').forEach(h=>{let n=h.nextElementSibling,any=false;while(n&&!n.classList.contains('set')){if(n.classList.contains('q')&&!n.classList.contains('hide'))any=true;n=n.nextElementSibling;}h.style.display=any?'':'none';});}
+  window.ES.onFilter=run;
+  txt.addEventListener('input',run);fb.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{c.classList.toggle('on');run();});fb.querySelector('select.status').onchange=run;
+  const clr=fb.querySelector('.clear');if(clr)clr.onclick=()=>{txt.value='';fb.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));fb.querySelector('select.status').value='all';run();};
+  run();}
+/* ---- sticky offset = real header height (nav can wrap) ---- */
+const hd=document.querySelector('header.top');const setH=()=>root.style.setProperty('--hdr',(getComputedStyle(hd).position==='sticky'?hd.offsetHeight:0)+'px');setH();window.addEventListener('resize',setH);
+/* ---- copy link, back to top ---- */
+document.addEventListener('click',e=>{const b=e.target.closest('[data-copy]');if(!b)return;const q=b.closest('.q');const url=location.href.split('#')[0]+'#'+q.id;
+  (navigator.clipboard?navigator.clipboard.writeText(url):Promise.reject()).then(()=>{b.textContent='\u2713';setTimeout(()=>b.innerHTML='&#128279;',1200);}).catch(()=>prompt('Copy this link:',url));});
+const tt=document.createElement('button');tt.id='totop';tt.title='Back to top';tt.innerHTML='&uarr;';tt.className='noprint';document.body.appendChild(tt);tt.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+window.addEventListener('scroll',()=>tt.classList.toggle('show',window.scrollY>600),{passive:true});
+/* ---- print & reveal ---- */
+document.querySelectorAll('[data-print]').forEach(b=>b.onclick=()=>{const ms=b.dataset.print==='ms';document.body.classList.toggle('print-ms',ms);document.querySelectorAll('details.ms').forEach(d=>d.open=ms);window.print();});
+document.querySelectorAll('[data-reveal]').forEach(b=>b.onclick=()=>{const open=b.dataset.reveal==='1';document.querySelectorAll('details.ms').forEach(d=>d.open=open);b.dataset.reveal=open?'0':'1';b.textContent=open?'Hide all mark schemes':'Show all mark schemes';});
+})();
+</script></body></html>

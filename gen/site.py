@@ -10,6 +10,7 @@ from .marking import mark_points
 from bank.official_index import OFFICIAL_INDEX
 from bank.exemplars import EXEMPLARS, ESSAY_EXEMPLARS
 from bank.terms import TERMS
+from . import diagrams
 
 EXAM_SECONDS = 3 * 60 * 60   # AQA 7447: each paper is 3 hours
 
@@ -133,6 +134,21 @@ details.ex{margin:10px 0 4px;background:var(--card);border:1px solid var(--ms-li
 .drill .work{white-space:pre-line;background:var(--sand-dark);border-radius:8px;padding:10px 14px;font-size:.92rem;margin-top:8px}
 .modecard{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:14px}.modecard .mi{font-size:1.6rem;flex:0 0 40px;text-align:center}.modecard h3{margin:0 0 4px;color:var(--head)}.modecard p{margin:0 0 8px;color:var(--stone)}
 .due{font-size:.85rem;color:var(--stone)}
+/* revision notes */
+.notes{max-width:900px}.notes h2{font-size:1.4rem;color:var(--head);margin:34px 0 8px;padding-top:8px;border-top:1px solid var(--line);display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.notes h2 .pg{font-family:'Source Sans 3',sans-serif;font-size:.8rem;font-weight:600;color:var(--earth);background:var(--sand-dark);border-radius:999px;padding:2px 10px;white-space:nowrap}
+.notes p{margin:8px 0}.notes ul,.notes ol{margin:6px 0 10px 22px;padding:0}.notes li{margin:4px 0}
+.notes .summary{font-size:1.1rem;line-height:1.6;background:var(--leaf-light);border-left:4px solid var(--leaf);border-radius:0 12px 12px 0;padding:14px 18px;margin:18px 0}
+table.nt{border-collapse:collapse;width:100%;margin:10px 0 14px;font-size:.93rem;background:var(--card)}table.nt th,table.nt td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}table.nt th{background:var(--sand-dark);color:var(--head)}
+figure.diag{margin:18px 0;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px 8px}figure.diag figcaption{font-family:Fraunces,serif;font-weight:700;color:var(--head);margin-bottom:6px}
+figure.diag svg{max-width:100%;height:auto;display:block;margin:0 auto;background:#fff;border-radius:8px}figure.diag .dcap{font-size:.85rem;color:var(--stone);margin-top:6px}
+[data-theme=dark] figure.diag svg{background:#f6f3ec}
+.toc{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 18px;margin:14px 0 6px;font-size:.92rem}.toc b{color:var(--head)}.toc a{margin-right:14px;white-space:nowrap;line-height:1.9}
+.nums{background:var(--note-bg);border:1px solid var(--note-line);border-radius:12px;padding:12px 18px;margin:16px 0}.nums h3,.examh h3{margin:0 0 6px;font-size:1.05rem;color:var(--head)}
+.examh{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 18px;margin:16px 0}
+.nlinks{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+.notes-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:860px){.notes-grid{grid-template-columns:1fr}}
+.ncard{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;text-decoration:none;color:inherit}.ncard:hover{border-color:var(--moss)}.ncard b{color:var(--head)}.ncard span{display:block;font-size:.85rem;color:var(--stone)}
 /* print */
 @media print{header.top,footer,.tools,.filterbar,.st,.pill,.aw,.hero .crumbs,.prog,.noprint{display:none!important}
 body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;color:#000;padding:10px 0}.hero p,.hero h1{color:#000}.hero:before{display:none}
@@ -267,7 +283,7 @@ PAPERS_JS = r"""
 
 def page(title, body, root="", active="", extra_js="", body_attrs=""):
     nav = "".join(f'<a href="{root}{h}" class="{"on" if active == h else ""}">{t}</a>' for h, t in
-                  [("index.html", "Topics"), ("papers.html", "Mock papers"), ("official.html", "Past papers"), ("practice.html", "Practice modes"),
+                  [("index.html", "Topics"), ("notes.html", "Notes"), ("papers.html", "Mock papers"), ("official.html", "Past papers"), ("practice.html", "Practice modes"),
                    ("planner.html", "Planner"), ("search.html", "Search")])
     return f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(title)} - AQA Environmental Science</title><style>{CSS}</style>
@@ -453,7 +469,7 @@ def filter_bar(show_status=True):
 
 
 def sub_links(slug, sets, root=""):
-    links = [f'<a href="{root}subtopic/{slug}.html">View online</a>']
+    links = [f'<a href="{root}notes/{slug}.html" style="background:var(--leaf-light)">Notes</a>', f'<a href="{root}subtopic/{slug}.html">Questions</a>']
     for k in range(1, len(sets) + 1):
         links.append(f'<a class="qp" href="{root}pdf/topic/{slug}-set{k}-QP.pdf">Set {k} QP</a><a href="{root}pdf/topic/{slug}-set{k}-MS.pdf">Set {k} MS</a>')
     return '<span class="links">' + "".join(links) + "</span>"
@@ -469,7 +485,7 @@ def index_page(sets_by_sub, counts):
     body = [hero("Environmental Science A-level revision",
                  f"Questions by topic, full mock papers and official past papers for AQA 7447, organised exactly as the specification. Every question is referenced to the page of the approved textbook ({html.escape(BOOK)}).")]
     body.append('<main><div class="wrap">')
-    body.append('<div class="grid4">'
+    body.append('<p class="note" style="margin-bottom:18px"><b>New:</b> <a href="notes.html">revision notes for every subtopic</a> - the whole course summarised under the book\'s headings with page numbers and diagrams.</p><div class="grid4">'
                 f'<div class="card"><div class="stat">{counts["questions"]}</div><h3>Questions by topic</h3><p>Across {counts["subtopics"]} subtopics, each with an AQA-format question paper PDF and a separate mark-scheme PDF.</p><a class="btn" href="#topics">Browse topics</a></div>'
                 f'<div class="card"><div class="stat">{counts["papers"]}</div><h3>Mock papers</h3><p>Full 3-hour papers (120 marks) with an exam timer and self-marking scorecard.</p><a class="btn" href="papers.html">Open mock papers</a></div>'
                 f'<div class="card"><div class="stat">{counts["official"]}</div><h3>Official AQA papers</h3><p>Real question papers and mark schemes for every series so far (plus the specimen papers), grouped by year and paper.</p><a class="btn ghost" href="official.html">Open past papers</a></div>'
@@ -523,7 +539,7 @@ def subtopic_page(slug, sets):
     real = official_rows(slug)
     if real:
         body.append(f'<h2 class="sec">Real AQA questions on this topic ({len(real)})</h2><div class="real">' + "".join(real) + "</div>")
-    body.append(f'<p class="note noprint">Practise this subtopic one question at a time: <a href="../quickfire.html?sub={slug}">Quick-fire &rarr;</a></p>')
+    body.append(f'<p class="note noprint"><a class="btn" href="../notes/{slug}.html">Revision notes for this subtopic &rarr;</a> &nbsp; Practise one question at a time: <a href="../quickfire.html?sub={slug}">Quick-fire &rarr;</a></p>')
     body.append(filter_bar())
     qn = 0
     for k, s in enumerate(sets, 1):
@@ -836,6 +852,7 @@ def practice_page(counts):
         ("&#128203;", "Definitions drill", "terms.html", f"Question 1 of every real paper is a 5-mark table of terms and definitions. Flashcards and a timed table test on {counts['terms']} key terms from every subtopic, with spaced repetition."),
         ("&#128290;", "Calculations", "calc.html", "Fresh numbers every time: percentage change, standard form, Lincoln index, energy ratios, Simpson's index, residence time, USLE, half-lives, decibels and more, each with worked solutions."),
         ("&#128214;", "Model answers", "essays.html", "Every 9-mark question has a Level 3 model answer beside a weaker one, with notes on what makes the difference - open <i>Model answers</i> inside its mark scheme. Two full Level 5 essays are in the essay bank."),
+        ("&#128218;", "Revision notes", "notes.html", "Full notes for all 43 subtopics under the textbook's own headings with page references, redrawn diagrams, key numbers and a list of how each topic has been examined."),
         ("&#127891;", "Real questions by topic", "pastq.html", "All 132 questions from the published AQA papers indexed by subtopic, each linking to the official paper and mark scheme."),
         ("&#9203;", "Timed mock papers", "papers.html", f"{counts['papers']} generated papers in exact AQA format with a 3-hour timer and a self-marking scorecard."),
     ]
@@ -945,3 +962,62 @@ def calc_page():
     body.append('<main><div class="wrap"><div class="qf-controls"><label>Type <select id="cType"><option value="any">Random mix</option></select></label><span class="kbd" id="cStat"></span></div>'
                 '<p class="kbd">Type the answer and press <kbd>Enter</kbd>. Standard form can be entered as 7.5e11.</p><div id="cHost"></div><p class="kbd" id="cHist"></p></div></main>')
     return page("Calculations", "\n".join(body), active="practice.html", extra_js=f"<script>{CALC_JS}</script>")
+
+
+# ---------- revision notes ----------
+NOTES_ALL = {}   # filled by build.py from bank/notes_*.py
+
+
+def notes_page(slug, note, sets):
+    idx = subtopic_index()[slug]
+    pno = idx["papers"][0]
+    cls = f"p{pno}" if len(idx["papers"]) == 1 else ""
+    nq = sum(len(s) for s in sets)
+    real = official_counts().get(slug, 0)
+    body = [hero(html.escape(idx["name"]), f'Revision notes &middot; {html.escape(idx["topic"])} &middot; AQA spec {html.escape(idx["spec"])} &middot; {html.escape(BOOK)}, pp. {html.escape(idx["pages"])}',
+                 crumbs=[("../index.html", "Topics"), (f"../topic/{idx['topic_slug']}.html", idx["topic"]), ("../notes.html", "Notes"), (None, idx["name"])], cls=cls + " small",
+                 pills=[" and ".join("Paper " + str(p) for p in idx["papers"]), f"{len(note['sections'])} sections", f"{len(note.get('diagrams', []))} diagram{'s' if len(note.get('diagrams', [])) != 1 else ''}"])]
+    body.append('<main><div class="wrap notes">')
+    body.append(f'<div class="summary">{note["summary"]}</div>')
+    body.append('<div class="nlinks noprint">' + f'<a class="btn" href="../subtopic/{slug}.html">Practice questions ({nq})</a> <a class="btn ghost" href="../quickfire.html?sub={slug}">Quick-fire</a> '
+                f'<a class="btn ghost" href="../terms.html?topic={idx["topic_slug"]}">Definitions drill</a> <a class="btn ghost" href="../pastq.html#{idx["topic_slug"]}">Real AQA questions ({real})</a> <button type="button" class="btn ghost" data-print="qp">Print notes</button></div>')
+    body.append('<div class="toc noprint"><b>Contents:</b> ' + " ".join(f'<a href="#s{i}">{html.escape(h)}</a>' for i, (h, pg, _) in enumerate(note["sections"], 1)) +
+                (' <a href="#diagrams">Diagrams</a>' if note.get("diagrams") else "") + ' <a href="#numbers">Key numbers</a> <a href="#exam">How it is examined</a></div>')
+    for i, (h, pg, content) in enumerate(note["sections"], 1):
+        body.append(f'<h2 id="s{i}">{html.escape(h)} <span class="pg">Genn pp. {html.escape(pg)}</span></h2>{content}')
+    if note.get("diagrams"):
+        body.append('<h2 id="diagrams">Diagrams</h2>')
+        for d in note["diagrams"]:
+            body.append(diagrams.render(d, svg_chart))
+    if note.get("numbers"):
+        body.append('<div class="nums" id="numbers"><h3>Key numbers and facts to remember</h3><ul>' + "".join(f"<li>{n}</li>" for n in note["numbers"]) + "</ul></div>")
+    body.append('<div class="examh" id="exam"><h3>How this subtopic is examined</h3><ul>' + "".join(f"<li>{e}</li>" for e in note.get("exam", [])) + "</ul>")
+    rows = official_rows(slug)
+    if rows:
+        body.append(f'<p><b>Real AQA questions on this subtopic ({len(rows)}):</b></p><div class="real">' + "".join(rows) + "</div>")
+    body.append("</div>")
+    body.append(f'<p class="note">These notes are written from {html.escape(BOOK)} - the page numbers on each heading are where to read the original. Diagrams are redrawn, not copied. AQA question references show where the topic has come up in real papers.</p>')
+    body.append("</div></main>")
+    return page(f"Notes: {idx['name']}", "\n".join(body), root="../", active="notes.html")
+
+
+def notes_index_page(sets_by_sub):
+    idx = subtopic_index()
+    counts = official_counts()
+    body = [hero("Revision notes", f"Everything you need to know for each subtopic, organised under the textbook's own headings with the page numbers to read alongside, plus diagrams, key numbers and how each topic is examined. {len(NOTES_ALL)} subtopics.")]
+    body.append('<main><div class="wrap">')
+    seen = set()
+    for pno, paper in PAPERS.items():
+        for t in paper["topics"]:
+            if t["slug"] in seen:
+                continue
+            seen.add(t["slug"])
+            body.append(f'<h2 class="sec">{html.escape(t["name"])} <span style="font-size:.85rem;color:var(--stone);font-weight:400">spec {t["spec"]} &middot; {"Paper " + str(pno) if t["slug"] != "research" else "both papers"}</span></h2><div class="notes-grid">')
+            for slug, name, spec, pages in t["subtopics"]:
+                n = NOTES_ALL.get(slug)
+                if not n:
+                    continue
+                body.append(f'<a class="ncard" href="notes/{slug}.html"><b>{html.escape(name)}</b><span>Genn pp. {pages} &middot; {len(n["sections"])} sections &middot; {len(n.get("diagrams", []))} diagrams &middot; examined {counts.get(slug, 0)} times</span></a>')
+            body.append("</div>")
+    body.append("</div></main>")
+    return page("Revision notes", "\n".join(body), active="notes.html")
