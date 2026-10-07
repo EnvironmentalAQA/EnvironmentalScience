@@ -6,7 +6,7 @@ import os, re, html, json
 from bank.topics import PAPERS, subtopic_index, BOOK
 from .model import Table as QTable, Chart
 from .pdf import plain, LEVELS_9, LEVELS_25
-from .marking import mark_points
+from .marking import scheme
 from bank.official_index import OFFICIAL_INDEX
 from bank.exemplars import EXEMPLARS, ESSAY_EXEMPLARS
 from bank.terms import TERMS
@@ -18,9 +18,9 @@ CSS = """
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap');
 :root{--forest:#1f3d2b;--moss:#3f6b4a;--leaf:#7fb069;--leaf-light:#e6f0dc;--sand:#f6f3ec;--sand-dark:#ece6d8;--earth:#8b5e3c;--stone:#5c6660;--ink:#22302a;--line:#dcd6c8;
 --p1:#2f5f73;--p1-light:#e2edf2;--p2:#3f6b4a;--p2-light:#e6f0dc;--card:#ffffff;--head:#1f3d2b;--ms-bg:#e6f0dc;--ms-line:#cfe0bf;--note-bg:#fff8e6;--note-line:#ecd9a3;--input:#fff;
---ok:#3f8f5a;--warn:#d9a441;--bad:#c0554a}
+--ok:#3f8f5a;--warn:#d9a441;--bad:#c0554a;--ac-bg:#eef7ea;--ac-line:#c6e0b8;--rj-bg:#fdf1ef;--rj-line:#edc9c4}
 [data-theme=dark]{--forest:#0f1a13;--moss:#8fc17f;--leaf:#7fb069;--leaf-light:#22301f;--sand:#131a15;--sand-dark:#1c2620;--earth:#d6a878;--stone:#a6b0a8;--ink:#e4e8e2;--line:#2c3a31;
---p1-light:#1c3140;--p2-light:#22301f;--card:#192219;--head:#dfe9d9;--ms-bg:#1f2d21;--ms-line:#33513a;--note-bg:#2b2716;--note-line:#5a4c22;--input:#0f1611}
+--p1-light:#1c3140;--p2-light:#22301f;--card:#192219;--head:#dfe9d9;--ms-bg:#1f2d21;--ms-line:#33513a;--note-bg:#2b2716;--note-line:#5a4c22;--input:#0f1611;--ac-bg:#1b2a1d;--ac-line:#35533c;--rj-bg:#2b1d1b;--rj-line:#5a3732}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;font-family:'Source Sans 3',Segoe UI,Arial,sans-serif;font-size:17px;color:var(--ink);background:var(--sand);line-height:1.55}
 h1,h2,h3,.brand{font-family:Fraunces,Georgia,'Times New Roman',serif;font-weight:700;letter-spacing:-.01em}
@@ -103,9 +103,32 @@ footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-
 .res .t{font-weight:700;color:var(--head)}.res .m{font-size:.82rem;color:var(--stone)}.res .s{font-size:.92rem;margin-top:4px}.res mark{background:#ffe58a;color:#222;border-radius:3px;padding:0 2px}
 .empty{color:var(--stone);font-style:italic}
 /* mark scheme points, levels, links */
-.mspart{margin:8px 0 12px}.msh{display:flex;align-items:baseline;gap:8px;margin-bottom:2px}.msh .mtot{font-size:.8rem;color:var(--earth);font-weight:700}
-ul.pts{list-style:none;margin:4px 0 6px 0!important;padding:0}ul.pts li{display:flex;gap:10px;align-items:flex-start;padding:4px 0;border-top:1px dashed var(--ms-line)}ul.pts li:first-child{border-top:0}
-.mk{flex:0 0 auto;min-width:26px;text-align:center;font-size:.75rem;font-weight:700;color:#fff;background:var(--ok);border-radius:6px;padding:2px 6px;margin-top:3px}
+.mspart{margin:10px 0 14px;background:var(--card);border:1px solid var(--ms-line);border-radius:10px;padding:9px 13px 11px}
+.msh{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding-bottom:6px;margin-bottom:6px;border-bottom:1px solid var(--ms-line)}
+.msh b{font-family:Fraunces,serif;font-size:1.02rem;color:var(--head)}.msh .mtot{font-size:.78rem;color:var(--earth);font-weight:700}
+.msh .mtag{font-size:.74rem;font-weight:700;background:var(--leaf-light);color:var(--moss);border:1px solid var(--leaf);border-radius:999px;padding:1px 10px}
+.msh .tcount{margin-left:auto;font-size:.78rem;color:var(--stone)}.msh .tcount.full{color:var(--ok);font-weight:700}
+.mrule{font-size:.85rem;color:var(--stone);margin:0;line-height:1.45}
+ol.pts,ul.pts{list-style:none;margin:5px 0 7px 0!important;padding:0}
+ol.pts>li,ul.pts>li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-top:1px dashed var(--ms-line)}
+ol.pts>li:first-child,ul.pts>li:first-child{border-top:0}
+.pb{flex:1;min-width:0}.pm{margin:0;line-height:1.5}.plab{color:var(--moss)}
+ul.pd{list-style:none;margin:5px 0 0 0!important;padding:0 0 0 11px;border-left:2px solid var(--ms-line)}
+ul.pd>li{font-size:.92rem;color:var(--stone);margin:3px 0;line-height:1.45}
+.pa{font-size:.93rem;margin:5px 0 0}
+.ortag{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--earth);border:1px solid var(--line);border-radius:4px;padding:0 4px;margin-right:5px}
+button.mk,span.mk{flex:0 0 auto;min-width:32px;text-align:center;font-family:inherit;font-size:.74rem;font-weight:700;border-radius:7px;padding:3px 7px;margin-top:2px}
+button.mk{cursor:pointer;color:var(--moss);background:var(--sand);border:1px solid var(--leaf)}button.mk:hover{background:var(--leaf-light)}
+button.mk.on{background:var(--ok);border-color:var(--ok);color:#fff}button.mk.on:after{content:" \2713"}
+span.mk{color:var(--stone);background:var(--sand);border:1px solid var(--line)}
+.tol{font-size:.88rem;border-radius:8px;padding:7px 11px;margin:7px 0 0}
+.tol>b{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
+.tol ul{list-style:disc;margin:0 0 0 17px!important;padding:0}.tol li{margin:3px 0;line-height:1.45}
+.tol.ac{background:var(--ac-bg);border:1px solid var(--ac-line)}.tol.ac>b{color:var(--moss)}
+.tol.rj{background:var(--rj-bg);border:1px solid var(--rj-line)}.tol.rj>b{color:var(--bad)}
+.mnote{font-size:.82rem;color:var(--stone);font-style:italic;margin:8px 0 0}
+.mshelp{font-size:.85rem;margin:6px 0 0;color:var(--stone)}.mshelp summary{cursor:pointer;color:var(--moss);font-weight:700}
+.mshelp ul{margin:6px 0 0 18px}.mshelp li{margin:3px 0}
 table.levels{border-collapse:collapse;width:100%;margin:6px 0 10px;font-size:.86rem;background:var(--card)}table.levels th,table.levels td{border:1px solid var(--ms-line);padding:5px 8px;text-align:left;vertical-align:top}table.levels th{background:var(--sand-dark)}table.levels td.r{white-space:nowrap;font-weight:700;color:var(--earth)}
 ul.ind{margin:4px 0 8px 18px}
 .st button.lnk{padding:2px 7px}
@@ -152,7 +175,7 @@ figure.diag svg{max-width:100%;height:auto;display:block;margin:0 auto;backgroun
 /* print */
 @media print{header.top,footer,.tools,.filterbar,.st,.pill,.aw,.hero .crumbs,.prog,.noprint{display:none!important}
 body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;color:#000;padding:10px 0}.hero p,.hero h1{color:#000}.hero:before{display:none}
-.q{break-inside:avoid;box-shadow:none;border:1px solid #999;page-break-inside:avoid}details.ms{display:none}body.print-ms details.ms{display:block;background:#f3f3f3}body.print-ms details.ms summary{display:none}
+.q{break-inside:avoid;box-shadow:none;border:1px solid #999;page-break-inside:avoid}.mspart{break-inside:avoid;border:1px solid #bbb}button.mk{background:#fff!important;color:#000!important;border:1px solid #000!important}.tol{background:#f6f6f6!important;border:1px solid #bbb!important}.mshelp{display:none}details.ms{display:none}body.print-ms details.ms{display:block;background:#f3f3f3}body.print-ms details.ms summary{display:none}
 svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 """
 
@@ -246,6 +269,15 @@ const tt=document.createElement('button');tt.id='totop';tt.title='Back to top';t
 window.addEventListener('scroll',()=>tt.classList.toggle('show',window.scrollY>600),{passive:true});
 /* ---- print & reveal ---- */
 document.querySelectorAll('[data-print]').forEach(b=>b.onclick=()=>{const ms=b.dataset.print==='ms';document.body.classList.toggle('print-ms',ms);document.querySelectorAll('details.ms').forEach(d=>d.open=ms);window.print();});
+/* ---- tick off the marking points you made ---- */
+document.addEventListener('click',e=>{const b=e.target.closest('button.mk');if(!b)return;
+  const on=b.classList.toggle('on');b.setAttribute('aria-pressed',on?'true':'false');
+  const mp=b.closest('.mspart');const all=[...mp.querySelectorAll('button.mk')];const hit=all.filter(x=>x.classList.contains('on'));
+  const c=mp.querySelector('.tcount');
+  if(c){c.textContent=hit.length?hit.length+' of '+all.length+' points ticked':'';c.classList.toggle('full',hit.length===all.length);}
+  const aw=mp.querySelector('input.aw-in');
+  if(aw&&all.every(x=>x.dataset.mk)){const t=hit.reduce((n,x)=>n+(+x.dataset.mk||0),0);
+    aw.value=Math.min(+aw.max,t);aw.dispatchEvent(new Event('input',{bubbles:true}));}});
 document.querySelectorAll('[data-reveal]').forEach(b=>b.onclick=()=>{const open=b.dataset.reveal==='1';document.querySelectorAll('details.ms').forEach(d=>d.open=open);b.dataset.reveal=open?'0':'1';b.textContent=open?'Hide all mark schemes':'Show all mark schemes';});
 })();
 """
@@ -405,6 +437,54 @@ def exemplar_html(ex, essay=False):
             '<div class="exn"><b>What makes the difference</b><ul>' + "".join(f"<li>{n}</li>" for n in ex["notes"]) + "</ul></div></details>")
 
 
+def point_html(pt, tick=True):
+    """One marking point: the mark it earns, the point itself, then its detail and alternatives."""
+    mk = pt["marks"]
+    if not tick or mk == "":
+        badge = '<span class="mk">&bull;</span>'
+    else:
+        val = mk if mk.isdigit() else ""
+        badge = (f'<button type="button" class="mk" data-mk="{val}" aria-pressed="false"'
+                 f' title="Tick this if you made the point">{html.escape(mk)}</button>')
+    main = (f'<b class="plab">{fmt(pt["label"])}:</b> ' if pt["label"] else "") + fmt(pt["main"])
+    inner = [f'<p class="pm">{main}</p>']
+    if pt["detail"]:
+        inner.append('<ul class="pd">' + "".join(f"<li>{fmt(d)}</li>" for d in pt["detail"]) + "</ul>")
+    for a in pt["alts"]:
+        inner.append(f'<p class="pa"><span class="ortag">or</span>{fmt(a)}</p>')
+    return f'<li>{badge}<div class="pb">' + "".join(inner) + "</div></li>"
+
+
+def points_html(points, tick=True):
+    return '<ol class="pts">' + "".join(point_html(pt, tick) for pt in points) + "</ol>"
+
+
+def tolerance_html(sch):
+    """'Also accept' / 'Do not credit' - the width of answer an examiner would allow."""
+    out = []
+    if sch["accept"]:
+        out.append('<div class="tol ac"><b>Also accept</b><ul>' + "".join(f"<li>{fmt(a)}</li>" for a in sch["accept"]) + "</ul></div>")
+    if sch["reject"]:
+        out.append('<div class="tol rj"><b>Do not credit</b><ul>' + "".join(f"<li>{fmt(a)}</li>" for a in sch["reject"]) + "</ul></div>")
+    return "".join(out)
+
+
+def ind_html(items):
+    """Indicative content for levels-of-response questions, split the same way as marking points."""
+    from .marking import indicative
+    return '<ol class="pts">' + "".join(point_html(pt, tick=False) for pt in indicative(items)) + "</ol>"
+
+
+MS_HELP = ('<details class="mshelp noprint"><summary>How to read these mark schemes</summary><ul>'
+           '<li>The green chip in each heading says how the marks are shared out - how many points you need, '
+           'and whether there is a choice.</li>'
+           '<li>Each row is worth the mark shown on its left. The first line is the point an examiner looks for; '
+           'the indented lines are detail or a second route to the same mark.</li>'
+           '<li><b>Click a mark</b> to tick off a point you made - the counter in the heading keeps your total.</li>'
+           '<li><b>Also accept</b> lists other wordings and answers that earn the same mark; '
+           '<b>Do not credit</b> lists the answers that look right and score nothing.</li></ul></details>')
+
+
 def levels_table(levels):
     rows = "".join(f'<tr><td><b>{html.escape(lv) if lv else "&nbsp;"}</b></td><td class="r">{html.escape(rng)}</td><td>{html.escape(desc)}</td></tr>' for lv, rng, desc in levels)
     return f'<table class="levels"><tr><th>Level</th><th>Marks</th><th>What the answer must show</th></tr>{rows}</table>'
@@ -439,17 +519,24 @@ def html_question(qn, q, marking=False):
     out.append('<details class="ms"><summary>Show mark scheme</summary>')
     for i, p in enumerate(q.parts, 1):
         lab = f"{qn:02d}" if single else f"{qn:02d}.{i}"
-        out.append(f'<div class="mspart"><div class="msh"><b>{lab}</b> <span class="mtot">{p.marks} mark{"s" if p.marks != 1 else ""}</span></div>')
-        rule, pts = mark_points(p)
+        sch = scheme(p)
+        out.append(f'<div class="mspart"><div class="msh"><b>{lab}</b><span class="mtot">{p.marks} mark{"s" if p.marks != 1 else ""}</span>'
+                   + (f'<span class="mtag">{sch["tag"]}</span>' if sch["tag"] else "") + '<span class="tcount"></span></div>')
+        if sch["rule"]:
+            out.append(f'<p class="mrule">{fmt(sch["rule"])}</p>')
         if p.level:
-            out.append(levels_table(LEVELS_9) + '<div class="lvl"><b>Indicative content</b> - credit any of the following (and other relevant, accurate points):</div>')
-            out.append('<ul class="ind">' + "".join(f"<li>{fmt(m)}</li>" for m in p.ms) + "</ul>")
-            out.append(exemplar_html(EXEMPLARS.get(q.id)))
+            out.append(levels_table(LEVELS_9) + '<div class="lvl"><b>Indicative content</b> &mdash; a guide to placing the mark, not a checklist:</div>')
+            out.append(points_html(sch["points"], tick=False))
         elif p.mcq:
-            letter = chr(65 + p.mcq.index(p.ms[0])) if p.ms and p.ms[0] in p.mcq else ""
-            out.append(f'<div class="lvl">{fmt(rule)}</div><ul class="pts"><li><span class="mk">1</span><span><b>{letter}</b>&nbsp; {fmt(p.ms[0]) if p.ms else ""}</span></li></ul>')
+            pt = dict(sch["points"][0]) if sch["points"] else None
+            if pt:
+                pt["label"] = pt["label"] or ""
+                out.append(points_html([pt]))
         else:
-            out.append(f'<div class="lvl">{fmt(rule)}</div><ul class="pts">' + "".join(f'<li><span class="mk">{lab_}</span><span>{fmt(m)}</span></li>' for m, lab_ in pts) + "</ul>")
+            out.append(points_html(sch["points"]))
+        out.append(tolerance_html(sch))
+        if p.level:
+            out.append(exemplar_html(EXEMPLARS.get(q.id)))
         if marking:
             out.append(f'<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="{p.marks}" step="1" data-kind="part" data-key="{q.id}.{i}"></label> / {p.marks}</div>')
         out.append("</div>")
@@ -465,7 +552,7 @@ def filter_bar(show_status=True):
     return (f'<div class="filterbar noprint"><input type="search" placeholder="Filter questions by keyword (e.g. albedo, quota, Simpson)">{chips}{status}'
             '<button type="button" class="chip clear">Clear</button><label class="modew" title="Type your answer before the mark scheme can be opened"><input type="checkbox" class="modeW"> Write-first mode</label><span class="cnt"></span>'
             '<button type="button" class="chip" data-reveal="1">Show all mark schemes</button>'
-            '<button type="button" class="chip" data-print="qp" title="Print the questions only">Print</button><button type="button" class="chip" data-print="ms" title="Print questions with mark schemes">Print + MS</button></div>')
+            '<button type="button" class="chip" data-print="qp" title="Print the questions only">Print</button><button type="button" class="chip" data-print="ms" title="Print questions with mark schemes">Print + MS</button></div>' + MS_HELP)
 
 
 def sub_links(slug, sets, root=""):
@@ -578,7 +665,7 @@ def paper_online_page(g):
                 f'<span class="score">Score <b id="scoreN">0</b>/{total} <span class="pct" id="scorePct">0%</span></span><button type="button" id="clearScore">Clear marks</button>'
                 '<button type="button" data-reveal="1">Show all mark schemes</button><button type="button" data-print="qp">Print</button><button type="button" data-print="ms">Print + MS</button>'
                 '<label class="modew"><input type="checkbox" class="modeW"> Write-first mode</label>'
-                '<span class="kbd">Enter the marks you award yourself inside each mark scheme; the score is saved for this paper.</span></div>')
+                '<span class="kbd">Tick the marking points you made, or type the marks straight in; the score is saved for this paper.</span></div>' + MS_HELP)
     body.append('<div class="jump noprint">' + "".join(f'<a href="#{q.id}">Q{i} &middot; {q.marks}</a>' for i, q in enumerate(g["questions"], 1)) + (f'<a href="#essay">Q{len(g["questions"]) + 1} &middot; essay</a>' if g["essays"] else "") + "</div>")
     for i, q in enumerate(g["questions"], 1):
         body.append(html_question(i, q, marking=True))
@@ -587,8 +674,8 @@ def paper_online_page(g):
         body.append(f'<div class="q" id="essay"><div class="qh"><span class="num">Question {n} &mdash; Essay (answer ONE)</span><span class="meta">25 marks</span></div>')
         for k, e in enumerate(g["essays"], 1):
             body.append(f'<div class="part"><span class="marks">[25 marks]</span><span class="pn">{n:02d}.{k}</span>{fmt(e.title)}</div>')
-            body.append('<details class="ms"><summary>Indicative content</summary>' + levels_table(LEVELS_25) + '<div class="lvl"><b>Indicative content</b> - students are not expected to cover all of these:</div><ul class="ind">' + "".join(f"<li>{fmt(m)}</li>" for m in e.indicative) +
-                        f'</ul>' + exemplar_html(ESSAY_EXEMPLARS.get(e.id), essay=True) + f'<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="25" step="1" data-kind="essay" data-key="{e.id}"></label> / 25 (only the higher of the two essays counts)</div><div class="src">Source: {html.escape(BOOK)}, pp. {html.escape(e.pages)}; spec {html.escape(e.spec)}.</div></details>')
+            body.append('<details class="ms"><summary>Indicative content</summary>' + levels_table(LEVELS_25) + '<div class="lvl"><b>Indicative content</b> &mdash; students are not expected to cover all of these:</div>' + ind_html(e.indicative) +
+                        f'<p class="mnote">Credit any relevant, accurate material, including points that are not listed here. Reward a clear line of argument and a supported conclusion.</p>' + exemplar_html(ESSAY_EXEMPLARS.get(e.id), essay=True) + f'<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="25" step="1" data-kind="essay" data-key="{e.id}"></label> / 25 (only the higher of the two essays counts)</div><div class="src">Source: {html.escape(BOOK)}, pp. {html.escape(e.pages)}; spec {html.escape(e.spec)}.</div></details>')
         body.append("</div>")
     body.append("</div></main>")
     return page(f"Generated Set {g['set']:02d}", "\n".join(body), root="../", extra_js=f"<script>{PAPER_JS % EXAM_SECONDS}</script>",
@@ -602,7 +689,7 @@ def essays_page(essays):
         body.append(f'<div class="paper-head"><span class="tag p{pno}">{PAPERS[pno]["name"]}</span><span class="assessed">{html.escape(PAPERS[pno]["assessed"])}</span></div>')
         for e in [x for x in essays if x.paper == pno]:
             body.append(f'<div class="q"><div class="qh"><span class="num">{fmt(e.title)}</span><span class="meta">spec {html.escape(e.spec)} &middot; Genn pp. {html.escape(e.pages)} &middot; {e.id}</span></div>'
-                        '<details class="ms"><summary>Mark scheme and indicative content</summary>' + levels_table(LEVELS_25) + '<div class="lvl"><b>Indicative content</b> - students are not expected to cover all of these:</div><ul class="ind">' + "".join(f"<li>{fmt(m)}</li>" for m in e.indicative) + "</ul>" + exemplar_html(ESSAY_EXEMPLARS.get(e.id), essay=True) + "</details></div>")
+                        '<details class="ms"><summary>Mark scheme and indicative content</summary>' + levels_table(LEVELS_25) + '<div class="lvl"><b>Indicative content</b> &mdash; students are not expected to cover all of these:</div>' + ind_html(e.indicative) + '<p class="mnote">Credit any relevant, accurate material, including points that are not listed here. Reward a clear line of argument and a supported conclusion.</p>' + exemplar_html(ESSAY_EXEMPLARS.get(e.id), essay=True) + "</details></div>")
     body.append("</div></main>")
     return page("Essay bank", "\n".join(body), active="essays.html")
 

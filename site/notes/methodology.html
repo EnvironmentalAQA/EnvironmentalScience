@@ -3,9 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap');
 :root{--forest:#1f3d2b;--moss:#3f6b4a;--leaf:#7fb069;--leaf-light:#e6f0dc;--sand:#f6f3ec;--sand-dark:#ece6d8;--earth:#8b5e3c;--stone:#5c6660;--ink:#22302a;--line:#dcd6c8;
 --p1:#2f5f73;--p1-light:#e2edf2;--p2:#3f6b4a;--p2-light:#e6f0dc;--card:#ffffff;--head:#1f3d2b;--ms-bg:#e6f0dc;--ms-line:#cfe0bf;--note-bg:#fff8e6;--note-line:#ecd9a3;--input:#fff;
---ok:#3f8f5a;--warn:#d9a441;--bad:#c0554a}
+--ok:#3f8f5a;--warn:#d9a441;--bad:#c0554a;--ac-bg:#eef7ea;--ac-line:#c6e0b8;--rj-bg:#fdf1ef;--rj-line:#edc9c4}
 [data-theme=dark]{--forest:#0f1a13;--moss:#8fc17f;--leaf:#7fb069;--leaf-light:#22301f;--sand:#131a15;--sand-dark:#1c2620;--earth:#d6a878;--stone:#a6b0a8;--ink:#e4e8e2;--line:#2c3a31;
---p1-light:#1c3140;--p2-light:#22301f;--card:#192219;--head:#dfe9d9;--ms-bg:#1f2d21;--ms-line:#33513a;--note-bg:#2b2716;--note-line:#5a4c22;--input:#0f1611}
+--p1-light:#1c3140;--p2-light:#22301f;--card:#192219;--head:#dfe9d9;--ms-bg:#1f2d21;--ms-line:#33513a;--note-bg:#2b2716;--note-line:#5a4c22;--input:#0f1611;--ac-bg:#1b2a1d;--ac-line:#35533c;--rj-bg:#2b1d1b;--rj-line:#5a3732}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;font-family:'Source Sans 3',Segoe UI,Arial,sans-serif;font-size:17px;color:var(--ink);background:var(--sand);line-height:1.55}
 h1,h2,h3,.brand{font-family:Fraunces,Georgia,'Times New Roman',serif;font-weight:700;letter-spacing:-.01em}
@@ -88,9 +88,32 @@ footer{background:var(--forest);color:rgba(255,255,255,.75);padding:26px 0;font-
 .res .t{font-weight:700;color:var(--head)}.res .m{font-size:.82rem;color:var(--stone)}.res .s{font-size:.92rem;margin-top:4px}.res mark{background:#ffe58a;color:#222;border-radius:3px;padding:0 2px}
 .empty{color:var(--stone);font-style:italic}
 /* mark scheme points, levels, links */
-.mspart{margin:8px 0 12px}.msh{display:flex;align-items:baseline;gap:8px;margin-bottom:2px}.msh .mtot{font-size:.8rem;color:var(--earth);font-weight:700}
-ul.pts{list-style:none;margin:4px 0 6px 0!important;padding:0}ul.pts li{display:flex;gap:10px;align-items:flex-start;padding:4px 0;border-top:1px dashed var(--ms-line)}ul.pts li:first-child{border-top:0}
-.mk{flex:0 0 auto;min-width:26px;text-align:center;font-size:.75rem;font-weight:700;color:#fff;background:var(--ok);border-radius:6px;padding:2px 6px;margin-top:3px}
+.mspart{margin:10px 0 14px;background:var(--card);border:1px solid var(--ms-line);border-radius:10px;padding:9px 13px 11px}
+.msh{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding-bottom:6px;margin-bottom:6px;border-bottom:1px solid var(--ms-line)}
+.msh b{font-family:Fraunces,serif;font-size:1.02rem;color:var(--head)}.msh .mtot{font-size:.78rem;color:var(--earth);font-weight:700}
+.msh .mtag{font-size:.74rem;font-weight:700;background:var(--leaf-light);color:var(--moss);border:1px solid var(--leaf);border-radius:999px;padding:1px 10px}
+.msh .tcount{margin-left:auto;font-size:.78rem;color:var(--stone)}.msh .tcount.full{color:var(--ok);font-weight:700}
+.mrule{font-size:.85rem;color:var(--stone);margin:0;line-height:1.45}
+ol.pts,ul.pts{list-style:none;margin:5px 0 7px 0!important;padding:0}
+ol.pts>li,ul.pts>li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-top:1px dashed var(--ms-line)}
+ol.pts>li:first-child,ul.pts>li:first-child{border-top:0}
+.pb{flex:1;min-width:0}.pm{margin:0;line-height:1.5}.plab{color:var(--moss)}
+ul.pd{list-style:none;margin:5px 0 0 0!important;padding:0 0 0 11px;border-left:2px solid var(--ms-line)}
+ul.pd>li{font-size:.92rem;color:var(--stone);margin:3px 0;line-height:1.45}
+.pa{font-size:.93rem;margin:5px 0 0}
+.ortag{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--earth);border:1px solid var(--line);border-radius:4px;padding:0 4px;margin-right:5px}
+button.mk,span.mk{flex:0 0 auto;min-width:32px;text-align:center;font-family:inherit;font-size:.74rem;font-weight:700;border-radius:7px;padding:3px 7px;margin-top:2px}
+button.mk{cursor:pointer;color:var(--moss);background:var(--sand);border:1px solid var(--leaf)}button.mk:hover{background:var(--leaf-light)}
+button.mk.on{background:var(--ok);border-color:var(--ok);color:#fff}button.mk.on:after{content:" ¹3"}
+span.mk{color:var(--stone);background:var(--sand);border:1px solid var(--line)}
+.tol{font-size:.88rem;border-radius:8px;padding:7px 11px;margin:7px 0 0}
+.tol>b{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
+.tol ul{list-style:disc;margin:0 0 0 17px!important;padding:0}.tol li{margin:3px 0;line-height:1.45}
+.tol.ac{background:var(--ac-bg);border:1px solid var(--ac-line)}.tol.ac>b{color:var(--moss)}
+.tol.rj{background:var(--rj-bg);border:1px solid var(--rj-line)}.tol.rj>b{color:var(--bad)}
+.mnote{font-size:.82rem;color:var(--stone);font-style:italic;margin:8px 0 0}
+.mshelp{font-size:.85rem;margin:6px 0 0;color:var(--stone)}.mshelp summary{cursor:pointer;color:var(--moss);font-weight:700}
+.mshelp ul{margin:6px 0 0 18px}.mshelp li{margin:3px 0}
 table.levels{border-collapse:collapse;width:100%;margin:6px 0 10px;font-size:.86rem;background:var(--card)}table.levels th,table.levels td{border:1px solid var(--ms-line);padding:5px 8px;text-align:left;vertical-align:top}table.levels th{background:var(--sand-dark)}table.levels td.r{white-space:nowrap;font-weight:700;color:var(--earth)}
 ul.ind{margin:4px 0 8px 18px}
 .st button.lnk{padding:2px 7px}
@@ -137,7 +160,7 @@ figure.diag svg{max-width:100%;height:auto;display:block;margin:0 auto;backgroun
 /* print */
 @media print{header.top,footer,.tools,.filterbar,.st,.pill,.aw,.hero .crumbs,.prog,.noprint{display:none!important}
 body{background:#fff;color:#000;font-size:12pt}.hero{background:#fff!important;color:#000;padding:10px 0}.hero p,.hero h1{color:#000}.hero:before{display:none}
-.q{break-inside:avoid;box-shadow:none;border:1px solid #999;page-break-inside:avoid}details.ms{display:none}body.print-ms details.ms{display:block;background:#f3f3f3}body.print-ms details.ms summary{display:none}
+.q{break-inside:avoid;box-shadow:none;border:1px solid #999;page-break-inside:avoid}.mspart{break-inside:avoid;border:1px solid #bbb}button.mk{background:#fff!important;color:#000!important;border:1px solid #000!important}.tol{background:#f6f6f6!important;border:1px solid #bbb!important}.mshelp{display:none}details.ms{display:none}body.print-ms details.ms{display:block;background:#f3f3f3}body.print-ms details.ms summary{display:none}
 svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 </style>
 <script>try{if(localStorage.getItem('envsci.theme')==='"dark"')document.documentElement.dataset.theme='dark';}catch(e){}</script></head><body >
@@ -267,6 +290,15 @@ const tt=document.createElement('button');tt.id='totop';tt.title='Back to top';t
 window.addEventListener('scroll',()=>tt.classList.toggle('show',window.scrollY>600),{passive:true});
 /* ---- print & reveal ---- */
 document.querySelectorAll('[data-print]').forEach(b=>b.onclick=()=>{const ms=b.dataset.print==='ms';document.body.classList.toggle('print-ms',ms);document.querySelectorAll('details.ms').forEach(d=>d.open=ms);window.print();});
+/* ---- tick off the marking points you made ---- */
+document.addEventListener('click',e=>{const b=e.target.closest('button.mk');if(!b)return;
+  const on=b.classList.toggle('on');b.setAttribute('aria-pressed',on?'true':'false');
+  const mp=b.closest('.mspart');const all=[...mp.querySelectorAll('button.mk')];const hit=all.filter(x=>x.classList.contains('on'));
+  const c=mp.querySelector('.tcount');
+  if(c){c.textContent=hit.length?hit.length+' of '+all.length+' points ticked':'';c.classList.toggle('full',hit.length===all.length);}
+  const aw=mp.querySelector('input.aw-in');
+  if(aw&&all.every(x=>x.dataset.mk)){const t=hit.reduce((n,x)=>n+(+x.dataset.mk||0),0);
+    aw.value=Math.min(+aw.max,t);aw.dispatchEvent(new Event('input',{bubbles:true}));}});
 document.querySelectorAll('[data-reveal]').forEach(b=>b.onclick=()=>{const open=b.dataset.reveal==='1';document.querySelectorAll('details.ms').forEach(d=>d.open=open);b.dataset.reveal=open?'0':'1';b.textContent=open?'Hide all mark schemes':'Show all mark schemes';});
 })();
 </script></body></html>

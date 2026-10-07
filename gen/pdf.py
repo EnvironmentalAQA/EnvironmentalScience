@@ -13,7 +13,7 @@ from reportlab.graphics.charts.legends import Legend
 from reportlab.graphics.widgets.markers import makeMarker
 import re, html
 
-from .marking import mark_points
+from .marking import scheme, indicative
 from bank.exemplars import EXEMPLARS, ESSAY_EXEMPLARS
 from .model import Q, P, Table as QTable, Chart, Essay
 from bank.topics import BOOK
@@ -61,6 +61,12 @@ CAP = ParagraphStyle("cap", parent=BASE, fontName=FONTB, alignment=TA_CENTER, sp
 CELL = ParagraphStyle("cell", parent=BASE, fontSize=9.5, leading=12)
 CELLB = ParagraphStyle("cellb", parent=CELL, fontName=FONTB)
 MSCELL = ParagraphStyle("mscell", parent=BASE, fontSize=9.5, leading=12.5)
+MSRULE = ParagraphStyle("msrule", parent=MSCELL, fontSize=8.8, leading=11, textColor=colors.HexColor("#4a564c"), spaceAfter=2)
+MSPT = ParagraphStyle("mspt", parent=MSCELL, leftIndent=16, firstLineIndent=-16, spaceBefore=2.5)
+MSDET = ParagraphStyle("msdet", parent=MSCELL, fontSize=8.8, leading=11, leftIndent=26, firstLineIndent=-8,
+                       textColor=colors.HexColor("#3d473e"))
+MSTOL = ParagraphStyle("mstol", parent=MSCELL, fontSize=8.8, leading=11, leftIndent=12, firstLineIndent=-6)
+MSHEAD = ParagraphStyle("mshead", parent=MSCELL, fontName=FONTB, fontSize=8.8, leading=11, spaceBefore=3)
 
 
 def esc(s: str) -> str:
@@ -74,6 +80,16 @@ def esc(s: str) -> str:
     s = re.sub(r"_(\d+)", r"<sub>\1</sub>", s)
     s = re.sub(r"\^(-?\d+)", r"<sup>\1</sup>", s)
     return s
+
+
+_ENT = {"&rarr;": "→", "&middot;": "·", "&mdash;": "—", "&ndash;": "–", "&nbsp;": " "}
+
+
+def mstext(s: str) -> str:
+    """esc(), but first turn the named entities used in the mark schemes into real characters."""
+    for k, v in _ENT.items():
+        s = s.replace(k, v)
+    return esc(s)
 
 
 # ---------- flowables ----------
@@ -549,26 +565,72 @@ def exemplar_flowables(ex):
     return body
 
 
-def ms_rows(qn, q: Q):
+def point_flowables(pt, n=0):
+    """One marking point: the mark it earns, the point, then its detail and alternatives."""
+    out = []
+    head = f"<b>{mstext(pt['marks'])}</b>  " if pt["marks"] else "•  "
+    lab = f"<b>{mstext(pt['label'])}:</b> " if pt["label"] else ""
+    out.append(Paragraph(head + lab + mstext(pt["main"]), MSPT))
+    for d in pt["detail"]:
+        out.append(Paragraph("–  " + mstext(d), MSDET))
+    for a in pt["alts"]:
+        out.append(Paragraph("<b>OR</b>  " + mstext(a), MSDET))
+    return out
+
+
+def tolerance_flowables(sch):
+    out = []
+    if sch["accept"]:
+        out.append(Paragraph("Also accept", MSHEAD))
+        for a in sch["accept"]:
+            out.append(Paragraph("•  " + mstext(a), MSTOL))
+    if sch["reject"]:
+        out.append(Paragraph("Do not credit", MSHEAD))
+        for a in sch["reject"]:
+            out.append(Paragraph("•  " + mstext(a), MSTOL))
+    return out
+
+
+def split_rows(label, body, marks, w, limit=540):
+    """Turn one part's mark scheme into table rows short enough to fit a page.
+
+    A table cell cannot break across pages, so a long scheme (levels of response, or a
+    part with a lot of tolerance notes) is measured and carried over into further rows
+    that leave the question and mark columns blank.
+    """
+    rows, cur, h, first = [], [], 0.0, True
+    for f in body:
+        try:
+            fh = f.wrap(w, 0)[1]
+        except Exception:
+            fh = 12
+        if cur and h + fh > limit:
+            rows.append([Paragraph(label if first else "", CELLB), cur, Paragraph(marks if first else "", CELL)])
+            cur, h, first = [], 0.0, False
+        cur.append(f)
+        h += fh
+    if cur or first:
+        rows.append([Paragraph(label if first else "", CELLB), cur, Paragraph(marks if first else "", CELL)])
+    return rows
+
+
+def ms_rows(qn, q: Q, w=380):
     rows = []
     single = len(q.parts) == 1 and not q.intro and not q.figures
     for i, p in enumerate(q.parts, 1):
         label = f"{qn:02d}" if single else f"{qn:02d}.{i}"
-        body = []
+        sch = scheme(p)
+        body = [Paragraph(f"<b>{mstext(sch['tag'])}</b>", MSHEAD)]
+        if sch["rule"]:
+            body.append(Paragraph(mstext(sch["rule"]), MSRULE))
         if p.level:
-            body.append(Paragraph("<b>Levels of response</b>", MSCELL))
             for lv, rng, desc in LEVELS_9:
-                body.append(Paragraph(f"<b>{lv} ({rng} marks)</b>: {esc(desc)}" if lv else f"<b>{rng} marks</b>: {esc(desc)}", MSCELL))
-            body.append(Spacer(1, 4))
-            body.append(Paragraph("<b>Indicative content</b> (credit other relevant, accurate points)", MSCELL))
-            for m in p.ms:
-                body.append(Paragraph("&bull; " + esc(m), MSCELL))
-        else:
-            rule, pts = mark_points(p)
-            body.append(Paragraph(f"<i>{esc(rule)}</i>", MSCELL))
-            for m, lab in pts:
-                body.append(Paragraph("&bull; " + esc(m) + (f"  <b>({lab})</b>" if lab else ""), MSCELL))
-        rows.append([Paragraph(label, CELLB), body, Paragraph(str(p.marks), CELL)])
+                body.append(Paragraph(f"<b>{lv} ({rng} marks)</b>: {esc(desc)}" if lv else f"<b>{rng} marks</b>: {esc(desc)}", MSDET))
+            body.append(Paragraph("Indicative content - a guide to placing the mark, not a checklist", MSHEAD))
+        for pt in sch["points"]:
+            body += point_flowables(pt)
+        body += tolerance_flowables(sch)
+        rows += split_rows(label, body, str(p.marks), w)
         if p.level and q.id in EXEMPLARS:
             rows += exemplar_rows(EXEMPLARS[q.id])
     src = f"<b>Source:</b> {esc(BOOK)}, pp. {esc(q.pages)}; AQA spec {esc(q.spec)}."
@@ -576,18 +638,20 @@ def ms_rows(qn, q: Q):
     return rows
 
 
-def essay_ms_rows(qn, pair):
+def essay_ms_rows(qn, pair, w=380):
     rows = []
     for k, e in enumerate(pair, 1):
         body = [Paragraph(f"<b>{esc(e.title)}</b>", MSCELL), Spacer(1, 4), Paragraph("<b>Levels of response</b>", MSCELL)]
         for lv, rng, desc in LEVELS_25:
             body.append(Paragraph(f"<b>{lv} ({rng} marks)</b>: {esc(desc)}" if lv else f"<b>{rng} marks</b>: {esc(desc)}", MSCELL))
         body.append(Spacer(1, 4))
-        body.append(Paragraph("<b>Indicative content</b> (students are not expected to cover all of these; credit other relevant material)", MSCELL))
-        for m in e.indicative:
-            body.append(Paragraph("&bull; " + esc(m), MSCELL))
+        body.append(Paragraph("Indicative content - students are not expected to cover all of these", MSHEAD))
+        for pt in indicative(e.indicative):
+            body += point_flowables(pt)
+        body.append(Paragraph("<i>Credit any relevant, accurate material, including points that are not listed here. "
+                              "Reward a clear line of argument and a supported conclusion.</i>", MSRULE))
         body.append(Paragraph(f"<b>Source:</b> {esc(BOOK)}, pp. {esc(e.pages)}; AQA spec {esc(e.spec)}.", SMALL))
-        rows.append([Paragraph(f"{qn:02d}.{k}", CELLB), body, Paragraph("25", CELL)])
+        rows += split_rows(f"{qn:02d}.{k}", body, "25", w)
         if e.id in ESSAY_EXEMPLARS:
             rows += exemplar_rows(ESSAY_EXEMPLARS[e.id])
     return rows
@@ -606,19 +670,22 @@ def build_mark_scheme(path, code, title, questions, essays=None, subtitle=""):
     if subtitle:
         story.append(Paragraph(esc(subtitle), BASE))
     story += [Spacer(1, 10), Paragraph("<b>Marking guidance</b>", H2),
-              Paragraph("&bull; The number in brackets after each marking point is the mark it earns; the note above the points says how many are needed.<br/>"
+              Paragraph("&bull; Each part opens with a line in bold saying how its marks are shared out, followed by one sentence on how to mark it.<br/>"
+                        "&bull; The figure in bold at the start of a marking point is the mark that point earns. Lines indented beneath it, starting with a dash, "
+                        "are the detail that belongs to the same mark; a line starting <b>OR</b> is another route to it.<br/>"
+                        "&bull; <b>Also accept</b> lists other wordings and answers that earn the mark - wording never has to match these notes, only the science. "
+                        "<b>Do not credit</b> lists the answers that look right and earn nothing.<br/>"
                         "&bull; Where a question asks for a fixed number of points (eg <i>two</i> reasons), credit only the first points given.<br/>"
-                        "&bull; Alternative correct wording and other relevant, accurate points are credited.<br/>"
-                        "&bull; For levels-of-response questions, first determine the level using the descriptors, then position the mark within the level using the indicative content.<br/>"
+                        "&bull; For levels-of-response questions, determine the level from the descriptors first, then position the mark within the level using the indicative content.<br/>"
                         "&bull; Calculations: credit correct working (method marks) even if the final answer is wrong; incorrect answers with no working score 0.", BASE),
               Spacer(1, 6),
               Paragraph(f"<b>Textbook references:</b> every question below cites the printed page numbers in {esc(BOOK)} from which the content is drawn, "
                         "together with the AQA 7447 specification reference.", SMALL), Spacer(1, 12)]
     rows = [[Paragraph("<b>Question</b>", CELLB), Paragraph("<b>Marking guidance</b>", CELLB), Paragraph("<b>Marks</b>", CELLB)]]
     for i, q in enumerate(questions, 1):
-        rows += ms_rows(i, q)
+        rows += ms_rows(i, q, avail_w - 3.9 * cm - 12)
     if essays:
-        rows += essay_ms_rows(len(questions) + 1, essays)
+        rows += essay_ms_rows(len(questions) + 1, essays, avail_w - 3.9 * cm - 12)
     t = Table(rows, colWidths=[2.3 * cm, avail_w - 3.9 * cm, 1.6 * cm], repeatRows=1)
     t.setStyle(TableStyle([("GRID", (0, 0), (-1, -1), 0.5, colors.black), ("VALIGN", (0, 0), (-1, -1), "TOP"),
                            ("BACKGROUND", (0, 0), (-1, 0), colors.whitesmoke)]))

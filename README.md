@@ -101,9 +101,17 @@ They are grouped by series and paper on `site/official.html`.
   each subtopic page also lists the real questions on that topic.
 - **Revision planner** (`planner.html`) - exam countdown, subtopics sorted weakest-first with how often each
   has been examined, mock-paper score history and suggested next steps.
-- **Explicit mark schemes** - every marking point shows the mark it earns and a rule line ("Any 3 from",
-  "2 marks for each point", calculation rules); levels-of-response questions show the full level
-  descriptor table (`gen/marking.py`, shared by the PDFs and the site).
+- **Explicit mark schemes** - each part opens with a chip saying how its marks are shared out ("1 mark each",
+  "Any 3 of 5", "Calculation", "Levels of response") and one line of marking guidance. Every marking point is a
+  row carrying the mark it earns; clauses after a semicolon become indented detail or an `OR` alternative instead
+  of one long line, so a scheme can be read a point at a time. On the site you can **click a mark to tick off a
+  point you made**, and on a mock paper the ticks fill in the marks-awarded box.
+- **Answer tolerance** - every scheme ends with **Also accept** (other wordings and routes that earn the same
+  mark, including per-term equivalents such as "albedo &rarr; reflectivity") and, where it applies, **Do not credit**
+  (the answers that look right and score nothing). The wording equivalents and common misconceptions live in
+  `bank/accept.py` and are matched against the words a question actually uses; a part can also carry its own
+  `accept=[...]` / `reject=[...]` lists, and `||` inside a marking point marks an alternative route to that mark.
+  Levels-of-response questions show the full level descriptor table (`gen/marking.py`, shared by the PDFs and the site).
 - **Revision notes** (`notes.html`, `notes/<slug>.html`) - full notes for all 43 subtopics, each organised under the
   textbook's own headings with the printed pages to read alongside, redrawn diagrams, key numbers and a list of how
   the subtopic has been examined (linked to the real papers). Written in `bank/notes_*.py`.

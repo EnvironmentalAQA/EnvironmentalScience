@@ -47,6 +47,8 @@ class P:
     table: Optional[Table] = None  # answer table to complete
     mcq: Optional[List[str]] = None   # multiple-choice options (tick one box)
     ms_note: str = ""              # e.g. "Accept converse", "Any 3 from"
+    accept: List[str] = field(default_factory=list)   # extra answers that also earn the mark
+    reject: List[str] = field(default_factory=list)   # answers that look right but earn nothing
     ao: str = ""                   # optional AO tag
 
 
