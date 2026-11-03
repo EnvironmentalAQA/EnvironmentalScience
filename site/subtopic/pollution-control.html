@@ -35,6 +35,17 @@ a.btn,button.btn{display:inline-block;background:var(--moss);color:#fff;text-dec
 a.btn.ghost,button.btn.ghost{background:transparent;color:var(--moss);border:1.5px solid var(--moss)}a.btn.ghost:hover,button.btn.ghost:hover{background:var(--leaf-light)}
 .paper-head{display:flex;align-items:center;gap:14px;margin:8px 0 14px}.paper-head .tag{white-space:nowrap;font-family:Fraunces,serif;font-size:1.05rem;font-weight:700;color:#fff;border-radius:8px;padding:4px 12px}
 .tag.p1{background:var(--p1)}.tag.p2{background:var(--p2)}.paper-head span.assessed{color:var(--stone);font-size:.95rem}
+.papers2{display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;align-items:start}
+.papers2 .paper-head{display:block;position:sticky;top:var(--hdr,62px);z-index:6;background:var(--sand);margin:0;padding:10px 0 8px;border-bottom:1px solid var(--line)}
+.papers2 .paper-head .tag{display:inline-block}.papers2 .paper-head span.assessed{display:block;font-size:.85rem;margin-top:5px;min-height:1.3em}
+.papers2 table.list{margin:10px 0 0}
+table.list.compact th,table.list.compact td{padding:7px 10px;font-size:.9rem;vertical-align:top}
+table.list.compact td:first-child{font-family:Fraunces,serif;white-space:nowrap}
+table.list.compact td a{text-decoration:none;font-weight:600;white-space:nowrap}table.list.compact td a:hover{text-decoration:underline}
+table.list.compact a.sit{background:var(--leaf-light);border:1px solid var(--leaf);border-radius:999px;padding:1px 9px}
+.tcov{display:inline-block;margin-left:8px;vertical-align:baseline}.tcov summary{cursor:pointer;color:var(--stone);font-size:.78rem;white-space:nowrap}
+.tcov[open]{display:block;margin:3px 0 0}.tcov>div{font-size:.8rem;color:var(--stone);line-height:1.45;margin-top:3px}
+@media(max-width:900px){.papers2{grid-template-columns:1fr}.papers2 .paper-head{position:static}}
 .topic-card{display:flex;gap:16px;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;transition:transform .12s,box-shadow .12s}
 .topic-card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(31,61,43,.12)}
 .topic-card .icon{flex:0 0 52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center}.topic-card .icon svg{width:30px;height:30px}
@@ -232,31 +243,89 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="q" id="PCON-03" data-qid="PCON-03" data-marks="10" data-pm="2,1,4,3" data-flags="calc data"><div class="qh"><span class="num">Question 3</span><span class="meta">10 marks &middot; <a href="../subtopic/pollution-control.html">Principles of pollution control (CPA, CGM, new technologies)</a> &middot; spec 3.4.3.1 &middot; Genn pp. 244-245 &middot; PCON-03</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>Figure 1 shows the relationship between the cost of pollution control equipment at a factory and the percentage of a pollutant emission that is prevented.</p>
 <div class="cap">Figure 1</div>
-<svg class="chart" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
-<polyline points="60.0,270.0 157.0,264.3 253.9,257.2 350.9,247.3 447.9,227.4 496.4,199.0 520.6,156.4 540.0,42.7" fill="none" stroke="#22302a" stroke-width="1.8"/>
-<circle cx="60.0" cy="270.0" r="2.6" fill="#22302a"/>
-<circle cx="157.0" cy="264.3" r="2.6" fill="#22302a"/>
-<circle cx="253.9" cy="257.2" r="2.6" fill="#22302a"/>
-<circle cx="350.9" cy="247.3" r="2.6" fill="#22302a"/>
-<circle cx="447.9" cy="227.4" r="2.6" fill="#22302a"/>
-<circle cx="496.4" cy="199.0" r="2.6" fill="#22302a"/>
-<circle cx="520.6" cy="156.4" r="2.6" fill="#22302a"/>
-<circle cx="540.0" cy="42.7" r="2.6" fill="#22302a"/>
-<line x1="60.0" y1="270" x2="60.0" y2="274" stroke="#000"/><text x="60.0" y="286" text-anchor="middle">0</text>
-<line x1="56" y1="270.0" x2="60" y2="270.0" stroke="#000"/><text x="52" y="274.0" text-anchor="end">0</text>
-<line x1="156.0" y1="270" x2="156.0" y2="274" stroke="#000"/><text x="156.0" y="286" text-anchor="middle">19.8</text>
-<line x1="56" y1="220.0" x2="60" y2="220.0" stroke="#000"/><text x="52" y="224.0" text-anchor="end">3.52</text>
-<line x1="252.0" y1="270" x2="252.0" y2="274" stroke="#000"/><text x="252.0" y="286" text-anchor="middle">39.6</text>
-<line x1="56" y1="170.0" x2="60" y2="170.0" stroke="#000"/><text x="52" y="174.0" text-anchor="end">7.04</text>
-<line x1="348.0" y1="270" x2="348.0" y2="274" stroke="#000"/><text x="348.0" y="286" text-anchor="middle">59.4</text>
-<line x1="56" y1="120.0" x2="60" y2="120.0" stroke="#000"/><text x="52" y="124.0" text-anchor="end">10.6</text>
-<line x1="444.0" y1="270" x2="444.0" y2="274" stroke="#000"/><text x="444.0" y="286" text-anchor="middle">79.2</text>
-<line x1="56" y1="70.0" x2="60" y2="70.0" stroke="#000"/><text x="52" y="74.0" text-anchor="end">14.1</text>
-<line x1="540.0" y1="270" x2="540.0" y2="274" stroke="#000"/><text x="540.0" y="286" text-anchor="middle">99</text>
-<line x1="56" y1="20.0" x2="60" y2="20.0" stroke="#000"/><text x="52" y="24.0" text-anchor="end">17.6</text>
-<line x1="60" y1="20" x2="60" y2="270" stroke="#000"/><line x1="60" y1="270" x2="540" y2="270" stroke="#000"/>
-<text x="300.0" y="312" text-anchor="middle" font-weight="bold">Pollution prevented / %</text>
-<text transform="translate(14,145.0) rotate(-90)" text-anchor="middle" font-weight="bold">Cost / &amp;pound; million</text>
+<svg class="chart" viewBox="0 0 600 348" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
+<rect x="66" y="18" width="516" height="272" fill="#fff"/>
+<line x1="66.00" y1="290.00" x2="582.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="281.50" x2="582.00" y2="281.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="273.00" x2="582.00" y2="273.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="264.50" x2="582.00" y2="264.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="256.00" x2="582.00" y2="256.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="247.50" x2="582.00" y2="247.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="239.00" x2="582.00" y2="239.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="230.50" x2="582.00" y2="230.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="222.00" x2="582.00" y2="222.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="213.50" x2="582.00" y2="213.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="205.00" x2="582.00" y2="205.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="196.50" x2="582.00" y2="196.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="188.00" x2="582.00" y2="188.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="179.50" x2="582.00" y2="179.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="171.00" x2="582.00" y2="171.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="162.50" x2="582.00" y2="162.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="154.00" x2="582.00" y2="154.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="145.50" x2="582.00" y2="145.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="137.00" x2="582.00" y2="137.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="128.50" x2="582.00" y2="128.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="120.00" x2="582.00" y2="120.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="111.50" x2="582.00" y2="111.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="103.00" x2="582.00" y2="103.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="94.50" x2="582.00" y2="94.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="86.00" x2="582.00" y2="86.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="77.50" x2="582.00" y2="77.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="69.00" x2="582.00" y2="69.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="60.50" x2="582.00" y2="60.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="52.00" x2="582.00" y2="52.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="43.50" x2="582.00" y2="43.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="35.00" x2="582.00" y2="35.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="26.50" x2="582.00" y2="26.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="18.00" x2="582.00" y2="18.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="18.00" x2="66.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="91.80" y1="18.00" x2="91.80" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="117.60" y1="18.00" x2="117.60" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="143.40" y1="18.00" x2="143.40" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="169.20" y1="18.00" x2="169.20" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="195.00" y1="18.00" x2="195.00" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="220.80" y1="18.00" x2="220.80" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="246.60" y1="18.00" x2="246.60" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="272.40" y1="18.00" x2="272.40" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="298.20" y1="18.00" x2="298.20" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="324.00" y1="18.00" x2="324.00" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="349.80" y1="18.00" x2="349.80" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="375.60" y1="18.00" x2="375.60" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="401.40" y1="18.00" x2="401.40" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="427.20" y1="18.00" x2="427.20" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="453.00" y1="18.00" x2="453.00" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="478.80" y1="18.00" x2="478.80" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="504.60" y1="18.00" x2="504.60" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="530.40" y1="18.00" x2="530.40" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="556.20" y1="18.00" x2="556.20" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="582.00" y1="18.00" x2="582.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<polyline points="66.0,290.0 169.2,283.2 272.4,274.7 375.6,262.8 478.8,239.0 530.4,205.0 556.2,154.0 576.8,18.0" fill="none" stroke="#22302a" stroke-width="2"/>
+<circle cx="66.0" cy="290.0" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="169.2" cy="283.2" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="272.4" cy="274.7" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="375.6" cy="262.8" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="478.8" cy="239.0" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="530.4" cy="205.0" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="556.2" cy="154.0" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="576.8" cy="18.0" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<line x1="66.0" y1="290" x2="66.0" y2="295" stroke="#38463c"/><text x="66.0" y="307" text-anchor="middle">0</text>
+<line x1="169.2" y1="290" x2="169.2" y2="295" stroke="#38463c"/><text x="169.2" y="307" text-anchor="middle">20</text>
+<line x1="272.4" y1="290" x2="272.4" y2="295" stroke="#38463c"/><text x="272.4" y="307" text-anchor="middle">40</text>
+<line x1="375.6" y1="290" x2="375.6" y2="295" stroke="#38463c"/><text x="375.6" y="307" text-anchor="middle">60</text>
+<line x1="478.8" y1="290" x2="478.8" y2="295" stroke="#38463c"/><text x="478.8" y="307" text-anchor="middle">80</text>
+<line x1="582.0" y1="290" x2="582.0" y2="295" stroke="#38463c"/><text x="582.0" y="307" text-anchor="middle">100</text>
+<line x1="61" y1="290.0" x2="66" y2="290.0" stroke="#38463c"/><text x="57" y="294.0" text-anchor="end">0</text>
+<line x1="61" y1="256.0" x2="66" y2="256.0" stroke="#38463c"/><text x="57" y="260.0" text-anchor="end">2</text>
+<line x1="61" y1="222.0" x2="66" y2="222.0" stroke="#38463c"/><text x="57" y="226.0" text-anchor="end">4</text>
+<line x1="61" y1="188.0" x2="66" y2="188.0" stroke="#38463c"/><text x="57" y="192.0" text-anchor="end">6</text>
+<line x1="61" y1="154.0" x2="66" y2="154.0" stroke="#38463c"/><text x="57" y="158.0" text-anchor="end">8</text>
+<line x1="61" y1="120.0" x2="66" y2="120.0" stroke="#38463c"/><text x="57" y="124.0" text-anchor="end">10</text>
+<line x1="61" y1="86.0" x2="66" y2="86.0" stroke="#38463c"/><text x="57" y="90.0" text-anchor="end">12</text>
+<line x1="61" y1="52.0" x2="66" y2="52.0" stroke="#38463c"/><text x="57" y="56.0" text-anchor="end">14</text>
+<line x1="61" y1="18.0" x2="66" y2="18.0" stroke="#38463c"/><text x="57" y="22.0" text-anchor="end">16</text>
+<rect x="66" y="18" width="516" height="272" fill="none" stroke="#38463c" stroke-width="1.3"/>
+<text x="324.0" y="340" text-anchor="middle" font-weight="bold">Pollution prevented / %</text>
+<text transform="translate(15,154.0) rotate(-90)" text-anchor="middle" font-weight="bold">Cost / &amp;pound; million</text>
 </svg>
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">03.1</span>Describe the relationship shown in Figure 1.
 </div>
@@ -399,31 +468,73 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="q" id="PCON-08" data-qid="PCON-08" data-marks="15" data-pm="1,3,2,9" data-flags="calc data ext"><div class="qh"><span class="num">Question 8</span><span class="meta">15 marks &middot; <a href="../subtopic/pollution-control.html">Principles of pollution control (CPA, CGM, new technologies)</a> &middot; spec 3.4.3.1, 3.4.3.3 &middot; Genn pp. 243-245, 303-304 &middot; PCON-08</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>Figure 1 shows how the cost of controlling emissions from a factory changes with the proportion of the pollutant that is prevented from being released.</p>
 <div class="cap">Figure 1</div>
-<svg class="chart" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
-<polyline points="60.0,270.0 157.0,264.4 253.9,257.5 350.9,247.8 447.9,228.3 496.4,200.6 520.6,158.9 540.0,47.8" fill="none" stroke="#22302a" stroke-width="1.8"/>
-<circle cx="60.0" cy="270.0" r="2.6" fill="#22302a"/>
-<circle cx="157.0" cy="264.4" r="2.6" fill="#22302a"/>
-<circle cx="253.9" cy="257.5" r="2.6" fill="#22302a"/>
-<circle cx="350.9" cy="247.8" r="2.6" fill="#22302a"/>
-<circle cx="447.9" cy="228.3" r="2.6" fill="#22302a"/>
-<circle cx="496.4" cy="200.6" r="2.6" fill="#22302a"/>
-<circle cx="520.6" cy="158.9" r="2.6" fill="#22302a"/>
-<circle cx="540.0" cy="47.8" r="2.6" fill="#22302a"/>
-<line x1="60.0" y1="270" x2="60.0" y2="274" stroke="#000"/><text x="60.0" y="286" text-anchor="middle">0</text>
-<line x1="56" y1="270.0" x2="60" y2="270.0" stroke="#000"/><text x="52" y="274.0" text-anchor="end">0</text>
-<line x1="156.0" y1="270" x2="156.0" y2="274" stroke="#000"/><text x="156.0" y="286" text-anchor="middle">19.8</text>
-<line x1="56" y1="220.0" x2="60" y2="220.0" stroke="#000"/><text x="52" y="224.0" text-anchor="end">3.6</text>
-<line x1="252.0" y1="270" x2="252.0" y2="274" stroke="#000"/><text x="252.0" y="286" text-anchor="middle">39.6</text>
-<line x1="56" y1="170.0" x2="60" y2="170.0" stroke="#000"/><text x="52" y="174.0" text-anchor="end">7.2</text>
-<line x1="348.0" y1="270" x2="348.0" y2="274" stroke="#000"/><text x="348.0" y="286" text-anchor="middle">59.4</text>
-<line x1="56" y1="120.0" x2="60" y2="120.0" stroke="#000"/><text x="52" y="124.0" text-anchor="end">10.8</text>
-<line x1="444.0" y1="270" x2="444.0" y2="274" stroke="#000"/><text x="444.0" y="286" text-anchor="middle">79.2</text>
-<line x1="56" y1="70.0" x2="60" y2="70.0" stroke="#000"/><text x="52" y="74.0" text-anchor="end">14.4</text>
-<line x1="540.0" y1="270" x2="540.0" y2="274" stroke="#000"/><text x="540.0" y="286" text-anchor="middle">99</text>
-<line x1="56" y1="20.0" x2="60" y2="20.0" stroke="#000"/><text x="52" y="24.0" text-anchor="end">18</text>
-<line x1="60" y1="20" x2="60" y2="270" stroke="#000"/><line x1="60" y1="270" x2="540" y2="270" stroke="#000"/>
-<text x="300.0" y="312" text-anchor="middle" font-weight="bold">Proportion of pollution prevented / %</text>
-<text transform="translate(14,145.0) rotate(-90)" text-anchor="middle" font-weight="bold">Cost / &amp;pound; million</text>
+<svg class="chart" viewBox="0 0 600 348" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
+<rect x="66" y="18" width="516" height="272" fill="#fff"/>
+<line x1="66.00" y1="290.00" x2="582.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="276.40" x2="582.00" y2="276.40" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="262.80" x2="582.00" y2="262.80" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="249.20" x2="582.00" y2="249.20" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="235.60" x2="582.00" y2="235.60" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="222.00" x2="582.00" y2="222.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="208.40" x2="582.00" y2="208.40" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="194.80" x2="582.00" y2="194.80" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="181.20" x2="582.00" y2="181.20" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="167.60" x2="582.00" y2="167.60" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="154.00" x2="582.00" y2="154.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="140.40" x2="582.00" y2="140.40" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="126.80" x2="582.00" y2="126.80" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="113.20" x2="582.00" y2="113.20" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="99.60" x2="582.00" y2="99.60" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="86.00" x2="582.00" y2="86.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="72.40" x2="582.00" y2="72.40" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="58.80" x2="582.00" y2="58.80" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="45.20" x2="582.00" y2="45.20" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="31.60" x2="582.00" y2="31.60" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="18.00" x2="582.00" y2="18.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="18.00" x2="66.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="91.80" y1="18.00" x2="91.80" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="117.60" y1="18.00" x2="117.60" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="143.40" y1="18.00" x2="143.40" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="169.20" y1="18.00" x2="169.20" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="195.00" y1="18.00" x2="195.00" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="220.80" y1="18.00" x2="220.80" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="246.60" y1="18.00" x2="246.60" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="272.40" y1="18.00" x2="272.40" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="298.20" y1="18.00" x2="298.20" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="324.00" y1="18.00" x2="324.00" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="349.80" y1="18.00" x2="349.80" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="375.60" y1="18.00" x2="375.60" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="401.40" y1="18.00" x2="401.40" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="427.20" y1="18.00" x2="427.20" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="453.00" y1="18.00" x2="453.00" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="478.80" y1="18.00" x2="478.80" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="504.60" y1="18.00" x2="504.60" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="530.40" y1="18.00" x2="530.40" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="556.20" y1="18.00" x2="556.20" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="582.00" y1="18.00" x2="582.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<polyline points="66.0,290.0 169.2,284.6 272.4,277.8 375.6,268.2 478.8,249.2 530.4,222.0 556.2,181.2 576.8,72.4" fill="none" stroke="#22302a" stroke-width="2"/>
+<circle cx="66.0" cy="290.0" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="169.2" cy="284.6" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="272.4" cy="277.8" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="375.6" cy="268.2" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="478.8" cy="249.2" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="530.4" cy="222.0" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="556.2" cy="181.2" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="576.8" cy="72.4" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<line x1="66.0" y1="290" x2="66.0" y2="295" stroke="#38463c"/><text x="66.0" y="307" text-anchor="middle">0</text>
+<line x1="169.2" y1="290" x2="169.2" y2="295" stroke="#38463c"/><text x="169.2" y="307" text-anchor="middle">20</text>
+<line x1="272.4" y1="290" x2="272.4" y2="295" stroke="#38463c"/><text x="272.4" y="307" text-anchor="middle">40</text>
+<line x1="375.6" y1="290" x2="375.6" y2="295" stroke="#38463c"/><text x="375.6" y="307" text-anchor="middle">60</text>
+<line x1="478.8" y1="290" x2="478.8" y2="295" stroke="#38463c"/><text x="478.8" y="307" text-anchor="middle">80</text>
+<line x1="582.0" y1="290" x2="582.0" y2="295" stroke="#38463c"/><text x="582.0" y="307" text-anchor="middle">100</text>
+<line x1="61" y1="290.0" x2="66" y2="290.0" stroke="#38463c"/><text x="57" y="294.0" text-anchor="end">0</text>
+<line x1="61" y1="222.0" x2="66" y2="222.0" stroke="#38463c"/><text x="57" y="226.0" text-anchor="end">5</text>
+<line x1="61" y1="154.0" x2="66" y2="154.0" stroke="#38463c"/><text x="57" y="158.0" text-anchor="end">10</text>
+<line x1="61" y1="86.0" x2="66" y2="86.0" stroke="#38463c"/><text x="57" y="90.0" text-anchor="end">15</text>
+<line x1="61" y1="18.0" x2="66" y2="18.0" stroke="#38463c"/><text x="57" y="22.0" text-anchor="end">20</text>
+<rect x="66" y="18" width="516" height="272" fill="none" stroke="#38463c" stroke-width="1.3"/>
+<text x="324.0" y="340" text-anchor="middle" font-weight="bold">Proportion of pollution prevented / %</text>
+<text transform="translate(15,154.0) rotate(-90)" text-anchor="middle" font-weight="bold">Cost / &amp;pound; million</text>
 </svg>
 <div class="part"><span class="marks">[1 mark]</span><span class="pn">08.1</span>Use Figure 1 to calculate the extra cost of increasing control from 90% to 99% of the pollutant.
 </div>

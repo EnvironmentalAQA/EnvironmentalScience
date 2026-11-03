@@ -35,6 +35,17 @@ a.btn,button.btn{display:inline-block;background:var(--moss);color:#fff;text-dec
 a.btn.ghost,button.btn.ghost{background:transparent;color:var(--moss);border:1.5px solid var(--moss)}a.btn.ghost:hover,button.btn.ghost:hover{background:var(--leaf-light)}
 .paper-head{display:flex;align-items:center;gap:14px;margin:8px 0 14px}.paper-head .tag{white-space:nowrap;font-family:Fraunces,serif;font-size:1.05rem;font-weight:700;color:#fff;border-radius:8px;padding:4px 12px}
 .tag.p1{background:var(--p1)}.tag.p2{background:var(--p2)}.paper-head span.assessed{color:var(--stone);font-size:.95rem}
+.papers2{display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;align-items:start}
+.papers2 .paper-head{display:block;position:sticky;top:var(--hdr,62px);z-index:6;background:var(--sand);margin:0;padding:10px 0 8px;border-bottom:1px solid var(--line)}
+.papers2 .paper-head .tag{display:inline-block}.papers2 .paper-head span.assessed{display:block;font-size:.85rem;margin-top:5px;min-height:1.3em}
+.papers2 table.list{margin:10px 0 0}
+table.list.compact th,table.list.compact td{padding:7px 10px;font-size:.9rem;vertical-align:top}
+table.list.compact td:first-child{font-family:Fraunces,serif;white-space:nowrap}
+table.list.compact td a{text-decoration:none;font-weight:600;white-space:nowrap}table.list.compact td a:hover{text-decoration:underline}
+table.list.compact a.sit{background:var(--leaf-light);border:1px solid var(--leaf);border-radius:999px;padding:1px 9px}
+.tcov{display:inline-block;margin-left:8px;vertical-align:baseline}.tcov summary{cursor:pointer;color:var(--stone);font-size:.78rem;white-space:nowrap}
+.tcov[open]{display:block;margin:3px 0 0}.tcov>div{font-size:.8rem;color:var(--stone);line-height:1.45;margin-top:3px}
+@media(max-width:900px){.papers2{grid-template-columns:1fr}.papers2 .paper-head{position:static}}
 .topic-card{display:flex;gap:16px;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;transition:transform .12s,box-shadow .12s}
 .topic-card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(31,61,43,.12)}
 .topic-card .icon{flex:0 0 52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center}.topic-card .icon svg{width:30px;height:30px}
@@ -238,32 +249,113 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <div class="q" id="WPOL-05" data-qid="WPOL-05" data-marks="10" data-pm="2,2,3,3" data-flags="calc data"><div class="qh"><span class="num">Question 3</span><span class="meta">10 marks &middot; <a href="../subtopic/water-pollution.html">Thermal &amp; oil pollution</a> &middot; spec 3.4.3.2.7 &middot; Genn pp. 258-262 &middot; WPOL-05</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>Figure 1 shows the number of large oil spills (over 700 tonnes) from tankers worldwide and the amount of oil transported by sea between 1975 and 2015.</p>
 <div class="cap">Figure 1</div>
-<svg class="chart" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
-<rect x="69.0" y="42.7" width="42.0" height="227.3" fill="#3f6b4a"/>
-<text x="90.0" y="286" text-anchor="middle">1975</text>
-<rect x="129.0" y="184.8" width="42.0" height="85.2" fill="#3f6b4a"/>
-<text x="150.0" y="286" text-anchor="middle">1980</text>
-<rect x="189.0" y="194.2" width="42.0" height="75.8" fill="#3f6b4a"/>
-<text x="210.0" y="286" text-anchor="middle">1985</text>
-<rect x="249.0" y="194.2" width="42.0" height="75.8" fill="#3f6b4a"/>
-<text x="270.0" y="286" text-anchor="middle">1990</text>
-<rect x="309.0" y="232.1" width="42.0" height="37.9" fill="#3f6b4a"/>
-<text x="330.0" y="286" text-anchor="middle">1995</text>
-<rect x="369.0" y="241.6" width="42.0" height="28.4" fill="#3f6b4a"/>
-<text x="390.0" y="286" text-anchor="middle">2000</text>
-<rect x="429.0" y="232.1" width="42.0" height="37.9" fill="#3f6b4a"/>
-<text x="450.0" y="286" text-anchor="middle">2005</text>
-<rect x="489.0" y="251.1" width="42.0" height="18.9" fill="#3f6b4a"/>
-<text x="510.0" y="286" text-anchor="middle">2010</text>
-<line x1="56" y1="270.0" x2="60" y2="270.0" stroke="#000"/><text x="52" y="274.0" text-anchor="end">0</text>
-<line x1="56" y1="220.0" x2="60" y2="220.0" stroke="#000"/><text x="52" y="224.0" text-anchor="end">5.28</text>
-<line x1="56" y1="170.0" x2="60" y2="170.0" stroke="#000"/><text x="52" y="174.0" text-anchor="end">10.56</text>
-<line x1="56" y1="120.0" x2="60" y2="120.0" stroke="#000"/><text x="52" y="124.0" text-anchor="end">15.84</text>
-<line x1="56" y1="70.0" x2="60" y2="70.0" stroke="#000"/><text x="52" y="74.0" text-anchor="end">21.12</text>
-<line x1="56" y1="20.0" x2="60" y2="20.0" stroke="#000"/><text x="52" y="24.0" text-anchor="end">26.4</text>
-<line x1="60" y1="20" x2="60" y2="270" stroke="#000"/><line x1="60" y1="270" x2="540" y2="270" stroke="#000"/>
-<text x="300.0" y="312" text-anchor="middle" font-weight="bold">Five-year period beginning</text>
-<text transform="translate(14,145.0) rotate(-90)" text-anchor="middle" font-weight="bold">Number of large spills</text>
+<svg class="chart" viewBox="0 0 600 348" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
+<rect x="66" y="18" width="516" height="272" fill="#fff"/>
+<line x1="66.00" y1="290.00" x2="582.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="279.12" x2="582.00" y2="279.12" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="268.24" x2="582.00" y2="268.24" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="257.36" x2="582.00" y2="257.36" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="246.48" x2="582.00" y2="246.48" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="235.60" x2="582.00" y2="235.60" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="224.72" x2="582.00" y2="224.72" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="213.84" x2="582.00" y2="213.84" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="202.96" x2="582.00" y2="202.96" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="192.08" x2="582.00" y2="192.08" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="181.20" x2="582.00" y2="181.20" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="170.32" x2="582.00" y2="170.32" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="159.44" x2="582.00" y2="159.44" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="148.56" x2="582.00" y2="148.56" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="137.68" x2="582.00" y2="137.68" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="126.80" x2="582.00" y2="126.80" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="115.92" x2="582.00" y2="115.92" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="105.04" x2="582.00" y2="105.04" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="94.16" x2="582.00" y2="94.16" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="83.28" x2="582.00" y2="83.28" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="72.40" x2="582.00" y2="72.40" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="61.52" x2="582.00" y2="61.52" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="50.64" x2="582.00" y2="50.64" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="39.76" x2="582.00" y2="39.76" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="28.88" x2="582.00" y2="28.88" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="18.00" x2="582.00" y2="18.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="76.88" y1="18.00" x2="76.88" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="87.76" y1="18.00" x2="87.76" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="98.64" y1="18.00" x2="98.64" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="109.52" y1="18.00" x2="109.52" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="120.40" y1="18.00" x2="120.40" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="131.28" y1="18.00" x2="131.28" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="142.16" y1="18.00" x2="142.16" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="153.04" y1="18.00" x2="153.04" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="163.92" y1="18.00" x2="163.92" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="174.80" y1="18.00" x2="174.80" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="185.68" y1="18.00" x2="185.68" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="196.56" y1="18.00" x2="196.56" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="207.44" y1="18.00" x2="207.44" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="218.32" y1="18.00" x2="218.32" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="229.20" y1="18.00" x2="229.20" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="240.08" y1="18.00" x2="240.08" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="250.96" y1="18.00" x2="250.96" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="261.84" y1="18.00" x2="261.84" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="272.72" y1="18.00" x2="272.72" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="283.60" y1="18.00" x2="283.60" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="294.48" y1="18.00" x2="294.48" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="305.36" y1="18.00" x2="305.36" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="316.24" y1="18.00" x2="316.24" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="327.12" y1="18.00" x2="327.12" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="338.00" y1="18.00" x2="338.00" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="348.88" y1="18.00" x2="348.88" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="359.76" y1="18.00" x2="359.76" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="370.64" y1="18.00" x2="370.64" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="381.52" y1="18.00" x2="381.52" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="392.40" y1="18.00" x2="392.40" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="403.28" y1="18.00" x2="403.28" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="414.16" y1="18.00" x2="414.16" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="425.04" y1="18.00" x2="425.04" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="435.92" y1="18.00" x2="435.92" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="446.80" y1="18.00" x2="446.80" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="457.68" y1="18.00" x2="457.68" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="468.56" y1="18.00" x2="468.56" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="479.44" y1="18.00" x2="479.44" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="490.32" y1="18.00" x2="490.32" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="501.20" y1="18.00" x2="501.20" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="512.08" y1="18.00" x2="512.08" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="522.96" y1="18.00" x2="522.96" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="533.84" y1="18.00" x2="533.84" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="544.72" y1="18.00" x2="544.72" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="555.60" y1="18.00" x2="555.60" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="566.48" y1="18.00" x2="566.48" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="577.36" y1="18.00" x2="577.36" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="130.50" y1="18.00" x2="130.50" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="195.00" y1="18.00" x2="195.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="259.50" y1="18.00" x2="259.50" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="324.00" y1="18.00" x2="324.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="388.50" y1="18.00" x2="388.50" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="453.00" y1="18.00" x2="453.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="517.50" y1="18.00" x2="517.50" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<rect x="75.0" y="28.9" width="46.4" height="261.1" fill="#3f6b4a" stroke="#38463c" stroke-width="0.6"/>
+<text y="306" text-anchor="middle" font-size="10.5"><tspan x="98.2" dy="0">1975</tspan></text>
+<rect x="139.5" y="192.1" width="46.4" height="97.9" fill="#3f6b4a" stroke="#38463c" stroke-width="0.6"/>
+<text y="306" text-anchor="middle" font-size="10.5"><tspan x="162.8" dy="0">1980</tspan></text>
+<rect x="204.0" y="203.0" width="46.4" height="87.0" fill="#3f6b4a" stroke="#38463c" stroke-width="0.6"/>
+<text y="306" text-anchor="middle" font-size="10.5"><tspan x="227.2" dy="0">1985</tspan></text>
+<rect x="268.5" y="203.0" width="46.4" height="87.0" fill="#3f6b4a" stroke="#38463c" stroke-width="0.6"/>
+<text y="306" text-anchor="middle" font-size="10.5"><tspan x="291.8" dy="0">1990</tspan></text>
+<rect x="333.0" y="246.5" width="46.4" height="43.5" fill="#3f6b4a" stroke="#38463c" stroke-width="0.6"/>
+<text y="306" text-anchor="middle" font-size="10.5"><tspan x="356.2" dy="0">1995</tspan></text>
+<rect x="397.5" y="257.4" width="46.4" height="32.6" fill="#3f6b4a" stroke="#38463c" stroke-width="0.6"/>
+<text y="306" text-anchor="middle" font-size="10.5"><tspan x="420.8" dy="0">2000</tspan></text>
+<rect x="462.0" y="246.5" width="46.4" height="43.5" fill="#3f6b4a" stroke="#38463c" stroke-width="0.6"/>
+<text y="306" text-anchor="middle" font-size="10.5"><tspan x="485.2" dy="0">2005</tspan></text>
+<rect x="526.5" y="268.2" width="46.4" height="21.8" fill="#3f6b4a" stroke="#38463c" stroke-width="0.6"/>
+<text y="306" text-anchor="middle" font-size="10.5"><tspan x="549.8" dy="0">2010</tspan></text>
+<line x1="61" y1="290.0" x2="66" y2="290.0" stroke="#38463c"/><text x="57" y="294.0" text-anchor="end">0</text>
+<line x1="61" y1="235.6" x2="66" y2="235.6" stroke="#38463c"/><text x="57" y="239.6" text-anchor="end">5</text>
+<line x1="61" y1="181.2" x2="66" y2="181.2" stroke="#38463c"/><text x="57" y="185.2" text-anchor="end">10</text>
+<line x1="61" y1="126.8" x2="66" y2="126.8" stroke="#38463c"/><text x="57" y="130.8" text-anchor="end">15</text>
+<line x1="61" y1="72.4" x2="66" y2="72.4" stroke="#38463c"/><text x="57" y="76.4" text-anchor="end">20</text>
+<line x1="61" y1="18.0" x2="66" y2="18.0" stroke="#38463c"/><text x="57" y="22.0" text-anchor="end">25</text>
+<rect x="66" y="18" width="516" height="272" fill="none" stroke="#38463c" stroke-width="1.3"/>
+<text x="324.0" y="340" text-anchor="middle" font-weight="bold">Five-year period beginning</text>
+<text transform="translate(15,154.0) rotate(-90)" text-anchor="middle" font-weight="bold">Number of large spills</text>
 </svg>
 <div class="cap">Table 1</div><table class="data"><tr><th>Year</th><th>1975</th><th>1985</th><th>1995</th><th>2005</th><th>2015</th></tr><tr><td>Oil transported by sea / million tonnes</td><td>1 400</td><td>1 200</td><td>1 800</td><td>2 400</td><td>2 900</td></tr></table>
 <div class="part"><span class="marks">[2 marks]</span><span class="pn">03.1</span>Calculate the percentage increase in oil transported by sea between 1975 and 2015.

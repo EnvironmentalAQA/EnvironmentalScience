@@ -35,6 +35,17 @@ a.btn,button.btn{display:inline-block;background:var(--moss);color:#fff;text-dec
 a.btn.ghost,button.btn.ghost{background:transparent;color:var(--moss);border:1.5px solid var(--moss)}a.btn.ghost:hover,button.btn.ghost:hover{background:var(--leaf-light)}
 .paper-head{display:flex;align-items:center;gap:14px;margin:8px 0 14px}.paper-head .tag{white-space:nowrap;font-family:Fraunces,serif;font-size:1.05rem;font-weight:700;color:#fff;border-radius:8px;padding:4px 12px}
 .tag.p1{background:var(--p1)}.tag.p2{background:var(--p2)}.paper-head span.assessed{color:var(--stone);font-size:.95rem}
+.papers2{display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;align-items:start}
+.papers2 .paper-head{display:block;position:sticky;top:var(--hdr,62px);z-index:6;background:var(--sand);margin:0;padding:10px 0 8px;border-bottom:1px solid var(--line)}
+.papers2 .paper-head .tag{display:inline-block}.papers2 .paper-head span.assessed{display:block;font-size:.85rem;margin-top:5px;min-height:1.3em}
+.papers2 table.list{margin:10px 0 0}
+table.list.compact th,table.list.compact td{padding:7px 10px;font-size:.9rem;vertical-align:top}
+table.list.compact td:first-child{font-family:Fraunces,serif;white-space:nowrap}
+table.list.compact td a{text-decoration:none;font-weight:600;white-space:nowrap}table.list.compact td a:hover{text-decoration:underline}
+table.list.compact a.sit{background:var(--leaf-light);border:1px solid var(--leaf);border-radius:999px;padding:1px 9px}
+.tcov{display:inline-block;margin-left:8px;vertical-align:baseline}.tcov summary{cursor:pointer;color:var(--stone);font-size:.78rem;white-space:nowrap}
+.tcov[open]{display:block;margin:3px 0 0}.tcov>div{font-size:.8rem;color:var(--stone);line-height:1.45;margin-top:3px}
+@media(max-width:900px){.papers2{grid-template-columns:1fr}.papers2 .paper-head{position:static}}
 .topic-card{display:flex;gap:16px;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;transition:transform .12s,box-shadow .12s}
 .topic-card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(31,61,43,.12)}
 .topic-card .icon{flex:0 0 52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center}.topic-card .icon svg{width:30px;height:30px}
@@ -177,30 +188,89 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <h2 id="s5">Measuring noise pollution <span class="pg">Genn pp. 294-295</span></h2><p>Sound-level meters give dB(A). <b>L<sub>eq</sub></b> is the equivalent continuous level over a period; <b>L<sub>10</sub></b> (level exceeded 10% of the time) is used for road traffic; airport <b>noise contours</b> (eg 57 dB L<sub>eq</sub>) map affected areas and define compensation; <b>Perceived Noise Level (PNdB)</b> and <b>effective perceived noise level (EPNdB)</b> are used for aircraft certification; measurements must standardise distance, height, weather and time.</p>
 <h2 id="diagrams">Diagrams</h2>
 <figure class="diag"><figcaption>Noise level falls with distance from a point source (inverse square law)</figcaption><div class="cap"></div>
-<svg class="chart" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
-<polyline points="60.0,61.7 69.8,86.7 99.2,120.0 148.2,145.0 246.1,170.0 344.1,184.6 540.0,203.3" fill="none" stroke="#22302a" stroke-width="1.8"/>
-<circle cx="60.0" cy="61.7" r="2.6" fill="#22302a"/>
-<circle cx="69.8" cy="86.7" r="2.6" fill="#22302a"/>
-<circle cx="99.2" cy="120.0" r="2.6" fill="#22302a"/>
-<circle cx="148.2" cy="145.0" r="2.6" fill="#22302a"/>
-<circle cx="246.1" cy="170.0" r="2.6" fill="#22302a"/>
-<circle cx="344.1" cy="184.6" r="2.6" fill="#22302a"/>
-<circle cx="540.0" cy="203.3" r="2.6" fill="#22302a"/>
-<line x1="60.0" y1="270" x2="60.0" y2="274" stroke="#000"/><text x="60.0" y="286" text-anchor="middle">10</text>
-<line x1="56" y1="270.0" x2="60" y2="270.0" stroke="#000"/><text x="52" y="274.0" text-anchor="end">40</text>
-<line x1="156.0" y1="270" x2="156.0" y2="274" stroke="#000"/><text x="156.0" y="286" text-anchor="middle">108</text>
-<line x1="56" y1="220.0" x2="60" y2="220.0" stroke="#000"/><text x="52" y="224.0" text-anchor="end">52</text>
-<line x1="252.0" y1="270" x2="252.0" y2="274" stroke="#000"/><text x="252.0" y="286" text-anchor="middle">206</text>
-<line x1="56" y1="170.0" x2="60" y2="170.0" stroke="#000"/><text x="52" y="174.0" text-anchor="end">64</text>
-<line x1="348.0" y1="270" x2="348.0" y2="274" stroke="#000"/><text x="348.0" y="286" text-anchor="middle">304</text>
-<line x1="56" y1="120.0" x2="60" y2="120.0" stroke="#000"/><text x="52" y="124.0" text-anchor="end">76</text>
-<line x1="444.0" y1="270" x2="444.0" y2="274" stroke="#000"/><text x="444.0" y="286" text-anchor="middle">402</text>
-<line x1="56" y1="70.0" x2="60" y2="70.0" stroke="#000"/><text x="52" y="74.0" text-anchor="end">88</text>
-<line x1="540.0" y1="270" x2="540.0" y2="274" stroke="#000"/><text x="540.0" y="286" text-anchor="middle">500</text>
-<line x1="56" y1="20.0" x2="60" y2="20.0" stroke="#000"/><text x="52" y="24.0" text-anchor="end">100</text>
-<line x1="60" y1="20" x2="60" y2="270" stroke="#000"/><line x1="60" y1="270" x2="540" y2="270" stroke="#000"/>
-<text x="300.0" y="312" text-anchor="middle" font-weight="bold">Distance from source / m</text>
-<text transform="translate(14,145.0) rotate(-90)" text-anchor="middle" font-weight="bold">Noise level / dB</text>
+<svg class="chart" viewBox="0 0 600 348" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
+<rect x="66" y="18" width="516" height="272" fill="#fff"/>
+<line x1="66.00" y1="290.00" x2="582.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="280.93" x2="582.00" y2="280.93" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="271.87" x2="582.00" y2="271.87" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="262.80" x2="582.00" y2="262.80" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="253.73" x2="582.00" y2="253.73" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="244.67" x2="582.00" y2="244.67" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="235.60" x2="582.00" y2="235.60" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="226.53" x2="582.00" y2="226.53" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="217.47" x2="582.00" y2="217.47" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="208.40" x2="582.00" y2="208.40" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="199.33" x2="582.00" y2="199.33" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="190.27" x2="582.00" y2="190.27" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="181.20" x2="582.00" y2="181.20" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="172.13" x2="582.00" y2="172.13" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="163.07" x2="582.00" y2="163.07" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="154.00" x2="582.00" y2="154.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="144.93" x2="582.00" y2="144.93" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="135.87" x2="582.00" y2="135.87" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="126.80" x2="582.00" y2="126.80" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="117.73" x2="582.00" y2="117.73" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="108.67" x2="582.00" y2="108.67" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="99.60" x2="582.00" y2="99.60" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="90.53" x2="582.00" y2="90.53" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="81.47" x2="582.00" y2="81.47" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="72.40" x2="582.00" y2="72.40" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="63.33" x2="582.00" y2="63.33" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="54.27" x2="582.00" y2="54.27" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="45.20" x2="582.00" y2="45.20" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="36.13" x2="582.00" y2="36.13" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="27.07" x2="582.00" y2="27.07" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="18.00" x2="582.00" y2="18.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="18.00" x2="66.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="86.64" y1="18.00" x2="86.64" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="107.28" y1="18.00" x2="107.28" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="127.92" y1="18.00" x2="127.92" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="148.56" y1="18.00" x2="148.56" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="169.20" y1="18.00" x2="169.20" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="189.84" y1="18.00" x2="189.84" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="210.48" y1="18.00" x2="210.48" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="231.12" y1="18.00" x2="231.12" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="251.76" y1="18.00" x2="251.76" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="272.40" y1="18.00" x2="272.40" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="293.04" y1="18.00" x2="293.04" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="313.68" y1="18.00" x2="313.68" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="334.32" y1="18.00" x2="334.32" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="354.96" y1="18.00" x2="354.96" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="375.60" y1="18.00" x2="375.60" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="396.24" y1="18.00" x2="396.24" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="416.88" y1="18.00" x2="416.88" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="437.52" y1="18.00" x2="437.52" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="458.16" y1="18.00" x2="458.16" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="478.80" y1="18.00" x2="478.80" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="499.44" y1="18.00" x2="499.44" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="520.08" y1="18.00" x2="520.08" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="540.72" y1="18.00" x2="540.72" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="561.36" y1="18.00" x2="561.36" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="582.00" y1="18.00" x2="582.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<polyline points="76.3,63.3 86.6,90.5 117.6,126.8 169.2,154.0 272.4,181.2 375.6,197.1 582.0,217.5" fill="none" stroke="#22302a" stroke-width="2"/>
+<circle cx="76.3" cy="63.3" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="86.6" cy="90.5" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="117.6" cy="126.8" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="169.2" cy="154.0" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="272.4" cy="181.2" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="375.6" cy="197.1" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="582.0" cy="217.5" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<line x1="66.0" y1="290" x2="66.0" y2="295" stroke="#38463c"/><text x="66.0" y="307" text-anchor="middle">0</text>
+<line x1="169.2" y1="290" x2="169.2" y2="295" stroke="#38463c"/><text x="169.2" y="307" text-anchor="middle">100</text>
+<line x1="272.4" y1="290" x2="272.4" y2="295" stroke="#38463c"/><text x="272.4" y="307" text-anchor="middle">200</text>
+<line x1="375.6" y1="290" x2="375.6" y2="295" stroke="#38463c"/><text x="375.6" y="307" text-anchor="middle">300</text>
+<line x1="478.8" y1="290" x2="478.8" y2="295" stroke="#38463c"/><text x="478.8" y="307" text-anchor="middle">400</text>
+<line x1="582.0" y1="290" x2="582.0" y2="295" stroke="#38463c"/><text x="582.0" y="307" text-anchor="middle">500</text>
+<line x1="61" y1="290.0" x2="66" y2="290.0" stroke="#38463c"/><text x="57" y="294.0" text-anchor="end">40</text>
+<line x1="61" y1="244.7" x2="66" y2="244.7" stroke="#38463c"/><text x="57" y="248.7" text-anchor="end">50</text>
+<line x1="61" y1="199.3" x2="66" y2="199.3" stroke="#38463c"/><text x="57" y="203.3" text-anchor="end">60</text>
+<line x1="61" y1="154.0" x2="66" y2="154.0" stroke="#38463c"/><text x="57" y="158.0" text-anchor="end">70</text>
+<line x1="61" y1="108.7" x2="66" y2="108.7" stroke="#38463c"/><text x="57" y="112.7" text-anchor="end">80</text>
+<line x1="61" y1="63.3" x2="66" y2="63.3" stroke="#38463c"/><text x="57" y="67.3" text-anchor="end">90</text>
+<line x1="61" y1="18.0" x2="66" y2="18.0" stroke="#38463c"/><text x="57" y="22.0" text-anchor="end">100</text>
+<rect x="66" y="18" width="516" height="272" fill="none" stroke="#38463c" stroke-width="1.3"/>
+<text x="324.0" y="340" text-anchor="middle" font-weight="bold">Distance from source / m</text>
+<text transform="translate(15,154.0) rotate(-90)" text-anchor="middle" font-weight="bold">Noise level / dB</text>
 </svg><div class="dcap">Doubling distance reduces the level by about 6 dB (Genn pp. 288, 295; June 2024 Q4 used a similar graph).</div></figure>
 <div class="nums" id="numbers"><h3>Key numbers and facts to remember</h3><ul><li>10 dB = 10x intensity; 3 dB = 2x; doubling distance = -6 dB</li><li>Hearing damage risk above ~85 dB with long exposure; 57 dB L<sub>eq</sub> contour marks airport annoyance</li></ul></div>
 <div class="examh" id="exam"><h3>How this subtopic is examined</h3><ul><li>Use a noise-distance graph; explain environmental factors affecting the level reaching residents (June 2024 Q4).</li><li>Exposure time vs noise level graph (June 2023 Q8).</li><li>Aircraft noise contours and airport design (Nov 2020 Q4); railway sources and controls; motorway noise (specimen Q2).</li><li>Explain the logarithmic scale; why small dB reductions matter.</li><li>9-mark: control by design, operation and location with named examples.</li></ul>

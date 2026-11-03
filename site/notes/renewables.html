@@ -35,6 +35,17 @@ a.btn,button.btn{display:inline-block;background:var(--moss);color:#fff;text-dec
 a.btn.ghost,button.btn.ghost{background:transparent;color:var(--moss);border:1.5px solid var(--moss)}a.btn.ghost:hover,button.btn.ghost:hover{background:var(--leaf-light)}
 .paper-head{display:flex;align-items:center;gap:14px;margin:8px 0 14px}.paper-head .tag{white-space:nowrap;font-family:Fraunces,serif;font-size:1.05rem;font-weight:700;color:#fff;border-radius:8px;padding:4px 12px}
 .tag.p1{background:var(--p1)}.tag.p2{background:var(--p2)}.paper-head span.assessed{color:var(--stone);font-size:.95rem}
+.papers2{display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;align-items:start}
+.papers2 .paper-head{display:block;position:sticky;top:var(--hdr,62px);z-index:6;background:var(--sand);margin:0;padding:10px 0 8px;border-bottom:1px solid var(--line)}
+.papers2 .paper-head .tag{display:inline-block}.papers2 .paper-head span.assessed{display:block;font-size:.85rem;margin-top:5px;min-height:1.3em}
+.papers2 table.list{margin:10px 0 0}
+table.list.compact th,table.list.compact td{padding:7px 10px;font-size:.9rem;vertical-align:top}
+table.list.compact td:first-child{font-family:Fraunces,serif;white-space:nowrap}
+table.list.compact td a{text-decoration:none;font-weight:600;white-space:nowrap}table.list.compact td a:hover{text-decoration:underline}
+table.list.compact a.sit{background:var(--leaf-light);border:1px solid var(--leaf);border-radius:999px;padding:1px 9px}
+.tcov{display:inline-block;margin-left:8px;vertical-align:baseline}.tcov summary{cursor:pointer;color:var(--stone);font-size:.78rem;white-space:nowrap}
+.tcov[open]{display:block;margin:3px 0 0}.tcov>div{font-size:.8rem;color:var(--stone);line-height:1.45;margin-top:3px}
+@media(max-width:900px){.papers2{grid-template-columns:1fr}.papers2 .paper-head{position:static}}
 .topic-card{display:flex;gap:16px;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;transition:transform .12s,box-shadow .12s}
 .topic-card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(31,61,43,.12)}
 .topic-card .icon{flex:0 0 52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center}.topic-card .icon svg{width:30px;height:30px}
@@ -182,32 +193,89 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <h2 id="diagrams">Diagrams</h2>
 <figure class="diag"><figcaption>Ground-source heat pump</figcaption><svg viewBox="0 0 820 212" xmlns="http://www.w3.org/2000/svg" font-family="Source Sans 3, Segoe UI, Arial, sans-serif"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3f6b4a"/></marker></defs><rect x="28.0" y="31.0" width="164" height="54" rx="9" fill="#ffffff" stroke="#3f6b4a" stroke-width="1.5"/><text x="110.0" y="54.8" text-anchor="middle" font-size="12" font-weight="normal" fill="#22302a"><tspan x="110.0" dy="0.0">Ground / air:</tspan><tspan x="110.0" dy="14.4">low-grade heat</tspan></text><rect x="228.0" y="31.0" width="164" height="54" rx="9" fill="#ffffff" stroke="#3f6b4a" stroke-width="1.5"/><text x="310.0" y="54.8" text-anchor="middle" font-size="12" font-weight="normal" fill="#22302a"><tspan x="310.0" dy="0.0">Evaporator: refrigerant</tspan><tspan x="310.0" dy="14.4">boils, absorbing heat</tspan></text><rect x="428.0" y="31.0" width="164" height="54" rx="9" fill="#ffffff" stroke="#3f6b4a" stroke-width="1.5"/><text x="510.0" y="54.8" text-anchor="middle" font-size="12" font-weight="normal" fill="#22302a"><tspan x="510.0" dy="0.0">Compressor: pressure up,</tspan><tspan x="510.0" dy="14.4">gas condenses -&gt; heat out</tspan></text><rect x="628.0" y="31.0" width="164" height="54" rx="9" fill="#e6f0dc" stroke="#3f6b4a" stroke-width="1.5"/><text x="710.0" y="54.8" text-anchor="middle" font-size="12" font-weight="600" fill="#22302a"><tspan x="710.0" dy="0.0">Building heated</tspan><tspan x="710.0" dy="14.4">(up to 4x energy input)</tspan></text><rect x="428.0" y="127.0" width="164" height="54" rx="9" fill="#ffffff" stroke="#3f6b4a" stroke-width="1.5"/><text x="510.0" y="150.8" text-anchor="middle" font-size="12" font-weight="normal" fill="#22302a"><tspan x="510.0" dy="0.0">Expansion valve:</tspan><tspan x="510.0" dy="14.4">pressure drops, liquid boils</tspan></text><line x1="195.0" y1="58.0" x2="225.0" y2="58.0" stroke="#3f6b4a" stroke-width="1.6" marker-end="url(#ah)"/><line x1="395.0" y1="58.0" x2="425.0" y2="58.0" stroke="#3f6b4a" stroke-width="1.6" marker-end="url(#ah)"/><line x1="595.0" y1="58.0" x2="625.0" y2="58.0" stroke="#3f6b4a" stroke-width="1.6" marker-end="url(#ah)"/><line x1="510.0" y1="88.0" x2="510.0" y2="124.0" stroke="#3f6b4a" stroke-width="1.6" marker-end="url(#ah)"/><line x1="451.0" y1="125.7" x2="369.0" y2="86.3" stroke="#3f6b4a" stroke-width="1.6" marker-end="url(#ah)"/></svg><div class="dcap">Genn pp. 200-201. The change of state of the refrigerant moves heat from a cold source to a warm building.</div></figure>
 <figure class="diag"><figcaption>Wind turbine power output rises steeply with wind speed</figcaption><div class="cap"></div>
-<svg class="chart" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
-<polyline points="60.0,269.2 116.5,260.0 172.9,241.7 229.4,206.7 285.9,153.3 342.4,86.7 370.6,53.3 427.1,53.3 540.0,53.3" fill="none" stroke="#22302a" stroke-width="1.8"/>
-<circle cx="60.0" cy="269.2" r="2.6" fill="#22302a"/>
-<circle cx="116.5" cy="260.0" r="2.6" fill="#22302a"/>
-<circle cx="172.9" cy="241.7" r="2.6" fill="#22302a"/>
-<circle cx="229.4" cy="206.7" r="2.6" fill="#22302a"/>
-<circle cx="285.9" cy="153.3" r="2.6" fill="#22302a"/>
-<circle cx="342.4" cy="86.7" r="2.6" fill="#22302a"/>
-<circle cx="370.6" cy="53.3" r="2.6" fill="#22302a"/>
-<circle cx="427.1" cy="53.3" r="2.6" fill="#22302a"/>
-<circle cx="540.0" cy="53.3" r="2.6" fill="#22302a"/>
-<line x1="60.0" y1="270" x2="60.0" y2="274" stroke="#000"/><text x="60.0" y="286" text-anchor="middle">3</text>
-<line x1="56" y1="270.0" x2="60" y2="270.0" stroke="#000"/><text x="52" y="274.0" text-anchor="end">0</text>
-<line x1="156.0" y1="270" x2="156.0" y2="274" stroke="#000"/><text x="156.0" y="286" text-anchor="middle">6.4</text>
-<line x1="56" y1="220.0" x2="60" y2="220.0" stroke="#000"/><text x="52" y="224.0" text-anchor="end">300</text>
-<line x1="252.0" y1="270" x2="252.0" y2="274" stroke="#000"/><text x="252.0" y="286" text-anchor="middle">9.8</text>
-<line x1="56" y1="170.0" x2="60" y2="170.0" stroke="#000"/><text x="52" y="174.0" text-anchor="end">600</text>
-<line x1="348.0" y1="270" x2="348.0" y2="274" stroke="#000"/><text x="348.0" y="286" text-anchor="middle">13.2</text>
-<line x1="56" y1="120.0" x2="60" y2="120.0" stroke="#000"/><text x="52" y="124.0" text-anchor="end">900</text>
-<line x1="444.0" y1="270" x2="444.0" y2="274" stroke="#000"/><text x="444.0" y="286" text-anchor="middle">16.6</text>
-<line x1="56" y1="70.0" x2="60" y2="70.0" stroke="#000"/><text x="52" y="74.0" text-anchor="end">1.2e+03</text>
-<line x1="540.0" y1="270" x2="540.0" y2="274" stroke="#000"/><text x="540.0" y="286" text-anchor="middle">20</text>
-<line x1="56" y1="20.0" x2="60" y2="20.0" stroke="#000"/><text x="52" y="24.0" text-anchor="end">1.5e+03</text>
-<line x1="60" y1="20" x2="60" y2="270" stroke="#000"/><line x1="60" y1="270" x2="540" y2="270" stroke="#000"/>
-<text x="300.0" y="312" text-anchor="middle" font-weight="bold">Wind velocity / m s-1</text>
-<text transform="translate(14,145.0) rotate(-90)" text-anchor="middle" font-weight="bold">Power / kW</text>
+<svg class="chart" viewBox="0 0 600 348" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
+<rect x="66" y="18" width="516" height="272" fill="#fff"/>
+<line x1="66.00" y1="290.00" x2="582.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="281.50" x2="582.00" y2="281.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="273.00" x2="582.00" y2="273.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="264.50" x2="582.00" y2="264.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="256.00" x2="582.00" y2="256.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="247.50" x2="582.00" y2="247.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="239.00" x2="582.00" y2="239.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="230.50" x2="582.00" y2="230.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="222.00" x2="582.00" y2="222.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="213.50" x2="582.00" y2="213.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="205.00" x2="582.00" y2="205.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="196.50" x2="582.00" y2="196.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="188.00" x2="582.00" y2="188.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="179.50" x2="582.00" y2="179.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="171.00" x2="582.00" y2="171.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="162.50" x2="582.00" y2="162.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="154.00" x2="582.00" y2="154.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="145.50" x2="582.00" y2="145.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="137.00" x2="582.00" y2="137.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="128.50" x2="582.00" y2="128.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="120.00" x2="582.00" y2="120.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="111.50" x2="582.00" y2="111.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="103.00" x2="582.00" y2="103.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="94.50" x2="582.00" y2="94.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="86.00" x2="582.00" y2="86.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="77.50" x2="582.00" y2="77.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="69.00" x2="582.00" y2="69.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="60.50" x2="582.00" y2="60.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="52.00" x2="582.00" y2="52.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="43.50" x2="582.00" y2="43.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="35.00" x2="582.00" y2="35.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="26.50" x2="582.00" y2="26.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="18.00" x2="582.00" y2="18.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="18.00" x2="66.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="91.80" y1="18.00" x2="91.80" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="117.60" y1="18.00" x2="117.60" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="143.40" y1="18.00" x2="143.40" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="169.20" y1="18.00" x2="169.20" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="195.00" y1="18.00" x2="195.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="220.80" y1="18.00" x2="220.80" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="246.60" y1="18.00" x2="246.60" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="272.40" y1="18.00" x2="272.40" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="298.20" y1="18.00" x2="298.20" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="324.00" y1="18.00" x2="324.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="349.80" y1="18.00" x2="349.80" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="375.60" y1="18.00" x2="375.60" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="401.40" y1="18.00" x2="401.40" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="427.20" y1="18.00" x2="427.20" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="453.00" y1="18.00" x2="453.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="478.80" y1="18.00" x2="478.80" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="504.60" y1="18.00" x2="504.60" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="530.40" y1="18.00" x2="530.40" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="556.20" y1="18.00" x2="556.20" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="582.00" y1="18.00" x2="582.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<polyline points="143.4,289.1 195.0,279.8 246.6,261.1 298.2,225.4 349.8,171.0 401.4,103.0 427.2,69.0 478.8,69.0 582.0,69.0" fill="none" stroke="#22302a" stroke-width="2"/>
+<circle cx="143.4" cy="289.1" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="195.0" cy="279.8" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="246.6" cy="261.1" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="298.2" cy="225.4" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="349.8" cy="171.0" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="401.4" cy="103.0" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="427.2" cy="69.0" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="478.8" cy="69.0" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="582.0" cy="69.0" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<line x1="66.0" y1="290" x2="66.0" y2="295" stroke="#38463c"/><text x="66.0" y="307" text-anchor="middle">0</text>
+<line x1="195.0" y1="290" x2="195.0" y2="295" stroke="#38463c"/><text x="195.0" y="307" text-anchor="middle">5</text>
+<line x1="324.0" y1="290" x2="324.0" y2="295" stroke="#38463c"/><text x="324.0" y="307" text-anchor="middle">10</text>
+<line x1="453.0" y1="290" x2="453.0" y2="295" stroke="#38463c"/><text x="453.0" y="307" text-anchor="middle">15</text>
+<line x1="582.0" y1="290" x2="582.0" y2="295" stroke="#38463c"/><text x="582.0" y="307" text-anchor="middle">20</text>
+<line x1="61" y1="290.0" x2="66" y2="290.0" stroke="#38463c"/><text x="57" y="294.0" text-anchor="end">0</text>
+<line x1="61" y1="256.0" x2="66" y2="256.0" stroke="#38463c"/><text x="57" y="260.0" text-anchor="end">200</text>
+<line x1="61" y1="222.0" x2="66" y2="222.0" stroke="#38463c"/><text x="57" y="226.0" text-anchor="end">400</text>
+<line x1="61" y1="188.0" x2="66" y2="188.0" stroke="#38463c"/><text x="57" y="192.0" text-anchor="end">600</text>
+<line x1="61" y1="154.0" x2="66" y2="154.0" stroke="#38463c"/><text x="57" y="158.0" text-anchor="end">800</text>
+<line x1="61" y1="120.0" x2="66" y2="120.0" stroke="#38463c"/><text x="57" y="124.0" text-anchor="end">1000</text>
+<line x1="61" y1="86.0" x2="66" y2="86.0" stroke="#38463c"/><text x="57" y="90.0" text-anchor="end">1200</text>
+<line x1="61" y1="52.0" x2="66" y2="52.0" stroke="#38463c"/><text x="57" y="56.0" text-anchor="end">1400</text>
+<line x1="61" y1="18.0" x2="66" y2="18.0" stroke="#38463c"/><text x="57" y="22.0" text-anchor="end">1600</text>
+<rect x="66" y="18" width="516" height="272" fill="none" stroke="#38463c" stroke-width="1.3"/>
+<text x="324.0" y="340" text-anchor="middle" font-weight="bold">Wind velocity / m s-1</text>
+<text transform="translate(15,154.0) rotate(-90)" text-anchor="middle" font-weight="bold">Power / kW</text>
 </svg><div class="dcap">Power rises with the cube of wind speed until the rated output is reached, then is capped (Genn pp. 206-207; specimen Q4).</div></figure>
 <div class="nums" id="numbers"><h3>Key numbers and facts to remember</h3><ul><li>Heat pumps deliver up to 4x the energy used to run them</li><li>Smooth PV cells reflect ~30% of light; CSP molten salt stored at 550 &deg;C</li><li>Wind power proportional to (wind speed)<sup>3</sup></li></ul></div>
 <div class="examh" id="exam"><h3>How this subtopic is examined</h3><ul><li>Explain problematic properties of solar / wind and how new technologies address them (June 2024 Q2 VAWTs; Nov 2020 Q5 wind lens; Nov 2021 Q8 solar PV).</li><li>Use a power-output graph to estimate changes (specimen Q4).</li><li>Energy density of biofuels and why low-density elephant grass is still grown (June 2022 Q4).</li><li>Wave energy devices (June 2022 Q6, MCQ).</li><li>9-mark: potential of renewables in the UK; solar technologies; essay on new technologies and energy impacts.</li></ul>

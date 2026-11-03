@@ -35,6 +35,17 @@ a.btn,button.btn{display:inline-block;background:var(--moss);color:#fff;text-dec
 a.btn.ghost,button.btn.ghost{background:transparent;color:var(--moss);border:1.5px solid var(--moss)}a.btn.ghost:hover,button.btn.ghost:hover{background:var(--leaf-light)}
 .paper-head{display:flex;align-items:center;gap:14px;margin:8px 0 14px}.paper-head .tag{white-space:nowrap;font-family:Fraunces,serif;font-size:1.05rem;font-weight:700;color:#fff;border-radius:8px;padding:4px 12px}
 .tag.p1{background:var(--p1)}.tag.p2{background:var(--p2)}.paper-head span.assessed{color:var(--stone);font-size:.95rem}
+.papers2{display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;align-items:start}
+.papers2 .paper-head{display:block;position:sticky;top:var(--hdr,62px);z-index:6;background:var(--sand);margin:0;padding:10px 0 8px;border-bottom:1px solid var(--line)}
+.papers2 .paper-head .tag{display:inline-block}.papers2 .paper-head span.assessed{display:block;font-size:.85rem;margin-top:5px;min-height:1.3em}
+.papers2 table.list{margin:10px 0 0}
+table.list.compact th,table.list.compact td{padding:7px 10px;font-size:.9rem;vertical-align:top}
+table.list.compact td:first-child{font-family:Fraunces,serif;white-space:nowrap}
+table.list.compact td a{text-decoration:none;font-weight:600;white-space:nowrap}table.list.compact td a:hover{text-decoration:underline}
+table.list.compact a.sit{background:var(--leaf-light);border:1px solid var(--leaf);border-radius:999px;padding:1px 9px}
+.tcov{display:inline-block;margin-left:8px;vertical-align:baseline}.tcov summary{cursor:pointer;color:var(--stone);font-size:.78rem;white-space:nowrap}
+.tcov[open]{display:block;margin:3px 0 0}.tcov>div{font-size:.8rem;color:var(--stone);line-height:1.45;margin-top:3px}
+@media(max-width:900px){.papers2{grid-template-columns:1fr}.papers2 .paper-head{position:static}}
 .topic-card{display:flex;gap:16px;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;transition:transform .12s,box-shadow .12s}
 .topic-card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(31,61,43,.12)}
 .topic-card .icon{flex:0 0 52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center}.topic-card .icon svg{width:30px;height:30px}
@@ -175,24 +186,132 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <h2 id="s3">Methods of reducing pesticide pollution <span class="pg">Genn pp. 266</span></h2><ul><li><b>Restrictions on use:</b> bans (organochlorines, neonicotinoids on flowering crops), licensing, maximum residue levels in food, buffer zones near water.</li><li><b>Use of non-persistent pesticides</b> that break down before they spread; <b>use of more specific pesticides</b> (Bt toxin, hormone pesticides, pheromones).</li><li><b>Use of systemic pesticides</b> - absorbed by the crop so only pests that eat it are affected, less spray on the surface (though neonicotinoids show the risk to pollinators via pollen).</li><li><b>Application methods and timing:</b> spraying when crops are not in flower or at night when bees are not foraging; on still days to prevent drift; correct dose; seed coatings rather than sprays; targeted spraying with GPS.</li><li><b>Alternatives:</b> cultural control, biological control, integrated pest management to minimise chemical use.</li></ul>
 <h2 id="diagrams">Diagrams</h2>
 <figure class="diag"><figcaption>Persistence of pesticide groups in the environment (approximate half-life)</figcaption><div class="cap"></div>
-<svg class="chart" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
-<rect x="78.0" y="269.6" width="84.0" height="0.4" fill="#3f6b4a"/>
-<text x="120.0" y="286" text-anchor="middle">Pyrethroids</text>
-<rect x="198.0" y="268.6" width="84.0" height="1.4" fill="#3f6b4a"/>
-<text x="240.0" y="286" text-anchor="middle">Organophosphates</text>
-<rect x="318.0" y="259.3" width="84.0" height="10.7" fill="#3f6b4a"/>
-<text x="360.0" y="286" text-anchor="middle">Neonicotinoids</text>
-<rect x="438.0" y="55.7" width="84.0" height="214.3" fill="#3f6b4a"/>
-<text x="480.0" y="286" text-anchor="middle">Organochlorines (DDT)</text>
-<line x1="56" y1="270.0" x2="60" y2="270.0" stroke="#000"/><text x="52" y="274.0" text-anchor="end">0</text>
-<line x1="56" y1="220.0" x2="60" y2="220.0" stroke="#000"/><text x="52" y="224.0" text-anchor="end">700</text>
-<line x1="56" y1="170.0" x2="60" y2="170.0" stroke="#000"/><text x="52" y="174.0" text-anchor="end">1400</text>
-<line x1="56" y1="120.0" x2="60" y2="120.0" stroke="#000"/><text x="52" y="124.0" text-anchor="end">2100</text>
-<line x1="56" y1="70.0" x2="60" y2="70.0" stroke="#000"/><text x="52" y="74.0" text-anchor="end">2800</text>
-<line x1="56" y1="20.0" x2="60" y2="20.0" stroke="#000"/><text x="52" y="24.0" text-anchor="end">3500</text>
-<line x1="60" y1="20" x2="60" y2="270" stroke="#000"/><line x1="60" y1="270" x2="540" y2="270" stroke="#000"/>
-<text x="300.0" y="312" text-anchor="middle" font-weight="bold"></text>
-<text transform="translate(14,145.0) rotate(-90)" text-anchor="middle" font-weight="bold">Half-life / days</text>
+<svg class="chart" viewBox="0 0 600 348" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
+<rect x="66" y="18" width="516" height="272" fill="#fff"/>
+<line x1="66.00" y1="290.00" x2="582.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="282.23" x2="582.00" y2="282.23" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="274.46" x2="582.00" y2="274.46" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="266.69" x2="582.00" y2="266.69" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="258.91" x2="582.00" y2="258.91" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="251.14" x2="582.00" y2="251.14" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="243.37" x2="582.00" y2="243.37" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="235.60" x2="582.00" y2="235.60" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="227.83" x2="582.00" y2="227.83" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="220.06" x2="582.00" y2="220.06" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="212.29" x2="582.00" y2="212.29" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="204.51" x2="582.00" y2="204.51" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="196.74" x2="582.00" y2="196.74" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="188.97" x2="582.00" y2="188.97" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="181.20" x2="582.00" y2="181.20" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="173.43" x2="582.00" y2="173.43" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="165.66" x2="582.00" y2="165.66" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="157.89" x2="582.00" y2="157.89" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="150.11" x2="582.00" y2="150.11" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="142.34" x2="582.00" y2="142.34" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="134.57" x2="582.00" y2="134.57" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="126.80" x2="582.00" y2="126.80" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="119.03" x2="582.00" y2="119.03" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="111.26" x2="582.00" y2="111.26" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="103.49" x2="582.00" y2="103.49" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="95.71" x2="582.00" y2="95.71" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="87.94" x2="582.00" y2="87.94" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="80.17" x2="582.00" y2="80.17" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="72.40" x2="582.00" y2="72.40" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="64.63" x2="582.00" y2="64.63" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="56.86" x2="582.00" y2="56.86" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="49.09" x2="582.00" y2="49.09" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="41.31" x2="582.00" y2="41.31" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="33.54" x2="582.00" y2="33.54" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="25.77" x2="582.00" y2="25.77" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="18.00" x2="582.00" y2="18.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="73.77" y1="18.00" x2="73.77" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="81.54" y1="18.00" x2="81.54" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="89.31" y1="18.00" x2="89.31" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="97.09" y1="18.00" x2="97.09" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="104.86" y1="18.00" x2="104.86" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="112.63" y1="18.00" x2="112.63" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="120.40" y1="18.00" x2="120.40" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="128.17" y1="18.00" x2="128.17" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="135.94" y1="18.00" x2="135.94" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="143.71" y1="18.00" x2="143.71" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="151.49" y1="18.00" x2="151.49" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="159.26" y1="18.00" x2="159.26" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="167.03" y1="18.00" x2="167.03" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="174.80" y1="18.00" x2="174.80" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="182.57" y1="18.00" x2="182.57" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="190.34" y1="18.00" x2="190.34" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="198.11" y1="18.00" x2="198.11" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="205.89" y1="18.00" x2="205.89" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="213.66" y1="18.00" x2="213.66" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="221.43" y1="18.00" x2="221.43" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="229.20" y1="18.00" x2="229.20" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="236.97" y1="18.00" x2="236.97" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="244.74" y1="18.00" x2="244.74" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="252.51" y1="18.00" x2="252.51" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="260.29" y1="18.00" x2="260.29" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="268.06" y1="18.00" x2="268.06" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="275.83" y1="18.00" x2="275.83" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="283.60" y1="18.00" x2="283.60" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="291.37" y1="18.00" x2="291.37" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="299.14" y1="18.00" x2="299.14" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="306.91" y1="18.00" x2="306.91" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="314.69" y1="18.00" x2="314.69" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="322.46" y1="18.00" x2="322.46" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="330.23" y1="18.00" x2="330.23" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="338.00" y1="18.00" x2="338.00" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="345.77" y1="18.00" x2="345.77" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="353.54" y1="18.00" x2="353.54" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="361.31" y1="18.00" x2="361.31" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="369.09" y1="18.00" x2="369.09" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="376.86" y1="18.00" x2="376.86" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="384.63" y1="18.00" x2="384.63" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="392.40" y1="18.00" x2="392.40" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="400.17" y1="18.00" x2="400.17" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="407.94" y1="18.00" x2="407.94" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="415.71" y1="18.00" x2="415.71" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="423.49" y1="18.00" x2="423.49" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="431.26" y1="18.00" x2="431.26" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="439.03" y1="18.00" x2="439.03" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="446.80" y1="18.00" x2="446.80" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="454.57" y1="18.00" x2="454.57" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="462.34" y1="18.00" x2="462.34" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="470.11" y1="18.00" x2="470.11" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="477.89" y1="18.00" x2="477.89" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="485.66" y1="18.00" x2="485.66" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="493.43" y1="18.00" x2="493.43" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="501.20" y1="18.00" x2="501.20" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="508.97" y1="18.00" x2="508.97" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="516.74" y1="18.00" x2="516.74" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="524.51" y1="18.00" x2="524.51" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="532.29" y1="18.00" x2="532.29" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="540.06" y1="18.00" x2="540.06" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="547.83" y1="18.00" x2="547.83" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="555.60" y1="18.00" x2="555.60" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="563.37" y1="18.00" x2="563.37" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="571.14" y1="18.00" x2="571.14" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="578.91" y1="18.00" x2="578.91" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="195.00" y1="18.00" x2="195.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="324.00" y1="18.00" x2="324.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="453.00" y1="18.00" x2="453.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<rect x="84.1" y="289.6" width="92.9" height="0.4" fill="#3f6b4a" stroke="#38463c" stroke-width="0.6"/>
+<text y="306" text-anchor="middle" font-size="10.5"><tspan x="130.5" dy="0">Pyrethroids</tspan></text>
+<rect x="213.1" y="288.4" width="92.9" height="1.6" fill="#3f6b4a" stroke="#38463c" stroke-width="0.6"/>
+<text y="306" text-anchor="middle" font-size="10.5"><tspan x="259.5" dy="0">Organophosphates</tspan></text>
+<rect x="342.1" y="278.3" width="92.9" height="11.7" fill="#3f6b4a" stroke="#38463c" stroke-width="0.6"/>
+<text y="306" text-anchor="middle" font-size="10.5"><tspan x="388.5" dy="0">Neonicotinoids</tspan></text>
+<rect x="471.1" y="56.9" width="92.9" height="233.1" fill="#3f6b4a" stroke="#38463c" stroke-width="0.6"/>
+<text y="306" text-anchor="middle" font-size="10.5"><tspan x="517.5" dy="0">Organochlorines (DDT)</tspan></text>
+<line x1="61" y1="290.0" x2="66" y2="290.0" stroke="#38463c"/><text x="57" y="294.0" text-anchor="end">0</text>
+<line x1="61" y1="251.1" x2="66" y2="251.1" stroke="#38463c"/><text x="57" y="255.1" text-anchor="end">500</text>
+<line x1="61" y1="212.3" x2="66" y2="212.3" stroke="#38463c"/><text x="57" y="216.3" text-anchor="end">1000</text>
+<line x1="61" y1="173.4" x2="66" y2="173.4" stroke="#38463c"/><text x="57" y="177.4" text-anchor="end">1500</text>
+<line x1="61" y1="134.6" x2="66" y2="134.6" stroke="#38463c"/><text x="57" y="138.6" text-anchor="end">2000</text>
+<line x1="61" y1="95.7" x2="66" y2="95.7" stroke="#38463c"/><text x="57" y="99.7" text-anchor="end">2500</text>
+<line x1="61" y1="56.9" x2="66" y2="56.9" stroke="#38463c"/><text x="57" y="60.9" text-anchor="end">3000</text>
+<line x1="61" y1="18.0" x2="66" y2="18.0" stroke="#38463c"/><text x="57" y="22.0" text-anchor="end">3500</text>
+<rect x="66" y="18" width="516" height="272" fill="none" stroke="#38463c" stroke-width="1.3"/>
+<text x="324.0" y="340" text-anchor="middle" font-weight="bold"></text>
+<text transform="translate(15,154.0) rotate(-90)" text-anchor="middle" font-weight="bold">Half-life / days</text>
 </svg><div class="dcap">Orders of magnitude, not precise values (Genn pp. 263-265). Persistence governs how far a pesticide travels and whether it accumulates.</div></figure>
 <div class="nums" id="numbers"><h3>Key numbers and facts to remember</h3><ul><li>DDT: persistent, liposoluble, biomagnified - eggshell thinning in peregrines</li><li>Neonicotinoids: EU restrictions on outdoor use on flowering crops</li></ul></div>
 <div class="examh" id="exam"><h3>How this subtopic is examined</h3><ul><li>Explain how named properties cause impacts on non-target species (dose-response graphs, LD50).</li><li>Compare pesticide groups; explain why systemic pesticides do not affect insects landing on crops (Nov 2021 Q6).</li><li>Pesticide residues in food and MRLs (Nov 2020 Q9, 15 marks).</li><li>9-mark: neonicotinoids and bees; methods of reducing pesticide pollution; essay on pesticide properties.</li></ul>

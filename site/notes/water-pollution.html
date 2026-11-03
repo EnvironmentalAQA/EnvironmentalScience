@@ -35,6 +35,17 @@ a.btn,button.btn{display:inline-block;background:var(--moss);color:#fff;text-dec
 a.btn.ghost,button.btn.ghost{background:transparent;color:var(--moss);border:1.5px solid var(--moss)}a.btn.ghost:hover,button.btn.ghost:hover{background:var(--leaf-light)}
 .paper-head{display:flex;align-items:center;gap:14px;margin:8px 0 14px}.paper-head .tag{white-space:nowrap;font-family:Fraunces,serif;font-size:1.05rem;font-weight:700;color:#fff;border-radius:8px;padding:4px 12px}
 .tag.p1{background:var(--p1)}.tag.p2{background:var(--p2)}.paper-head span.assessed{color:var(--stone);font-size:.95rem}
+.papers2{display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;align-items:start}
+.papers2 .paper-head{display:block;position:sticky;top:var(--hdr,62px);z-index:6;background:var(--sand);margin:0;padding:10px 0 8px;border-bottom:1px solid var(--line)}
+.papers2 .paper-head .tag{display:inline-block}.papers2 .paper-head span.assessed{display:block;font-size:.85rem;margin-top:5px;min-height:1.3em}
+.papers2 table.list{margin:10px 0 0}
+table.list.compact th,table.list.compact td{padding:7px 10px;font-size:.9rem;vertical-align:top}
+table.list.compact td:first-child{font-family:Fraunces,serif;white-space:nowrap}
+table.list.compact td a{text-decoration:none;font-weight:600;white-space:nowrap}table.list.compact td a:hover{text-decoration:underline}
+table.list.compact a.sit{background:var(--leaf-light);border:1px solid var(--leaf);border-radius:999px;padding:1px 9px}
+.tcov{display:inline-block;margin-left:8px;vertical-align:baseline}.tcov summary{cursor:pointer;color:var(--stone);font-size:.78rem;white-space:nowrap}
+.tcov[open]{display:block;margin:3px 0 0}.tcov>div{font-size:.8rem;color:var(--stone);line-height:1.45;margin-top:3px}
+@media(max-width:900px){.papers2{grid-template-columns:1fr}.papers2 .paper-head{position:static}}
 .topic-card{display:flex;gap:16px;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;transition:transform .12s,box-shadow .12s}
 .topic-card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(31,61,43,.12)}
 .topic-card .icon{flex:0 0 52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center}.topic-card .icon svg{width:30px;height:30px}
@@ -177,30 +188,99 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <h2 id="s5">Treatment of oil spills <span class="pg">Genn pp. 261-262</span></h2><table class="nt"><tr><th>Method</th><th>How it works / limits</th></tr><tr><td>Inflatable booms</td><td>Floating barriers contain or divert the slick; fail in rough seas</td></tr><tr><td>Skimmers</td><td>Recover floating oil from the surface for re-use</td></tr><tr><td>Absorbent materials</td><td>Straw, polymers, peat soak up oil; must then be disposed of</td></tr><tr><td>Polymerising agents</td><td>Turn oil into a solid that can be lifted</td></tr><tr><td>Dispersants</td><td>Detergents break oil into droplets that disperse and degrade faster - but may be more toxic than the oil and spread it into the water column</td></tr><tr><td>Steam washing</td><td>Cleans rocks but kills surviving organisms</td></tr><tr><td>Bioremediation</td><td>Nutrients (and sometimes bacteria) added so natural microbes break the oil down; slow but low impact</td></tr></table>
 <h2 id="diagrams">Diagrams</h2>
 <figure class="diag"><figcaption>Dissolved oxygen falls as water temperature rises</figcaption><div class="cap"></div>
-<svg class="chart" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
-<polyline points="60.0,41.9 140.0,70.0 220.0,93.4 300.0,112.2 380.0,127.8 460.0,140.3 540.0,151.2" fill="none" stroke="#22302a" stroke-width="1.8"/>
-<circle cx="60.0" cy="41.9" r="2.6" fill="#22302a"/>
-<circle cx="140.0" cy="70.0" r="2.6" fill="#22302a"/>
-<circle cx="220.0" cy="93.4" r="2.6" fill="#22302a"/>
-<circle cx="300.0" cy="112.2" r="2.6" fill="#22302a"/>
-<circle cx="380.0" cy="127.8" r="2.6" fill="#22302a"/>
-<circle cx="460.0" cy="140.3" r="2.6" fill="#22302a"/>
-<circle cx="540.0" cy="151.2" r="2.6" fill="#22302a"/>
-<line x1="60.0" y1="270" x2="60.0" y2="274" stroke="#000"/><text x="60.0" y="286" text-anchor="middle">0</text>
-<line x1="56" y1="270.0" x2="60" y2="270.0" stroke="#000"/><text x="52" y="274.0" text-anchor="end">0</text>
-<line x1="156.0" y1="270" x2="156.0" y2="274" stroke="#000"/><text x="156.0" y="286" text-anchor="middle">6</text>
-<line x1="56" y1="220.0" x2="60" y2="220.0" stroke="#000"/><text x="52" y="224.0" text-anchor="end">3.2</text>
-<line x1="252.0" y1="270" x2="252.0" y2="274" stroke="#000"/><text x="252.0" y="286" text-anchor="middle">12</text>
-<line x1="56" y1="170.0" x2="60" y2="170.0" stroke="#000"/><text x="52" y="174.0" text-anchor="end">6.4</text>
-<line x1="348.0" y1="270" x2="348.0" y2="274" stroke="#000"/><text x="348.0" y="286" text-anchor="middle">18</text>
-<line x1="56" y1="120.0" x2="60" y2="120.0" stroke="#000"/><text x="52" y="124.0" text-anchor="end">9.6</text>
-<line x1="444.0" y1="270" x2="444.0" y2="274" stroke="#000"/><text x="444.0" y="286" text-anchor="middle">24</text>
-<line x1="56" y1="70.0" x2="60" y2="70.0" stroke="#000"/><text x="52" y="74.0" text-anchor="end">12.8</text>
-<line x1="540.0" y1="270" x2="540.0" y2="274" stroke="#000"/><text x="540.0" y="286" text-anchor="middle">30</text>
-<line x1="56" y1="20.0" x2="60" y2="20.0" stroke="#000"/><text x="52" y="24.0" text-anchor="end">16</text>
-<line x1="60" y1="20" x2="60" y2="270" stroke="#000"/><line x1="60" y1="270" x2="540" y2="270" stroke="#000"/>
-<text x="300.0" y="312" text-anchor="middle" font-weight="bold">Temperature / degrees C</text>
-<text transform="translate(14,145.0) rotate(-90)" text-anchor="middle" font-weight="bold">Dissolved O2 / mg dm-3</text>
+<svg class="chart" viewBox="0 0 600 348" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
+<rect x="66" y="18" width="516" height="272" fill="#fff"/>
+<line x1="66.00" y1="290.00" x2="582.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="281.50" x2="582.00" y2="281.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="273.00" x2="582.00" y2="273.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="264.50" x2="582.00" y2="264.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="256.00" x2="582.00" y2="256.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="247.50" x2="582.00" y2="247.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="239.00" x2="582.00" y2="239.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="230.50" x2="582.00" y2="230.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="222.00" x2="582.00" y2="222.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="213.50" x2="582.00" y2="213.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="205.00" x2="582.00" y2="205.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="196.50" x2="582.00" y2="196.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="188.00" x2="582.00" y2="188.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="179.50" x2="582.00" y2="179.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="171.00" x2="582.00" y2="171.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="162.50" x2="582.00" y2="162.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="154.00" x2="582.00" y2="154.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="145.50" x2="582.00" y2="145.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="137.00" x2="582.00" y2="137.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="128.50" x2="582.00" y2="128.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="120.00" x2="582.00" y2="120.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="111.50" x2="582.00" y2="111.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="103.00" x2="582.00" y2="103.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="94.50" x2="582.00" y2="94.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="86.00" x2="582.00" y2="86.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="77.50" x2="582.00" y2="77.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="69.00" x2="582.00" y2="69.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="60.50" x2="582.00" y2="60.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="52.00" x2="582.00" y2="52.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="43.50" x2="582.00" y2="43.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="35.00" x2="582.00" y2="35.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="26.50" x2="582.00" y2="26.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="18.00" x2="582.00" y2="18.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="18.00" x2="66.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="83.20" y1="18.00" x2="83.20" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="100.40" y1="18.00" x2="100.40" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="117.60" y1="18.00" x2="117.60" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="134.80" y1="18.00" x2="134.80" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="152.00" y1="18.00" x2="152.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="169.20" y1="18.00" x2="169.20" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="186.40" y1="18.00" x2="186.40" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="203.60" y1="18.00" x2="203.60" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="220.80" y1="18.00" x2="220.80" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="238.00" y1="18.00" x2="238.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="255.20" y1="18.00" x2="255.20" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="272.40" y1="18.00" x2="272.40" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="289.60" y1="18.00" x2="289.60" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="306.80" y1="18.00" x2="306.80" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="324.00" y1="18.00" x2="324.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="341.20" y1="18.00" x2="341.20" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="358.40" y1="18.00" x2="358.40" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="375.60" y1="18.00" x2="375.60" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="392.80" y1="18.00" x2="392.80" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="410.00" y1="18.00" x2="410.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="427.20" y1="18.00" x2="427.20" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="444.40" y1="18.00" x2="444.40" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="461.60" y1="18.00" x2="461.60" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="478.80" y1="18.00" x2="478.80" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="496.00" y1="18.00" x2="496.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="513.20" y1="18.00" x2="513.20" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="530.40" y1="18.00" x2="530.40" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="547.60" y1="18.00" x2="547.60" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="564.80" y1="18.00" x2="564.80" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="582.00" y1="18.00" x2="582.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<polyline points="66.0,41.8 152.0,72.4 238.0,97.9 324.0,118.3 410.0,135.3 496.0,148.9 582.0,160.8" fill="none" stroke="#22302a" stroke-width="2"/>
+<circle cx="66.0" cy="41.8" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="152.0" cy="72.4" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="238.0" cy="97.9" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="324.0" cy="118.3" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="410.0" cy="135.3" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="496.0" cy="148.9" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="582.0" cy="160.8" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<line x1="66.0" y1="290" x2="66.0" y2="295" stroke="#38463c"/><text x="66.0" y="307" text-anchor="middle">0</text>
+<line x1="152.0" y1="290" x2="152.0" y2="295" stroke="#38463c"/><text x="152.0" y="307" text-anchor="middle">5</text>
+<line x1="238.0" y1="290" x2="238.0" y2="295" stroke="#38463c"/><text x="238.0" y="307" text-anchor="middle">10</text>
+<line x1="324.0" y1="290" x2="324.0" y2="295" stroke="#38463c"/><text x="324.0" y="307" text-anchor="middle">15</text>
+<line x1="410.0" y1="290" x2="410.0" y2="295" stroke="#38463c"/><text x="410.0" y="307" text-anchor="middle">20</text>
+<line x1="496.0" y1="290" x2="496.0" y2="295" stroke="#38463c"/><text x="496.0" y="307" text-anchor="middle">25</text>
+<line x1="582.0" y1="290" x2="582.0" y2="295" stroke="#38463c"/><text x="582.0" y="307" text-anchor="middle">30</text>
+<line x1="61" y1="290.0" x2="66" y2="290.0" stroke="#38463c"/><text x="57" y="294.0" text-anchor="end">0</text>
+<line x1="61" y1="256.0" x2="66" y2="256.0" stroke="#38463c"/><text x="57" y="260.0" text-anchor="end">2</text>
+<line x1="61" y1="222.0" x2="66" y2="222.0" stroke="#38463c"/><text x="57" y="226.0" text-anchor="end">4</text>
+<line x1="61" y1="188.0" x2="66" y2="188.0" stroke="#38463c"/><text x="57" y="192.0" text-anchor="end">6</text>
+<line x1="61" y1="154.0" x2="66" y2="154.0" stroke="#38463c"/><text x="57" y="158.0" text-anchor="end">8</text>
+<line x1="61" y1="120.0" x2="66" y2="120.0" stroke="#38463c"/><text x="57" y="124.0" text-anchor="end">10</text>
+<line x1="61" y1="86.0" x2="66" y2="86.0" stroke="#38463c"/><text x="57" y="90.0" text-anchor="end">12</text>
+<line x1="61" y1="52.0" x2="66" y2="52.0" stroke="#38463c"/><text x="57" y="56.0" text-anchor="end">14</text>
+<line x1="61" y1="18.0" x2="66" y2="18.0" stroke="#38463c"/><text x="57" y="22.0" text-anchor="end">16</text>
+<rect x="66" y="18" width="516" height="272" fill="none" stroke="#38463c" stroke-width="1.3"/>
+<text x="324.0" y="340" text-anchor="middle" font-weight="bold">Temperature / degrees C</text>
+<text transform="translate(15,154.0) rotate(-90)" text-anchor="middle" font-weight="bold">Dissolved O2 / mg dm-3</text>
 </svg><div class="dcap">Warm discharges lower oxygen just as organisms&#x27; oxygen demand rises (Genn pp. 256-257).</div></figure>
 <div class="nums" id="numbers"><h3>Key numbers and facts to remember</h3><ul><li>Waste lubricating oil is the largest source of oil pollution</li><li>MV Wakashio (Mauritius, 2020) is the case in June 2023 Q9</li></ul></div>
 <div class="examh" id="exam"><h3>How this subtopic is examined</h3><ul><li>Explain effects of thermal pollution on dissolved oxygen and species; describe cooling towers.</li><li>Sources of oil pollution and effects on birds; tanker design and operation improvements.</li><li>Compare clean-up methods and their limits from a spill case study (June 2023 Q9).</li><li>Explain why enclosed water bodies are most at risk.</li></ul>

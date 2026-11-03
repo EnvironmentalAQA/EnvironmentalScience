@@ -11,7 +11,7 @@ from reportlab.graphics.charts.lineplots import LinePlot
 from reportlab.graphics.charts.barcharts import VerticalBarChart
 from reportlab.graphics.charts.legends import Legend
 from reportlab.graphics.widgets.markers import makeMarker
-import re, html
+import math, re, html
 
 from .marking import scheme, indicative
 from bank.exemplars import EXEMPLARS, ESSAY_EXEMPLARS
@@ -276,28 +276,139 @@ def render_table(tbl: QTable, avail_w, caption):
     return [Paragraph(esc(caption), CAP), t, Spacer(1, 6)]
 
 
+def nice_step(raw):
+    """Round a raw interval up to 1, 2, 2.5 or 5 times a power of ten."""
+    if raw <= 0:
+        return 1.0
+    e = math.floor(math.log10(raw))
+    f = raw / 10 ** e
+    for n in (1, 2, 2.5, 5):
+        if f <= n * 1.0001:
+            return n * 10 ** e
+    return 10 ** (e + 1)
+
+
+def nice_axis(lo, hi):
+    """Expand a data range so the gridlines land on round numbers a student can read off.
+
+    Every 1/2/2.5/5 step that gives 4-8 major squares is scored on how much blank space it
+    adds, with a nudge away from 2.5 (its half-labels read worse), and the best one wins.
+    """
+    if hi <= lo:
+        hi = lo + (abs(lo) or 1)
+    span = hi - lo
+    best = None
+    e0 = math.floor(math.log10(span)) - 2
+    for e in range(e0, e0 + 5):
+        for f in (1, 2, 2.5, 5):
+            step = f * 10 ** e
+            lo2 = math.floor(lo / step + 1e-9) * step
+            hi2 = math.ceil(hi / step - 1e-9) * step
+            n = int(round((hi2 - lo2) / step))
+            if not 4 <= n <= 8:
+                continue
+            score = (hi2 - lo2 - span) / span + (0.25 if f == 2.5 else 0)
+            if best is None or score < best[0] - 1e-12:
+                best = (score, round(lo2, 10), round(hi2, 10), step, n)
+    if best is None:
+        step = nice_step(span / 5)
+        lo2, hi2 = math.floor(lo / step) * step, math.ceil(hi / step) * step
+        return round(lo2, 10), round(hi2, 10), step, max(1, int(round((hi2 - lo2) / step)))
+    return best[1], best[2], best[3], best[4]
+
+
+def minor_count(step, span_px, majors):
+    """Small squares per big square - 5 for a step of 1 or 5, 4 for a step of 2 - clamped
+    so they never crowd or stretch on the page."""
+    lead = step / 10 ** math.floor(math.log10(step)) if step > 0 else 1
+    n = 4 if abs(lead - 2) < 0.01 else 5
+    per = span_px / max(1, majors)
+    while n > 2 and per / n < 5:
+        n //= 2
+    while per / n > 26:
+        n *= 2
+    return int(n)
+
+
+GRID_MAJOR = colors.HexColor("#9aada0")
+GRID_MINOR = colors.HexColor("#ccd8ce")
+
+
+def wrap_cat(label, width_pt, size):
+    """Break a long category name over up to three lines so neighbours stop colliding."""
+    fit = max(5, int(width_pt / (size * 0.52)))
+    if len(label) <= fit:
+        return label, 1
+    lines, cur = [], ""
+    for word in label.split(" "):
+        if cur and len(cur) + 1 + len(word) > fit:
+            lines.append(cur)
+            cur = word
+        else:
+            cur = f"{cur} {word}".strip()
+    if cur:
+        lines.append(cur)
+    if len(lines) > 3:
+        lines = lines[:2] + [" ".join(lines[2:])]
+    return "\n".join(lines), len(lines)
+
+
+def graph_paper(axis, lo, hi, span_pt):
+    """Rule a value axis like graph paper: major lines on round numbers, finer squares between.
+    Returns the pitch of the fine lines in points so the other axis can be ruled to match."""
+    vmin, vmax, step, n = nice_axis(lo, hi)
+    cells = minor_count(step, span_pt, n)
+    axis.valueMin, axis.valueMax, axis.valueStep = vmin, vmax, step
+    axis.visibleGrid = 1
+    axis.gridStrokeColor = GRID_MAJOR
+    axis.gridStrokeWidth = 0.6
+    if hasattr(axis, "visibleSubGrid"):
+        axis.visibleSubGrid = 1
+        axis.subTickNum = cells - 1
+        axis.subGridStrokeColor = GRID_MINOR
+        axis.subGridStrokeWidth = 0.4
+    return span_pt / (n * cells)
+
+
 def render_chart(ch: Chart, avail_w, caption):
     w, h = min(avail_w, 15 * cm), 8.5 * cm
     d = Drawing(w, h)
     labels = list(ch.series.keys())
+
     if ch.kind == "bar":
         bc = VerticalBarChart()
-        bc.x, bc.y, bc.width, bc.height = 55, 45, w - 90, h - 75
-        bc.data = [[v for _, v in ch.series[k]] for k in labels]
         cats = ch.categories or [str(x) for x, _ in ch.series[labels[0]]]
-        bc.categoryAxis.categoryNames = [plain(c) for c in cats]
+        csize = 8 if max(len(plain(c)) for c in cats) < 14 else 7
+        wrapped = [wrap_cat(plain(c), (w - 90) / len(cats) - 4, csize) for c in cats]
+        rows = max(r for _, r in wrapped)
+        bc.x, bc.y, bc.width, bc.height = 55, 34 + rows * 9, w - 90, h - 64 - rows * 9
+        bc.data = [[v for _, v in ch.series[k]] for k in labels]
+        bc.categoryAxis.categoryNames = [t for t, _ in wrapped]
         bc.categoryAxis.labels.fontName = FONT
         bc.valueAxis.labels.fontName = FONT
-        bc.categoryAxis.labels.fontSize = 8
+        bc.categoryAxis.labels.fontSize = csize
+        bc.categoryAxis.labels.leading = csize + 1.5
+        bc.categoryAxis.labels.boxAnchor = "n"
+        bc.categoryAxis.labels.dy = -3
         bc.valueAxis.labels.fontSize = 8
-        if ch.y_min is not None: bc.valueAxis.valueMin = ch.y_min
-        if ch.y_max is not None: bc.valueAxis.valueMax = ch.y_max
+        vals = [v for k in labels for _, v in ch.series[k]]
+        pitch = graph_paper(bc.valueAxis,
+                            ch.y_min if ch.y_min is not None else min(0, min(vals)),
+                            ch.y_max if ch.y_max is not None else max(vals), bc.height)
         bc.groupSpacing = 8
+        bc.categoryAxis.visibleGrid = 1
+        bc.categoryAxis.gridStrokeColor = GRID_MAJOR
+        bc.categoryAxis.gridStrokeWidth = 0.6
         palette = [colors.HexColor("#4a6fa5"), colors.HexColor("#a5c16b"), colors.HexColor("#d98c3f"), colors.grey]
         for i in range(len(labels)):
             bc.bars[i].fillColor = palette[i % len(palette)]
         d.add(bc)
         plot = bc
+        px, py, pw, ph = bc.x, bc.y, bc.width, bc.height
+        x = px + pitch                       # square paper: verticals at the same pitch
+        while x < px + pw - 0.3:
+            d.insert(0, Line(x, py, x, py + ph, strokeColor=GRID_MINOR, strokeWidth=0.4))
+            x += pitch
     else:
         lp = LinePlot()
         lp.x, lp.y, lp.width, lp.height = 55, 45, w - 90, h - 75
@@ -306,8 +417,12 @@ def render_chart(ch: Chart, avail_w, caption):
         lp.xValueAxis.labels.fontName = FONT
         lp.yValueAxis.labels.fontName = FONT
         lp.yValueAxis.labels.fontSize = 8
-        if ch.y_min is not None: lp.yValueAxis.valueMin = ch.y_min
-        if ch.y_max is not None: lp.yValueAxis.valueMax = ch.y_max
+        xs = [x for k in labels for x, _ in ch.series[k]]
+        ys = [y for k in labels for _, y in ch.series[k]]
+        graph_paper(lp.xValueAxis, min(xs), max(xs), lp.width)
+        graph_paper(lp.yValueAxis,
+                    ch.y_min if ch.y_min is not None else min(ys),
+                    ch.y_max if ch.y_max is not None else max(ys), lp.height)
         lp.joinedLines = 1
         markers = ["FilledCircle", "FilledSquare", "FilledTriangle", "FilledDiamond"]
         for i in range(len(labels)):
@@ -317,6 +432,9 @@ def render_chart(ch: Chart, avail_w, caption):
             lp.lines[i].symbol.size = 4
         d.add(lp)
         plot = lp
+        px, py, pw, ph = lp.x, lp.y, lp.width, lp.height
+    d.insert(0, Rect(px, py, pw, ph, fillColor=colors.white, strokeColor=None))
+    d.add(Rect(px, py, pw, ph, fillColor=None, strokeColor=colors.HexColor("#38463c"), strokeWidth=0.9))
     # axis labels
     d.add(String(w / 2, 8, plain(ch.x_label), fontName=FONT, fontSize=9, textAnchor="middle"))
     ylab = String(0, 0, plain(ch.y_label), fontName=FONT, fontSize=9, textAnchor="middle")

@@ -35,6 +35,17 @@ a.btn,button.btn{display:inline-block;background:var(--moss);color:#fff;text-dec
 a.btn.ghost,button.btn.ghost{background:transparent;color:var(--moss);border:1.5px solid var(--moss)}a.btn.ghost:hover,button.btn.ghost:hover{background:var(--leaf-light)}
 .paper-head{display:flex;align-items:center;gap:14px;margin:8px 0 14px}.paper-head .tag{white-space:nowrap;font-family:Fraunces,serif;font-size:1.05rem;font-weight:700;color:#fff;border-radius:8px;padding:4px 12px}
 .tag.p1{background:var(--p1)}.tag.p2{background:var(--p2)}.paper-head span.assessed{color:var(--stone);font-size:.95rem}
+.papers2{display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;align-items:start}
+.papers2 .paper-head{display:block;position:sticky;top:var(--hdr,62px);z-index:6;background:var(--sand);margin:0;padding:10px 0 8px;border-bottom:1px solid var(--line)}
+.papers2 .paper-head .tag{display:inline-block}.papers2 .paper-head span.assessed{display:block;font-size:.85rem;margin-top:5px;min-height:1.3em}
+.papers2 table.list{margin:10px 0 0}
+table.list.compact th,table.list.compact td{padding:7px 10px;font-size:.9rem;vertical-align:top}
+table.list.compact td:first-child{font-family:Fraunces,serif;white-space:nowrap}
+table.list.compact td a{text-decoration:none;font-weight:600;white-space:nowrap}table.list.compact td a:hover{text-decoration:underline}
+table.list.compact a.sit{background:var(--leaf-light);border:1px solid var(--leaf);border-radius:999px;padding:1px 9px}
+.tcov{display:inline-block;margin-left:8px;vertical-align:baseline}.tcov summary{cursor:pointer;color:var(--stone);font-size:.78rem;white-space:nowrap}
+.tcov[open]{display:block;margin:3px 0 0}.tcov>div{font-size:.8rem;color:var(--stone);line-height:1.45;margin-top:3px}
+@media(max-width:900px){.papers2{grid-template-columns:1fr}.papers2 .paper-head{position:static}}
 .topic-card{display:flex;gap:16px;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;transition:transform .12s,box-shadow .12s}
 .topic-card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(31,61,43,.12)}
 .topic-card .icon{flex:0 0 52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center}.topic-card .icon svg{width:30px;height:30px}
@@ -177,36 +188,95 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <h2 id="s5">Ecological terminology <span class="pg">Genn pp. 82-85</span></h2><table class="nt"><tr><th>Term</th><th>Definition</th></tr><tr><td>Taxonomy / species</td><td>Classification; a group of organisms that resemble each other and can interbreed to produce fertile offspring</td></tr><tr><td>Evolution</td><td>Change in the characteristics of a population over generations by natural selection</td></tr><tr><td>Habitat</td><td>The place where an organism lives, with its abiotic and biotic conditions</td></tr><tr><td>Ecological niche</td><td>The role of a species: what it eats, where, when, and its interactions</td></tr><tr><td>Population</td><td>All individuals of one species in an area</td></tr><tr><td>Community</td><td>All the populations of different species living together</td></tr><tr><td>Ecosystem</td><td>A community together with its abiotic environment, functioning as a system</td></tr><tr><td>Biome</td><td>A large-scale ecosystem type determined by climate (rainforest, tundra, grassland) - not the same as a local ecosystem</td></tr><tr><td>Biosphere</td><td>All the parts of the Earth where life exists</td></tr><tr><td>Species richness / diversity</td><td>Number of species / number and evenness of species (Simpson's index)</td></tr></table>
 <h2 id="diagrams">Diagrams</h2>
 <figure class="diag"><figcaption>Sigmoid population growth to carrying capacity</figcaption><div class="cap"></div>
-<svg class="chart" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
-<polyline points="60.0,265.5 100.0,261.8 140.0,254.1 180.0,238.2 220.0,210.9 260.0,170.0 300.0,124.5 340.0,88.2 380.0,65.5 420.0,51.8 460.0,47.3 500.0,45.0 540.0,42.7" fill="none" stroke="#22302a" stroke-width="1.8"/>
-<circle cx="60.0" cy="265.5" r="2.6" fill="#22302a"/>
-<circle cx="100.0" cy="261.8" r="2.6" fill="#22302a"/>
-<circle cx="140.0" cy="254.1" r="2.6" fill="#22302a"/>
-<circle cx="180.0" cy="238.2" r="2.6" fill="#22302a"/>
-<circle cx="220.0" cy="210.9" r="2.6" fill="#22302a"/>
-<circle cx="260.0" cy="170.0" r="2.6" fill="#22302a"/>
-<circle cx="300.0" cy="124.5" r="2.6" fill="#22302a"/>
-<circle cx="340.0" cy="88.2" r="2.6" fill="#22302a"/>
-<circle cx="380.0" cy="65.5" r="2.6" fill="#22302a"/>
-<circle cx="420.0" cy="51.8" r="2.6" fill="#22302a"/>
-<circle cx="460.0" cy="47.3" r="2.6" fill="#22302a"/>
-<circle cx="500.0" cy="45.0" r="2.6" fill="#22302a"/>
-<circle cx="540.0" cy="42.7" r="2.6" fill="#22302a"/>
-<line x1="60.0" y1="270" x2="60.0" y2="274" stroke="#000"/><text x="60.0" y="286" text-anchor="middle">0</text>
-<line x1="56" y1="270.0" x2="60" y2="270.0" stroke="#000"/><text x="52" y="274.0" text-anchor="end">0</text>
-<line x1="156.0" y1="270" x2="156.0" y2="274" stroke="#000"/><text x="156.0" y="286" text-anchor="middle">2.4</text>
-<line x1="56" y1="220.0" x2="60" y2="220.0" stroke="#000"/><text x="52" y="224.0" text-anchor="end">110</text>
-<line x1="252.0" y1="270" x2="252.0" y2="274" stroke="#000"/><text x="252.0" y="286" text-anchor="middle">4.8</text>
-<line x1="56" y1="170.0" x2="60" y2="170.0" stroke="#000"/><text x="52" y="174.0" text-anchor="end">220</text>
-<line x1="348.0" y1="270" x2="348.0" y2="274" stroke="#000"/><text x="348.0" y="286" text-anchor="middle">7.2</text>
-<line x1="56" y1="120.0" x2="60" y2="120.0" stroke="#000"/><text x="52" y="124.0" text-anchor="end">330</text>
-<line x1="444.0" y1="270" x2="444.0" y2="274" stroke="#000"/><text x="444.0" y="286" text-anchor="middle">9.6</text>
-<line x1="56" y1="70.0" x2="60" y2="70.0" stroke="#000"/><text x="52" y="74.0" text-anchor="end">440</text>
-<line x1="540.0" y1="270" x2="540.0" y2="274" stroke="#000"/><text x="540.0" y="286" text-anchor="middle">12</text>
-<line x1="56" y1="20.0" x2="60" y2="20.0" stroke="#000"/><text x="52" y="24.0" text-anchor="end">550</text>
-<line x1="60" y1="20" x2="60" y2="270" stroke="#000"/><line x1="60" y1="270" x2="540" y2="270" stroke="#000"/>
-<text x="300.0" y="312" text-anchor="middle" font-weight="bold">Time</text>
-<text transform="translate(14,145.0) rotate(-90)" text-anchor="middle" font-weight="bold">Population size</text>
+<svg class="chart" viewBox="0 0 600 348" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
+<rect x="66" y="18" width="516" height="272" fill="#fff"/>
+<line x1="66.00" y1="290.00" x2="582.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="280.93" x2="582.00" y2="280.93" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="271.87" x2="582.00" y2="271.87" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="262.80" x2="582.00" y2="262.80" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="253.73" x2="582.00" y2="253.73" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="244.67" x2="582.00" y2="244.67" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="235.60" x2="582.00" y2="235.60" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="226.53" x2="582.00" y2="226.53" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="217.47" x2="582.00" y2="217.47" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="208.40" x2="582.00" y2="208.40" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="199.33" x2="582.00" y2="199.33" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="190.27" x2="582.00" y2="190.27" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="181.20" x2="582.00" y2="181.20" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="172.13" x2="582.00" y2="172.13" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="163.07" x2="582.00" y2="163.07" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="154.00" x2="582.00" y2="154.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="144.93" x2="582.00" y2="144.93" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="135.87" x2="582.00" y2="135.87" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="126.80" x2="582.00" y2="126.80" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="117.73" x2="582.00" y2="117.73" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="108.67" x2="582.00" y2="108.67" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="99.60" x2="582.00" y2="99.60" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="90.53" x2="582.00" y2="90.53" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="81.47" x2="582.00" y2="81.47" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="72.40" x2="582.00" y2="72.40" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="63.33" x2="582.00" y2="63.33" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="54.27" x2="582.00" y2="54.27" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="45.20" x2="582.00" y2="45.20" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="36.13" x2="582.00" y2="36.13" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="27.07" x2="582.00" y2="27.07" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="18.00" x2="582.00" y2="18.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="18.00" x2="66.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="87.50" y1="18.00" x2="87.50" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="109.00" y1="18.00" x2="109.00" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="130.50" y1="18.00" x2="130.50" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="152.00" y1="18.00" x2="152.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="173.50" y1="18.00" x2="173.50" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="195.00" y1="18.00" x2="195.00" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="216.50" y1="18.00" x2="216.50" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="238.00" y1="18.00" x2="238.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="259.50" y1="18.00" x2="259.50" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="281.00" y1="18.00" x2="281.00" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="302.50" y1="18.00" x2="302.50" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="324.00" y1="18.00" x2="324.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="345.50" y1="18.00" x2="345.50" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="367.00" y1="18.00" x2="367.00" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="388.50" y1="18.00" x2="388.50" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="410.00" y1="18.00" x2="410.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="431.50" y1="18.00" x2="431.50" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="453.00" y1="18.00" x2="453.00" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="474.50" y1="18.00" x2="474.50" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="496.00" y1="18.00" x2="496.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="517.50" y1="18.00" x2="517.50" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="539.00" y1="18.00" x2="539.00" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="560.50" y1="18.00" x2="560.50" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="582.00" y1="18.00" x2="582.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<polyline points="66.0,285.5 109.0,281.8 152.0,274.1 195.0,258.3 238.0,231.1 281.0,190.3 324.0,144.9 367.0,108.7 410.0,86.0 453.0,72.4 496.0,67.9 539.0,65.6 582.0,63.3" fill="none" stroke="#22302a" stroke-width="2"/>
+<circle cx="66.0" cy="285.5" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="109.0" cy="281.8" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="152.0" cy="274.1" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="195.0" cy="258.3" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="238.0" cy="231.1" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="281.0" cy="190.3" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="324.0" cy="144.9" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="367.0" cy="108.7" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="410.0" cy="86.0" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="453.0" cy="72.4" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="496.0" cy="67.9" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="539.0" cy="65.6" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="582.0" cy="63.3" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<line x1="66.0" y1="290" x2="66.0" y2="295" stroke="#38463c"/><text x="66.0" y="307" text-anchor="middle">0</text>
+<line x1="152.0" y1="290" x2="152.0" y2="295" stroke="#38463c"/><text x="152.0" y="307" text-anchor="middle">2</text>
+<line x1="238.0" y1="290" x2="238.0" y2="295" stroke="#38463c"/><text x="238.0" y="307" text-anchor="middle">4</text>
+<line x1="324.0" y1="290" x2="324.0" y2="295" stroke="#38463c"/><text x="324.0" y="307" text-anchor="middle">6</text>
+<line x1="410.0" y1="290" x2="410.0" y2="295" stroke="#38463c"/><text x="410.0" y="307" text-anchor="middle">8</text>
+<line x1="496.0" y1="290" x2="496.0" y2="295" stroke="#38463c"/><text x="496.0" y="307" text-anchor="middle">10</text>
+<line x1="582.0" y1="290" x2="582.0" y2="295" stroke="#38463c"/><text x="582.0" y="307" text-anchor="middle">12</text>
+<line x1="61" y1="290.0" x2="66" y2="290.0" stroke="#38463c"/><text x="57" y="294.0" text-anchor="end">0</text>
+<line x1="61" y1="244.7" x2="66" y2="244.7" stroke="#38463c"/><text x="57" y="248.7" text-anchor="end">100</text>
+<line x1="61" y1="199.3" x2="66" y2="199.3" stroke="#38463c"/><text x="57" y="203.3" text-anchor="end">200</text>
+<line x1="61" y1="154.0" x2="66" y2="154.0" stroke="#38463c"/><text x="57" y="158.0" text-anchor="end">300</text>
+<line x1="61" y1="108.7" x2="66" y2="108.7" stroke="#38463c"/><text x="57" y="112.7" text-anchor="end">400</text>
+<line x1="61" y1="63.3" x2="66" y2="63.3" stroke="#38463c"/><text x="57" y="67.3" text-anchor="end">500</text>
+<line x1="61" y1="18.0" x2="66" y2="18.0" stroke="#38463c"/><text x="57" y="22.0" text-anchor="end">600</text>
+<rect x="66" y="18" width="516" height="272" fill="none" stroke="#38463c" stroke-width="1.3"/>
+<text x="324.0" y="340" text-anchor="middle" font-weight="bold">Time</text>
+<text transform="translate(15,154.0) rotate(-90)" text-anchor="middle" font-weight="bold">Population size</text>
 </svg><div class="dcap">Lag, exponential growth, slowing as density-dependent factors bite, plateau at carrying capacity K (Genn pp. 78-80).</div></figure>
 <figure class="diag"><figcaption>Succession on bare rock (lithosere)</figcaption><svg viewBox="0 0 820 212" xmlns="http://www.w3.org/2000/svg" font-family="Source Sans 3, Segoe UI, Arial, sans-serif"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3f6b4a"/></marker></defs><rect x="28.0" y="31.0" width="164" height="54" rx="9" fill="#ffffff" stroke="#3f6b4a" stroke-width="1.5"/><text x="110.0" y="62.0" text-anchor="middle" font-size="12" font-weight="normal" fill="#22302a"><tspan x="110.0" dy="0.0">Bare rock</tspan></text><rect x="228.0" y="31.0" width="164" height="54" rx="9" fill="#ffffff" stroke="#3f6b4a" stroke-width="1.5"/><text x="310.0" y="54.8" text-anchor="middle" font-size="12" font-weight="normal" fill="#22302a"><tspan x="310.0" dy="0.0">Lichens, mosses:</tspan><tspan x="310.0" dy="14.4">pioneers, weather rock</tspan></text><rect x="428.0" y="31.0" width="164" height="54" rx="9" fill="#ffffff" stroke="#3f6b4a" stroke-width="1.5"/><text x="510.0" y="54.8" text-anchor="middle" font-size="12" font-weight="normal" fill="#22302a"><tspan x="510.0" dy="0.0">Grasses, herbs:</tspan><tspan x="510.0" dy="14.4">thin soil forms</tspan></text><rect x="628.0" y="31.0" width="164" height="54" rx="9" fill="#ffffff" stroke="#3f6b4a" stroke-width="1.5"/><text x="710.0" y="54.8" text-anchor="middle" font-size="12" font-weight="normal" fill="#22302a"><tspan x="710.0" dy="0.0">Shrubs, scrub:</tspan><tspan x="710.0" dy="14.4">deeper soil, shade</tspan></text><rect x="628.0" y="127.0" width="164" height="54" rx="9" fill="#e6f0dc" stroke="#3f6b4a" stroke-width="1.5"/><text x="710.0" y="150.8" text-anchor="middle" font-size="12" font-weight="600" fill="#22302a"><tspan x="710.0" dy="0.0">Climax woodland</tspan><tspan x="710.0" dy="14.4">(climate-controlled)</tspan></text><rect x="428.0" y="127.0" width="164" height="54" rx="9" fill="#fff3d6" stroke="#3f6b4a" stroke-width="1.5"/><text x="510.0" y="150.8" text-anchor="middle" font-size="12" font-weight="normal" fill="#22302a"><tspan x="510.0" dy="0.0">Plagioclimax: grazing,</tspan><tspan x="510.0" dy="14.4">burning, coppicing</tspan></text><line x1="195.0" y1="58.0" x2="225.0" y2="58.0" stroke="#3f6b4a" stroke-width="1.6" marker-end="url(#ah)"/><line x1="395.0" y1="58.0" x2="425.0" y2="58.0" stroke="#3f6b4a" stroke-width="1.6" marker-end="url(#ah)"/><line x1="595.0" y1="58.0" x2="625.0" y2="58.0" stroke="#3f6b4a" stroke-width="1.6" marker-end="url(#ah)"/><line x1="710.0" y1="88.0" x2="710.0" y2="124.0" stroke="#3f6b4a" stroke-width="1.6" marker-end="url(#ah)"/><line x1="510.0" y1="124.0" x2="510.0" y2="88.0" stroke="#3f6b4a" stroke-width="1.6" marker-end="url(#ah)"/></svg><div class="dcap">Genn pp. 73-77. Human activity can hold the community at an earlier sere.</div></figure>
 <div class="nums" id="numbers"><h3>Key numbers and facts to remember</h3><ul><li>UK climax community: deciduous woodland</li><li>r-selected: many young, fast recovery; k-selected: few young, slow recovery, vulnerable</li></ul></div>

@@ -35,6 +35,17 @@ a.btn,button.btn{display:inline-block;background:var(--moss);color:#fff;text-dec
 a.btn.ghost,button.btn.ghost{background:transparent;color:var(--moss);border:1.5px solid var(--moss)}a.btn.ghost:hover,button.btn.ghost:hover{background:var(--leaf-light)}
 .paper-head{display:flex;align-items:center;gap:14px;margin:8px 0 14px}.paper-head .tag{white-space:nowrap;font-family:Fraunces,serif;font-size:1.05rem;font-weight:700;color:#fff;border-radius:8px;padding:4px 12px}
 .tag.p1{background:var(--p1)}.tag.p2{background:var(--p2)}.paper-head span.assessed{color:var(--stone);font-size:.95rem}
+.papers2{display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;align-items:start}
+.papers2 .paper-head{display:block;position:sticky;top:var(--hdr,62px);z-index:6;background:var(--sand);margin:0;padding:10px 0 8px;border-bottom:1px solid var(--line)}
+.papers2 .paper-head .tag{display:inline-block}.papers2 .paper-head span.assessed{display:block;font-size:.85rem;margin-top:5px;min-height:1.3em}
+.papers2 table.list{margin:10px 0 0}
+table.list.compact th,table.list.compact td{padding:7px 10px;font-size:.9rem;vertical-align:top}
+table.list.compact td:first-child{font-family:Fraunces,serif;white-space:nowrap}
+table.list.compact td a{text-decoration:none;font-weight:600;white-space:nowrap}table.list.compact td a:hover{text-decoration:underline}
+table.list.compact a.sit{background:var(--leaf-light);border:1px solid var(--leaf);border-radius:999px;padding:1px 9px}
+.tcov{display:inline-block;margin-left:8px;vertical-align:baseline}.tcov summary{cursor:pointer;color:var(--stone);font-size:.78rem;white-space:nowrap}
+.tcov[open]{display:block;margin:3px 0 0}.tcov>div{font-size:.8rem;color:var(--stone);line-height:1.45;margin-top:3px}
+@media(max-width:900px){.papers2{grid-template-columns:1fr}.papers2 .paper-head{position:static}}
 .topic-card{display:flex;gap:16px;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;transition:transform .12s,box-shadow .12s}
 .topic-card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(31,61,43,.12)}
 .topic-card .icon{flex:0 0 52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center}.topic-card .icon svg{width:30px;height:30px}
@@ -178,29 +189,77 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <h2 id="s6">Control of food chain energy losses <span class="pg">Genn pp. 326-328</span></h2><p><b>Autotrophs</b> capture light (photoautotrophs) or chemical energy (chemoautotrophs); <b>heterotrophs</b> depend on them. Of 100 000 units of solar energy about 4 000 are captured in photosynthesis and 1 000 stored in biomass; each trophic level loses most energy as heat in respiration, so few chains exceed four levels. Hence <b>plant food gives most food per hectare</b>; where crops cannot grow (uplands, semi-arid areas), grazing sheep and cattle with cellulose-digesting gut bacteria is best; omnivorous pigs convert food wastes; keeping livestock warm, restricting movement and choosing young fast-growing animals reduce losses.</p>
 <h2 id="diagrams">Diagrams</h2>
 <figure class="diag"><figcaption>Law of diminishing returns</figcaption><div class="cap"></div>
-<svg class="chart" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
-<polyline points="60.0,220.0 156.0,145.0 252.0,95.0 348.0,65.0 444.0,45.0 540.0,35.0" fill="none" stroke="#22302a" stroke-width="1.8"/>
-<circle cx="60.0" cy="220.0" r="2.6" fill="#22302a"/>
-<circle cx="156.0" cy="145.0" r="2.6" fill="#22302a"/>
-<circle cx="252.0" cy="95.0" r="2.6" fill="#22302a"/>
-<circle cx="348.0" cy="65.0" r="2.6" fill="#22302a"/>
-<circle cx="444.0" cy="45.0" r="2.6" fill="#22302a"/>
-<circle cx="540.0" cy="35.0" r="2.6" fill="#22302a"/>
-<line x1="60.0" y1="270" x2="60.0" y2="274" stroke="#000"/><text x="60.0" y="286" text-anchor="middle">0</text>
-<line x1="56" y1="270.0" x2="60" y2="270.0" stroke="#000"/><text x="52" y="274.0" text-anchor="end">0</text>
-<line x1="156.0" y1="270" x2="156.0" y2="274" stroke="#000"/><text x="156.0" y="286" text-anchor="middle">1</text>
-<line x1="56" y1="220.0" x2="60" y2="220.0" stroke="#000"/><text x="52" y="224.0" text-anchor="end">20</text>
-<line x1="252.0" y1="270" x2="252.0" y2="274" stroke="#000"/><text x="252.0" y="286" text-anchor="middle">2</text>
-<line x1="56" y1="170.0" x2="60" y2="170.0" stroke="#000"/><text x="52" y="174.0" text-anchor="end">40</text>
-<line x1="348.0" y1="270" x2="348.0" y2="274" stroke="#000"/><text x="348.0" y="286" text-anchor="middle">3</text>
-<line x1="56" y1="120.0" x2="60" y2="120.0" stroke="#000"/><text x="52" y="124.0" text-anchor="end">60</text>
-<line x1="444.0" y1="270" x2="444.0" y2="274" stroke="#000"/><text x="444.0" y="286" text-anchor="middle">4</text>
-<line x1="56" y1="70.0" x2="60" y2="70.0" stroke="#000"/><text x="52" y="74.0" text-anchor="end">80</text>
-<line x1="540.0" y1="270" x2="540.0" y2="274" stroke="#000"/><text x="540.0" y="286" text-anchor="middle">5</text>
-<line x1="56" y1="20.0" x2="60" y2="20.0" stroke="#000"/><text x="52" y="24.0" text-anchor="end">100</text>
-<line x1="60" y1="20" x2="60" y2="270" stroke="#000"/><line x1="60" y1="270" x2="540" y2="270" stroke="#000"/>
-<text x="300.0" y="312" text-anchor="middle" font-weight="bold">Inputs / arbitrary units</text>
-<text transform="translate(14,145.0) rotate(-90)" text-anchor="middle" font-weight="bold">Yield / arbitrary units</text>
+<svg class="chart" viewBox="0 0 600 348" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
+<rect x="66" y="18" width="516" height="272" fill="#fff"/>
+<line x1="66.00" y1="290.00" x2="582.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="276.40" x2="582.00" y2="276.40" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="262.80" x2="582.00" y2="262.80" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="249.20" x2="582.00" y2="249.20" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="235.60" x2="582.00" y2="235.60" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="222.00" x2="582.00" y2="222.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="208.40" x2="582.00" y2="208.40" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="194.80" x2="582.00" y2="194.80" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="181.20" x2="582.00" y2="181.20" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="167.60" x2="582.00" y2="167.60" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="154.00" x2="582.00" y2="154.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="140.40" x2="582.00" y2="140.40" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="126.80" x2="582.00" y2="126.80" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="113.20" x2="582.00" y2="113.20" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="99.60" x2="582.00" y2="99.60" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="86.00" x2="582.00" y2="86.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="72.40" x2="582.00" y2="72.40" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="58.80" x2="582.00" y2="58.80" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="45.20" x2="582.00" y2="45.20" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="31.60" x2="582.00" y2="31.60" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="18.00" x2="582.00" y2="18.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="18.00" x2="66.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="86.64" y1="18.00" x2="86.64" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="107.28" y1="18.00" x2="107.28" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="127.92" y1="18.00" x2="127.92" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="148.56" y1="18.00" x2="148.56" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="169.20" y1="18.00" x2="169.20" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="189.84" y1="18.00" x2="189.84" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="210.48" y1="18.00" x2="210.48" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="231.12" y1="18.00" x2="231.12" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="251.76" y1="18.00" x2="251.76" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="272.40" y1="18.00" x2="272.40" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="293.04" y1="18.00" x2="293.04" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="313.68" y1="18.00" x2="313.68" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="334.32" y1="18.00" x2="334.32" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="354.96" y1="18.00" x2="354.96" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="375.60" y1="18.00" x2="375.60" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="396.24" y1="18.00" x2="396.24" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="416.88" y1="18.00" x2="416.88" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="437.52" y1="18.00" x2="437.52" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="458.16" y1="18.00" x2="458.16" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="478.80" y1="18.00" x2="478.80" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="499.44" y1="18.00" x2="499.44" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="520.08" y1="18.00" x2="520.08" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="540.72" y1="18.00" x2="540.72" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="561.36" y1="18.00" x2="561.36" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="582.00" y1="18.00" x2="582.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<polyline points="66.0,235.6 169.2,154.0 272.4,99.6 375.6,67.0 478.8,45.2 582.0,34.3" fill="none" stroke="#22302a" stroke-width="2"/>
+<circle cx="66.0" cy="235.6" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="169.2" cy="154.0" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="272.4" cy="99.6" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="375.6" cy="67.0" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="478.8" cy="45.2" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="582.0" cy="34.3" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<line x1="66.0" y1="290" x2="66.0" y2="295" stroke="#38463c"/><text x="66.0" y="307" text-anchor="middle">0</text>
+<line x1="169.2" y1="290" x2="169.2" y2="295" stroke="#38463c"/><text x="169.2" y="307" text-anchor="middle">1</text>
+<line x1="272.4" y1="290" x2="272.4" y2="295" stroke="#38463c"/><text x="272.4" y="307" text-anchor="middle">2</text>
+<line x1="375.6" y1="290" x2="375.6" y2="295" stroke="#38463c"/><text x="375.6" y="307" text-anchor="middle">3</text>
+<line x1="478.8" y1="290" x2="478.8" y2="295" stroke="#38463c"/><text x="478.8" y="307" text-anchor="middle">4</text>
+<line x1="582.0" y1="290" x2="582.0" y2="295" stroke="#38463c"/><text x="582.0" y="307" text-anchor="middle">5</text>
+<line x1="61" y1="290.0" x2="66" y2="290.0" stroke="#38463c"/><text x="57" y="294.0" text-anchor="end">0</text>
+<line x1="61" y1="235.6" x2="66" y2="235.6" stroke="#38463c"/><text x="57" y="239.6" text-anchor="end">20</text>
+<line x1="61" y1="181.2" x2="66" y2="181.2" stroke="#38463c"/><text x="57" y="185.2" text-anchor="end">40</text>
+<line x1="61" y1="126.8" x2="66" y2="126.8" stroke="#38463c"/><text x="57" y="130.8" text-anchor="end">60</text>
+<line x1="61" y1="72.4" x2="66" y2="72.4" stroke="#38463c"/><text x="57" y="76.4" text-anchor="end">80</text>
+<line x1="61" y1="18.0" x2="66" y2="18.0" stroke="#38463c"/><text x="57" y="22.0" text-anchor="end">100</text>
+<rect x="66" y="18" width="516" height="272" fill="none" stroke="#38463c" stroke-width="1.3"/>
+<text x="324.0" y="340" text-anchor="middle" font-weight="bold">Inputs / arbitrary units</text>
+<text transform="translate(15,154.0) rotate(-90)" text-anchor="middle" font-weight="bold">Yield / arbitrary units</text>
 </svg><div class="dcap">Each extra unit of input adds less yield (Genn p. 325).</div></figure>
 <figure class="diag"><figcaption>Energy flow through an agroecosystem (units from 100 000 of sunlight)</figcaption><svg viewBox="0 0 820 212" xmlns="http://www.w3.org/2000/svg" font-family="Source Sans 3, Segoe UI, Arial, sans-serif"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3f6b4a"/></marker></defs><rect x="28.0" y="31.0" width="164" height="54" rx="9" fill="#ffffff" stroke="#3f6b4a" stroke-width="1.5"/><text x="110.0" y="62.0" text-anchor="middle" font-size="12" font-weight="normal" fill="#22302a"><tspan x="110.0" dy="0.0">Sunlight 100 000</tspan></text><rect x="228.0" y="127.0" width="164" height="54" rx="9" fill="#ffffff" stroke="#3f6b4a" stroke-width="1.5"/><text x="310.0" y="150.8" text-anchor="middle" font-size="12" font-weight="normal" fill="#22302a"><tspan x="310.0" dy="0.0">Reflected, transmitted,</tspan><tspan x="310.0" dy="14.4">wrong wavelength</tspan></text><rect x="228.0" y="31.0" width="164" height="54" rx="9" fill="#ffffff" stroke="#3f6b4a" stroke-width="1.5"/><text x="310.0" y="54.8" text-anchor="middle" font-size="12" font-weight="normal" fill="#22302a"><tspan x="310.0" dy="0.0">Captured in</tspan><tspan x="310.0" dy="14.4">photosynthesis 4 000</tspan></text><rect x="428.0" y="127.0" width="164" height="54" rx="9" fill="#ffffff" stroke="#3f6b4a" stroke-width="1.5"/><text x="510.0" y="150.8" text-anchor="middle" font-size="12" font-weight="normal" fill="#22302a"><tspan x="510.0" dy="0.0">Plant respiration</tspan><tspan x="510.0" dy="14.4">(heat)</tspan></text><rect x="428.0" y="31.0" width="164" height="54" rx="9" fill="#e6f0dc" stroke="#3f6b4a" stroke-width="1.5"/><text x="510.0" y="62.0" text-anchor="middle" font-size="12" font-weight="600" fill="#22302a"><tspan x="510.0" dy="0.0">Crop biomass 1 000</tspan></text><rect x="628.0" y="31.0" width="164" height="54" rx="9" fill="#ffffff" stroke="#3f6b4a" stroke-width="1.5"/><text x="710.0" y="54.8" text-anchor="middle" font-size="12" font-weight="normal" fill="#22302a"><tspan x="710.0" dy="0.0">Livestock: ~10%</tspan><tspan x="710.0" dy="14.4">passes on</tspan></text><line x1="195.0" y1="58.0" x2="225.0" y2="58.0" stroke="#3f6b4a" stroke-width="1.6" marker-end="url(#ah)"/><line x1="169.0" y1="86.3" x2="251.0" y2="125.7" stroke="#3f6b4a" stroke-width="1.6" marker-end="url(#ah)"/><line x1="395.0" y1="58.0" x2="425.0" y2="58.0" stroke="#3f6b4a" stroke-width="1.6" marker-end="url(#ah)"/><line x1="369.0" y1="86.3" x2="451.0" y2="125.7" stroke="#3f6b4a" stroke-width="1.6" marker-end="url(#ah)"/><line x1="595.0" y1="58.0" x2="625.0" y2="58.0" stroke="#3f6b4a" stroke-width="1.6" marker-end="url(#ah)"/></svg><div class="dcap">Genn p. 327. Eating crops directly captures more food energy per hectare than feeding them to animals.</div></figure>
 <div class="nums" id="numbers"><h3>Key numbers and facts to remember</h3><ul><li>Energy ratios: wheat / rice several : 1; beef, milk below 1</li><li>FCR: salmon ~1.2, chicken ~2, pork 3-4, beef 6-10</li><li>100 000 units sun -> 4 000 captured -> 1 000 in biomass</li></ul></div>

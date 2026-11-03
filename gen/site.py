@@ -2,10 +2,10 @@
 progress tracking, filtering / search, timed self-marked mock papers, dark mode,
 print styles and a quick-fire random-question mode.  All state lives in the browser's
 localStorage so the site still works as plain files with no server."""
-import os, re, html, json
+import math, os, re, html, json
 from bank.topics import PAPERS, subtopic_index, BOOK
 from .model import Table as QTable, Chart
-from .pdf import plain, LEVELS_9, LEVELS_25
+from .pdf import plain, LEVELS_9, LEVELS_25, nice_axis as _nice_axis, minor_count as _minor_count
 from .marking import scheme
 from bank.official_index import OFFICIAL_INDEX
 from bank.exemplars import EXEMPLARS, ESSAY_EXEMPLARS
@@ -50,6 +50,17 @@ a.btn,button.btn{display:inline-block;background:var(--moss);color:#fff;text-dec
 a.btn.ghost,button.btn.ghost{background:transparent;color:var(--moss);border:1.5px solid var(--moss)}a.btn.ghost:hover,button.btn.ghost:hover{background:var(--leaf-light)}
 .paper-head{display:flex;align-items:center;gap:14px;margin:8px 0 14px}.paper-head .tag{white-space:nowrap;font-family:Fraunces,serif;font-size:1.05rem;font-weight:700;color:#fff;border-radius:8px;padding:4px 12px}
 .tag.p1{background:var(--p1)}.tag.p2{background:var(--p2)}.paper-head span.assessed{color:var(--stone);font-size:.95rem}
+.papers2{display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;align-items:start}
+.papers2 .paper-head{display:block;position:sticky;top:var(--hdr,62px);z-index:6;background:var(--sand);margin:0;padding:10px 0 8px;border-bottom:1px solid var(--line)}
+.papers2 .paper-head .tag{display:inline-block}.papers2 .paper-head span.assessed{display:block;font-size:.85rem;margin-top:5px;min-height:1.3em}
+.papers2 table.list{margin:10px 0 0}
+table.list.compact th,table.list.compact td{padding:7px 10px;font-size:.9rem;vertical-align:top}
+table.list.compact td:first-child{font-family:Fraunces,serif;white-space:nowrap}
+table.list.compact td a{text-decoration:none;font-weight:600;white-space:nowrap}table.list.compact td a:hover{text-decoration:underline}
+table.list.compact a.sit{background:var(--leaf-light);border:1px solid var(--leaf);border-radius:999px;padding:1px 9px}
+.tcov{display:inline-block;margin-left:8px;vertical-align:baseline}.tcov summary{cursor:pointer;color:var(--stone);font-size:.78rem;white-space:nowrap}
+.tcov[open]{display:block;margin:3px 0 0}.tcov>div{font-size:.8rem;color:var(--stone);line-height:1.45;margin-top:3px}
+@media(max-width:900px){.papers2{grid-template-columns:1fr}.papers2 .paper-head{position:static}}
 .topic-card{display:flex;gap:16px;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;transition:transform .12s,box-shadow .12s}
 .topic-card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(31,61,43,.12)}
 .topic-card .icon{flex:0 0 52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center}.topic-card .icon svg{width:30px;height:30px}
@@ -354,56 +365,146 @@ def strip_tags(s):
 
 
 # ---------- charts as inline SVG ----------
+GRID_MINOR, GRID_MAJOR, AXIS = "#d6e0d7", "#a7b9aa", "#38463c"
+
+
+def _wrap(label, width_px, size=11.0):
+    """Split a long category label over two lines so neighbouring labels stop colliding."""
+    fit = max(6, int(width_px / (size * 0.52)))
+    if len(label) <= fit:
+        return [label]
+    words, lines, cur = label.split(" "), [], ""
+    for w in words:
+        if cur and len(cur) + 1 + len(w) > fit:
+            lines.append(cur)
+            cur = w
+        else:
+            cur = f"{cur} {w}".strip()
+    if cur:
+        lines.append(cur)
+    if len(lines) > 2:                       # never more than two lines; squeeze the rest in
+        lines = [lines[0], " ".join(lines[1:])]
+    return lines
+
+
+def _ticklabel(v, step):
+    """Axis numbers printed to the precision of the step, with no 1e-16 arithmetic artefacts."""
+    dec = max(0, -int(math.floor(math.log10(step))) + (1 if step < 1 else 0)) if step > 0 else 0
+    v = round(v, dec + 2)
+    if abs(v) < step * 1e-6:
+        v = 0.0
+    txt = f"{v:.{min(dec, 6)}f}"
+    return txt.rstrip("0").rstrip(".") if "." in txt else txt
+
+
 def svg_chart(ch: Chart, caption):
-    W, H = 560, 320
-    ml, mr, mt, mb = 60, 20, 20, 50
+    """A chart drawn on graph paper: gridlines on round numbers, with finer squares between
+    them, so a value can be read off the grid instead of guessed."""
+    W, H = 600, 348
+    ml, mr, mt, mb = 66, 18, 18, 58
     pw, ph = W - ml - mr, H - mt - mb
     labels = list(ch.series.keys())
     cols = ["#22302a", "#2f5f73", "#8b5e3c", "#7fb069"]
     out = [f'<div class="cap">{html.escape(caption)}</div>',
-           f'<svg class="chart" viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">']
+           f'<svg class="chart" viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">',
+           f'<rect x="{ml}" y="{mt}" width="{pw}" height="{ph}" fill="#fff"/>']
+    grid, axes = [], []
+
+    def rule(x1, y1, x2, y2, major):
+        grid.append(f'<line x1="{x1:.2f}" y1="{y1:.2f}" x2="{x2:.2f}" y2="{y2:.2f}" '
+                    f'stroke="{GRID_MAJOR if major else GRID_MINOR}" stroke-width="{1 if major else 0.6}"/>')
+
     if ch.kind == "bar":
         cats = ch.categories or [str(x) for x, _ in ch.series[labels[0]]]
         vals = [v for k in labels for _, v in ch.series[k]]
-        ymin = ch.y_min if ch.y_min is not None else min(0, min(vals))
-        ymax = ch.y_max if ch.y_max is not None else max(vals) * 1.1
-        ng = len(cats); ns = len(labels)
-        gw = pw / ng; bw = gw * 0.7 / ns
-        def ypix(v): return mt + ph - (v - ymin) / (ymax - ymin) * ph
+        lo = ch.y_min if ch.y_min is not None else min(0, min(vals))
+        hi = ch.y_max if ch.y_max is not None else max(vals)
+        ymin, ymax, ystep, ny = _nice_axis(lo, hi)
+        my = _minor_count(ystep, ph, ny)
+        ng, ns = len(cats), len(labels)
+        gw = pw / ng
+        bw = gw * 0.72 / ns
+
+        def ypix(v):
+            return mt + ph - (v - ymin) / (ymax - ymin) * ph
+
+        cell = ph / (ny * my)                 # square paper: the verticals match the horizontals
+        for i in range(ny * my + 1):
+            y = mt + ph - ph * i / (ny * my)
+            rule(ml, y, ml + pw, y, i % my == 0)
+        x = ml + cell
+        while x < ml + pw - 0.5:
+            rule(x, mt, x, mt + ph, False)
+            x += cell
+        for gi in range(1, ng):
+            rule(ml + gi * gw, mt, ml + gi * gw, mt + ph, True)
+        out += grid
         for gi, cat in enumerate(cats):
             for si, k in enumerate(labels):
                 v = ch.series[k][gi][1]
-                x = ml + gi * gw + gw * 0.15 + si * bw
-                out.append(f'<rect x="{x:.1f}" y="{ypix(v):.1f}" width="{bw:.1f}" height="{(ypix(ymin)-ypix(v)):.1f}" fill="{cols[(si+1)%4] if ns>1 else "#3f6b4a"}"/>')
-            out.append(f'<text x="{ml+gi*gw+gw/2:.1f}" y="{mt+ph+16}" text-anchor="middle">{html.escape(plain(cat))}</text>')
-        for t in range(6):
-            v = ymin + (ymax - ymin) * t / 5
-            out.append(f'<line x1="{ml-4}" y1="{ypix(v):.1f}" x2="{ml}" y2="{ypix(v):.1f}" stroke="#000"/><text x="{ml-8}" y="{ypix(v)+4:.1f}" text-anchor="end">{v:g}</text>')
+                x = ml + gi * gw + gw * 0.14 + si * bw
+                out.append(f'<rect x="{x:.1f}" y="{ypix(v):.1f}" width="{bw:.1f}" height="{abs(ypix(ymin)-ypix(v)):.1f}" '
+                           f'fill="{cols[(si+1)%4] if ns>1 else "#3f6b4a"}" stroke="{AXIS}" stroke-width="0.6"/>')
+            lines = _wrap(plain(cat), gw - 6)
+            cx = ml + gi * gw + gw / 2
+            tsp = "".join(f'<tspan x="{cx:.1f}" dy="{0 if i == 0 else 12}">{html.escape(t)}</tspan>' for i, t in enumerate(lines))
+            out.append(f'<text y="{mt+ph+16}" text-anchor="middle" font-size="{10.5 if len(lines) < 2 else 9.8}">{tsp}</text>')
+        for i in range(ny + 1):
+            v = ymin + ystep * i
+            y = ypix(v)
+            axes.append(f'<line x1="{ml-5}" y1="{y:.1f}" x2="{ml}" y2="{y:.1f}" stroke="{AXIS}"/>'
+                        f'<text x="{ml-9}" y="{y+4:.1f}" text-anchor="end">{_ticklabel(v, ystep)}</text>')
     else:
-        xs = [x for k in labels for x, _ in ch.series[k]]; ys = [y for k in labels for _, y in ch.series[k]]
-        xmin, xmax = min(xs), max(xs)
-        ymin = ch.y_min if ch.y_min is not None else min(ys) - (max(ys) - min(ys)) * 0.05
-        ymax = ch.y_max if ch.y_max is not None else max(ys) + (max(ys) - min(ys)) * 0.1
-        if ymax == ymin: ymax = ymin + 1
-        if xmax == xmin: xmax = xmin + 1
-        def xpix(v): return ml + (v - xmin) / (xmax - xmin) * pw
-        def ypix(v): return mt + ph - (v - ymin) / (ymax - ymin) * ph
+        xs = [x for k in labels for x, _ in ch.series[k]]
+        ys = [y for k in labels for _, y in ch.series[k]]
+        xmin, xmax, xstep, nx = _nice_axis(min(xs), max(xs))
+        lo = ch.y_min if ch.y_min is not None else min(ys)
+        hi = ch.y_max if ch.y_max is not None else max(ys)
+        ymin, ymax, ystep, ny = _nice_axis(lo, hi)
+        mx, my = _minor_count(xstep, pw, nx), _minor_count(ystep, ph, ny)
+
+        def xpix(v):
+            return ml + (v - xmin) / (xmax - xmin) * pw
+
+        def ypix(v):
+            return mt + ph - (v - ymin) / (ymax - ymin) * ph
+
+        for i in range(ny * my + 1):
+            y = mt + ph - ph * i / (ny * my)
+            rule(ml, y, ml + pw, y, i % my == 0)
+        for i in range(nx * mx + 1):
+            x = ml + pw * i / (nx * mx)
+            rule(x, mt, x, mt + ph, i % mx == 0)
+        out += grid
+        if ymin < 0 < ymax:                       # the zero line reads as an axis, not a gridline
+            out.append(f'<line x1="{ml}" y1="{ypix(0):.2f}" x2="{ml+pw}" y2="{ypix(0):.2f}" stroke="{AXIS}" stroke-width="1.2"/>')
         for si, k in enumerate(labels):
             pts = " ".join(f"{xpix(x):.1f},{ypix(y):.1f}" for x, y in ch.series[k])
-            out.append(f'<polyline points="{pts}" fill="none" stroke="{cols[si%4]}" stroke-width="1.8"/>')
+            out.append(f'<polyline points="{pts}" fill="none" stroke="{cols[si%4]}" stroke-width="2"/>')
             for x, y in ch.series[k]:
-                out.append(f'<circle cx="{xpix(x):.1f}" cy="{ypix(y):.1f}" r="2.6" fill="{cols[si%4]}"/>')
-        for t in range(6):
-            v = xmin + (xmax - xmin) * t / 5
-            out.append(f'<line x1="{xpix(v):.1f}" y1="{mt+ph}" x2="{xpix(v):.1f}" y2="{mt+ph+4}" stroke="#000"/><text x="{xpix(v):.1f}" y="{mt+ph+16}" text-anchor="middle">{v:g}</text>')
-            v = ymin + (ymax - ymin) * t / 5
-            out.append(f'<line x1="{ml-4}" y1="{ypix(v):.1f}" x2="{ml}" y2="{ypix(v):.1f}" stroke="#000"/><text x="{ml-8}" y="{ypix(v)+4:.1f}" text-anchor="end">{v:.3g}</text>')
-    out.append(f'<line x1="{ml}" y1="{mt}" x2="{ml}" y2="{mt+ph}" stroke="#000"/><line x1="{ml}" y1="{mt+ph}" x2="{ml+pw}" y2="{mt+ph}" stroke="#000"/>')
+                out.append(f'<circle cx="{xpix(x):.1f}" cy="{ypix(y):.1f}" r="2.8" fill="{cols[si%4]}" stroke="#fff" stroke-width="0.8"/>')
+        for i in range(nx + 1):
+            v = xmin + xstep * i
+            x = xpix(v)
+            axes.append(f'<line x1="{x:.1f}" y1="{mt+ph}" x2="{x:.1f}" y2="{mt+ph+5}" stroke="{AXIS}"/>'
+                        f'<text x="{x:.1f}" y="{mt+ph+17}" text-anchor="middle">{_ticklabel(v, xstep)}</text>')
+        for i in range(ny + 1):
+            v = ymin + ystep * i
+            y = ypix(v)
+            axes.append(f'<line x1="{ml-5}" y1="{y:.1f}" x2="{ml}" y2="{y:.1f}" stroke="{AXIS}"/>'
+                        f'<text x="{ml-9}" y="{y+4:.1f}" text-anchor="end">{_ticklabel(v, ystep)}</text>')
+    out += axes
+    out.append(f'<rect x="{ml}" y="{mt}" width="{pw}" height="{ph}" fill="none" stroke="{AXIS}" stroke-width="1.3"/>')
     out.append(f'<text x="{ml+pw/2}" y="{H-8}" text-anchor="middle" font-weight="bold">{html.escape(plain(ch.x_label))}</text>')
-    out.append(f'<text transform="translate(14,{mt+ph/2}) rotate(-90)" text-anchor="middle" font-weight="bold">{html.escape(plain(ch.y_label))}</text>')
+    out.append(f'<text transform="translate(15,{mt+ph/2}) rotate(-90)" text-anchor="middle" font-weight="bold">{html.escape(plain(ch.y_label))}</text>')
     if len(labels) > 1:
+        bx, by = ml + 12, mt + 10
+        wide = 26 + 6 * max(len(plain(k)) for k in labels)
+        out.append(f'<rect x="{bx-7}" y="{by-7}" width="{wide}" height="{8 + 15 * len(labels)}" '
+                   f'fill="#ffffff" fill-opacity="0.9" stroke="{GRID_MAJOR}"/>')
         for si, k in enumerate(labels):
-            out.append(f'<rect x="{ml+10}" y="{mt+4+si*14}" width="10" height="10" fill="{cols[si%4] if ch.kind=="line" else cols[(si+1)%4]}"/><text x="{ml+24}" y="{mt+13+si*14}">{html.escape(plain(k))}</text>')
+            out.append(f'<rect x="{bx}" y="{by+si*15}" width="10" height="10" fill="{cols[si%4] if ch.kind=="line" else cols[(si+1)%4]}"/>'
+                       f'<text x="{bx+15}" y="{by+9+si*15}">{html.escape(plain(k))}</text>')
     out.append("</svg>")
     return "\n".join(out)
 
@@ -639,19 +740,28 @@ def subtopic_page(slug, sets):
 
 
 def papers_page(generated):
+    """Both papers side by side - 40 sets each, so stacking them meant a long scroll to reach Paper 2."""
     idx = subtopic_index()
     body = [hero("Generated mock papers", "Full-length papers in exact AQA 7447 format: 10 questions (5, 10 or 15 marks; 95 marks) plus one 25-mark essay chosen from two. Each set is assembled from the topic bank, so topics recur across sets deliberately to consolidate memory. Open a paper online for a 3-hour exam timer and a self-marking scorecard; your scores appear in the table.")]
-    body.append('<main><div class="wrap">')
+    body.append('<main><div class="wrap"><div class="papers2">')
     for pno in (1, 2):
-        body.append(f'<div class="paper-head"><span class="tag p{pno}">{PAPERS[pno]["name"]}</span><span class="assessed">{html.escape(PAPERS[pno]["assessed"])}</span></div><table class="list"><tr><th>Set</th><th>Question paper</th><th>Mark scheme</th><th>Your score</th><th>Topics covered (Q1&ndash;Q10) and essays</th></tr>')
+        body.append(f'<section class="pcol"><div class="paper-head"><span class="tag p{pno}">{PAPERS[pno]["name"]}</span>'
+                    f'<span class="assessed">{html.escape(PAPERS[pno]["assessed"])}</span></div>'
+                    '<table class="list compact"><tr><th>Set</th><th>Question paper &amp; mark scheme</th><th>Score</th></tr>')
         for g in generated:
             if g["paper"] != pno:
                 continue
             tl = "; ".join(f'Q{i} {html.escape(idx[q.topic]["name"])} ({q.marks})' for i, q in enumerate(g["questions"], 1))
             es = " / ".join(html.escape(e.title) for e in g["essays"]) if g["essays"] else ""
-            body.append(f'<tr><td><b>Set {g["set"]:02d}</b></td><td><a href="pdf/papers/{g["file"]}-QP.pdf">QP (PDF)</a><br><a href="paper/{g["file"]}.html">Sit online</a></td><td><a href="pdf/papers/{g["file"]}-MS.pdf">MS (PDF)</a></td><td class="yours" data-file="{g["file"]}"></td><td style="font-size:.88rem">{tl}<br><i style="color:var(--stone)">Essay: {es}</i></td></tr>')
-        body.append("</table>")
-    body.append("</div></main>")
+            body.append(f'<tr><td><b>{g["set"]:02d}</b></td><td>'
+                        f'<a href="paper/{g["file"]}.html" class="sit">Sit online</a> &middot; '
+                        f'<a href="pdf/papers/{g["file"]}-QP.pdf">QP</a> &middot; '
+                        f'<a href="pdf/papers/{g["file"]}-MS.pdf">MS</a>'
+                        f'<details class="tcov"><summary>Topics covered</summary><div>{tl}'
+                        + (f'<br><i>Essay: {es}</i>' if es else "") + '</div></details></td>'
+                        f'<td class="yours" data-file="{g["file"]}"></td></tr>')
+        body.append("</table></section>")
+    body.append("</div></div></main>")
     return page("Mock papers", "\n".join(body), active="papers.html", extra_js=f"<script>{PAPERS_JS}</script>")
 
 

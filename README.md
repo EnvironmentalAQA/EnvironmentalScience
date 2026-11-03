@@ -92,9 +92,15 @@ They are grouped by series and paper on `site/official.html`.
 - **Quick-fire** (`quickfire.html`) - one random question at a time filtered by paper / topic / marks, skipping
   questions already marked secure. Keyboard: N or space = next, M = mark scheme, 1 = needs work, 2 = secure.
   Topic hub pages link straight into quick-fire for that topic (`quickfire.html?topic=pollution`).
-- **Timed mock papers with self-marking** - *Sit online* on the mock-papers page gives a 3-hour countdown
-  (pause / resume / reset, survives reloads) and a *Marks awarded* box under every mark-scheme part
-  (essay: higher of the two counts). The score is saved per paper and shown in the *Your score* column.
+- **Timed mock papers with self-marking** - the mock-papers page lists Paper 1 and Paper 2 **side by side**,
+  one line per set with its sticky paper heading, so neither has to be scrolled past to reach the other;
+  each row opens its own topic breakdown. *Sit online* gives a 3-hour countdown (pause / resume / reset,
+  survives reloads) and a *Marks awarded* box under every mark-scheme part (essay: higher of the two counts).
+  The score is saved per paper and shown in the *Score* column.
+- **Graph-paper charts** - every bar and line chart, online and in the PDFs, is drawn on squared paper:
+  major gridlines on round numbers chosen by `nice_axis()` in `gen/pdf.py` (shared by both renderers, so a
+  chart looks the same in either), finer squares between them, and category labels wrapped instead of
+  overlapping. Values are never printed on the chart - the grid is there so they can be read off it.
 - **Dark mode** toggle in the header (remembered) and a print stylesheet that hides navigation and tools.
 - **Real AQA questions by topic** (`pastq.html`) - every question in the published AQA papers indexed by
   subtopic (`bank/official_index.py`), linking to the official PDF at the right page and to its mark scheme;
