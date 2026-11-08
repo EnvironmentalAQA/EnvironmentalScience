@@ -3,14 +3,20 @@
 Real AQA 7447 papers: 10 questions worth 5, 10 or 15 marks each (total 95)
 plus one 25-mark essay chosen from two -> 120 marks.  e.g. June 2023 Paper 1:
 5, 10, 10, 10, 15, 5, 5, 10, 10, 15 + 25.
+
+A real paper carries exactly **one** 9-mark levels-of-response question, so each mock
+takes exactly one question that contains one and fills every other slot from questions
+that do not.  See bank/long_15.py for the 15-markers written to make that possible.
 """
 import random
 from collections import Counter
 from bank.topics import subtopic_index
 
-# (number of 15s, number of 10s, number of 5s) -> 10 questions, 95 marks, in order of preference
-PATTERNS = [(2, 5, 3), (1, 7, 2), (0, 9, 1), (3, 3, 4), (1, 6, 3)]  # last is 9 questions? no: keep only 10-question sums
-PATTERNS = [p for p in PATTERNS if sum(p) == 10 and 15 * p[0] + 10 * p[1] + 5 * p[2] == 95]
+# (number of 15s, number of 10s, number of 5s).  Every published 7447 paper uses one of
+# these two shapes, six of each across the twelve papers released so far, so the sets
+# alternate between them rather than inventing others.
+PATTERNS = [(2, 5, 3), (1, 7, 2)]
+assert all(sum(p) == 10 and 15 * p[0] + 10 * p[1] + 5 * p[2] == 95 for p in PATTERNS)
 
 
 def assemble_paper(paper_no, set_no, questions, essays, used_counter):
@@ -19,33 +25,43 @@ def assemble_paper(paper_no, set_no, questions, essays, used_counter):
     idx = subtopic_index()
     rng = random.Random(1000 * paper_no + set_no)
     pool = [q for q in questions if paper_no in idx[q.topic]["papers"]]
-    avail = Counter(q.marks for q in pool)
-    # rotate the preferred pattern between sets, but only use feasible ones
-    feasible = [p for p in PATTERNS if avail[15] >= p[0] and avail[10] >= p[1] and avail[5] >= p[2]]
-    if not feasible:
-        feasible = [(0, 9, 1)]
-    # choose the feasible pattern whose questions have been used least so far (spreads reuse evenly)
-    def cost(p):
-        tot = 0
-        for size, n in zip((15, 10, 5), p):
-            us = sorted(used_counter[q.id] for q in pool if q.marks == size)
-            tot += sum(us[:n])
-        # small bias towards the real AQA pattern (2 x 15, 5 x 10, 3 x 5) when usage is similar
-        return tot - 2 * p[0]
-    a, b, c = min(feasible, key=lambda p: (cost(p), PATTERNS.index(p)))
+    ext_pool = [q for q in pool if q.has_extended]
+    plain_pool = [q for q in pool if not q.has_extended]
+    availp = Counter(q.marks for q in plain_pool)
+    ext_sizes = {q.marks for q in ext_pool}
 
-    def pick(size, n, chosen, need_extended=False):
-        cands = [q for q in pool if q.marks == size and q not in chosen]
+    # Alternate the two real paper shapes between sets; a shape is usable only if the nine
+    # non-extended slots can be filled from questions with no 9-mark part, once the single
+    # extended question has taken a 15 or a 10.
+    def options(p):
+        need = dict(zip((15, 10, 5), p))
+        return [(p, size) for size in (15, 10)
+                if size in ext_sizes and need[size] >= 1
+                and all(availp[s] >= need[s] - (1 if s == size else 0) for s in (15, 10, 5))]
+
+    order = [PATTERNS[(set_no - 1) % len(PATTERNS)]] + [p for p in PATTERNS if p != PATTERNS[(set_no - 1) % len(PATTERNS)]]
+    feasible = next((o for o in (options(p) for p in order) if o), [((0, 9, 1), 10)])
+
+    def least_used(cands, n):
+        return sorted(used_counter[q.id] for q in cands)[:n]
+
+    def cost(choice):
+        """Within the shape, put the 9-mark question in whichever slot has been used least,
+        so the sets rotate evenly through the bank."""
+        p, size = choice
+        tot = 0
+        for s, n in zip((15, 10, 5), p):
+            tot += sum(least_used([q for q in plain_pool if q.marks == s], n - (1 if s == size else 0)))
+        tot += sum(least_used([q for q in ext_pool if q.marks == size], 1))
+        return tot
+
+    (a, b, c), ext_size = min(feasible, key=lambda ch: (cost(ch), ch[1]))
+
+    def pick(cands, n, chosen):
+        cands = [q for q in cands if q not in chosen]
         rng.shuffle(cands)
         cands.sort(key=lambda q: used_counter[q.id])
         out = []
-        if need_extended:  # make sure a 9-mark levels question is included
-            for q in [x for x in cands if x.has_extended]:
-                subs = {x.topic for x in chosen}
-                if q.topic not in subs:
-                    out.append(q)
-                    cands = [x for x in cands if x is not q]
-                    break
         for q in cands:
             if len(out) == n:
                 break
@@ -67,14 +83,15 @@ def assemble_paper(paper_no, set_no, questions, essays, used_counter):
                     out.append(q)
         return out
 
-    chosen = []
-    chosen += pick(15, a, chosen)
-    has_ext = any(q.has_extended for q in chosen)
-    chosen += pick(10, b, chosen, need_extended=not has_ext)
-    chosen += pick(5, c, chosen)
+    # exactly one question carrying the 9-mark levels-of-response part
+    chosen = pick([q for q in ext_pool if q.marks == ext_size], 1, [])
+    for size, n in zip((15, 10, 5), (a, b, c)):
+        want = n - (1 if size == ext_size else 0)
+        if want > 0:
+            chosen += pick([q for q in plain_pool if q.marks == size], want, chosen)
     for q in chosen:
         used_counter[q.id] += 1
-    # order: shuffle, but put a question containing the 9-mark extended response last (as AQA does)
+    # order: shuffle, but put the 9-mark extended response last (as AQA does)
     rng.shuffle(chosen)
     ext = [q for q in chosen if q.has_extended]
     if ext:

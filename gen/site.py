@@ -82,6 +82,7 @@ table.list th,table.list td{padding:10px 14px;text-align:left;font-size:.95rem;v
 .q table.data{border-collapse:collapse;margin:12px auto;background:var(--card)}.q table.data th,.q table.data td{border:1px solid var(--stone);padding:5px 12px;text-align:center;font-size:.92rem}.q table.data th{background:var(--sand-dark)}
 .q .cap{text-align:center;font-weight:700;margin:10px 0 2px;font-family:Fraunces,serif;color:var(--head)}
 .q ul.mcq{list-style:none;padding-left:10px}.q ul.mcq li:before{content:"\\2610  ";}
+.q ul.plabels{list-style:none;margin:7px 0 2px;padding:0}.q ul.plabels li{font-weight:600;color:var(--moss);margin:4px 0;padding-left:12px;border-left:3px solid var(--leaf-light)}
 svg.chart{max-width:100%;height:auto;display:block;margin:6px auto;background:#fff;border-radius:8px}
 details.ms{margin-top:12px;background:var(--ms-bg);border:1px solid var(--ms-line);border-radius:10px;padding:10px 14px}details.ms summary{cursor:pointer;font-weight:700;color:var(--moss)}
 details.ms ul{margin:6px 0 8px 18px;padding:0}details.ms .lvl{font-size:.88rem;margin:4px 0;color:var(--stone)}details.ms .src{font-size:.85rem;color:var(--earth);margin-top:8px;border-top:1px dashed var(--ms-line);padding-top:6px}
@@ -614,6 +615,8 @@ def html_question(qn, q, marking=False):
         out.append(f'<div class="part"><span class="marks">[{p.marks} mark{"s" if p.marks != 1 else ""}]</span><span class="pn">{lab}</span>{fmt(p.text)}')
         if p.table:
             tab[0] += 1; out.append(html_table(p.table, p.table.caption or f"Table {tab[0]}"))
+        if p.labels:   # the things the part asks about, one answer slot each in the PDF
+            out.append('<ul class="plabels">' + "".join(f"<li>{fmt(l)}</li>" for l in p.labels) + "</ul>")
         if p.mcq:
             out.append('<ul class="mcq">' + "".join(f"<li>{chr(65+k)}&nbsp; {fmt(o)}</li>" for k, o in enumerate(p.mcq)) + "</ul>")
         out.append("</div>")

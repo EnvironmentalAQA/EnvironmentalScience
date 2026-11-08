@@ -67,6 +67,7 @@ table.list th,table.list td{padding:10px 14px;text-align:left;font-size:.95rem;v
 .q table.data{border-collapse:collapse;margin:12px auto;background:var(--card)}.q table.data th,.q table.data td{border:1px solid var(--stone);padding:5px 12px;text-align:center;font-size:.92rem}.q table.data th{background:var(--sand-dark)}
 .q .cap{text-align:center;font-weight:700;margin:10px 0 2px;font-family:Fraunces,serif;color:var(--head)}
 .q ul.mcq{list-style:none;padding-left:10px}.q ul.mcq li:before{content:"\2610  ";}
+.q ul.plabels{list-style:none;margin:7px 0 2px;padding:0}.q ul.plabels li{font-weight:600;color:var(--moss);margin:4px 0;padding-left:12px;border-left:3px solid var(--leaf-light)}
 svg.chart{max-width:100%;height:auto;display:block;margin:6px auto;background:#fff;border-radius:8px}
 details.ms{margin-top:12px;background:var(--ms-bg);border:1px solid var(--ms-line);border-radius:10px;padding:10px 14px}details.ms summary{cursor:pointer;font-weight:700;color:var(--moss)}
 details.ms ul{margin:6px 0 8px 18px;padding:0}details.ms .lvl{font-size:.88rem;margin:4px 0;color:var(--stone)}details.ms .src{font-size:.85rem;color:var(--earth);margin-top:8px;border-top:1px dashed var(--ms-line);padding-top:6px}
@@ -179,8 +180,45 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <section class="hero p1 small"><div class="wrap"><div class="crumbs"><a href="../papers.html">Mock papers</a><span>&rsaquo;</span>Set 16</div><h1>Paper 1 &mdash; Generated Set 16</h1><p>120 marks &middot; 3 hours &middot; <a style="color:#fff" href="../pdf/papers/P1-Set16-QP.pdf">Question paper PDF</a> &middot; <a style="color:#fff" href="../pdf/papers/P1-Set16-MS.pdf">Mark scheme PDF</a></p></div></section>
 <main><div class="wrap">
 <div class="tools noprint"><span class="time" id="clock">3:00:00</span><button type="button" class="primary" id="startBtn">Start exam</button><button type="button" id="resetBtn">Reset timer</button><span class="score">Score <b id="scoreN">0</b>/120 <span class="pct" id="scorePct">0%</span></span><button type="button" id="clearScore">Clear marks</button><button type="button" data-reveal="1">Show all mark schemes</button><button type="button" data-print="qp">Print</button><button type="button" data-print="ms">Print + MS</button><label class="modew"><input type="checkbox" class="modeW"> Write-first mode</label><span class="kbd">Tick the marking points you made, or type the marks straight in; the score is saved for this paper.</span></div><details class="mshelp noprint"><summary>How to read these mark schemes</summary><ul><li>The green chip in each heading says how the marks are shared out - how many points you need, and whether there is a choice.</li><li>Each row is worth the mark shown on its left. The first line is the point an examiner looks for; the indented lines are detail or a second route to the same mark.</li><li><b>Click a mark</b> to tick off a point you made - the counter in the heading keeps your total.</li><li><b>Also accept</b> lists other wordings and answers that earn the same mark; <b>Do not credit</b> lists the answers that look right and score nothing.</li></ul></details>
-<div class="jump noprint"><a href="#AIR-01">Q1 &middot; 10</a><a href="#ECON-04">Q2 &middot; 10</a><a href="#BGC-05">Q3 &middot; 10</a><a href="#PPRO-05">Q4 &middot; 10</a><a href="#REN-06">Q5 &middot; 10</a><a href="#EST-03">Q6 &middot; 10</a><a href="#FN-01">Q7 &middot; 10</a><a href="#NUT-01">Q8 &middot; 10</a><a href="#RM-16">Q9 &middot; 5</a><a href="#OZ-04">Q10 &middot; 10</a><a href="#essay">Q11 &middot; essay</a></div>
-<div class="q" id="AIR-01" data-qid="AIR-01" data-marks="10" data-pm="2,2,3,2,1" data-flags="calc data"><div class="qh"><span class="num">Question 1</span><span class="meta">10 marks &middot; <a href="../subtopic/air-pollution.html">Atmospheric pollution: smoke, acid rain, NOx, hydrocarbons, CO, smogs</a> &middot; spec 3.4.3.2.1 &middot; Genn pp. 245-247 &middot; AIR-01</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="jump noprint"><a href="#SOIL-01">Q1 &middot; 10</a><a href="#AIR-01">Q2 &middot; 10</a><a href="#RAD-04">Q3 &middot; 10</a><a href="#REN-07">Q4 &middot; 10</a><a href="#PEST-08">Q5 &middot; 5</a><a href="#RM-23">Q6 &middot; 15</a><a href="#ECON-08">Q7 &middot; 10</a><a href="#WPOL-01">Q8 &middot; 10</a><a href="#PCON-06">Q9 &middot; 5</a><a href="#CC-10">Q10 &middot; 10</a><a href="#essay">Q11 &middot; essay</a></div>
+<div class="q" id="SOIL-01" data-qid="SOIL-01" data-marks="10" data-pm="3,3,2,2" data-flags="data"><div class="qh"><span class="num">Question 1</span><span class="meta">10 marks &middot; <a href="../subtopic/soils.html">Soils: fertility, erosion &amp; management</a> &middot; spec 3.2.5.1 &middot; Genn pp. 158-160, 412 &middot; SOIL-01</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<p>Table 1 shows the textural composition of four soil samples.</p>
+<div class="cap">Table 1</div><table class="data"><tr><th>Soil sample</th><th>Sand / %</th><th>Silt / %</th><th>Clay / %</th></tr><tr><td>A</td><td>85</td><td>10</td><td>5</td></tr><tr><td>B</td><td>40</td><td>40</td><td>20</td></tr><tr><td>C</td><td>20</td><td>25</td><td>55</td></tr><tr><td>D</td><td>10</td><td>80</td><td>10</td></tr></table>
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">01.1</span>Identify the sample that is a loam and explain why loams are ideal for cultivating most crops.
+</div>
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">01.2</span>Explain why sample A is likely to have the highest permeability but the lowest nutrient retention.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">01.3</span>Compare the thermal capacity and root penetration of soils A and C.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">01.4</span>Describe how the texture of a soil sample could be determined by sedimentation.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div class="mspart"><div class="msh"><b>01.1</b><span class="mtot">3 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
+<p class="mrule">1 mark for each of the 3 points below.</p>
+<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">B (about 40:40:20 sand:silt:clay)</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Balanced mix gives good drainage and aeration from the sand fraction</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Water retention and nutrient (ion) retention from the clay fraction</p><ul class="pd"><li>easy root penetration and cultivation</li></ul></div></li></ol>
+<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li><b>loam</b> &rarr; a balanced mixture of sand, silt and clay</li></ul></div>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="SOIL-01.1"></label> / 3</div>
+</div>
+<div class="mspart"><div class="msh"><b>01.2</b><span class="mtot">3 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
+<p class="mrule">1 mark for each of the 3 points below.</p>
+<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Large sand particles leave large pore spaces so water drains rapidly (high permeability / aeration)</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Nutrient ions adsorb onto the (charged) surfaces of clay particles but not onto sand</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">With only 5% clay there is little surface to hold ions so nutrients are leached</p><ul class="pd"><li>low water retention too</li></ul></div></li></ol>
+<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li><b>permeability</b> &rarr; how easily water passes through / lets water through</li><li><b>adsorb</b> &rarr; nutrient ions sticking to the surfaces of clay and humus</li><li><b>leached</b> &rarr; nutrients or ions washed down out of the soil / washed away by water</li></ul></div>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="SOIL-01.2"></label> / 3</div>
+</div>
+<div class="mspart"><div class="msh"><b>01.3</b><span class="mtot">2 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
+<p class="mrule">1 mark for each of the 2 points below.</p>
+<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">C (clay) holds much water so has a high thermal capacity: warms and cools slowly</p><ul class="pd"><li>A warms rapidly after cold weather</li></ul></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Clay particles held together by capillary water so roots find it hard to push between them</p><ul class="pd"><li>penetration is easy in sandy A</li></ul></div></li></ol>
+<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li>The converse of any point, ie the same comparison written the other way round.</li></ul></div>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="SOIL-01.3"></label> / 2</div>
+</div>
+<div class="mspart"><div class="msh"><b>01.4</b><span class="mtot">2 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
+<p class="mrule">1 mark for each of the 2 points below.</p>
+<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Shake a known mass of soil with water in a measuring cylinder and leave to settle</p><ul class="pd"><li>particles settle in order of size (sand first, then silt, then clay; organic matter floats)</li></ul></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Measure the depth / volume of each layer to calculate the percentage of each fraction, then use the soil triangle to name the textural class</p></div></li></ol>
+<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li></ul></div>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="SOIL-01.4"></label> / 2</div>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 158-160, 412; AQA spec 3.2.5.1.</div></details></div>
+<div class="q" id="AIR-01" data-qid="AIR-01" data-marks="10" data-pm="2,2,3,2,1" data-flags="calc data"><div class="qh"><span class="num">Question 2</span><span class="meta">10 marks &middot; <a href="../subtopic/air-pollution.html">Atmospheric pollution: smoke, acid rain, NOx, hydrocarbons, CO, smogs</a> &middot; spec 3.4.3.2.1 &middot; Genn pp. 245-247 &middot; AIR-01</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
 <p>Figure 1 shows the daily deaths in London and the mean concentration of smoke in the air during the smog of December 1952.</p>
 <div class="cap">Figure 1</div>
 <svg class="chart" viewBox="0 0 600 348" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
@@ -269,643 +307,439 @@ svg.chart{max-width:420px}a{color:#000;text-decoration:none}}
 <text transform="translate(15,154.0) rotate(-90)" text-anchor="middle" font-weight="bold">Deaths per day</text>
 </svg>
 <div class="cap">Table 1</div><table class="data"><tr><th>Date</th><th>3 Dec</th><th>5 Dec</th><th>7 Dec</th><th>8 Dec</th><th>10 Dec</th><th>12 Dec</th></tr><tr><td>Smoke / mg m<sup>-3</sup></td><td>0.4</td><td>1.5</td><td>4.4</td><td>4.5</td><td>1.2</td><td>0.5</td></tr></table>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">01.1</span>Describe the relationship between smoke concentration and daily deaths shown in Figure 1 and Table 1.
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">02.1</span>Describe the relationship between smoke concentration and daily deaths shown in Figure 1 and Table 1.
 </div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">01.2</span>Calculate the percentage increase in daily deaths between 1 December and 8 December.
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">02.2</span>Calculate the percentage increase in daily deaths between 1 December and 8 December.
 </div>
-<div class="part"><span class="marks">[3 marks]</span><span class="pn">01.3</span>Explain how the weather conditions in December 1952 caused the smog to form.
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">02.3</span>Explain how the weather conditions in December 1952 caused the smog to form.
 </div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">01.4</span>Explain why most of the deaths were among the elderly, the very young and people with existing respiratory disease.
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">02.4</span>Explain why most of the deaths were among the elderly, the very young and people with existing respiratory disease.
 </div>
-<div class="part"><span class="marks">[1 mark]</span><span class="pn">01.5</span>State the legislation introduced in the UK in response to this smog.
+<div class="part"><span class="marks">[1 mark]</span><span class="pn">02.5</span>State the legislation introduced in the UK in response to this smog.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div class="mspart"><div class="msh"><b>01.1</b><span class="mtot">2 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
+<div class="mspart"><div class="msh"><b>02.1</b><span class="mtot">2 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
 <p class="mrule">1 mark for each of the 2 points below.</p>
 <ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Deaths rise as smoke concentration rises, peaking at about 930 per day on 8 Dec when smoke was highest (4.5 mg m<sup>-3</sup>)</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Deaths fall as smoke falls but remain above the starting level for several days (time lag / delayed effect)</p></div></li></ol>
 <div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li></ul></div>
 <div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="AIR-01.1"></label> / 2</div>
 </div>
-<div class="mspart"><div class="msh"><b>01.2</b><span class="mtot">2 marks</span><span class="mtag">Calculation</span><span class="tcount"></span></div>
+<div class="mspart"><div class="msh"><b>02.2</b><span class="mtot">2 marks</span><span class="mtag">Calculation</span><span class="tcount"></span></div>
 <p class="mrule">A correct final answer scores full marks on its own. If the answer is wrong, each correct step of working below earns its mark.</p>
 <ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">(930 - 250) / 250 x 100</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">= 272%</p></div></li></ol>
 <div class="tol ac"><b>Also accept</b><ul><li>The correct answer however it is set out, including a different but valid method.</li><li>An answer carried forward from an earlier incorrect step (error carried forward).</li><li>An answer rounded to 2 or more significant figures, and the answer written as a fraction, decimal or percentage where the question does not specify.</li><li>The value alone - the unit (%) is already printed on the answer line.</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>A bare wrong answer with no working.</li></ul></div>
 <div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="AIR-01.2"></label> / 2</div>
 </div>
-<div class="mspart"><div class="msh"><b>01.3</b><span class="mtot">3 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
+<div class="mspart"><div class="msh"><b>02.3</b><span class="mtot">3 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
 <p class="mrule">1 mark for each of the 3 points below.</p>
 <ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm"><b class="plab">Anticyclonic conditions:</b> clear skies allowed rapid radiation of heat from the ground at night so the ground and air near it cooled</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Low wind velocity so air layers did not mix</p><ul class="pd"><li>London lies in a valley / basin where cold dense air collected: a temperature inversion formed</li></ul></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Smoke from coal fires was trapped below the inversion</p><ul class="pd"><li>moist air cooled to its dew point forming fog</li><li>smoke + fog = smog</li><li>the smog's high albedo prolonged the inversion</li></ul></div></li></ol>
 <div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li><b>temperature inversion</b> &rarr; a layer of warm air above cooler air that traps pollutants</li><li><b>albedo</b> &rarr; reflectivity / the proportion of solar radiation reflected / how much sunlight is bounced back</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>'ice reflects the heat back' - albedo is the reflection of incoming short-wave solar radiation, before it is absorbed</li></ul></div>
 <div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="AIR-01.3"></label> / 3</div>
 </div>
-<div class="mspart"><div class="msh"><b>01.4</b><span class="mtot">2 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
+<div class="mspart"><div class="msh"><b>02.4</b><span class="mtot">2 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
 <p class="mrule">1 mark for each of the 2 points below.</p>
 <ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Smoke particles (PM10) are inhaled deeply and irritate the lungs / kill cilia so particles and bacteria are not cleared, causing bronchitis / infections</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">These groups have weaker lungs / immune systems / less reserve so the extra stress (with sulfur dioxide acting synergistically) was fatal</p></div></li></ol>
 <div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li><b>PM10</b> &rarr; fine solid particles / smoke and dust</li></ul></div>
 <div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="AIR-01.4"></label> / 2</div>
 </div>
-<div class="mspart"><div class="msh"><b>01.5</b><span class="mtot">1 mark</span><span class="tcount"></span></div>
+<div class="mspart"><div class="msh"><b>02.5</b><span class="mtot">1 mark</span><span class="tcount"></span></div>
 <p class="mrule">1 mark for the point below.</p>
 <ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Clean Air Act (1956)</p></div></li></ol>
 <div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li></ul></div>
 <div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="1" step="1" data-kind="part" data-key="AIR-01.5"></label> / 1</div>
 </div>
 <div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 245-247; AQA spec 3.4.3.2.1.</div></details></div>
-<div class="q" id="ECON-04" data-qid="ECON-04" data-marks="10" data-pm="3,2,2,2,1" data-flags="calc data"><div class="qh"><span class="num">Question 2</span><span class="meta">10 marks &middot; <a href="../subtopic/energy-conservation.html">Energy conservation: transport, buildings, industry</a> &middot; spec 3.3.4.2.2 &middot; Genn pp. 228-231 &middot; ECON-04</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
-<p>Table 1 shows the rate of heat loss through 1 m<sup>2</sup> of different glazing systems for a 1 &deg;C temperature difference (U-value).</p>
-<div class="cap">Table 1</div><table class="data"><tr><th>Glazing</th><th>Heat loss / W m<sup>-2</sup> K<sup>-1</sup></th></tr><tr><td>Single glazing</td><td>5.8</td></tr><tr><td>Double glazing, air filled</td><td>2.8</td></tr><tr><td>Double glazing, argon filled, low-e glass</td><td>1.6</td></tr><tr><td>Triple glazing, krypton filled, low-e glass</td><td>0.8</td></tr><tr><td>Double glazing, vacuum (0.2 mm gap)</td><td>0.74</td></tr></table>
-<div class="part"><span class="marks">[3 marks]</span><span class="pn">02.1</span>A house has 20 m<sup>2</sup> of single glazing. The average temperature difference between inside and outside over the heating season is 12 &deg;C. Calculate the reduction in the rate of heat loss if the windows are replaced with argon-filled low-e double glazing.
+<div class="q" id="RAD-04" data-qid="RAD-04" data-marks="10" data-pm="3,1,2,4" data-flags="calc data"><div class="qh"><span class="num">Question 3</span><span class="meta">10 marks &middot; <a href="../subtopic/radiation.html">Ionising radiation</a> &middot; spec 3.4.3.2.14 &middot; Genn pp. 297-299 &middot; RAD-04</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<p>Table 1 shows the average annual radiation dose received by a person in the UK from different sources.</p>
+<div class="cap">Table 1</div><table class="data"><tr><th>Source</th><th>Percentage of average dose / %</th></tr><tr><td>Radon gas from the ground</td><td>50</td></tr><tr><td>Medical (X-rays, CT scans)</td><td>16</td></tr><tr><td>Gamma rays from rocks / buildings</td><td>13</td></tr><tr><td>Internal (food and drink)</td><td>9.5</td></tr><tr><td>Cosmic radiation</td><td>10</td></tr><tr><td>Occupational, fallout, nuclear discharges, consumer products</td><td>1.5</td></tr></table>
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">03.1</span>Explain why radon concentrations are high inside some houses in Devon and Cornwall.
 </div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">02.2</span>Explain why the gap between the panes should be as large as possible but not too large.
+<div class="part"><span class="marks">[1 mark]</span><span class="pn">03.2</span>Use Table 1 to calculate the percentage of the average dose that comes from artificial (human-made) sources.
 </div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">02.3</span>Explain how low-emissivity glass and inert gas filling each reduce heat loss.
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">03.3</span>Suggest <b>two</b> reasons why the dose received by an individual may differ greatly from the average.
 </div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">02.4</span>Explain why vacuum double glazing has a very narrow gap and where it is used.
-</div>
-<div class="part"><span class="marks">[1 mark]</span><span class="pn">02.5</span>State <b>one</b> reason why insulation thickness has an optimum value.
+<div class="part"><span class="marks">[4 marks]</span><span class="pn">03.4</span>Explain why a risk:benefit analysis is needed for the use of X-rays in medicine, and give <b>two</b> reasons why the risks of ionising radiation are difficult to assess.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div class="mspart"><div class="msh"><b>02.1</b><span class="mtot">3 marks</span><span class="mtag">Calculation</span><span class="tcount"></span></div>
-<p class="mrule">A correct final answer scores full marks on its own. If the answer is wrong, each correct step of working below earns its mark.</p>
-<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm"><b class="plab">Single:</b> 5.8 x 20 x 12 = 1392 W</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm"><b class="plab">Argon:</b> 1.6 x 20 x 12 = 384 W</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Reduction = 1008 W (accept 1010)</p></div></li></ol>
-<div class="tol ac"><b>Also accept</b><ul><li>The correct answer however it is set out, including a different but valid method.</li><li>An answer carried forward from an earlier incorrect step (error carried forward).</li><li>An answer rounded to 2 or more significant figures, and the answer written as a fraction, decimal or percentage where the question does not specify.</li><li>The converse of any point, ie the same comparison written the other way round.</li><li>The value alone - the unit (W) is already printed on the answer line.</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>A bare wrong answer with no working.</li></ul></div>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="ECON-04.1"></label> / 3</div>
-</div>
-<div class="mspart"><div class="msh"><b>02.2</b><span class="mtot">2 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
-<p class="mrule">1 mark for each of the 2 points below.</p>
-<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">A wider gap of trapped gas reduces conduction because gas is a poor conductor</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">If the gap is too wide convection currents start in the gas, carrying heat across</p><ul class="pd"><li>the optimum depends on the gas and window size</li></ul></div></li></ol>
-<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li></ul></div>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="ECON-04.2"></label> / 2</div>
-</div>
-<div class="mspart"><div class="msh"><b>02.3</b><span class="mtot">2 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
-<p class="mrule">1 mark for each of the 2 points below.</p>
-<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Low-e coating reflects long-wavelength infrared back into the room, reducing radiation losses</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Argon / krypton / xenon have lower thermal conductivity than air so less conduction across the gap</p></div></li></ol>
-<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li><b>infrared</b> &rarr; heat radiation / long-wave radiation re-emitted by the Earth</li></ul></div>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="ECON-04.3"></label> / 2</div>
-</div>
-<div class="mspart"><div class="msh"><b>02.4</b><span class="mtot">2 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
-<p class="mrule">1 mark for each of the 2 points below.</p>
-<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Panes must be held apart by small spacers which cannot be long, so the gap is only about 0.2 mm</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Used where there is not room for thick gas-filled multiple glazing (eg historic buildings)</p></div></li></ol>
-<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li></ul></div>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="ECON-04.4"></label> / 2</div>
-</div>
-<div class="mspart"><div class="msh"><b>02.5</b><span class="mtot">1 mark</span><span class="tcount"></span></div>
-<p class="mrule">1 mark for the point below.</p>
-<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Each extra layer saves less energy (diminishing returns) while cost rises, so beyond the optimum the cost of insulation exceeds the value of energy saved</p></div></li></ol>
-<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li></ul></div>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="1" step="1" data-kind="part" data-key="ECON-04.5"></label> / 1</div>
-</div>
-<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 228-231; AQA spec 3.3.4.2.2.</div></details></div>
-<div class="q" id="BGC-05" data-qid="BGC-05" data-marks="10" data-pm="2,3,3,2" data-flags="calc data"><div class="qh"><span class="num">Question 3</span><span class="meta">10 marks &middot; <a href="../subtopic/biogeochem.html">Biogeochemical cycles: carbon, nitrogen, phosphorus</a> &middot; spec 3.2.4.3 &middot; Genn pp. 154-155 &middot; BGC-05</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
-<p>Table 1 shows global reactive nitrogen fixed each year by natural processes and by human activities.</p>
-<div class="cap">Table 1</div><table class="data"><tr><th>Source</th><th>Nitrogen fixed / million tonnes per year</th></tr><tr><td>Biological fixation (natural ecosystems)</td><td>110</td></tr><tr><td>Lightning</td><td>5</td></tr><tr><td>Haber process (fertiliser manufacture)</td><td>120</td></tr><tr><td>Cultivation of legume crops</td><td>60</td></tr><tr><td>Combustion (NOx)</td><td>30</td></tr></table>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">03.1</span>Use Table 1 to calculate the percentage of total nitrogen fixation that is caused by human activities.
-</div>
-<div class="part"><span class="marks">[3 marks]</span><span class="pn">03.2</span>Describe the Haber process and explain why it is unsustainable compared with biological nitrogen fixation.
-</div>
-<div class="part"><span class="marks">[3 marks]</span><span class="pn">03.3</span>Describe <b>three</b> consequences of the increased movement of nitrogen compounds caused by human activities.
-</div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">03.4</span>Explain how composting or anaerobic digestion of biological wastes produces a better fertiliser than raw waste.
-</div>
-<details class="ms"><summary>Show mark scheme</summary>
-<div class="mspart"><div class="msh"><b>03.1</b><span class="mtot">2 marks</span><span class="mtag">Calculation</span><span class="tcount"></span></div>
-<p class="mrule">A correct final answer scores full marks on its own. If the answer is wrong, each correct step of working below earns its mark.</p>
-<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Human = 120 + 60 + 30 = 210</p><ul class="pd"><li>total = 325</li></ul></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">210 / 325 x 100 = 64.6% (accept 65%)</p></div></li></ol>
-<div class="tol ac"><b>Also accept</b><ul><li>The correct answer however it is set out, including a different but valid method.</li><li>An answer carried forward from an earlier incorrect step (error carried forward).</li><li>An answer rounded to 2 or more significant figures, and the answer written as a fraction, decimal or percentage where the question does not specify.</li><li>The value alone - the unit (%) is already printed on the answer line.</li><li><b>nitrogen fixation</b> &rarr; nitrogen gas converted into ammonium or other nitrogen compounds</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>A bare wrong answer with no working.</li></ul></div>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="BGC-05.1"></label> / 2</div>
-</div>
-<div class="mspart"><div class="msh"><b>03.2</b><span class="mtot">3 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
+<div class="mspart"><div class="msh"><b>03.1</b><span class="mtot">3 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
 <p class="mrule">1 mark for each of the 3 points below.</p>
-<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Nitrogen and hydrogen react to form ammonia over an iron catalyst at high temperature and pressure</p><ul class="pd"><li>ammonia then converted to nitrates for fertiliser</li></ul></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Uses large amounts of energy from fossil fuels (also the hydrogen source), releasing CO2 and NOx</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Biological fixation by bacteria occurs at low temperature using solar energy captured by plants (enzymes lower activation energy)</p></div></li></ol>
-<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li><b>nitrogen fixation</b> &rarr; nitrogen gas converted into ammonium or other nitrogen compounds</li></ul></div>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="BGC-05.2"></label> / 3</div>
-</div>
-<div class="mspart"><div class="msh"><b>03.3</b><span class="mtot">3 marks</span><span class="mtag">Any 3 of 6</span><span class="tcount"></span></div>
-<p class="mrule">1 mark each for any 3 of the 6 points below, in any order, maximum 3.</p>
-<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Eutrophication of water bodies by leached nitrates / sewage</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Photochemical smogs and tropospheric ozone from NOx</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Acid rain (nitric acid)</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Nitrous oxide as a greenhouse gas</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">NOx toxicity / respiratory disease</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Nitrate in drinking water (methaemoglobinaemia)</p></div></li></ol>
-<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li><b>Eutrophication</b> &rarr; nutrient enrichment of water leading to algal growth</li><li><b>leached</b> &rarr; nutrients or ions washed down out of the soil / washed away by water</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>Points after the first three - the question asks for three, so a list of extras cannot pick up the marks.</li><li>carbon dioxide as the main cause of acid rain - the gases responsible are sulfur dioxide and oxides of nitrogen</li><li>'the algae use up all the oxygen' on its own - the oxygen is used by aerobic decomposers breaking down the dead algae</li></ul></div>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="BGC-05.3"></label> / 3</div>
-</div>
-<div class="mspart"><div class="msh"><b>03.4</b><span class="mtot">2 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
-<p class="mrule">1 mark for each of the 2 points below.</p>
-<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Carbon is lost as CO2 (composting) or CH4 (digestion) so the C:N ratio improves / more nitrogen-rich</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Bulk and odour reduced, pathogens killed, easier to apply</p><ul class="pd"><li>digestion also yields biogas</li></ul></div></li></ol>
+<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">The underlying granite contains uranium whose decay produces the radioactive gas radon (an alpha emitter)</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Radon travels up cracks in the rock and through foundations into buildings</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">It becomes concentrated inside enclosed / poorly ventilated buildings</p><ul class="pd"><li>control by ventilating foundations / sumps</li></ul></div></li></ol>
 <div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li></ul></div>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="BGC-05.4"></label> / 2</div>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="RAD-04.1"></label> / 3</div>
 </div>
-<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 154-155; AQA spec 3.2.4.3.</div></details></div>
-<div class="q" id="PPRO-05" data-qid="PPRO-05" data-marks="10" data-pm="2,2,2,2,2" data-flags="calc data"><div class="qh"><span class="num">Question 4</span><span class="meta">10 marks &middot; <a href="../subtopic/pollutant-properties.html">Properties of pollutants &amp; environmental factors</a> &middot; spec 3.4.1, 3.4.2.1 &middot; Genn pp. 236-241, 254-255 &middot; PPRO-05</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
-<p>A factory discharges a persistent, water-soluble pollutant into a river. Table 1 shows the concentration of the pollutant measured at sites along the river on a day with normal river flow.</p>
-<div class="cap">Table 1</div><table class="data"><tr><th>Site</th><th>Distance downstream of discharge / km</th><th>Pollutant concentration / mg dm<sup>-3</sup></th><th>River flow / m<sup>3</sup> s<sup>-1</sup></th></tr><tr><td>A (upstream)</td><td>-2</td><td>0.0</td><td>12</td></tr><tr><td>B</td><td>0.5</td><td>4.8</td><td>12</td></tr><tr><td>C</td><td>5</td><td>3.9</td><td>15</td></tr><tr><td>D (below tributary)</td><td>12</td><td>1.6</td><td>36</td></tr><tr><td>E</td><td>30</td><td>1.4</td><td>38</td></tr></table>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">04.1</span>Calculate the percentage decrease in pollutant concentration between site B and site E.
-</div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">04.2</span>Explain the large decrease in concentration between sites C and D.
-</div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">04.3</span>Explain why the concentration changes very little between sites D and E.
-</div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">04.4</span>Suggest why the pollution might be more serious if the same discharge entered a lake instead of a river.
-</div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">04.5</span>Explain why the factory might be permitted to discharge the effluent into the sea near a strong current but not into the river.
-</div>
-<details class="ms"><summary>Show mark scheme</summary>
-<div class="mspart"><div class="msh"><b>04.1</b><span class="mtot">2 marks</span><span class="mtag">Calculation</span><span class="tcount"></span></div>
-<p class="mrule">A correct final answer scores full marks on its own. If the answer is wrong, each correct step of working below earns its mark.</p>
-<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">(4.8 - 1.4) / 4.8 x 100</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">= 70.8% (accept 71%)</p></div></li></ol>
+<div class="mspart"><div class="msh"><b>03.2</b><span class="mtot">1 mark</span><span class="mtag">Calculation</span><span class="tcount"></span></div>
+<p class="mrule">1 mark for the correct answer; working does not have to be shown.</p>
+<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">16 + 1.5 = 17.5%</p></div></li></ol>
 <div class="tol ac"><b>Also accept</b><ul><li>The correct answer however it is set out, including a different but valid method.</li><li>An answer carried forward from an earlier incorrect step (error carried forward).</li><li>An answer rounded to 2 or more significant figures, and the answer written as a fraction, decimal or percentage where the question does not specify.</li><li>The value alone - the unit (%) is already printed on the answer line.</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>A bare wrong answer with no working.</li></ul></div>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="PPRO-05.1"></label> / 2</div>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="1" step="1" data-kind="part" data-key="RAD-04.2"></label> / 1</div>
 </div>
-<div class="mspart"><div class="msh"><b>04.2</b><span class="mtot">2 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
-<p class="mrule">1 mark for each of the 2 points below.</p>
-<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">A tributary joins the river, more than doubling the flow (15 to 36 m<sup>3</sup> s<sup>-1</sup>)</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">So the pollutant is diluted by the extra water (dispersal), not broken down</p></div></li></ol>
-<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li></ul></div>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="PPRO-05.2"></label> / 2</div>
+<div class="mspart"><div class="msh"><b>03.3</b><span class="mtot">2 marks</span><span class="mtag">Any 2 of 4</span><span class="tcount"></span></div>
+<p class="mrule">1 mark each for any 2 of the 4 points below, in any order, maximum 2.</p>
+<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Where they live (geology / radon, altitude)</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Occupation (radiographer, nuclear worker, aircrew, miner)</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Medical history (number of X-rays / CT scans)</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Lifestyle / diet (eg shellfish near discharges)</p><ul class="pd"><li>smoking</li></ul></div></li></ol>
+<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>Points after the first two - the question asks for two, so a list of extras cannot pick up the marks.</li><li>'nuclear power releases no carbon dioxide' - mining, fuel processing, construction and decommissioning all do</li></ul></div>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="RAD-04.3"></label> / 2</div>
 </div>
-<div class="mspart"><div class="msh"><b>04.3</b><span class="mtot">2 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
-<p class="mrule">1 mark for each of the 2 points below.</p>
-<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">The pollutant is persistent so it is not degraded / broken down as it travels</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Little extra water joins the river (flow 36 to 38) so little further dilution</p></div></li></ol>
-<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li><b>persistent</b> &rarr; does not break down / stays in the environment for a long time</li></ul></div>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="PPRO-05.3"></label> / 2</div>
+<div class="mspart"><div class="msh"><b>03.4</b><span class="mtot">4 marks</span><span class="mtag">Any 4 of 5</span><span class="tcount"></span></div>
+<p class="mrule">1 mark each for any 4 of the 5 points below, in any order, maximum 4.</p>
+<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">X-rays carry a small risk of mutation / cancer but the benefit (diagnosis, avoiding invasive surgery) may outweigh it</p><ul class="pd"><li>risks can be reduced (shielding, dose limits)</li></ul></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Symptoms of chronic low-dose exposure take a long time to develop</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">The same symptoms (cancers) have other causes so effects are hard to attribute</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Accurate data on human exposure / doses is often unavailable (especially after accidents)</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">People who benefit and people who take the risk may be different (eg uranium miners vs electricity consumers)</p></div></li></ol>
+<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li><b>ionising radiation</b> &rarr; radiation with enough energy to remove electrons and form ions</li><li><b>Accurate</b> &rarr; close to the true value</li></ul></div>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="4" step="1" data-kind="part" data-key="RAD-04.4"></label> / 4</div>
 </div>
-<div class="mspart"><div class="msh"><b>04.4</b><span class="mtot">2 marks</span><span class="mtag">Any 2 of 3</span><span class="tcount"></span></div>
-<p class="mrule">1 mark each for any 2 of the 3 points below, in any order, maximum 2.</p>
-<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Lake has a long residence time / water does not flow away so the pollutant accumulates rather than being carried away</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Smaller volume of water / less dilution / less dispersal by currents</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Persistent pollutant gradually becomes more concentrated (eg by evaporation)</p></div></li></ol>
-<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li><b>residence time</b> &rarr; the time a molecule stays in the atmosphere / atmospheric lifetime</li><li><b>Persistent</b> &rarr; does not break down / stays in the environment for a long time</li></ul></div>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="PPRO-05.4"></label> / 2</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 297-299; AQA spec 3.4.3.2.14.</div></details></div>
+<div class="q" id="REN-07" data-qid="REN-07" data-marks="10" data-pm="3,3,2,2" data-flags=""><div class="qh"><span class="num">Question 4</span><span class="meta">10 marks &middot; <a href="../subtopic/renewables.html">Renewable energy technologies</a> &middot; spec 3.3.4.1 &middot; Genn pp. 212-214 &middot; REN-07</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">04.1</span>Explain <b>three</b> advantages of biofuels over other renewable energy resources.
 </div>
-<div class="mspart"><div class="msh"><b>04.5</b><span class="mtot">2 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
-<p class="mrule">1 mark for each of the 2 points below.</p>
-<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm"><b class="plab">Marine discharge:</b> large volume of water and currents dilute and disperse the pollutant to acceptably low concentrations (control of emission location)</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm"><b class="plab">River:</b> small volume so concentrations stay high / drinking water abstraction / sensitive wildlife downstream</p></div></li></ol>
-<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li><b>abstraction</b> &rarr; water taken out of a river, lake or aquifer</li></ul></div>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="PPRO-05.5"></label> / 2</div>
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">04.2</span>Explain <b>three</b> disadvantages of biofuel crops.
 </div>
-<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 236-241, 254-255; AQA spec 3.4.1, 3.4.2.1.</div></details></div>
-<div class="q" id="REN-06" data-qid="REN-06" data-marks="10" data-pm="2,2,2,2,2" data-flags="data"><div class="qh"><span class="num">Question 5</span><span class="meta">10 marks &middot; <a href="../subtopic/renewables.html">Renewable energy technologies</a> &middot; spec 3.3.4.1 &middot; Genn pp. 214-215 &middot; REN-06</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
-<p>Figure 1 shows the water level inside and outside a tidal barrage over one 12.5-hour tidal cycle and the periods when electricity is generated.</p>
-<div class="cap">Figure 1</div>
-<svg class="chart" viewBox="0 0 600 348" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
-<rect x="66" y="18" width="516" height="272" fill="#fff"/>
-<line x1="66.00" y1="290.00" x2="582.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
-<line x1="66.00" y1="279.12" x2="582.00" y2="279.12" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="268.24" x2="582.00" y2="268.24" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="257.36" x2="582.00" y2="257.36" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="246.48" x2="582.00" y2="246.48" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="235.60" x2="582.00" y2="235.60" stroke="#a7b9aa" stroke-width="1"/>
-<line x1="66.00" y1="224.72" x2="582.00" y2="224.72" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="213.84" x2="582.00" y2="213.84" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="202.96" x2="582.00" y2="202.96" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="192.08" x2="582.00" y2="192.08" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="181.20" x2="582.00" y2="181.20" stroke="#a7b9aa" stroke-width="1"/>
-<line x1="66.00" y1="170.32" x2="582.00" y2="170.32" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="159.44" x2="582.00" y2="159.44" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="148.56" x2="582.00" y2="148.56" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="137.68" x2="582.00" y2="137.68" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="126.80" x2="582.00" y2="126.80" stroke="#a7b9aa" stroke-width="1"/>
-<line x1="66.00" y1="115.92" x2="582.00" y2="115.92" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="105.04" x2="582.00" y2="105.04" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="94.16" x2="582.00" y2="94.16" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="83.28" x2="582.00" y2="83.28" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="72.40" x2="582.00" y2="72.40" stroke="#a7b9aa" stroke-width="1"/>
-<line x1="66.00" y1="61.52" x2="582.00" y2="61.52" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="50.64" x2="582.00" y2="50.64" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="39.76" x2="582.00" y2="39.76" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="28.88" x2="582.00" y2="28.88" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="18.00" x2="582.00" y2="18.00" stroke="#a7b9aa" stroke-width="1"/>
-<line x1="66.00" y1="18.00" x2="66.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
-<line x1="84.43" y1="18.00" x2="84.43" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="102.86" y1="18.00" x2="102.86" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="121.29" y1="18.00" x2="121.29" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="139.71" y1="18.00" x2="139.71" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
-<line x1="158.14" y1="18.00" x2="158.14" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="176.57" y1="18.00" x2="176.57" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="195.00" y1="18.00" x2="195.00" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="213.43" y1="18.00" x2="213.43" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
-<line x1="231.86" y1="18.00" x2="231.86" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="250.29" y1="18.00" x2="250.29" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="268.71" y1="18.00" x2="268.71" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="287.14" y1="18.00" x2="287.14" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
-<line x1="305.57" y1="18.00" x2="305.57" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="324.00" y1="18.00" x2="324.00" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="342.43" y1="18.00" x2="342.43" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="360.86" y1="18.00" x2="360.86" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
-<line x1="379.29" y1="18.00" x2="379.29" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="397.71" y1="18.00" x2="397.71" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="416.14" y1="18.00" x2="416.14" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="434.57" y1="18.00" x2="434.57" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
-<line x1="453.00" y1="18.00" x2="453.00" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="471.43" y1="18.00" x2="471.43" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="489.86" y1="18.00" x2="489.86" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="508.29" y1="18.00" x2="508.29" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
-<line x1="526.71" y1="18.00" x2="526.71" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="545.14" y1="18.00" x2="545.14" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="563.57" y1="18.00" x2="563.57" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="582.00" y1="18.00" x2="582.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
-<polyline points="66.0,290.0 121.3,154.0 176.6,72.4 231.9,154.0 296.4,290.0 360.9,154.0 416.1,72.4 471.4,154.0 526.7,290.0" fill="none" stroke="#22302a" stroke-width="2"/>
-<circle cx="66.0" cy="290.0" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
-<circle cx="121.3" cy="154.0" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
-<circle cx="176.6" cy="72.4" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
-<circle cx="231.9" cy="154.0" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
-<circle cx="296.4" cy="290.0" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
-<circle cx="360.9" cy="154.0" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
-<circle cx="416.1" cy="72.4" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
-<circle cx="471.4" cy="154.0" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
-<circle cx="526.7" cy="290.0" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
-<polyline points="66.0,126.8 121.3,126.8 176.6,72.4 231.9,72.4 296.4,72.4 360.9,208.4 416.1,72.4 471.4,72.4 526.7,72.4" fill="none" stroke="#2f5f73" stroke-width="2"/>
-<circle cx="66.0" cy="126.8" r="2.8" fill="#2f5f73" stroke="#fff" stroke-width="0.8"/>
-<circle cx="121.3" cy="126.8" r="2.8" fill="#2f5f73" stroke="#fff" stroke-width="0.8"/>
-<circle cx="176.6" cy="72.4" r="2.8" fill="#2f5f73" stroke="#fff" stroke-width="0.8"/>
-<circle cx="231.9" cy="72.4" r="2.8" fill="#2f5f73" stroke="#fff" stroke-width="0.8"/>
-<circle cx="296.4" cy="72.4" r="2.8" fill="#2f5f73" stroke="#fff" stroke-width="0.8"/>
-<circle cx="360.9" cy="208.4" r="2.8" fill="#2f5f73" stroke="#fff" stroke-width="0.8"/>
-<circle cx="416.1" cy="72.4" r="2.8" fill="#2f5f73" stroke="#fff" stroke-width="0.8"/>
-<circle cx="471.4" cy="72.4" r="2.8" fill="#2f5f73" stroke="#fff" stroke-width="0.8"/>
-<circle cx="526.7" cy="72.4" r="2.8" fill="#2f5f73" stroke="#fff" stroke-width="0.8"/>
-<line x1="66.0" y1="290" x2="66.0" y2="295" stroke="#38463c"/><text x="66.0" y="307" text-anchor="middle">0</text>
-<line x1="139.7" y1="290" x2="139.7" y2="295" stroke="#38463c"/><text x="139.7" y="307" text-anchor="middle">2</text>
-<line x1="213.4" y1="290" x2="213.4" y2="295" stroke="#38463c"/><text x="213.4" y="307" text-anchor="middle">4</text>
-<line x1="287.1" y1="290" x2="287.1" y2="295" stroke="#38463c"/><text x="287.1" y="307" text-anchor="middle">6</text>
-<line x1="360.9" y1="290" x2="360.9" y2="295" stroke="#38463c"/><text x="360.9" y="307" text-anchor="middle">8</text>
-<line x1="434.6" y1="290" x2="434.6" y2="295" stroke="#38463c"/><text x="434.6" y="307" text-anchor="middle">10</text>
-<line x1="508.3" y1="290" x2="508.3" y2="295" stroke="#38463c"/><text x="508.3" y="307" text-anchor="middle">12</text>
-<line x1="582.0" y1="290" x2="582.0" y2="295" stroke="#38463c"/><text x="582.0" y="307" text-anchor="middle">14</text>
-<line x1="61" y1="290.0" x2="66" y2="290.0" stroke="#38463c"/><text x="57" y="294.0" text-anchor="end">0</text>
-<line x1="61" y1="235.6" x2="66" y2="235.6" stroke="#38463c"/><text x="57" y="239.6" text-anchor="end">1</text>
-<line x1="61" y1="181.2" x2="66" y2="181.2" stroke="#38463c"/><text x="57" y="185.2" text-anchor="end">2</text>
-<line x1="61" y1="126.8" x2="66" y2="126.8" stroke="#38463c"/><text x="57" y="130.8" text-anchor="end">3</text>
-<line x1="61" y1="72.4" x2="66" y2="72.4" stroke="#38463c"/><text x="57" y="76.4" text-anchor="end">4</text>
-<line x1="61" y1="18.0" x2="66" y2="18.0" stroke="#38463c"/><text x="57" y="22.0" text-anchor="end">5</text>
-<rect x="66" y="18" width="516" height="272" fill="none" stroke="#38463c" stroke-width="1.3"/>
-<text x="324.0" y="340" text-anchor="middle" font-weight="bold">Time / hours</text>
-<text transform="translate(15,154.0) rotate(-90)" text-anchor="middle" font-weight="bold">Water level / m</text>
-<rect x="71" y="21" width="146" height="38" fill="#ffffff" fill-opacity="0.9" stroke="#a7b9aa"/>
-<rect x="78" y="28" width="10" height="10" fill="#22302a"/><text x="93" y="37">Sea level</text>
-<rect x="78" y="43" width="10" height="10" fill="#2f5f73"/><text x="93" y="52">Level behind barrage</text>
-</svg>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">05.1</span>Use Figure 1 to explain when electricity is generated by the barrage.
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">04.3</span>Describe <b>two</b> new biofuel technologies.
 </div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">05.2</span>Explain why tidal power is intermittent but predictable.
-</div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">05.3</span>Explain the difference between spring and neap tides and why this affects output.
-</div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">05.4</span>Explain how a tidal lagoon can be used to generate electricity when there is no tidal flow.
-</div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">05.5</span>Give <b>two</b> coastal features that make a site suitable for tidal power.
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">04.4</span>Explain how new low-temperature turbine technology could allow geothermal electricity generation in the UK.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div class="mspart"><div class="msh"><b>05.1</b><span class="mtot">2 marks</span><span class="mtag">2 marks</span><span class="tcount"></span></div>
-<p class="mrule">2 marks for the point below; award fewer where it is only partly made.</p>
-<ol class="pts"><li><button type="button" class="mk" data-mk="2" aria-pressed="false" title="Tick this if you made the point">2</button><div class="pb"><p class="pm">When there is a difference in level between the sea and the basin: on the ebb (about 6-8 hours) water flows out through the turbines</p><ul class="pd"><li>no generation when levels are equal (slack water)</li></ul><p class="pa"><span class="ortag">or</span>possible on the flood when the sea is higher than the basin</p></div></li></ol>
+<div class="mspart"><div class="msh"><b>04.1</b><span class="mtot">3 marks</span><span class="mtag">Any 3 of 4</span><span class="tcount"></span></div>
+<p class="mrule">1 mark each for any 3 of the 4 points below, in any order, maximum 3.</p>
+<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Supply rate of energy crops can be controlled and fuels stored so supply matches demand (not intermittent)</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Liquid biofuels (alcohol, biodiesel) can replace petrol / diesel in vehicles</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm"><b class="plab">Carbon neutral in principle:</b> CO2 released equals CO2 absorbed in photosynthesis</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Energy density of alcohol / biodiesel nearly as high as fossil fuels</p><ul class="pd"><li>wastes (straw, sewage, landfill gas) are cheap</li></ul></div></li></ol>
+<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li><b>intermittent</b> &rarr; only generates when the wind blows or the Sun shines / supply is not continuous</li><li><b>landfill gas</b> &rarr; the methane and carbon dioxide produced by anaerobic decomposition of waste</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>Points after the first three - the question asks for three, so a list of extras cannot pick up the marks.</li><li>'renewables cause no pollution at all' - manufacture, construction and the land they occupy all have impacts</li><li>'landfill gas is just carbon dioxide' - it is roughly half methane, a far stronger greenhouse gas</li></ul></div>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="REN-07.1"></label> / 3</div>
+</div>
+<div class="mspart"><div class="msh"><b>04.2</b><span class="mtot">3 marks</span><span class="mtag">Any 3 of 4</span><span class="tcount"></span></div>
+<p class="mrule">1 mark each for any 3 of the 4 points below, in any order, maximum 3.</p>
+<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Large areas of farmland compete with food production or cause clearance of wildlife habitats (eg palm oil)</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Intensive farming inputs (fertiliser, pesticide, machinery fuel) may release nearly as much CO2 as using fossil fuels directly</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Low energy density of straw, wood, Miscanthus makes transport uneconomic - must be used locally</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Supply from wastes limited to the amount produced</p></div></li></ol>
+<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>Points after the first three - the question asks for three, so a list of extras cannot pick up the marks.</li><li>pests 'getting used to' a pesticide - the few naturally resistant individuals survive and pass the trait on</li></ul></div>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="REN-07.2"></label> / 3</div>
+</div>
+<div class="mspart"><div class="msh"><b>04.3</b><span class="mtot">2 marks</span><span class="mtag">Any 2 of 3</span><span class="tcount"></span></div>
+<p class="mrule">1 mark each for any 2 of the 3 points below, in any order, maximum 2.</p>
+<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm"><b class="plab">Hydrogen from algae:</b> some algae deprived of sulfur produce hydrogen during photosynthesis</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Anaerobic digestion extended to crop wastes and marine algae</p><ul class="pd"><li>small-scale digesters (eg one cow's manure supplying a family's cooking gas)</li></ul></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Biofuels from microorganisms (eg oil-producing microalgae)</p></div></li></ol>
+<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>Points after the first two - the question asks for two, so a list of extras cannot pick up the marks.</li></ul></div>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="REN-07.3"></label> / 2</div>
+</div>
+<div class="mspart"><div class="msh"><b>04.4</b><span class="mtot">2 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
+<p class="mrule">1 mark for each of the 2 points below.</p>
+<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Conventional geothermal steam turbines need rocks above 150 &deg;C (recent volcanic activity), too deep to reach economically in the UK</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">New turbines use fluids such as butane / pentane that boil at low temperatures, so water as cool as 60 &deg;C from deep boreholes / hot dry rock systems can drive them</p></div></li></ol>
 <div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li></ul></div>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="REN-06.1"></label> / 2</div>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="REN-07.4"></label> / 2</div>
+</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 212-214; AQA spec 3.3.4.1.</div></details></div>
+<div class="q" id="PEST-08" data-qid="PEST-08" data-marks="5" data-pm="1,2,2" data-flags="mcq"><div class="qh"><span class="num">Question 5</span><span class="meta">5 marks &middot; <a href="../subtopic/pesticides.html">Pesticides</a> &middot; spec 3.4.3.2.8 &middot; Genn pp. 262-266 &middot; PEST-08</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="part"><span class="marks">[1 mark]</span><span class="pn">05.1</span>Which of the following properties would make a pesticide <b>least</b> likely to biomagnify? Tick one box.
+<ul class="mcq"><li>A&nbsp; High liposolubility and high persistence</li><li>B&nbsp; Low liposolubility and low persistence</li><li>C&nbsp; High liposolubility and low persistence</li><li>D&nbsp; Low liposolubility and high persistence</li></ul>
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">05.2</span>Explain the difference between <b>bioaccumulation</b> and <b>biomagnification</b>.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">05.3</span>Explain why pesticides are described as an unusual type of pollutant.
+</div>
+<details class="ms"><summary>Show mark scheme</summary>
+<div class="mspart"><div class="msh"><b>05.1</b><span class="mtot">1 mark</span><span class="mtag">Correct answer only</span><span class="tcount"></span></div>
+<p class="mrule">1 mark for the correct option. No mark if more than one box is ticked.</p>
+<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">B - Low liposolubility and low persistence</p></div></li></ol>
+<div class="tol ac"><b>Also accept</b><ul><li><b>persistence</b> &rarr; does not break down / stays in the environment for a long time</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>pests 'getting used to' a pesticide - the few naturally resistant individuals survive and pass the trait on</li></ul></div>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="1" step="1" data-kind="part" data-key="PEST-08.1"></label> / 1</div>
 </div>
 <div class="mspart"><div class="msh"><b>05.2</b><span class="mtot">2 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
 <p class="mrule">1 mark for each of the 2 points below.</p>
-<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Two periods of slack water in each 12.5-hour cycle (twice in about 25 hours) give no flow</p><ul class="pd"><li>the timing does not match demand</li></ul></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Tides depend on the positions of the Moon and Sun which are known, so output can be forecast years ahead and alternative supplies planned</p></div></li></ol>
-<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li><b>intermittent</b> &rarr; only generates when the wind blows or the Sun shines / supply is not continuous</li></ul></div>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="REN-06.2"></label> / 2</div>
+<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm"><b class="plab">Bioaccumulation:</b> build-up of a pollutant in the tissues of an individual organism over time because uptake is faster than excretion / breakdown</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm"><b class="plab">Biomagnification:</b> increase in concentration of the pollutant at successive trophic levels of a food chain</p></div></li></ol>
+<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li>The converse of any point, ie the same comparison written the other way round.</li><li><b>bioaccumulation</b> &rarr; a pollutant building up inside one organism over time</li><li><b>biomagnification</b> &rarr; concentration rising at each step along a food chain</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>answers that swap the two terms - bioaccumulation is the build-up inside one organism, biomagnification is the rise along a food chain</li><li>'energy is lost between trophic levels' on its own - say how it is lost: respiration, excretion, egestion and uneaten parts</li></ul></div>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="PEST-08.2"></label> / 2</div>
 </div>
 <div class="mspart"><div class="msh"><b>05.3</b><span class="mtot">2 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
 <p class="mrule">1 mark for each of the 2 points below.</p>
-<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm"><b class="plab">Spring tides:</b> Sun and Moon aligned so their gravitational effects combine giving a large tidal range</p><ul class="pd"><li>neap: effects oppose giving a small range</li></ul></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Energy depends on the mass of water and height difference, so output is much greater at springs</p></div></li></ol>
-<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li>The converse of any point, ie the same comparison written the other way round.</li></ul></div>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="REN-06.3"></label> / 2</div>
+<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">They are intended to be toxic (to the target species)</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">They are deliberately released / spread into the environment (rather than being an accidental or waste release)</p></div></li></ol>
+<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>pests 'getting used to' a pesticide - the few naturally resistant individuals survive and pass the trait on</li></ul></div>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="PEST-08.3"></label> / 2</div>
 </div>
-<div class="mspart"><div class="msh"><b>05.4</b><span class="mtot">2 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
-<p class="mrule">1 mark for each of the 2 points below.</p>
-<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">When demand is low, surplus electricity pumps water into the lagoon above sea level</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">The stored water is released through the turbines later when demand is high (pumped storage)</p></div></li></ol>
-<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li><b>pumped storage</b> &rarr; water pumped uphill when demand is low and released to generate at peak</li></ul></div>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="REN-06.4"></label> / 2</div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 262-266; AQA spec 3.4.3.2.8.</div></details></div>
+<div class="q" id="RM-23" data-qid="RM-23" data-marks="15" data-pm="3,2,3,3,4" data-flags="data"><div class="qh"><span class="num">Question 6</span><span class="meta">15 marks &middot; <a href="../subtopic/stats.html">Specialist techniques &amp; statistical analysis</a> &middot; spec 3.7.2.3 &middot; Genn pp. 402-407, 420-423 &middot; RM-23</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<p>Table 1 shows three investigations carried out by a class.</p>
+<div class="cap">Table 1</div><table class="data"><tr><th>Investigation</th><th>Data collected</th></tr><tr><td>A</td><td>Mean height of bluebells in a coppiced and an uncoppiced wood (both normally distributed)</td></tr><tr><td>B</td><td>Number of limpets in each of five zones on a rocky shore, compared with the numbers expected if they were evenly spread</td></tr><tr><td>C</td><td>Soil moisture and the percentage cover of a moss, measured at 14 points along a transect</td></tr></table>
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">06.1</span>Name the most suitable statistical test for each investigation in Table 1.
 </div>
-<div class="mspart"><div class="msh"><b>05.5</b><span class="mtot">2 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
-<p class="mrule">1 mark for each of the 2 points below.</p>
-<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Large tidal range (eg Severn Estuary)</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Estuaries, bays or headlands / channels that focus the flow and increase velocity</p></div></li></ol>
-<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>Points after the first two - the question asks for two, so a list of extras cannot pick up the marks.</li></ul></div>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="REN-06.5"></label> / 2</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">06.2</span>Explain what it means if a test gives a probability of <i>p</i> = 0.02.
 </div>
-<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 214-215; AQA spec 3.3.4.1.</div></details></div>
-<div class="q" id="EST-03" data-qid="EST-03" data-marks="10" data-pm="4,3,2,1" data-flags=""><div class="qh"><span class="num">Question 6</span><span class="meta">10 marks &middot; <a href="../subtopic/energy-storage.html">Fluctuations in supply/demand &amp; energy storage</a> &middot; spec 3.3.4.1 &middot; Genn pp. 219-221 &middot; EST-03</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
-<div class="part"><span class="marks">[4 marks]</span><span class="pn">06.1</span>Explain how hydrogen can be used to store energy from intermittent renewable resources, and describe <b>two</b> ways the stored energy can be released.
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">06.3</span>Explain why the calculated value from a test must be compared with a critical value, and what else is needed to find that critical value.
 </div>
-<div class="part"><span class="marks">[3 marks]</span><span class="pn">06.2</span>Compare <b>three</b> methods of storing hydrogen, giving a disadvantage of each.
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">06.4</span>Explain what the <b>standard deviation</b> of each set of bluebell heights tells the student, and how it is shown on a graph of the means.
 </div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">06.3</span>Explain how a fuel cell differs from a rechargeable battery.
-</div>
-<div class="part"><span class="marks">[1 mark]</span><span class="pn">06.4</span>Explain what is meant by the 'hydrogen economy'.
+<div class="part"><span class="marks">[4 marks]</span><span class="pn">06.5</span>The class found a significant correlation in investigation C. Explain <b>four</b> reasons why this does not show that soil moisture causes the moss to grow.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div class="mspart"><div class="msh"><b>06.1</b><span class="mtot">4 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
-<p class="mrule">1 mark for each of the 4 points below.</p>
-<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Surplus electricity (eg windy nights) electrolyses water to produce hydrogen which is stored</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Hydrogen has a high energy density so it can be transported / stored for long periods</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Released by combustion for heat, industrial processes or steam turbines</p><p class="pa"><span class="ortag">or</span>by fuel cells combining hydrogen and oxygen electrochemically to produce electricity and water</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Can also be used as a vehicle fuel or converted to methane / ammonia</p></div></li></ol>
-<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li><b>intermittent</b> &rarr; only generates when the wind blows or the Sun shines / supply is not continuous</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>'renewables cause no pollution at all' - manufacture, construction and the land they occupy all have impacts</li></ul></div>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="4" step="1" data-kind="part" data-key="EST-03.1"></label> / 4</div>
+<div class="mspart"><div class="msh"><b>06.1</b><span class="mtot">3 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
+<p class="mrule">1 mark for each of the 3 points below.</p>
+<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">A: Student's t-test - a difference between the means of two sets of normally distributed data</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">B: chi-squared test - a comparison of observed frequencies (counts) with expected frequencies</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">C: Spearman's rank correlation - a relationship between two variables measured on the same sampling points</p></div></li></ol>
+<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li><b>Student's t</b> &rarr; a test for a difference between the means of two normally distributed sets</li><li><b>chi-squared</b> &rarr; a test comparing observed frequencies with expected frequencies</li><li><b>Spearman</b> &rarr; a test for correlation between two sets of ranked data</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>a correlation presented as proof of cause - say that it suggests a link that further work would have to test</li><li>'the result was significant' without comparing the calculated value with the critical value at p = 0.05</li></ul></div>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="RM-23.1"></label> / 3</div>
 </div>
-<div class="mspart"><div class="msh"><b>06.2</b><span class="mtot">3 marks</span><span class="mtag">Any 3 of 4</span><span class="tcount"></span></div>
-<p class="mrule">1 mark each for any 3 of the 4 points below, in any order, maximum 3.</p>
-<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Compressed gas (up to 700 times normal volume) - energy to run the compressor, strong tanks</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Liquefied at very low temperature - energy for refrigeration and compression</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Adsorbed on a metal matrix (metal hydride) at low pressure - tanks larger and heavier than a petrol tank storing the same energy</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Conversion to ammonia - some energy needed but less than the alternatives</p></div></li></ol>
-<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li>The converse of any point, ie the same comparison written the other way round.</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>Points after the first three - the question asks for three, so a list of extras cannot pick up the marks.</li></ul></div>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="EST-03.2"></label> / 3</div>
-</div>
-<div class="mspart"><div class="msh"><b>06.3</b><span class="mtot">2 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
+<div class="mspart"><div class="msh"><b>06.2</b><span class="mtot">2 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
 <p class="mrule">1 mark for each of the 2 points below.</p>
-<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Both convert chemical energy to electricity electrochemically, but a battery stores a fixed amount of chemicals which are reformed by recharging</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">A fuel cell keeps producing electricity as long as fresh fuel (hydrogen / alcohol) and oxidant are supplied</p></div></li></ol>
-<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li><b>fuel cell</b> &rarr; a cell that produces electricity from hydrogen and oxygen</li></ul></div>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="EST-03.3"></label> / 2</div>
+<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">There is a 2% probability, or a 1 in 50 chance, that a result at least as extreme as this would arise by chance alone if the null hypothesis were true</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">This is below the 5% significance level normally used, so the null hypothesis is rejected and the difference or correlation is described as statistically significant</p></div></li></ol>
+<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li><b>null hypothesis</b> &rarr; a statement that there is no significant difference or correlation</li><li><b>significance level</b> &rarr; a probability of 0.05, ie a 1 in 20 chance that the result happened by chance</li><li><b>correlation</b> &rarr; a relationship in which the two variables change together</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>a correlation presented as proof of cause - say that it suggests a link that further work would have to test</li><li>'the hypothesis was proved' - a statistical test either rejects the null hypothesis or fails to reject it</li></ul></div>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="RM-23.2"></label> / 2</div>
 </div>
-<div class="mspart"><div class="msh"><b>06.4</b><span class="mtot">1 mark</span><span class="tcount"></span></div>
-<p class="mrule">1 mark for the point below.</p>
-<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Using hydrogen made from surplus renewable electricity as the main store and carrier of energy, released when demand exceeds supply or intermittent sources fail, for heating, vehicles and electricity</p></div></li></ol>
-<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li><b>intermittent</b> &rarr; only generates when the wind blows or the Sun shines / supply is not continuous</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>'renewables cause no pollution at all' - manufacture, construction and the land they occupy all have impacts</li></ul></div>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="1" step="1" data-kind="part" data-key="EST-03.4"></label> / 1</div>
+<div class="mspart"><div class="msh"><b>06.3</b><span class="mtot">3 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
+<p class="mrule">1 mark for each of the 3 points below.</p>
+<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">The calculated value on its own has no meaning: it must be compared with the value that would be exceeded by chance in 5% of cases, which is read from a table of critical values</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">The critical value depends on the number of degrees of freedom, which comes from the number of categories or pairs of data, because a larger sample makes a given result less likely to be chance</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">If the calculated value exceeds the critical value at p = 0.05 the null hypothesis is rejected</p><ul class="pd"><li>if it does not, the null hypothesis is not rejected and the result is not significant</li></ul></div></li></ol>
+<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li><b>critical value</b> &rarr; the table value the calculated statistic must reach to be significant</li><li><b>p = 0.05</b> &rarr; a probability of 0.05, ie a 1 in 20 chance that the result happened by chance</li><li><b>null hypothesis</b> &rarr; a statement that there is no significant difference or correlation</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>'the hypothesis was proved' - a statistical test either rejects the null hypothesis or fails to reject it</li><li>'the result was significant' without comparing the calculated value with the critical value at p = 0.05</li></ul></div>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="RM-23.3"></label> / 3</div>
 </div>
-<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 219-221; AQA spec 3.3.4.1.</div></details></div>
-<div class="q" id="FN-01" data-qid="FN-01" data-marks="10" data-pm="2,2,3,3" data-flags="data"><div class="qh"><span class="num">Question 7</span><span class="meta">10 marks &middot; <a href="../subtopic/fossil-nuclear.html">Fossil fuels &amp; nuclear power: sustainability and new technologies</a> &middot; spec 3.3.4.1 &middot; Genn pp. 187-188 &middot; FN-01</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
-<p>Figure 1 shows the percentage of the oil in a reservoir that can be recovered using different recovery techniques.</p>
-<div class="cap">Figure 1</div>
-<svg class="chart" viewBox="0 0 600 348" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
-<rect x="66" y="18" width="516" height="272" fill="#fff"/>
-<line x1="66.00" y1="290.00" x2="582.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
-<line x1="66.00" y1="276.40" x2="582.00" y2="276.40" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="262.80" x2="582.00" y2="262.80" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="249.20" x2="582.00" y2="249.20" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="235.60" x2="582.00" y2="235.60" stroke="#a7b9aa" stroke-width="1"/>
-<line x1="66.00" y1="222.00" x2="582.00" y2="222.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="208.40" x2="582.00" y2="208.40" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="194.80" x2="582.00" y2="194.80" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="181.20" x2="582.00" y2="181.20" stroke="#a7b9aa" stroke-width="1"/>
-<line x1="66.00" y1="167.60" x2="582.00" y2="167.60" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="154.00" x2="582.00" y2="154.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="140.40" x2="582.00" y2="140.40" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="126.80" x2="582.00" y2="126.80" stroke="#a7b9aa" stroke-width="1"/>
-<line x1="66.00" y1="113.20" x2="582.00" y2="113.20" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="99.60" x2="582.00" y2="99.60" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="86.00" x2="582.00" y2="86.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="72.40" x2="582.00" y2="72.40" stroke="#a7b9aa" stroke-width="1"/>
-<line x1="66.00" y1="58.80" x2="582.00" y2="58.80" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="45.20" x2="582.00" y2="45.20" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="31.60" x2="582.00" y2="31.60" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="18.00" x2="582.00" y2="18.00" stroke="#a7b9aa" stroke-width="1"/>
-<line x1="79.60" y1="18.00" x2="79.60" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="93.20" y1="18.00" x2="93.20" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="106.80" y1="18.00" x2="106.80" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="120.40" y1="18.00" x2="120.40" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="134.00" y1="18.00" x2="134.00" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="147.60" y1="18.00" x2="147.60" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="161.20" y1="18.00" x2="161.20" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="174.80" y1="18.00" x2="174.80" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="188.40" y1="18.00" x2="188.40" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="202.00" y1="18.00" x2="202.00" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="215.60" y1="18.00" x2="215.60" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="229.20" y1="18.00" x2="229.20" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="242.80" y1="18.00" x2="242.80" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="256.40" y1="18.00" x2="256.40" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="270.00" y1="18.00" x2="270.00" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="283.60" y1="18.00" x2="283.60" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="297.20" y1="18.00" x2="297.20" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="310.80" y1="18.00" x2="310.80" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="324.40" y1="18.00" x2="324.40" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="338.00" y1="18.00" x2="338.00" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="351.60" y1="18.00" x2="351.60" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="365.20" y1="18.00" x2="365.20" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="378.80" y1="18.00" x2="378.80" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="392.40" y1="18.00" x2="392.40" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="406.00" y1="18.00" x2="406.00" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="419.60" y1="18.00" x2="419.60" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="433.20" y1="18.00" x2="433.20" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="446.80" y1="18.00" x2="446.80" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="460.40" y1="18.00" x2="460.40" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="474.00" y1="18.00" x2="474.00" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="487.60" y1="18.00" x2="487.60" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="501.20" y1="18.00" x2="501.20" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="514.80" y1="18.00" x2="514.80" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="528.40" y1="18.00" x2="528.40" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="542.00" y1="18.00" x2="542.00" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="555.60" y1="18.00" x2="555.60" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="569.20" y1="18.00" x2="569.20" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="238.00" y1="18.00" x2="238.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
-<line x1="410.00" y1="18.00" x2="410.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
-<rect x="90.1" y="235.6" width="123.8" height="54.4" fill="#3f6b4a" stroke="#38463c" stroke-width="0.6"/>
-<text y="306" text-anchor="middle" font-size="10.5"><tspan x="152.0" dy="0">Primary</tspan></text>
-<rect x="262.1" y="181.2" width="123.8" height="108.8" fill="#3f6b4a" stroke="#38463c" stroke-width="0.6"/>
-<text y="306" text-anchor="middle" font-size="10.5"><tspan x="324.0" dy="0">Primary + secondary</tspan></text>
-<rect x="434.1" y="126.8" width="123.8" height="163.2" fill="#3f6b4a" stroke="#38463c" stroke-width="0.6"/>
-<text y="306" text-anchor="middle" font-size="9.8"><tspan x="496.0" dy="0">Primary + secondary +</tspan><tspan x="496.0" dy="12">tertiary</tspan></text>
-<line x1="61" y1="290.0" x2="66" y2="290.0" stroke="#38463c"/><text x="57" y="294.0" text-anchor="end">0</text>
-<line x1="61" y1="235.6" x2="66" y2="235.6" stroke="#38463c"/><text x="57" y="239.6" text-anchor="end">20</text>
-<line x1="61" y1="181.2" x2="66" y2="181.2" stroke="#38463c"/><text x="57" y="185.2" text-anchor="end">40</text>
-<line x1="61" y1="126.8" x2="66" y2="126.8" stroke="#38463c"/><text x="57" y="130.8" text-anchor="end">60</text>
-<line x1="61" y1="72.4" x2="66" y2="72.4" stroke="#38463c"/><text x="57" y="76.4" text-anchor="end">80</text>
-<line x1="61" y1="18.0" x2="66" y2="18.0" stroke="#38463c"/><text x="57" y="22.0" text-anchor="end">100</text>
-<rect x="66" y="18" width="516" height="272" fill="none" stroke="#38463c" stroke-width="1.3"/>
-<text x="324.0" y="340" text-anchor="middle" font-weight="bold">Recovery technique</text>
-<text transform="translate(15,154.0) rotate(-90)" text-anchor="middle" font-weight="bold">Cumulative oil recovered / %</text>
-</svg>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">07.1</span>Describe how primary oil recovery works and explain why it recovers only about 20% of the oil.
+<div class="mspart"><div class="msh"><b>06.4</b><span class="mtot">3 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
+<p class="mrule">1 mark for each of the 3 points below.</p>
+<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">The standard deviation measures the spread of the individual values about the mean, so a small value means the heights were closely grouped and the mean is a good summary of them</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Comparing the standard deviations with the difference between the means shows whether the two sets really are distinct or merely overlap</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">It is drawn as error bars above and below each plotted mean</p><ul class="pd"><li>where the error bars of two means do not overlap, a significant difference is likely, and where they overlap widely it is not</li></ul></div></li></ol>
+<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li><b>standard deviation</b> &rarr; a measure of the spread of the data about the mean</li></ul></div>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="RM-23.4"></label> / 3</div>
 </div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">07.2</span>Describe secondary recovery and explain how it can be linked to carbon capture and storage.
+<div class="mspart"><div class="msh"><b>06.5</b><span class="mtot">4 marks</span><span class="mtag">Any 4 of 6</span><span class="tcount"></span></div>
+<p class="mrule">1 mark each for any 4 of the 6 points below, in any order, maximum 4.</p>
+<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">A correlation shows only that the two variables change together</p><ul class="pd"><li>it suggests a link that further work would have to test</li></ul></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">A third factor may cause both, for instance shade, which raises soil moisture by reducing evaporation and also directly favours the moss</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">The relationship may run the other way round: a dense moss cover holds water and shades the soil, so the moss could be raising the moisture rather than responding to it</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">The points along one transect are close together and not independent, so a pattern may reflect one gradient across the site rather than a general relationship</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Only an experiment in which soil moisture is changed while every other variable is held constant can establish cause</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">A result significant at p = 0.05 will still arise by chance about 1 time in 20, so a single significant result is not proof</p></div></li></ol>
+<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li><b>correlation</b> &rarr; a relationship in which the two variables change together</li><li><b>transect</b> &rarr; a line along which samples are taken to show change with distance</li><li><b>p = 0.05</b> &rarr; a probability of 0.05, ie a 1 in 20 chance that the result happened by chance</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>Points after the first four - the question asks for four, so a list of extras cannot pick up the marks.</li><li>a correlation presented as proof of cause - say that it suggests a link that further work would have to test</li></ul></div>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="4" step="1" data-kind="part" data-key="RM-23.5"></label> / 4</div>
 </div>
-<div class="part"><span class="marks">[3 marks]</span><span class="pn">07.3</span>Describe <b>three</b> tertiary (enhanced) recovery techniques.
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 402-407, 420-423; AQA spec 3.7.2.3.</div></details></div>
+<div class="q" id="ECON-08" data-qid="ECON-08" data-marks="10" data-pm="2,2,4,2" data-flags=""><div class="qh"><span class="num">Question 7</span><span class="meta">10 marks &middot; <a href="../subtopic/energy-conservation.html">Energy conservation: transport, buildings, industry</a> &middot; spec 3.3.4.2.3 &middot; Genn pp. 234-235 &middot; ECON-08</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">07.1</span>Explain how integrated manufacture saves energy in the iron and steel industry.
 </div>
-<div class="part"><span class="marks">[3 marks]</span><span class="pn">07.4</span>Explain <b>three</b> advantages of directional drilling.
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">07.2</span>Explain why recycling is not always energy efficient.
+</div>
+<div class="part"><span class="marks">[4 marks]</span><span class="pn">07.3</span>Explain how each of the following manages electricity infrastructure to conserve energy.
+<ul class="plabels"><li>High-voltage grid</li><li>ICT management of supply and demand</li></ul>
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">07.4</span>Give <b>two</b> locational factors affecting where new generating infrastructure is built.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
 <div class="mspart"><div class="msh"><b>07.1</b><span class="mtot">2 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
 <p class="mrule">1 mark for each of the 2 points below.</p>
-<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Natural pressure of gas above the oil (or dissolved in it) or water beneath forces oil up the production well</p><ul class="pd"><li>pump-jacks ('nodding donkeys') increase flow</li></ul></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Pressure falls as oil is removed so the remaining oil no longer flows to the well</p></div></li></ol>
+<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Molten iron from the blast furnace is converted directly to steel on the same site</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">So it does not cool and need re-melting</p><ul class="pd"><li>transport energy between sites is also avoided</li><li>waste heat from one process used by another (eg Kalundborg)</li></ul></div></li></ol>
 <div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li></ul></div>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="FN-01.1"></label> / 2</div>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="ECON-08.1"></label> / 2</div>
 </div>
 <div class="mspart"><div class="msh"><b>07.2</b><span class="mtot">2 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
 <p class="mrule">1 mark for each of the 2 points below.</p>
-<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Water or natural gas is pumped down an injection well to maintain the pressure and flow of oil (recovery to about 40%)</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Captured CO2 can be pumped down instead, increasing oil recovery while storing the CO2 underground</p></div></li></ol>
-<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li><b>carbon capture</b> &rarr; capturing carbon dioxide from flue gases and storing it underground</li></ul></div>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="FN-01.2"></label> / 2</div>
+<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Collecting and processing small dispersed quantities can use more energy in transport than is saved</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Mass production and large-scale mining have economies of scale</p><ul class="pd"><li>some materials (glass) take more energy to make than plastic but can be refilled many times</li></ul></div></li></ol>
+<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li><b>recycling</b> &rarr; reprocessing a material to make something new</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>'recycling uses no energy' - collection, sorting and reprocessing all use energy, usually less than making the material from new</li></ul></div>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="ECON-08.2"></label> / 2</div>
 </div>
-<div class="mspart"><div class="msh"><b>07.3</b><span class="mtot">3 marks</span><span class="mtag">Any 3 of 4</span><span class="tcount"></span></div>
-<p class="mrule">1 mark each for any 3 of the 4 points below, in any order, maximum 3.</p>
-<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Steam injection (from combustion or solar parabolic concentrators) to heat the oil and reduce its viscosity</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Controlled underground combustion to heat the oil</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Detergents / solvents to reduce surface tension so oil flows more easily</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Bacteria that partially digest heavy oil into lighter oils and produce CO2 to maintain pressure</p></div></li></ol>
-<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>Points after the first three - the question asks for three, so a list of extras cannot pick up the marks.</li></ul></div>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="FN-01.3"></label> / 3</div>
+<div class="mspart"><div class="msh"><b>07.3</b><span class="mtot">4 marks</span><span class="mtag">2 marks per point</span><span class="tcount"></span></div>
+<p class="mrule">2 marks for each of the 2 points below; award 1 mark where a point is only partly made.</p>
+<ol class="pts"><li><button type="button" class="mk" data-mk="2" aria-pressed="false" title="Tick this if you made the point">2</button><div class="pb"><p class="pm">Transmitting at high voltage means low current so less energy is lost as heat in the cables (loss proportional to current squared)</p><ul class="pd"><li>overhead cables cheaper than underground which need cooling</li></ul></div></li><li><button type="button" class="mk" data-mk="2" aria-pressed="false" title="Tick this if you made the point">2</button><div class="pb"><p class="pm">ICT / smart grids co-ordinate real-time data on demand and supply from many sources, switching generation, storage (pumped storage, batteries) and flexible loads so surplus is not wasted and inefficient peaking plants are avoided</p></div></li></ol>
+<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li><b>pumped storage</b> &rarr; water pumped uphill when demand is low and released to generate at peak</li></ul></div>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="4" step="1" data-kind="part" data-key="ECON-08.3"></label> / 4</div>
 </div>
-<div class="mspart"><div class="msh"><b>07.4</b><span class="mtot">3 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
-<p class="mrule">1 mark for each of the 3 points below.</p>
-<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Many wells can be drilled from a single platform, reducing land take / number of rigs</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Deposits under locations where rigs cannot be placed (urban areas, sensitive habitats) can be reached</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Drilling can follow softer strata (quicker) and target multiple small reservoirs up to 10 km away, increasing total recovery</p></div></li></ol>
-<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>Points after the first three - the question asks for three, so a list of extras cannot pick up the marks.</li></ul></div>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="FN-01.4"></label> / 3</div>
+<div class="mspart"><div class="msh"><b>07.4</b><span class="mtot">2 marks</span><span class="mtag">Any 2 of 4</span><span class="tcount"></span></div>
+<p class="mrule">1 mark each for any 2 of the 4 points below, in any order, maximum 2.</p>
+<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Proximity to the grid / demand to reduce transmission losses and cable costs</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Access to cooling water for thermal stations</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Resource availability (wind, tidal range, fuel deliveries)</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Land availability and planning / public acceptance</p><ul class="pd"><li>stable geology</li></ul></div></li></ol>
+<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>Points after the first two - the question asks for two, so a list of extras cannot pick up the marks.</li></ul></div>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="ECON-08.4"></label> / 2</div>
 </div>
-<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 187-188; AQA spec 3.3.4.1.</div></details></div>
-<div class="q" id="NUT-01" data-qid="NUT-01" data-marks="10" data-pm="2,4,2,2" data-flags="data"><div class="qh"><span class="num">Question 8</span><span class="meta">10 marks &middot; <a href="../subtopic/nutrient-pollution.html">Nutrient pollution, sewage treatment &amp; acid mine drainage</a> &middot; spec 3.4.3.2.9 &middot; Genn pp. 266-268 &middot; NUT-01</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
-<p>Figure 1 shows the dissolved oxygen concentration in a shallow lowland lake over 48 hours in late summer. The lake receives runoff from arable farmland and effluent from a sewage works.</p>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 234-235; AQA spec 3.3.4.2.3.</div></details></div>
+<div class="q" id="WPOL-01" data-qid="WPOL-01" data-marks="10" data-pm="1,1,2,2,3,1" data-flags="calc data"><div class="qh"><span class="num">Question 8</span><span class="meta">10 marks &middot; <a href="../subtopic/water-pollution.html">Thermal &amp; oil pollution</a> &middot; spec 3.4.3.2.6 &middot; Genn pp. 256-257 &middot; WPOL-01</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<p>Figure 1 shows the maximum concentration of dissolved oxygen in fresh water at different temperatures. A power station discharges warm cooling water into a river. The lowest dissolved oxygen concentration that trout can tolerate is 6.5 mg dm<sup>-3</sup>.</p>
 <div class="cap">Figure 1</div>
 <svg class="chart" viewBox="0 0 600 348" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">
 <rect x="66" y="18" width="516" height="272" fill="#fff"/>
 <line x1="66.00" y1="290.00" x2="582.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
-<line x1="66.00" y1="280.29" x2="582.00" y2="280.29" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="270.57" x2="582.00" y2="270.57" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="260.86" x2="582.00" y2="260.86" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="251.14" x2="582.00" y2="251.14" stroke="#a7b9aa" stroke-width="1"/>
-<line x1="66.00" y1="241.43" x2="582.00" y2="241.43" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="231.71" x2="582.00" y2="231.71" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="222.00" x2="582.00" y2="222.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="212.29" x2="582.00" y2="212.29" stroke="#a7b9aa" stroke-width="1"/>
-<line x1="66.00" y1="202.57" x2="582.00" y2="202.57" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="192.86" x2="582.00" y2="192.86" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="183.14" x2="582.00" y2="183.14" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="173.43" x2="582.00" y2="173.43" stroke="#a7b9aa" stroke-width="1"/>
-<line x1="66.00" y1="163.71" x2="582.00" y2="163.71" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="154.00" x2="582.00" y2="154.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="144.29" x2="582.00" y2="144.29" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="134.57" x2="582.00" y2="134.57" stroke="#a7b9aa" stroke-width="1"/>
-<line x1="66.00" y1="124.86" x2="582.00" y2="124.86" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="115.14" x2="582.00" y2="115.14" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="105.43" x2="582.00" y2="105.43" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="95.71" x2="582.00" y2="95.71" stroke="#a7b9aa" stroke-width="1"/>
-<line x1="66.00" y1="86.00" x2="582.00" y2="86.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="76.29" x2="582.00" y2="76.29" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="66.57" x2="582.00" y2="66.57" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="56.86" x2="582.00" y2="56.86" stroke="#a7b9aa" stroke-width="1"/>
-<line x1="66.00" y1="47.14" x2="582.00" y2="47.14" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="37.43" x2="582.00" y2="37.43" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="66.00" y1="27.71" x2="582.00" y2="27.71" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="281.50" x2="582.00" y2="281.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="273.00" x2="582.00" y2="273.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="264.50" x2="582.00" y2="264.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="256.00" x2="582.00" y2="256.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="247.50" x2="582.00" y2="247.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="239.00" x2="582.00" y2="239.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="230.50" x2="582.00" y2="230.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="222.00" x2="582.00" y2="222.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="213.50" x2="582.00" y2="213.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="205.00" x2="582.00" y2="205.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="196.50" x2="582.00" y2="196.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="188.00" x2="582.00" y2="188.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="179.50" x2="582.00" y2="179.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="171.00" x2="582.00" y2="171.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="162.50" x2="582.00" y2="162.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="154.00" x2="582.00" y2="154.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="145.50" x2="582.00" y2="145.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="137.00" x2="582.00" y2="137.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="128.50" x2="582.00" y2="128.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="120.00" x2="582.00" y2="120.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="111.50" x2="582.00" y2="111.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="103.00" x2="582.00" y2="103.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="94.50" x2="582.00" y2="94.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="86.00" x2="582.00" y2="86.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="77.50" x2="582.00" y2="77.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="69.00" x2="582.00" y2="69.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="60.50" x2="582.00" y2="60.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="52.00" x2="582.00" y2="52.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="66.00" y1="43.50" x2="582.00" y2="43.50" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="35.00" x2="582.00" y2="35.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="66.00" y1="26.50" x2="582.00" y2="26.50" stroke="#d6e0d7" stroke-width="0.6"/>
 <line x1="66.00" y1="18.00" x2="582.00" y2="18.00" stroke="#a7b9aa" stroke-width="1"/>
 <line x1="66.00" y1="18.00" x2="66.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
-<line x1="86.64" y1="18.00" x2="86.64" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="107.28" y1="18.00" x2="107.28" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="127.92" y1="18.00" x2="127.92" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="148.56" y1="18.00" x2="148.56" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="169.20" y1="18.00" x2="169.20" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
-<line x1="189.84" y1="18.00" x2="189.84" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="210.48" y1="18.00" x2="210.48" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="231.12" y1="18.00" x2="231.12" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="251.76" y1="18.00" x2="251.76" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="272.40" y1="18.00" x2="272.40" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
-<line x1="293.04" y1="18.00" x2="293.04" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="313.68" y1="18.00" x2="313.68" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="334.32" y1="18.00" x2="334.32" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="354.96" y1="18.00" x2="354.96" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="375.60" y1="18.00" x2="375.60" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
-<line x1="396.24" y1="18.00" x2="396.24" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="416.88" y1="18.00" x2="416.88" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="437.52" y1="18.00" x2="437.52" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="458.16" y1="18.00" x2="458.16" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="478.80" y1="18.00" x2="478.80" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
-<line x1="499.44" y1="18.00" x2="499.44" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="520.08" y1="18.00" x2="520.08" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="540.72" y1="18.00" x2="540.72" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
-<line x1="561.36" y1="18.00" x2="561.36" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="78.90" y1="18.00" x2="78.90" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="91.80" y1="18.00" x2="91.80" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="104.70" y1="18.00" x2="104.70" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="117.60" y1="18.00" x2="117.60" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="130.50" y1="18.00" x2="130.50" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="143.40" y1="18.00" x2="143.40" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="156.30" y1="18.00" x2="156.30" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="169.20" y1="18.00" x2="169.20" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="182.10" y1="18.00" x2="182.10" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="195.00" y1="18.00" x2="195.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="207.90" y1="18.00" x2="207.90" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="220.80" y1="18.00" x2="220.80" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="233.70" y1="18.00" x2="233.70" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="246.60" y1="18.00" x2="246.60" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="259.50" y1="18.00" x2="259.50" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="272.40" y1="18.00" x2="272.40" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="285.30" y1="18.00" x2="285.30" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="298.20" y1="18.00" x2="298.20" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="311.10" y1="18.00" x2="311.10" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="324.00" y1="18.00" x2="324.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="336.90" y1="18.00" x2="336.90" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="349.80" y1="18.00" x2="349.80" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="362.70" y1="18.00" x2="362.70" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="375.60" y1="18.00" x2="375.60" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="388.50" y1="18.00" x2="388.50" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="401.40" y1="18.00" x2="401.40" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="414.30" y1="18.00" x2="414.30" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="427.20" y1="18.00" x2="427.20" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="440.10" y1="18.00" x2="440.10" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="453.00" y1="18.00" x2="453.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="465.90" y1="18.00" x2="465.90" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="478.80" y1="18.00" x2="478.80" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="491.70" y1="18.00" x2="491.70" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="504.60" y1="18.00" x2="504.60" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="517.50" y1="18.00" x2="517.50" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
+<line x1="530.40" y1="18.00" x2="530.40" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="543.30" y1="18.00" x2="543.30" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="556.20" y1="18.00" x2="556.20" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
+<line x1="569.10" y1="18.00" x2="569.10" y2="290.00" stroke="#d6e0d7" stroke-width="0.6"/>
 <line x1="582.00" y1="18.00" x2="582.00" y2="290.00" stroke="#a7b9aa" stroke-width="1"/>
-<polyline points="66.0,173.4 107.3,222.0 148.6,202.6 189.8,76.3 231.1,27.7 272.4,115.1 313.7,183.1 355.0,241.4 396.2,216.2 437.5,86.0 478.8,37.4 520.1,124.9 561.4,192.9" fill="none" stroke="#22302a" stroke-width="2"/>
-<circle cx="66.0" cy="173.4" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
-<circle cx="107.3" cy="222.0" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
-<circle cx="148.6" cy="202.6" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
-<circle cx="189.8" cy="76.3" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
-<circle cx="231.1" cy="27.7" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
-<circle cx="272.4" cy="115.1" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
-<circle cx="313.7" cy="183.1" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
-<circle cx="355.0" cy="241.4" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
-<circle cx="396.2" cy="216.2" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
-<circle cx="437.5" cy="86.0" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
-<circle cx="478.8" cy="37.4" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
-<circle cx="520.1" cy="124.9" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
-<circle cx="561.4" cy="192.9" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<polyline points="66.0,41.8 130.5,72.4 195.0,97.9 259.5,118.3 324.0,135.3 388.5,148.9 453.0,160.8 517.5,171.0 582.0,181.2" fill="none" stroke="#22302a" stroke-width="2"/>
+<circle cx="66.0" cy="41.8" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="130.5" cy="72.4" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="195.0" cy="97.9" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="259.5" cy="118.3" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="324.0" cy="135.3" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="388.5" cy="148.9" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="453.0" cy="160.8" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="517.5" cy="171.0" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="582.0" cy="181.2" r="2.8" fill="#22302a" stroke="#fff" stroke-width="0.8"/>
 <line x1="66.0" y1="290" x2="66.0" y2="295" stroke="#38463c"/><text x="66.0" y="307" text-anchor="middle">0</text>
-<line x1="169.2" y1="290" x2="169.2" y2="295" stroke="#38463c"/><text x="169.2" y="307" text-anchor="middle">10</text>
-<line x1="272.4" y1="290" x2="272.4" y2="295" stroke="#38463c"/><text x="272.4" y="307" text-anchor="middle">20</text>
-<line x1="375.6" y1="290" x2="375.6" y2="295" stroke="#38463c"/><text x="375.6" y="307" text-anchor="middle">30</text>
-<line x1="478.8" y1="290" x2="478.8" y2="295" stroke="#38463c"/><text x="478.8" y="307" text-anchor="middle">40</text>
-<line x1="582.0" y1="290" x2="582.0" y2="295" stroke="#38463c"/><text x="582.0" y="307" text-anchor="middle">50</text>
+<line x1="130.5" y1="290" x2="130.5" y2="295" stroke="#38463c"/><text x="130.5" y="307" text-anchor="middle">5</text>
+<line x1="195.0" y1="290" x2="195.0" y2="295" stroke="#38463c"/><text x="195.0" y="307" text-anchor="middle">10</text>
+<line x1="259.5" y1="290" x2="259.5" y2="295" stroke="#38463c"/><text x="259.5" y="307" text-anchor="middle">15</text>
+<line x1="324.0" y1="290" x2="324.0" y2="295" stroke="#38463c"/><text x="324.0" y="307" text-anchor="middle">20</text>
+<line x1="388.5" y1="290" x2="388.5" y2="295" stroke="#38463c"/><text x="388.5" y="307" text-anchor="middle">25</text>
+<line x1="453.0" y1="290" x2="453.0" y2="295" stroke="#38463c"/><text x="453.0" y="307" text-anchor="middle">30</text>
+<line x1="517.5" y1="290" x2="517.5" y2="295" stroke="#38463c"/><text x="517.5" y="307" text-anchor="middle">35</text>
+<line x1="582.0" y1="290" x2="582.0" y2="295" stroke="#38463c"/><text x="582.0" y="307" text-anchor="middle">40</text>
 <line x1="61" y1="290.0" x2="66" y2="290.0" stroke="#38463c"/><text x="57" y="294.0" text-anchor="end">0</text>
-<line x1="61" y1="251.1" x2="66" y2="251.1" stroke="#38463c"/><text x="57" y="255.1" text-anchor="end">2</text>
-<line x1="61" y1="212.3" x2="66" y2="212.3" stroke="#38463c"/><text x="57" y="216.3" text-anchor="end">4</text>
-<line x1="61" y1="173.4" x2="66" y2="173.4" stroke="#38463c"/><text x="57" y="177.4" text-anchor="end">6</text>
-<line x1="61" y1="134.6" x2="66" y2="134.6" stroke="#38463c"/><text x="57" y="138.6" text-anchor="end">8</text>
-<line x1="61" y1="95.7" x2="66" y2="95.7" stroke="#38463c"/><text x="57" y="99.7" text-anchor="end">10</text>
-<line x1="61" y1="56.9" x2="66" y2="56.9" stroke="#38463c"/><text x="57" y="60.9" text-anchor="end">12</text>
-<line x1="61" y1="18.0" x2="66" y2="18.0" stroke="#38463c"/><text x="57" y="22.0" text-anchor="end">14</text>
+<line x1="61" y1="256.0" x2="66" y2="256.0" stroke="#38463c"/><text x="57" y="260.0" text-anchor="end">2</text>
+<line x1="61" y1="222.0" x2="66" y2="222.0" stroke="#38463c"/><text x="57" y="226.0" text-anchor="end">4</text>
+<line x1="61" y1="188.0" x2="66" y2="188.0" stroke="#38463c"/><text x="57" y="192.0" text-anchor="end">6</text>
+<line x1="61" y1="154.0" x2="66" y2="154.0" stroke="#38463c"/><text x="57" y="158.0" text-anchor="end">8</text>
+<line x1="61" y1="120.0" x2="66" y2="120.0" stroke="#38463c"/><text x="57" y="124.0" text-anchor="end">10</text>
+<line x1="61" y1="86.0" x2="66" y2="86.0" stroke="#38463c"/><text x="57" y="90.0" text-anchor="end">12</text>
+<line x1="61" y1="52.0" x2="66" y2="52.0" stroke="#38463c"/><text x="57" y="56.0" text-anchor="end">14</text>
+<line x1="61" y1="18.0" x2="66" y2="18.0" stroke="#38463c"/><text x="57" y="22.0" text-anchor="end">16</text>
 <rect x="66" y="18" width="516" height="272" fill="none" stroke="#38463c" stroke-width="1.3"/>
-<text x="324.0" y="340" text-anchor="middle" font-weight="bold">Time / hours</text>
-<text transform="translate(15,154.0) rotate(-90)" text-anchor="middle" font-weight="bold">Dissolved oxygen / mg/dm³</text>
+<text x="324.0" y="340" text-anchor="middle" font-weight="bold">Water temperature / &amp;deg;C</text>
+<text transform="translate(15,154.0) rotate(-90)" text-anchor="middle" font-weight="bold">Maximum dissolved oxygen / mg/dm³</text>
 </svg>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">08.1</span>Describe the pattern shown in Figure 1.
+<div class="part"><span class="marks">[1 mark]</span><span class="pn">08.1</span>Describe the relationship shown in Figure 1.
 </div>
-<div class="part"><span class="marks">[4 marks]</span><span class="pn">08.2</span>Explain the causes of the pattern shown in Figure 1.
+<div class="part"><span class="marks">[1 mark]</span><span class="pn">08.2</span>Use Figure 1 to determine the highest water temperature at which trout could survive if the water were fully saturated with oxygen.
 </div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">08.3</span>Explain why fish kills in eutrophic lakes usually happen at night or at the end of summer.
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">08.3</span>In summer the river upstream of the power station is at 20 &deg;C and the effluent raises the temperature by 7 &deg;C. Use Figure 1 to calculate the reduction in maximum dissolved oxygen concentration caused by the effluent.
 </div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">08.4</span>Give <b>two</b> other harmful effects of algal blooms.
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">08.4</span>Explain why the actual dissolved oxygen concentration downstream may be much lower than the values in Figure 1.
+</div>
+<div class="part"><span class="marks">[3 marks]</span><span class="pn">08.5</span>Describe <b>three</b> effects of warmer water on aquatic organisms other than reduced dissolved oxygen.
+</div>
+<div class="part"><span class="marks">[1 mark]</span><span class="pn">08.6</span>Describe how a cooling tower reduces the temperature of power station effluent water.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
-<div class="mspart"><div class="msh"><b>08.1</b><span class="mtot">2 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
-<p class="mrule">1 mark for each of the 2 points below.</p>
-<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Dissolved oxygen fluctuates daily / 24-hour cycle: highest in the afternoon (about 13-13.5 mg dm<sup>-3</sup> at 16 and 40 h) and lowest at night / early morning (2.5-3.5 mg dm<sup>-3</sup> at 4 and 28 h)</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">The night-time minimum is lower on the second night (2.5 vs 3.5)</p></div></li></ol>
+<div class="mspart"><div class="msh"><b>08.1</b><span class="mtot">1 mark</span><span class="tcount"></span></div>
+<p class="mrule">1 mark for the point below.</p>
+<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">As temperature increases the maximum dissolved oxygen concentration decreases (non-linear: falls faster at low temperatures)</p></div></li></ol>
 <div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li></ul></div>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="NUT-01.1"></label> / 2</div>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="1" step="1" data-kind="part" data-key="WPOL-01.1"></label> / 1</div>
 </div>
-<div class="mspart"><div class="msh"><b>08.2</b><span class="mtot">4 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
-<p class="mrule">1 mark for each of the 4 points below.</p>
-<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Nitrates (from fertiliser runoff) and phosphates (from sewage effluent) cause eutrophication: rapid growth of algae / cyanobacteria (algal bloom)</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">During the day photosynthesis by the dense algae releases oxygen so concentrations rise (above the normal saturation level)</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">At night there is no photosynthesis but respiration by algae / animals / bacteria continues, using oxygen</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Aerobic bacterial decomposition of dead algae / shaded macrophytes uses oxygen</p><ul class="pd"><li>warm summer water holds less oxygen and decay is rapid</li></ul></div></li></ol>
-<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li><b>eutrophication</b> &rarr; nutrient enrichment of water leading to algal growth</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>'the algae use up all the oxygen' on its own - the oxygen is used by aerobic decomposers breaking down the dead algae</li></ul></div>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="4" step="1" data-kind="part" data-key="NUT-01.2"></label> / 4</div>
+<div class="mspart"><div class="msh"><b>08.2</b><span class="mtot">1 mark</span><span class="mtag">Calculation</span><span class="tcount"></span></div>
+<p class="mrule">1 mark for the correct answer; working does not have to be shown.</p>
+<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">About 39 &deg;C (accept 38-40)</p></div></li></ol>
+<div class="tol ac"><b>Also accept</b><ul><li>The correct answer however it is set out, including a different but valid method.</li><li>An answer carried forward from an earlier incorrect step (error carried forward).</li><li>An answer rounded to 2 or more significant figures, and the answer written as a fraction, decimal or percentage where the question does not specify.</li><li>The value alone - the unit (&deg;C) is already printed on the answer line.</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>A bare wrong answer with no working.</li></ul></div>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="1" step="1" data-kind="part" data-key="WPOL-01.2"></label> / 1</div>
 </div>
-<div class="mspart"><div class="msh"><b>08.3</b><span class="mtot">2 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
+<div class="mspart"><div class="msh"><b>08.3</b><span class="mtot">2 marks</span><span class="mtag">Calculation</span><span class="tcount"></span></div>
+<p class="mrule">A correct final answer scores full marks on its own. If the answer is wrong, each correct step of working below earns its mark.</p>
+<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">9.1 - 7.9 (value at 27 &deg;C, accept 7.8-8.0)</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">= 1.2 mg dm<sup>-3</sup> (accept 1.1-1.3)</p></div></li></ol>
+<div class="tol ac"><b>Also accept</b><ul><li>The correct answer however it is set out, including a different but valid method.</li><li>An answer carried forward from an earlier incorrect step (error carried forward).</li><li>An answer rounded to 2 or more significant figures, and the answer written as a fraction, decimal or percentage where the question does not specify.</li><li>The value alone - the unit (mg dm<sup>-3</sup>) is already printed on the answer line.</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>A bare wrong answer with no working.</li></ul></div>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="WPOL-01.3"></label> / 2</div>
+</div>
+<div class="mspart"><div class="msh"><b>08.4</b><span class="mtot">2 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
 <p class="mrule">1 mark for each of the 2 points below.</p>
-<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">At night no photosynthesis replaces the oxygen used in respiration / decomposition so concentrations fall below the minimum fish can tolerate</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">At the end of summer large amounts of dead vegetation decay rapidly in warm water causing severe deoxygenation</p></div></li></ol>
-<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li><b>deoxygenation</b> &rarr; loss of dissolved oxygen from the water</li></ul></div>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="NUT-01.3"></label> / 2</div>
+<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Figure 1 shows the maximum / saturation values</p><ul class="pd"><li>processes that remove oxygen (aerobic decomposition of organic matter / respiration) can give values below the line</li></ul></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Higher temperature increases the metabolic rate of organisms and the rate of bacterial decomposition so oxygen is used faster</p><ul class="pd"><li>values above the line are impossible</li></ul></div></li></ol>
+<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li></ul></div>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="WPOL-01.4"></label> / 2</div>
 </div>
-<div class="mspart"><div class="msh"><b>08.4</b><span class="mtot">2 marks</span><span class="mtag">Any 2 of 4</span><span class="tcount"></span></div>
-<p class="mrule">1 mark each for any 2 of the 4 points below, in any order, maximum 2.</p>
-<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Cyanobacteria release toxins harmful to livestock, pets and people</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Floating algae shade submerged / rooted macrophytes which die, disrupting food webs</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Algae are an unreliable food source (die off rapidly) so food webs are poor</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Blocked filters / unpleasant taste and smell in water supplies</p></div></li></ol>
-<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>Points after the first two - the question asks for two, so a list of extras cannot pick up the marks.</li><li>'the algae use up all the oxygen' on its own - the oxygen is used by aerobic decomposers breaking down the dead algae</li></ul></div>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="NUT-01.4"></label> / 2</div>
+<div class="mspart"><div class="msh"><b>08.5</b><span class="mtot">3 marks</span><span class="mtag">Any 3 of 6</span><span class="tcount"></span></div>
+<p class="mrule">1 mark each for any 3 of the 6 points below, in any order, maximum 3.</p>
+<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Increased metabolic rate so more energy used / less surplus for growth</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Eggs develop faster / hatch earlier (out of step with food supply)</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Non-indigenous warm-water species may thrive and out-compete indigenous species</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Toxicity of other pollutants is greater as toxins are metabolised faster</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Reduced resistance to disease</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Proteins / enzymes denatured if temperature is very high (above about 40 &deg;C)</p></div></li></ol>
+<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>Points after the first three - the question asks for three, so a list of extras cannot pick up the marks.</li></ul></div>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="3" step="1" data-kind="part" data-key="WPOL-01.5"></label> / 3</div>
 </div>
-<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 266-268; AQA spec 3.4.3.2.9.</div></details></div>
-<div class="q" id="RM-16" data-qid="RM-16" data-marks="5" data-pm="1,2,2" data-flags="mcq"><div class="qh"><span class="num">Question 9</span><span class="meta">5 marks &middot; <a href="../subtopic/methodology.html">Scientific methodologies &amp; sampling design</a> &middot; spec 3.7.1 &middot; Genn pp. 390-391 &middot; RM-16</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
-<div class="part"><span class="marks">[1 mark]</span><span class="pn">09.1</span>A student measured the pH of a stream with a meter that reads to 0.01 pH units but had not been calibrated. Which statement is correct? Tick <b>one</b> box.
-<ul class="mcq"><li>A&nbsp; The readings are precise but may not be accurate</li><li>B&nbsp; The readings are accurate but not precise</li><li>C&nbsp; The readings are both accurate and precise</li><li>D&nbsp; The readings are reliable because the meter is electronic</li></ul>
+<div class="mspart"><div class="msh"><b>08.6</b><span class="mtot">1 mark</span><span class="tcount"></span></div>
+<p class="mrule">1 mark for the point below.</p>
+<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Hot water is sprayed from a shower floor in a tall hollow tower</p><ul class="pd"><li>air absorbs the heat and rises, drawing in more air (updraught), so the water returned is cooler (and saturated with oxygen)</li></ul></div></li></ol>
+<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li></ul></div>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="1" step="1" data-kind="part" data-key="WPOL-01.6"></label> / 1</div>
 </div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">09.2</span>Explain what is meant by an <b>anomalous result</b> and how a student should decide whether to include it.
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 256-257; AQA spec 3.4.3.2.6.</div></details></div>
+<div class="q" id="PCON-06" data-qid="PCON-06" data-marks="5" data-pm="1,2,2" data-flags="mcq"><div class="qh"><span class="num">Question 9</span><span class="meta">5 marks &middot; <a href="../subtopic/pollution-control.html">Principles of pollution control (CPA, CGM, new technologies)</a> &middot; spec 3.4.3.1 &middot; Genn pp. 243-244 &middot; PCON-06</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="part"><span class="marks">[1 mark]</span><span class="pn">09.1</span>Which of the following best describes the <b>precautionary principle</b>? Tick <b>one</b> box.
+<ul class="mcq"><li>A&nbsp; A waste is assumed to cause pollution until research shows it is unlikely to do so</li><li>B&nbsp; The polluter must pay for any damage caused</li><li>C&nbsp; Emissions should be as low as reasonably achievable</li><li>D&nbsp; Only pollutants known to be toxic need to be controlled</li></ul>
 </div>
-<div class="part"><span class="marks">[2 marks]</span><span class="pn">09.3</span>Explain why a preliminary study is carried out before the main investigation.
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">09.2</span>Explain why the polluter pays principle works best when penalties are high and enforcement is reliable.
+</div>
+<div class="part"><span class="marks">[2 marks]</span><span class="pn">09.3</span>Give <b>two</b> choices about emission location that reduce the severity of pollution.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
 <div class="mspart"><div class="msh"><b>09.1</b><span class="mtot">1 mark</span><span class="mtag">Correct answer only</span><span class="tcount"></span></div>
 <p class="mrule">1 mark for the correct option. No mark if more than one box is ticked.</p>
-<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm"><b class="plab">A:</b> The readings are precise but may not be accurate</p></div></li></ol>
-<div class="tol ac"><b>Also accept</b><ul><li><b>precise</b> &rarr; readings close together / fine resolution</li><li><b>accurate</b> &rarr; close to the true value</li></ul></div>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="1" step="1" data-kind="part" data-key="RM-16.1"></label> / 1</div>
+<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm"><b class="plab">A:</b> A waste is assumed to cause pollution until research shows it is unlikely to do so</p></div></li></ol>
+<div class="tol rj"><b>Do not credit</b><ul><li>the precautionary principle described as banning anything new - it shifts the burden of proof onto showing that harm is unlikely</li></ul></div>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="1" step="1" data-kind="part" data-key="PCON-06.1"></label> / 1</div>
 </div>
 <div class="mspart"><div class="msh"><b>09.2</b><span class="mtot">2 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
 <p class="mrule">1 mark for each of the 2 points below.</p>
-<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">A result that differs from other results with which it was expected to be similar</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm"><b class="plab">Repeat the study / measurement:</b> if it recurs it is a 'real' result caused by another variable</p><ul class="pd"><li>if not it was an error and can be excluded</li></ul></div></li></ol>
-<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li><b>anomalous</b> &rarr; an outlier / a result that does not fit the pattern</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>discarding a result only because it does not fit the expected pattern, with no reason to think it is faulty</li></ul></div>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="RM-16.2"></label> / 2</div>
+<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">If the cost of preventing damage is less than the (penalty for) damage there is a financial incentive to prevent pollution</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">If polluters can escape their responsibilities / penalties are low, there is little incentive to comply</p></div></li></ol>
+<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li><b>reliable</b> &rarr; repeatable / gives consistent results when repeated</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>'repeat the readings to make them more accurate' - repeats improve reliability; accuracy depends on the method and the instrument</li></ul></div>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="PCON-06.2"></label> / 2</div>
 </div>
-<div class="mspart"><div class="msh"><b>09.3</b><span class="mtot">2 marks</span><span class="mtag">1 mark each</span><span class="tcount"></span></div>
-<p class="mrule">1 mark for each of the 2 points below.</p>
-<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">To test the reliability of the method / equipment</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">To decide the sample size, number of samples, spacing or timing needed to detect the variation without collecting unnecessary data</p></div></li></ol>
-<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li><b>reliability</b> &rarr; repeatable / gives consistent results when repeated</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>'repeat the readings to make them more accurate' - repeats improve reliability; accuracy depends on the method and the instrument</li></ul></div>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="RM-16.3"></label> / 2</div>
+<div class="mspart"><div class="msh"><b>09.3</b><span class="mtot">2 marks</span><span class="mtag">Any 2 of 3</span><span class="tcount"></span></div>
+<p class="mrule">1 mark each for any 2 of the 3 points below, in any order, maximum 2.</p>
+<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Marine discharges where currents dilute and disperse emissions</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Emissions downwind of urban areas</p></div></li><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Not discharging waste onto permeable rock above an aquifer</p></div></li></ol>
+<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li><b>permeable</b> &rarr; how easily water passes through / lets water through</li><li><b>aquifer</b> &rarr; a permeable rock that stores groundwater / underground water store</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>Points after the first two - the question asks for two, so a list of extras cannot pick up the marks.</li></ul></div>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="2" step="1" data-kind="part" data-key="PCON-06.3"></label> / 2</div>
 </div>
-<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 390-391; AQA spec 3.7.1.</div></details></div>
-<div class="q" id="OZ-04" data-qid="OZ-04" data-marks="10" data-pm="9,1" data-flags="ext"><div class="qh"><span class="num">Question 10</span><span class="meta">10 marks &middot; <a href="../subtopic/ozone.html">Ozone depletion</a> &middot; spec 3.2.1.3, 3.2.1.2 &middot; Genn pp. 108-113, 105-106 &middot; OZ-04</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
-<div class="part"><span class="marks">[9 marks]</span><span class="pn">10.1</span>Ozone depletion is often described as an environmental problem that has been tackled successfully. Compare the effectiveness of the methods used to restore the ozone layer with the effectiveness of attempts to tackle global climate change, and explain the reasons for the difference.
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 243-244; AQA spec 3.4.3.1.</div></details></div>
+<div class="q" id="CC-10" data-qid="CC-10" data-marks="10" data-pm="9,1" data-flags="ext"><div class="qh"><span class="num">Question 10</span><span class="meta">10 marks &middot; <a href="../subtopic/climate-change.html">Global climate change</a> &middot; spec 3.2.1.2 &middot; Genn pp. 89-107 &middot; CC-10</span><span class="st noprint"><button type="button" class="lnk" data-copy title="Copy a link to this question">&#128279;</button><button type="button" data-s="1" title="Attempted but needs more work">Needs work</button><button type="button" data-s="2" title="Confident with this question">Secure</button></span></div>
+<div class="part"><span class="marks">[9 marks]</span><span class="pn">10.1</span>Evaluate the success of the methods and strategies used to reduce global climate change.
 </div>
-<div class="part"><span class="marks">[1 mark]</span><span class="pn">10.2</span>Name the international agreement of 1985 that preceded the Montreal Protocol and state its main weakness.
+<div class="part"><span class="marks">[1 mark]</span><span class="pn">10.2</span>State what is meant by a <b>carbon footprint</b>.
 </div>
 <details class="ms"><summary>Show mark scheme</summary>
 <div class="mspart"><div class="msh"><b>10.1</b><span class="mtot">9 marks</span><span class="mtag">Levels of response</span><span class="tcount"></span></div>
 <p class="mrule">Decide the level from the descriptors first, then use the indicative content to place the mark within that level. The points below are not a checklist.</p>
 <table class="levels"><tr><th>Level</th><th>Marks</th><th>What the answer must show</th></tr><tr><td><b>Level 3</b></td><td class="r">7-9</td><td>Answer is comprehensive, relevant and logically structured. Shows detailed knowledge and understanding of the relevant scientific ideas and applies them accurately to the context. Evaluation/analysis is well supported by evidence and a clear judgement or conclusion is reached.</td></tr><tr><td><b>Level 2</b></td><td class="r">4-6</td><td>Answer is mostly relevant and shows some structure. Knowledge and understanding of relevant ideas is sound but application to the context or evaluation may be incomplete or lack detail. A judgement may be made but is not fully supported.</td></tr><tr><td><b>Level 1</b></td><td class="r">1-3</td><td>Answer is basic, with limited structure. Some relevant knowledge is shown but there are omissions or errors. Little application to the context and little or no evaluation.</td></tr><tr><td><b>&nbsp;</b></td><td class="r">0</td><td>No relevant content.</td></tr></table><div class="lvl"><b>Indicative content</b> &mdash; a guide to placing the mark, not a checklist:</div>
-<ol class="pts"><li><span class="mk">&bull;</span><div class="pb"><p class="pm">Stages of scientific method illustrated by ozone: identification (Antarctic UV data), hypothesis (Rowland-Molina 1974), data collection / analysis (Dobson units, satellites, balloons confirming ClO), proposed solutions, enactment (Vienna 1985, Montreal 1987)</p></div></li><li><span class="mk">&bull;</span><div class="pb"><p class="pm"><b class="plab">Evidence of success:</b> ozone hole area and depth stabilised and beginning to shrink</p><ul class="pd"><li>CFC concentrations in the atmosphere falling</li><li>UV levels not rising further</li><li>global ozone loss limited to about 4%</li></ul></div></li><li><span class="mk">&bull;</span><div class="pb"><p class="pm"><b class="plab">Reasons for success:</b> international recognition of serious consequences (skin cancer)</p><ul class="pd"><li>agreement of nearly every country</li><li>legally binding targets with a fund for developing countries</li><li>relatively few producers / products</li><li>alternatives (HCFCs, HFCs, pump sprays, hydrocarbons) already available and cheap</li><li>no lifestyle change needed</li></ul></div></li><li><span class="mk">&bull;</span><div class="pb"><p class="pm"><b class="plab">Limits:</b> persistence of CFCs means recovery takes decades</p><ul class="pd"><li>some ODSs still used</li><li>HFC replacements are greenhouse gases</li></ul></div></li><li><span class="mk">&bull;</span><div class="pb"><p class="pm"><b class="plab">Climate change contrast:</b> greenhouse gases come from almost every human activity (energy, transport, agriculture, industry) in every country</p><ul class="pd"><li>fossil fuels underpin economies so control requires major lifestyle and economic change</li></ul></div></li><li><span class="mk">&bull;</span><div class="pb"><p class="pm">Agreements (Kyoto, Paris) have weaker / non-binding targets, disputes between developed and developing nations</p><ul class="pd"><li>emissions still rising</li><li>natural fluctuations, time delays and tipping points make cause-effect less clear to the public</li></ul></div></li><li><span class="mk">&bull;</span><div class="pb"><p class="pm"><b class="plab">Judgement:</b> ozone control was a technical substitution problem</p><ul class="pd"><li>climate change is a systemic one, so the ozone success is only partly transferable</li></ul></div></li></ol>
-<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li>Any accurate, relevant material that is not in the indicative content.</li><li>The converse of any point, ie the same comparison written the other way round.</li><li><b>ozone layer</b> &rarr; the ozone in the stratosphere that absorbs UV</li><li><b>persistence</b> &rarr; does not break down / stays in the environment for a long time</li><li><b>CFCs</b> &rarr; CFCs / halogenated organic compounds releasing chlorine</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>answers that make ozone depletion a cause of global warming, or that describe CFCs as physically blowing a hole - chlorine atoms catalyse the breakdown of ozone and are regenerated</li></ul></div>
-<details class="ex"><summary>Model answers: what a Level 3 answer looks like</summary><div class="exwrap"><div class="exa top"><div class="exh">Model answer &middot; Level 3 (9 marks)</div><p>Ozone depletion followed the scientific method almost textbook-fashion: Antarctic UV and ozone measurements identified a problem, Rowland and Molina's 1974 hypothesis explained it, Dobson-unit, satellite and balloon data confirmed chlorine monoxide in the stratosphere, and the Montreal Protocol enacted a solution. It has largely worked: CFC concentrations are falling, the ozone hole has stabilised and is starting to shrink, and global ozone loss was limited to about 4%.</p><p>Success came from particular conditions. The consequence - skin cancer - was clear and frightening, nearly every country agreed, targets were legally binding with a fund to help developing countries, there were relatively few producers and products, and alternatives (HCFCs, HFCs, hydrocarbons, pump sprays) already existed, so substitution cost little. Even so recovery will take decades because CFCs are so persistent, some ozone-depleting substances are still in use, and the HFC replacements are themselves greenhouse gases.</p><p>Climate change has none of these advantages. Greenhouse gases come from almost every activity - energy, transport, agriculture, industry - in every country, and fossil fuels underpin entire economies, so control means changing lifestyles and economies rather than swapping one chemical for another. Kyoto and Paris set weaker, largely non-binding targets, developed and developing nations dispute responsibility, and natural fluctuations, time lags and tipping points make cause and effect less obvious to the public. Emissions are still rising. The ozone story shows international agreement can work, but it was a technical substitution problem; climate change is systemic, so its lessons transfer only partly.</p></div><div class="exa low"><div class="exh">Weaker answer &middot; Level 2 (4 marks)</div><p>Ozone depletion was caused by CFCs. Scientists found the hole over Antarctica and the Montreal Protocol banned CFCs, so the ozone layer is now recovering. This was successful because everyone agreed and there were alternatives to CFCs. Climate change has not been tackled as well. There have been agreements like Kyoto and Paris but carbon dioxide is still going up. This is because fossil fuels are used everywhere and countries do not agree. So ozone depletion was solved better than climate change.</p></div></div><div class="exn"><b>What makes the difference</b><ul><li>Level 2 gives the right outline but Level 3 supports it with evidence (falling CFC levels, 4% loss, Dobson units, ClO detection) and explains each reason for the difference.</li><li>Level 3 acknowledges the limits of the ozone success (persistence, HFCs) - balance is expected at the top level.</li><li>The final judgement in Level 3 characterises the difference (substitution vs systemic problem); Level 2 just restates the question.</li></ul></div></details>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="9" step="1" data-kind="part" data-key="OZ-04.1"></label> / 9</div>
+<ol class="pts"><li><span class="mk">&bull;</span><div class="pb"><p class="pm"><b class="plab">Control of greenhouse gases:</b> energy conservation (transport, buildings, industry), renewable and nuclear energy replacing fossil fuels, CCS, reduced deforestation and afforestation (carbon sequestration), methane capture from landfill / digesters, HFC controls, changes in agriculture</p></div></li><li><span class="mk">&bull;</span><div class="pb"><p class="pm"><b class="plab">Geoengineering:</b> white roofs, ocean fertilisation, solar shades - largely untried, possible unpredictable consequences</p></div></li><li><span class="mk">&bull;</span><div class="pb"><p class="pm"><b class="plab">International agreements:</b> Kyoto Protocol, Paris Agreement - targets, but non-binding / uneven participation</p><ul class="pd"><li>carbon trading and taxes</li><li>comparison of per capita carbon footprints between countries</li></ul></div></li><li><span class="mk">&bull;</span><div class="pb"><p class="pm"><b class="plab">Evidence of limited success:</b> global CO2 concentrations still rising (about 280 ppm pre-industrial to over 410 ppm)</p><ul class="pd"><li>temperatures up about 1 &deg;C</li><li>emissions in some developed countries falling but rising in developing economies</li></ul></div></li><li><span class="mk">&bull;</span><div class="pb"><p class="pm"><b class="plab">Reasons for difficulty:</b> fossil fuels underpin economies, need for major lifestyle change, cost, time delays and natural fluctuations masking effects, political disagreement, developing countries' right to develop</p></div></li><li><span class="mk">&bull;</span><div class="pb"><p class="pm">Adaptation strategies (flood defences, drainage, managed retreat, infrastructure changes) reduce impacts but do not address the cause</p></div></li><li><span class="mk">&bull;</span><div class="pb"><p class="pm">Comparison with the Montreal Protocol's success for ozone</p></div></li><li><span class="mk">&bull;</span><div class="pb"><p class="pm"><b class="plab">Judgement:</b> partial success - technology exists and some regional reductions achieved, but global strategies have not yet stopped the rise</p><ul class="pd"><li>tipping points make urgency greater</li></ul></div></li></ol>
+<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li>Any accurate, relevant material that is not in the indicative content.</li><li><b>energy conservation</b> &rarr; using less energy, eg by insulation or behaviour change</li><li><b>CCS</b> &rarr; capturing carbon dioxide from flue gases and storing it underground</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>'nuclear power releases no carbon dioxide' - mining, fuel processing, construction and decommissioning all do</li><li>'renewables cause no pollution at all' - manufacture, construction and the land they occupy all have impacts</li></ul></div>
+<details class="ex"><summary>Model answers: what a Level 3 answer looks like</summary><div class="exwrap"><div class="exa top"><div class="exh">Model answer &middot; Level 3 (8 marks)</div><p>Strategies fall into control of greenhouse gases, geoengineering, international agreements and adaptation. Emissions are cut by energy conservation in transport, buildings and industry, by replacing fossil fuels with renewables and nuclear, by carbon capture and storage, by reducing deforestation and planting forests, and by capturing methane from landfill. Geoengineering ideas - white roofs, ocean fertilisation, solar shades - remain largely untried with unpredictable side effects. Adaptation, such as flood defences and managed retreat, reduces impacts but not the cause.</p><p>The Kyoto Protocol and Paris Agreement set targets, but they are weak or non-binding and participation is uneven; carbon trading and taxes exist but per capita footprints still differ enormously between countries. The evidence of success is limited: atmospheric CO<sub>2</sub> has risen from about 280 ppm before industrialisation to over 410 ppm and temperature by about 1 &deg;C, and although emissions are falling in some developed countries they are rising in developing economies.</p><p>The difficulty is that fossil fuels underpin economies, so control demands lifestyle change, cost, and political agreement between nations with different priorities, while time delays and natural fluctuations mask the effect of any action. By contrast the Montreal Protocol succeeded because ozone was a substitution problem. The judgement must be partial success: the technology exists and regional reductions prove it works, but global strategies have not yet stopped the rise, and tipping points make the delay dangerous.</p></div><div class="exa low"><div class="exh">Weaker answer &middot; Level 2 (5 marks)</div><p>Methods to reduce climate change include using renewable energy such as wind and solar instead of fossil fuels, saving energy, and planting trees to absorb carbon dioxide. International agreements like the Kyoto Protocol and the Paris Agreement have set targets for countries to reduce emissions. However carbon dioxide levels are still rising, so the methods have not been very successful so far. This is because countries rely on fossil fuels and do not always keep to the agreements. More needs to be done.</p></div></div><div class="exn"><b>What makes the difference</b><ul><li>Level 2 covers the main strategies and reaches a conclusion, but with no quantitative evidence (280 to 410 ppm, 1 &deg;C) and no mention of geoengineering or adaptation.</li><li>Level 3 explains <i>why</i> success is limited (economic dependence, time lags, natural variability, political disagreement) rather than just stating that it is.</li><li>The Montreal comparison and the tipping-point point give Level 3 the breadth and judgement the top band requires.</li></ul></div></details>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="9" step="1" data-kind="part" data-key="CC-10.1"></label> / 9</div>
 </div>
 <div class="mspart"><div class="msh"><b>10.2</b><span class="mtot">1 mark</span><span class="tcount"></span></div>
 <p class="mrule">1 mark for the point below.</p>
-<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">Vienna Convention for the Protection of the Ozone Layer - no legally binding goals</p></div></li></ol>
-<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li><li><b>Ozone Layer</b> &rarr; the ozone in the stratosphere that absorbs UV</li></ul></div><div class="tol rj"><b>Do not credit</b><ul><li>answers that make ozone depletion a cause of global warming, or that describe CFCs as physically blowing a hole - chlorine atoms catalyse the breakdown of ozone and are regenerated</li></ul></div>
-<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="1" step="1" data-kind="part" data-key="OZ-04.2"></label> / 1</div>
+<ol class="pts"><li><button type="button" class="mk" data-mk="1" aria-pressed="false" title="Tick this if you made the point">1</button><div class="pb"><p class="pm">The total greenhouse gas / CO2 emissions caused by an individual, organisation, product or country (often expressed per capita per year)</p></div></li></ol>
+<div class="tol ac"><b>Also accept</b><ul><li>Any other correct, relevant point of the same kind - wording never has to match these notes.</li></ul></div>
+<div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="1" step="1" data-kind="part" data-key="CC-10.2"></label> / 1</div>
 </div>
-<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 108-113, 105-106; AQA spec 3.2.1.3, 3.2.1.2.</div></details></div>
+<div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 89-107; AQA spec 3.2.1.2.</div></details></div>
 <div class="q" id="essay"><div class="qh"><span class="num">Question 11 &mdash; Essay (answer ONE)</span><span class="meta">25 marks</span></div>
 <div class="part"><span class="marks">[25 marks]</span><span class="pn">11.1</span>Soil is often described as a non-renewable resource. Discuss the causes and consequences of soil degradation and evaluate the strategies that can be used to manage soils sustainably.</div>
 <details class="ms"><summary>Indicative content</summary><table class="levels"><tr><th>Level</th><th>Marks</th><th>What the answer must show</th></tr><tr><td><b>Level 5</b></td><td class="r">21-25</td><td>Comprehensive and detailed knowledge and understanding drawn from across the specification, applied accurately to the question. Argument is coherent, well-structured and supported by a wide range of relevant, well-chosen examples and quantitative detail where appropriate. Interconnections between topics are made explicitly and a clear, justified conclusion is reached.</td></tr><tr><td><b>Level 4</b></td><td class="r">16-20</td><td>Detailed knowledge and understanding with good application to the question. Argument is logically organised with relevant examples; some links between different areas of the specification are made. Conclusions are drawn but may be less fully justified.</td></tr><tr><td><b>Level 3</b></td><td class="r">11-15</td><td>Sound knowledge and understanding, mostly applied to the question. Some structure and relevant examples, but coverage may be uneven or descriptive rather than analytical. Limited linking of topics.</td></tr><tr><td><b>Level 2</b></td><td class="r">6-10</td><td>Basic knowledge and understanding with partial relevance. Answer is largely descriptive with few examples and limited structure; some errors or omissions.</td></tr><tr><td><b>Level 1</b></td><td class="r">1-5</td><td>Limited, fragmented knowledge with little relevance to the question. Little structure; examples absent or inappropriate.</td></tr><tr><td><b>&nbsp;</b></td><td class="r">0</td><td>No relevant content.</td></tr></table><div class="lvl"><b>Indicative content</b> &mdash; students are not expected to cover all of these:</div><ol class="pts"><li><span class="mk">&bull;</span><div class="pb"><p class="pm"><b class="plab">Features of fertile soil:</b> water, nutrients, air, organic matter, pH, biota, texture, structure, depth</p><ul class="pd"><li>slow rate of soil formation vs rapid erosion (dynamic equilibrium broken)</li></ul></div></li><li><span class="mk">&bull;</span><div class="pb"><p class="pm"><b class="plab">Causes of degradation:</b> vegetation removal, ploughing vulnerable soils, overgrazing, reduced organic matter and biota, cultivating steep slopes, compaction, salinisation from irrigation, nutrient depletion, pollution</p></div></li><li><span class="mk">&bull;</span><div class="pb"><p class="pm"><b class="plab">Types of erosion:</b> rain splash, runoff, wind, slumping</p><ul class="pd"><li>consequences: reduced productivity, river and reservoir sedimentation, flooding, coastal sedimentation, particulates, desertification, landslides</li></ul></div></li><li><span class="mk">&bull;</span><div class="pb"><p class="pm">USLE as a tool for estimating loss and testing management</p></div></li><li><span class="mk">&bull;</span><div class="pb"><p class="pm"><b class="plab">Management:</b> long-term crops, low / zero tillage, contour ploughing, tied ridging, terracing, stone rows, windbreaks, multicropping / strip cropping, mulching, organic matter, livestock control, drainage / pH / nutrient management, conservation of soil biota</p></div></li><li><span class="mk">&bull;</span><div class="pb"><p class="pm">Links to sustainable agriculture, carbon storage, hydrological cycle, circular economy</p></div></li><li><span class="mk">&bull;</span><div class="pb"><p class="pm">Evaluation and judgement on which strategies are most effective in different environments</p></div></li></ol><p class="mnote">Credit any relevant, accurate material, including points that are not listed here. Reward a clear line of argument and a supported conclusion.</p><div class="aw"><label>Marks awarded <input class="aw-in" type="number" min="0" max="25" step="1" data-kind="essay" data-key="ESS-P1-SOIL"></label> / 25 (only the higher of the two essays counts)</div><div class="src">Source: R. Genn, Environmental Science A level AQA (Insight &amp; Perspective, 2018), pp. 158-169, 328-337; spec 3.2.5, 3.5.1.3, 3.5.1.5.</div></details>

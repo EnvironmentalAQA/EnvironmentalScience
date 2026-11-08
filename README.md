@@ -71,8 +71,12 @@ shortcuts `CO_2` → CO₂ and `m^-3` → m⁻³.
 
 Topic sets are split into PDFs of 8 questions each (`SET_SIZE` in build.py).
 Mock papers rotate through the bank so each set is different; questions are reused
-across sets deliberately (the assembler always spreads reuse as evenly as possible and
-guarantees one 9-mark extended-response question per paper).
+across sets deliberately and the assembler spreads reuse as evenly as possible.
+Each set carries **exactly one** 9-mark levels-of-response question, as the real papers do,
+and it is always the last question; every other slot is filled from questions with no 9-mark
+part (`bank/long_15.py` holds the fourteen 15-markers written so that this is possible).
+Sets alternate between the only two shapes AQA has used - (2 x 15, 5 x 10, 3 x 5) and
+(1 x 15, 7 x 10, 2 x 5), six of each across the twelve published papers.
 
 ## Adding official past papers
 
@@ -133,6 +137,5 @@ They are grouped by series and paper on `site/official.html`.
 
 ## Current contents
 
-301 questions across all 43 spec subtopics (33 five-markers, 13 fifteen-markers), 31 essay titles,
-40 mock papers per paper. Adding more 15-mark questions is the main lever for making the assembler
-use the real AQA (2 x 15, 5 x 10, 3 x 5) pattern more often.
+315 questions across all 43 spec subtopics (30 five-markers, 258 ten-markers, 27 fifteen-markers,
+of which 32 contain the 9-mark levels question), 31 essay titles, 40 mock papers per paper.
